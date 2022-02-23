@@ -25,6 +25,8 @@
     "vite-ssg": "^0.17.10",
     "vite-plugin-pages": "^0.20.2",
     "chart.js": "^3.7.1",
-    "sass": "^1.49.8"
+    "sass": "^1.49.8",
+    "unplugin-auto-import": "^0.6.1",
+    "unplugin-vue-components": "^0.17.20"
   }
 }

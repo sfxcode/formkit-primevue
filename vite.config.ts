@@ -2,7 +2,8 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
 import Pages from "vite-plugin-pages"
-
+import Components from 'unplugin-vue-components/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -36,6 +37,24 @@ export default defineConfig({
   },
   plugins: [
       vue(),
+    Components({
+      dts: 'src/components.d.ts',
+      resolvers: [
+      ],
+    }),
+    AutoImport({
+      imports: [
+        'vue',
+        'vue-router',
+        'vue-i18n',
+        '@vueuse/head',
+      ],
+      exclude: [
+        '**/dist/**',
+      ],
+      dts: 'src/auto-import.d.ts',
+    }),
+
     Pages({
       // pagesDir: ['src/pages', 'src/pages2'],
       pagesDir: [
