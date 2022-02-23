@@ -1,7 +1,69 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import * as path from 'path'
+import Pages from "vite-plugin-pages"
+
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue()]
+  server: {
+    hmr: {
+      port: false,
+      path: '/ws'
+    }
+  },
+  // https://github.com/antfu/vite-ssg
+  ssgOptions: {
+    script: 'async',
+    formatting: 'minify',
+  },
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, 'src/components/index.js'),
+      name: 'primevue-formkit',
+      fileName: (format) => `primevue-formkit.${format}.js`,
+    },
+    rollupOptions: {
+      external: ['vue'],
+      output: {
+        // Provide global variables to use in the UMD build
+        // Add external deps here
+        globals: {
+          vue: 'Vue',
+        },
+      },
+    },
+  },
+  plugins: [
+      vue(),
+    Pages({
+      // pagesDir: ['src/pages', 'src/pages2'],
+      pagesDir: [
+        {dir: 'src/pages', baseRoute: ''},
+      ],
+      extensions: ['vue', 'md'],
+      syncIndex: true,
+      replaceSquareBrackets: true,
+      extendRoute(route) {
+        if (route.name === 'about')
+          route.props = route => ({query: route.query.q})
+
+        if (route.name === 'components') {
+          return {
+            ...route,
+            beforeEnter: (route) => {
+              // eslint-disable-next-line no-console
+              // console.log(route)
+            },
+          }
+        }
+      },
+    }),
+  ],
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '~': path.resolve(__dirname, 'node_modules/'),
+    },
+  },
 })
