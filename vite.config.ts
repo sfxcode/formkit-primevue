@@ -6,7 +6,7 @@ import Pages from "vite-plugin-pages"
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
-process.env.VITE_APP_BUILD_EPOCH = new Date().getTime()
+process.env.VITE_APP_BUILD_EPOCH = new Date().getTime().toString()
 process.env.VITE_APP_VERSION = pkg.version
 
 /**
@@ -19,6 +19,24 @@ export default defineConfig({
       path: '/ws'
     }
   },
+  build: {
+    lib: {
+      entry: path.resolve(__dirname, 'src/components/index.js'),
+      name: 'primevue-formkit',
+      fileName: (format) => `primevue-formkit.${format}.js`,
+    },
+    rollupOptions: {
+      external: ['vue'],
+      output: {
+        // Provide global variables to use in the UMD build
+        // Add external deps here
+        globals: {
+          vue: 'Vue',
+        },
+      },
+    },
+  },
+
 
   // https://github.com/antfu/vite-ssg
   ssgOptions: {

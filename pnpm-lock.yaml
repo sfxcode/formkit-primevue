@@ -16,6 +16,7 @@ specifiers:
   '@vue/test-utils': next
   '@vuedx/typecheck': ~0.7.4
   '@vuedx/typescript-plugin-vue': ~0.7.4
+  '@vueuse/core': ^7.6.2
   '@vueuse/head': ~0.7.5
   chart.js: ^3.7.1
   eslint: ^8.9.0
@@ -59,6 +60,7 @@ devDependencies:
   '@vue/test-utils': 2.0.0-rc.18_vue@3.2.31
   '@vuedx/typecheck': 0.7.4
   '@vuedx/typescript-plugin-vue': 0.7.4
+  '@vueuse/core': 7.6.2_vue@3.2.31
   '@vueuse/head': 0.7.5_vue@3.2.31
   chart.js: 3.7.1
   eslint: 8.9.0
@@ -69,7 +71,7 @@ devDependencies:
   sass: 1.49.8
   tslib: 2.3.1
   typescript: 4.5.5
-  unplugin-auto-import: 0.6.1_vite@2.8.4
+  unplugin-auto-import: 0.6.1_@vueuse+core@7.6.2+vite@2.8.4
   unplugin-vue-components: 0.17.20_vite@2.8.4+vue@3.2.31
   vite: 2.8.4_sass@1.49.8
   vite-plugin-eslint: 1.3.0_vite@2.8.4
@@ -2349,12 +2351,43 @@ packages:
       - supports-color
     dev: true
 
+  /@vueuse/core/7.6.2_vue@3.2.31:
+    resolution: {integrity: sha512-bjAbXJVJO6aElMaZtDz2B70C0L6jFk/jGVqJxWZS5huffxA6dW5DN6tQQJwzOnx9B9rDhePHJIFKsix0qZIH2Q==}
+    peerDependencies:
+      '@vue/composition-api': ^1.1.0
+      vue: ^2.6.0 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      vue:
+        optional: true
+    dependencies:
+      '@vueuse/shared': 7.6.2_vue@3.2.31
+      vue: 3.2.31
+      vue-demi: 0.12.1_vue@3.2.31
+    dev: true
+
   /@vueuse/head/0.7.5_vue@3.2.31:
     resolution: {integrity: sha512-L+XQ5Act0nT/ZyO8Qo10J4FyM1qPOyQb6MT4MMn6+AITzrStpmKs/nUDDLJKD/rCcNWl/65XbdQm4T2vKp3VOQ==}
     peerDependencies:
       vue: '>=3'
     dependencies:
       vue: 3.2.31
+    dev: true
+
+  /@vueuse/shared/7.6.2_vue@3.2.31:
+    resolution: {integrity: sha512-ThDld4Mx501tahRuHV6qJGkwCr17GknZrOzlD02Na9qJcH7Pq0quNTLx5cNDou7b1CKNvE3BXi2w/hz9KuPNTQ==}
+    peerDependencies:
+      '@vue/composition-api': ^1.1.0
+      vue: ^2.6.0 || ^3.2.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+      vue:
+        optional: true
+    dependencies:
+      vue: 3.2.31
+      vue-demi: 0.12.1_vue@3.2.31
     dev: true
 
   /abab/2.0.5:
@@ -5576,7 +5609,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     dev: true
 
-  /unplugin-auto-import/0.6.1_vite@2.8.4:
+  /unplugin-auto-import/0.6.1_@vueuse+core@7.6.2+vite@2.8.4:
     resolution: {integrity: sha512-rSukyyROmSkqL9tjkA88oLhpG4tXYkk2rTpqGaYKjXRNktHEKf03pit8bamPt95KPVfMLjT0+TPKi6ju0toOIw==}
     engines: {node: '>=14'}
     peerDependencies:
@@ -5587,6 +5620,7 @@ packages:
     dependencies:
       '@antfu/utils': 0.5.0
       '@rollup/pluginutils': 4.1.2
+      '@vueuse/core': 7.6.2_vue@3.2.31
       local-pkg: 0.4.1
       magic-string: 0.25.7
       resolve: 1.22.0
@@ -5892,6 +5926,21 @@ packages:
   /vscode-web-custom-data/0.3.6:
     resolution: {integrity: sha512-9r2DOv4YMXL/WBTBB6zxde93hmg6AM7thr7GMR6c5LvPxXe/lwD8gsrJGe0tha4CUvoz86ElUieThGVpM+4PLg==}
     deprecated: This package has been renamed to @vscode/web-custom-data, please update to the new name
+    dev: true
+
+  /vue-demi/0.12.1_vue@3.2.31:
+    resolution: {integrity: sha512-QL3ny+wX8c6Xm1/EZylbgzdoDolye+VpCXRhI2hug9dJTP3OUJ3lmiKN3CsVV3mOJKwFi0nsstbgob0vG7aoIw==}
+    engines: {node: '>=12'}
+    hasBin: true
+    requiresBuild: true
+    peerDependencies:
+      '@vue/composition-api': ^1.0.0-rc.1
+      vue: ^3.0.0-0 || ^2.6.0
+    peerDependenciesMeta:
+      '@vue/composition-api':
+        optional: true
+    dependencies:
+      vue: 3.2.31
     dev: true
 
   /vue-eslint-parser/8.3.0_eslint@8.9.0:
