@@ -1,6 +1,6 @@
 <template>
     <span :class='spanClass()'>
-                <i v-if='hasLeftIcon' :class='props.context.iconLeft' />
+                <i v-if='hasLeftIcon()' :class='props.context.iconLeft' />
 
   <InputText :id='props.context.id' @input='handleInput' :value='props.context._value'
              :placeholder='props.context.attrs.placeholder' />

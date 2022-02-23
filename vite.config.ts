@@ -1,11 +1,17 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
 import * as path from 'path'
+import {defineConfig} from 'vite'
+import Vue from '@vitejs/plugin-vue'
+import pkg from './package.json'
 import Pages from "vite-plugin-pages"
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 
-// https://vitejs.dev/config/
+process.env.VITE_APP_BUILD_EPOCH = new Date().getTime()
+process.env.VITE_APP_VERSION = pkg.version
+
+/**
+ * @type {import('vite').UserConfig}
+ */
 export default defineConfig({
   server: {
     hmr: {
@@ -13,35 +19,53 @@ export default defineConfig({
       path: '/ws'
     }
   },
+
   // https://github.com/antfu/vite-ssg
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
   },
-  build: {
-    lib: {
-      entry: path.resolve(__dirname, 'src/components/index.js'),
-      name: 'primevue-formkit',
-      fileName: (format) => `primevue-formkit.${format}.js`,
-    },
-    rollupOptions: {
-      external: ['vue'],
-      output: {
-        // Provide global variables to use in the UMD build
-        // Add external deps here
-        globals: {
-          vue: 'Vue',
-        },
-      },
-    },
+  test: {
+    globals: true,
+    include: ['test/**/*.test.ts'],
+    environment: 'happy-dom',
+  },
+
+  optimizeDeps: {
+    include: [
+      'vue',
+      'vue-router',
+      '@vueuse/core',
+    ],
+    exclude: [
+      'vue-demi',
+    ],
   },
   plugins: [
-      vue(),
+
+    Vue({
+      include: [/\.vue$/, /\.md$/],
+      template: {
+        compilerOptions: {
+          directiveTransforms: {
+            styleclass: () => ({
+              props: [],
+              needRuntime: true,
+            }),
+            ripple: () => ({
+              props: [],
+              needRuntime: true,
+            }),
+          }
+        }
+      }
+    }),
     Components({
       dts: 'src/components.d.ts',
       resolvers: [
       ],
     }),
+
     AutoImport({
       imports: [
         'vue',
@@ -54,7 +78,6 @@ export default defineConfig({
       ],
       dts: 'src/auto-import.d.ts',
     }),
-
     Pages({
       // pagesDir: ['src/pages', 'src/pages2'],
       pagesDir: [
@@ -78,6 +101,7 @@ export default defineConfig({
         }
       },
     }),
+
   ],
   resolve: {
     alias: {
@@ -85,4 +109,5 @@ export default defineConfig({
       '~': path.resolve(__dirname, 'node_modules/'),
     },
   },
+
 })
