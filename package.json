@@ -12,7 +12,8 @@
     "@formkit/vue": "^1.0.0-beta.4",
     "primeicons": "^5.0.0",
     "primevue": "^3.12.1",
-    "vue": "^3.2.31"
+    "vue": "^3.2.31",
+    "quill": "^1.3.7"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.16.1",

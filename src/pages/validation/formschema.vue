@@ -27,7 +27,7 @@ const schema = reactive(
     },
     {
       $el: 'h3',
-      children: 'sdfsdfsd',
+      children: 'Header Text H3',
     },
     {
       $formkit: 'primeInputText',
@@ -35,6 +35,19 @@ const schema = reactive(
       label: 'Email',
       help: 'This will be used for your account.',
       validation: 'required|email',
+    },
+    {
+      $formkit: 'primeInputTextArea',
+      name: 'myText',
+      label: 'Text',
+      validation: '',
+      rows: '3',
+    },
+    {
+      $formkit: 'primeEditor',
+      name: 'myEditor',
+      label: 'Editor',
+      validation: '',
     },
     {
       $formkit: 'primeInputText',
@@ -52,7 +65,7 @@ const schema = reactive(
       validationLabel: 'password confirmation',
     },
     {
-      $formkit: 'checkbox',
+      $formkit: 'primeCheckBox',
       name: 'eu_citizen',
       id: 'eu',
       label: 'Are you a european citizen?',
@@ -76,3 +89,16 @@ const data = ref({ email: 'tom@sfxcode.com' });
 
 
 </script>
+
+<style lang='scss'>
+
+.p-inputtext {
+  width: 400px;
+}
+
+.p-editor-container  {
+  width: 400px;
+  height: 250px;
+  margin-bottom: 60px;
+}
+</style>

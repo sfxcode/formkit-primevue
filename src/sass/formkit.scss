@@ -7,17 +7,19 @@
 
 .formkit-outer {
   margin: 4px;
+  padding-bottom: 10px;
 }
 
 .formkit-wrapper,
 .formkit-fieldset {
   max-width: 0;
+
 }
 
 .formkit-label {
   display: block;
   margin: 0;
-  padding: 0;
+  padding-bottom: 4px;
   width: 400px;
   font-weight: bold;
   font-size: 0.75rem;
@@ -51,18 +53,18 @@
   display: flex;
   align-items: center;
 
+    width: fit-content;
+
   &:focus-within {
 
   }
 
-  .p-component {
-    width: 400px;
-  }
-
 }
 
-formkit-help {
+.formkit-help {
   margin: 0;
+  font-size: 0.80rem;
+  color: var(--text-color-secondary);
 }
 
 .formkit-messages {
@@ -77,10 +79,8 @@ formkit-help {
 .formkit-message {
   padding: 0;
   margin: 0;
-  color: red;
+  color: #ef9a9a;
   list-style: none;
   font-size: 0.75rem;
 
 }
-
-
