@@ -4,7 +4,7 @@ import PrimeInputText from '@/components/PrimeInputText.vue';
 import { de, en } from '@formkit/i18n'
 
 // import '@formkit/themes/genesis/theme.css'
-import './formkit.scss'
+//import './formkit.scss'
 
 
 export const install: UserModule = ({ app, router, isClient }) => {

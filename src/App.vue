@@ -1,11 +1,16 @@
 <script setup lang="ts">
-
-</script>
+import AppTopBar from '@/components/app/AppTopbar.vue';</script>
 
 <template>
-  <div style="padding: 24px;">
-  <router-view />
+  <div>
+    <AppTopBar/>
   </div>
+  <div class='layout-main-container'>
+    <div class='layout-main'>
+      <router-view/>
+    </div>
+  </div>
+
 </template>
 
 <style lang='scss'>
