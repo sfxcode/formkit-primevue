@@ -1,5 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 
+import "/src/sass/primevue-formkit.scss";
+
 export { default as PrimeInputText } from './PrimeInputText.vue';
 export { default as PrimeInputTextArea } from './PrimeInputTextArea.vue';
 export { default as PrimeCheckBox } from './PrimeCheckBox.vue';

@@ -5,10 +5,6 @@
 declare module 'vue' {
   export interface GlobalComponents {
     AppTopbar: typeof import('./components/app/AppTopbar.vue')['default']
-    PrimeCheckBox: typeof import('./components/PrimeCheckBox.vue')['default']
-    PrimeEditor: typeof import('./components/PrimeEditor.vue')['default']
-    PrimeInputText: typeof import('./components/PrimeInputText.vue')['default']
-    PrimeInputTextArea: typeof import('./components/PrimeInputTextArea.vue')['default']
   }
 }
 

@@ -1,9 +1,9 @@
 import type { UserModule } from '@/types';
 import { plugin, defaultConfig, createInput } from '@formkit/vue';
-import PrimeInputText from '@/components/PrimeInputText.vue';
-import PrimeInputTextArea from '@/components/PrimeInputTextArea.vue';
-import PrimeCheckBox from '@/components/PrimeCheckBox.vue';
-import PrimeEditor from '@/components/PrimeEditor.vue';
+import PrimeInputText from '@/formkit/PrimeInputText.vue';
+import PrimeInputTextArea from '@/formkit/PrimeInputTextArea.vue';
+import PrimeCheckBox from '@/formkit/PrimeCheckBox.vue';
+import PrimeEditor from '@/formkit/PrimeEditor.vue';
 import { de, en } from '@formkit/i18n'
 
 export const install: UserModule = ({ app, router, isClient }) => {

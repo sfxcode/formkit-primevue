@@ -21,7 +21,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/components/index.js'),
+      entry: path.resolve(__dirname, 'src/formkit/index.js'),
       name: 'primevue-formkit',
       fileName: (format) => `primevue-formkit.${format}.js`,
     },
