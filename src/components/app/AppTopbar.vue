@@ -1,33 +1,11 @@
 <template>
   <div class='layout-topbar'>
-    <router-link to='/' class='layout-topbar-logo'>
-      <span>Formkit - PrimeVue</span>
-    </router-link>
-    <button class='p-link layout-menu-button layout-topbar-button' >
-      <i class='pi pi-bars'></i>
+    <MegaMenu :model="items"/>
+    <button class='p-link layout-topbar-button' @click='redirectToGithub'>
+      <i class='pi pi-github'> </i>
+      <span>Github</span>
     </button>
 
-
-    <ul class='layout-topbar-menu hidden lg:flex origin-top'>
-      <li>
-        <button class='p-link layout-topbar-button'>
-          <i class='pi pi-cog'></i>
-          <span>Settings</span>
-        </button>
-      </li>
-      <li>
-        <button class='p-link layout-topbar-button'>
-          <i class='pi pi-user'></i>
-          <span>Profile</span>
-        </button>
-      </li>
-      <li>
-        <button class='p-link layout-topbar-button' @click='redirectToGithub'>
-          <i class='pi pi-github'> </i>
-          <span>Github</span>
-        </button>
-      </li>
-    </ul>
 
   </div>
 </template>
@@ -38,7 +16,37 @@
 function redirectToGithub(event: any) {
   window.open('https://github.com/sfxcode/formkit-primevue', '_blank');
 }
+
+const items = ref([
+  {
+    label: 'Input', icon: 'pi pi-fw pi-video',
+    items: [
+      [
+        {
+          label: 'Text',
+          items: [{label: 'Text', icon: 'pi pi-fw pi-user-edit', to: '/demo/text'}, {label: 'TextArea', icon: 'pi pi-fw pi-user-edit', to: '/demo/text'}]
+        },
+        {
+          label: 'Editor',
+          items: [{label: 'HTML Editor', icon: 'pi pi-fw pi-user-edit', to: '/demo/text'}]
+        }
+      ],
+      [
+        {
+          label: 'Boolean',
+          items: [{label: 'CheckBox', icon: 'pi pi-fw pi-user-edit', to: '/demo/text'}, {label: 'Switch', icon: 'pi pi-fw pi-user-edit', to: '/demo/text'}]
+        },
+        {
+          label: 'Editor',
+          items: [{label: 'HTML Editor', icon: 'pi pi-fw pi-user-edit', to: '/demo/text'}]
+        }
+      ]
+    ]
+  },
+]);
+
 </script>
+
 
 <style scoped>
 
