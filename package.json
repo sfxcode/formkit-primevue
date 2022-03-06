@@ -1,7 +1,18 @@
 {
-  "name": "primevue-formkit",
+  "name": "formkit-primevue",
   "private": true,
-  "version": "0.0.1",
+  "version": "0.1.0",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/formkit-primevue.umd.js",
+  "module": "./dist/formkit-primevue.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/formkit-primevue.es.js",
+      "require": "./dist/formkit-primevue.umd.js"
+    }
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
