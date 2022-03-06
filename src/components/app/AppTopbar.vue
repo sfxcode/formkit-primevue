@@ -1,7 +1,7 @@
 <template>
   <div class='layout-topbar'>
     <router-link to='/' class='layout-topbar-logo'>
-      <span>Vite PrimeVue Starter</span>
+      <span>Formkit - PrimeVue</span>
     </router-link>
     <button class='p-link layout-menu-button layout-topbar-button' >
       <i class='pi pi-bars'></i>
@@ -36,7 +36,7 @@
 
 
 function redirectToGithub(event: any) {
-  window.open('https://github.com/sfxcode/vite-primevue-starter', '_blank');
+  window.open('https://github.com/sfxcode/formkit-primevue', '_blank');
 }
 </script>
 
