@@ -3,6 +3,7 @@ import {createInput} from "@formkit/vue";
 import PrimeInputText from "./PrimeInputText.vue";
 import PrimeInputTextArea from "./PrimeInputTextArea.vue";
 import PrimeCheckBox from "./PrimeCheckBox.vue";
+import PrimeInputSwitch from "./PrimeInputSwitch.vue";
 import PrimeEditor from "./PrimeEditor.vue";
 
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
@@ -14,6 +15,10 @@ export const primeInputTextAreaDefinition: FormKitTypeDefinition = createInput(P
 })
 
 export const primeCheckBoxDefinition: FormKitTypeDefinition = createInput(PrimeCheckBox, {
+    props: [],
+})
+
+export const primeInputSwitchDefinition: FormKitTypeDefinition = createInput(PrimeInputSwitch, {
     props: [],
 })
 

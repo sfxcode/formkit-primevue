@@ -55,6 +55,8 @@ const schema = reactive(
         label: 'Password',
         help: 'Enter your new password.',
         validation: 'required|length:5,16',
+        validationVisibility: "live"
+
       },
       {
         $formkit: 'primeInputText',
@@ -72,7 +74,7 @@ const schema = reactive(
       },
       {
         $formkit: 'select',
-        if: '$get(eu).value', // 👀 Oooo, conditionals!
+        if: '$eu_citizen', // 👀 Oooo, conditionals!
         name: 'cookie_notice',
         label: 'Cookie notice frequency',
         options: {
@@ -87,7 +89,10 @@ const schema = reactive(
 
 const data = ref({ email: 'tom@sfxcode.com' });
 
-
+const submitHandler = async () => {
+  // Lets pretend this is an ajax request:
+  await new Promise((r) => setTimeout(r, 1000))
+}
 </script>
 
 <style lang='scss'>
