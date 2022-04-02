@@ -8,7 +8,7 @@ import {
   primeEditorDefinition, primeInputSwitchDefinition,
   primeInputTextAreaDefinition,
   primeInputTextDefinition
-} from "@/formkit/inputs";
+} from "@/formkit";
 
 
 
@@ -26,3 +26,6 @@ export const install: UserModule = ({ app, router, isClient }) => {
     },
   }));
 };
+
+export { }
+

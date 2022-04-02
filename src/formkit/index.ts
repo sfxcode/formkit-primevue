@@ -5,6 +5,7 @@ import PrimeInputTextArea from "./PrimeInputTextArea.vue";
 import PrimeCheckBox from "./PrimeCheckBox.vue";
 import PrimeInputSwitch from "./PrimeInputSwitch.vue";
 import PrimeEditor from "./PrimeEditor.vue";
+import "/src/sass/formkit-primevue.scss";
 
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
     props: ['iconRight', 'iconLeft'],

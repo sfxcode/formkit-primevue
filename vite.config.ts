@@ -5,6 +5,8 @@ import pkg from './package.json'
 import Pages from "vite-plugin-pages"
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+import dts from 'vite-plugin-dts'
+
 
 process.env.VITE_APP_BUILD_EPOCH = new Date().getTime().toString()
 process.env.VITE_APP_VERSION = pkg.version
@@ -21,7 +23,7 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: path.resolve(__dirname, 'src/formkit/index.js'),
+      entry: path.resolve(__dirname, 'src/formkit/index.ts'),
       name: 'formkit-primevue',
       fileName: (format) => `formkit-primevue.${format}.js`,
     },
@@ -77,6 +79,9 @@ export default defineConfig({
           }
         }
       }
+    }),
+    dts({
+      copyDtsFiles:false
     }),
     Components({
       dts: 'src/components.d.ts',
