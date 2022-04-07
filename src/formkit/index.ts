@@ -36,3 +36,13 @@ export const primeEditorDefinition: FormKitTypeDefinition = createInput(PrimeEdi
 export const primeDropdownDefinition: FormKitTypeDefinition = createInput(PrimeDropdown, {
     props: [],
 })
+
+export const primeInputs = {
+    primeInputText: primeInputTextDefinition,
+    primePassword: primePasswordDefinition,
+    primeCheckBox: primeCheckBoxDefinition,
+    primeInputSwitch: primeInputSwitchDefinition,
+    primeInputTextArea: primeInputTextAreaDefinition,
+    primeEditor: primeEditorDefinition,
+    primeDropdown: primeDropdownDefinition
+}
