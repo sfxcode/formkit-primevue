@@ -1,14 +1,19 @@
 import {FormKitTypeDefinition} from "@formkit/core";
 import {createInput} from "@formkit/vue";
+
 import PrimeInputText from "./PrimeInputText.vue";
+import PrimePassword from "./PrimePassword.vue";
 import PrimeInputTextArea from "./PrimeInputTextArea.vue";
 import PrimeCheckBox from "./PrimeCheckBox.vue";
 import PrimeInputSwitch from "./PrimeInputSwitch.vue";
 import PrimeEditor from "./PrimeEditor.vue";
-import "/src/sass/formkit-primevue.scss";
 
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
     props: ['iconRight', 'iconLeft'],
+})
+
+export const primePasswordDefinition: FormKitTypeDefinition = createInput(PrimePassword, {
+    props: ['feedback', 'toggleMask'],
 })
 
 export const primeInputTextAreaDefinition: FormKitTypeDefinition = createInput(PrimeInputTextArea, {

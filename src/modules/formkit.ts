@@ -7,7 +7,7 @@ import {
   primeCheckBoxDefinition,
   primeEditorDefinition, primeInputSwitchDefinition,
   primeInputTextAreaDefinition,
-  primeInputTextDefinition
+  primeInputTextDefinition, primePasswordDefinition
 } from "@/formkit";
 
 
@@ -19,6 +19,7 @@ export const install: UserModule = ({ app, router, isClient }) => {
     locale: 'de',
     inputs: {
       primeInputText: primeInputTextDefinition,
+      primePassword: primePasswordDefinition,
       primeCheckBox: primeCheckBoxDefinition,
       primeInputSwitch: primeInputSwitchDefinition,
       primeInputTextArea: primeInputTextAreaDefinition,

@@ -10,7 +10,6 @@ const props = defineProps({
 });
 
 function handleInput(e: any) {
-  console.log(e);
   props.context?.node.input(e);
 }
 </script>

@@ -41,7 +41,7 @@ const schema = reactive(
         name: 'myText',
         label: 'Text',
         validation: '',
-        rows: '3',
+        rows: '5',
       },
       {
         $formkit: 'primeEditor',
@@ -59,9 +59,11 @@ const schema = reactive(
 
       },
       {
-        $formkit: 'primeInputText',
+        $formkit: 'primePassword',
         name: 'password_confirm',
         label: 'Confirm password',
+        toggleMask: true,
+        feedback: false,
         help: 'Enter your new password again to confirm it.',
         validation: 'required|confirm',
         validationLabel: 'password confirmation',

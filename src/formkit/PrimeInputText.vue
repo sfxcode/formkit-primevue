@@ -6,7 +6,6 @@
              :placeholder='props.context.attrs.placeholder' />
           <i v-if='hasRightIcon' :class='props.context.iconRight' />
     </span>
-
 </template>
 
 <script setup lang='ts'>
@@ -32,7 +31,6 @@ const spanClass = () => {
 };
 
 function handleInput(e: any) {
-  console.log(props.context);
   props.context?.node.input(e.target.value);
 }
 </script>
