@@ -7,6 +7,7 @@ import PrimeInputTextArea from "./PrimeInputTextArea.vue";
 import PrimeCheckBox from "./PrimeCheckBox.vue";
 import PrimeInputSwitch from "./PrimeInputSwitch.vue";
 import PrimeEditor from "./PrimeEditor.vue";
+import PrimeDropdown from "./PrimeDropdown.vue";
 
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
     props: ['iconRight', 'iconLeft'],
@@ -29,5 +30,9 @@ export const primeInputSwitchDefinition: FormKitTypeDefinition = createInput(Pri
 })
 
 export const primeEditorDefinition: FormKitTypeDefinition = createInput(PrimeEditor, {
+    props: [],
+})
+
+export const primeDropdownDefinition: FormKitTypeDefinition = createInput(PrimeDropdown, {
     props: [],
 })

@@ -75,19 +75,23 @@ const schema = reactive(
         label: 'Are you a european citizen?',
       },
       {
-        $formkit: 'select',
+        $formkit: 'primeDropdown',
         if: '$eu_citizen', // 👀 Oooo, conditionals!
         name: 'cookie_notice',
         label: 'Cookie notice frequency',
-        options: {
-          refresh: 'Every page load',
-          hourly: 'Ever hour',
-          daily: 'Every day',
-        },
+        value: 'hourly',
+        showClear: false,
+        filter: false,
+        options: [
+          {label: 'Every page load', value: 'refresh'},
+          {label: 'Ever hour', value: 'hourly'},
+          {label: 'Every day', value: 'daily'},
+        ],
         help: 'How often should we display a cookie notice?',
       },
     ],
 );
+
 
 const data = ref({ email: 'tom@sfxcode.com' });
 

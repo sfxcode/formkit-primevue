@@ -9,6 +9,8 @@ const props = defineProps({
   context: Object,
 });
 
+
+
 function handleInput(e: any) {
   props.context?.node.input(e.htmlValue);
 }

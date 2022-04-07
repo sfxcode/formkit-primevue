@@ -4,7 +4,7 @@ import { plugin, defaultConfig } from '@formkit/vue';
 
 import { de, en } from '@formkit/i18n'
 import {
-  primeCheckBoxDefinition,
+  primeCheckBoxDefinition, primeDropdownDefinition,
   primeEditorDefinition, primeInputSwitchDefinition,
   primeInputTextAreaDefinition,
   primeInputTextDefinition, primePasswordDefinition
@@ -23,7 +23,8 @@ export const install: UserModule = ({ app, router, isClient }) => {
       primeCheckBox: primeCheckBoxDefinition,
       primeInputSwitch: primeInputSwitchDefinition,
       primeInputTextArea: primeInputTextAreaDefinition,
-      primeEditor: primeEditorDefinition
+      primeEditor: primeEditorDefinition,
+      primeDropdown: primeDropdownDefinition
     },
   }));
 };
