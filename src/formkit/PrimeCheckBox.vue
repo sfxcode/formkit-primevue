@@ -1,7 +1,8 @@
 <template>
 
   <Checkbox :id='props.context.id' @input='handleInput' v-model='props.context._value'
-                      :placeholder='props.context.attrs.placeholder' :binary="true"/>
+            :placeholder='props.context.attrs.placeholder' :binary="true"
+            :class="props.context.attrs.class"/>
 </template>
 
 <script setup lang='ts'>

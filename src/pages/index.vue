@@ -35,6 +35,8 @@ const schema = reactive(
         label: 'Email',
         help: 'This will be used for your account.',
         validation: 'required|email',
+        class: 'test',
+
       },
       {
         $formkit: 'primeInputTextArea',
@@ -42,12 +44,26 @@ const schema = reactive(
         label: 'Text',
         validation: '',
         rows: '5',
+        class: 'test',
+
       },
       {
         $formkit: 'primeEditor',
         name: 'myEditor',
         label: 'Editor',
         validation: '',
+        class: 'test',
+
+      },
+      {
+        $formkit: 'primeCalendar',
+        name: 'myCalendar',
+        label: 'Calendar',
+        validation: '',
+        class: 'test',
+        dateFormat:'dd.mm.yy',
+        showIcon: 'true'
+
       },
       {
         $formkit: 'primeInputText',
@@ -55,7 +71,9 @@ const schema = reactive(
         label: 'Password',
         help: 'Enter your new password.',
         validation: 'required|length:5,16',
-        validationVisibility: "live"
+        validationVisibility: "live",
+        class: 'test',
+
 
       },
       {
@@ -67,12 +85,16 @@ const schema = reactive(
         help: 'Enter your new password again to confirm it.',
         validation: 'required|confirm',
         validationLabel: 'password confirmation',
+        class: 'test',
+
       },
       {
         $formkit: 'primeCheckBox',
         name: 'eu_citizen',
         id: 'eu',
         label: 'Are you a european citizen?',
+        class: 'test',
+
       },
       {
         $formkit: 'primeDropdown',
@@ -88,6 +110,8 @@ const schema = reactive(
           {label: 'Every day', value: 'daily'},
         ],
         help: 'How often should we display a cookie notice?',
+        class: 'test',
+
       },
     ],
 );
@@ -103,13 +127,5 @@ const submitHandler = async () => {
 
 <style lang='scss'>
 
-.p-inputtext {
-  width: 400px;
-}
 
-.p-editor-container  {
-  width: 400px;
-  height: 250px;
-  margin-bottom: 60px;
-}
 </style>

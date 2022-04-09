@@ -3,7 +3,8 @@
   <Dropdown :id='props.context.id' @change='handleInput' v-model='props.context._value'
             :options="props.context?.attrs?.options"
             optionLabel="label" optionValue="value" :placeholder='props.context.attrs.placeholder'
-            :filter="props.context.attrs.filter ?? false" :showClear="props.context.attrs.showClear ?? false"/>
+            :filter="props.context.attrs.filter ?? false" :showClear="props.context.attrs.showClear ?? false"
+            :class="props.context.attrs.class"/>
 </template>
 
 <script setup lang='ts'>

@@ -1,10 +1,11 @@
 <template>
     <span :class='spanClass()'>
-                <i v-if='hasLeftIcon()' :class='props.context.iconLeft' />
+                <i v-if='hasLeftIcon()' :class='props.context.iconLeft'/>
 
   <InputText :id='props.context.id' @input='handleInput' v-model='props.context._value'
-             :placeholder='props.context.attrs.placeholder' />
-          <i v-if='hasRightIcon' :class='props.context.iconRight' />
+             :placeholder='props.context.attrs.placeholder'
+             :class="props.context.attrs.class"/>
+          <i v-if='hasRightIcon' :class='props.context.iconRight'/>
     </span>
 </template>
 
