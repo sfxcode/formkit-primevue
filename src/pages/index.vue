@@ -1,29 +1,32 @@
 <template>
   <h1>Basic Form</h1>
 
-  <FormKit
-      id='form'
-      v-model='data'
-      type='form'
-      @submit='submitHandler'
-      :submit-attrs="{
+  <div>
+    <FormKit
+        id='form'
+        v-model='data'
+        type='form'
+        @submit='submitHandler'
+        :submit-attrs="{
       inputClass: 'p-button p-component',
     }"
-  >
-    <FormKitSchema :schema='schema' :data="data"></FormKitSchema>
-  </FormKit>
+    >
+
+      <FormKitSchema :schema='schema' :data="data"></FormKitSchema>
+    </FormKit>
+  </div>
   <pre>{{ data }}</pre>
 </template>
 
 <script setup lang='ts'>
-import { FormKitSchema } from '@formkit/vue';
-import { ref } from 'vue';
+import {FormKitSchema} from '@formkit/vue';
+import {ref} from 'vue';
 
 const schema = reactive(
     [
       {
         $el: 'h1',
-        children: ['Register ','$email'],
+        children: ['Register ', '$email'],
       },
       {
         $el: 'h3',
@@ -61,33 +64,40 @@ const schema = reactive(
         label: 'Calendar',
         validation: '',
         class: 'test',
-        dateFormat:'dd.mm.yy',
+        dateFormat: 'dd.mm.yy',
         showIcon: 'true'
 
       },
       {
-        $formkit: 'primeInputText',
-        name: 'password',
-        label: 'Password',
-        help: 'Enter your new password.',
-        validation: 'required|length:5,16',
-        validationVisibility: "live",
-        class: 'test',
+        $el: 'div',
+        attrs: {
+          class: 'double'
+        },
+        children: [{
+          $formkit: 'primeInputText',
+          name: 'password',
+          label: 'Password',
+          help: 'Enter your new password.',
+          validation: 'required|length:5,16',
+          validationVisibility: "live",
+          class: 'test',
 
 
+        },
+          {
+            $formkit: 'primePassword',
+            name: 'password_confirm',
+            label: 'Confirm password',
+            toggleMask: true,
+            feedback: false,
+            help: 'Enter your new password again to confirm it.',
+            validation: 'required|confirm',
+            validationLabel: 'password confirmation',
+            class: 'test',
+
+          }],
       },
-      {
-        $formkit: 'primePassword',
-        name: 'password_confirm',
-        label: 'Confirm password',
-        toggleMask: true,
-        feedback: false,
-        help: 'Enter your new password again to confirm it.',
-        validation: 'required|confirm',
-        validationLabel: 'password confirmation',
-        class: 'test',
-
-      },
+      ,
       {
         $formkit: 'primeCheckBox',
         name: 'eu_citizen',
@@ -117,7 +127,7 @@ const schema = reactive(
 );
 
 
-const data = ref({ email: 'tom@sfxcode.com' });
+const data = ref({email: 'tom@sfxcode.com'});
 
 const submitHandler = async () => {
   // Lets pretend this is an ajax request:
@@ -126,6 +136,5 @@ const submitHandler = async () => {
 </script>
 
 <style lang='scss'>
-
 
 </style>
