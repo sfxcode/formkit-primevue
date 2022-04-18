@@ -22,6 +22,12 @@
 import {FormKitSchema} from '@formkit/vue';
 import {ref} from 'vue';
 
+const options = [
+  {label: 'Every page load', value: 'refresh'},
+  {label: 'Ever hour', value: 'hourly'},
+  {label: 'Every day', value: 'daily'},
+];
+
 const schema = reactive(
     [
       {
@@ -104,7 +110,6 @@ const schema = reactive(
 
           }],
       },
-      ,
       {
         $formkit: 'primeCheckBox',
         name: 'eu_citizen',
@@ -128,11 +133,19 @@ const schema = reactive(
         value: 'hourly',
         showClear: false,
         filter: false,
-        options: [
-          {label: 'Every page load', value: 'refresh'},
-          {label: 'Ever hour', value: 'hourly'},
-          {label: 'Every day', value: 'daily'},
-        ],
+        options: options,
+        help: 'How often should we display a cookie notice?',
+        class: 'test',
+
+      },
+      {
+        $formkit: 'primeMultiSelect',
+        name: 'cookie_notice2',
+        label: 'Cookie notice frequency',
+        value: ['hourly'],
+        showClear: true,
+        filter: true,
+        options: options,
         help: 'How often should we display a cookie notice?',
         class: 'test',
 
@@ -142,6 +155,8 @@ const schema = reactive(
 
 
 const data = ref({email: 'tom@sfxcode.com'});
+
+
 
 const submitHandler = async () => {
   // Lets pretend this is an ajax request:

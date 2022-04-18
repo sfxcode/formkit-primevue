@@ -8,6 +8,7 @@ import PrimeCheckBox from "./PrimeCheckBox.vue";
 import PrimeInputSwitch from "./PrimeInputSwitch.vue";
 import PrimeEditor from "./PrimeEditor.vue";
 import PrimeDropdown from "./PrimeDropdown.vue";
+import PrimeMultiSelect from "./PrimeMultiSelect.vue";
 import PrimeCalendar from "./PrimeCalendar.vue";
 import PrimeSlider from "./PrimeSlider.vue";
 
@@ -39,6 +40,10 @@ export const primeDropdownDefinition: FormKitTypeDefinition = createInput(PrimeD
     props: [],
 })
 
+export const primeMultiSelectDefinition: FormKitTypeDefinition = createInput(PrimeMultiSelect, {
+    props: [],
+})
+
 export const primeCalendarDefinition: FormKitTypeDefinition = createInput(PrimeCalendar, {
     props: [],
 })
@@ -55,6 +60,7 @@ export const primeInputs = {
     primeInputTextArea: primeInputTextAreaDefinition,
     primeEditor: primeEditorDefinition,
     primeDropdown: primeDropdownDefinition,
+    primeMultiSelect: primeMultiSelectDefinition,
     primeCalendar: primeCalendarDefinition,
     primeSlider: primeSliderDefinition,
 }
