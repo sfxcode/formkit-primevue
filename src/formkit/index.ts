@@ -9,6 +9,7 @@ import PrimeInputSwitch from "./PrimeInputSwitch.vue";
 import PrimeEditor from "./PrimeEditor.vue";
 import PrimeDropdown from "./PrimeDropdown.vue";
 import PrimeCalendar from "./PrimeCalendar.vue";
+import PrimeSlider from "./PrimeSlider.vue";
 
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
     props: ['iconRight', 'iconLeft'],
@@ -42,6 +43,10 @@ export const primeCalendarDefinition: FormKitTypeDefinition = createInput(PrimeC
     props: [],
 })
 
+export const primeSliderDefinition: FormKitTypeDefinition = createInput(PrimeSlider, {
+    props: [],
+})
+
 export const primeInputs = {
     primeInputText: primeInputTextDefinition,
     primePassword: primePasswordDefinition,
@@ -51,4 +56,5 @@ export const primeInputs = {
     primeEditor: primeEditorDefinition,
     primeDropdown: primeDropdownDefinition,
     primeCalendar: primeCalendarDefinition,
+    primeSlider: primeSliderDefinition,
 }

@@ -114,6 +114,13 @@ const schema = reactive(
 
       },
       {
+        $formkit: 'primeSlider',
+        name: 'slider',
+        label: 'Use Slider',
+        min:5,
+        step: 5
+      },
+      {
         $formkit: 'primeDropdown',
         if: '$eu_citizen', // 👀 Oooo, conditionals!
         name: 'cookie_notice',
