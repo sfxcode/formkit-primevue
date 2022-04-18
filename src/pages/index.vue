@@ -33,23 +33,30 @@ const schema = reactive(
         children: 'Header Text H3',
       },
       {
-        $formkit: 'primeInputText',
-        name: 'email',
-        label: 'Email',
-        help: 'This will be used for your account.',
-        validation: 'required|email',
-        class: 'test',
+        $formkit: 'group',
+        name: 'myGroup',
+        children: [ {
+          $formkit: 'primeInputText',
+          name: 'email',
+          label: 'Email',
+          help: 'This will be used for your account.',
+          validation: 'required|email',
+          class: 'test',
 
-      },
-      {
-        $formkit: 'primeInputTextArea',
-        name: 'myText',
-        label: 'Text',
-        validation: '',
-        rows: '5',
-        class: 'test',
+        },
+          {
+            $formkit: 'primeInputTextArea',
+            name: 'myText',
+            label: 'Text',
+            validation: '',
+            rows: '5',
+            class: 'test',
 
+          },]
+        ,
       },
+
+
       {
         $formkit: 'primeEditor',
         name: 'myEditor',

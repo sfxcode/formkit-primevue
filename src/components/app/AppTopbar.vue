@@ -19,7 +19,7 @@ function redirectToGithub(event: any) {
 
 const items = ref([
   {
-    label: 'Input', icon: 'pi pi-fw pi-video',
+    label: 'Demo', icon: 'pi pi-fw pi-video',
     items: [
       [
         {
