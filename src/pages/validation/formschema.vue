@@ -1,29 +1,12 @@
-<template>
-  <h1>Basic Form</h1>
-
-  <FormKit
-    id='form'
-    v-model='data'
-    type='form'
-    @submit='submitHandler'
-    :submit-attrs="{
-      inputClass: 'p-button p-component',
-    }"
-  >
-    <FormKitSchema :schema='schema' :data="data"></FormKitSchema>
-  </FormKit>
-  <pre>{{ data }}</pre>
-</template>
-
 <script setup lang='ts'>
-import { FormKitSchema } from '@formkit/vue';
-import { ref } from 'vue';
+import { FormKitSchema } from '@formkit/vue'
+import { ref } from 'vue'
 
 const schema = reactive(
   [
     {
       $el: 'h1',
-      children: ['Register ','$email'],
+      children: ['Register ', '$email'],
     },
     {
       $el: 'h3',
@@ -83,12 +66,28 @@ const schema = reactive(
       help: 'How often should we display a cookie notice?',
     },
   ],
-);
+)
 
-const data = ref({ email: 'tom@sfxcode.com' });
-
+const data = ref({ email: 'tom@sfxcode.com' })
 
 </script>
+
+<template>
+  <h1>Basic Form</h1>
+
+  <FormKit
+    id="form"
+    v-model="data"
+    type="form"
+    :submit-attrs="{
+      inputClass: 'p-button p-component',
+    }"
+    @submit="submitHandler"
+  >
+    <FormKitSchema :schema="schema" :data="data" />
+  </FormKit>
+  <pre>{{ data }}</pre>
+</template>
 
 <style lang='scss'>
 
