@@ -26,7 +26,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "eslint --fix ./src"
   },
   "dependencies": {
     "@formkit/themes": "^1.0.0-beta.6",
@@ -37,10 +38,10 @@
     "vue": "^3.2.33"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.20.6",
+    "@antfu/eslint-config": "^0.23.0",
     "@types/node": "^17.0.25",
-    "@typescript-eslint/eslint-plugin": "5.20.0",
-    "@typescript-eslint/parser": "5.20.0",
+    "@typescript-eslint/eslint-plugin": "5.22.0",
+    "@typescript-eslint/parser": "5.22.0",
     "@vitejs/plugin-vue": "^2.3.1",
     "@vue/babel-preset-app": "^5.0.4",
     "@vue/compiler-sfc": "^3.2.33",
@@ -67,7 +68,7 @@
     "vite-plugin-dts": "^1.1.0",
     "vite-plugin-eslint": "^1.5.2",
     "vite-plugin-pages": "^0.23.0",
-    "vite-ssg": "^0.19.2",
+    "vite-ssg": "^0.20.0",
     "vue-router": "^4.0.14",
     "vue-tsc": "^0.34.8"
   }
