@@ -3,12 +3,14 @@ const props = defineProps({
   context: Object,
 })
 
+const context = props.context
+
 const hasLeftIcon = () => {
-  return props.context?.iconLeft && props.context?.iconLeft.length > 0
+  return context?.iconLeft && context?.iconLeft.length > 0
 }
 
 const hasRightIcon = () => {
-  return props.context?.iconRight && props.context?.iconRight.length > 0
+  return context?.iconRight && context?.iconRight.length > 0
 }
 
 const spanClass = () => {
@@ -21,19 +23,19 @@ const spanClass = () => {
 }
 
 function handleInput(e: any) {
-  props.context?.node.input(e.target.value)
+  context?.node.input(e.target.value)
 }
 </script>
 
 <template>
   <span :class="spanClass()">
-    <i v-if="hasLeftIcon()" :class="props.context.iconLeft" />
+    <i v-if="hasLeftIcon()" :class="context.iconLeft" />
 
     <InputText
-      :id="props.context.id" v-model="props.context._value" :placeholder="props.context.attrs.placeholder"
-      :class="props.context.attrs.class"
+      :id="context.id" v-model="context._value" :placeholder="context.attrs.placeholder"
+      :class="context.attrs.class"
       @input="handleInput"
     />
-    <i v-if="hasRightIcon" :class="props.context.iconRight" />
+    <i v-if="hasRightIcon" :class="context.iconRight" />
   </span>
 </template>

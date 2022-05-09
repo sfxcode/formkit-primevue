@@ -3,17 +3,19 @@ const props = defineProps({
   context: Object,
 })
 
+const context = props.context
+
 function handleInput(e: any) {
-  props.context?.node.input(e.value)
+  context?.node.input(e.value)
 }
 </script>
 
 <template>
   <Dropdown
-    :id="props.context.id" v-model="props.context._value" :options="props.context?.attrs?.options"
+    :id="context.id" v-model="context._value" :options="context?.attrs?.options"
     option-label="label"
-    option-value="value" :placeholder="props.context.attrs.placeholder" :filter="props.context.attrs.filter ?? false"
-    :show-clear="props.context.attrs.showClear ?? false" :class="props.context.attrs.class"
+    option-value="value" :placeholder="context.attrs.placeholder" :filter="context.attrs.filter ?? false"
+    :show-clear="context.attrs.showClear ?? false" :class="context.attrs.class"
     @change="handleInput"
   />
 </template>

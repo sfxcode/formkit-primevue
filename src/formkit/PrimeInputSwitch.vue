@@ -3,19 +3,21 @@ const props = defineProps({
   context: Object,
 })
 
+const context = props.context
+
 function handleInput(e: any) {
-  props.context?.node.input(props.context?._value)
+  context?.node.input(props.context?._value)
 }
 </script>
 
 <template>
-  <span v-if="props.context.attrs.labelLeft" class="formkit-prime-left">{{ props.context.attrs.labelLeft }}</span>
+  <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.attrs.labelLeft }}</span>
 
   <InputSwitch
-    :id="props.context.id" v-model="props.context._value" :true-value="props.context.attrs.trueValue ?? undefined"
-    :false-value="props.context.attrs.falseValue ?? undefined"
-    :class="props.context.attrs.class"
+    :id="context.id" v-model="context._value" :true-value="context.attrs.trueValue ?? undefined"
+    :false-value="context.attrs.falseValue ?? undefined"
+    :class="context.attrs.class"
     @input="handleInput"
   />
-  <span v-if="props.context.attrs.labelRight" class="formkit-prime-right">{{ props.context.attrs.labelRight }}</span>
+  <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.attrs.labelRight }}</span>
 </template>

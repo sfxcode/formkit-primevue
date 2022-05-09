@@ -3,15 +3,17 @@ const props = defineProps({
   context: Object,
 })
 
+const context = props.context
+
 function handleInput(e: any) {
-  props.context?.node.input(e.target.value)
+  context?.node.input(e.target.value)
 }
 </script>
 
 <template>
   <Password
-    :id="props.context.id" v-model="props.context._value" :placeholder="props.context.attrs.placeholder" :feedback="props.context?.feedback ?? true"
-    :toggle-mask="props.context?.toggleMask ?? false" :class="props.context.attrs.class"
+    :id="context.id" v-model="context._value" :placeholder="context.attrs.placeholder" :feedback="context?.feedback ?? true"
+    :toggle-mask="context?.toggleMask ?? false" :class="context.attrs.class"
     @input="handleInput"
   />
 </template>

@@ -3,17 +3,19 @@ const props = defineProps({
   context: Object,
 })
 
+const context = props.context
+
 function handleInput(e: any) {
-  props.context?.node.input(props.context?._value)
+  context?.node.input(props.context?._value)
 }
 </script>
 
 <template>
   <Slider
-    :id="props.context.id" v-model="props.context._value" :min="props.context.attrs.min ?? 0"
-    :max="props.context.attrs.max ?? 100"
-    :step="props.context.attrs.step ?? undefined"
-    :range="props.context.attrs.range ?? false"
+    :id="context.id" v-model="context._value" :min="context.attrs.min ?? 0"
+    :max="context.attrs.max ?? 100"
+    :step="context.attrs.step ?? undefined"
+    :range="context.attrs.range ?? false"
     @change="handleInput"
   />
 </template>

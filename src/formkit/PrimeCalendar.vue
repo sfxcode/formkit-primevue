@@ -3,20 +3,22 @@ const props = defineProps({
   context: Object,
 })
 
+const context = props.context
+
 function handleInput(e: any) {
-  props.context?.node.input(props.context?._value)
+  context?.node.input(context?._value)
 }
 
 function handleSelect(e: any) {
-  props.context?.node.input(e)
+  context?.node.input(e)
 }
 </script>
 
 <template>
   <Calendar
-    :id="props.context.id" v-model="props.context._value" :class="props.context.attrs.class" :date-format="props.context.attrs.dateFormat"
-    :show-icon="props.context.attrs.showIcon"
-    :icon="props.context.attrs.icon"
+    :id="props.context.id" v-model="context._value" :class="context.attrs.class" :date-format="context.attrs.dateFormat"
+    :show-icon="context.attrs.showIcon"
+    :icon="context.attrs.icon"
     @date-select="handleSelect" @input="handleInput"
   />
 </template>

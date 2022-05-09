@@ -3,14 +3,16 @@ const props = defineProps({
   context: Object,
 })
 
+const context = props.context
+
 function handleInput(e: any) {
-  props.context?.node.input(e.htmlValue)
+  context?.node.input(e.htmlValue)
 }
 </script>
 
 <template>
   <Editor
-    :id="props.context.id" v-model="props.context._value" :placeholder="props.context.attrs.placeholder"
+    :id="context.id" v-model="context._value" :placeholder="context.attrs.placeholder"
     @text-change="handleInput"
   />
 </template>

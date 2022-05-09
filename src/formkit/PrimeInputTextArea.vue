@@ -3,15 +3,17 @@ const props = defineProps({
   context: Object,
 })
 
+const context = props.context
+
 function handleInput(e: any) {
-  props.context?.node.input(e.target.value)
+  context?.node.input(e.target.value)
 }
 </script>
 
 <template>
   <Textarea
-    :id="props.context.id" v-model="props.context._value" :rows="props.context.rows ?? 3"
-    :placeholder="props.context.attrs.placeholder" :class="props.context.attrs.class"
+    :id="context.id" v-model="context._value" :rows="context.rows ?? 3"
+    :placeholder="context.attrs.placeholder" :class="context.attrs.class"
     @input="handleInput"
   />
 </template>

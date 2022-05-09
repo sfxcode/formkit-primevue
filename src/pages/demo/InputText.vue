@@ -51,7 +51,6 @@ const data = ref({ name: 'tom' })
     :submit-attrs="{
       inputClass: 'p-button p-component',
     }"
-    @submit=""
   >
     <FormKitSchema :schema="schema" :data="data" />
   </FormKit>

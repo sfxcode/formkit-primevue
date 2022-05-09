@@ -1,5 +1,3 @@
-import type { UserModule } from '@/types'
-
 import AutoComplete from 'primevue/autocomplete'
 import Accordion from 'primevue/accordion'
 import AccordionTab from 'primevue/accordiontab'
@@ -94,6 +92,9 @@ import Tooltip from 'primevue/tooltip'
 import ConfirmationService from 'primevue/confirmationservice'
 import ToastService from 'primevue/toastservice'
 
+import type { UserModule } from '@/types'
+
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const install: UserModule = ({ app, router, isClient }) => {
   // directives
 

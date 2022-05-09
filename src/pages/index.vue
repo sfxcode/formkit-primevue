@@ -141,11 +141,11 @@ const schema = reactive(
   ],
 )
 
-const data = ref({ email: 'tom@sfxcode.com' })
+const data = ref()
 
 const submitHandler = async() => {
   // Lets pretend this is an ajax request:
-  await new Promise(r => setTimeout(r, 1000))
+  await new Promise(resolve => setTimeout(resolve, 1000))
 }
 </script>
 

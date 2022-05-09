@@ -3,17 +3,19 @@ const props = defineProps({
   context: Object,
 })
 
+const context = props.context
+
 function handleInput(e: any) {
-  props.context?.node.input(e)
+  context?.node.input(e)
 }
 </script>
 
 <template>
-  <span v-if="props.context.attrs.labelLeft" class="formkit-prime-left">{{ props.context.attrs.labelLeft }}</span>
+  <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.attrs.labelLeft }}</span>
   <Checkbox
-    :id="props.context.id" v-model="props.context._value" :placeholder="props.context.attrs.placeholder"
-    :binary="true" :class="props.context.attrs.class"
+    :id="context.id" v-model="context._value" :placeholder="context.attrs.placeholder"
+    :binary="true" :class="context.attrs.class"
     @input="handleInput"
   />
-  <span v-if="props.context.attrs.labelRight" class="formkit-prime-right">{{ props.context.attrs.labelRight }}</span>
+  <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.attrs.labelRight }}</span>
 </template>
