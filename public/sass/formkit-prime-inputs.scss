@@ -1,0 +1,49 @@
+.p-inputtext {
+  width: 300px;
+}
+
+.p-slider {
+  width: 300px;
+  margin-top: 10px;
+
+}
+
+.p-calendar {
+  .p-inputtext {
+    width: 150px;
+  }
+}
+
+.p-dropdown {
+  .p-inputtext {
+    width: 250px;
+  }
+}
+
+.p-multiselect {
+  .p-multiselect-label {
+    width: 250px;
+  }
+}
+
+.p-editor-container  {
+  width: 300px;
+  height: 250px;
+  margin-bottom: 90px;
+}
+
+.formkit-outer[data-type="primeInputSwitch"], .formkit-outer[data-type="primeCheckBox"] {
+  .formkit-inner {
+    width: 300px;
+    .formkit-prime-right {
+      margin-left: 10px;
+      font-weight: bold;
+      font-size: 0.75rem;
+    }
+    .formkit-prime-left {
+      margin-right: 10px;
+      font-weight: bold;
+      font-size: 0.75rem;
+    }
+  }
+}

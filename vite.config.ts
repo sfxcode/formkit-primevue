@@ -22,6 +22,7 @@ export default defineConfig({
     }
   },
   build: {
+    manifest: true,
     lib: {
       entry: path.resolve(__dirname, 'src/formkit/index.ts'),
       name: 'formkit-primevue',

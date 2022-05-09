@@ -116,6 +116,17 @@ const schema = reactive(
         id: 'eu',
         label: 'Are you a european citizen?',
         class: 'test',
+        labelLeft: 'Left Label: ',
+        labelRight: 'Right Label',
+
+      },
+      {
+        $formkit: 'primeInputSwitch',
+        name: 'primeInputSwitch',
+        id: 'primeInputSwitch',
+        labelLeft: 'Left Label: ',
+        labelRight: 'Right Label',
+
 
       },
       {
