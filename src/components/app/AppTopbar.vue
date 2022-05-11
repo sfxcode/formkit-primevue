@@ -12,21 +12,21 @@ const items = ref([
       [
         {
           label: 'Text',
-          items: [{ label: 'Text', icon: 'pi pi-fw pi-user-edit', to: '/demo/text' }, { label: 'TextArea', icon: 'pi pi-fw pi-user-edit', to: '/demo/text' }],
+          items: [{ label: 'Text', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }, { label: 'TextArea', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }],
         },
         {
           label: 'Editor',
-          items: [{ label: 'HTML Editor', icon: 'pi pi-fw pi-user-edit', to: '/demo/text' }],
+          items: [{ label: 'HTML Editor', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }],
         },
       ],
       [
         {
           label: 'Boolean',
-          items: [{ label: 'CheckBox', icon: 'pi pi-fw pi-user-edit', to: '/demo/text' }, { label: 'Switch', icon: 'pi pi-fw pi-user-edit', to: '/demo/text' }],
+          items: [{ label: 'CheckBox', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }, { label: 'Switch', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }],
         },
         {
           label: 'Editor',
-          items: [{ label: 'HTML Editor', icon: 'pi pi-fw pi-user-edit', to: '/demo/text' }],
+          items: [{ label: 'HTML Editor', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }],
         },
       ],
     ],

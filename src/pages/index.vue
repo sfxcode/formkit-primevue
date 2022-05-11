@@ -16,7 +16,7 @@ const schema = reactive(
     },
     {
       $el: 'h3',
-      children: 'Header Text H3',
+      children: ['Header Text H3'],
     },
     {
       $formkit: 'group',
@@ -57,7 +57,7 @@ const schema = reactive(
       validation: '',
       class: 'test',
       dateFormat: 'dd.mm.yy',
-      showIcon: 'true',
+      showIcon: true,
 
     },
     {
@@ -104,7 +104,6 @@ const schema = reactive(
       id: 'primeInputSwitch',
       labelLeft: 'Left Label: ',
       labelRight: 'Right Label',
-
     },
     {
       $formkit: 'primeSlider',
@@ -112,6 +111,7 @@ const schema = reactive(
       label: 'Use Slider',
       min: 5,
       step: 5,
+      value: 10,
     },
     {
       $formkit: 'primeDropdown',
@@ -141,7 +141,7 @@ const schema = reactive(
   ],
 )
 
-const data = ref()
+const data = ref({})
 
 const submitHandler = async() => {
   // Lets pretend this is an ajax request:
@@ -165,6 +165,7 @@ const submitHandler = async() => {
       <FormKitSchema :schema="schema" :data="data" />
     </FormKit>
   </div>
+  <h4>fsdffds</h4>
   <pre>{{ data }}</pre>
 </template>
 
