@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import AppTopBar from '@/components/app/AppTopbar.vue'; </script>
+import AppTopBar from '@/components/app/AppTopbar.vue'
+</script>
 
 <template>
   <div class="main">
@@ -18,5 +19,4 @@ import AppTopBar from '@/components/app/AppTopbar.vue'; </script>
 
 <style lang='scss'>
 @import 'App.scss';
-
 </style>

@@ -1,5 +1,4 @@
 <script setup lang='ts'>
-
 function redirectToGithub(event: any) {
   window.open('https://github.com/sfxcode/formkit-primevue', '_blank')
 }
@@ -32,7 +31,6 @@ const items = ref([
     ],
   },
 ])
-
 </script>
 
 <template>
@@ -46,7 +44,6 @@ const items = ref([
 </template>
 
 <style scoped>
-
 @media (min-width: 1024px) {
   .lg\:flex {
     display: flex !important;

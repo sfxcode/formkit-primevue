@@ -38,7 +38,6 @@ const schema = reactive(
 )
 
 const data = ref({ name: 'tom' })
-
 </script>
 
 <template>
@@ -58,9 +57,7 @@ const data = ref({ name: 'tom' })
 </template>
 
 <style lang='scss'>
-
 .p-inputtext {
   width: 400px;
 }
-
 </style>
