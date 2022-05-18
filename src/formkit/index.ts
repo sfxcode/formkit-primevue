@@ -2,6 +2,7 @@ import type { FormKitTypeDefinition } from '@formkit/core'
 import { createInput } from '@formkit/vue'
 
 import PrimeInputText from './PrimeInputText.vue'
+import PrimeInputNumber from './PrimeInputNumber.vue'
 import PrimePassword from './PrimePassword.vue'
 import PrimeInputTextArea from './PrimeInputTextArea.vue'
 import PrimeCheckBox from './PrimeCheckBox.vue'
@@ -13,6 +14,10 @@ import PrimeCalendar from './PrimeCalendar.vue'
 import PrimeSlider from './PrimeSlider.vue'
 
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
+  props: ['iconRight', 'iconLeft'],
+})
+
+export const primeInputNumberDefinition: FormKitTypeDefinition = createInput(PrimeInputNumber, {
   props: ['iconRight', 'iconLeft'],
 })
 
@@ -54,6 +59,7 @@ export const primeSliderDefinition: FormKitTypeDefinition = createInput(PrimeSli
 
 export const primeInputs = {
   primeInputText: primeInputTextDefinition,
+  primeInputNumber: primeInputNumberDefinition,
   primePassword: primePasswordDefinition,
   primeCheckBox: primeCheckBoxDefinition,
   primeInputSwitch: primeInputSwitchDefinition,

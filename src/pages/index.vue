@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { FormKitSchema } from '@formkit/vue'
 import { ref } from 'vue'
+import schema_json from '../../public/index_form.json'
 
 const options = [
   { label: 'Every page load', value: 'refresh' },
@@ -8,11 +9,13 @@ const options = [
   { label: 'Every day', value: 'daily' },
 ]
 
+const schemaFromJson = reactive(schema_json)
+
 const schema = reactive(
   [
     {
       $el: 'h1',
-      children: ['Register ', '$email'],
+      children: ['Register ', '$myGroup.email'],
     },
     {
       $el: 'h3',
@@ -143,7 +146,7 @@ const schema = reactive(
 
 const data = ref({})
 
-const submitHandler = async() => {
+const submitHandler = async () => {
   // Lets pretend this is an ajax request:
   await new Promise(resolve => setTimeout(resolve, 1000))
 }
@@ -162,10 +165,10 @@ const submitHandler = async() => {
       }"
       @submit="submitHandler"
     >
-      <FormKitSchema :schema="schema" :data="data" />
+      <FormKitSchema :schema="schema_json" :data="data" />
     </FormKit>
   </div>
-  <h4>fsdffds</h4>
+  <h4>Data</h4>
   <pre>{{ data }}</pre>
 </template>
 
