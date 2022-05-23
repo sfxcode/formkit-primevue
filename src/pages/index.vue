@@ -141,6 +141,24 @@ const schema = reactive(
       class: 'test',
 
     },
+    {
+      $formkit: 'primeInputNumber',
+      name: 'myInputNumber',
+      label: 'Input Number',
+      value: 123456,
+      class: 'test',
+      useGrouping: true,
+      minFractionDigits: 2,
+    },
+    {
+      $formkit: 'primeInputMask',
+      name: 'myInputMask',
+      label: 'Input Mask',
+      class: 'test',
+      validation: 'required',
+      validationVisibility: 'live',
+      mask: '99-999999',
+    },
   ],
 )
 
@@ -155,7 +173,7 @@ const submitHandler = async () => {
 <template>
   <h1>Basic Form</h1>
 
-  <div>
+  <div class="myFormkit">
     <FormKit
       id="form"
       v-model="data"
@@ -165,13 +183,15 @@ const submitHandler = async () => {
       }"
       @submit="submitHandler"
     >
-      <FormKitSchema :schema="schema_json" :data="data" />
+      <FormKitSchema :schema="schema" :data="data" />
     </FormKit>
   </div>
   <h4>Data</h4>
   <pre>{{ data }}</pre>
 </template>
 
-<style lang='scss'>
-
+<style lang='scss' scoped>
+.p-inputtext {
+  width: 500px;
+}
 </style>

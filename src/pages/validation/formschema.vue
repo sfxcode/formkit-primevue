@@ -88,7 +88,7 @@ const data = ref({ email: 'tom@sfxcode.com' })
   <pre>{{ data }}</pre>
 </template>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 .p-inputtext {
   width: 400px;
 }

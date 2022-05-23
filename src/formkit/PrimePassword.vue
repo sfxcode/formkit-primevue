@@ -12,8 +12,11 @@ function handleInput(e: any) {
 
 <template>
   <Password
-    :id="context.id" v-model="context._value" :placeholder="context.attrs.placeholder" :feedback="context?.feedback ?? true"
-    :toggle-mask="context?.toggleMask ?? false" :class="context.attrs.class"
+    :id="context.id" v-model="context._value"
+    :class="context.attrs.class"
+    :placeholder="context.attrs.placeholder"
+    :feedback="context?.feedback ?? true"
+    :toggle-mask="context?.toggleMask ?? false"
     @input="handleInput"
   />
 </template>

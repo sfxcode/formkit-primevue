@@ -12,8 +12,10 @@ function handleInput(e: any) {
 
 <template>
   <Textarea
-    :id="context.id" v-model="context._value" :rows="context.rows ?? 3"
-    :placeholder="context.attrs.placeholder" :class="context.attrs.class"
+    :id="context.id" v-model="context._value"
+    :class="context.attrs.class"
+    :placeholder="context.attrs.placeholder"
+    :rows="context.rows ?? 3"
     @input="handleInput"
   />
 </template>

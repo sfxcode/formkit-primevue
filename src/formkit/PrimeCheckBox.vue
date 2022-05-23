@@ -13,8 +13,10 @@ function handleInput(e: any) {
 <template>
   <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.attrs.labelLeft }}</span>
   <Checkbox
-    :id="context.id" v-model="context._value" :placeholder="context.attrs.placeholder"
-    :binary="true" :class="context.attrs.class"
+    :id="context.id" v-model="context._value"
+    :class="context.attrs.class"
+    :placeholder="context.attrs.placeholder"
+    :binary="true"
     @input="handleInput"
   />
   <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.attrs.labelRight }}</span>

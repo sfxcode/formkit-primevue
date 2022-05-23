@@ -1,12 +1,11 @@
 import * as path from 'path'
-import {defineConfig} from 'vite'
+import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
-import pkg from './package.json'
-import Pages from "vite-plugin-pages"
+import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import dts from 'vite-plugin-dts'
-
+import pkg from './package.json'
 
 process.env.VITE_APP_BUILD_EPOCH = new Date().getTime().toString()
 process.env.VITE_APP_VERSION = pkg.version
@@ -18,15 +17,15 @@ export default defineConfig({
   server: {
     hmr: {
       port: false,
-      path: '/ws'
-    }
+      path: '/ws',
+    },
   },
   build: {
     manifest: true,
     lib: {
       entry: path.resolve(__dirname, 'src/formkit/index.ts'),
       name: 'formkit-primevue',
-      fileName: (format) => `formkit-primevue.${format}.js`,
+      fileName: format => `formkit-primevue.${format}.js`,
     },
     rollupOptions: {
       external: ['vue'],
@@ -39,7 +38,6 @@ export default defineConfig({
       },
     },
   },
-
 
   // https://github.com/antfu/vite-ssg
   ssgOptions: {
@@ -77,12 +75,12 @@ export default defineConfig({
               props: [],
               needRuntime: true,
             }),
-          }
-        }
-      }
+          },
+        },
+      },
     }),
     dts({
-      copyDtsFiles:false
+      copyDtsFiles: false,
     }),
     Components({
       dts: 'src/components.d.ts',
@@ -105,14 +103,14 @@ export default defineConfig({
     Pages({
       // pagesDir: ['src/pages', 'src/pages2'],
       pagesDir: [
-        {dir: 'src/pages', baseRoute: ''},
+        { dir: 'src/pages', baseRoute: '' },
       ],
       extensions: ['vue', 'md'],
       syncIndex: true,
       replaceSquareBrackets: true,
       extendRoute(route) {
         if (route.name === 'about')
-          route.props = route => ({query: route.query.q})
+          route.props = route => ({ query: route.query.q })
 
         if (route.name === 'components') {
           return {

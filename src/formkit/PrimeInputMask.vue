@@ -1,6 +1,4 @@
 <script setup lang='ts'>
-import consola from 'consola'
-
 const props = defineProps({
   context: Object,
 })
@@ -13,12 +11,14 @@ function handleInput(e: any) {
 </script>
 
 <template>
-  <MultiSelect
+  <InputMask
     :id="context.id" v-model="context._value"
     :class="context.attrs.class"
-    :options="context?.attrs?.options"
-    option-label="label"
-    option-value="value" :placeholder="context.attrs.placeholder" :filter="context.attrs.filter ?? false"
-    @change="handleInput"
+    :placeholder="context.attrs.placeholder"
+    :mask="context.attrs.mask ?? undefined"
+    :slot-char="context.attrs.slotChar ?? '_'"
+    :auto-clear="context.attrs.autoClear ?? true"
+    :unmask="context.attrs.unmask ?? false"
+    @blur="handleInput"
   />
 </template>

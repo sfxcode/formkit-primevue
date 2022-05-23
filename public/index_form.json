@@ -108,6 +108,20 @@
     "name": "cookie_notice",
     "label": "Cookie notice frequency",
     "value": "hourly",
+    "options":[
+      {
+        "label": "Every page load",
+        "value": "refresh"
+      },
+      {
+        "label": "Ever hour",
+        "value": "hourly"
+      },
+      {
+        "label": "Every day",
+        "value": "daily"
+      }
+    ],
     "showClear": false,
     "filter": false,
     "help": "How often should we display a cookie notice?",
@@ -119,6 +133,20 @@
     "label": "Cookie notice frequency",
     "value": [
       "hourly"
+    ],
+    "options": [
+      {
+        "label": "Every page load",
+        "value": "refresh"
+      },
+      {
+        "label": "Ever hour",
+        "value": "hourly"
+      },
+      {
+        "label": "Every Single day",
+        "value": "daily"
+      }
     ],
     "showClear": true,
     "filter": true,

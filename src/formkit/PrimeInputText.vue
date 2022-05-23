@@ -32,8 +32,9 @@ function handleInput(e: any) {
     <i v-if="hasLeftIcon()" :class="context.iconLeft" />
 
     <InputText
-      :id="context.id" v-model="context._value" :placeholder="context.attrs.placeholder"
+      :id="context.id" v-model="context._value"
       :class="context.attrs.class"
+      :placeholder="context.attrs.placeholder"
       @input="handleInput"
     />
     <i v-if="hasRightIcon" :class="context.iconRight" />
