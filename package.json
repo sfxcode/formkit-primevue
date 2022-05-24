@@ -1,8 +1,17 @@
 {
   "name": "@sfxcode/formkit-primevue",
-  "private": true,
   "version": "0.5.0",
   "type": "module",
+  "license": "MIT",
+  "repository": "https://github.com/sfxcode/formkit-primevue",
+  "homepage": "https://github.com/sfxcode/formkit-primevue",
+  "author": {
+    "name": "Tom",
+    "email": "tom@sfxcode.com"
+  },
+  "contributors": [
+    "sfxcode <tom@sfxcode.com>"
+  ],
   "files": [
     "dist"
   ],
