@@ -1,6 +1,6 @@
 {
   "name": "@sfxcode/formkit-primevue",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "type": "module",
   "license": "MIT",
   "repository": "https://github.com/sfxcode/formkit-primevue",
@@ -39,13 +39,10 @@
     "lint": "eslint --fix ./src"
   },
   "dependencies": {
-    "@formkit/i18n": "^1.0.0-beta.8",
-    "@formkit/themes": "^1.0.0-beta.8",
     "@formkit/vue": "^1.0.0-beta.8",
     "primeicons": "^5.0.0",
     "primevue": "^3.12.6",
-    "quill": "^1.3.7",
-    "vue": "^3.2.36"
+    "quill": "^1.3.7"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.23.1",
@@ -69,6 +66,7 @@
     "typescript": "^4.6.4",
     "unplugin-auto-import": "^0.7.2",
     "unplugin-vue-components": "^0.19.5",
+    "vue": "^3.2.36",
     "vite": "^2.9.9",
     "vite-plugin-dts": "^1.1.1",
     "vite-plugin-eslint": "^1.6.1",
