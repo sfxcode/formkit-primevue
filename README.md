@@ -16,6 +16,7 @@ Helper classes for using [Formkit](https://formkit.com/) with the [PrimeVue UI F
 - MultiSelect
 - Password
 - Ranking
+- Chips
 
 ## Usage
 

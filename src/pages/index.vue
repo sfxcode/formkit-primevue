@@ -117,6 +117,11 @@ const schema = reactive(
       value: 10,
     },
     {
+      $formkit: 'primeChips',
+      name: 'chips',
+      label: 'Use Chips',
+    },
+    {
       $formkit: 'primeDropdown',
       if: '$eu_citizen', // 👀 Oooo, conditionals!
       name: 'cookie_notice',

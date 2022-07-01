@@ -14,6 +14,7 @@ import PrimeMultiSelect from './PrimeMultiSelect.vue'
 import PrimeCalendar from './PrimeCalendar.vue'
 import PrimeSlider from './PrimeSlider.vue'
 import PrimeRating from './PrimeRating.vue'
+import PrimeChips from './PrimeChips.vue'
 
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
   props: ['iconRight', 'iconLeft'],
@@ -67,6 +68,10 @@ export const primeRatingDefinition: FormKitTypeDefinition = createInput(PrimeRat
   props: [],
 })
 
+export const primeChipsDefinition: FormKitTypeDefinition = createInput(PrimeChips, {
+  props: [],
+})
+
 export const primeInputs = {
   primeInputText: primeInputTextDefinition,
   primeInputNumber: primeInputNumberDefinition,
@@ -80,4 +85,5 @@ export const primeInputs = {
   primeMultiSelect: primeMultiSelectDefinition,
   primeCalendar: primeCalendarDefinition,
   primeSlider: primeSliderDefinition,
+  primeChips: primeChipsDefinition,
 }
