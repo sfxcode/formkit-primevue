@@ -17,6 +17,7 @@ Helper classes for using [Formkit](https://formkit.com/) with the [PrimeVue UI F
 - Password
 - Ranking
 - Chips
+- Knob
 
 ## Usage
 

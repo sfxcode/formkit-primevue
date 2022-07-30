@@ -11,12 +11,18 @@ function handleInput(e: any) {
 </script>
 
 <template>
-  <Slider
+  <Knob
     :id="context.id" v-model="context._value"
     :min="context.attrs.min ?? 0"
     :max="context.attrs.max ?? 100"
     :step="context.attrs.step ?? undefined"
-    :range="context.attrs.range ?? false"
+    :size="context.attrs.max ?? 100"
+    :stroke-width="context.attrs.strokeWidth ?? 14"
+    :show-value="context.attrs.showValue ?? true"
+    :value-color="context.attrs.valueColor ?? undefined"
+    :range-color="context.attrs.rangeColor ?? undefined"
+    :text-color="context.attrs.textColor ?? undefined"
+    :value-template="context.attrs.valueTemplate ?? undefined"
     @change="handleInput"
   />
 </template>
