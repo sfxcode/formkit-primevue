@@ -2,6 +2,12 @@
 
 Helper classes for using [Formkit](https://formkit.com/) with the [PrimeVue UI Framework](https://www.primefaces.org/primevue/#/)
 
+## Usages
+
+A Nuxt 3 Module (PrimeVue and Formkit bundled) under [nuxt-primevue](https://github.com/sfxcode/nuxt-primevue)
+
+[Nuxt 3 PrimeVue Starter](https://github.com/sfxcode/nuxt3-primevue-starter) and [Vite PrimeVue Starter](https://github.com/sfxcode/vite-primevue-starter) with Formkit support available
+
 ## Supported Inputs
 
 - Calendar
@@ -35,4 +41,5 @@ import { primeInputs } from '@sfxcode/formkit-primevue'
   }))
 ```
 
+![](formkit-primevue.png)
 
