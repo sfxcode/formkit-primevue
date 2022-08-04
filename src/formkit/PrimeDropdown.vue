@@ -5,6 +5,9 @@ const props = defineProps({
 
 const context = props.context
 
+function handleBlur(e: any) {
+  context?.handlers.blur(e.value)
+}
 function handleInput(e: any) {
   context?.node.input(e.value)
 }
@@ -21,5 +24,6 @@ function handleInput(e: any) {
     :filter="context.attrs.filter ?? false"
     :show-clear="context.attrs.showClear ?? false"
     @change="handleInput"
+    @blur="handleBlur"
   />
 </template>

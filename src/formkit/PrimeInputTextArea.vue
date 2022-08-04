@@ -5,6 +5,10 @@ const props = defineProps({
 
 const context = props.context
 
+function handleBlur(e: any) {
+  context?.handlers.blur(e.target.value)
+}
+
 function handleInput(e: any) {
   context?.node.input(e.target.value)
 }
@@ -17,5 +21,6 @@ function handleInput(e: any) {
     :placeholder="context.attrs.placeholder"
     :rows="context.rows ?? 3"
     @input="handleInput"
+    @blur="handleBlur"
   />
 </template>

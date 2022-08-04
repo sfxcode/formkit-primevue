@@ -37,7 +37,7 @@ const schema = reactive(
         $formkit: 'primeInputTextArea',
         name: 'myText',
         label: 'Text',
-        validation: '',
+        validation: 'required',
         rows: '5',
         class: 'test',
 
@@ -49,7 +49,7 @@ const schema = reactive(
       $formkit: 'primeEditor',
       name: 'myEditor',
       label: 'Editor',
-      validation: '',
+      validation: 'required',
       class: 'test',
 
     },
