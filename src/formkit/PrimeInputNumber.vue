@@ -1,14 +1,15 @@
 <script setup lang='ts'>
-import consola from 'consola'
-
 const props = defineProps({
   context: Object,
 })
 
 const context = props.context
 
+function handleBlur(e: any) {
+  context?.handlers.blur(e.value)
+}
+
 function handleInput(e: any) {
-  consola.error(e)
   context?.node.input(e.value)
 }
 </script>
@@ -29,5 +30,6 @@ function handleInput(e: any) {
     :button-layout="context.attrs.buttonLayout ?? 'stacked'"
     :step="context.attrs.step ?? undefined"
     @input="handleInput"
+    @blur="handleBlur"
   />
 </template>

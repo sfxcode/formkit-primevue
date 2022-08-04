@@ -7,6 +7,7 @@ const context = props.context
 
 function handleInput(e: any) {
   context?.node.input(props.context?._value)
+  context?.handlers.blur(props.context?._value)
 }
 </script>
 
