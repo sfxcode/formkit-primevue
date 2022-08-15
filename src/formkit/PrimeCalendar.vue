@@ -16,11 +16,14 @@ function handleSelect(e: any) {
 
 <template>
   <Calendar
-    :id="props.context.id" v-model="context._value"
+    v-model="context._value"
+    :id="props.context.id"
+    :name="context.name"
     :class="context.attrs.class"
     :date-format="context.attrs.dateFormat"
     :show-icon="context.attrs.showIcon"
     :icon="context.attrs.icon"
-    @date-select="handleSelect" @input="handleInput"
+    @date-select="handleSelect"
+    @input="handleInput"
   />
 </template>

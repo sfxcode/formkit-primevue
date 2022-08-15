@@ -13,7 +13,9 @@ function handleInput(e: any) {
 
 <template>
   <InputMask
-    :id="context.id" v-model="context._value"
+    v-model="context._value"
+    :id="context.id"
+    :name="context.name"
     :class="context.attrs.class"
     :placeholder="context.attrs.placeholder"
     :mask="context.attrs.mask ?? undefined"

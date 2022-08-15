@@ -11,27 +11,26 @@ const options = [
 
 const schemaFromJson = reactive(schema_json)
 
-const schema = reactive(
-  [
-    {
-      $el: 'h1',
-      children: ['Register ', '$myGroup.email'],
-    },
-    {
-      $el: 'h3',
-      children: ['Header Text H3'],
-    },
-    {
-      $formkit: 'group',
-      name: 'myGroup',
-      children: [{
+const schema = reactive([
+  {
+    $el: 'h1',
+    children: ['Register ', '$myGroup.email'],
+  },
+  {
+    $el: 'h3',
+    children: ['Header Text H3'],
+  },
+  {
+    $formkit: 'group',
+    name: 'myGroup',
+    children: [
+      {
         $formkit: 'primeInputText',
         name: 'email',
         label: 'Email',
         help: 'This will be used for your account.',
         validation: 'required|email',
         class: 'test',
-
       },
       {
         $formkit: 'primeInputTextArea',
@@ -40,35 +39,33 @@ const schema = reactive(
         validation: 'required',
         rows: '5',
         class: 'test',
-
-      }]
-      ,
-    },
-
-    {
-      $formkit: 'primeEditor',
-      name: 'myEditor',
-      label: 'Editor',
-      validation: 'required',
-      class: 'test',
-
-    },
-    {
-      $formkit: 'primeCalendar',
-      name: 'myCalendar',
-      label: 'Calendar',
-      validation: '',
-      class: 'test',
-      dateFormat: 'dd.mm.yy',
-      showIcon: true,
-
-    },
-    {
-      $el: 'div',
-      attrs: {
-        class: 'double',
       },
-      children: [{
+    ],
+  },
+
+  {
+    $formkit: 'primeEditor',
+    name: 'myEditor',
+    label: 'Editor',
+    validation: 'required',
+    class: 'test',
+  },
+  {
+    $formkit: 'primeCalendar',
+    name: 'myCalendar',
+    label: 'Calendar',
+    validation: '',
+    class: 'test',
+    dateFormat: 'dd.mm.yy',
+    showIcon: true,
+  },
+  {
+    $el: 'div',
+    attrs: {
+      class: 'double',
+    },
+    children: [
+      {
         $formkit: 'primeInputText',
         name: 'password',
         label: 'Password',
@@ -76,7 +73,6 @@ const schema = reactive(
         validation: 'required|length:5,16',
         validationVisibility: 'live',
         class: 'test',
-
       },
       {
         $formkit: 'primePassword',
@@ -88,97 +84,96 @@ const schema = reactive(
         validation: 'required|confirm',
         validationLabel: 'password confirmation',
         class: 'test',
-
-      }],
-    },
-    {
-      $formkit: 'primeCheckBox',
-      name: 'eu_citizen',
-      id: 'eu',
-      label: 'Are you a european citizen?',
-      class: 'test',
-      labelLeft: 'Left Label: ',
-      labelRight: 'Right Label',
-
-    },
-    {
-      $formkit: 'primeInputSwitch',
-      name: 'primeInputSwitch',
-      id: 'primeInputSwitch',
-      labelLeft: 'Left Label: ',
-      labelRight: 'Right Label',
-    },
-    {
-      $formkit: 'primeSlider',
-      name: 'slider',
-      label: 'Use Slider',
-      min: 5,
-      step: 5,
-      value: 10,
-    },
-    {
-      $formkit: 'primeChips',
-      name: 'chips',
-      label: 'Use Chips',
-    },
-    {
-      $formkit: 'primeKnob',
-      name: 'knob',
-      label: 'Use Knob',
-      value: 50,
-    },
-    {
-      $formkit: 'primeDropdown',
-      if: '$eu_citizen', // 👀 Oooo, conditionals!
-      name: 'cookie_notice',
-      label: 'Cookie notice frequency',
-      value: 'hourly',
-      showClear: false,
-      filter: false,
-      options,
-      help: 'How often should we display a cookie notice?',
-      class: 'test',
-
-    },
-    {
-      $formkit: 'primeMultiSelect',
-      name: 'cookie_notice2',
-      label: 'Cookie notice frequency',
-      value: ['hourly'],
-      showClear: true,
-      filter: true,
-      options,
-      help: 'How often should we display a cookie notice?',
-      class: 'test',
-
-    },
-    {
-      $formkit: 'primeInputNumber',
-      name: 'myInputNumber',
-      label: 'Input Number',
-      value: 1234,
-      class: 'test',
-      validation: 'max:10000',
-      useGrouping: true,
-      minFractionDigits: 2,
-    },
-    {
-      $formkit: 'primeInputMask',
-      name: 'myInputMask',
-      label: 'Input Mask',
-      class: 'test',
-      validation: 'required',
-      validationVisibility: 'live',
-      mask: '99-999999',
-    },
-  ],
-)
+      },
+    ],
+  },
+  {
+    $formkit: 'primeCheckBox',
+    name: 'eu_citizen',
+    id: 'eu',
+    label: 'Are you a european citizen?',
+    class: 'test',
+    labelLeft: 'Left Label: ',
+    labelRight: 'Right Label',
+  },
+  {
+    $formkit: 'primeInputSwitch',
+    name: 'primeInputSwitch',
+    id: 'primeInputSwitch',
+    labelLeft: 'Left Label: ',
+    labelRight: 'Right Label',
+  },
+  {
+    $formkit: 'primeSlider',
+    name: 'slider',
+    label: 'Use Slider',
+    min: 5,
+    max: 100,
+    step: 5,
+    value: 10,
+    validation: 'min:20|max:80',
+  },
+  {
+    $formkit: 'primeChips',
+    name: 'chips',
+    label: 'Use Chips',
+  },
+  {
+    $formkit: 'primeKnob',
+    name: 'knob',
+    label: 'Use Knob',
+    value: 50,
+    validation: 'min:20|max:80',
+  },
+  {
+    $formkit: 'primeDropdown',
+    if: '$eu_citizen', // 👀 Oooo, conditionals!
+    name: 'cookie_notice',
+    label: 'Cookie notice frequency',
+    value: 'hourly',
+    showClear: false,
+    filter: false,
+    options,
+    help: 'How often should we display a cookie notice?',
+    class: 'test',
+  },
+  {
+    $formkit: 'primeMultiSelect',
+    name: 'cookie_notice2',
+    label: 'Cookie notice frequency',
+    value: ['hourly'],
+    showClear: true,
+    filter: true,
+    options,
+    help: 'How often should we display a cookie notice?',
+    class: 'test',
+  },
+  {
+    $formkit: 'primeInputNumber',
+    name: 'myInputNumber',
+    label: 'Input Number',
+    value: 1234,
+    class: 'test',
+    validation: 'max:10000',
+    useGrouping: true,
+    minFractionDigits: 2,
+  },
+  {
+    $formkit: 'primeInputMask',
+    name: 'myInputMask',
+    label: 'Input Mask',
+    class: 'test',
+    validation: 'required',
+    validationVisibility: 'live',
+    mask: '99-999999',
+  },
+])
 
 const data = ref({})
 
 const submitHandler = async () => {
   // Lets pretend this is an ajax request:
-  await new Promise(resolve => setTimeout(resolve, 1000))
+  await new Promise((resolve) => setTimeout(resolve, 1000))
 }
 </script>
 
@@ -202,7 +197,7 @@ const submitHandler = async () => {
   <pre>{{ data }}</pre>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .p-inputtext {
   width: 500px;
 }

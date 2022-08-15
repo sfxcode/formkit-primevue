@@ -16,8 +16,11 @@ function handleInput(e: any) {
 
 <template>
   <InputNumber
-    :id="context.id" v-model="context._value"
-    :placeholder="context.attrs.placeholder" :class="context.attrs.class"
+    v-model="context._value"
+    :id="context.id"
+    :name="context.name"
+    :placeholder="context.attrs.placeholder"
+    :class="context.attrs.class"
     :use-grouping="context.attrs.useGrouping ?? true"
     :min-fraction-digits="context.attrs.minFractionDigits ?? undefined"
     :max-fraction-digits="context.attrs.maxFractionDigits ?? undefined"

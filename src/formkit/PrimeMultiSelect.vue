@@ -14,11 +14,15 @@ function handleInput(e: any) {
 
 <template>
   <MultiSelect
-    :id="context.id" v-model="context._value"
+    v-model="context._value"
+    :id="context.id"
+    :name="context.name"
     :class="context.attrs.class"
     :options="context?.attrs?.options"
     option-label="label"
-    option-value="value" :placeholder="context.attrs.placeholder" :filter="context.attrs.filter ?? false"
+    option-value="value"
+    :placeholder="context.attrs.placeholder"
+    :filter="context.attrs.filter ?? false"
     @change="handleInput"
   />
 </template>

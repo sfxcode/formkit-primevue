@@ -13,7 +13,9 @@ function handleInput(e: any) {
 <template>
   <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.attrs.labelLeft }}</span>
   <Checkbox
-    :id="context.id" v-model="context._value"
+    v-model="context._value"
+    :id="context.id"
+    :name="context.name"
     :class="context.attrs.class"
     :placeholder="context.attrs.placeholder"
     :binary="true"

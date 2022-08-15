@@ -6,13 +6,16 @@ const props = defineProps({
 const context = props.context
 
 function handleInput(e: any) {
-  context?.node.input(props.context?._value)
+  context?.node.input(e)
+  context?.handlers.blur(e)
 }
 </script>
 
 <template>
   <Knob
-    :id="context.id" v-model="context._value"
+    v-model="context._value"
+    :id="context.id"
+    :name="context.name"
     :min="context.attrs.min ?? 0"
     :max="context.attrs.max ?? 100"
     :step="context.attrs.step ?? undefined"
