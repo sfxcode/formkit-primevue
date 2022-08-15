@@ -14,7 +14,9 @@ function handleInput(e: any) {
   <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.attrs.labelLeft }}</span>
 
   <InputSwitch
-    :id="context.id" v-model="context._value"
+    v-model="context._value"
+    :id="context.id"
+    :name="context.name"
     :class="context.attrs.class"
     :true-value="context.attrs.trueValue ?? undefined"
     :false-value="context.attrs.falseValue ?? undefined"

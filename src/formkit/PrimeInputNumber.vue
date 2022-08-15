@@ -1,22 +1,26 @@
 <script setup lang='ts'>
-import consola from 'consola'
-
 const props = defineProps({
   context: Object,
 })
 
 const context = props.context
 
+function handleBlur(e: any) {
+  context?.handlers.blur(e.value)
+}
+
 function handleInput(e: any) {
-  consola.error(e)
   context?.node.input(e.value)
 }
 </script>
 
 <template>
   <InputNumber
-    :id="context.id" v-model="context._value"
-    :placeholder="context.attrs.placeholder" :class="context.attrs.class"
+    v-model="context._value"
+    :id="context.id"
+    :name="context.name"
+    :placeholder="context.attrs.placeholder"
+    :class="context.attrs.class"
     :use-grouping="context.attrs.useGrouping ?? true"
     :min-fraction-digits="context.attrs.minFractionDigits ?? undefined"
     :max-fraction-digits="context.attrs.maxFractionDigits ?? undefined"
@@ -29,5 +33,6 @@ function handleInput(e: any) {
     :button-layout="context.attrs.buttonLayout ?? 'stacked'"
     :step="context.attrs.step ?? undefined"
     @input="handleInput"
+    @blur="handleBlur"
   />
 </template>

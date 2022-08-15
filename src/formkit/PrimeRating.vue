@@ -12,7 +12,9 @@ function handleInput(e: any) {
 
 <template>
   <Rating
-    :id="context.id" v-model="context._value"
+    v-model="context._value"
+    :id="context.id"
+    :name="context.name"
     :disabled="context.attrs.disabled ?? false"
     :readonly="context.attrs.readonly ?? false"
     :stars="context.attrs.stars ?? 5"

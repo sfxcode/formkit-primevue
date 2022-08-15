@@ -5,6 +5,10 @@ const props = defineProps({
 
 const context = props.context
 
+function handleBlur(e: any) {
+  context?.handlers.blur(e.target.value)
+}
+
 function handleInput(e: any) {
   context?.node.input(e.target.value)
 }
@@ -12,11 +16,14 @@ function handleInput(e: any) {
 
 <template>
   <Password
-    :id="context.id" v-model="context._value"
+    v-model="context._value"
+    :id="context.id"
+    :name="context.name"
     :class="context.attrs.class"
     :placeholder="context.attrs.placeholder"
     :feedback="context?.feedback ?? true"
     :toggle-mask="context?.toggleMask ?? false"
     @input="handleInput"
+    @blur="handleBlur"
   />
 </template>

@@ -22,6 +22,10 @@ const spanClass = () => {
   return result
 }
 
+function handleBlur(e: any) {
+  context?.handlers.blur(e.target.value)
+}
+
 function handleInput(e: any) {
   context?.node.input(e.target.value)
 }
@@ -32,10 +36,13 @@ function handleInput(e: any) {
     <i v-if="hasLeftIcon()" :class="context.iconLeft" />
 
     <InputText
-      :id="context.id" v-model="context._value"
+      v-model="context._value"
+      :id="context.id"
+      :name="context.name"
       :class="context.attrs.class"
       :placeholder="context.attrs.placeholder"
       @input="handleInput"
+      @blur="handleBlur"
     />
     <i v-if="hasRightIcon" :class="context.iconRight" />
   </span>
