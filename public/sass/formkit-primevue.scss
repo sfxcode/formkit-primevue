@@ -3,12 +3,28 @@
   .formkit-message {
     font-size: 0.8rem;
   }
+
 }
 
 .formkit-outer {
   margin: 4px;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
   width: 400px;
+  ul {
+    margin-block-start: 2px;
+    margin-block-end: 2px;
+  }
+  .formkit-messages {
+    padding: 4px 0 0 0;
+
+    .formkit-message {
+      padding: 0;
+      margin: 0;
+      color: #ef9a9a;
+      list-style: none;
+      font-size: 0.75rem;
+    }
+  }
 }
 
 .formkit-wrapper,
@@ -63,25 +79,24 @@
 }
 
 .formkit-help {
-  margin: 0;
+  margin: 4px 0 0 0 ;
   font-size: 0.80rem;
   color: var(--text-color-secondary);
 }
 
 .formkit-messages {
   padding: 0;
-  margin: 0;
 }
-
-.formkit-help + .formkit-messages {
-  padding-top: 0;
-}
-
 .formkit-message {
   padding: 0;
   margin: 0;
   color: #ef9a9a;
   list-style: none;
   font-size: 0.75rem;
+
+}
+
+.formkit-actions {
+  padding-top: 6px;
 
 }

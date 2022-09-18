@@ -15,13 +15,13 @@ function handleInput(e: any) {
 
 <template>
   <Dropdown
-    v-model="context._value"
     :id="context.id"
+    v-model="context._value"
     :name="context.name"
     :class="context.attrs.class"
     :options="context?.attrs?.options"
-    option-label="label"
-    option-value="value"
+    :option-label="context?.attrs?.optionLabel ?? 'label'"
+    :option-value="context?.attrs?.optionValue ?? 'value'"
     :placeholder="context.attrs.placeholder"
     :filter="context.attrs.filter ?? false"
     :show-clear="context.attrs.showClear ?? false"

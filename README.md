@@ -24,6 +24,9 @@ A Nuxt 3 Module (PrimeVue and Formkit bundled) under [nuxt-primevue](https://git
 - Ranking
 - Chips
 - Knob
+- ColorPicker
+- Listbox
+- ToggleButton
 
 ## Usage
 

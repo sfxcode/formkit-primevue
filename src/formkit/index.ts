@@ -1,21 +1,24 @@
 import type { FormKitTypeDefinition } from '@formkit/core'
 import { createInput } from '@formkit/vue'
 
-import PrimeInputText from './PrimeInputText.vue'
-import PrimeInputNumber from './PrimeInputNumber.vue'
-import PrimeInputMask from './PrimeInputMask.vue'
-import PrimePassword from './PrimePassword.vue'
-import PrimeInputTextArea from './PrimeInputTextArea.vue'
-import PrimeCheckBox from './PrimeCheckBox.vue'
-import PrimeInputSwitch from './PrimeInputSwitch.vue'
-import PrimeEditor from './PrimeEditor.vue'
-import PrimeDropdown from './PrimeDropdown.vue'
-import PrimeMultiSelect from './PrimeMultiSelect.vue'
 import PrimeCalendar from './PrimeCalendar.vue'
-import PrimeSlider from './PrimeSlider.vue'
-import PrimeRating from './PrimeRating.vue'
+import PrimeCheckBox from './PrimeCheckBox.vue'
 import PrimeChips from './PrimeChips.vue'
+import PrimeColorPicker from './PrimeColorPicker.vue'
+import PrimeDropdown from './PrimeDropdown.vue'
+import PrimeEditor from './PrimeEditor.vue'
+import PrimeInputMask from './PrimeInputMask.vue'
+import PrimeInputNumber from './PrimeInputNumber.vue'
+import PrimeInputSwitch from './PrimeInputSwitch.vue'
+import PrimeInputText from './PrimeInputText.vue'
+import PrimeInputTextArea from './PrimeInputTextArea.vue'
 import PrimeKnob from './PrimeKnob.vue'
+import PrimeMultiSelect from './PrimeMultiSelect.vue'
+import PrimeListbox from './PrimeListbox.vue'
+import PrimePassword from './PrimePassword.vue'
+import PrimeRating from './PrimeRating.vue'
+import PrimeSlider from './PrimeSlider.vue'
+import PrimeToggleButton from './PrimeToggleButton.vue'
 
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
   props: ['iconRight', 'iconLeft'],
@@ -57,6 +60,10 @@ export const primeMultiSelectDefinition: FormKitTypeDefinition = createInput(Pri
   props: [],
 })
 
+export const primeListboxDefinition: FormKitTypeDefinition = createInput(PrimeListbox, {
+  props: [],
+})
+
 export const primeCalendarDefinition: FormKitTypeDefinition = createInput(PrimeCalendar, {
   props: [],
 })
@@ -77,6 +84,14 @@ export const primeKnobDefinition: FormKitTypeDefinition = createInput(PrimeKnob,
   props: [],
 })
 
+export const primeColorPickerDefinition: FormKitTypeDefinition = createInput(PrimeColorPicker, {
+  props: [],
+})
+
+export const primeToggleButtonDefinition: FormKitTypeDefinition = createInput(PrimeToggleButton, {
+  props: [],
+})
+
 export const primeInputs = {
   primeInputText: primeInputTextDefinition,
   primeInputNumber: primeInputNumberDefinition,
@@ -92,4 +107,8 @@ export const primeInputs = {
   primeSlider: primeSliderDefinition,
   primeChips: primeChipsDefinition,
   primeKnob: primeKnobDefinition,
+  primeRating: primeRatingDefinition,
+  primeColorPicker: primeColorPickerDefinition,
+  primeToggleButton: primeToggleButtonDefinition,
+  primeListbox: primeListboxDefinition,
 }

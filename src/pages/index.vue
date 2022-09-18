@@ -72,7 +72,7 @@ const schema = reactive([
         help: 'Enter your new password.',
         validation: 'required|length:5,16',
         validationVisibility: 'live',
-        class: 'test',
+        class: 'p-password',
       },
       {
         $formkit: 'primePassword',
@@ -129,7 +129,7 @@ const schema = reactive([
     $formkit: 'primeDropdown',
     if: '$eu_citizen', // 👀 Oooo, conditionals!
     name: 'cookie_notice',
-    label: 'Cookie notice frequency',
+    label: 'Cookie notice Dropdown',
     value: 'hourly',
     showClear: false,
     filter: false,
@@ -140,7 +140,7 @@ const schema = reactive([
   {
     $formkit: 'primeMultiSelect',
     name: 'cookie_notice2',
-    label: 'Cookie notice frequency',
+    label: 'Cookie notice MultiSelect',
     value: ['hourly'],
     showClear: true,
     filter: true,
@@ -167,13 +167,41 @@ const schema = reactive([
     validationVisibility: 'live',
     mask: '99-999999',
   },
+  {
+    $formkit: 'primeColorPicker',
+    label: 'Select Color',
+    name: 'color',
+  },
+  {
+    $formkit: 'primeRating',
+    label: 'Select Rating',
+    name: 'rating',
+  },
+  {
+    $formkit: 'primeListbox',
+    name: 'cookie_notice3',
+    label: 'Cookie notice Listbox',
+    value: ['hourly'],
+    filter: false,
+    multiple: true,
+    style: 'width:15rem',
+    options,
+    help: 'How often should we display a cookie notice?',
+    class: 'test',
+  },
+  {
+    $formkit: 'primeToggleButton',
+    label: 'Select ToggleButton',
+    name: 'toggleButton',
+  },
+
 ])
 
 const data = ref({})
 
 const submitHandler = async () => {
   // Lets pretend this is an ajax request:
-  await new Promise((resolve) => setTimeout(resolve, 1000))
+  await new Promise(resolve => setTimeout(resolve, 1000))
 }
 </script>
 

@@ -1,6 +1,29 @@
 .formkit-inner {
-  .p-inputtext {
-    width: 300px;
+
+  span {
+    .p-inputtext {
+      width: 300px;
+    }
+  }
+
+  .p-inputnumber {
+    .p-inputtext {
+      width: 150px;
+    }
+  }
+
+  .p-inputmask {
+    width: 150px;
+  }
+
+  .p-password {
+    .p-inputtext {
+      width: 300px;
+    }
+  }
+
+  .p-inputtextarea {
+      width: 300px;
   }
 
   .p-slider {
@@ -9,9 +32,21 @@
 
   }
 
+  .p-color-picker {
+    .p-inputtext {
+      width: 30px;
+    }
+  }
+
   .p-calendar {
     .p-inputtext {
       width: 150px;
+    }
+  }
+
+  .p-chips {
+    .p-inputtext {
+      width: 300px;
     }
   }
 
@@ -20,6 +55,8 @@
       width: 250px;
     }
   }
+
+
 
   .p-multiselect {
     .p-multiselect-label {
@@ -34,7 +71,7 @@
   }
 }
 
-.formkit-outer[data-type="primeInputSwitch"], .formkit-outer[data-type="primeCheckBox"] {
+.formkit-outer[data-type="primeInputSwitch"], .formkit-outer[data-type="primeCheckBox"], .formkit-outer[data-type="primeTriStateCheckBox"] {
   .formkit-inner {
     width: 300px;
 
