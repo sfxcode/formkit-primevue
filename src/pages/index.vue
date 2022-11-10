@@ -15,6 +15,8 @@ const selectOptions = [
   { label: 'maybe', value: 'MAYBE' },
 ]
 
+const triStateValue = ref(true)
+
 const schemaFromJson = reactive(schema_json)
 
 const schema = reactive([
@@ -205,6 +207,12 @@ const schema = reactive([
     label: 'SelectButton',
     name: 'selectButton',
     options: selectOptions,
+  },
+  {
+    $formkit: 'primeTriStateCheckbox',
+    label: 'TriStateCheckbox',
+    name: 'triStateCheckbox',
+    value: triStateValue,
   },
 
 ])

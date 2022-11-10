@@ -28,6 +28,7 @@ A Nuxt 3 Module (PrimeVue and Formkit bundled) under [nuxt-primevue](https://git
 - Listbox
 - ToggleButton
 - SelectButton
+- TriStateCheckbox
 
 ## Usage
 

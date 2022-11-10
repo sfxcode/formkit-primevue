@@ -20,6 +20,7 @@ import PrimeRating from './PrimeRating.vue'
 import PrimeSlider from './PrimeSlider.vue'
 import PrimeToggleButton from './PrimeToggleButton.vue'
 import PrimeSelectButton from './PrimeSelectButton.vue'
+import PrimeTriStateCheckbox from './PrimeTriStateCheckbox.vue'
 
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
   props: ['iconRight', 'iconLeft'],
@@ -96,6 +97,9 @@ export const primeToggleButtonDefinition: FormKitTypeDefinition = createInput(Pr
 export const primeSelectButtonDefinition: FormKitTypeDefinition = createInput(PrimeSelectButton, {
   props: [],
 })
+export const primeTriStateCheckboxDefinition: FormKitTypeDefinition = createInput(PrimeTriStateCheckbox, {
+  props: [],
+})
 
 export const primeInputs = {
   primeInputText: primeInputTextDefinition,
@@ -117,4 +121,5 @@ export const primeInputs = {
   primeToggleButton: primeToggleButtonDefinition,
   primeListbox: primeListboxDefinition,
   primeSelectButton: primeSelectButtonDefinition,
+  primeTriStateCheckbox: primeTriStateCheckboxDefinition,
 }
