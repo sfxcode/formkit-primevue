@@ -9,6 +9,12 @@ const options = [
   { label: 'Every day', value: 'daily' },
 ]
 
+const selectOptions = [
+  { label: 'yes', value: 'YES' },
+  { label: 'no', value: 'NO' },
+  { label: 'maybe', value: 'MAYBE' },
+]
+
 const schemaFromJson = reactive(schema_json)
 
 const schema = reactive([
@@ -193,6 +199,12 @@ const schema = reactive([
     $formkit: 'primeToggleButton',
     label: 'Select ToggleButton',
     name: 'toggleButton',
+  },
+  {
+    $formkit: 'primeSelectButton',
+    label: 'SelectButton',
+    name: 'selectButton',
+    options: selectOptions,
   },
 
 ])

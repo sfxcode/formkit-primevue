@@ -19,6 +19,7 @@ import PrimePassword from './PrimePassword.vue'
 import PrimeRating from './PrimeRating.vue'
 import PrimeSlider from './PrimeSlider.vue'
 import PrimeToggleButton from './PrimeToggleButton.vue'
+import PrimeSelectButton from './PrimeSelectButton.vue'
 
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
   props: ['iconRight', 'iconLeft'],
@@ -92,6 +93,10 @@ export const primeToggleButtonDefinition: FormKitTypeDefinition = createInput(Pr
   props: [],
 })
 
+export const primeSelectButtonDefinition: FormKitTypeDefinition = createInput(PrimeSelectButton, {
+  props: [],
+})
+
 export const primeInputs = {
   primeInputText: primeInputTextDefinition,
   primeInputNumber: primeInputNumberDefinition,
@@ -111,4 +116,5 @@ export const primeInputs = {
   primeColorPicker: primeColorPickerDefinition,
   primeToggleButton: primeToggleButtonDefinition,
   primeListbox: primeListboxDefinition,
+  primeSelectButton: primeSelectButtonDefinition,
 }

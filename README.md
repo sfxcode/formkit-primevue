@@ -27,6 +27,7 @@ A Nuxt 3 Module (PrimeVue and Formkit bundled) under [nuxt-primevue](https://git
 - ColorPicker
 - Listbox
 - ToggleButton
+- SelectButton
 
 ## Usage
 
