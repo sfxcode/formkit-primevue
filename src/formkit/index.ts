@@ -112,3 +112,6 @@ export const primeInputs = {
   primeToggleButton: primeToggleButtonDefinition,
   primeListbox: primeListboxDefinition,
 }
+
+declare module '@sfxcode/formkit-primevue';
+
