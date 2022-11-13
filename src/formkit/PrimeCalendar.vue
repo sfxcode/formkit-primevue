@@ -4,6 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
+const attrs = context?.attrs
 
 function handleInput(e: any) {
   context?.node.input(context?._value)
@@ -17,12 +18,14 @@ function handleSelect(e: any) {
 <template>
   <Calendar
     v-model="context._value"
-    :id="props.context.id"
-    :name="context.name"
-    :class="context.attrs.class"
-    :date-format="context.attrs.dateFormat"
-    :show-icon="context.attrs.showIcon"
-    :icon="context.attrs.icon"
+    :input-id="props.context.id"
+    :disabled="attrs._disabled ?? false"
+    :readonly="attrs._readonly ?? false"
+    :input-style="attrs.style"
+    :input-class="attrs.class"
+    :date-format="attrs.dateFormat"
+    :icon="attrs.icon"
+    :show-icon="context.showIcon"
     @date-select="handleSelect"
     @input="handleInput"
   />

@@ -73,20 +73,18 @@
   }
 }
 
-.formkit-outer[data-type="primeInputSwitch"], .formkit-outer[data-type="primeCheckBox"], .formkit-outer[data-type="primeTriStateCheckBox"] {
+.formkit-outer[data-type="primeInputSwitch"], .formkit-outer[data-type="primeCheckbox"], .formkit-outer[data-type="primeTriStateCheckBox"] {
   .formkit-inner {
     width: 300px;
 
     .formkit-prime-right {
       margin-left: 10px;
-      font-weight: bold;
-      font-size: 0.75rem;
+      font-size: 1rem;
     }
 
     .formkit-prime-left {
       margin-right: 10px;
-      font-weight: bold;
-      font-size: 0.75rem;
+      font-size: 1rem;
     }
   }
 }

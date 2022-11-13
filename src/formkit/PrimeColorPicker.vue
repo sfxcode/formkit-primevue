@@ -4,6 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
+const attrs = context?.attrs
 
 function handleChange(e: any) {
   context?.node.input(props.context?._value)
@@ -12,12 +13,14 @@ function handleChange(e: any) {
 
 <template>
   <ColorPicker
-    :id="context.id"
     v-model="context._value"
-    :name="context.name"
-    :class="context.attrs.class"
-    :inline="false"
-    :default-color="context.attrs.defaultColor"
+    :disabled="attrs._disabled ?? false"
+    :readonly="attrs._readonly ?? false"
+    :style="attrs.style"
+    :panel-class="attrs.class"
+    :default-color="attrs.defaultColor ?? 'ff0000'"
+    :inline="attrs.inline ?? false"
+    :format="attrs.format"
     @change="handleChange"
   />
 </template>

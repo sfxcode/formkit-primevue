@@ -2,7 +2,7 @@ import type { FormKitTypeDefinition } from '@formkit/core'
 import { createInput } from '@formkit/vue'
 
 import PrimeCalendar from './PrimeCalendar.vue'
-import PrimeCheckBox from './PrimeCheckBox.vue'
+import PrimeCheckbox from './PrimeCheckbox.vue'
 import PrimeChips from './PrimeChips.vue'
 import PrimeColorPicker from './PrimeColorPicker.vue'
 import PrimeDropdown from './PrimeDropdown.vue'
@@ -42,7 +42,7 @@ export const primeInputTextAreaDefinition: FormKitTypeDefinition = createInput(P
   props: ['rows'],
 })
 
-export const primeCheckBoxDefinition: FormKitTypeDefinition = createInput(PrimeCheckBox, {
+export const primeCheckboxDefinition: FormKitTypeDefinition = createInput(PrimeCheckbox, {
   props: [],
 })
 
@@ -106,7 +106,7 @@ export const primeInputs = {
   primeInputNumber: primeInputNumberDefinition,
   primeInputMask: primeInputMaskDefinition,
   primePassword: primePasswordDefinition,
-  primeCheckBox: primeCheckBoxDefinition,
+  primeCheckbox: primeCheckboxDefinition,
   primeInputSwitch: primeInputSwitchDefinition,
   primeInputTextArea: primeInputTextAreaDefinition,
   primeEditor: primeEditorDefinition,

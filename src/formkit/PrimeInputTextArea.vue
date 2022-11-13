@@ -13,10 +13,6 @@ function handleBlur(e: any) {
 function handleInput(e: any) {
   context?.node.input(e.target.value)
 }
-
-onMounted(() => {
-  console.log(context.rows)
-})
 </script>
 
 <template>

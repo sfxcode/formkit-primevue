@@ -1,6 +1,5 @@
 <script setup lang='ts'>
 const primeAttributes = 'style, class, placeholder'
-const customAttributes = 'iconLeft, iconRight'
 const schema
   = [
     {
@@ -39,7 +38,7 @@ const data = { }
 <template>
   <div>
     <PrimeInput
-      header="PrimeInputText" :schema="schema" :data="data"
+      header="PrimeInputTextArea" :schema="schema" :data="data"
       :prime-attributes="primeAttributes" :custom-attributes="customAttributes"
     />
   </div>

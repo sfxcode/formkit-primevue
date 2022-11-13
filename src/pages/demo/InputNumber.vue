@@ -1,6 +1,5 @@
 <script setup lang='ts'>
-const primeAttributes = 'style, class, placeholder, useGrouping, minFractionDigits, maxFractionDigits, locale, mode, currency, prefix, suffix, showButtons, buttonLayout, step'
-const customAttributes = ''
+const primeAttributes = 'date'
 const schema
   = [
     {
@@ -29,8 +28,8 @@ const data = { }
 <template>
   <div>
     <PrimeInput
-      header="PrimeInputText" :schema="schema" :data="data"
-      :prime-attributes="primeAttributes" :custom-attributes="customAttributes"
+      header="PrimeInputNumber" :schema="schema" :data="data"
+      :prime-attributes="primeAttributes"
     />
   </div>
 </template>

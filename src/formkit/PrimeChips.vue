@@ -4,6 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
+const attrs = context?.attrs
 
 function handleInput(e: any) {
   context?.node.input(props.context?._value)
@@ -13,12 +14,16 @@ function handleInput(e: any) {
 <template>
   <Chips
     v-model="context._value"
-    :id="context.id"
-    :name="context.name"
-    :class="context.attrs.class"
-    :allow-duplicate="context.attrs.allowDuplicate ?? true"
-    :add-on-blur="context.attrs.addOnBlur ?? false"
-    :max="context.attrs.max ?? undefined"
+    :input-id="context.id"
+    :disabled="attrs._disabled ?? false"
+    :readonly="attrs._readonly ?? true"
+    :input-style="attrs.style"
+    :input-class="attrs.class"
+    :allow-duplicate="attrs.allowDuplicate ?? true"
+    :add-on-blur="attrs.addOnBlur ?? false"
+    :max="attrs.max ?? undefined"
+    :placeholder="attrs.placeholder"
+    :separator="attrs.separator"
     @add="handleInput"
     @remove="handleInput"
   />

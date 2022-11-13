@@ -6,8 +6,8 @@ const props = defineProps<{
   header: string
   schema: object
   data: object
-  primeAttributes: string
-  customAttributes: string
+  primeAttributes?: string
+  customAttributes?: string
 }>()
 
 const formSchema = reactive(props.schema)
@@ -39,13 +39,15 @@ const formData = ref(props.data)
           <TabPanel header="Schema">
             <pre>{{ formSchema }}</pre>
           </TabPanel>
-          <TabPanel header="Supported Attributes">
+          <TabPanel v-if="primeAttributes" header="Supported Attributes">
             <h4>Base Attributes</h4>
-            <span>_disable, _readonly</span>
+            <span>_disabled, _readonly, style, class</span>
             <h4>PrimeVue Attributes</h4>
             <span>{{ primeAttributes }}</span>
-            <h4>Custom Attributes</h4>
-            <span>{{ customAttributes }}</span>
+            <h4 v-if="customAttributes">
+              Custom Attributes
+            </h4>
+            <span v-if="customAttributes">{{ customAttributes }}</span>
           </TabPanel>
           <TabPanel header="Editor" />
         </TabView>
