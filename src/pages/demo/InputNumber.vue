@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-const primeAttributes = 'date'
+const primeAttributes = 'placeholder, useGrouping, minFractionDigits, maxFractionDigits, locale, mode, currency, prefix, suffix, showButtons, buttonLayout, step'
 const schema
   = [
     {

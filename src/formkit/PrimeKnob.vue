@@ -4,6 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
+const attrs = context?.attrs
 
 function handleInput(e: any) {
   context?.node.input(e)
@@ -13,19 +14,22 @@ function handleInput(e: any) {
 
 <template>
   <Knob
-    v-model="context._value"
     :id="context.id"
-    :name="context.name"
-    :min="context.attrs.min ?? 0"
-    :max="context.attrs.max ?? 100"
-    :step="context.attrs.step ?? undefined"
-    :size="context.attrs.max ?? 100"
-    :stroke-width="context.attrs.strokeWidth ?? 14"
-    :show-value="context.attrs.showValue ?? true"
-    :value-color="context.attrs.valueColor ?? undefined"
-    :range-color="context.attrs.rangeColor ?? undefined"
-    :text-color="context.attrs.textColor ?? undefined"
-    :value-template="context.attrs.valueTemplate ?? undefined"
+    v-model="context._value"
+    :disabled="attrs._disabled ?? false"
+    :readonly="attrs._readonly ?? false"
+    :style="attrs.style"
+    :class="attrs.class"
+    :min="attrs.min ?? 0"
+    :max="attrs.max ?? 100"
+    :step="attrs.step ?? undefined"
+    :size="attrs.size ?? 100"
+    :stroke-width="attrs.strokeWidth ?? 14"
+    :show-value="attrs.showValue ?? true"
+    :value-color="attrs.valueColor ?? undefined"
+    :range-color="attrs.rangeColor ?? undefined"
+    :text-color="attrs.textColor ?? undefined"
+    :value-template="attrs.valueTemplate ?? undefined"
     @change="handleInput"
   />
 </template>

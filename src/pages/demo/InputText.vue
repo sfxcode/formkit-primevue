@@ -27,7 +27,6 @@ const schema
       help: 'Right Icon Demo',
       iconRight: 'pi pi-check',
       _disabled: true,
-      disabled: true,
     },
     {
       $formkit: 'primeInputText',

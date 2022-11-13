@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-const primeAttributes = 'style, class, placeholder'
+const primeAttributes = 'placeholder, rows'
 const schema
   = [
     {

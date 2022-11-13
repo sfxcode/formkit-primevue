@@ -16,7 +16,7 @@ const schema
       label: 'Styled + Disabled',
       style: 'background:gray;',
       class: 'customClass',
-      _disabled: 'true',
+      _disabled: true,
     },
     {
       $formkit: 'primeColorPicker',

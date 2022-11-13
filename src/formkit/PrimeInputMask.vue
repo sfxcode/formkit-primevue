@@ -4,6 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
+const attrs = context?.attrs
 
 function handleInput(e: any) {
   context?.node.input(props.context?._value)
@@ -13,15 +14,17 @@ function handleInput(e: any) {
 
 <template>
   <InputMask
-    v-model="context._value"
     :id="context.id"
-    :name="context.name"
-    :class="context.attrs.class"
-    :placeholder="context.attrs.placeholder"
-    :mask="context.attrs.mask ?? undefined"
-    :slot-char="context.attrs.slotChar ?? '_'"
-    :auto-clear="context.attrs.autoClear ?? true"
-    :unmask="context.attrs.unmask ?? false"
+    v-model="context._value"
+    :disabled="attrs._disabled ?? false"
+    :readonly="attrs._readonly ?? false"
+    :editor-style="attrs.style"
+    :class="attrs.class"
+    :placeholder="attrs.placeholder"
+    :mask="attrs.mask ?? undefined"
+    :slot-char="attrs.slotChar ?? '_'"
+    :auto-clear="attrs.autoClear ?? true"
+    :unmask="attrs.unmask ?? false"
     @blur="handleInput"
   />
 </template>

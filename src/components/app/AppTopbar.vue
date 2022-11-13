@@ -13,8 +13,9 @@ const items = ref([
           label: 'Edit',
           items: [
             { label: 'InputText', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' },
-            { label: 'InputNumber', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputNumber' },
             { label: 'TextArea', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputTextArea' },
+            { label: 'InputNumber', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputNumber' },
+            { label: 'InputMask', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputMask' },
             { label: 'Calendar', icon: 'pi pi-fw pi-user-edit', to: '/demo/calendar' },
             { label: 'Chips', icon: 'pi pi-fw pi-user-edit', to: '/demo/chips' },
             { label: 'Editor', icon: 'pi pi-fw pi-user-edit', to: '/demo/editor' }],
@@ -22,21 +23,22 @@ const items = ref([
         {
           label: 'Check',
           items: [
-            { label: 'CheckBox', icon: 'pi pi-fw pi-user-edit', to: '/demo/checkBox' },
-            { label: 'Switch', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }],
+            { label: 'Checkbox', icon: 'pi pi-fw pi-user-edit', to: '/demo/checkBox' },
+            { label: 'InputSwitch', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputSwitch' }],
         },
       ],
       [
         {
           label: 'Select',
           items: [
-            { label: 'CheckBox', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' },
-            { label: 'Switch', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }],
+            { label: 'Dropdown', icon: 'pi pi-fw pi-user-edit', to: '/demo/dropdown' },
+            { label: 'Listbox', icon: 'pi pi-fw pi-user-edit', to: '/demo/listbox' }],
         },
         {
           label: 'Misc',
           items: [
             { label: 'ColorPicker', icon: 'pi pi-fw pi-user-edit', to: '/demo/colorPicker' },
+            { label: 'Knob', icon: 'pi pi-fw pi-user-edit', to: '/demo/knob' },
           ],
         },
       ],

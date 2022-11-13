@@ -17,7 +17,7 @@ function handleInput(e: any) {
     v-model="context._value"
     :input-id="context.id"
     :disabled="attrs._disabled ?? false"
-    :readonly="attrs._readonly ?? true"
+    :readonly="attrs._readonly ?? false"
     :input-style="attrs.style"
     :input-class="attrs.class"
     :binary="attrs.binary ?? true"

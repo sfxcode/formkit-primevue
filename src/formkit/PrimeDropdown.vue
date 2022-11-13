@@ -4,6 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
+const attrs = context?.attrs
 
 function handleBlur(e: any) {
   context?.handlers.blur(e.value)
@@ -15,16 +16,18 @@ function handleInput(e: any) {
 
 <template>
   <Dropdown
-    :id="context.id"
     v-model="context._value"
-    :name="context.name"
-    :class="context.attrs.class"
-    :options="context?.attrs?.options"
-    :option-label="context?.attrs?.optionLabel ?? 'label'"
-    :option-value="context?.attrs?.optionValue ?? 'value'"
-    :placeholder="context.attrs.placeholder"
-    :filter="context.attrs.filter ?? false"
-    :show-clear="context.attrs.showClear ?? false"
+    :input-id="context.id"
+    :disabled="attrs._disabled ?? false"
+    :readonly="attrs._readonly ?? false"
+    :input-style="attrs.style"
+    :input-class="attrs.class"
+    :options="attrs.options"
+    :option-label="attrs.optionLabel ?? 'label'"
+    :option-value="attrs.optionValue ?? 'value'"
+    :placeholder="attrs.placeholder"
+    :filter="attrs.filter ?? false"
+    :show-clear="attrs.showClear ?? false"
     @change="handleInput"
     @blur="handleBlur"
   />
