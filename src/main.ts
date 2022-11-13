@@ -2,6 +2,7 @@
 import { ViteSSG } from 'vite-ssg'
 import generatedRoutes from 'virtual:generated-pages'
 import App from './App.vue'
+import 'uno.css'
 
 const routes = generatedRoutes
 

@@ -5,23 +5,29 @@ function redirectToGithub(event: any) {
 
 const items = ref([
   {
-    label: 'Demo',
+    label: 'Input Elements',
     icon: 'pi pi-fw pi-video',
     items: [
       [
         {
           label: 'Text',
-          items: [{ label: 'Text', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }, { label: 'TextArea', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }],
+          items: [
+            { label: 'InputText', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' },
+            { label: 'InputNumber', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputNumber' },
+            { label: 'TextArea', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }],
         },
         {
           label: 'Editor',
-          items: [{ label: 'HTML Editor', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }],
+          items: [
+            { label: 'HTML Editor', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }],
         },
       ],
       [
         {
           label: 'Boolean',
-          items: [{ label: 'CheckBox', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }, { label: 'Switch', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }],
+          items: [
+            { label: 'CheckBox', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' },
+            { label: 'Switch', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' }],
         },
         {
           label: 'Editor',
@@ -35,6 +41,9 @@ const items = ref([
 
 <template>
   <div class="layout-topbar">
+    <div>
+      <a href="/" class="text-2xl mr-4">PrimeVue Formkit</a>
+    </div>
     <MegaMenu :model="items" />
     <button class="p-link layout-topbar-button" @click="redirectToGithub">
       <i class="pi pi-github" />
@@ -44,9 +53,4 @@ const items = ref([
 </template>
 
 <style scoped>
-@media (min-width: 1024px) {
-  .lg\:flex {
-    display: flex !important;
-  }
-}
 </style>

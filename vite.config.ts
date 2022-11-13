@@ -5,6 +5,7 @@ import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import dts from 'vite-plugin-dts'
+import Unocss from 'unocss/vite'
 import pkg from './package.json'
 
 process.env.VITE_APP_BUILD_EPOCH = new Date().getTime().toString()
@@ -61,7 +62,7 @@ export default defineConfig({
     ],
   },
   plugins: [
-
+    Unocss(),
     Vue({
       include: [/\.vue$/, /\.md$/],
       template: {
@@ -116,7 +117,7 @@ export default defineConfig({
           return {
             ...route,
             beforeEnter: (route) => {
-              // eslint-disable-next-line no-console
+
               // console.log(route)
             },
           }

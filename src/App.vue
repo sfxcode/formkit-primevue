@@ -4,7 +4,7 @@ import AppTopBar from '@/components/app/AppTopbar.vue'
 
 <template>
   <div class="main">
-    <div class="main-container">
+    <div class="">
       <div>
         <AppTopBar />
       </div>

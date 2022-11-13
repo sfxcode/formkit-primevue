@@ -4,6 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
+const attrs = context?.attrs
 
 const hasLeftIcon = () => {
   return context?.iconLeft && context?.iconLeft.length > 0
@@ -36,11 +37,13 @@ function handleInput(e: any) {
     <i v-if="hasLeftIcon()" :class="context.iconLeft" />
 
     <InputText
-      v-model="context._value"
       :id="context.id"
-      :name="context.name"
-      :class="context.attrs.class"
-      :placeholder="context.attrs.placeholder"
+      v-model="context._value"
+      :disabled="attrs._disabled ?? false"
+      :readonly="attrs._readonly ?? false"
+      :style="attrs.style"
+      :class="attrs.class"
+      :placeholder="attrs.placeholder"
       @input="handleInput"
       @blur="handleBlur"
     />

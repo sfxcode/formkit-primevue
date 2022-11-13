@@ -1,63 +1,59 @@
 <script setup lang='ts'>
-import { FormKitSchema } from '@formkit/vue'
-import { ref } from 'vue'
-
-const schema = reactive(
-  [
+const primeAttributes = 'style, class, placeholder'
+const customAttributes = 'iconLeft, iconRight'
+const schema
+  = [
     {
       $formkit: 'primeInputText',
       name: 'name',
       label: 'Basic',
       help: 'Required.',
       validation: 'required',
+      _readonly: true,
     },
     {
       $formkit: 'primeInputText',
+      id: 'iconLeft',
       name: 'iconLeft',
-      label: 'Icon Left',
-      iconLeft: 'pi pi-check',
+      label: 'Icon Left eee',
       help: '',
+      placeholder: 'iconLeft',
+      iconLeft: 'pi pi-check',
     },
     {
       $formkit: 'primeInputText',
       name: 'iconRight',
-      label: 'Icon Right',
+      label: 'Icon Right (Disabled)',
+      help: 'Right Icon Demo',
       iconRight: 'pi pi-check',
-      help: '',
+      _disabled: true,
+      disabled: true,
     },
     {
       $formkit: 'primeInputText',
       name: 'iconBoth',
       label: 'Icon Both Sides',
+      help: '',
+      style: 'background:gray;',
+      class: 'customClass',
       iconLeft: 'pi pi-plus',
       iconRight: 'pi pi-check',
-      help: '',
     },
 
-  ],
-)
+  ]
 
-const data = ref({ name: 'tom' })
+const data = { name: 'tom', iconRight: 'Some Text ...' }
 </script>
 
 <template>
-  <h1>TextInput</h1>
-
-  <FormKit
-    id="form"
-    v-model="data"
-    type="form"
-    :submit-attrs="{
-      inputClass: 'p-button p-component',
-    }"
-  >
-    <FormKitSchema :schema="schema" :data="data" />
-  </FormKit>
-  <pre>{{ data }}</pre>
+  <div>
+    <PrimeInput
+      header="PrimeInputText" :schema="schema" :data="data"
+      :prime-attributes="primeAttributes" :custom-attributes="customAttributes"
+    />
+  </div>
 </template>
 
 <style lang='scss' scoped>
-.p-inputtext {
-  width: 400px;
-}
+
 </style>

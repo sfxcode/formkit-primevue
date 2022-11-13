@@ -4,6 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
+const attrs = context?.attrs
 
 function handleBlur(e: any) {
   context?.handlers.blur(e.value)
@@ -17,21 +18,23 @@ function handleInput(e: any) {
 <template>
   <InputNumber
     v-model="context._value"
-    :id="context.id"
-    :name="context.name"
-    :placeholder="context.attrs.placeholder"
-    :class="context.attrs.class"
-    :use-grouping="context.attrs.useGrouping ?? true"
-    :min-fraction-digits="context.attrs.minFractionDigits ?? undefined"
-    :max-fraction-digits="context.attrs.maxFractionDigits ?? undefined"
-    :locale="context.attrs.locale ?? undefined"
-    :mode="context.attrs.mode ?? undefined"
-    :currency="context.attrs.currency ?? undefined"
-    :prefix="context.attrs.prefix ?? undefined"
-    :suffix="context.attrs.suffix ?? undefined"
-    :show-buttons="context.attrs.showButtons ?? undefined"
-    :button-layout="context.attrs.buttonLayout ?? 'stacked'"
-    :step="context.attrs.step ?? undefined"
+    :input-id="context.id"
+    :disabled="attrs._disabled ?? false"
+    :readonly="attrs._readonly ?? false"
+    :placeholder="attrs.placeholder"
+    :input-style="attrs.style"
+    :input-class="attrs.class"
+    :use-grouping="attrs.useGrouping ?? true"
+    :min-fraction-digits="attrs.minFractionDigits ?? undefined"
+    :max-fraction-digits="attrs.maxFractionDigits ?? undefined"
+    :locale="attrs.locale ?? undefined"
+    :mode="attrs.mode ?? undefined"
+    :currency="attrs.currency ?? undefined"
+    :prefix="attrs.prefix ?? undefined"
+    :suffix="attrs.suffix ?? undefined"
+    :show-buttons="attrs.showButtons ?? undefined"
+    :button-layout="attrs.buttonLayout ?? 'stacked'"
+    :step="attrs.step ?? undefined"
     @input="handleInput"
     @blur="handleBlur"
   />
