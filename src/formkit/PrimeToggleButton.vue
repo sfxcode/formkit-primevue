@@ -4,6 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
+const attrs = context?.attrs
 
 function handleChange(e: any) {
   context?.node.input(props.context?._value)
@@ -12,14 +13,17 @@ function handleChange(e: any) {
 
 <template>
   <ToggleButton
-    :id="context.id"
     v-model="context._value"
-    :input-class="context.attrs.inputClass"
-    :input-style="context.attrs.inputStyle"
-    :on-label="context.attrs.onLabel ?? 'Yes'"
-    :off-label="context.attrs.offLabel ?? 'No'"
-    :on-icon="context.attrs.onIcon ?? 'pi pi-check'"
-    :off-icon="context.attrs.offIcon ?? 'pi pi-times'"
+    :input-id="context.id"
+    :disabled="attrs._disabled ?? false"
+    :readonly="attrs._readonly ?? false"
+    :input-style="attrs.style"
+    :input-class="attrs.class"
+    :on-label="attrs.onLabel ?? 'Yes'"
+    :off-label="attrs.offLabel ?? 'No'"
+    :on-icon="attrs.onIcon ?? 'pi pi-check'"
+    :off-icon="attrs.offIcon ?? 'pi pi-times'"
+    :icon-pos="attrs.iconPos ?? 'left'"
     @change="handleChange"
   />
 </template>

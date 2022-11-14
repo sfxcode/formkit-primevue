@@ -138,7 +138,6 @@ const schema = reactive([
     if: '$eu_citizen', // 👀 Oooo, conditionals!
     name: 'cookie_notice',
     label: 'Cookie notice Dropdown',
-    value: 'hourly',
     showClear: false,
     filter: false,
     options,

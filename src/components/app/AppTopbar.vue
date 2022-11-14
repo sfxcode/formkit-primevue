@@ -18,7 +18,8 @@ const items = ref([
             { label: 'InputMask', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputMask' },
             { label: 'Calendar', icon: 'pi pi-fw pi-user-edit', to: '/demo/calendar' },
             { label: 'Chips', icon: 'pi pi-fw pi-user-edit', to: '/demo/chips' },
-            { label: 'Editor', icon: 'pi pi-fw pi-user-edit', to: '/demo/editor' }],
+            { label: 'Editor', icon: 'pi pi-fw pi-user-edit', to: '/demo/editor' },
+            { label: 'Password', icon: 'pi pi-fw pi-user-edit', to: '/demo/password' }],
         },
         {
           label: 'Check',
@@ -32,13 +33,19 @@ const items = ref([
           label: 'Select',
           items: [
             { label: 'Dropdown', icon: 'pi pi-fw pi-user-edit', to: '/demo/dropdown' },
-            { label: 'Listbox', icon: 'pi pi-fw pi-user-edit', to: '/demo/listbox' }],
+            { label: 'Listbox', icon: 'pi pi-fw pi-user-edit', to: '/demo/listbox' },
+            { label: 'MultiSelect', icon: 'pi pi-fw pi-user-edit', to: '/demo/multiSelect' },
+            { label: 'SelectButton', icon: 'pi pi-fw pi-user-edit', to: '/demo/selectButton' },
+            { label: 'ToggleButton', icon: 'pi pi-fw pi-user-edit', to: '/demo/toggleButton' },
+          ],
         },
         {
           label: 'Misc',
           items: [
             { label: 'ColorPicker', icon: 'pi pi-fw pi-user-edit', to: '/demo/colorPicker' },
             { label: 'Knob', icon: 'pi pi-fw pi-user-edit', to: '/demo/knob' },
+            { label: 'Slider', icon: 'pi pi-fw pi-user-edit', to: '/demo/slider' },
+            { label: 'Rating', icon: 'pi pi-fw pi-user-edit', to: '/demo/rating' },
           ],
         },
       ],

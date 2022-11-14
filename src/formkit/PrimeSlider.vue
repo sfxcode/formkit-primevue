@@ -4,6 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
+const attrs = context?.attrs
 
 function handleInput(e: any) {
   context?.node.input(e)
@@ -13,13 +14,17 @@ function handleInput(e: any) {
 
 <template>
   <Slider
-    v-model="context._value"
     :id="context.id"
-    :name="context.name"
-    :min="context.attrs.min ?? 0"
-    :max="context.attrs.max ?? 100"
-    :step="context.attrs.step ?? undefined"
-    :range="context.attrs.range ?? false"
+    v-model="context._value"
+    :disabled="attrs._disabled ?? false"
+    :readonly="attrs._readonly ?? false"
+    :style="attrs.style"
+    :class="attrs.class"
+    :min="attrs.min ?? 0"
+    :max="attrs.max ?? 100"
+    :step="attrs.step ?? undefined"
+    :range="attrs.range ?? false"
+    :orientation="attrs.orientation ?? 'horizontal'"
     @change="handleInput"
   />
 </template>

@@ -4,6 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
+const attrs = context?.attrs
 
 function handleInput(e: any) {
   context?.node.input(props.context?._value)
@@ -12,13 +13,17 @@ function handleInput(e: any) {
 
 <template>
   <Rating
-    v-model="context._value"
     :id="context.id"
-    :name="context.name"
-    :disabled="context.attrs.disabled ?? false"
-    :readonly="context.attrs.readonly ?? false"
-    :stars="context.attrs.stars ?? 5"
-    :cancel="context.attrs.cancel ?? false"
+    v-model="context._value"
+    :disabled="attrs._disabled ?? false"
+    :readonly="attrs._readonly ?? false"
+    :style="attrs.style"
+    :class="attrs.class"
+    :stars="attrs.stars ?? 5"
+    :cancel="attrs.cancel ?? false"
+    :on-icon="attrs.onIcon ?? 'pi pi-star-fill'"
+    :off-icon="attrs.offIcon ?? 'pi pi-star'"
+    :cancel-icon="attrs.cancelIcon ?? 'pi pi-ban'"
     @change="handleInput"
   />
 </template>
