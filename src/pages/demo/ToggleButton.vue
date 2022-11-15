@@ -24,7 +24,7 @@ const data = { }
 <template>
   <div>
     <PrimeInput
-      header="ToggleButton" :schema="schema" :data="data"
+      header="PrimeToggleButton" :schema="schema" :data="data"
       :prime-attributes="primeAttributes"
     />
   </div>

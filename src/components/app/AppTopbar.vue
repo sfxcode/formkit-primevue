@@ -25,6 +25,7 @@ const items = ref([
           label: 'Check',
           items: [
             { label: 'Checkbox', icon: 'pi pi-fw pi-user-edit', to: '/demo/checkBox' },
+            { label: 'TriStateCheckbox', icon: 'pi pi-fw pi-user-edit', to: '/demo/triStateCheckbox' },
             { label: 'InputSwitch', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputSwitch' }],
         },
       ],

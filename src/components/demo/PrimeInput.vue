@@ -39,7 +39,7 @@ const formData = ref(props.data)
           <TabPanel header="Schema">
             <pre>{{ formSchema }}</pre>
           </TabPanel>
-          <TabPanel v-if="primeAttributes" header="Supported Attributes">
+          <TabPanel v-if="primeAttributes || customAttributes" header="Supported Attributes">
             <h4>Base Attributes</h4>
             <span>_disabled, _readonly, style, class</span>
             <h4>PrimeVue Attributes</h4>
