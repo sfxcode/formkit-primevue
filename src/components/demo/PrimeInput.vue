@@ -23,7 +23,6 @@ const documentationLink = `https://www.primefaces.org/primevue/${props.header.re
 
     <div class="flex flex-wrap">
       <div class="min-w-lg mb-6">
-        <h3>Sample Form</h3>
         <FormKit
           id="form"
           v-model="formData"
@@ -37,7 +36,7 @@ const documentationLink = `https://www.primefaces.org/primevue/${props.header.re
         <h3>Data</h3>
         <pre>{{ formData }}</pre>
       </div>
-      <div class="">
+      <div class="max-w-xl">
         <TabView>
           <TabPanel header="Schema">
             <pre>{{ formSchema }}</pre>

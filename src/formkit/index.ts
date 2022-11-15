@@ -1,3 +1,4 @@
+// @ts-expect-error
 import type { FormKitTypeDefinition } from '@formkit/core'
 import { createInput } from '@formkit/vue'
 

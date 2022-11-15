@@ -10,7 +10,7 @@ const options = [
 const schema = reactive(
   [
     {
-      $el: 'h1',
+      $el: 'h2',
       children: ['Register ', '$email'],
     },
     {
