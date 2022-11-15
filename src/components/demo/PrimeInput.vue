@@ -12,6 +12,8 @@ const props = defineProps<{
 
 const formSchema = reactive(props.schema)
 const formData = ref(props.data)
+
+const documentationLink = `https://www.primefaces.org/primevue/${props.header.replace('Prime', '').toLowerCase()}`
 </script>
 
 <template>
@@ -41,13 +43,22 @@ const formData = ref(props.data)
           </TabPanel>
           <TabPanel v-if="primeAttributes || customAttributes" header="Supported Attributes">
             <h4>Base Attributes</h4>
-            <span>_disabled, _readonly, style, class</span>
+            <div>
+              <span>_disabled, _readonly, style, class, tabindex, ariaLabel, ariaLabelledby</span>
+            </div>
             <h4>PrimeVue Attributes</h4>
-            <span>{{ primeAttributes }}</span>
+            <div>
+              <a :href="documentationLink" target="_blank" class="text-xl">Open Documentation</a>
+            </div>
+            <div class="mt-2">
+              <span>{{ primeAttributes }}</span>
+            </div>
             <h4 v-if="customAttributes">
               Custom Attributes
             </h4>
-            <span v-if="customAttributes">{{ customAttributes }}</span>
+            <div>
+              <span v-if="customAttributes">{{ customAttributes }}</span>
+            </div>
           </TabPanel>
           <TabPanel header="Editor" />
         </TabView>

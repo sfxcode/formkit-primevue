@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-const primeAttributes = 'dateFormat, showIcon, icon'
+const primeAttributes = 'dateFormat, showIcon, icon, .... (see documentation)'
 
 const schema
   = [
