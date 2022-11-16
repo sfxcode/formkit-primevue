@@ -18,7 +18,7 @@ A Nuxt 3 Module (PrimeVue and Formkit bundled) under [nuxt-primevue](https://git
 - InputNumber
 - InputSwitch
 - InputText
-- InputTextArea
+- InputTextarea
 - MultiSelect
 - Password
 - Ranking

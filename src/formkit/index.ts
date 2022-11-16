@@ -12,7 +12,7 @@ import PrimeInputMask from './PrimeInputMask.vue'
 import PrimeInputNumber from './PrimeInputNumber.vue'
 import PrimeInputSwitch from './PrimeInputSwitch.vue'
 import PrimeInputText from './PrimeInputText.vue'
-import PrimeInputTextArea from './PrimeInputTextArea.vue'
+import PrimeTextarea from './PrimeTextarea.vue'
 import PrimeKnob from './PrimeKnob.vue'
 import PrimeMultiSelect from './PrimeMultiSelect.vue'
 import PrimeListbox from './PrimeListbox.vue'
@@ -39,7 +39,7 @@ export const primePasswordDefinition: FormKitTypeDefinition = createInput(PrimeP
   props: ['feedback', 'toggleMask'],
 })
 
-export const primeInputTextAreaDefinition: FormKitTypeDefinition = createInput(PrimeInputTextArea, {
+export const primeTextareaDefinition: FormKitTypeDefinition = createInput(PrimeTextarea, {
   props: ['rows'],
 })
 
@@ -109,7 +109,7 @@ export const primeInputs = {
   primePassword: primePasswordDefinition,
   primeCheckbox: primeCheckboxDefinition,
   primeInputSwitch: primeInputSwitchDefinition,
-  primeInputTextArea: primeInputTextAreaDefinition,
+  primeTextarea: primeTextareaDefinition,
   primeEditor: primeEditorDefinition,
   primeDropdown: primeDropdownDefinition,
   primeMultiSelect: primeMultiSelectDefinition,
