@@ -1,3 +1,20 @@
+### [0.9.1](https://github.com/sfxcode/formkit-primevue/compare/v0.9.0...v0.9.1) (2022-11-16)
+
+
+### ⚠ BREAKING CHANGES
+
+* **Inputs:** PrimeInputTextArea => PrimeTextArea
+  Name alignment with PrimeVue
+
+### Code Refactoring
+
+* **Inputs:** Rena PrimeInputTextArea ([991b6de](https://github.com/sfxcode/formkit-primevue/commit/991b6de0420ddb655d2e58389d005732c864762e))
+
+
+### Maintenance
+
+* **dependencies:** PrimeVue ([4cecf64](https://github.com/sfxcode/formkit-primevue/commit/4cecf64c019dc3bed051681cd42132890209c464))
+
 ## [0.9.0](https://github.com/sfxcode/formkit-primevue/compare/v0.8.4...v0.9.0) (2022-11-15)
 
 
