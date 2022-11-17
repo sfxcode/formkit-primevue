@@ -1,3 +1,15 @@
+### [0.9.3](https://github.com/sfxcode/formkit-primevue/compare/v0.9.1...v0.9.3) (2022-11-17)
+
+
+### Code Refactoring
+
+* **inputs:** Surround with div tag ([8b375bd](https://github.com/sfxcode/formkit-primevue/commit/8b375bd1694e551cc067305e26d3f13088eb2404))
+
+
+### Maintenance
+
+* **dependencies:** PrimeVue ([28d20bc](https://github.com/sfxcode/formkit-primevue/commit/28d20bc17f059c7eeaa6c94f740172d6ea08adce))
+
 ### [0.9.1](https://github.com/sfxcode/formkit-primevue/compare/v0.9.0...v0.9.1) (2022-11-16)
 
 
