@@ -33,23 +33,25 @@ function handleInput(e: any) {
 </script>
 
 <template>
-  <span :class="spanClass()">
-    <i v-if="hasLeftIcon()" :class="context.iconLeft" />
+  <div>
+    <span :class="spanClass()">
+      <i v-if="hasLeftIcon()" :class="context.iconLeft" />
 
-    <InputText
-      :id="context.id"
-      v-model="context._value"
-      :disabled="attrs._disabled ?? false"
-      :readonly="attrs._readonly ?? false"
-      :style="attrs.style"
-      :class="attrs.class"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
-      :placeholder="attrs.placeholder"
-      @input="handleInput"
-      @blur="handleBlur"
-    />
-    <i v-if="hasRightIcon" :class="context.iconRight" />
-  </span>
+      <InputText
+        :id="context.id"
+        v-model="context._value"
+        :disabled="attrs._disabled ?? false"
+        :readonly="attrs._readonly ?? false"
+        :style="attrs.style"
+        :class="attrs.class"
+        :tabindex="attrs.tabindex"
+        :aria-label="attrs.ariaLabel"
+        :aria-labelledby="attrs.ariaLabelledby"
+        :placeholder="attrs.placeholder"
+        @input="handleInput"
+        @blur="handleBlur"
+      />
+      <i v-if="hasRightIcon" :class="context.iconRight" />
+    </span>
+  </div>
 </template>

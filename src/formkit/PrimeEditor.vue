@@ -19,20 +19,22 @@ function handleSelection(e: EditorSelectionChangeEvent) {
 </script>
 
 <template>
-  <Editor
-    :id="context.id"
-    v-model="context._value"
-    :disabled="attrs._disabled ?? false"
-    :readonly="attrs._readonly ?? false"
-    :editor-style="attrs.style"
-    :class="attrs.class"
-    :tabindex="attrs.tabindex"
-    :aria-label="attrs.ariaLabel"
-    :aria-labelledby="attrs.ariaLabelledby"
-    :placeholder="attrs.placeholder"
-    :formats="attrs.formats"
-    :modules="attrs.modules"
-    @text-change="handleInput"
-    @selection-change="handleSelection"
-  />
+  <div>
+    <Editor
+      :id="context.id"
+      v-model="context._value"
+      :disabled="attrs._disabled ?? false"
+      :readonly="attrs._readonly ?? false"
+      :editor-style="attrs.style"
+      :class="attrs.class"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
+      :placeholder="attrs.placeholder"
+      :formats="attrs.formats"
+      :modules="attrs.modules"
+      @text-change="handleInput"
+      @selection-change="handleSelection"
+    />
+  </div>
 </template>

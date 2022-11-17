@@ -16,19 +16,21 @@ function handleInput(e: any) {
 </script>
 
 <template>
-  <Textarea
-    :id="context.id"
-    v-model="context._value"
-    :disabled="attrs._disabled ?? false"
-    :readonly="attrs._readonly ?? false"
-    :style="attrs.style"
-    :class="attrs.class"
-    :tabindex="attrs.tabindex"
-    :aria-label="attrs.ariaLabel"
-    :aria-labelledby="attrs.ariaLabelledby"
-    :placeholder="attrs.placeholder"
-    :rows="context.rows ?? 3"
-    @input="handleInput"
-    @blur="handleBlur"
-  />
+  <div>
+    <Textarea
+      :id="context.id"
+      v-model="context._value"
+      :disabled="attrs._disabled ?? false"
+      :readonly="attrs._readonly ?? false"
+      :style="attrs.style"
+      :class="attrs.class"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
+      :placeholder="attrs.placeholder"
+      :rows="context.rows ?? 3"
+      @input="handleInput"
+      @blur="handleBlur"
+    />
+  </div>
 </template>

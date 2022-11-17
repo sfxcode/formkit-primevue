@@ -12,22 +12,24 @@ function handleInput(e: any) {
 </script>
 
 <template>
-  <Chips
-    v-model="context._value"
-    :input-id="context.id"
-    :disabled="attrs._disabled ?? false"
-    :readonly="attrs._readonly ?? false"
-    :input-style="attrs.style"
-    :input-class="attrs.class"
-    :tabindex="attrs.tabindex"
-    :aria-label="attrs.ariaLabel"
-    :aria-labelledby="attrs.ariaLabelledby"
-    :allow-duplicate="attrs.allowDuplicate ?? true"
-    :add-on-blur="attrs.addOnBlur ?? false"
-    :max="attrs.max ?? undefined"
-    :placeholder="attrs.placeholder"
-    :separator="attrs.separator"
-    @add="handleInput"
-    @remove="handleInput"
-  />
+  <div>
+    <Chips
+      v-model="context._value"
+      :input-id="context.id"
+      :disabled="attrs._disabled ?? false"
+      :readonly="attrs._readonly ?? false"
+      :input-style="attrs.style"
+      :input-class="attrs.class"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
+      :allow-duplicate="attrs.allowDuplicate ?? true"
+      :add-on-blur="attrs.addOnBlur ?? false"
+      :max="attrs.max ?? undefined"
+      :placeholder="attrs.placeholder"
+      :separator="attrs.separator"
+      @add="handleInput"
+      @remove="handleInput"
+    />
+  </div>
 </template>
