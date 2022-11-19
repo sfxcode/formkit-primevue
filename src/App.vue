@@ -13,6 +13,7 @@ import AppTopBar from '@/components/app/AppTopbar.vue'
           <router-view />
         </div>
       </div>
+      <AppFooter />
     </div>
   </div>
 </template>

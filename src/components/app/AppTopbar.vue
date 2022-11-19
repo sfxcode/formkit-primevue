@@ -3,6 +3,8 @@ function redirectToGithub(event: any) {
   window.open('https://github.com/sfxcode/formkit-primevue', '_blank')
 }
 
+const version = ref(import.meta.env.VITE_APP_VERSION)
+
 const items = ref([
   {
     label: 'Demo',
@@ -58,7 +60,7 @@ const items = ref([
 <template>
   <div class="layout-topbar">
     <router-link to="/" class="layout-topbar-logo">
-      <span>PrimeVue Formkit</span>
+      <span>Formkit-PrimeVue {{ version }}</span>
     </router-link>
     <MegaMenu :model="items" />
     <button class="p-link layout-topbar-button" @click="redirectToGithub">
