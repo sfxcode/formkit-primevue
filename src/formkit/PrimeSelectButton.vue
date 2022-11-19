@@ -12,23 +12,25 @@ function handleChange(e: any) {
 </script>
 
 <template>
-  <SelectButton
-    :id="context.id"
-    v-model="context._value"
-    :disabled="attrs._disabled ?? false"
-    :readonly="attrs._readonly ?? false"
-    :style="attrs.style"
-    :class="attrs.class"
-    :tabindex="attrs.tabindex"
-    :aria-label="attrs.ariaLabel"
-    :aria-labelledby="attrs.ariaLabelledby"
-    :options="attrs.options"
-    :option-label="attrs.optionLabel ?? 'label'"
-    :option-value="attrs.optionValue ?? 'value'"
-    :option-disabled="attrs.optionDisabled"
-    :multiple="attrs.multiple ?? false"
-    :unselectable="attrs.unselectable ?? true"
-    :data-key="attrs.dataKey"
-    @change="handleChange"
-  />
+  <div>
+    <SelectButton
+      :id="context.id"
+      v-model="context._value"
+      :disabled="attrs._disabled ?? false"
+      :readonly="attrs._readonly ?? false"
+      :style="attrs.style"
+      :class="attrs.class"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
+      :options="attrs.options"
+      :option-label="attrs.optionLabel ?? 'label'"
+      :option-value="attrs.optionValue ?? 'value'"
+      :option-disabled="attrs.optionDisabled"
+      :multiple="attrs.multiple ?? false"
+      :unselectable="attrs.unselectable ?? true"
+      :data-key="attrs.dataKey"
+      @change="handleChange"
+    />
+  </div>
 </template>

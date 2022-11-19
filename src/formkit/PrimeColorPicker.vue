@@ -12,18 +12,20 @@ function handleChange(e: any) {
 </script>
 
 <template>
-  <ColorPicker
-    v-model="context._value"
-    :disabled="attrs._disabled ?? false"
-    :readonly="attrs._readonly ?? false"
-    :style="attrs.style"
-    :panel-class="attrs.class"
-    :tabindex="attrs.tabindex"
-    :aria-label="attrs.ariaLabel"
-    :aria-labelledby="attrs.ariaLabelledby"
-    :default-color="attrs.defaultColor ?? 'ff0000'"
-    :inline="attrs.inline ?? false"
-    :format="attrs.format"
-    @change="handleChange"
-  />
+  <div>
+    <ColorPicker
+      v-model="context._value"
+      :disabled="attrs._disabled ?? false"
+      :readonly="attrs._readonly ?? false"
+      :style="attrs.style"
+      :panel-class="attrs.class"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
+      :default-color="attrs.defaultColor ?? 'ff0000'"
+      :inline="attrs.inline ?? false"
+      :format="attrs.format"
+      @change="handleChange"
+    />
+  </div>
 </template>

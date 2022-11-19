@@ -13,7 +13,7 @@ const items = ref([
           label: 'Edit',
           items: [
             { label: 'InputText', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputText' },
-            { label: 'TextArea', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputTextArea' },
+            { label: 'Textarea', icon: 'pi pi-fw pi-user-edit', to: '/demo/textArea' },
             { label: 'InputNumber', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputNumber' },
             { label: 'InputMask', icon: 'pi pi-fw pi-user-edit', to: '/demo/inputMask' },
             { label: 'Calendar', icon: 'pi pi-fw pi-user-edit', to: '/demo/calendar' },

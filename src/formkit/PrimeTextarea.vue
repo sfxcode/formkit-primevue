@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup lang='ts'>
 const props = defineProps({
   context: Object,
 })
@@ -7,32 +7,29 @@ const context = props.context
 const attrs = context?.attrs
 
 function handleBlur(e: any) {
-  context?.handlers.blur(e.value)
+  context?.handlers.blur(e.target.value)
 }
+
 function handleInput(e: any) {
-  context?.node.input(e.value)
+  context?.node.input(e.target.value)
 }
 </script>
 
 <template>
   <div>
-    <Dropdown
+    <Textarea
+      :id="context.id"
       v-model="context._value"
-      :input-id="context.id"
       :disabled="attrs._disabled ?? false"
       :readonly="attrs._readonly ?? false"
-      :input-style="attrs.style"
-      :input-class="attrs.class"
+      :style="attrs.style"
+      :class="attrs.class"
       :tabindex="attrs.tabindex"
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
-      :options="attrs.options"
-      :option-label="attrs.optionLabel ?? 'label'"
-      :option-value="attrs.optionValue ?? 'value'"
       :placeholder="attrs.placeholder"
-      :filter="attrs.filter ?? false"
-      :show-clear="attrs.showClear ?? false"
-      @change="handleInput"
+      :rows="context.rows ?? 3"
+      @input="handleInput"
       @blur="handleBlur"
     />
   </div>

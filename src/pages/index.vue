@@ -25,7 +25,7 @@ const schema = reactive(
       validation: 'required|email',
     },
     {
-      $formkit: 'primeInputTextArea',
+      $formkit: 'primeTextarea',
       name: 'myText',
       label: 'Text',
       validation: '',
