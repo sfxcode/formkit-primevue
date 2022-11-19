@@ -3,7 +3,7 @@ const primeAttributes = 'placeholder, rows'
 const schema
   = [
     {
-      $formkit: 'primeInputTextArea',
+      $formkit: 'primeTextarea',
       id: 'basic',
       name: 'name',
       label: 'Basic',
@@ -11,20 +11,20 @@ const schema
       validation: 'required',
     },
     {
-      $formkit: 'primeInputTextArea',
+      $formkit: 'primeTextarea',
       name: 'name',
       label: '5 Rows',
       rows: 5,
     },
     {
-      $formkit: 'primeInputTextArea',
+      $formkit: 'primeTextarea',
       name: 'name',
       placeholder: 'Styled',
       style: 'background:gray;',
       class: 'customClass',
     },
     {
-      $formkit: 'primeInputTextArea',
+      $formkit: 'primeTextarea',
       name: 'name',
       placeholder: 'Read Only',
       _readonly: true,
@@ -38,7 +38,7 @@ const data = { }
 <template>
   <div>
     <PrimeInput
-      header="PrimeInputTextArea" :schema="schema" :data="data"
+      header="PrimeInputTextarea" :schema="schema" :data="data"
       :prime-attributes="primeAttributes" :custom-attributes="customAttributes"
     />
   </div>
