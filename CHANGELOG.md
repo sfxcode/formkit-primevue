@@ -1,3 +1,18 @@
+## [1.0.0](https://github.com/sfxcode/formkit-primevue/compare/v0.9.5...v1.0.0) (2023-03-08)
+
+
+### Code Refactoring
+
+* **PrimeInput:** Change link to docs ([2898a9c](https://github.com/sfxcode/formkit-primevue/commit/2898a9c138a2130e37292abd4c1236e3c8a5e6ea))
+
+
+### Maintenance
+
+* **dependencies:** PrimeVue ([048cb1e](https://github.com/sfxcode/formkit-primevue/commit/048cb1ed21c223148182e46006214ff56011dc99))
+* **dependencies:** PrimeVue, Formkit ([021d0e7](https://github.com/sfxcode/formkit-primevue/commit/021d0e71ecc46c6c8e3ab30cdeebe5ee1a17a7c0))
+* **dependencies:** PrimeVue, Formkit ([ba6f8b7](https://github.com/sfxcode/formkit-primevue/commit/ba6f8b7bfd9ec104bd7e3dce6a95c7f96053f4a4))
+* **dependencies:** PrimeVue, Formkit ([0dcd81b](https://github.com/sfxcode/formkit-primevue/commit/0dcd81b4c50c97d23a3e8ec6d5cde4f79f59b497))
+
 ### [0.9.5](https://github.com/sfxcode/formkit-primevue/compare/v0.9.4...v0.9.5) (2023-01-22)
 
 
