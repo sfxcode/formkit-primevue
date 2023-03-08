@@ -14,7 +14,7 @@ const props = defineProps<{
 const formSchema = ref(props.schema)
 const formData = ref(props.data)
 
-const documentationLink = `https://www.primefaces.org/primevue/${props.header.replace('Prime', '').toLowerCase()}`
+const documentationLink = `https://primevue.org/${props.header.replace('Prime', '').toLowerCase()}`
 </script>
 
 <template>
