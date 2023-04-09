@@ -6,15 +6,15 @@ const props = defineProps({
 const context = props.context
 const attrs = context?.attrs
 
-const hasLeftIcon = () => {
+function hasLeftIcon() {
   return context?.iconLeft && context?.iconLeft.length > 0
 }
 
-const hasRightIcon = () => {
+function hasRightIcon() {
   return context?.iconRight && context?.iconRight.length > 0
 }
 
-const spanClass = () => {
+function spanClass() {
   let result = ''
   if (hasLeftIcon())
     result = `${result}p-input-icon-left `
@@ -30,6 +30,8 @@ function handleBlur(e: any) {
 function handleInput(e: any) {
   context?.node.input(e.target.value)
 }
+
+const styleClass = computed(() => context?.state.valid ? attrs?.class : `${attrs?.class} p-invalid`)
 </script>
 
 <template>
@@ -43,7 +45,7 @@ function handleInput(e: any) {
         :disabled="attrs._disabled ?? false"
         :readonly="attrs._readonly ?? false"
         :style="attrs.style"
-        :class="attrs.class"
+        :class="styleClass"
         :tabindex="attrs.tabindex"
         :aria-label="attrs.ariaLabel"
         :aria-labelledby="attrs.ariaLabelledby"

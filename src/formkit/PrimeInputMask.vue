@@ -10,6 +10,7 @@ function handleInput(e: any) {
   context?.node.input(props.context?._value)
   context?.handlers.blur(props.context?._value)
 }
+const styleClass = computed(() => context?.state.valid ? attrs?.class : `${attrs?.class} p-invalid`)
 </script>
 
 <template>
@@ -20,7 +21,7 @@ function handleInput(e: any) {
       :disabled="attrs._disabled ?? false"
       :readonly="attrs._readonly ?? false"
       :editor-style="attrs.style"
-      :class="attrs.class"
+      :class="styleClass"
       :tabindex="attrs.tabindex"
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
