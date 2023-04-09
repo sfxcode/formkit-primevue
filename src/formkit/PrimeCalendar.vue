@@ -34,7 +34,7 @@ function handleSelect(e: any) {
       :select-other-months="attrs.selectOtherMonths ?? false"
       :icon="attrs.icon"
       :show-icon="context.showIcon"
-      :previous-icon="attrs.previousIcon ?? 'pi pi-calendar'"
+      :previous-icon="attrs.previousIcon ?? 'pi pi-chevron-left'"
       :next-icon="attrs.nextIcon ?? 'pi pi-chevron-right'"
       :increment-icon="attrs.incrementIcon ?? 'pi pi-chevron-up'"
       :decrement-icon="attrs.decrementIcon ?? 'pi pi-chevron-down'"
