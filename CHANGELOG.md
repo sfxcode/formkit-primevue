@@ -6,11 +6,17 @@
 * **Calendar:** wrong icon ([9e421a7](https://github.com/sfxcode/formkit-primevue/commit/9e421a7cfa13fd24fd38d4246eac510e8be36d97))
 
 
+### Features
+
+* **Validation:** Add p-invalid to class attribute if not valid ([96802d2](https://github.com/sfxcode/formkit-primevue/commit/96802d23143b556121d5cc5a556f9189aa5eb592))
+
+
 ### Maintenance
 
 * **dependencies:** PrimeVue ([98139fc](https://github.com/sfxcode/formkit-primevue/commit/98139fc3e4c2090cfa6ba89cfc5f7baa877cd79f))
 * **dependencies:** PrimeVue 3.25.0 ([91c1184](https://github.com/sfxcode/formkit-primevue/commit/91c1184ec8b84e021c193c1d970c937e19add21b))
 * **dependencies:** PrimeVue, Formkit ([89ca028](https://github.com/sfxcode/formkit-primevue/commit/89ca028415481199dc3ac1080c2984f76beb1c58))
+* **dependencies:** update all ([85050df](https://github.com/sfxcode/formkit-primevue/commit/85050dff8dbe6af471a1a1697f1e8241d0553a16))
 * **dependencies:** update all ([f55d22c](https://github.com/sfxcode/formkit-primevue/commit/f55d22cc4972900263d6a4fa312028f687f35bbd))
 
 ## [1.0.0](https://github.com/sfxcode/formkit-primevue/compare/v0.9.5...v1.0.0) (2023-03-08)
