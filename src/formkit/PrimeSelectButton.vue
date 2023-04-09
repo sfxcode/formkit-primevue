@@ -9,6 +9,8 @@ const attrs = context?.attrs
 function handleChange(e: any) {
   context?.node.input(props.context?._value)
 }
+
+const styleClass = computed(() => context?.state.valid ? attrs?.class : `${attrs?.class} p-invalid`)
 </script>
 
 <template>
@@ -19,7 +21,7 @@ function handleChange(e: any) {
       :disabled="attrs._disabled ?? false"
       :readonly="attrs._readonly ?? false"
       :style="attrs.style"
-      :class="attrs.class"
+      :class="styleClass"
       :tabindex="attrs.tabindex"
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"

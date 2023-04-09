@@ -13,6 +13,9 @@ function handleInput(e: any) {
 function handleSelect(e: any) {
   context?.node.input(e)
 }
+
+const styleClass = computed(() => context?.state.valid ? attrs?.class : `${attrs?.class} p-invalid`)
+
 </script>
 
 <template>
@@ -23,7 +26,7 @@ function handleSelect(e: any) {
       :disabled="attrs._disabled ?? false"
       :readonly="attrs._readonly ?? false"
       :input-style="attrs.style"
-      :input-class="attrs.class"
+      :input-class="styleClass"
       :tabindex="attrs.tabindex"
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"

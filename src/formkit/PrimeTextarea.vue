@@ -13,6 +13,7 @@ function handleBlur(e: any) {
 function handleInput(e: any) {
   context?.node.input(e.target.value)
 }
+const styleClass = computed(() => context?.state.valid ? attrs?.class : `${attrs?.class} p-invalid`)
 </script>
 
 <template>
@@ -23,7 +24,7 @@ function handleInput(e: any) {
       :disabled="attrs._disabled ?? false"
       :readonly="attrs._readonly ?? false"
       :style="attrs.style"
-      :class="attrs.class"
+      :class="styleClass"
       :tabindex="attrs.tabindex"
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
