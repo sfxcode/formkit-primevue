@@ -17,7 +17,7 @@ function handleSelection(e: EditorSelectionChangeEvent) {
     context?.handlers.blur(e.htmlValue)
 }
 
-const styleClass = computed(() => context?.state.valid ? attrs?.class : `${attrs?.class} p-invalid`)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs?.class} p-invalid` : attrs?.class)
 </script>
 
 <template>

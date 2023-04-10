@@ -9,7 +9,7 @@ const attrs = context?.attrs
 function handleChange(e: any) {
   context?.node.input(props.context?._value)
 }
-const styleClass = computed(() => context?.state.valid ? attrs?.class : `${attrs?.class} p-invalid`)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs?.class} p-invalid` : attrs?.class)
 </script>
 
 <template>
