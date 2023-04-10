@@ -12,7 +12,7 @@ function handleBlur(e: any) {
 function handleInput(e: any) {
   context?.node.input(e.value)
 }
-const styleClass = computed(() => context?.state.valid ? attrs?.class : `${attrs?.class} p-invalid`)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs?.class} p-invalid` : attrs?.class)
 </script>
 
 <template>
