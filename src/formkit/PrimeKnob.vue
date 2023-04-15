@@ -22,7 +22,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :disabled="attrs._disabled ?? false"
       :readonly="attrs._readonly ?? false"
       :style="attrs.style"
-      :class="styleClasss"
+      :class="styleClass"
       :tabindex="attrs.tabindex"
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
