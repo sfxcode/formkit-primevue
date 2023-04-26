@@ -1,4 +1,4 @@
-import * as path from 'path'
+import * as path from 'node:path'
 import { defineConfig } from 'vite'
 import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
@@ -82,6 +82,8 @@ export default defineConfig({
     }),
     dts({
       copyDtsFiles: false,
+      insertTypesEntry: true,
+
     }),
     Components({
       dts: 'src/components.d.ts',

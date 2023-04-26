@@ -1,6 +1,6 @@
 {
   "name": "@sfxcode/formkit-primevue",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "type": "module",
   "license": "MIT",
   "repository": "https://github.com/sfxcode/formkit-primevue",
@@ -15,7 +15,8 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/formkit-primevue.umd.js",
+  "main": "dist/formkit-primevue",
+  "typings": "dist/index",
   "module": "./dist/formkit-primevue.es.js",
   "exports": {
     ".": {
@@ -32,6 +33,7 @@
       "require": "./dist/sass/formkit-primevue.scss"
     }
   },
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
