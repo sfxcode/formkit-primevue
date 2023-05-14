@@ -1,8 +1,10 @@
-### [1.1.1](https://github.com/sfxcode/formkit-primevue/compare/v1.1.0...v1.1.1) (2023-04-29)
+### [1.1.2](https://github.com/sfxcode/formkit-primevue/compare/v1.1.0...v1.1.2) (2023-05-14)
 
 
 ### Maintenance
 
+* **dependencies:** Formkit 0.17.0 - primevue 3.29.0 ([4af4952](https://github.com/sfxcode/formkit-primevue/commit/4af49527f8a0702b57b46a6be599af0b8d64a561))
+* **dependencies:** updates ([94f1b6e](https://github.com/sfxcode/formkit-primevue/commit/94f1b6e47e2719eb84402843cfe4c4f3a114562b))
 * **dependencies:** updates ([53b311c](https://github.com/sfxcode/formkit-primevue/commit/53b311c76dad85e80c1602d32faf527cd9a6fedd))
 
 ## [1.1.0](https://github.com/sfxcode/formkit-primevue/compare/v1.0.0...v1.1.0) (2023-04-26)
