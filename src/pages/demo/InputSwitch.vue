@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 const primeAttributes = 'trueValue, falseValue'
-const customAttributes = 'labelLeft, labelRight'
+const customAttributes = 'labelLeft, labelRight, option_class'
 
 const schema
   = [
@@ -14,7 +14,8 @@ const schema
       $formkit: 'primeInputSwitch',
       name: 'eu_citizen',
       id: 'eu',
-      labelLeft: 'Are you a european citizen: ',
+      labelRight: 'Are you a european citizen: ',
+      option_class: 'flex items-center',
     },
     {
       $formkit: 'primeInputSwitch',

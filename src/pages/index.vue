@@ -3,7 +3,7 @@ import { ref } from 'vue'
 
 const options = [
   { label: 'Every page load', value: 'refresh' },
-  { label: 'Ever hour', value: 'hourly' },
+  { label: 'Every hour', value: 'hourly' },
   { label: 'Every day', value: 'daily' },
 ]
 
@@ -71,7 +71,7 @@ const schema = reactive(
 
 const data = ref({ email: 'tom@sfxcode.com' })
 
-const submitHandler = async () => {
+async function submitHandler() {
   // Lets pretend this is an ajax request:
   await new Promise(resolve => setTimeout(resolve, 1000))
 }

@@ -5,7 +5,7 @@ const primeAttributes = 'placeholder, options, filter, optionLabel (default: lab
 
 const options = [
   { label: 'Every page load', value: 'refresh' },
-  { label: 'Ever hour', value: 'hourly' },
+  { label: 'Every hour', value: 'hourly' },
   { label: 'Every day', value: 'daily' },
 ]
 
@@ -28,7 +28,7 @@ const schema
       class: 'customClass',
       options: [
         { label: 'Every page load', value: 'refresh' },
-        { label: 'Ever hour', value: 'hourly' },
+        { label: 'Every hour', value: 'hourly' },
         { label: 'Every day', value: 'daily' },
       ],
       _disabled: 'true',
@@ -56,4 +56,3 @@ const data = { }
     />
   </div>
 </template>
-

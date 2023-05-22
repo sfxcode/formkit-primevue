@@ -60,7 +60,7 @@ const schema = reactive(
       label: 'Cookie notice frequency',
       options: {
         refresh: 'Every page load',
-        hourly: 'Ever hour',
+        hourly: 'Every hour',
         daily: 'Every day',
       },
       help: 'How often should we display a cookie notice?',

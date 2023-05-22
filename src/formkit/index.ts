@@ -17,6 +17,7 @@ import PrimeKnob from './PrimeKnob.vue'
 import PrimeMultiSelect from './PrimeMultiSelect.vue'
 import PrimeListbox from './PrimeListbox.vue'
 import PrimePassword from './PrimePassword.vue'
+import PrimeRadioButton from './PrimeRadioButton.vue'
 import PrimeRating from './PrimeRating.vue'
 import PrimeSlider from './PrimeSlider.vue'
 import PrimeToggleButton from './PrimeToggleButton.vue'
@@ -78,6 +79,9 @@ export const primeSliderDefinition: FormKitTypeDefinition = createInput(PrimeSli
 export const primeRatingDefinition: FormKitTypeDefinition = createInput(PrimeRating, {
   props: [],
 })
+export const primeRadioButtonDefinition: FormKitTypeDefinition = createInput(PrimeRadioButton, {
+  props: [],
+})
 
 export const primeChipsDefinition: FormKitTypeDefinition = createInput(PrimeChips, {
   props: [],
@@ -118,6 +122,7 @@ export const primeInputs = {
   primeChips: primeChipsDefinition,
   primeKnob: primeKnobDefinition,
   primeRating: primeRatingDefinition,
+  primeRadioButton: primeRadioButtonDefinition,
   primeColorPicker: primeColorPickerDefinition,
   primeToggleButton: primeToggleButtonDefinition,
   primeListbox: primeListboxDefinition,
