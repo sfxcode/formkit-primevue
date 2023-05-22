@@ -29,4 +29,3 @@ const data = { }
     />
   </div>
 </template>
-

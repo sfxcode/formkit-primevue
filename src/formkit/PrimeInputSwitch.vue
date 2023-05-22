@@ -13,7 +13,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
 </script>
 
 <template>
-  <div>
+  <div :class="attrs.option_class">
     <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.attrs.labelLeft }}</span>
     <InputSwitch
       v-model="context._value"

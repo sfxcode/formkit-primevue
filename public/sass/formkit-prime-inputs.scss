@@ -77,7 +77,7 @@
   }
 }
 
-.formkit-outer[data-type="primeInputSwitch"], .formkit-outer[data-type="primeCheckbox"], .formkit-outer[data-type="primeTriStateCheckBox"] {
+.formkit-outer[data-type="primeInputSwitch"], .formkit-outer[data-type="primeCheckbox"], .formkit-outer[data-type="primeTriStateCheckBox"], .formkit-outer[data-type="primeRadioButton"] {
   .formkit-inner {
     width: 300px;
 
@@ -92,5 +92,4 @@
     }
   }
 }
-
 

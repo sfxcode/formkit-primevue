@@ -40,6 +40,7 @@ const items = ref([
             { label: 'MultiSelect', icon: 'pi pi-fw pi-user-edit', to: '/demo/multiSelect' },
             { label: 'SelectButton', icon: 'pi pi-fw pi-user-edit', to: '/demo/selectButton' },
             { label: 'ToggleButton', icon: 'pi pi-fw pi-user-edit', to: '/demo/toggleButton' },
+            { label: 'RadioButton', icon: 'pi pi-fw pi-user-edit', to: '/demo/radioButton' },
           ],
         },
         {
