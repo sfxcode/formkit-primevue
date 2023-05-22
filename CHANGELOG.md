@@ -1,8 +1,21 @@
+### [1.1.4](https://github.com/sfxcode/formkit-primevue/compare/v1.1.2...v1.1.4) (2023-05-22)
+
+
+### Features
+
+* **Input:** Add RadioButton ([380a5b5](https://github.com/sfxcode/formkit-primevue/commit/380a5b5e17396b67dd628220ea4fbb5c2c3078a8))
+
+
+### Maintenance
+
+* **dependencies:** Vue 3.3.4 ([2d0129f](https://github.com/sfxcode/formkit-primevue/commit/2d0129f836388a9625580e5ca2b484eda1e235fa))
+
 ### [1.1.2](https://github.com/sfxcode/formkit-primevue/compare/v1.1.0...v1.1.2) (2023-05-14)
 
 
 ### Maintenance
 
+* **dependencies:** Formkit 0.17.0 - primevue 3.29.0 ([cc34762](https://github.com/sfxcode/formkit-primevue/commit/cc347620b545c1bc869f7d7f831bb4d2528be7b3))
 * **dependencies:** Formkit 0.17.0 - primevue 3.29.0 ([4af4952](https://github.com/sfxcode/formkit-primevue/commit/4af49527f8a0702b57b46a6be599af0b8d64a561))
 * **dependencies:** updates ([94f1b6e](https://github.com/sfxcode/formkit-primevue/commit/94f1b6e47e2719eb84402843cfe4c4f3a114562b))
 * **dependencies:** updates ([53b311c](https://github.com/sfxcode/formkit-primevue/commit/53b311c76dad85e80c1602d32faf527cd9a6fedd))
