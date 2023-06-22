@@ -22,6 +22,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
         :value="option.value"
         :input-style="attrs.style"
         :input-class="styleClass"
+        :pt="attrs.pt"
         @click="handleChange"
         @change="handleChange"
       />

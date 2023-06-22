@@ -69,6 +69,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :append-to="attrs.appendTo ?? 'body'"
       :panel-style="attrs.panelStyle"
       :panel-class="attrs.panelClass"
+      :pt="attrs.pt"
       @date-select="handleSelect"
       @input="handleInput"
     />

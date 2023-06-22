@@ -29,6 +29,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :option-label="attrs.optionLabel ?? 'label'"
       :option-value="attrs.optionValue ?? 'value'"
       :filter="attrs.filter ?? false"
+      :pt="attrs.pt"
       @change="handleChange"
     />
   </div>

@@ -29,6 +29,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :binary="attrs.binary ?? true"
       :true-value="attrs.trueValue ?? undefined"
       :false-value="attrs.falseValue ?? undefined"
+      :pt="attrs.pt"
       @input="handleInput"
     />
     <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.attrs.labelRight }}</span>

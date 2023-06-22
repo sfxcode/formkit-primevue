@@ -25,6 +25,7 @@ function handleChange(e: any) {
       :default-color="attrs.defaultColor ?? 'ff0000'"
       :inline="attrs.inline ?? false"
       :format="attrs.format"
+      :pt="attrs.pt"
       @change="handleChange"
     />
   </div>

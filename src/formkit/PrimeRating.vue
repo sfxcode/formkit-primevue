@@ -30,6 +30,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :on-icon="attrs.onIcon ?? 'pi pi-star-fill'"
       :off-icon="attrs.offIcon ?? 'pi pi-star'"
       :cancel-icon="attrs.cancelIcon ?? 'pi pi-ban'"
+      :pt="attrs.pt"
       @change="handleInput"
     />
   </div>

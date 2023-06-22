@@ -30,6 +30,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :slot-char="attrs.slotChar ?? '_'"
       :auto-clear="attrs.autoClear ?? true"
       :unmask="attrs.unmask ?? false"
+      :pt="attrs.pt"
       @blur="handleInput"
     />
   </div>
