@@ -40,6 +40,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :show-icon="attrs.showIcon ?? 'pi pi-eye'"
       :feedback="context.feedback ?? false"
       :toggle-mask="context.toggleMask ?? false"
+      :pt="attrs.pt"
       @input="handleInput"
       @blur="handleBlur"
     />

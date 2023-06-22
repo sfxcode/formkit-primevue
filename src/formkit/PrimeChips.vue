@@ -29,6 +29,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :max="attrs.max ?? undefined"
       :placeholder="attrs.placeholder"
       :separator="attrs.separator"
+      :pt="attrs.pt"
       @add="handleInput"
       @remove="handleInput"
     />

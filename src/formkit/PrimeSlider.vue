@@ -30,6 +30,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :step="attrs.step ?? undefined"
       :range="attrs.range ?? false"
       :orientation="attrs.orientation ?? 'horizontal'"
+      :pt="attrs.pt"
       @change="handleInput"
     />
   </div>
