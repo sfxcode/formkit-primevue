@@ -1,6 +1,11 @@
 <script setup lang='ts'>
 const primeAttributes = 'placeholder'
 const customAttributes = 'iconLeft, iconRight'
+
+const pt_content = {
+  root: { style: 'font-weight: 600;' },
+}
+
 const schema
   = [
     {
@@ -9,6 +14,7 @@ const schema
       label: 'Basic',
       help: 'Required.',
       validation: 'required',
+      pt: pt_content,
       _readonly: true,
     },
     {
@@ -45,7 +51,7 @@ const data = { name: 'tom', iconRight: 'Some Text ...' }
 </script>
 
 <template>
-  <div>
+  <div class="bg-teal-400">
     <PrimeInput
       header="PrimeInputText" :schema="schema" :data="data"
       :prime-attributes="primeAttributes" :custom-attributes="customAttributes"
