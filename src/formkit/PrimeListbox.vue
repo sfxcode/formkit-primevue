@@ -36,6 +36,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :filter-match-mode="attrs.filterMatchMode"
       :auto-option-focus="attrs.autoOptionFocus ?? true"
       :select-on-focus="attrs.selectOnFocus ?? false"
+      :pt="attrs.pt"
       @change="handleInput"
     />
   </div>

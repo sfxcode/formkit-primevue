@@ -40,6 +40,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :show-buttons="attrs.showButtons ?? undefined"
       :button-layout="attrs.buttonLayout ?? 'stacked'"
       :step="attrs.step ?? undefined"
+      :pt="attrs.pt"
       @input="handleInput"
       @blur="handleBlur"
     />

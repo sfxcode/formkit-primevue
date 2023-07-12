@@ -1,16 +1,24 @@
-### [1.1.4](https://github.com/sfxcode/formkit-primevue/compare/v1.1.2...v1.1.4) (2023-05-22)
+## [1.2.0](https://github.com/sfxcode/formkit-primevue/compare/v1.1.2...v1.2.0) (2023-07-12)
 
 
 ### Features
 
+* **Input:** Add RadioButton ([38be693](https://github.com/sfxcode/formkit-primevue/commit/38be693223f369b8ad03b3a4248f4058cb195d28))
+* **Input:** Add RadioButton ([7c4b3d7](https://github.com/sfxcode/formkit-primevue/commit/7c4b3d7a75aa2f3aea52238fc4fca67dcb1e8931))
+* **Input:** Add RadioButton ([54295a7](https://github.com/sfxcode/formkit-primevue/commit/54295a7197281437522a3bd2c7ab40efe127635b))
 * **Input:** Add RadioButton ([380a5b5](https://github.com/sfxcode/formkit-primevue/commit/380a5b5e17396b67dd628220ea4fbb5c2c3078a8))
 
 
 ### Maintenance
 
+* **dependencies:** Formkit 0.17.3 - primevue 3.29.2 ([d3b7836](https://github.com/sfxcode/formkit-primevue/commit/d3b7836cec31535dde8b6a07ae9a0e6aa5410610))
+* **dependencies:** Formkit 0.17.4 ([ed34919](https://github.com/sfxcode/formkit-primevue/commit/ed34919da554a5c6995c9dd3f33a388ecc7b4111))
+* **dependencies:** Formkit 0.17.4 ([5b6328b](https://github.com/sfxcode/formkit-primevue/commit/5b6328ba14e96ffa25adbf1053b6d76177201323))
+* **dependencies:** PrimeVue 3.30.0 ([db746df](https://github.com/sfxcode/formkit-primevue/commit/db746df91ff432804f1ab346709e5d03f931241f))
+* **dependencies:** update dependencies ([55f3dd9](https://github.com/sfxcode/formkit-primevue/commit/55f3dd967ebd3a63dc962b42c7c5dab4e7c6b868))
 * **dependencies:** Vue 3.3.4 ([2d0129f](https://github.com/sfxcode/formkit-primevue/commit/2d0129f836388a9625580e5ca2b484eda1e235fa))
 
-### [1.1.2](https://github.com/sfxcode/formkit-primevue/compare/v1.1.0...v1.1.2) (2023-05-14)
+## [1.1.2](https://github.com/sfxcode/formkit-primevue/compare/v1.1.0...v1.1.2) (2023-05-14)
 
 
 ### Maintenance
@@ -67,14 +75,14 @@
 * **dependencies:** PrimeVue, Formkit ([ba6f8b7](https://github.com/sfxcode/formkit-primevue/commit/ba6f8b7bfd9ec104bd7e3dce6a95c7f96053f4a4))
 * **dependencies:** PrimeVue, Formkit ([0dcd81b](https://github.com/sfxcode/formkit-primevue/commit/0dcd81b4c50c97d23a3e8ec6d5cde4f79f59b497))
 
-### [0.9.5](https://github.com/sfxcode/formkit-primevue/compare/v0.9.4...v0.9.5) (2023-01-22)
+## [0.9.5](https://github.com/sfxcode/formkit-primevue/compare/v0.9.4...v0.9.5) (2023-01-22)
 
 
 ### Maintenance
 
 * **dependencies:** PrimeVue, Formkit ([16b1db2](https://github.com/sfxcode/formkit-primevue/commit/16b1db240f65c5f3d0ed6085f7d955c7d7abe1b8))
 
-### [0.9.4](https://github.com/sfxcode/formkit-primevue/compare/v0.9.3...v0.9.4) (2022-11-19)
+## [0.9.4](https://github.com/sfxcode/formkit-primevue/compare/v0.9.3...v0.9.4) (2022-11-19)
 
 
 ### Maintenance
@@ -82,7 +90,7 @@
 * **dependencies:** PrimeVue ([9256b4a](https://github.com/sfxcode/formkit-primevue/commit/9256b4a49630e7d0e91c837f26c91392c7beb922))
 * **dependencies:** PrimeVue ([2056bf4](https://github.com/sfxcode/formkit-primevue/commit/2056bf4d3796125f2b00f280e9b1f1d3594ef8bf))
 
-### [0.9.3](https://github.com/sfxcode/formkit-primevue/compare/v0.9.1...v0.9.3) (2022-11-17)
+## [0.9.3](https://github.com/sfxcode/formkit-primevue/compare/v0.9.1...v0.9.3) (2022-11-17)
 
 
 ### Code Refactoring
@@ -95,7 +103,7 @@
 
 * **dependencies:** PrimeVue ([28d20bc](https://github.com/sfxcode/formkit-primevue/commit/28d20bc17f059c7eeaa6c94f740172d6ea08adce))
 
-### [0.9.1](https://github.com/sfxcode/formkit-primevue/compare/v0.9.0...v0.9.1) (2022-11-16)
+## [0.9.1](https://github.com/sfxcode/formkit-primevue/compare/v0.9.0...v0.9.1) (2022-11-16)
 
 
 ### ⚠ BREAKING CHANGES
@@ -136,7 +144,7 @@
 
 * **Input:** Add TriStateCheckbox ([7d9b29f](https://github.com/sfxcode/formkit-primevue/commit/7d9b29f61eeb02c6d693cc1539bdb0930cc3ea33))
 
-### [0.8.4](https://github.com/sfxcode/formkit-primevue/compare/0194d445051ac1e1e2295a05f6eacb79d9abb9f5...v0.8.4) (2022-11-10)
+## [0.8.4](https://github.com/sfxcode/formkit-primevue/compare/0194d445051ac1e1e2295a05f6eacb79d9abb9f5...v0.8.4) (2022-11-10)
 
 
 ### Features
