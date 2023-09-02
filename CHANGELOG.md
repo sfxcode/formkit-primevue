@@ -1,3 +1,10 @@
+## [v1.2.9] - 2023-08-28
+### :wrench: Chores
+- [`49da165`](https://github.com/sfxcode/formkit-primevue/commit/49da1650be7f0671a63e1c7b7300b11bc592de4a) - **dependencies**: update dependencies *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`3e8dc54`](https://github.com/sfxcode/formkit-primevue/commit/3e8dc54b848e4270090d43466e14828dc47eefe9) - **dependencies**: update dependencies *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`709a452`](https://github.com/sfxcode/formkit-primevue/commit/709a452fdd7ccea673e99a0f431b28da62d9c12b) - **release**: update package because of deprecation *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [1.2.1](https://github.com/sfxcode/formkit-primevue/compare/v1.2.0...v1.2.1) (2023-07-18)
 
 
@@ -205,3 +212,5 @@
 * **Notes:** Readme and Some package info ([c2af7b0](https://github.com/sfxcode/formkit-primevue/commit/c2af7b07fb288c38abc51fd820fb97772483a48c))
 * **release:** new version ([784260f](https://github.com/sfxcode/formkit-primevue/commit/784260f4d141e168df74dec3a5f12f48cbba63ef))
 
+
+[v1.2.9]: https://github.com/sfxcode/formkit-primevue/compare/v1.2.8...v1.2.9
