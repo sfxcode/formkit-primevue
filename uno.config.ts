@@ -28,7 +28,7 @@ export default defineConfig({
   configDeps: ['../anu-vue/src/presets/theme-default/index.ts'],
   content: {
     pipeline: {
-      include: [/.*\/anu-vue\.js(.*)?$/, './**/*.vue', './**/*.md'],
+      include: ['./**/*.vue', './**/*.md'],
     },
   },
 })
