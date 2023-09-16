@@ -30,6 +30,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :placeholder="attrs.placeholder"
       :separator="attrs.separator"
       :pt="attrs.pt"
+      :pt-options="attrs.ptOptions"
+      :unstyled="attrs.unstyled ?? false"
       @add="handleInput"
       @remove="handleInput"
     />

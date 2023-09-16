@@ -70,6 +70,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :panel-style="attrs.panelStyle"
       :panel-class="attrs.panelClass"
       :pt="attrs.pt"
+      :pt-options="attrs.ptOptions"
+      :unstyled="attrs.unstyled ?? false"
       @date-select="handleSelect"
       @input="handleInput"
     />

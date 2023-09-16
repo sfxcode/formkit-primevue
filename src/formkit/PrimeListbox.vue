@@ -37,6 +37,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :auto-option-focus="attrs.autoOptionFocus ?? true"
       :select-on-focus="attrs.selectOnFocus ?? false"
       :pt="attrs.pt"
+      :pt-options="attrs.ptOptions"
+      :unstyled="attrs.unstyled ?? false"
       @change="handleInput"
     />
   </div>

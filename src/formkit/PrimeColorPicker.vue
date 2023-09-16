@@ -26,6 +26,8 @@ function handleChange(e: any) {
       :inline="attrs.inline ?? false"
       :format="attrs.format"
       :pt="attrs.pt"
+      :pt-options="attrs.ptOptions"
+      :unstyled="attrs.unstyled ?? false"
       @change="handleChange"
     />
   </div>

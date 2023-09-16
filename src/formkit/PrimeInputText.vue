@@ -51,6 +51,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
         :aria-labelledby="attrs.ariaLabelledby"
         :placeholder="attrs.placeholder"
         :pt="attrs.pt"
+        :pt-options="attrs.ptOptions"
+        :unstyled="attrs.unstyled ?? false"
         @input="handleInput"
         @blur="handleBlur"
       />

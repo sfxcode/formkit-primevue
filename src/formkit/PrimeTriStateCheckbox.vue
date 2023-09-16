@@ -27,6 +27,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
       :pt="attrs.pt"
+      :pt-options="attrs.ptOptions"
+      :unstyled="attrs.unstyled ?? false"
       @click="handleChange"
     />
     <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.attrs.labelRight }}</span>

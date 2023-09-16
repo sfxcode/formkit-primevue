@@ -41,6 +41,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :feedback="context.feedback ?? false"
       :toggle-mask="context.toggleMask ?? false"
       :pt="attrs.pt"
+      :pt-options="attrs.ptOptions"
+      :unstyled="attrs.unstyled ?? false"
       @input="handleInput"
       @blur="handleBlur"
     />
