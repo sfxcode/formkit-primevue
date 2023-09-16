@@ -105,12 +105,10 @@ export default defineConfig({
     }),
     Pages({
       // pagesDir: ['src/pages', 'src/pages2'],
-      pagesDir: [
+      dirs: [
         { dir: 'src/pages', baseRoute: '' },
       ],
       extensions: ['vue', 'md'],
-      syncIndex: true,
-      replaceSquareBrackets: true,
       extendRoute(route) {
         if (route.name === 'about')
           route.props = route => ({ query: route.query.q })
