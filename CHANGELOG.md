@@ -1,3 +1,8 @@
+## [v1.3.3] - 2023-09-17
+### :bug: Bug Fixes
+- [`43ea7e3`](https://github.com/sfxcode/formkit-primevue/commit/43ea7e3caa5b529530651d9a16bdabfe4f1b9ed0) - **Typo**: Import AutoComplete *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.3.0] - 2023-09-02
 ### :wrench: Chores
 - [`88c43fc`](https://github.com/sfxcode/formkit-primevue/commit/88c43fc81a0832dfa5fbce891f2ac4257d2bb020) - **dependencies**: Formkit 1.0.0 PrimeVue 3.33.0 *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -220,3 +225,4 @@
 
 [v1.2.9]: https://github.com/sfxcode/formkit-primevue/compare/v1.2.8...v1.2.9
 [v1.3.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.2.9...v1.3.0
+[v1.3.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.2...v1.3.3
