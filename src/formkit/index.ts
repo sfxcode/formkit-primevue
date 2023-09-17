@@ -1,7 +1,7 @@
 import type { FormKitTypeDefinition } from '@formkit/core'
 import { createInput } from '@formkit/vue'
 
-import PrimeAutoComplete from './PrimeAutocomplete.vue'
+import PrimeAutoComplete from './PrimeAutoComplete.vue'
 import PrimeCalendar from './PrimeCalendar.vue'
 import PrimeCheckbox from './PrimeCheckbox.vue'
 import PrimeChips from './PrimeChips.vue'
