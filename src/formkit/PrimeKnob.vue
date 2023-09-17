@@ -11,6 +11,10 @@ function handleInput(e: any) {
   context?.handlers.blur(e)
 }
 
+function updateValue(n: number) {
+  context?.node.input(n)
+}
+
 const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs?.class} p-invalid` : attrs?.class)
 </script>
 
@@ -40,6 +44,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :pt-options="attrs.ptOptions"
       :unstyled="attrs.unstyled ?? false"
       @change="handleInput"
+      @update:model-value="updateValue"
     />
   </div>
 </template>
