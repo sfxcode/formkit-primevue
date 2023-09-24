@@ -12,6 +12,28 @@
   "contributors": [
     "sfxcode <tom@sfxcode.com>"
   ],
+  "files": [
+    "dist"
+  ],
+  "main": "dist/formkit-primevue",
+  "typings": "dist/index",
+  "module": "./dist/formkit-primevue.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/formkit-primevue.es.js",
+      "require": "./dist/formkit-primevue.umd.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./dist/sass/formkit-prime-inputs.scss": {
+      "import": "./dist/sass/formkit-prime-inputs.scss",
+      "require": "./dist/sass/formkit-prime-inputs.scss"
+    },
+    "./dist/sass/formkit-primevue.scss": {
+      "import": "./dist/sass/formkit-primevue.scss",
+      "require": "./dist/sass/formkit-primevue.scss"
+    }
+  },
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
