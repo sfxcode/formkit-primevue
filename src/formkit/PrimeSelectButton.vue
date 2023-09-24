@@ -33,6 +33,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :unselectable="attrs.unselectable ?? true"
       :data-key="attrs.dataKey"
       :pt="attrs.pt"
+      :pt-options="attrs.ptOptions"
+      :unstyled="attrs.unstyled ?? false"
       @change="handleChange"
     />
   </div>

@@ -1,3 +1,27 @@
+## [v1.3.3] - 2023-09-17
+### :bug: Bug Fixes
+- [`43ea7e3`](https://github.com/sfxcode/formkit-primevue/commit/43ea7e3caa5b529530651d9a16bdabfe4f1b9ed0) - **Typo**: Import AutoComplete *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
+## [v1.3.0] - 2023-09-02
+### :wrench: Chores
+- [`88c43fc`](https://github.com/sfxcode/formkit-primevue/commit/88c43fc81a0832dfa5fbce891f2ac4257d2bb020) - **dependencies**: Formkit 1.0.0 PrimeVue 3.33.0 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
+## [v1.2.9] - 2023-08-28
+### :wrench: Chores
+- [`49da165`](https://github.com/sfxcode/formkit-primevue/commit/49da1650be7f0671a63e1c7b7300b11bc592de4a) - **dependencies**: update dependencies *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`3e8dc54`](https://github.com/sfxcode/formkit-primevue/commit/3e8dc54b848e4270090d43466e14828dc47eefe9) - **dependencies**: update dependencies *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`709a452`](https://github.com/sfxcode/formkit-primevue/commit/709a452fdd7ccea673e99a0f431b28da62d9c12b) - **release**: update package because of deprecation *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
+## [1.2.1](https://github.com/sfxcode/formkit-primevue/compare/v1.2.0...v1.2.1) (2023-07-18)
+
+
+### Maintenance
+
+* **dependencies:** PrimeVue 3.30.1 ([162464d](https://github.com/sfxcode/formkit-primevue/commit/162464d215d46df335ad4e48d1246883f6f76684))
+
 ## [1.2.0](https://github.com/sfxcode/formkit-primevue/compare/v1.1.2...v1.2.0) (2023-07-12)
 
 
@@ -14,6 +38,7 @@
 * **dependencies:** Formkit 0.17.3 - primevue 3.29.2 ([d3b7836](https://github.com/sfxcode/formkit-primevue/commit/d3b7836cec31535dde8b6a07ae9a0e6aa5410610))
 * **dependencies:** Formkit 0.17.4 ([ed34919](https://github.com/sfxcode/formkit-primevue/commit/ed34919da554a5c6995c9dd3f33a388ecc7b4111))
 * **dependencies:** Formkit 0.17.4 ([5b6328b](https://github.com/sfxcode/formkit-primevue/commit/5b6328ba14e96ffa25adbf1053b6d76177201323))
+* **dependencies:** PrimeVue 3.30.0 ([047c258](https://github.com/sfxcode/formkit-primevue/commit/047c258357108da5b7239e2408d3aef95e7a113b))
 * **dependencies:** PrimeVue 3.30.0 ([db746df](https://github.com/sfxcode/formkit-primevue/commit/db746df91ff432804f1ab346709e5d03f931241f))
 * **dependencies:** update dependencies ([55f3dd9](https://github.com/sfxcode/formkit-primevue/commit/55f3dd967ebd3a63dc962b42c7c5dab4e7c6b868))
 * **dependencies:** Vue 3.3.4 ([2d0129f](https://github.com/sfxcode/formkit-primevue/commit/2d0129f836388a9625580e5ca2b484eda1e235fa))
@@ -197,3 +222,7 @@
 * **Notes:** Readme and Some package info ([c2af7b0](https://github.com/sfxcode/formkit-primevue/commit/c2af7b07fb288c38abc51fd820fb97772483a48c))
 * **release:** new version ([784260f](https://github.com/sfxcode/formkit-primevue/commit/784260f4d141e168df74dec3a5f12f48cbba63ef))
 
+
+[v1.2.9]: https://github.com/sfxcode/formkit-primevue/compare/v1.2.8...v1.2.9
+[v1.3.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.2.9...v1.3.0
+[v1.3.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.2...v1.3.3

@@ -31,6 +31,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :auto-clear="attrs.autoClear ?? true"
       :unmask="attrs.unmask ?? false"
       :pt="attrs.pt"
+      :pt-options="attrs.ptOptions"
+      :unstyled="attrs.unstyled ?? false"
       @blur="handleInput"
     />
   </div>

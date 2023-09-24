@@ -30,6 +30,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :option-value="attrs.optionValue ?? 'value'"
       :filter="attrs.filter ?? false"
       :pt="attrs.pt"
+      :pt-options="attrs.ptOptions"
+      :unstyled="attrs.unstyled ?? false"
       @change="handleChange"
     />
   </div>

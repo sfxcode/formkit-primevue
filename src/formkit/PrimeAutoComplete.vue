@@ -6,7 +6,13 @@ const props = defineProps({
 const context = props.context
 const attrs = context?.attrs
 
-function handleChange(e: any) {
+const suggestions = ref([])
+
+function search(event) {
+  suggestions.value = attrs.complete(event.query)
+}
+
+function handleInput(e: any) {
   context?.node.input(props.context?._value)
 }
 
@@ -15,22 +21,21 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
 
 <template>
   <div>
-    <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.attrs.labelLeft }}</span>
-    <TriStateCheckbox
+    <AutoComplete
+      :id="context.id"
       v-model="context._value"
-      :input-id="context.id"
       :disabled="attrs._disabled ?? false"
-      :readonly="attrs._readonly ?? false"
-      :input-style="attrs.style"
-      :input-class="styleClass"
       :tabindex="attrs.tabindex"
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
+      :suggestions="suggestions"
+      :dropdown="attrs?.dropdown ?? false"
+      :multiple="attrs.multiple ?? false"
       :pt="attrs.pt"
       :pt-options="attrs.ptOptions"
       :unstyled="attrs.unstyled ?? false"
-      @click="handleChange"
+      @complete="search"
+      @change="handleInput"
     />
-    <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.attrs.labelRight }}</span>
   </div>
 </template>

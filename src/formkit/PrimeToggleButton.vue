@@ -30,6 +30,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :off-icon="attrs.offIcon ?? 'pi pi-times'"
       :icon-pos="attrs.iconPos ?? 'left'"
       :pt="attrs.pt"
+      :pt-options="attrs.ptOptions"
+      :unstyled="attrs.unstyled ?? false"
       @change="handleChange"
     />
   </div>

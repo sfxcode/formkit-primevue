@@ -51,7 +51,7 @@ const data = { name: 'tom', iconRight: 'Some Text ...' }
 </script>
 
 <template>
-  <div class="bg-teal-400">
+  <div class="">
     <PrimeInput
       header="PrimeInputText" :schema="schema" :data="data"
       :prime-attributes="primeAttributes" :custom-attributes="customAttributes"

@@ -44,7 +44,7 @@ const documentationLink = `https://primevue.org/${props.header.replace('Prime', 
           <TabPanel v-if="primeAttributes || customAttributes" header="Supported Attributes">
             <h4>Base Attributes</h4>
             <div>
-              <span>_disabled, _readonly, style, class, tabindex, ariaLabel, ariaLabelledby</span>
+              <span>_disabled, _readonly, style, class, tabindex, ariaLabel, ariaLabelledby, pt, ptOptions, unstyled</span>
             </div>
             <h4>PrimeVue Attributes</h4>
             <div>
