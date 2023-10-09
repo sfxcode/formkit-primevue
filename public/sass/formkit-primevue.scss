@@ -6,7 +6,7 @@
 }
 
 .formkit-outer {
-  margin: 4px;
+  margin: 0;
   padding-bottom: 12px;
   ul {
     margin-block-start: 2px;
@@ -86,6 +86,10 @@
   margin: 4px 0 0 0 ;
   font-size: 0.8rem;
   color: var(--text-color-secondary);
+}
+
+.formkit-messages {
+  padding: 0;
 }
 
 .formkit-message {
