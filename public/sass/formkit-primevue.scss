@@ -1,3 +1,7 @@
+:root {
+  --formkit-error-color: #ef9a9a;
+}
+
 .formkit-form > .formkit-messages {
   margin: 4px;
   .formkit-message {
@@ -18,7 +22,7 @@
     .formkit-message {
       padding: 0;
       margin: 0;
-      color: #ef9a9a;
+      color: var(--formkit-error-color);
       list-style: none;
       font-size: 0.8rem;
     }
@@ -95,7 +99,7 @@
 .formkit-message {
   padding: 0;
   margin: 0;
-  color: #ef9a9a;
+  color: var(--formkit-error-color);
   list-style: none;
   font-size: 0.8rem;
 }
