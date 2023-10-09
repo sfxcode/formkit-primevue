@@ -22,7 +22,7 @@ const documentationLink = `https://primevue.org/${props.header.replace('Prime', 
     <h1>{{ header }}</h1>
 
     <div class="flex flex-wrap">
-      <div class="min-w-lg mb-6">
+      <div class="min-w-lg mb-6 mr-6">
         <FormKit
           id="form"
           v-model="formData"

@@ -9,6 +9,7 @@ const schema
       $formkit: 'primeSlider',
       name: 'slider',
       label: 'Use Slider',
+      class: 'mt-2 w-48',
       min: 5,
       max: 100,
       step: 5,

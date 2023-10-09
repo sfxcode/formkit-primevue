@@ -40,7 +40,7 @@ const schema
       label: 'Icon Both Sides',
       help: '',
       style: 'background:gray;',
-      class: 'customClass',
+      class: 'customClass w-64',
       iconLeft: 'pi pi-plus',
       iconRight: 'pi pi-check',
     },

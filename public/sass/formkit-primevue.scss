@@ -8,7 +8,6 @@
 .formkit-outer {
   margin: 4px;
   padding-bottom: 12px;
-  width: 400px;
   ul {
     margin-block-start: 2px;
     margin-block-end: 2px;
@@ -26,16 +25,26 @@
   }
 }
 
-.formkit-wrapper,
-.formkit-fieldset {
-  max-width: 0;
+.formkit-outer[data-type="primeInputSwitch"], .formkit-outer[data-type="primeCheckbox"], .formkit-outer[data-type="primeTriStateCheckBox"], .formkit-outer[data-type="primeRadioButton"] {
+  .formkit-inner {
+
+    .formkit-prime-right {
+      margin-left: 10px;
+      font-size: 1rem;
+    }
+
+    .formkit-prime-left {
+      margin-right: 10px;
+      font-size: 1rem;
+    }
+  }
 }
+
 
 .formkit-label {
   display: block;
   margin: 0;
   padding-bottom: 6px;
-  width: 300px;
   font-weight: bold;
   font-size: 0.8rem;
 }
@@ -77,10 +86,6 @@
   margin: 4px 0 0 0 ;
   font-size: 0.8rem;
   color: var(--text-color-secondary);
-}
-
-.formkit-messages {
-  padding: 0;
 }
 
 .formkit-message {
