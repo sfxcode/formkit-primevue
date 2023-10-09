@@ -12,7 +12,7 @@ function handleChange(e: any) {
 </script>
 
 <template>
-  <div>
+  <div class="p-formkit">
     <ColorPicker
       v-model="context._value"
       :disabled="attrs._disabled ?? false"

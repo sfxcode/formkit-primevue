@@ -18,7 +18,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
 </script>
 
 <template>
-  <div>
+  <div class="p-formkit">
     <Calendar
       v-model="context._value"
       :input-id="props.context.id"
