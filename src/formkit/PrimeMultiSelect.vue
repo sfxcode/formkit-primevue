@@ -25,6 +25,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :tabindex="attrs.tabindex"
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
+      :placeholder="attrs.placeholder"
       :options="attrs.options"
       :option-label="attrs.optionLabel ?? 'label'"
       :option-value="attrs.optionValue ?? 'value'"
