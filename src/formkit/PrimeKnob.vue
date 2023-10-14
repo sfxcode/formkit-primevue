@@ -19,7 +19,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
 </script>
 
 <template>
-  <div>
+  <div class="p-formkit">
     <Knob
       :id="context.id"
       v-model="context._value"

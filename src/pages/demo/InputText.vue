@@ -2,10 +2,6 @@
 const primeAttributes = 'placeholder'
 const customAttributes = 'iconLeft, iconRight'
 
-const pt_content = {
-  root: { style: 'font-weight: 600;' },
-}
-
 const schema
   = [
     {
@@ -13,9 +9,7 @@ const schema
       name: 'name',
       label: 'Basic',
       help: 'Required.',
-      validation: 'required',
-      pt: pt_content,
-      _readonly: true,
+      validation: 'required'
     },
     {
       $formkit: 'primeInputText',
@@ -40,7 +34,7 @@ const schema
       label: 'Icon Both Sides',
       help: '',
       style: 'background:gray;',
-      class: 'customClass',
+      class: 'customClass w-64',
       iconLeft: 'pi pi-plus',
       iconRight: 'pi pi-check',
     },

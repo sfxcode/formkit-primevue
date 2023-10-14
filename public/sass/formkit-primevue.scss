@@ -1,3 +1,7 @@
+:root {
+  --formkit-error-color: #ef9a9a;
+}
+
 .formkit-form > .formkit-messages {
   margin: 4px;
   .formkit-message {
@@ -6,9 +10,29 @@
 }
 
 .formkit-outer {
-  margin: 4px;
+  margin: 0;
   padding-bottom: 12px;
-  width: 400px;
+
+  .formkit-inner {
+
+    .p-formkit {
+
+      .p-formkit-icon {
+        box-sizing: border-box;
+        width: 100%;
+      }
+
+      .p-inputtext, .p-password, .p-multiselect, .p-dropdown {
+        box-sizing: border-box;
+        width: 100%;
+        &.p-colorpicker-preview {
+          width: 2rem;
+        }
+      }
+
+    }
+  }
+
   ul {
     margin-block-start: 2px;
     margin-block-end: 2px;
@@ -19,23 +43,33 @@
     .formkit-message {
       padding: 0;
       margin: 0;
-      color: #ef9a9a;
+      color: var(--formkit-error-color);
       list-style: none;
       font-size: 0.8rem;
     }
   }
 }
 
-.formkit-wrapper,
-.formkit-fieldset {
-  max-width: 0;
+.formkit-outer[data-type="primeInputSwitch"], .formkit-outer[data-type="primeCheckbox"], .formkit-outer[data-type="primeTriStateCheckBox"], .formkit-outer[data-type="primeRadioButton"] {
+  .formkit-inner {
+
+    .formkit-prime-right {
+      margin-left: 10px;
+      font-size: 1rem;
+    }
+
+    .formkit-prime-left {
+      margin-right: 10px;
+      font-size: 1rem;
+    }
+  }
 }
+
 
 .formkit-label {
   display: block;
   margin: 0;
   padding-bottom: 6px;
-  width: 300px;
   font-weight: bold;
   font-size: 0.8rem;
 }
@@ -62,16 +96,7 @@
   padding: 0;
 }
 
-.formkit-inner {
-  position: relative;
-  border-radius: 0;
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  &:focus-within {
 
-  }
-}
 
 .formkit-help {
   margin: 4px 0 0 0 ;
@@ -86,7 +111,7 @@
 .formkit-message {
   padding: 0;
   margin: 0;
-  color: #ef9a9a;
+  color: var(--formkit-error-color);
   list-style: none;
   font-size: 0.8rem;
 }

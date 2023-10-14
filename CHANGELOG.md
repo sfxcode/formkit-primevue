@@ -1,3 +1,44 @@
+## [v1.4.1] - 2023-10-14
+### :recycle: Refactors
+- [`e308a1d`](https://github.com/sfxcode/formkit-primevue/commit/e308a1d226ca72cc88a2767f93143249189c6c2b) - **styles**: set width of inputs, dropdowns, ... to 100 % *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`29c63f1`](https://github.com/sfxcode/formkit-primevue/commit/29c63f1b94808f909d8dd063b65fd10143798d62) - **dependencies**: PrimeVue 3.36.0 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
+## [v1.4.0] - 2023-10-09
+### :boom: BREAKING CHANGES
+- due to [`cdb256c`](https://github.com/sfxcode/formkit-primevue/commit/cdb256c665c240f2d71a5c62070cf6dd663f0f7e) - Remove formkit-prime-inputs.scss *(commit by [@sfxcode](https://github.com/sfxcode))*:
+
+  Remove formkit-prime-inputs.scss
+
+
+### :sparkles: New Features
+- [`d0a2fd0`](https://github.com/sfxcode/formkit-primevue/commit/d0a2fd05df0a8054fe6da8a0ec9da3bcf656f2b8) - **Components**: Add p-formkit to each outer div for better styling *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :recycle: Refactors
+- [`c57b16c`](https://github.com/sfxcode/formkit-primevue/commit/c57b16c4107a8f21073fb563c5b11c4a90de8752) - **styles**: Remove all fixed With *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`cdb256c`](https://github.com/sfxcode/formkit-primevue/commit/cdb256c665c240f2d71a5c62070cf6dd663f0f7e) - **styles**: Remove formkit-prime-inputs.scss *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`33222fb`](https://github.com/sfxcode/formkit-primevue/commit/33222fb8f04e54c4f02e8655ba5b894e34a3c8ec) - **styles**: remove some margins *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`00bdba3`](https://github.com/sfxcode/formkit-primevue/commit/00bdba34cd64ae5f8dcc0ca9c1ea606ad3d0a881) - **styles**: extract error color *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`1a689cf`](https://github.com/sfxcode/formkit-primevue/commit/1a689cfcf2554d5e853a235bef0343f92f9853de) - **dependencies**: Formkit 1.2.2 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
+## [v1.3.5] - 2023-10-01
+### :wrench: Chores
+- [`aec7626`](https://github.com/sfxcode/formkit-primevue/commit/aec7626c3eeac6443fcf63f8df3e8b06c0d52aa4) - **dependencies**: Formkit 1.2.0, PrimeVue 3.35.0 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
+## [v1.3.4] - 2023-09-24
+### :bug: Bug Fixes
+- [`27c3f94`](https://github.com/sfxcode/formkit-primevue/commit/27c3f941cb1d19f4ebc520873f828cef948ae56a) - **Knob**: listen to update model value *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`f640b3e`](https://github.com/sfxcode/formkit-primevue/commit/f640b3e75ad1a5295fca844f07a5b1098b58122a) - **dependencies**: Formkit 1.1.0 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.3.3] - 2023-09-17
 ### :bug: Bug Fixes
 - [`43ea7e3`](https://github.com/sfxcode/formkit-primevue/commit/43ea7e3caa5b529530651d9a16bdabfe4f1b9ed0) - **Typo**: Import AutoComplete *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -226,3 +267,7 @@
 [v1.2.9]: https://github.com/sfxcode/formkit-primevue/compare/v1.2.8...v1.2.9
 [v1.3.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.2.9...v1.3.0
 [v1.3.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.2...v1.3.3
+[v1.3.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.3...v1.3.4
+[v1.3.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.4...v1.3.5
+[v1.4.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.5...v1.4.0
+[v1.4.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.0...v1.4.1

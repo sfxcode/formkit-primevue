@@ -35,8 +35,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
 </script>
 
 <template>
-  <div>
-    <span :class="spanClass()">
+  <div class="p-formkit">
+    <span class="p-formkit-icon" :class="spanClass()">
       <i v-if="hasLeftIcon()" :class="context.iconLeft" />
 
       <InputText

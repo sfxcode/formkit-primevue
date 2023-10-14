@@ -12,14 +12,18 @@ const schema
     },
     {
       $formkit: 'primeCheckbox',
-      name: 'eu_citizen',
       id: 'eu',
       labelLeft: 'Are you a european citizen: ',
     },
+  {
+    $formkit: 'primeCheckbox',
+    id: 'taxes',
+    labelRight: 'Taxes includes ',
+  },
     {
       $formkit: 'primeCheckbox',
       name: 'readonly',
-      label: 'readonly does not work atn',
+      label: 'readonly',
       _readonly: true,
     },
     {

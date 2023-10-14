@@ -20,9 +20,9 @@ const documentationLink = `https://primevue.org/${props.header.replace('Prime', 
 <template>
   <div>
     <h1>{{ header }}</h1>
-
-    <div class="flex flex-wrap">
-      <div class="min-w-lg mb-6">
+    <slot/>
+    <div class="flex flex-wrap gap-12">
+      <div class="min-w-30rem basis-1/3 md:basis-1/4">
         <FormKit
           id="form"
           v-model="formData"
@@ -36,7 +36,7 @@ const documentationLink = `https://primevue.org/${props.header.replace('Prime', 
         <h3>Data</h3>
         <pre>{{ formData }}</pre>
       </div>
-      <div class="max-w-xl">
+      <div class="">
         <TabView>
           <TabPanel header="Schema">
             <pre>{{ formSchema }}</pre>

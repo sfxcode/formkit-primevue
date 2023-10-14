@@ -13,7 +13,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
 </script>
 
 <template>
-  <div>
+  <div class="p-formkit">
     <Chips
       v-model="context._value"
       :input-id="context.id"

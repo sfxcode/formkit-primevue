@@ -14,7 +14,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
 </script>
 
 <template>
-  <div>
+  <div class="p-formkit">
     <MultiSelect
       v-model="context._value"
       :input-id="context.id"
@@ -25,10 +25,16 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :tabindex="attrs.tabindex"
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
+      :placeholder="attrs.placeholder"
       :options="attrs.options"
       :option-label="attrs.optionLabel ?? 'label'"
       :option-value="attrs.optionValue ?? 'value'"
       :filter="attrs.filter ?? false"
+      :display="attrs.display"
+      :max-selected-labels="attrs.maxSelectedLabels"
+      :selected-items-label="attrs.selectedItemsLabel"
+      :selection-limit="attrs.selectionLimit"
+      :show-toggle-all="attrs.showToggleAll"
       :pt="attrs.pt"
       :pt-options="attrs.ptOptions"
       :unstyled="attrs.unstyled ?? false"
