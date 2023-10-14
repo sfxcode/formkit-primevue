@@ -2,10 +2,6 @@
 const primeAttributes = 'placeholder'
 const customAttributes = 'iconLeft, iconRight'
 
-const pt_content = {
-  root: { style: 'font-weight: 600;' },
-}
-
 const schema
   = [
     {
@@ -14,7 +10,6 @@ const schema
       label: 'Basic',
       help: 'Required.',
       validation: 'required',
-      pt: pt_content,
       _readonly: true,
     },
     {

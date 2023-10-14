@@ -53,7 +53,17 @@ const items = ref([
           ],
         },
       ],
+
+    [
+        {
+          label: 'Styling',
+          items: [
+            { label: 'Basic', icon: 'pi pi-fw pi-user-edit', to: '/demo/styling' },
+            { label: 'Pass Through', icon: 'pi pi-fw pi-user-edit', to: '/demo/passThrough' },
+          ],
+        },
     ],
+        ]
   },
 ])
 </script>
