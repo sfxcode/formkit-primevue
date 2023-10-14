@@ -1,3 +1,11 @@
+## [v1.4.1] - 2023-10-14
+### :recycle: Refactors
+- [`e308a1d`](https://github.com/sfxcode/formkit-primevue/commit/e308a1d226ca72cc88a2767f93143249189c6c2b) - **styles**: set width of inputs, dropdowns, ... to 100 % *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`29c63f1`](https://github.com/sfxcode/formkit-primevue/commit/29c63f1b94808f909d8dd063b65fd10143798d62) - **dependencies**: PrimeVue 3.36.0 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.4.0] - 2023-10-09
 ### :boom: BREAKING CHANGES
 - due to [`cdb256c`](https://github.com/sfxcode/formkit-primevue/commit/cdb256c665c240f2d71a5c62070cf6dd663f0f7e) - Remove formkit-prime-inputs.scss *(commit by [@sfxcode](https://github.com/sfxcode))*:
@@ -262,3 +270,4 @@
 [v1.3.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.3...v1.3.4
 [v1.3.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.4...v1.3.5
 [v1.4.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.5...v1.4.0
+[v1.4.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.0...v1.4.1
