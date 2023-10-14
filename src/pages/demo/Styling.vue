@@ -44,7 +44,7 @@ const data = { name: 'Some Text in Green', name2: 'Some bold Text in Gray' }
   </div>
 </template>
 
-<style lang='scss'>
+<style lang='scss' scoped>
 
 .p-formkit {
   width:60%;
