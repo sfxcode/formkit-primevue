@@ -12,6 +12,27 @@
 .formkit-outer {
   margin: 0;
   padding-bottom: 12px;
+
+  .formkit-inner {
+
+    .p-formkit {
+
+      .p-formkit-icon {
+        box-sizing: border-box;
+        width: 100%;
+      }
+
+      .p-inputtext, .p-password, .p-multiselect, .p-dropdown {
+        box-sizing: border-box;
+        width: 100%;
+        &.p-colorpicker-preview {
+          width: 2rem;
+        }
+      }
+
+    }
+  }
+
   ul {
     margin-block-start: 2px;
     margin-block-end: 2px;
@@ -75,16 +96,7 @@
   padding: 0;
 }
 
-.formkit-inner {
-  position: relative;
-  border-radius: 0;
-  display: flex;
-  align-items: center;
-  width: fit-content;
-  &:focus-within {
 
-  }
-}
 
 .formkit-help {
   margin: 4px 0 0 0 ;
