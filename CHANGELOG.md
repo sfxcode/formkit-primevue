@@ -1,3 +1,23 @@
+## [v1.4.0] - 2023-10-09
+### :boom: BREAKING CHANGES
+- due to [`cdb256c`](https://github.com/sfxcode/formkit-primevue/commit/cdb256c665c240f2d71a5c62070cf6dd663f0f7e) - Remove formkit-prime-inputs.scss *(commit by [@sfxcode](https://github.com/sfxcode))*:
+
+  Remove formkit-prime-inputs.scss
+
+
+### :sparkles: New Features
+- [`d0a2fd0`](https://github.com/sfxcode/formkit-primevue/commit/d0a2fd05df0a8054fe6da8a0ec9da3bcf656f2b8) - **Components**: Add p-formkit to each outer div for better styling *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :recycle: Refactors
+- [`c57b16c`](https://github.com/sfxcode/formkit-primevue/commit/c57b16c4107a8f21073fb563c5b11c4a90de8752) - **styles**: Remove all fixed With *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`cdb256c`](https://github.com/sfxcode/formkit-primevue/commit/cdb256c665c240f2d71a5c62070cf6dd663f0f7e) - **styles**: Remove formkit-prime-inputs.scss *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`33222fb`](https://github.com/sfxcode/formkit-primevue/commit/33222fb8f04e54c4f02e8655ba5b894e34a3c8ec) - **styles**: remove some margins *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`00bdba3`](https://github.com/sfxcode/formkit-primevue/commit/00bdba34cd64ae5f8dcc0ca9c1ea606ad3d0a881) - **styles**: extract error color *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`1a689cf`](https://github.com/sfxcode/formkit-primevue/commit/1a689cfcf2554d5e853a235bef0343f92f9853de) - **dependencies**: Formkit 1.2.2 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.3.5] - 2023-10-01
 ### :wrench: Chores
 - [`aec7626`](https://github.com/sfxcode/formkit-primevue/commit/aec7626c3eeac6443fcf63f8df3e8b06c0d52aa4) - **dependencies**: Formkit 1.2.0, PrimeVue 3.35.0 *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -241,3 +261,4 @@
 [v1.3.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.2...v1.3.3
 [v1.3.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.3...v1.3.4
 [v1.3.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.4...v1.3.5
+[v1.4.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.5...v1.4.0
