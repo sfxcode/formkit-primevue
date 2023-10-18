@@ -30,6 +30,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
       :date-format="attrs.dateFormat"
+      :placeholder="attrs.placeholder"
       :selection-mode="attrs.selectionMode ?? 'single'"
       :inline="attrs.inline ?? false"
       :show-other-months="attrs.showOtherMonths ?? true"

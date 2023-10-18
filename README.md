@@ -35,6 +35,7 @@ You can use it or take it as base for your own styling.
 - All inputs are wrapped in a div with a **p-formkit** class
 - Most Prime Components have access to class / styles attributes
 - PT and PTOptions are available ([https://primevue.org/passthrough/](https://primevue.org/passthrough/))
+- [Styling](https://formkit-primevue.netlify.app/demo/styling), [Grid](https://formkit-primevue.netlify.app/demo/grid) and [PT](https://formkit-primevue.netlify.app/demo/passThrough) demo available
 
 ## Showcases
 

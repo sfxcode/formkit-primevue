@@ -8,6 +8,8 @@ const schema
       id: 'basic',
       name: 'basic',
       label: 'Basic',
+      placeholder: 'MM/DD/YYYY',
+      validation: 'required',
     },
     {
       $formkit: 'primeCalendar',
