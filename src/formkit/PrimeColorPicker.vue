@@ -4,7 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = context?.attrs
+const attrs = computed(() => context?.attrs)
 
 function handleChange(e: any) {
   context?.node.input(props.context?._value)
