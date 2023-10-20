@@ -4,19 +4,19 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = context?.attrs
+const attrs = computed(() => context?.attrs)
 
 const suggestions = ref([])
 
 function search(event) {
-  suggestions.value = attrs.complete(event.query)
+  suggestions.value = attrs.value.complete(event.query)
 }
 
 function handleInput(e: any) {
   context?.node.input(props.context?._value)
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs?.class} p-invalid` : attrs?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
 </script>
 
 <template>

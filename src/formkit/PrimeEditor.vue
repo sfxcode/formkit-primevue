@@ -6,7 +6,7 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = context?.attrs
+const attrs = computed(() => context?.attrs)
 
 function handleInput(e: any) {
   context?.node.input(e.htmlValue)
@@ -17,7 +17,7 @@ function handleSelection(e: EditorSelectionChangeEvent) {
     context?.handlers.blur(e.htmlValue)
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs?.class} p-invalid` : attrs?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
 </script>
 
 <template>

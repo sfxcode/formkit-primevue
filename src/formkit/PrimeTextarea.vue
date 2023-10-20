@@ -4,7 +4,7 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = context?.attrs
+const attrs = computed(() => context?.attrs)
 
 function handleBlur(e: any) {
   context?.handlers.blur(e.target.value)
@@ -13,7 +13,7 @@ function handleBlur(e: any) {
 function handleInput(e: any) {
   context?.node.input(e.target.value)
 }
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs?.class} p-invalid` : attrs?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
 </script>
 
 <template>
