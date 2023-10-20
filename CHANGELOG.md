@@ -1,3 +1,11 @@
+## [v1.4.3] - 2023-10-20
+### :recycle: Refactors
+- [`3545e23`](https://github.com/sfxcode/formkit-primevue/commit/3545e238af31742a0d758a1d3b1b9de55c3178d5) - **styling**: change some px to rem *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`b24cf50`](https://github.com/sfxcode/formkit-primevue/commit/b24cf50d09580aba1a367b5c022b76978080b86e) - **dependencies**: PrimeVue 3.37.0 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.4.2] - 2023-10-18
 ### :sparkles: New Features
 - [`7de1387`](https://github.com/sfxcode/formkit-primevue/commit/7de13876a7d9e856aeb3bcc3e74c8395d72df918) - **footer**: update versions *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -303,3 +311,4 @@
 [v1.4.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.3.5...v1.4.0
 [v1.4.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.0...v1.4.1
 [v1.4.2]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.1...v1.4.2
+[v1.4.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.2...v1.4.3
