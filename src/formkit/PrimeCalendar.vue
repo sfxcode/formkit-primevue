@@ -1,4 +1,6 @@
 <script setup lang='ts'>
+import {CalendarBlurEvent} from "primevue/calendar";
+
 const props = defineProps({
   context: Object,
 })
@@ -12,6 +14,10 @@ function handleInput(e: any) {
 
 function handleSelect(e: any) {
   context?.node.input(e)
+}
+
+function handleBlur(e: CalendarBlurEvent) {
+  context?.handlers.blur(e.value)
 }
 
 const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
@@ -75,6 +81,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :unstyled="attrs.unstyled ?? false"
       @date-select="handleSelect"
       @input="handleInput"
+      @blur="handleBlur"
     />
   </div>
 </template>
