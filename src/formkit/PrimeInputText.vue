@@ -17,9 +17,9 @@ function hasRightIcon() {
 function spanClass() {
   let result = ''
   if (hasLeftIcon())
-    result = `${result}p-input-icon-left `
+    result = `p-formkit-icon ${result}p-input-icon-left `
   if (hasRightIcon())
-    result = `${result}p-input-icon-right `
+    result = `p-formkit-icon ${result}p-input-icon-right `
   return result
 }
 
@@ -36,8 +36,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
 
 <template>
   <div class="p-formkit">
-    <span class="p-formkit-icon" :class="spanClass()">
-      <i v-if="hasLeftIcon()" :class="context.iconLeft" />
+    <span :class="spanClass()">
+      <i v-if="hasLeftIcon()" :class="context?.iconLeft" />
 
       <InputText
         :id="context.id"
@@ -56,7 +56,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
         @input="handleInput"
         @blur="handleBlur"
       />
-      <i v-if="hasRightIcon" :class="context.iconRight" />
+      <i v-if="hasRightIcon()" :class="context?.iconRight" />
     </span>
   </div>
 </template>
