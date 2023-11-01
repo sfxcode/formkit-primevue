@@ -1,3 +1,15 @@
+## [v1.4.4] - 2023-11-01
+### :sparkles: New Features
+- [`7b6bf53`](https://github.com/sfxcode/formkit-primevue/commit/7b6bf533128fc2ea5c2f450d65a8a36e66af1d11) - **PrimeAutoComplete**: Add to demos *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :bug: Bug Fixes
+- [`09d5f0d`](https://github.com/sfxcode/formkit-primevue/commit/09d5f0d4f227297c58ab534e4b22c769c1ea7997) - **PrimeInputText**: icon tag was shown even when no icons should be used *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`aa79a53`](https://github.com/sfxcode/formkit-primevue/commit/aa79a53ccda76faca7b8fd6ba9fb122bd8623323) - **PrimeCalendar**: does not trigger error when validation: 'required" on blur [#22](https://github.com/sfxcode/formkit-primevue/pull/22) *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`1d90b92`](https://github.com/sfxcode/formkit-primevue/commit/1d90b929f7c060ae332d96e7e6a8ee01b6a39bf8) - **dependencies**: PrimeVue 3.38.1 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.4.3] - 2023-10-20
 ### :recycle: Refactors
 - [`3545e23`](https://github.com/sfxcode/formkit-primevue/commit/3545e238af31742a0d758a1d3b1b9de55c3178d5) - **styling**: change some px to rem *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -312,3 +324,4 @@
 [v1.4.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.0...v1.4.1
 [v1.4.2]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.1...v1.4.2
 [v1.4.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.2...v1.4.3
+[v1.4.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.3...v1.4.4
