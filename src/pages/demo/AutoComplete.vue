@@ -16,7 +16,7 @@ const schema
       id: 'basic',
       name: 'basic',
       complete: search,
-      label: 'Basic AutoComplete',
+      label: 'Basic AutoComplete - Use [h]ello',
     },
   ]
 

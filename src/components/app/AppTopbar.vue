@@ -46,6 +46,7 @@ const items = ref([
         {
           label: 'Misc',
           items: [
+            { label: 'AutoComplete', icon: 'pi pi-fw pi-user-edit', to: '/demo/autoComplete' },
             { label: 'ColorPicker', icon: 'pi pi-fw pi-user-edit', to: '/demo/colorPicker' },
             { label: 'Knob', icon: 'pi pi-fw pi-user-edit', to: '/demo/knob' },
             { label: 'Slider', icon: 'pi pi-fw pi-user-edit', to: '/demo/slider' },
