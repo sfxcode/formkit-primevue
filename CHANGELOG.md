@@ -1,3 +1,8 @@
+## [v1.4.5] - 2023-11-02
+### :bug: Bug Fixes
+- [`5a48d8e`](https://github.com/sfxcode/formkit-primevue/commit/5a48d8ec6a809e029a0ddcb3f00f362738f4d4ff) - **Build**: Build was broken in 1.4.4 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.4.4] - 2023-11-01
 ### :sparkles: New Features
 - [`7b6bf53`](https://github.com/sfxcode/formkit-primevue/commit/7b6bf533128fc2ea5c2f450d65a8a36e66af1d11) - **PrimeAutoComplete**: Add to demos *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -325,3 +330,4 @@
 [v1.4.2]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.1...v1.4.2
 [v1.4.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.2...v1.4.3
 [v1.4.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.3...v1.4.4
+[v1.4.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.4...v1.4.5
