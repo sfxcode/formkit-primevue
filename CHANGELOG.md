@@ -1,3 +1,9 @@
+## [v1.5.1] - 2023-11-12
+### :wrench: Chores
+- [`94c8377`](https://github.com/sfxcode/formkit-primevue/commit/94c8377952dc18362be2933f655dc7e5d6720ca1) - **release**: Next Version *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`f53eff4`](https://github.com/sfxcode/formkit-primevue/commit/f53eff4a1979febe6c6312ac12cd206481dcdc19) - **release**: Fix Version *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.4.5] - 2023-11-02
 ### :bug: Bug Fixes
 - [`5a48d8e`](https://github.com/sfxcode/formkit-primevue/commit/5a48d8ec6a809e029a0ddcb3f00f362738f4d4ff) - **Build**: Build was broken in 1.4.4 *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -331,3 +337,4 @@
 [v1.4.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.2...v1.4.3
 [v1.4.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.3...v1.4.4
 [v1.4.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.4...v1.4.5
+[v1.5.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.0...v1.5.1
