@@ -24,7 +24,6 @@ import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
 import Dialog from 'primevue/dialog'
 import Divider from 'primevue/divider'
 import Editor from 'primevue/editor'
-
 import Dropdown from 'primevue/dropdown'
 import Fieldset from 'primevue/fieldset'
 import FileUpload from 'primevue/fileupload'
