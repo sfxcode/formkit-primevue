@@ -1,3 +1,14 @@
+## [v1.5.2] - 2023-11-25
+### :sparkles: New Features
+- [`66f43e8`](https://github.com/sfxcode/formkit-primevue/commit/66f43e8e5beb0920975d8c3c6db1658a72330fad) - **textarea**: Textarea auto resize props [#27](https://github.com/sfxcode/formkit-primevue/pull/27) *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :bug: Bug Fixes
+- [`50ea352`](https://github.com/sfxcode/formkit-primevue/commit/50ea35223d47f8790bec180372e0725e17f3ecc4) - **modules**: Fix Vite 5 based problems *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`4c35b02`](https://github.com/sfxcode/formkit-primevue/commit/4c35b02591ace6c206073d511de824c9767d1803) - **dependencies**: PrimeVue 3.41.1 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.5.1] - 2023-11-12
 ### :wrench: Chores
 - [`94c8377`](https://github.com/sfxcode/formkit-primevue/commit/94c8377952dc18362be2933f655dc7e5d6720ca1) - **release**: Next Version *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -338,3 +349,4 @@
 [v1.4.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.3...v1.4.4
 [v1.4.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.4.4...v1.4.5
 [v1.5.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.0...v1.5.1
+[v1.5.2]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.1...v1.5.2
