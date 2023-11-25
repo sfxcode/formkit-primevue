@@ -26,6 +26,8 @@ jobs:
 
       - run: pnpm build
 
+      - run: pnpm docs:build
+
       - name: Update CHANGELOG
         id: changelog
         uses: requarks/changelog-action@v1
