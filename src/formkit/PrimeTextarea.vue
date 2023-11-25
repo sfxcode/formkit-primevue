@@ -30,6 +30,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :aria-labelledby="attrs.ariaLabelledby"
       :placeholder="attrs.placeholder"
       :rows="context.rows ?? 3"
+      :auto-resize="attrs.autoResize ?? false"
       :pt="attrs.pt"
       :pt-options="attrs.ptOptions"
       :unstyled="attrs.unstyled ?? false"

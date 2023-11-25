@@ -15,6 +15,7 @@ const schema
       name: 'name',
       label: '5 Rows',
       rows: 5,
+      autoResize: true,
     },
     {
       $formkit: 'primeTextarea',
