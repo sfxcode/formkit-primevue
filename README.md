@@ -2,6 +2,12 @@
 
 Helper classes for using [Formkit](https://formkit.com/) with the [PrimeVue UI Framework](https://www.primefaces.org/primevue/#/)
 
+## Docs
+
+[Docs](https://sfxcode.github.io/formkit-primevue/)
+
+[Demo/Playground](https://formkit-primevue.netlify.app/)
+
 ## Usage
 
 ```typescript

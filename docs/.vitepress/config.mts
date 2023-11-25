@@ -48,6 +48,10 @@ function nav() {
       text: 'External Docs',
       items: [
         {
+          text: 'Playground',
+          link: 'https://formkit-primevue.netlify.app',
+        },
+        {
           text: 'PrimeVue',
           link: 'https://www.primefaces.org/primevue',
         },
