@@ -16,6 +16,7 @@ E.g. InputMask -> primeInputMask
 
 ## Supported Inputs
 
+- AutoComplete
 - Calendar
 - Checkbox
 - Dropdown

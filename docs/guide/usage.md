@@ -1,31 +1,44 @@
 # Usage
 
-formkit-primevue was designed for easy integration into FormKit schema.
+To build a form a schema is required and some kind of data. 
 
-## Formkit Schema 
+More information can be found in the  [Formkit Schema](https://formkit.com/essentials/schema) documentation.
+
+## Example
 
 ```ts
 
-const schema
-  = [
-  {
-    $formkit: 'primeInputMask',
-    name: 'myInputMask',
-    label: 'Input Mask',
-    validation: 'required',
-    validationVisibility: 'live',
-    mask: '99-999999',
-    placeholder: '99-999999',
-  },
-  {
-    $formkit: 'primeInputMask',
-    name: 'custom',
-    label: 'Input Mask',
-    mask: '(999) 999-9999',
-    unmask: true,
-  },
-]
-const data = { }
+const schema = reactive(
+    [
+        {
+            $el: 'h2',
+            children: 'Registration Form',
+        },
+        {
+            $el: 'h3',
+            children: ['Register ', '$email'],
+        },
+        {
+            $formkit: 'primeInputText',
+            name: 'email',
+            label: 'Email',
+            help: 'This will be used for your account.',
+            validation: 'required|email',
+        },
+        {
+            $formkit: 'primeTextarea',
+            name: 'comment',
+            label: 'Text',
+            validation: '',
+            rows: '3',
+        }
+    ])
+
+const data = ref({ email: 'tom@sfxcode.com' })
+
+async function submitHandler() {
+    await new Promise(resolve => setTimeout(resolve, 1000))
+}
 ```
 
 ```vue

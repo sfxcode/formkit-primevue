@@ -31,7 +31,7 @@ Basic styling is provided with the **formkit-primevue.scss** file.
 Features:
 
 - Width of all text and dropdown elements is set to 100%
-- Error Color by varianble (--formkit-error-color)
+- Error Color by variable (--formkit-error-color)
 - Some margins, font sizes ...
 
 You can use it or take it as base for your own styling.
@@ -45,9 +45,9 @@ You can use it or take it as base for your own styling.
 
 ## Showcases
 
-A Nuxt 3 Module (PrimeVue and Formkit bundled) under [nuxt-primevue](https://github.com/sfxcode/nuxt-primevue)
+[Demo Application](https://formkit-primevue.netlify.app/)
 
-[Nuxt 3 PrimeVue Starter](https://github.com/sfxcode/nuxt3-primevue-starter) and [Vite PrimeVue Starter](https://github.com/sfxcode/vite-primevue-starter) with Formkit support available
+[Nuxt 3 PrimeVue Starter](https://github.com/sfxcode/nuxt3-primevue-starter) and [Vite PrimeVue Starter](https://github.com/sfxcode/vite-primevue-starter) with Formkit support available.
 
 ## Supported Inputs
 

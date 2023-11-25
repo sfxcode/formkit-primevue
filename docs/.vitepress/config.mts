@@ -89,6 +89,7 @@ function sidebarGuide() {
       items: [
         { text: 'Usage', link: '/guide/usage' },
         { text: 'PrimeVue Inputs', link: '/guide/inputs' },
+        { text: 'Styling', link: '/guide/styling' },
         { text: 'Sample Apps', link: '/guide/examples' },
       ],
     },
