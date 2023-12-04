@@ -1,13 +1,21 @@
 <script setup lang='ts'>
-const primeAttributes = 'placeholder'
+const primeAttributes = 'placeholder, feedback, mediumRegex, strongRegex, promptLabel, weakLabel, mediumLabel, strongLabel, hideIcon, showIcon, toggleMask'
 const schema
   = [
     {
       $formkit: 'primePassword',
+      name: 'password',
+      label: 'Password',
+      help: 'Enter your new password',
+      feedback: true,
+    },
+    {
+      $formkit: 'primePassword',
       name: 'password_confirm',
       label: 'Confirm password',
-      placeholder: 'password',
-
+      help: 'Enter your new password again.',
+      validation: 'required|confirm',
+      validationLabel: 'password confirmation',
     },
   ]
 
