@@ -40,8 +40,10 @@
     "docs:serve": "vitepress serve docs"
   },
   "dependencies": {
+    "@formkit/addons": "^1.4.0",
     "@formkit/i18n": "^1.4.0",
     "@formkit/vue": "^1.4.0",
+    "add": "^2.0.6",
     "primeicons": "^6.0.1",
     "primevue": "^3.43.0"
   },
