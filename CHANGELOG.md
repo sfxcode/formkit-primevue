@@ -1,3 +1,12 @@
+## [v1.5.7] - 2023-12-07
+### :wrench: Chores
+- [`365b23d`](https://github.com/sfxcode/formkit-primevue/commit/365b23d6cd3e1febb463dd7ef81d9f668625ddfe) - **dependencies**: Update vue, vite, unocss *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`130b8d2`](https://github.com/sfxcode/formkit-primevue/commit/130b8d2925f985abdc803296b5a9d4fa7f8b4cc2) - **demo**: Add missing password attributes in playground *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`b7fd077`](https://github.com/sfxcode/formkit-primevue/commit/b7fd07737d8a9a3ccec1429cc24884c1193d7de9) - **dependencies**: PrimeVue 3.43, FormKit 1.4.0 *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`959e8a7`](https://github.com/sfxcode/formkit-primevue/commit/959e8a74c1898f3a058b2aa32bd81f2bbe6e7bbf) - **feature**: add autoAnimate plugin *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`4aeaa98`](https://github.com/sfxcode/formkit-primevue/commit/4aeaa986d33d8fde7568bd901e3ef5fb47b250f4) - **release**: Next Version *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.5.6] - 2023-12-03
 ### :wrench: Chores
 - [`832bf64`](https://github.com/sfxcode/formkit-primevue/commit/832bf64e5625cc568ee5463a5b5f08c0fca81fad) - **dependencies**: PrimeVue 3.42 *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -356,3 +365,4 @@
 [v1.5.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.0...v1.5.1
 [v1.5.2]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.1...v1.5.2
 [v1.5.6]: https://github.com/sfxcode/formkit-primevue/compare/v_1.5.5...v1.5.6
+[v1.5.7]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.6...v1.5.7
