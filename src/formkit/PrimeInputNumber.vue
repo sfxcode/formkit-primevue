@@ -30,6 +30,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :aria-labelledby="attrs.ariaLabelledby"
       :placeholder="attrs.placeholder"
       :use-grouping="attrs.useGrouping ?? true"
+      :min="attrs.min ?? undefined"
+      :max="attrs.max ?? undefined"
       :min-fraction-digits="attrs.minFractionDigits ?? undefined"
       :max-fraction-digits="attrs.maxFractionDigits ?? undefined"
       :locale="attrs.locale ?? undefined"
