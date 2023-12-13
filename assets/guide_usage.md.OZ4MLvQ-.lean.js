@@ -1,0 +1,1 @@
+import{_ as s,o as i,c as a,R as n}from"./chunks/framework.isnNP9sq.js";const F=JSON.parse('{"title":"Usage","description":"","frontmatter":{},"headers":[],"relativePath":"guide/usage.md","filePath":"guide/usage.md"}'),l={name:"guide/usage.md"},h=n("",6),t=[h];function k(p,e,E,r,d,g){return i(),a("div",null,t)}const c=s(l,[["render",k]]);export{F as __pageData,c as default};
