@@ -1,3 +1,10 @@
+## [v1.5.9] - 2023-12-15
+### :wrench: Chores
+- [`f8145be`](https://github.com/sfxcode/formkit-primevue/commit/f8145be20900f52d61b84c669eb926c489df6507) - **dependencies**: PrimeVue 3.44 *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`19c3dae`](https://github.com/sfxcode/formkit-primevue/commit/19c3dae367c77f82229ee13dd4bf087e6ed13e44) - **dependencies**: Update all *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`aeef2e6`](https://github.com/sfxcode/formkit-primevue/commit/aeef2e6b2d8df8735a8679df16bc81dd3a90b3d2) - **release**: Next Version 1.5.9 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.5.8] - 2023-12-13
 ### :sparkles: New Features
 - [`c20ba7d`](https://github.com/sfxcode/formkit-primevue/commit/c20ba7d24847332c0ada47fcfa5fdfc43f6c7013) - **Components**: support more props on inputnumber *(commit by [@edwmurph](https://github.com/edwmurph))*
@@ -376,3 +383,4 @@
 [v1.5.6]: https://github.com/sfxcode/formkit-primevue/compare/v_1.5.5...v1.5.6
 [v1.5.7]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.6...v1.5.7
 [v1.5.8]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.7...v1.5.8
+[v1.5.9]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.8...v1.5.9
