@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import PrimeInput from '@/components/demo/PrimeInput.vue'
 
-const primeAttributes = 'placeholder, options, showClear, filter, optionLabel (default: label), optionValue (default: value)'
+const primeAttributes = 'placeholder, options, showClear, filter, optionLabel, optionValue'
 
 const options = [
   { label: 'Every page load', value: 'refresh' },
@@ -9,17 +9,40 @@ const options = [
   { label: 'Every day', value: 'daily' },
 ]
 
+const cities = [
+  { name: 'New York', code: 'NY' },
+  { name: 'Rome', code: 'RM' },
+  { name: 'London', code: 'LDN' },
+  { name: 'Istanbul', code: 'IST' },
+  { name: 'Paris', code: 'PRS' },
+]
+
+const stringArray = ['refresh', 'hourly', 'daily']
+
 const schema
   = [
     {
       $formkit: 'primeDropdown',
-      name: 'cookie_notice',
+      name: 'selectValue',
       label: 'Cookie notice Dropdown',
       value: 'hourly',
       optionLabel: 'label',
       optionValue: 'value',
       options,
       help: 'Cookie notice frequency ?',
+    },
+    {
+      $formkit: 'primeDropdown',
+      name: 'selectObjectByLabel',
+      label: 'Select Object Dropdown',
+      optionLabel: 'name',
+      options: cities,
+    },
+    {
+      $formkit: 'primeDropdown',
+      name: 'selectString',
+      label: 'Simple String Array Dropdown',
+      options: stringArray,
     },
     {
       $formkit: 'primeDropdown',

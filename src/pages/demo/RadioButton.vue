@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-const primeAttributes = 'options, optionLabel (default: label), optionValue (default: value)'
+const primeAttributes = 'options, optionLabel, optionValue'
 const customAttributes = 'options_class, option_class'
 
 const schema

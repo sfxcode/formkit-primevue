@@ -14,6 +14,10 @@ Features:
 
 You can use it or take it as base for your own styling.
 
+## PrimeVue Tailwind / Unstyled mode
+
+Make sure to add a class selector for **p-invalid**.
+
 ## Extended Styling
 
 - All inputs are wrapped in a div with a **p-formkit** class

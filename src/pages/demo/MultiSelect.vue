@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import PrimeInput from '@/components/demo/PrimeInput.vue'
 
-const primeAttributes = 'placeholder, options, filter, optionLabel (default: label), optionValue (default: value)'
+const primeAttributes = 'placeholder, options, filter, optionLabel, optionValue'
 
 const options = [
   { label: 'Every page load', value: 'refresh' },

@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import PrimeInput from '@/components/demo/PrimeInput.vue'
 
-const primeAttributes = 'options, optionLabel (default: label), optionValue (default: value), optionDisabled, multiple, unselectable, dataKey'
+const primeAttributes = 'options, optionLabel, optionValue, optionDisabled, multiple, unselectable, dataKey'
 
 const selectOptions = [
   { label: 'yes', value: 'YES' },
@@ -49,4 +49,3 @@ const data = { }
     />
   </div>
 </template>
-
