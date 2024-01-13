@@ -1,3 +1,8 @@
+## [v1.5.10] - 2024-01-13
+### :wrench: Chores
+- [`dc9010b`](https://github.com/sfxcode/formkit-primevue/commit/dc9010be8667292eea525b654b40ccd7fc3f4366) - **dependencies**: PrimeVue 3.46, VUE 3.4.x *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.5.9] - 2023-12-15
 ### :wrench: Chores
 - [`f8145be`](https://github.com/sfxcode/formkit-primevue/commit/f8145be20900f52d61b84c669eb926c489df6507) - **dependencies**: PrimeVue 3.44 *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -384,3 +389,4 @@
 [v1.5.7]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.6...v1.5.7
 [v1.5.8]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.7...v1.5.8
 [v1.5.9]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.8...v1.5.9
+[v1.5.10]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.9...v1.5.10
