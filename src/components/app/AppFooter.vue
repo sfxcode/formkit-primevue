@@ -4,7 +4,7 @@ const version = ref(import.meta.env.VITE_APP_VERSION)
 
 <template>
   <div class="mt-4 layout-footer">
-    <span class="font-medium ml-2">Formkit (1.3) - PrimeVue (3.40) - Version {{ version }}</span>
+    <span class="font-medium ml-2">Formkit (1.4) - PrimeVue (3.46) - Version {{ version }}</span>
   </div>
 </template>
 
