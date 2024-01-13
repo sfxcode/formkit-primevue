@@ -11,6 +11,8 @@ const schema
       name: 'basic',
       options_class: 'mt-1 flex flex-col space-y-2',
       option_class: 'flex space-x-2',
+      optionLabel: 'label',
+      optionValue: 'value',
       options: [
         { label: 'Every page load', value: 'refresh' },
         { label: 'Every hour', value: 'hourly' },
