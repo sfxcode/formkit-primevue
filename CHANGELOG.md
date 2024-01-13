@@ -1,3 +1,20 @@
+## [v1.6.0] - 2024-01-13
+### :boom: BREAKING CHANGES
+- due to [`5fa0972`](https://github.com/sfxcode/formkit-primevue/commit/5fa0972f9b26dc143577a991403f3663ca5b3888) - Merge pull request [#31](https://github.com/sfxcode/formkit-primevue/pull/31) from DanielleHuisman/fix/option-defaults *(commit by [@sfxcode](https://github.com/sfxcode))*:
+
+  OptionLabel or OptionValue has to be set
+
+- due to [`3133dc0`](https://github.com/sfxcode/formkit-primevue/commit/3133dc0803cdf73a1e795bc3f9965d020631fe17) - optionLabel and optionValue has no default values anymore *(commit by [@sfxcode](https://github.com/sfxcode))*:
+
+  OptionLabel or OptionValue has to be set manually
+
+
+### :recycle: Refactors
+- [`5fa0972`](https://github.com/sfxcode/formkit-primevue/commit/5fa0972f9b26dc143577a991403f3663ca5b3888) - **Options**: Merge pull request [#31](https://github.com/sfxcode/formkit-primevue/pull/31) from DanielleHuisman/fix/option-defaults *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`3133dc0`](https://github.com/sfxcode/formkit-primevue/commit/3133dc0803cdf73a1e795bc3f9965d020631fe17) - **Options**: optionLabel and optionValue has no default values anymore *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`e863176`](https://github.com/sfxcode/formkit-primevue/commit/e863176501c082f2ab9b188ad2fbb021370396b3) - **footer**: Footer in demo has now updated versions *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.5.10] - 2024-01-13
 ### :wrench: Chores
 - [`dc9010b`](https://github.com/sfxcode/formkit-primevue/commit/dc9010be8667292eea525b654b40ccd7fc3f4366) - **dependencies**: PrimeVue 3.46, VUE 3.4.x *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -390,3 +407,4 @@
 [v1.5.8]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.7...v1.5.8
 [v1.5.9]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.8...v1.5.9
 [v1.5.10]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.9...v1.5.10
+[v1.6.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.10...v1.6.0
