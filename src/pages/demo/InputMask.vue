@@ -9,7 +9,7 @@ const schema
       validation: 'required',
       validationVisibility: 'live',
       mask: '99-999999',
-      placeholder: '99-999999',
+      placeholder: '##-######',
     },
     {
       $formkit: 'primeInputMask',
@@ -17,6 +17,15 @@ const schema
       label: 'Input Mask',
       mask: '(999) 999-9999',
       unmask: true,
+    },
+    {
+      $formkit: 'primeInputMask',
+      name: 'phone',
+      label: 'Phone',
+      mask: '+1 (999) 999-9999',
+      placeholder: '+1 (###) ###-####',
+      validation: 'required',
+      validationVisibility: 'live',
     },
   ]
 
