@@ -1,3 +1,8 @@
+## [v1.6.2] - 2024-01-21
+### :wrench: Chores
+- [`07206b6`](https://github.com/sfxcode/formkit-primevue/commit/07206b69b43eca8784a11d6bf8b0ab8d3dabc1f1) - **dependencies**: FormKit 1.5.1 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.6.1] - 2024-01-17
 ### :sparkles: New Features
 - [`3b1a55e`](https://github.com/sfxcode/formkit-primevue/commit/3b1a55e2cae23e7eb570a56664eafc0e2a096e35) - **InputMask**: Add some more Demos [#33](https://github.com/sfxcode/formkit-primevue/pull/33) *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -417,3 +422,4 @@
 [v1.5.10]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.9...v1.5.10
 [v1.6.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.5.10...v1.6.0
 [v1.6.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.0...v1.6.1
+[v1.6.2]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.1...v1.6.2
