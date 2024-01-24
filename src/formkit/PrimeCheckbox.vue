@@ -32,7 +32,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :pt="attrs.pt"
       :pt-options="attrs.ptOptions"
       :unstyled="attrs.unstyled ?? false"
-      @input="handleInput"
+      @change="handleInput"
     />
     <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.attrs.labelRight }}</span>
   </div>
