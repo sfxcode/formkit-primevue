@@ -38,14 +38,15 @@ const schema = reactive(
       style: 'height: 160px;',
     },
     {
-      $formkit: 'primeInputText',
+      $formkit: 'primePassword',
       name: 'password',
       label: 'Password',
       help: 'Enter your new password.',
       validation: 'required|length:5,16',
+      feedback: true,
     },
     {
-      $formkit: 'primeInputText',
+      $formkit: 'primePassword',
       name: 'password_confirm',
       label: 'Confirm password',
       help: 'Enter your new password again.',

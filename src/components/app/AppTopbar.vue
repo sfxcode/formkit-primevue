@@ -1,6 +1,14 @@
 <script setup lang='ts'>
-function redirectToGithub(event: any) {
+function redirectToGithub() {
   window.open('https://github.com/sfxcode/formkit-primevue', '_blank')
+}
+
+function redirectToFormKit() {
+  window.open('https://formkit.com/', '_blank')
+}
+
+function redirectToPrimeVue() {
+  window.open('https://primevue.org', '_blank')
 }
 
 const version = ref(import.meta.env.VITE_APP_VERSION)
@@ -8,7 +16,6 @@ const version = ref(import.meta.env.VITE_APP_VERSION)
 const items = ref([
   {
     label: 'Demo',
-    icon: 'pi pi-fw pi-video',
     items: [
       [
         {
@@ -73,30 +80,42 @@ const items = ref([
 </script>
 
 <template>
-  <div class="layout-topbar">
-    <router-link to="/" class="layout-topbar-logo">
-      <span>Formkit-PrimeVue {{ version }}</span>
-    </router-link>
-    <MegaMenu :model="items">
-      <template #item="{ item }">
-        <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
-          <a v-ripple :href="href" class="text-lg" @click="navigate">
-            <span :class="item.icon" />
-            <span class="ml-2">{{ item.label }}</span>
-          </a>
+  <nav class="pb-4">
+    <Toolbar>
+      <template #start>
+        <router-link to="/" class="">
+          <span class="text-2xl">Formkit-PrimeVue  {{ version }}</span>
         </router-link>
-        <a v-else v-ripple :href="item.url" :target="item.target">
-          <span :class="item.icon" />
-          <span class="ml-2">{{ item.label }}</span>
-        </a>
       </template>
-    </MegaMenu>
-    <button class="p-link layout-topbar-button" @click="redirectToGithub">
-      <i class="pi pi-github" />
-      <span>Github</span>
-    </button>
-  </div>
+
+      <template #center>
+        <MegaMenu :model="items" class="mr-4">
+          <template #item="{ item }">
+            <router-link v-if="item.route" v-slot="{ href, navigate }" class="ml-2" :to="item.route" custom>
+              <a v-ripple :href="href" class="text-lg" @click="navigate">
+                <span :class="item.icon" />
+                <span class="ml-2">{{ item.label }}</span>
+              </a>
+            </router-link>
+            <a v-else v-ripple :href="item.url" :target="item.target">
+              <span :class="item.icon" />
+              <span class="ml-2">{{ item.label }}</span>
+            </a>
+          </template>
+        </MegaMenu>
+      </template>
+
+      <template #end>
+        <Button label="FormKit" class="mr-2" @click="redirectToFormKit" />
+        <Button label="PrimeVue" class="mr-2" @click="redirectToPrimeVue" />
+        <Button icon="pi pi-github" @click="redirectToGithub" />
+      </template>
+    </Toolbar>
+  </nav>
 </template>
 
-<style scoped>
+<style scoped lang='scss'>
+a {
+  color: var(--primary-color);
+}
 </style>

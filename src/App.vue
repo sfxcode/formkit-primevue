@@ -3,19 +3,15 @@ import AppTopBar from '@/components/app/AppTopbar.vue'
 </script>
 
 <template>
-  <div class="main">
+  <main class="p-2">
     <div class="">
-      <div>
-        <AppTopBar />
-      </div>
-      <div class="layout-main-container">
-        <div class="layout-main">
-          <router-view />
-        </div>
+      <AppTopBar />
+      <div class="pl-2">
+        <router-view />
       </div>
       <AppFooter />
     </div>
-  </div>
+  </main>
 </template>
 
 <style lang='scss'>
