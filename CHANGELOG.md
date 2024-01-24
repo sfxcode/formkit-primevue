@@ -1,3 +1,8 @@
+## [v1.6.4] - 2024-01-24
+### :bug: Bug Fixes
+- [`45d830a`](https://github.com/sfxcode/formkit-primevue/commit/45d830a223d08d64c2b7fcbe1720fcf4ede7aad0) - **Components**: CheckBoxes should listen to change events *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.6.3] - 2024-01-24
 ### :wrench: Chores
 - [`a7bf107`](https://github.com/sfxcode/formkit-primevue/commit/a7bf107010a0eab4860616ef69112f6283964880) - **dependencies**: PrimeVue 3.47 *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -429,3 +434,4 @@
 [v1.6.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.0...v1.6.1
 [v1.6.2]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.1...v1.6.2
 [v1.6.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.2...v1.6.3
+[v1.6.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.3...v1.6.4
