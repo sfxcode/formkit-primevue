@@ -20,6 +20,10 @@ function handleBlur(e: CalendarBlurEvent) {
   context?.handlers.blur(e.value)
 }
 
+function handleClearClick() {
+  context?.node.input(null)
+}
+
 const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
 </script>
 
@@ -82,6 +86,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       @date-select="handleSelect"
       @input="handleInput"
       @blur="handleBlur"
+      @clear-click="handleClearClick"
     />
   </div>
 </template>
