@@ -1,3 +1,12 @@
+## [v1.6.5] - 2024-02-02
+### :sparkles: New Features
+- [`fb8f595`](https://github.com/sfxcode/formkit-primevue/commit/fb8f59514a2010e9d4776b888ac4fc7f20596307) - **PrimeCalendar**: Support clearing value *(commit by [@edwmurph](https://github.com/edwmurph))*
+
+### :wrench: Chores
+- [`414fc23`](https://github.com/sfxcode/formkit-primevue/commit/414fc230fbc1e612446a9b12468e7c11cbe70abb) - **dependencies**: FormKit 1.5.3 *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`1eadf86`](https://github.com/sfxcode/formkit-primevue/commit/1eadf86b27c394c34230c7e5a0f1f00ada22fe14) - **release**: Next Version *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.6.4] - 2024-01-24
 ### :bug: Bug Fixes
 - [`45d830a`](https://github.com/sfxcode/formkit-primevue/commit/45d830a223d08d64c2b7fcbe1720fcf4ede7aad0) - **Components**: CheckBoxes should listen to change events *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -435,3 +444,4 @@
 [v1.6.2]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.1...v1.6.2
 [v1.6.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.2...v1.6.3
 [v1.6.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.3...v1.6.4
+[v1.6.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.4...v1.6.5
