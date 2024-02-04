@@ -1,6 +1,6 @@
 {
   "name": "@sfxcode/formkit-primevue",
-  "version": "1.6.5",
+  "version": "1.6.6",
   "type": "module",
   "license": "MIT",
   "repository": "https://github.com/sfxcode/formkit-primevue",
@@ -40,15 +40,15 @@
     "docs:serve": "vitepress serve docs"
   },
   "dependencies": {
-    "@formkit/addons": "^1.5.3",
-    "@formkit/i18n": "^1.5.3",
-    "@formkit/vue": "^1.5.3",
+    "@formkit/addons": "^1.5.5",
+    "@formkit/i18n": "^1.5.5",
+    "@formkit/vue": "^1.5.5",
     "add": "^2.0.6",
     "primeicons": "^6.0.1",
     "primevue": "^3.47.2"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "2.6.3",
+    "@antfu/eslint-config": "2.6.4",
     "@types/node": "^20.11.16",
     "@unocss/preset-icons": "^0.58.4",
     "@unocss/preset-uno": "0.58.4",
