@@ -11,6 +11,10 @@ function redirectToPrimeVue() {
   window.open('https://primevue.org', '_blank')
 }
 
+function redirectToDocs() {
+  window.open('https://sfxcode.github.io/formkit-primevue/', '_blank')
+}
+
 const version = ref(import.meta.env.VITE_APP_VERSION)
 
 const items = ref([
@@ -107,7 +111,8 @@ const items = ref([
 
       <template #end>
         <Button label="FormKit" class="mr-2" @click="redirectToFormKit" />
-        <Button label="PrimeVue" class="mr-2" @click="redirectToPrimeVue" />
+        <Button icon="pi pi-prime" label="PrimeVue" class="mr-2" @click="redirectToPrimeVue" />
+        <Button icon="pi pi-book" label="Docs" class="mr-2" @click="redirectToDocs" />
         <Button icon="pi pi-github" @click="redirectToGithub" />
       </template>
     </Toolbar>
