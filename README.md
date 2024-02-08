@@ -52,6 +52,7 @@ You can use it or take it as base for your own styling.
 ## Supported Inputs
 
 - Calendar
+- CascadeSelect
 - Checkbox
 - Dropdown
 - Editor (HTML Editor)
