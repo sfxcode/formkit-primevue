@@ -3,6 +3,7 @@ import { createInput } from '@formkit/vue'
 
 import PrimeAutoComplete from './PrimeAutoComplete.vue'
 import PrimeCalendar from './PrimeCalendar.vue'
+import PrimeCascadeSelect from './PrimeCascadeSelect.vue'
 import PrimeCheckbox from './PrimeCheckbox.vue'
 import PrimeChips from './PrimeChips.vue'
 import PrimeColorPicker from './PrimeColorPicker.vue'
@@ -108,6 +109,9 @@ export const primeSelectButtonDefinition: FormKitTypeDefinition = createInput(Pr
 export const primeTriStateCheckboxDefinition: FormKitTypeDefinition = createInput(PrimeTriStateCheckbox, {
   props: [],
 })
+export const primeCascadeSelectDefinition: FormKitTypeDefinition = createInput(PrimeCascadeSelect, {
+  props: [],
+})
 
 export const primeInputs = {
   primeAutoComplete: primeAutoCompleteDefinition,
@@ -132,4 +136,5 @@ export const primeInputs = {
   primeListbox: primeListboxDefinition,
   primeSelectButton: primeSelectButtonDefinition,
   primeTriStateCheckbox: primeTriStateCheckboxDefinition,
+  primeCascadeSelect: primeCascadeSelectDefinition,
 }

@@ -50,6 +50,7 @@ const items = ref([
         {
           label: 'Select',
           items: [
+            { label: 'CascadeSelect', icon: 'pi pi-fw pi-user-edit', route: '/demo/cascadeSelect' },
             { label: 'Dropdown', icon: 'pi pi-fw pi-user-edit', route: '/demo/dropdown' },
             { label: 'Listbox', icon: 'pi pi-fw pi-user-edit', route: '/demo/listbox' },
             { label: 'MultiSelect', icon: 'pi pi-fw pi-user-edit', route: '/demo/multiSelect' },
@@ -113,7 +114,7 @@ const items = ref([
   </nav>
   <MegaMenu :model="items" class="w-134">
     <template #item="{ item }">
-      <router-link v-if="item.route" v-slot="{ href, navigate }" class="ml-2" :to="item.route" custom>
+      <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
         <a v-ripple :href="href" class="text-lg" @click="navigate">
           <span :class="item.icon" />
           <span class="ml-2">{{ item.label }}</span>

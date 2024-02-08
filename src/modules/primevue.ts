@@ -9,6 +9,7 @@ import Breadcrumb from 'primevue/breadcrumb'
 import Calendar from 'primevue/calendar'
 import Card from 'primevue/card'
 import Carousel from 'primevue/carousel'
+import CascadeSelect from 'primevue/cascadeselect'
 import Chart from 'primevue/chart'
 import Checkbox from 'primevue/checkbox'
 import Chip from 'primevue/chip'
@@ -114,6 +115,7 @@ export const install: UserModule = ({ app, router, isClient }) => {
   app.component('Calendar', Calendar)
   app.component('Card', Card)
   app.component('Carousel', Carousel)
+  app.component('CascadeSelect', CascadeSelect)
   app.component('Chart', Chart)
   app.component('Checkbox', Checkbox)
   app.component('Chip', Chip)
