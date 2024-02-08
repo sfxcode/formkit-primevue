@@ -1,3 +1,15 @@
+## [v1.7.0] - 2024-02-08
+### :sparkles: New Features
+- [`2c1d9ae`](https://github.com/sfxcode/formkit-primevue/commit/2c1d9ae50acc94a9580b33bb4b56e861a4de705b) - **CascadeSelect**: Add new Form Element *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :recycle: Refactors
+- [`6409206`](https://github.com/sfxcode/formkit-primevue/commit/64092067943faf063cd950cdbb10a5f9a38f396d) - **demo**: Better Visibility of Menu Items *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`fa66550`](https://github.com/sfxcode/formkit-primevue/commit/fa6655033afcbd321a8976ec7a24ea994d7a9eb0) - **dependencies**: PrimeVue 3.48 *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`27eb2a7`](https://github.com/sfxcode/formkit-primevue/commit/27eb2a782a8dc68a472f5b0ffe866386fb21b7d0) - **release**: Next Version *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.6.5] - 2024-02-02
 ### :sparkles: New Features
 - [`fb8f595`](https://github.com/sfxcode/formkit-primevue/commit/fb8f59514a2010e9d4776b888ac4fc7f20596307) - **PrimeCalendar**: Support clearing value *(commit by [@edwmurph](https://github.com/edwmurph))*
@@ -445,3 +457,4 @@
 [v1.6.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.2...v1.6.3
 [v1.6.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.3...v1.6.4
 [v1.6.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.4...v1.6.5
+[v1.7.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.11...v1.7.0
