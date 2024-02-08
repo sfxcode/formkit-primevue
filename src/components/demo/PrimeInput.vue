@@ -19,7 +19,9 @@ const documentationLink = `https://primevue.org/${props.header.replace('Prime', 
 
 <template>
   <div>
-    <h1>{{ header }}</h1>
+    <h2 class="text-color-[var(--primary-color)] pb-2">
+      {{ header }}
+    </h2>
     <slot />
     <div class="flex flex-wrap gap-12">
       <div class="min-w-30rem basis-1/3 md:basis-1/4">

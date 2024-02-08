@@ -15,7 +15,13 @@ const version = ref(import.meta.env.VITE_APP_VERSION)
 
 const items = ref([
   {
-    label: 'Demo',
+    label: 'Demo -> ',
+    class: '',
+  },
+  {
+    label: 'Components',
+    icon: 'pi pi-box',
+    class: 'ml-2',
     items: [
       [
         {
@@ -63,7 +69,14 @@ const items = ref([
           ],
         },
       ],
+    ],
+  },
+  {
+    label: 'More',
+    icon: 'pi pi-box',
+    class: 'ml-2',
 
+    items: [
       [
         {
           label: 'Styling',
@@ -76,6 +89,7 @@ const items = ref([
       ],
     ],
   },
+
 ])
 </script>
 
@@ -84,26 +98,11 @@ const items = ref([
     <Toolbar>
       <template #start>
         <router-link to="/" class="">
-          <span class="text-2xl">Formkit-PrimeVue  {{ version }}</span>
+          <span class="text-3xl">Formkit PrimeVue Demo</span>
         </router-link>
       </template>
 
-      <template #center>
-        <MegaMenu :model="items" class="mr-4">
-          <template #item="{ item }">
-            <router-link v-if="item.route" v-slot="{ href, navigate }" class="ml-2" :to="item.route" custom>
-              <a v-ripple :href="href" class="text-lg" @click="navigate">
-                <span :class="item.icon" />
-                <span class="ml-2">{{ item.label }}</span>
-              </a>
-            </router-link>
-            <a v-else v-ripple :href="item.url" :target="item.target">
-              <span :class="item.icon" />
-              <span class="ml-2">{{ item.label }}</span>
-            </a>
-          </template>
-        </MegaMenu>
-      </template>
+      <template #center />
 
       <template #end>
         <Button label="FormKit" class="mr-2" @click="redirectToFormKit" />
@@ -112,6 +111,20 @@ const items = ref([
       </template>
     </Toolbar>
   </nav>
+  <MegaMenu :model="items" class="w-134">
+    <template #item="{ item }">
+      <router-link v-if="item.route" v-slot="{ href, navigate }" class="ml-2" :to="item.route" custom>
+        <a v-ripple :href="href" class="text-lg" @click="navigate">
+          <span :class="item.icon" />
+          <span class="ml-2">{{ item.label }}</span>
+        </a>
+      </router-link>
+      <a v-else v-ripple :href="item.url" :target="item.target">
+        <span :class="item.icon" />
+        <span class="ml-2">{{ item.label }}</span>
+      </a>
+    </template>
+  </MegaMenu>
 </template>
 
 <style scoped lang='scss'>

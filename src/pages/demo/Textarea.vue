@@ -39,7 +39,7 @@ const data = { }
 <template>
   <div>
     <PrimeInput
-      header="PrimeInputTextarea" :schema="schema" :data="data"
+      header="PrimeTextarea" :schema="schema" :data="data"
       :prime-attributes="primeAttributes"
     />
   </div>

@@ -79,7 +79,7 @@
     "vite-plugin-pages": "^0.32.0",
     "vite-ssg": "^0.23.6",
     "vitepress": "1.0.0-rc.42",
-    "vue": "^3.4.16",
+    "vue": "3.4.15",
     "vue-demi": "^0.14.7",
     "vue-router": "^4.2.5",
     "vue-tsc": "^1.8.27"
