@@ -1,3 +1,13 @@
+## [v1.7.1] - 2024-02-15
+### :sparkles: New Features
+- [`35b0cba`](https://github.com/sfxcode/formkit-primevue/commit/35b0cba12bf5dc6701f72d20f9ee840eb5318c12) - **TreeSelect**: Base Support *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`9a69fbb`](https://github.com/sfxcode/formkit-primevue/commit/9a69fbb2ab8fe7e474063acaf02405a465e4de2e) - **dependencies**: FormKit 1.5.9 *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`27a22e4`](https://github.com/sfxcode/formkit-primevue/commit/27a22e48994d899ceba3ed764115f381f2bc04d7) - **release**: Next Version *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`41dc5b4`](https://github.com/sfxcode/formkit-primevue/commit/41dc5b4cfe41300a10c0179f749163f7958b9867) - **release**: Next Version *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.7.0] - 2024-02-08
 ### :sparkles: New Features
 - [`2c1d9ae`](https://github.com/sfxcode/formkit-primevue/commit/2c1d9ae50acc94a9580b33bb4b56e861a4de705b) - **CascadeSelect**: Add new Form Element *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -458,3 +468,4 @@
 [v1.6.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.3...v1.6.4
 [v1.6.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.4...v1.6.5
 [v1.7.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.11...v1.7.0
+[v1.7.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.7.0...v1.7.1
