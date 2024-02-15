@@ -22,6 +22,7 @@ import PrimeRadioButton from './PrimeRadioButton.vue'
 import PrimeRating from './PrimeRating.vue'
 import PrimeSlider from './PrimeSlider.vue'
 import PrimeToggleButton from './PrimeToggleButton.vue'
+import PrimeTreeSelect from './PrimeTreeSelect.vue'
 import PrimeSelectButton from './PrimeSelectButton.vue'
 import PrimeTriStateCheckbox from './PrimeTriStateCheckbox.vue'
 
@@ -112,6 +113,9 @@ export const primeTriStateCheckboxDefinition: FormKitTypeDefinition = createInpu
 export const primeCascadeSelectDefinition: FormKitTypeDefinition = createInput(PrimeCascadeSelect, {
   props: [],
 })
+export const primeTreeSelectDefinition: FormKitTypeDefinition = createInput(PrimeTreeSelect, {
+  props: [],
+})
 
 export const primeInputs = {
   primeAutoComplete: primeAutoCompleteDefinition,
@@ -137,4 +141,5 @@ export const primeInputs = {
   primeSelectButton: primeSelectButtonDefinition,
   primeTriStateCheckbox: primeTriStateCheckboxDefinition,
   primeCascadeSelect: primeCascadeSelectDefinition,
+  primeTreeSelect: primeTreeSelectDefinition,
 }

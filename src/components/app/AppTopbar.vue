@@ -58,9 +58,10 @@ const items = ref([
             { label: 'Dropdown', icon: 'pi pi-fw pi-user-edit', route: '/demo/dropdown' },
             { label: 'Listbox', icon: 'pi pi-fw pi-user-edit', route: '/demo/listbox' },
             { label: 'MultiSelect', icon: 'pi pi-fw pi-user-edit', route: '/demo/multiSelect' },
+            { label: 'RadioButton', icon: 'pi pi-fw pi-user-edit', route: '/demo/radioButton' },
             { label: 'SelectButton', icon: 'pi pi-fw pi-user-edit', route: '/demo/selectButton' },
             { label: 'ToggleButton', icon: 'pi pi-fw pi-user-edit', route: '/demo/toggleButton' },
-            { label: 'RadioButton', icon: 'pi pi-fw pi-user-edit', route: '/demo/radioButton' },
+            { label: 'TreeSelect', icon: 'pi pi-fw pi-user-edit', route: '/demo/treeSelect' },
           ],
         },
         {

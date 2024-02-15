@@ -75,6 +75,7 @@ import TabPanel from 'primevue/tabpanel'
 import ToggleButton from 'primevue/togglebutton'
 import Tree from 'primevue/tree'
 import TreeTable from 'primevue/treetable'
+import TreeSelect from 'primevue/treeselect'
 import TriStateCheckbox from 'primevue/tristatecheckbox'
 
 import 'primevue/resources/primevue.min.css'
@@ -181,6 +182,7 @@ export const install: UserModule = ({ app, router, isClient }) => {
   app.component('ToggleButton', ToggleButton)
   app.component('Tree', Tree)
   app.component('TreeTable', TreeTable)
+  app.component('TreeSelect', TreeSelect)
   app.component('TriStateCheckbox', TriStateCheckbox)
 
   app.use(PrimeVue, { ripple: false })
