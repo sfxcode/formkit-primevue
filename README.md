@@ -72,6 +72,7 @@ You can use it or take it as base for your own styling.
 - SelectButton
 - TriStateCheckbox
 - RadioButton
+- TreeSelect
 
 ## Demo 
 [Demo/Playground](https://formkit-primevue.netlify.app/)

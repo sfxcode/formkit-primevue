@@ -16,8 +16,8 @@ E.g. InputMask -> primeInputMask
 
 ## Supported Inputs
 
-- AutoComplete
 - Calendar
+- CascadeSelect
 - Checkbox
 - Dropdown
 - Editor (HTML Editor)
@@ -37,4 +37,5 @@ E.g. InputMask -> primeInputMask
 - SelectButton
 - TriStateCheckbox
 - RadioButton
+- TreeSelect
 
