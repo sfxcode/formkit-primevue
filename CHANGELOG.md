@@ -2,6 +2,9 @@
 ### :wrench: Chores
 - [`ad693bc`](https://github.com/sfxcode/formkit-primevue/commit/ad693bcd9679905014b5f1c8b00fa63a5e2f9576) - **release**: Next Version 1.7.4 *(commit by [@sfxcode](https://github.com/sfxcode))*
 
+## [v1.7.3] - 2024-02-24
+### :bug: Bug Fixes
+- [`878c706`](https://github.com/sfxcode/formkit-primevue/commit/45d830a223d08d64c2b7fcbe1720fcf4ede7aad0) - **Components**: fix(state): Missing input disabled state, while submitting a form via XHR/Fetch request. #35 sfxcode  *(commit by [@sfxcode](https://github.com/sfxcode))*
 
 ## [v1.7.1] - 2024-02-15
 ### :sparkles: New Features
