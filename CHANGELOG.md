@@ -1,3 +1,8 @@
+## [v1.7.4] - 2024-02-24
+### :wrench: Chores
+- [`ad693bc`](https://github.com/sfxcode/formkit-primevue/commit/ad693bcd9679905014b5f1c8b00fa63a5e2f9576) - **release**: Next Version 1.7.4 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.7.1] - 2024-02-15
 ### :sparkles: New Features
 - [`35b0cba`](https://github.com/sfxcode/formkit-primevue/commit/35b0cba12bf5dc6701f72d20f9ee840eb5318c12) - **TreeSelect**: Base Support *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -469,3 +474,4 @@
 [v1.6.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.4...v1.6.5
 [v1.7.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.11...v1.7.0
 [v1.7.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.7.0...v1.7.1
+[v1.7.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.7.3...v1.7.4
