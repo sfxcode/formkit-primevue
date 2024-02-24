@@ -18,7 +18,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <Slider
       :id="context.id"
       v-model="context._value"
-      :disabled="attrs._disabled ?? false"
+      :disabled="attrs._disabled ?? !!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :style="attrs.style"
       :class="styleClass"

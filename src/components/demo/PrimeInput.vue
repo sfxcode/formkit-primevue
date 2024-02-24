@@ -2,6 +2,8 @@
 import { FormKitSchema } from '@formkit/vue'
 import { ref } from 'vue'
 import JsonEditorVue from 'json-editor-vue'
+import { useToast } from 'primevue/usetoast'
+import type { ToastMessageOptions } from 'primevue/toast'
 
 const props = defineProps<{
   header: string
@@ -11,14 +13,26 @@ const props = defineProps<{
   customAttributes?: string
 }>()
 
+const toast = useToast()
+
+function showMessage(severity: ToastMessageOptions['severity'], summary: string, detail: string) {
+  toast.add({ severity, summary, detail, life: 1000 })
+}
+
 const formSchema = ref(props.schema)
 const formData = ref(props.data)
 
 const documentationLink = `https://primevue.org/${props.header.replace('Prime', '').toLowerCase()}`
+
+async function submitHandler() {
+  showMessage('success', 'Form Submitted ...', 'Form submitted successfully')
+  await new Promise(resolve => setTimeout(resolve, 2000))
+}
 </script>
 
 <template>
   <div>
+    <Toast position="bottom-right" />
     <h2 class="text-color-[var(--primary-color)] pb-2">
       {{ header }}
     </h2>
@@ -32,6 +46,7 @@ const documentationLink = `https://primevue.org/${props.header.replace('Prime', 
           :submit-attrs="{
             inputClass: 'p-button p-component',
           }"
+          @submit="submitHandler"
         >
           <FormKitSchema :schema="formSchema" :data="formData" />
         </FormKit>

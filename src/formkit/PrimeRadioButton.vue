@@ -17,7 +17,10 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
   <div :class="attrs.options_class" class="p-formkit">
     <div v-for="option in attrs.options" :key="option.value" :class="attrs.option_class">
       <RadioButton
+        :id="context.id"
         v-model="context._value"
+        :disabled="attrs._disabled ?? !!context?.disabled"
+        :readonly="attrs._readonly ?? false"
         :name="attrs.name"
         :value="option.value"
         :input-style="attrs.style"

@@ -20,7 +20,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <Dropdown
       v-model="context._value"
       :input-id="context.id"
-      :disabled="attrs._disabled ?? false"
+      :disabled="attrs._disabled ?? !!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :style="attrs.style"
       :class="styleClass"

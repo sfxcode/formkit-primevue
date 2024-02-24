@@ -73,10 +73,6 @@ const schema = reactive(
 )
 
 const data = ref({ email: 'tom@sfxcode.com' })
-
-async function submitHandler() {
-  await new Promise(resolve => setTimeout(resolve, 1000))
-}
 </script>
 
 <template>

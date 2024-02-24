@@ -15,7 +15,7 @@ function handleChange(e: any) {
   <div class="p-formkit">
     <ColorPicker
       v-model="context._value"
-      :disabled="attrs._disabled ?? false"
+      :disabled="attrs._disabled ?? !!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :style="attrs.style"
       :panel-class="attrs.class"

@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import {CalendarBlurEvent} from "primevue/calendar";
+import type { CalendarBlurEvent } from 'primevue/calendar'
 
 const props = defineProps({
   context: Object,
@@ -32,7 +32,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <Calendar
       v-model="context._value"
       :input-id="props.context.id"
-      :disabled="attrs._disabled ?? false"
+      :disabled="attrs._disabled ?? !!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :input-style="attrs.style"
       :input-class="styleClass"

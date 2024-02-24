@@ -18,7 +18,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <InputSwitch
       v-model="context._value"
       :input-id="context.id"
-      :disabled="attrs._disabled ?? false"
+      :disabled="attrs._disabled ?? !!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :input-style="attrs.style"
       :input-class="styleClass"
