@@ -276,7 +276,7 @@ packages:
     resolution: {integrity: sha512-lFMjJTrFL3j7L9yBxwYfCq2k6qqwHyzuUl/XBnif78PWTJYyL/dfowQHWE3sp6U6ZzqWiiIZnpTMO96zhkjwtg==}
     engines: {node: '>=6.0.0'}
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.3
+      '@jridgewell/gen-mapping': 0.3.4
       '@jridgewell/trace-mapping': 0.3.23
 
   /@antfu/eslint-config@2.6.4(@vue/compiler-sfc@3.4.19)(eslint@8.57.0)(typescript@5.3.3):
@@ -421,7 +421,7 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/types': 7.23.9
-      '@jridgewell/gen-mapping': 0.3.3
+      '@jridgewell/gen-mapping': 0.3.4
       '@jridgewell/trace-mapping': 0.3.23
       jsesc: 2.5.2
 
@@ -2159,8 +2159,8 @@ packages:
       wrap-ansi-cjs: /wrap-ansi@7.0.0
     dev: true
 
-  /@jridgewell/gen-mapping@0.3.3:
-    resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
+  /@jridgewell/gen-mapping@0.3.4:
+    resolution: {integrity: sha512-Oud2QPM5dHviZNn4y/WhhYKSXksv+1xLEIsNrAbGcFzUN3ubqWRFT5gwPchNc5NuzILOU4tPBDTZ4VwhL8Y7cw==}
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/set-array': 1.1.2
