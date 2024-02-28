@@ -16,6 +16,11 @@ function handleInput(e: any) {
   context?.node.input(e)
   context?.handlers.blur(e)
 }
+
+function handleBlur(e: Event) {
+  context?.handlers.blur(e)
+}
+
 const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
 </script>
 
@@ -29,6 +34,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :style="attrs.style"
       :class="styleClass"
       @change="handleInput"
+      @blur="handleBlur"
     />
   </div>
 </template>

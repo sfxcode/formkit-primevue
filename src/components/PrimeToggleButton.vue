@@ -15,6 +15,11 @@ const attrs = computed(() => context?.attrs)
 function handleChange(e: any) {
   context?.node.input(props.context?._value)
 }
+
+function handleBlur(e: Event) {
+  context?.handlers.blur(e)
+}
+
 const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
 </script>
 
@@ -31,6 +36,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :on-icon="context.onIcon ?? 'pi pi-check'"
       :off-icon="context.offIcon ?? 'pi pi-times'"
       @change="handleChange"
+      @blur="handleBlur"
     />
   </div>
 </template>

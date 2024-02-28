@@ -29,8 +29,8 @@ function spanClass() {
   return result
 }
 
-function handleBlur(e: any) {
-  context?.handlers.blur(e.target.value)
+function handleBlur(e: Event) {
+  context?.handlers.blur(e)
 }
 
 function handleInput(e: any) {

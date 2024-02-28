@@ -15,6 +15,11 @@ const attrs = computed(() => context?.attrs)
 function handleInput(e: any) {
   context?.node.input(props.context?._value)
 }
+
+function handleBlur(e: Event) {
+  context?.handlers.blur(e)
+}
+
 const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
 </script>
 
@@ -30,6 +35,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :input-style="attrs.style"
       :input-class="styleClass"
       @change="handleInput"
+      @blur='handleBlur'
     />
     <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.attrs.labelRight }}</span>
   </div>

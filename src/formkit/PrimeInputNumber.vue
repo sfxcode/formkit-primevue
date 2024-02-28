@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue';
 import { type FormKitFrameworkContext } from '@formkit/core';
+import { InputNumberBlurEvent } from 'primevue/inputnumber'
 
 const props = defineProps({
   context: {
@@ -12,8 +13,8 @@ const props = defineProps({
 const context = props.context
 const attrs = computed(() => context?.attrs)
 
-function handleBlur(e: any) {
-  context?.handlers.blur(e.value)
+function handleBlur(e: InputNumberBlurEvent) {
+  context?.handlers.blur(e.originalEvent)
 }
 
 function handleInput(e: any) {

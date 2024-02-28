@@ -22,7 +22,7 @@ function handleSelect(e: any) {
 }
 
 function handleBlur(e: CalendarBlurEvent) {
-  context?.handlers.blur(e.value)
+  context?.handlers.blur(e.originalEvent)
 }
 
 function handleClearClick() {

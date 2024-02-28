@@ -12,9 +12,9 @@ const props = defineProps({
 const context = props.context
 const attrs = computed(() => context?.attrs)
 
-function handleInput(e: any) {
+function handleInput(e: Event) {
   context?.node.input(props.context?._value)
-  context?.handlers.blur(props.context?._value)
+  context?.handlers.blur(e)
 }
 const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
 </script>

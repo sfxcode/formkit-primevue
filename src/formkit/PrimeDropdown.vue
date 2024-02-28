@@ -12,8 +12,8 @@ const props = defineProps({
 const context = props.context
 const attrs = computed(() => context?.attrs)
 
-function handleBlur(e: any) {
-  context?.handlers.blur(e.value)
+function handleBlur(e: Event) {
+  context?.handlers.blur(e)
 }
 function handleInput(e: any) {
   context?.node.input(e.value)
