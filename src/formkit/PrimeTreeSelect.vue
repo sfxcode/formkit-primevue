@@ -17,20 +17,12 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
   <div class="p-formkit">
     <TreeSelect
       v-model="context._value"
+      v-bind="attrs"
       :input-id="context.id"
       :disabled="attrs._disabled ?? !!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :input-style="attrs.style"
       :input-class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
-      :options="attrs?.options"
-      :placeholder="attrs.placeholder"
-      :selection-mode="attrs.selectionMode"
-      :pt="attrs.pt"
-      :pt-options="attrs.ptOptions"
-      :unstyled="attrs.unstyled ?? false"
       @change="handleInput"
     />
   </div>

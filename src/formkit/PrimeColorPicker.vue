@@ -15,19 +15,11 @@ function handleChange(e: any) {
   <div class="p-formkit">
     <ColorPicker
       v-model="context._value"
+      v-bind="attrs"
       :disabled="attrs._disabled ?? !!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :style="attrs.style"
       :panel-class="attrs.class"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
-      :default-color="attrs.defaultColor ?? 'ff0000'"
-      :inline="attrs.inline ?? false"
-      :format="attrs.format"
-      :pt="attrs.pt"
-      :pt-options="attrs.ptOptions"
-      :unstyled="attrs.unstyled ?? false"
       @change="handleChange"
     />
   </div>

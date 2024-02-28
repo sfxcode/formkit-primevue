@@ -24,7 +24,7 @@ const schema
     {
       $formkit: 'primeListbox',
       name: 'styled',
-      label: 'Styled',
+      label: 'Styled and Diabled',
       value: 'hourly',
       style: 'background:gray;',
       class: 'customClass',

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 const primeAttributes = 'placeholder'
-const customAttributes = 'iconLeft, iconRight'
+const customAttributes = 'icon, icon'
 
 const schema
   = [
@@ -13,35 +13,26 @@ const schema
     },
     {
       $formkit: 'primeInputText',
-      id: 'iconLeft',
-      name: 'iconLeft',
-      label: 'Icon Left eee',
+      id: 'icon',
+      name: 'icon',
+      label: 'Icon Left',
       help: '',
-      placeholder: 'iconLeft',
-      iconLeft: 'pi pi-check',
+      placeholder: 'icon',
+      icon: 'pi pi-check',
+      iconPosition: 'left',
     },
     {
       $formkit: 'primeInputText',
-      name: 'iconRight',
+      name: 'icon',
       label: 'Icon Right (Disabled)',
       help: 'Right Icon Demo',
-      iconRight: 'pi pi-check',
+      icon: 'pi pi-check',
       _disabled: true,
-    },
-    {
-      $formkit: 'primeInputText',
-      name: 'iconBoth',
-      label: 'Icon Both Sides',
-      help: '',
-      style: 'background:gray;',
-      class: 'customClass w-64',
-      iconLeft: 'pi pi-plus',
-      iconRight: 'pi pi-check',
     },
 
   ]
 
-const data = { name: 'tom', iconRight: 'Some Text ...' }
+const data = { name: 'tom', icon: 'Some Text ...' }
 </script>
 
 <template>

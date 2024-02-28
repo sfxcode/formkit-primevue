@@ -16,22 +16,14 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
   <div class="p-formkit">
     <ToggleButton
       v-model="context._value"
+      v-bind="attrs"
       :input-id="context.id"
       :disabled="attrs._disabled ?? !!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :input-style="attrs.style"
       :input-class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
-      :on-label="attrs.onLabel ?? 'Yes'"
-      :off-label="attrs.offLabel ?? 'No'"
-      :on-icon="attrs.onIcon ?? 'pi pi-check'"
-      :off-icon="attrs.offIcon ?? 'pi pi-times'"
-      :icon-pos="attrs.iconPos ?? 'left'"
-      :pt="attrs.pt"
-      :pt-options="attrs.ptOptions"
-      :unstyled="attrs.unstyled ?? false"
+      :on-icon="context.onIcon ?? 'pi pi-check'"
+      :off-icon="context.offIcon ?? 'pi pi-times'"
       @change="handleChange"
     />
   </div>

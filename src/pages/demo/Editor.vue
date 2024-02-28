@@ -13,7 +13,7 @@ const schema
       $formkit: 'primeEditor',
       name: 'custom',
       label: 'Editor',
-      style: 'height: 160px;',
+      style: 'height: 160px;margin-bottom:80px;',
       placeholder: 'Some placeholder',
     },
 

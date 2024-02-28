@@ -18,21 +18,11 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <InputMask
       :id="context.id"
       v-model="context._value"
+      v-bind="attrs"
       :disabled="attrs._disabled ?? !!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :editor-style="attrs.style"
       :class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
-      :placeholder="attrs.placeholder"
-      :mask="attrs.mask ?? undefined"
-      :slot-char="attrs.slotChar ?? '_'"
-      :auto-clear="attrs.autoClear ?? true"
-      :unmask="attrs.unmask ?? false"
-      :pt="attrs.pt"
-      :pt-options="attrs.ptOptions"
-      :unstyled="attrs.unstyled ?? false"
       @blur="handleInput"
     />
   </div>

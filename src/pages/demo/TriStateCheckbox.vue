@@ -12,8 +12,8 @@ const schema
     },
     {
       $formkit: 'primeTriStateCheckbox',
-      label: 'TriStateCheckbox',
       name: 'triStateCheckboxDisabled',
+      labelLeft: 'TriStateCheckbox',
       _disabled: true,
       value: false,
     },

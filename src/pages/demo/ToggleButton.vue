@@ -7,14 +7,24 @@ const schema
   = [
     {
       $formkit: 'primeToggleButton',
-      label: 'Select ToggleButton',
+      label: 'ToggleButton',
       name: 'toggleButton',
     },
     {
       $formkit: 'primeToggleButton',
-      label: 'Select ToggleButton',
+      label: 'Second ToggleButton',
       name: 'toggleButtonRight',
       iconPos: 'right',
+    },
+    {
+      $formkit: 'primeToggleButton',
+      label: 'Custom ToggleButton',
+      name: 'toggleButtonCustom',
+      iconPos: 'right',
+      onIcon: 'pi pi-plus',
+      offIcon: 'pi pi-minus',
+      onLabel: 'plus',
+      offLabel: 'minus',
     },
   ]
 

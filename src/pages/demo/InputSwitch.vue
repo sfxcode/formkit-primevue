@@ -19,8 +19,15 @@ const schema
     },
     {
       $formkit: 'primeInputSwitch',
+      name: 'confirmation',
+      id: 'confirm',
+      labelLeft: 'Are you sure ?',
+      option_class: 'flex items-center',
+    },
+    {
+      $formkit: 'primeInputSwitch',
       name: 'readonly',
-      label: 'readonly does not work atn',
+      label: 'readonly',
       _readonly: true,
     },
     {

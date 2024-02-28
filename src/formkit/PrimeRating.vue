@@ -18,21 +18,14 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <Rating
       :id="context.id"
       v-model="context._value"
+      v-bind="attrs"
       :disabled="attrs._disabled ?? !!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :style="attrs.style"
       :class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
-      :stars="attrs.stars ?? 5"
-      :cancel="attrs.cancel ?? false"
       :on-icon="attrs.onIcon ?? 'pi pi-star-fill'"
       :off-icon="attrs.offIcon ?? 'pi pi-star'"
-      :cancel-icon="attrs.cancelIcon ?? 'pi pi-ban'"
-      :pt="attrs.pt"
-      :pt-options="attrs.ptOptions"
-      :unstyled="attrs.unstyled ?? false"
+      :cancel="attrs.cancel ?? false"
       @change="handleInput"
     />
   </div>

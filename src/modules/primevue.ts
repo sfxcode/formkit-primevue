@@ -28,6 +28,8 @@ import Editor from 'primevue/editor'
 import Dropdown from 'primevue/dropdown'
 import Fieldset from 'primevue/fieldset'
 import FileUpload from 'primevue/fileupload'
+import IconField from 'primevue/iconfield'
+import InputIcon from 'primevue/inputicon'
 import InlineMessage from 'primevue/inlinemessage'
 import Inplace from 'primevue/inplace'
 import InputMask from 'primevue/inputmask'
@@ -135,6 +137,8 @@ export const install: UserModule = ({ app, router, isClient }) => {
   app.component('Editor', Editor)
   app.component('Fieldset', Fieldset)
   app.component('FileUpload', FileUpload)
+  app.component('IconField', IconField)
+  app.component('InputIcon', InputIcon)
   app.component('InlineMessage', InlineMessage)
   app.component('Inplace', Inplace)
   app.component('InputMask', InputMask)

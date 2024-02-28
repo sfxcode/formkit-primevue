@@ -18,20 +18,13 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.attrs.labelLeft }}</span>
     <Checkbox
       v-model="context._value"
+      v-bind="attrs"
       :input-id="context.id"
       :disabled="attrs._disabled ?? !!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :input-style="attrs.style"
       :input-class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
       :binary="attrs.binary ?? true"
-      :true-value="attrs.trueValue ?? undefined"
-      :false-value="attrs.falseValue ?? undefined"
-      :pt="attrs.pt"
-      :pt-options="attrs.ptOptions"
-      :unstyled="attrs.unstyled ?? false"
       @change="handleInput"
     />
     <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.attrs.labelRight }}</span>

@@ -18,21 +18,11 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <Slider
       :id="context.id"
       v-model="context._value"
+      v-bind="attrs"
       :disabled="attrs._disabled ?? !!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :style="attrs.style"
       :class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
-      :min="attrs.min ?? 0"
-      :max="attrs.max ?? 100"
-      :step="attrs.step ?? undefined"
-      :range="attrs.range ?? false"
-      :orientation="attrs.orientation ?? 'horizontal'"
-      :pt="attrs.pt"
-      :pt-options="attrs.ptOptions"
-      :unstyled="attrs.unstyled ?? false"
       @change="handleInput"
     />
   </div>
