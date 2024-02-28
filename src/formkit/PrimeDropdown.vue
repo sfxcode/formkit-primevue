@@ -1,6 +1,12 @@
 <script setup lang="ts">
+import { type PropType, computed } from 'vue';
+import { type FormKitFrameworkContext } from '@formkit/core';
+
 const props = defineProps({
-  context: Object,
+  context: {
+    type: Object as PropType<FormKitFrameworkContext>,
+    required: true,
+  },
 })
 
 const context = props.context
