@@ -1,3 +1,28 @@
+## [v1.8.0] - 2024-02-28
+### :boom: BREAKING CHANGES
+- due to [`be00f9b`](https://github.com/sfxcode/formkit-primevue/commit/be00f9b92ef84424967ff06b9277c588bb6a88a2) - Icons *(commit by [@sfxcode](https://github.com/sfxcode))*:
+
+  IconField and InputIcon from latest PrimeVue 3.39.x is required for showing Icons - displaying icons on both sides is not longer supported
+
+
+### :bug: Bug Fixes
+- [`7cb09aa`](https://github.com/sfxcode/formkit-primevue/commit/7cb09aa9e945c91509993a4766950bd15436480d) - **state**: Missing input disabled state, while submitting a form via XHR/Fetch request. [#35](https://github.com/sfxcode/formkit-primevue/pull/35) *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`80396b0`](https://github.com/sfxcode/formkit-primevue/commit/80396b0b2acf0917d2d428c3a1e8fda87000343f) - **ui**: Typo for TriStateCheckbox *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`6f137aa`](https://github.com/sfxcode/formkit-primevue/commit/6f137aadc1bc58c0b444950491fc14c471932fca) - **demo**: Some more styling for editor was needed *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :recycle: Refactors
+- [`be00f9b`](https://github.com/sfxcode/formkit-primevue/commit/be00f9b92ef84424967ff06b9277c588bb6a88a2) - **InputText**: Icons *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`9e2520e`](https://github.com/sfxcode/formkit-primevue/commit/9e2520e710a3ccaf27307362bccc9bac000757d6) - **Inputs**: Use v-bind for Attributed to passthrouh the maximum of all available attributes for PrimeVue components - however, some attributes has to be defined to work ... *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`878c706`](https://github.com/sfxcode/formkit-primevue/commit/878c7066d2786d091e051c670143aa0ffc7c92a5) - **release**: Next Version 1.7.3 *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`ad693bc`](https://github.com/sfxcode/formkit-primevue/commit/ad693bcd9679905014b5f1c8b00fa63a5e2f9576) - **release**: Next Version 1.7.4 *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`cf8da49`](https://github.com/sfxcode/formkit-primevue/commit/cf8da495913621df5f3d6f180035e52d47a13dfe) - **release**: Next Version 1.7.4 *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`567627b`](https://github.com/sfxcode/formkit-primevue/commit/567627b28abc255d5ec60115bd24f34bfef2179b) - **release**: Next Version 1.7.4 *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`e7689dc`](https://github.com/sfxcode/formkit-primevue/commit/e7689dcbba749020feb0760f808efba3282b3862) - **dependencies**: PrimeVue 3.49.1 *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`9342532`](https://github.com/sfxcode/formkit-primevue/commit/9342532cec1b2802235533765cb30b24d0328d24) - **release**: Next Version 1.8.0 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.7.4] - 2024-02-24
 ### :wrench: Chores
 - [`ad693bc`](https://github.com/sfxcode/formkit-primevue/commit/ad693bcd9679905014b5f1c8b00fa63a5e2f9576) - **release**: Next Version 1.7.4 *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -478,3 +503,4 @@
 [v1.7.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.6.11...v1.7.0
 [v1.7.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.7.0...v1.7.1
 [v1.7.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.7.3...v1.7.4
+[v1.8.0]: https://github.com/sfxcode/formkit-primevue/compare/1.7.2...v1.8.0
