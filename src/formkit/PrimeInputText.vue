@@ -6,21 +6,8 @@ const props = defineProps({
 const context = props.context
 const attrs = computed(() => context?.attrs)
 
-function hasLeftIcon() {
-  return context?.iconLeft && context?.iconLeft.length > 0
-}
-
-function hasRightIcon() {
-  return context?.iconRight && context?.iconRight.length > 0
-}
-
-function spanClass() {
-  let result = ''
-  if (hasLeftIcon())
-    result = `p-formkit-icon ${result}p-input-icon-left `
-  if (hasRightIcon())
-    result = `p-formkit-icon ${result}p-input-icon-right `
-  return result
+function hasIcon() {
+  return context?.icon && context?.icon.length > 0
 }
 
 function handleBlur(e: any) {
@@ -36,27 +23,31 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
 
 <template>
   <div class="p-formkit">
-    <span :class="spanClass()">
-      <i v-if="hasLeftIcon()" :class="context?.iconLeft" />
-
+    <IconField v-if="hasIcon()" :icon-position="attrs.iconPosition">
+      <InputIcon :class="context.icon" />
       <InputText
         :id="context.id"
         v-model="context._value"
+        v-bind="attrs"
         :disabled="attrs._disabled ?? !!context?.disabled"
         :readonly="attrs._readonly ?? false"
         :style="attrs.style"
         :class="styleClass"
-        :tabindex="attrs.tabindex"
-        :aria-label="attrs.ariaLabel"
-        :aria-labelledby="attrs.ariaLabelledby"
-        :placeholder="attrs.placeholder"
-        :pt="attrs.pt"
-        :pt-options="attrs.ptOptions"
-        :unstyled="attrs.unstyled ?? false"
         @input="handleInput"
         @blur="handleBlur"
       />
-      <i v-if="hasRightIcon()" :class="context?.iconRight" />
-    </span>
+    </IconField>
+    <InputText
+      v-else
+      :id="context.id"
+      v-model="context._value"
+      v-bind="attrs"
+      :disabled="attrs._disabled ?? !!context?.disabled"
+      :readonly="attrs._readonly ?? false"
+      :style="attrs.style"
+      :class="styleClass"
+      @input="handleInput"
+      @blur="handleBlur"
+    />
   </div>
 </template>
