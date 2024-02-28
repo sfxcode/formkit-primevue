@@ -21,8 +21,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       <RadioButton
         :id="context.id"
         v-model="context._value"
-        v-bind="attrs"
-        :disabled="attrs._disabled ?? !!context?.disabled"
+        :disabled="!!context?.disabled"
         :readonly="attrs._readonly ?? false"
         :name="attrs.name"
         :value="option.value"

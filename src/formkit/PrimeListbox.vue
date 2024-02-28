@@ -1,6 +1,4 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
-
 const props = defineProps({
   context: Object,
 })
@@ -24,6 +22,22 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :readonly="attrs._readonly ?? false"
       :list-style="attrs.style"
       :class="styleClass"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
+      :options="attrs?.options"
+      :option-label="attrs.optionLabel"
+      :option-value="attrs.optionValue"
+      :multiple="attrs.multiple ?? false"
+      :filter="attrs.filter ?? false"
+      :filter-icon="attrs.filterIcon"
+      :filter-placeholder="attrs.filterPlaceholder"
+      :filter-locale="attrs.filterLocale"
+      :filter-match-mode="attrs.filterMatchMode"
+      :auto-option-focus="attrs.autoOptionFocus ?? true"
+      :select-on-focus="attrs.selectOnFocus ?? false"
+      :pt="attrs.pt"
+      :pt-options="attrs.ptOptions"
       :unstyled="attrs.unstyled ?? false"
       @change="handleInput"
     />

@@ -20,7 +20,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       v-model="context._value"
       v-bind="attrs"
       :input-id="context.id"
-      :disabled="attrs._disabled ?? !!context?.disabled"
+      :disabled="!!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :input-style="attrs.style"
       :input-class="styleClass"

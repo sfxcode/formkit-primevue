@@ -26,9 +26,10 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <AutoComplete
       :id="context.id"
       v-model="context._value"
-      v-bind="attrs"
-      :disabled="attrs._disabled ?? !!context?.disabled"
-      :class="styleClass"
+      :disabled="!!context?.disabled"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
       :suggestions="suggestions"
       @complete="search"
       @change="handleInput"

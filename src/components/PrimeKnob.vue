@@ -25,8 +25,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <Knob
       :id="context.id"
       v-model="context._value"
-      v-bind="attrs"
-      :disabled="attrs._disabled ?? !!context?.disabled"
+      :disabled="!!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :style="attrs.style"
       :class="styleClass"
