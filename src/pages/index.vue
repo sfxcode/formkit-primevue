@@ -35,7 +35,7 @@ const schema = reactive(
       $formkit: 'primeEditor',
       name: 'myEditor',
       label: 'Editor',
-      style: 'height: 160px;',
+      style: 'height: 160px; margin-bottom:80px;',
     },
     {
       $formkit: 'primePassword',
