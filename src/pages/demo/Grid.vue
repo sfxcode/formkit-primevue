@@ -1,27 +1,25 @@
 <script setup lang='ts'>
+import { useFormKitSchema } from '@/formkit/useFormKitSchema'
+
+const { addElement } = useFormKitSchema()
+
 const schema
   = [
-    {
-      $el: 'div', // try an h1!
-      attrs: {
-        class: 'flex gap-4',
+    addElement('div', [
+      {
+        $formkit: 'primeInputText',
+        name: 'name',
+        label: 'Col 1',
+        help: 'Required.',
+        validation: 'required',
       },
-      children: [
-        {
-          $formkit: 'primeInputText',
-          name: 'name',
-          label: 'Col 1',
-          help: 'Required.',
-          validation: 'required',
-        },
-        {
-          $formkit: 'primeInputText',
-          name: 'name2',
-          label: 'Col 2',
+      {
+        $formkit: 'primeInputText',
+        name: 'name2',
+        label: 'Col 2',
 
-        },
-      ],
-    },
+      },
+    ], { class: 'flex gap-4' }),
   ]
 
 const data = { name: 'Name', name2: 'Name 2' }
