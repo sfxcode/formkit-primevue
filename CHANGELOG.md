@@ -1,3 +1,11 @@
+## [v1.8.1] - 2024-03-03
+### :sparkles: New Features
+- [`6f4ccf9`](https://github.com/sfxcode/formkit-primevue/commit/6f4ccf9a443712fe126dd0850f1f10f3d1649ae3) - **schema**: add schema helper functions composable: useFormKitSchema *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`2045488`](https://github.com/sfxcode/formkit-primevue/commit/2045488b3829dd69af8d0a2f1d2034169f10b82e) - **release**: Next Version 1.8.1 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.8.0] - 2024-02-28
 ### :boom: BREAKING CHANGES
 - due to [`be00f9b`](https://github.com/sfxcode/formkit-primevue/commit/be00f9b92ef84424967ff06b9277c588bb6a88a2) - Icons *(commit by [@sfxcode](https://github.com/sfxcode))*:
@@ -504,3 +512,4 @@
 [v1.7.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.7.0...v1.7.1
 [v1.7.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.7.3...v1.7.4
 [v1.8.0]: https://github.com/sfxcode/formkit-primevue/compare/1.7.2...v1.8.0
+[v1.8.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.0...v1.8.1
