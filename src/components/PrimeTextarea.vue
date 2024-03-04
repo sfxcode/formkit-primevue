@@ -19,16 +19,14 @@ const props = defineProps({
   },
 })
 
-const context = props.context
-
 function handleBlur(e: Event) {
-  context?.handlers.blur(e)
+  props.context?.handlers.blur(e)
 }
 
 function handleInput(e: any) {
-  context?.node.input(e.target.value)
+  props.context?.node.input(e.target.value)
 }
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
+const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>

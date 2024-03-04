@@ -21,23 +21,21 @@ const props = defineProps({
   },
 })
 
-const context = props.context
-
 const suggestions = ref([])
 
 function search(event: AutoCompleteCompleteEvent) {
-  suggestions.value = context?.attrs.complete(event.query)
+  suggestions.value = props.context?.attrs.complete(event.query)
 }
 
 function handleInput(e: any) {
-  context?.node.input(props.context?._value)
+  props.context?.node.input(props.context?._value)
 }
 
 const handleBlur = (event: Event) => {
-  context?.handlers.blur(event);
+  props.context?.handlers.blur(event);
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
+const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>

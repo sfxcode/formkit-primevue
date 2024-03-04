@@ -19,10 +19,8 @@ const props = defineProps({
   },
 })
 
-const context = props.context
-
 function handleChange(e: any) {
-  context?.node.input(props.context?._value)
+  props.context?.node.input(props.context?._value)
 }
 </script>
 

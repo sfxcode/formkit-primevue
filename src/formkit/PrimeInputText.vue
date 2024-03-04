@@ -19,14 +19,12 @@ const props = defineProps({
   },
 })
 
-const context = props.context
-
 function hasLeftIcon() {
-  return context?.iconLeft && context?.iconLeft.length > 0
+  return props.context?.iconLeft && props.context?.iconLeft.length > 0
 }
 
 function hasRightIcon() {
-  return context?.iconRight && context?.iconRight.length > 0
+  return props.context?.iconRight && props.context?.iconRight.length > 0
 }
 
 function spanClass() {
@@ -39,14 +37,14 @@ function spanClass() {
 }
 
 function handleBlur(e: Event) {
-  context?.handlers.blur(e)
+  props.context?.handlers.blur(e)
 }
 
 function handleInput(e: any) {
-  context?.node.input(e.target.value)
+  props.context?.node.input(e.target.value)
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
+const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
