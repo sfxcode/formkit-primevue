@@ -1,6 +1,6 @@
 {
   "name": "@sfxcode/formkit-primevue",
-  "version": "1.8.3",
+  "version": "1.8.4",
   "type": "module",
   "license": "MIT",
   "repository": "https://github.com/sfxcode/formkit-primevue",
@@ -52,6 +52,7 @@
     }
   },
   "files": [
+    "components.d.ts",
     "dist",
     "*.css",
     "*.scss"

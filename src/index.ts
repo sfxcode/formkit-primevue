@@ -1,5 +1,6 @@
 import type { FormKitTypeDefinition } from '@formkit/core'
 import { createInput } from '@formkit/vue'
+import type { Plugin } from 'vue'
 
 import PrimeAutoComplete from './components/PrimeAutoComplete.vue'
 import PrimeCalendar from './components/PrimeCalendar.vue'
@@ -27,6 +28,17 @@ import PrimeSelectButton from './components/PrimeSelectButton.vue'
 import PrimeTriStateCheckbox from './components/PrimeTriStateCheckbox.vue'
 
 import { useFormKitSchema } from './composables'
+
+import * as components from './components'
+
+const install: Plugin = {
+  install(app) {
+    for (const key of Object.keys(components))
+      app.component(key, components[key as keyof typeof components])
+  },
+}
+
+export default install
 
 export const primeAutoCompleteDefinition: FormKitTypeDefinition = createInput(PrimeAutoComplete, {
   props: [],
