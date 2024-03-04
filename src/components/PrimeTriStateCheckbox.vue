@@ -1,10 +1,18 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue';
 import { type FormKitFrameworkContext } from '@formkit/core';
+import { type TriStateCheckboxProps } from 'primevue/tristatecheckbox'
+
+export type FormKitPrimeTriStateCheckboxProps = {
+  pt?: TriStateCheckboxProps['pt'];
+  ptOptions?: TriStateCheckboxProps['ptOptions'];
+  unstyled?: TriStateCheckboxProps['unstyled'];
+  variant?: TriStateCheckboxProps['variant'];
+}
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeTriStateCheckboxProps>,
     required: true,
   },
 })
@@ -34,6 +42,13 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :readonly="attrs._readonly ?? false"
       :input-style="attrs.style"
       :input-class="styleClass"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
+      :variant="context.variant"
       @change="handleChange"
       @blur="handleBlur"
     />

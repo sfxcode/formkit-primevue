@@ -2,10 +2,31 @@
 import { type PropType, computed } from 'vue';
 import { type FormKitFrameworkContext } from '@formkit/core';
 import { InputNumberBlurEvent } from 'primevue/inputnumber'
+import { type InputNumberProps } from 'primevue/inputnumber'
+
+export type FormKitPrimeInputNumberProps = {
+  useGrouping?: InputNumberProps['useGrouping'];
+  min?: InputNumberProps['min'];
+  max?: InputNumberProps['max'];
+  minFractionDigits?: InputNumberProps['minFractionDigits'];
+  maxFractionDigits?: InputNumberProps['maxFractionDigits'];
+  locale?: InputNumberProps['locale'];
+  mode?: InputNumberProps['mode'];
+  currency?: InputNumberProps['currency'];
+  prefix?: InputNumberProps['prefix'];
+  suffix?: InputNumberProps['suffix'];
+  showButtons?: InputNumberProps['showButtons'];
+  buttonLayout?: InputNumberProps['buttonLayout'];
+  step?: InputNumberProps['step'];
+  pt?: InputNumberProps['pt'];
+  ptOptions?: InputNumberProps['ptOptions'];
+  unstyled?: InputNumberProps['unstyled'];
+  placeholder?: InputNumberProps['placeholder'];
+}
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeInputNumberProps>,
     required: true,
   },
 })
@@ -35,23 +56,23 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :tabindex="attrs.tabindex"
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
-      :placeholder="attrs.placeholder"
-      :use-grouping="attrs.useGrouping ?? true"
-      :min="attrs.min ?? undefined"
-      :max="attrs.max ?? undefined"
-      :min-fraction-digits="attrs.minFractionDigits ?? undefined"
-      :max-fraction-digits="attrs.maxFractionDigits ?? undefined"
-      :locale="attrs.locale ?? undefined"
-      :mode="attrs.mode ?? undefined"
-      :currency="attrs.currency ?? undefined"
-      :prefix="attrs.prefix ?? undefined"
-      :suffix="attrs.suffix ?? undefined"
-      :show-buttons="attrs.showButtons ?? undefined"
-      :button-layout="attrs.buttonLayout ?? 'stacked'"
-      :step="attrs.step ?? undefined"
-      :pt="attrs.pt"
-      :pt-options="attrs.ptOptions"
-      :unstyled="attrs.unstyled ?? false"
+      :placeholder="context.placeholder"
+      :use-grouping="context.useGrouping ?? true"
+      :min="context.min ?? undefined"
+      :max="context.max ?? undefined"
+      :min-fraction-digits="context.minFractionDigits ?? undefined"
+      :max-fraction-digits="context.maxFractionDigits ?? undefined"
+      :locale="context.locale ?? undefined"
+      :mode="context.mode ?? undefined"
+      :currency="context.currency ?? undefined"
+      :prefix="context.prefix ?? undefined"
+      :suffix="context.suffix ?? undefined"
+      :show-buttons="context.showButtons ?? undefined"
+      :button-layout="context.buttonLayout ?? 'stacked'"
+      :step="context.step ?? undefined"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @input="handleInput"
       @blur="handleBlur"
     />

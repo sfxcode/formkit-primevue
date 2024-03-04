@@ -1,10 +1,22 @@
 <script setup lang='ts'>
 import { type PropType, computed, ref } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
+import type { FormKitFrameworkContext } from '@formkit/core';
+import type {
+  AutoCompleteCompleteEvent,
+  AutoCompleteProps,
+} from 'primevue/autocomplete'
+
+export type FormKitPrimeAutoCompleteProps = {
+  pt?: AutoCompleteProps['pt'];
+  ptOptions?: AutoCompleteProps['ptOptions'];
+  unstyled?: AutoCompleteProps['unstyled'];
+  dropdown?: AutoCompleteProps['dropdown'];
+  multiple?: AutoCompleteProps['multiple'];
+};
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeAutoCompleteProps>,
     required: true,
   },
 })
@@ -14,7 +26,7 @@ const attrs = computed(() => context?.attrs)
 
 const suggestions = ref([])
 
-function search(event) {
+function search(event: AutoCompleteCompleteEvent) {
   suggestions.value = attrs.value.complete(event.query)
 }
 
@@ -39,6 +51,11 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
       :suggestions="suggestions"
+      :dropdown="context?.dropdown ?? false"
+      :multiple="context?.multiple ?? false"
+      :pt="context?.pt"
+      :pt-options="context?.ptOptions"
+      :unstyled="context?.unstyled ?? false"
       @complete="search"
       @change="handleInput"
       @blur="handleBlur"

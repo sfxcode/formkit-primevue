@@ -1,10 +1,28 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue';
 import { type FormKitFrameworkContext } from '@formkit/core';
+import { ListboxProps } from 'primevue/listbox'
+
+export type FormKitPrimeListboxProps = {
+  pt?: ListboxProps['pt'];
+  ptOptions?: ListboxProps['ptOptions'];
+  unstyled?: ListboxProps['unstyled'];
+  options?: ListboxProps['options'];
+  optionLabel?: ListboxProps['optionLabel'];
+  optionValue?: ListboxProps['optionValue'];
+  multiple?: ListboxProps['multiple'];
+  filter?: ListboxProps['filter'];
+  filterIcon?: ListboxProps['filterIcon'];
+  filterPlaceholder?: ListboxProps['filterPlaceholder'];
+  filterLocale?: ListboxProps['filterLocale'];
+  filterMatchMode?: ListboxProps['filterMatchMode'];
+  autoOptionFocus?: ListboxProps['autoOptionFocus'];
+  selectOnFocus?: ListboxProps['selectOnFocus'];
+}
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeListboxProps>,
     required: true,
   },
 })
@@ -35,20 +53,20 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :tabindex="attrs.tabindex"
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
-      :options="attrs?.options"
-      :option-label="attrs.optionLabel"
-      :option-value="attrs.optionValue"
-      :multiple="attrs.multiple ?? false"
-      :filter="attrs.filter ?? false"
-      :filter-icon="attrs.filterIcon"
-      :filter-placeholder="attrs.filterPlaceholder"
-      :filter-locale="attrs.filterLocale"
-      :filter-match-mode="attrs.filterMatchMode"
-      :auto-option-focus="attrs.autoOptionFocus ?? true"
-      :select-on-focus="attrs.selectOnFocus ?? false"
-      :pt="attrs.pt"
-      :pt-options="attrs.ptOptions"
-      :unstyled="attrs.unstyled ?? false"
+      :options="context?.options"
+      :option-label="context.optionLabel"
+      :option-value="context.optionValue"
+      :multiple="context.multiple ?? false"
+      :filter="context.filter ?? false"
+      :filter-icon="context.filterIcon"
+      :filter-placeholder="context.filterPlaceholder"
+      :filter-locale="context.filterLocale"
+      :filter-match-mode="context.filterMatchMode"
+      :auto-option-focus="context.autoOptionFocus ?? true"
+      :select-on-focus="context.selectOnFocus ?? false"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @change="handleInput"
       @blur='handleBlur'
     />

@@ -1,10 +1,19 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue';
 import { type FormKitFrameworkContext } from '@formkit/core';
+import { type RadioButtonProps } from 'primevue/radiobutton'
+
+export type FormKitPrimeRadioButtonProps = {
+  pt?: RadioButtonProps['pt'];
+  ptOptions?: RadioButtonProps['ptOptions'];
+  unstyled?: RadioButtonProps['unstyled'];
+  options?: { label: string, value: any }[];
+  options_class?: string;
+}
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeRadioButtonProps>,
     required: true,
   },
 })
@@ -24,8 +33,8 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
 </script>
 
 <template>
-  <div :class="attrs.options_class" class="p-formkit">
-    <div v-for="option in attrs.options" :key="option.value" :class="attrs.option_class">
+  <div :class="context.options_class" class="p-formkit">
+    <div v-for="option in context.options" :key="option.value" :class="context.option_class">
       <RadioButton
         :id="context.id"
         v-model="context._value"
@@ -35,6 +44,9 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
         :value="option.value"
         :input-style="attrs.style"
         :input-class="styleClass"
+        :pt="context.pt"
+        :pt-options="context.ptOptions"
+        :unstyled="context.unstyled ?? false"
         @click="handleChange"
         @change="handleChange"
         @blur="handleChange"

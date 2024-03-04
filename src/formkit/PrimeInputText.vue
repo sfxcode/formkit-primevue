@@ -1,10 +1,20 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue';
 import { type FormKitFrameworkContext } from '@formkit/core';
+import { InputTextProps } from 'primevue/inputtext'
+
+export type FormKitPrimeInputTextProps = {
+  pt?: InputTextProps['pt'];
+  ptOptions?: InputTextProps['ptOptions'];
+  unstyled?: InputTextProps['unstyled'];
+  placeholder?: InputTextProps['placeholder'];
+  iconLeft?: string;
+  iconRight?: string;
+}
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeInputTextProps>,
     required: true,
   },
 })
@@ -55,10 +65,10 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
         :tabindex="attrs.tabindex"
         :aria-label="attrs.ariaLabel"
         :aria-labelledby="attrs.ariaLabelledby"
-        :placeholder="attrs.placeholder"
-        :pt="attrs.pt"
-        :pt-options="attrs.ptOptions"
-        :unstyled="attrs.unstyled ?? false"
+        :placeholder="context.placeholder"
+        :pt="context.pt"
+        :pt-options="context.ptOptions"
+        :unstyled="context.unstyled ?? false"
         @input="handleInput"
         @blur="handleBlur"
       />

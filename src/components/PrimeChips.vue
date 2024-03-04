@@ -1,10 +1,22 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue';
 import { type FormKitFrameworkContext } from '@formkit/core';
+import { ChipsProps } from 'primevue/chips'
+
+export type FormKitPrimeChipsProps = {
+  allowDuplicate?: ChipsProps['allowDuplicate'];
+  addOnBlur?: ChipsProps['addOnBlur'];
+  max?: ChipsProps['max'];
+  placeholder?: ChipsProps['placeholder'];
+  separator?: ChipsProps['separator'];
+  pt?: ChipsProps['pt'];
+  ptOptions?: ChipsProps['ptOptions'];
+  unstyled?: ChipsProps['unstyled'];
+}
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeChipsProps>,
     required: true,
   },
 })
@@ -28,6 +40,17 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :readonly="attrs._readonly ?? false"
       :input-style="attrs.style"
       :input-class="styleClass"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
+      :allow-duplicate="context.allowDuplicate ?? true"
+      :add-on-blur="context.addOnBlur ?? false"
+      :max="context.max ?? undefined"
+      :placeholder="context.placeholder"
+      :separator="context.separator"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @add="handleInput"
       @remove="handleInput"
     />

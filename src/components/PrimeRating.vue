@@ -1,10 +1,22 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue';
 import { type FormKitFrameworkContext } from '@formkit/core';
+import { type RatingProps } from 'primevue/rating'
+
+export type FormKitPrimeRatingProps = {
+  unstyled?: RatingProps['unstyled'];
+  stars?: RatingProps['stars'];
+  cancel?: RatingProps['cancel'];
+  onIcon?: RatingProps['onIcon'];
+  offIcon?: RatingProps['offIcon'];
+  cancelIcon?: RatingProps['cancelIcon'];
+  ptOptions?: RatingProps['ptOptions'];
+  pt?: RatingProps['pt'];
+}
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeRatingProps>,
     required: true,
   },
 })
@@ -32,9 +44,17 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :readonly="attrs._readonly ?? false"
       :style="attrs.style"
       :class="styleClass"
-      :on-icon="attrs.onIcon ?? 'pi pi-star-fill'"
-      :off-icon="attrs.offIcon ?? 'pi pi-star'"
-      :cancel="attrs.cancel ?? false"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
+      :stars="context.stars ?? 5"
+      :cancel="context.cancel ?? false"
+      :on-icon="context.onIcon ?? 'pi pi-star-fill'"
+      :off-icon="context.offIcon ?? 'pi pi-star'"
+      :cancel-icon="context.cancelIcon ?? 'pi pi-ban'"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @change="handleInput"
       @blur="handleBlur"
     />

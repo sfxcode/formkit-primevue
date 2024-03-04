@@ -1,10 +1,22 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue';
 import { type FormKitFrameworkContext } from '@formkit/core';
+import { CheckboxProps } from 'primevue/checkbox'
+
+export type FormKitPrimeCheckboxProps = {
+  binary?: CheckboxProps['binary'];
+  trueValue?: CheckboxProps['trueValue'];
+  falseValue?: CheckboxProps['falseValue'];
+  pt?: CheckboxProps['pt'];
+  ptOptions?: CheckboxProps['ptOptions'];
+  unstyled?: CheckboxProps['unstyled'];
+  labelLeft?: string;
+  labelRight?: string;
+}
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeCheckboxProps>,
     required: true,
   },
 })
@@ -25,7 +37,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
 
 <template>
   <div class="p-formkit">
-    <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.attrs.labelLeft }}</span>
+    <span v-if="context.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
     <Checkbox
       v-model="context._value"
       v-bind="attrs"
@@ -34,10 +46,18 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :readonly="attrs._readonly ?? false"
       :input-style="attrs.style"
       :input-class="styleClass"
-      :binary="attrs.binary ?? true"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
+      :binary="context.binary ?? true"
+      :true-value="context.trueValue ?? undefined"
+      :false-value="context.falseValue ?? undefined"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @change="handleInput"
       @blur="handleBlur"
     />
-    <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.attrs.labelRight }}</span>
+    <span v-if="context.labelRight" class="formkit-prime-right">{{ context.labelRight }}</span>
   </div>
 </template>

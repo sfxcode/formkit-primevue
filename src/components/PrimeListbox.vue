@@ -1,10 +1,23 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue';
 import { type FormKitFrameworkContext } from '@formkit/core';
+import { CascadeSelectProps } from 'primevue/cascadeselect'
+
+export type FormKitPrimeCascadeSelectProps = {
+  options?: CascadeSelectProps['options'];
+  optionLabel?: CascadeSelectProps['optionLabel'];
+  optionValue?: CascadeSelectProps['optionValue'];
+  optionGroupLabel?: CascadeSelectProps['optionGroupLabel'];
+  optionGroupChildren?: CascadeSelectProps['optionGroupChildren'];
+  placeholder?: CascadeSelectProps['placeholder'];
+  pt?: CascadeSelectProps['pt'];
+  ptOptions?: CascadeSelectProps['ptOptions'];
+  unstyled?: CascadeSelectProps['unstyled'];
+}
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeCascadeSelectProps>,
     required: true,
   },
 })
@@ -30,9 +43,19 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       v-model="context._value"
       :disabled="!!context?.disabled"
       :readonly="attrs._readonly ?? false"
-      :list-style="attrs.style"
       :class="styleClass"
-      :unstyled="attrs.unstyled ?? false"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
+      :options="context?.options"
+      :option-label="context?.optionLabel"
+      :option-value="context.optionValue"
+      :option-group-label="context.optionGroupLabel"
+      :option-group-children="context.optionGroupChildren"
+      :placeholder="context.placeholder"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @change="handleInput"
       @blur="handleBlur"
     />

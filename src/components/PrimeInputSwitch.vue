@@ -1,10 +1,19 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue';
 import { type FormKitFrameworkContext } from '@formkit/core';
+import { type InputSwitchProps } from 'primevue/inputswitch'
+
+export type FormKitPrimeInputSwitchProps = {
+  trueValue?: InputSwitchProps['trueValue'];
+  falseValue?: InputSwitchProps['falseValue'];
+  pt?: InputSwitchProps['pt'];
+  ptOptions?: InputSwitchProps['ptOptions'];
+  unstyled?: InputSwitchProps['unstyled'];
+}
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeInputSwitchProps>,
     required: true,
   },
 })
@@ -34,6 +43,14 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :readonly="attrs._readonly ?? false"
       :input-style="attrs.style"
       :input-class="styleClass"
+      :tabindex="attrs.tabindex"
+      :aria-label="attrs.ariaLabel"
+      :aria-labelledby="attrs.ariaLabelledby"
+      :true-value="context.trueValue ?? undefined"
+      :false-value="context.falseValue ?? undefined"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @change="handleInput"
       @blur='handleBlur'
     />

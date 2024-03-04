@@ -2,15 +2,63 @@
 import type { CalendarBlurEvent } from 'primevue/calendar'
 import { type PropType, computed } from 'vue';
 import { type FormKitFrameworkContext } from '@formkit/core';
+import { CalendarProps } from 'primevue/calendar'
+
+export type FormKitPrimeCalendarProps = {
+  dateFormat?: CalendarProps['dateFormat'];
+  placeholder?: CalendarProps['placeholder'];
+  selectionMode?: CalendarProps['selectionMode'];
+  inline?: CalendarProps['inline'];
+  icon?: CalendarProps['icon'];
+  showOtherMonths?: CalendarProps['showOtherMonths'];
+  selectOtherMonths?: CalendarProps['selectOtherMonths'];
+  showIcon?: CalendarProps['showIcon'];
+  previousIcon?: CalendarProps['previousIcon'];
+  nextIcon?: CalendarProps['nextIcon'];
+  incrementIcon?: CalendarProps['incrementIcon'];
+  decrementIcon?: CalendarProps['decrementIcon'];
+  numberOfMonths?: CalendarProps['numberOfMonths'];
+  responsiveOptions?: CalendarProps['responsiveOptions'];
+  view?: CalendarProps['view'];
+  touchUI?: CalendarProps['touchUI'];
+  minDate?: CalendarProps['minDate'];
+  maxDate?: CalendarProps['maxDate'];
+  disabledDates?: CalendarProps['disabledDates'];
+  disabledDays?: CalendarProps['disabledDays'];
+  maxDateCount?: CalendarProps['maxDateCount'];
+  showOnFocus?: CalendarProps['showOnFocus'];
+  autoZIndex?: CalendarProps['autoZIndex'];
+  baseZIndex?: CalendarProps['baseZIndex'];
+  showButtonBar?: CalendarProps['showButtonBar'];
+  showTime?: CalendarProps['showTime'];
+  timeOnly?: CalendarProps['timeOnly'];
+  shortYearCutoff?: CalendarProps['shortYearCutoff'];
+  hourFormat?: CalendarProps['hourFormat'];
+  stepHour?: CalendarProps['stepHour'];
+  stepMinute?: CalendarProps['stepMinute'];
+  stepSecond?: CalendarProps['stepSecond'];
+  showSeconds?: CalendarProps['showSeconds'];
+  hideOnDateTimeSelect?: CalendarProps['hideOnDateTimeSelect'];
+  hideOnRangeSelection?: CalendarProps['hideOnRangeSelection'];
+  timeSeparator?: CalendarProps['timeSeparator'];
+  showWeek?: CalendarProps['showWeek'];
+  manualInput?: CalendarProps['manualInput'];
+  appendTo?: CalendarProps['appendTo'];
+  panelStyle?: CalendarProps['panelStyle'];
+  panelClass?: CalendarProps['panelClass'];
+  pt?: CalendarProps['pt'];
+  ptOptions?: CalendarProps['ptOptions'];
+  unstyled?: CalendarProps['unstyled'];
+}
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeCalendarProps>,
     required: true,
   },
 })
 
-const context = props.context
+const context: FormKitFrameworkContext = props.context
 const attrs = computed(() => context?.attrs)
 
 function handleInput(e: any) {
@@ -36,7 +84,7 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
   <div class="p-formkit">
     <Calendar
       v-model="context._value"
-      :input-id="props.context.id"
+      :input-id="context.id"
       :disabled="!!context?.disabled"
       :readonly="attrs._readonly ?? false"
       :input-style="attrs.style"
@@ -44,50 +92,50 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :tabindex="attrs.tabindex"
       :aria-label="attrs.ariaLabel"
       :aria-labelledby="attrs.ariaLabelledby"
-      :date-format="attrs.dateFormat"
-      :placeholder="attrs.placeholder"
-      :selection-mode="attrs.selectionMode ?? 'single'"
-      :inline="attrs.inline ?? false"
-      :show-other-months="attrs.showOtherMonths ?? true"
-      :select-other-months="attrs.selectOtherMonths ?? false"
-      :icon="attrs.icon"
+      :date-format="context?.dateFormat"
+      :placeholder="context?.placeholder"
+      :selection-mode="context?.selectionMode ?? 'single'"
+      :inline="context?.inline ?? false"
+      :show-other-months="context?.showOtherMonths ?? true"
+      :select-other-months="context?.selectOtherMonths ?? false"
+      :icon="context?.icon"
       :show-icon="context.showIcon"
-      :previous-icon="attrs.previousIcon ?? 'pi pi-chevron-left'"
-      :next-icon="attrs.nextIcon ?? 'pi pi-chevron-right'"
-      :increment-icon="attrs.incrementIcon ?? 'pi pi-chevron-up'"
-      :decrement-icon="attrs.decrementIcon ?? 'pi pi-chevron-down'"
-      :number-of-months="attrs.numberOfMonths ?? 1"
-      :responsive-options="attrs.responsiveOptions"
-      :view="attrs.view ?? 'date'"
-      :touch-u-i="attrs.touchUI ?? false"
-      :min-date="attrs.minDate"
-      :max-date="attrs.maxDate"
-      :disabled-dates="attrs.disabledDates"
-      :disabled-days="attrs.disabledDays"
-      :max-date-count="attrs.maxDateCount"
-      :show-on-focus="attrs.showOnFocus ?? true"
-      :auto-z-index="attrs.autoZIndex ?? true"
-      :base-z-index="attrs.baseZIndex ?? 0"
-      :show-button-bar="attrs.showButtonBar ?? false"
-      :show-time="attrs.showTime ?? false"
-      :time-only="attrs.timeOnly ?? false"
-      :short-year-cutoff="attrs.shortYearCutoff ?? '+10'"
-      :hour-format="attrs.hourFormat ?? '24'"
-      :step-hour="attrs.stepHour ?? 1"
-      :step-minute="attrs.stepMinute ?? 1"
-      :step-second="attrs.stepSecond ?? 1"
-      :show-seconds="attrs.showSeconds ?? false"
-      :hide-on-date-time-select="attrs.hideOnDateTimeSelect ?? false"
-      :hide-on-range-selection="attrs.hideOnRangeSelection ?? false"
-      :time-separator="attrs.timeSeparator ?? ':'"
-      :show-week="attrs.showWeek ?? false"
-      :manual-input="attrs.manualInput ?? true"
-      :append-to="attrs.appendTo ?? 'body'"
-      :panel-style="attrs.panelStyle"
-      :panel-class="attrs.panelClass"
-      :pt="attrs.pt"
-      :pt-options="attrs.ptOptions"
-      :unstyled="attrs.unstyled ?? false"
+      :previous-icon="context?.previousIcon ?? 'pi pi-chevron-left'"
+      :next-icon="context?.nextIcon ?? 'pi pi-chevron-right'"
+      :increment-icon="context?.incrementIcon ?? 'pi pi-chevron-up'"
+      :decrement-icon="context?.decrementIcon ?? 'pi pi-chevron-down'"
+      :number-of-months="context?.numberOfMonths ?? 1"
+      :responsive-options="context?.responsiveOptions"
+      :view="context?.view ?? 'date'"
+      :touch-u-i="context?.touchUI ?? false"
+      :min-date="context?.minDate"
+      :max-date="context?.maxDate"
+      :disabled-dates="context?.disabledDates"
+      :disabled-days="context?.disabledDays"
+      :max-date-count="context?.maxDateCount"
+      :show-on-focus="context?.showOnFocus ?? true"
+      :auto-z-index="context?.autoZIndex ?? true"
+      :base-z-index="context?.baseZIndex ?? 0"
+      :show-button-bar="context?.showButtonBar ?? false"
+      :show-time="context?.showTime ?? false"
+      :time-only="context?.timeOnly ?? false"
+      :short-year-cutoff="context?.shortYearCutoff ?? '+10'"
+      :hour-format="context?.hourFormat ?? '24'"
+      :step-hour="context?.stepHour ?? 1"
+      :step-minute="context?.stepMinute ?? 1"
+      :step-second="context?.stepSecond ?? 1"
+      :show-seconds="context?.showSeconds ?? false"
+      :hide-on-date-time-select="context?.hideOnDateTimeSelect ?? false"
+      :hide-on-range-selection="context?.hideOnRangeSelection ?? false"
+      :time-separator="context?.timeSeparator ?? ':'"
+      :show-week="context?.showWeek ?? false"
+      :manual-input="context?.manualInput ?? true"
+      :append-to="context?.appendTo ?? 'body'"
+      :panel-style="context?.panelStyle"
+      :panel-class="context?.panelClass"
+      :pt="context?.pt"
+      :pt-options="context?.ptOptions"
+      :unstyled="context?.unstyled ?? false"
       @date-select="handleSelect"
       @input="handleInput"
       @blur="handleBlur"
