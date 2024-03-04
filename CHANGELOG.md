@@ -1,3 +1,10 @@
+## [v1.8.5] - 2024-03-04
+### :bug: Bug Fixes
+- [`8d074ef`](https://github.com/sfxcode/formkit-primevue/commit/8d074ef8805931a08cf36b538e650f61345d626a) - **package**: add missing exports *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`b22ab30`](https://github.com/sfxcode/formkit-primevue/commit/b22ab30485b72f8726b5029565c1fc7a231d6a3c) - **components**: add as plugin *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`f175e63`](https://github.com/sfxcode/formkit-primevue/commit/f175e6316be42d9ac4548b4fc0af69a288321565) - **components**: add imports *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.8.1] - 2024-03-03
 ### :sparkles: New Features
 - [`6f4ccf9`](https://github.com/sfxcode/formkit-primevue/commit/6f4ccf9a443712fe126dd0850f1f10f3d1649ae3) - **schema**: add schema helper functions composable: useFormKitSchema *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -513,3 +520,4 @@
 [v1.7.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.7.3...v1.7.4
 [v1.8.0]: https://github.com/sfxcode/formkit-primevue/compare/1.7.2...v1.8.0
 [v1.8.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.0...v1.8.1
+[v1.8.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.1...v1.8.5
