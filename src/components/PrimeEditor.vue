@@ -23,7 +23,6 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = computed(() => context?.attrs)
 
 function handleInput(e: any) {
   context?.node.input(e.htmlValue)
@@ -34,7 +33,7 @@ function handleSelection(e: EditorSelectionChangeEvent) {
     context?.handlers.blur(e.htmlValue)
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
 </script>
 
 <template>
@@ -43,12 +42,12 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :id="context.id"
       v-model="context._value"
       :disabled="!!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :editor-style="attrs.style"
+      :readonly="context?.attrs._readonly ?? false"
+      :editor-style="context?.attrs.style"
       :class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
       :placeholder="context.placeholder"
       :formats="context.formats"
       :modules="context.modules"

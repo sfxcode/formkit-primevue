@@ -19,7 +19,6 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = computed(() => context?.attrs)
 
 function handleChange(e: any) {
   context?.node.input(props.context?._value)
@@ -29,7 +28,7 @@ function handleBlur(e: Event) {
   context?.handlers.blur(e)
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
 </script>
 
 <template>
@@ -39,10 +38,10 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
         :id="context.id"
         v-model="context._value"
         :disabled="!!context?.disabled"
-        :readonly="attrs._readonly ?? false"
-        :name="attrs.name"
+        :readonly="context?.attrs._readonly ?? false"
+        :name="context?.attrs.name"
         :value="option.value"
-        :input-style="attrs.style"
+        :input-style="context?.attrs.style"
         :input-class="styleClass"
         :pt="context.pt"
         :pt-options="context.ptOptions"

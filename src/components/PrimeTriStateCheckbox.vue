@@ -8,6 +8,8 @@ export type FormKitPrimeTriStateCheckboxProps = {
   ptOptions?: TriStateCheckboxProps['ptOptions'];
   unstyled?: TriStateCheckboxProps['unstyled'];
   variant?: TriStateCheckboxProps['variant'];
+  labelLeft?: string;
+  labelRight?: string;
 }
 
 const props = defineProps({
@@ -18,7 +20,6 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = computed(() => context?.attrs)
 
 function handleChange(e: any) {
   context?.node.input(props.context?._value)
@@ -28,23 +29,23 @@ function handleBlur(e: Event) {
   context?.handlers.blur(e)
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
 </script>
 
 <template>
   <div class="p-formkit">
-    <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.attrs.labelLeft }}</span>
+    <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
     <TriStateCheckbox
       v-model="context._value"
       v-bind="attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :input-style="attrs.style"
+      :readonly="context?.attrs._readonly ?? false"
+      :input-style="context?.attrs.style"
       :input-class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
       :pt="context.pt"
       :pt-options="context.ptOptions"
       :unstyled="context.unstyled ?? false"
@@ -52,6 +53,6 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       @change="handleChange"
       @blur="handleBlur"
     />
-    <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.attrs.labelRight }}</span>
+    <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.labelRight }}</span>
   </div>
 </template>

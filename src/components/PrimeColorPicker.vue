@@ -20,7 +20,6 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = computed(() => context?.attrs)
 
 function handleChange(e: any) {
   context?.node.input(props.context?._value)
@@ -32,12 +31,12 @@ function handleChange(e: any) {
     <ColorPicker
       v-model="context._value"
       :disabled="!!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :style="attrs.style"
-      :panel-class="attrs.class"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
+      :readonly="context?.attrs._readonly ?? false"
+      :style="context?.attrs.style"
+      :panel-class="context?.attrs.class"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
       :default-color="context.defaultColor ?? 'ff0000'"
       :inline="context.inline ?? false"
       :format="context.format"

@@ -22,7 +22,6 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = computed(() => context?.attrs)
 
 function handleInput(e: any) {
   context?.node.input(props.context?._value)
@@ -32,7 +31,7 @@ function handleBlur(e: Event) {
   context?.handlers.blur(e)
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
 </script>
 
 <template>
@@ -41,12 +40,12 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :id="context.id"
       v-model="context._value"
       :disabled="!!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :style="attrs.style"
+      :readonly="context?.attrs._readonly ?? false"
+      :style="context?.attrs.style"
       :class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
       :stars="context.stars ?? 5"
       :cancel="context.cancel ?? false"
       :on-icon="context.onIcon ?? 'pi pi-star-fill'"

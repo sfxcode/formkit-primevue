@@ -20,7 +20,6 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = computed(() => context?.attrs)
 
 function handleBlur(e: Event) {
   context?.handlers.blur(e)
@@ -29,7 +28,7 @@ function handleBlur(e: Event) {
 function handleInput(e: any) {
   context?.node.input(e.target.value)
 }
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
 </script>
 
 <template>
@@ -38,15 +37,15 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :id="context.id"
       v-model="context._value"
       :disabled="!!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :style="attrs.style"
+      :readonly="context?.attrs._readonly ?? false"
+      :style="context?.attrs.style"
       :class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
       :placeholder="context.placeholder"
       :rows="context.rows ?? 3"
-      :auto-resize="attrs.autoResize ?? false"
+      :auto-resize="context.autoResize ?? false"
       :pt="context.pt"
       :pt-options="context.ptOptions"
       :unstyled="context.unstyled ?? false"

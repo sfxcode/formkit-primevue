@@ -47,7 +47,6 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = computed(() => context?.attrs)
 
 function handleBlur(e: Event) {
   context?.handlers.blur(e)
@@ -55,7 +54,7 @@ function handleBlur(e: Event) {
 function handleInput(e: any) {
   context?.node.input(e.value)
 }
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
 </script>
 
 <template>
@@ -64,15 +63,15 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       v-model="context._value"
       :input-id="context.id"
       :disabled="!!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :style="attrs.style"
+      :readonly="context?.attrs._readonly ?? false"
+      :style="context?.attrs.style"
       :class="styleClass"
-      :input-style="attrs.style"
+      :input-style="context?.attrs.style"
       :input-class="styleClass"
-      :input-props="attrs.inputProps"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
+      :input-props="context?.attrs.inputProps"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
       :options="context.options"
       :option-label="context.optionLabel"
       :option-value="context.optionValue"

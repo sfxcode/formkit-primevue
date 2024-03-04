@@ -32,7 +32,6 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = computed(() => context?.attrs)
 
 function handleBlur(e: InputNumberBlurEvent) {
   context?.handlers.blur(e.originalEvent)
@@ -41,7 +40,7 @@ function handleBlur(e: InputNumberBlurEvent) {
 function handleInput(e: any) {
   context?.node.input(e.value)
 }
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
 </script>
 
 <template>
@@ -50,12 +49,12 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       v-model="context._value"
       :input-id="context.id"
       :disabled="!!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :input-style="attrs.style"
+      :readonly="context?.attrs._readonly ?? false"
+      :input-style="context?.attrs.style"
       :input-class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
       :placeholder="context.placeholder"
       :use-grouping="context.useGrouping ?? true"
       :min="context.min ?? undefined"

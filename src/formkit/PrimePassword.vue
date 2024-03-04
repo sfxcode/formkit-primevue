@@ -28,7 +28,6 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = computed(() => context?.attrs)
 
 function handleBlur(e: Event) {
   context?.handlers.blur(e)
@@ -38,7 +37,7 @@ function handleInput(e: any) {
   context?.node.input(e.target.value)
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
 </script>
 
 <template>
@@ -47,12 +46,12 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       v-model="context._value"
       :input-id="context.id"
       :disabled="!!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :input-style="attrs.style"
+      :readonly="context?.attrs._readonly ?? false"
+      :input-style="context?.attrs.style"
       :input-class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
       :placeholder="context.placeholder"
       :medium-regex="context.mediumRegex ?? '^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})'"
       :strong-regex="context.strongRegex ?? '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})'"
@@ -64,9 +63,9 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :show-icon="context.showIcon ?? 'pi pi-eye'"
       :feedback="context.feedback ?? false"
       :toggle-mask="context.toggleMask ?? false"
-      :pt="attrs.pt"
-      :pt-options="attrs.ptOptions"
-      :unstyled="attrs.unstyled ?? false"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @input="handleInput"
       @blur="handleBlur"
     />

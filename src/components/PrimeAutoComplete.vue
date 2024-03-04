@@ -22,12 +22,11 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = computed(() => context?.attrs)
 
 const suggestions = ref([])
 
 function search(event: AutoCompleteCompleteEvent) {
-  suggestions.value = attrs.value.complete(event.query)
+  suggestions.value = context?.attrs.complete(event.query)
 }
 
 function handleInput(e: any) {
@@ -38,7 +37,7 @@ const handleBlur = (event: Event) => {
   context?.handlers.blur(event);
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
 </script>
 
 <template>
@@ -47,9 +46,9 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       :id="context.id"
       v-model="context._value"
       :disabled="!!context?.disabled"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
       :suggestions="suggestions"
       :dropdown="context?.dropdown ?? false"
       :multiple="context?.multiple ?? false"

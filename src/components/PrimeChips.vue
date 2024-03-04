@@ -22,12 +22,11 @@ const props = defineProps({
 })
 
 const context = props.context
-const attrs = computed(() => context?.attrs)
 
 function handleInput(e: any) {
   context?.node.input(props.context?._value)
 }
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class)
 </script>
 
 <template>
@@ -37,12 +36,12 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
       v-bind="attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :input-style="attrs.style"
+      :readonly="context?.attrs._readonly ?? false"
+      :input-style="context?.attrs.style"
       :input-class="styleClass"
-      :tabindex="attrs.tabindex"
-      :aria-label="attrs.ariaLabel"
-      :aria-labelledby="attrs.ariaLabelledby"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
       :allow-duplicate="context.allowDuplicate ?? true"
       :add-on-blur="context.addOnBlur ?? false"
       :max="context.max ?? undefined"

@@ -140,6 +140,8 @@ export const primeInputSwitchDefinition: FormKitTypeDefinition = createInput(Pri
     'pt',
     'ptOptions',
     'unstyled',
+    'labelLeft',
+    'labelRight',
   ],
 })
 
@@ -411,6 +413,8 @@ export const primeTriStateCheckboxDefinition: FormKitTypeDefinition = createInpu
     'ptOptions',
     'unstyled',
     'variant',
+    'labelRight',
+    'labelLeft',
   ],
 })
 export const primeCascadeSelectDefinition: FormKitTypeDefinition = createInput(PrimeCascadeSelect, {
