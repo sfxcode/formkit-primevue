@@ -1,4 +1,6 @@
-<script setup lang="ts">
+<script setup lang='ts'>
+import { computed, defineProps } from 'vue'
+
 import type { EditorSelectionChangeEvent } from 'primevue/editor'
 
 const props = defineProps({

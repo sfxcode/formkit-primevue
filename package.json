@@ -1,6 +1,6 @@
 {
   "name": "@sfxcode/formkit-primevue",
-  "version": "1.8.4",
+  "version": "1.8.5",
   "type": "module",
   "license": "MIT",
   "repository": "https://github.com/sfxcode/formkit-primevue",
@@ -70,7 +70,7 @@
     "docs:serve": "vitepress serve docs"
   },
   "peerDependencies": {
-    "vue": "^3.2.0"
+    "vue": "^3.4.0"
   },
   "dependencies": {
     "@formkit/addons": "^1.5.9",
