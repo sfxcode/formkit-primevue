@@ -1,3 +1,8 @@
+## [v1.8.6] - 2024-03-04
+### :recycle: Refactors
+- [`8fd602f`](https://github.com/sfxcode/formkit-primevue/commit/8fd602f5d7aa1d39f781fae2930e3c0ba84681e0) - **components**: cosmetics *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.8.5] - 2024-03-04
 ### :bug: Bug Fixes
 - [`8d074ef`](https://github.com/sfxcode/formkit-primevue/commit/8d074ef8805931a08cf36b538e650f61345d626a) - **package**: add missing exports *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -521,3 +526,4 @@
 [v1.8.0]: https://github.com/sfxcode/formkit-primevue/compare/1.7.2...v1.8.0
 [v1.8.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.0...v1.8.1
 [v1.8.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.1...v1.8.5
+[v1.8.6]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.5...v1.8.6
