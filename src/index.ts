@@ -87,6 +87,8 @@ export const primeInputMaskDefinition: FormKitTypeDefinition = createInput(Prime
     'unstyled',
     'invalid',
     'variant',
+    'iconLeft',
+    'iconRight',
   ],
 })
 
