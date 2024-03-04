@@ -1,6 +1,4 @@
 <script setup lang='ts'>
-import PrimeInput from '@/components/demo/PrimeInput.vue'
-
 const primeAttributes = 'placeholder, separator, allowDuplicate, max, addOnBlur'
 
 const list = ['Hello', 'Hero', 'House', 'World']

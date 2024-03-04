@@ -1,30 +1,32 @@
 import type { FormKitTypeDefinition } from '@formkit/core'
 import { createInput } from '@formkit/vue'
 
-import PrimeAutoComplete from './PrimeAutoComplete.vue'
-import PrimeCalendar from './PrimeCalendar.vue'
-import PrimeCascadeSelect from './PrimeCascadeSelect.vue'
-import PrimeCheckbox from './PrimeCheckbox.vue'
-import PrimeChips from './PrimeChips.vue'
-import PrimeColorPicker from './PrimeColorPicker.vue'
-import PrimeDropdown from './PrimeDropdown.vue'
-import PrimeEditor from './PrimeEditor.vue'
-import PrimeInputMask from './PrimeInputMask.vue'
-import PrimeInputNumber from './PrimeInputNumber.vue'
-import PrimeInputSwitch from './PrimeInputSwitch.vue'
-import PrimeInputText from './PrimeInputText.vue'
-import PrimeTextarea from './PrimeTextarea.vue'
-import PrimeKnob from './PrimeKnob.vue'
-import PrimeMultiSelect from './PrimeMultiSelect.vue'
-import PrimeListbox from './PrimeListbox.vue'
-import PrimePassword from './PrimePassword.vue'
-import PrimeRadioButton from './PrimeRadioButton.vue'
-import PrimeRating from './PrimeRating.vue'
-import PrimeSlider from './PrimeSlider.vue'
-import PrimeToggleButton from './PrimeToggleButton.vue'
-import PrimeTreeSelect from './PrimeTreeSelect.vue'
-import PrimeSelectButton from './PrimeSelectButton.vue'
-import PrimeTriStateCheckbox from './PrimeTriStateCheckbox.vue'
+import PrimeAutoComplete from './components/PrimeAutoComplete.vue'
+import PrimeCalendar from './components/PrimeCalendar.vue'
+import PrimeCascadeSelect from './components/PrimeCascadeSelect.vue'
+import PrimeCheckbox from './components/PrimeCheckbox.vue'
+import PrimeChips from './components/PrimeChips.vue'
+import PrimeColorPicker from './components/PrimeColorPicker.vue'
+import PrimeDropdown from './components/PrimeDropdown.vue'
+import PrimeEditor from './components/PrimeEditor.vue'
+import PrimeInputMask from './components/PrimeInputMask.vue'
+import PrimeInputNumber from './components/PrimeInputNumber.vue'
+import PrimeInputSwitch from './components/PrimeInputSwitch.vue'
+import PrimeInputText from './components/PrimeInputText.vue'
+import PrimeTextarea from './components/PrimeTextarea.vue'
+import PrimeKnob from './components/PrimeKnob.vue'
+import PrimeMultiSelect from './components/PrimeMultiSelect.vue'
+import PrimeListbox from './components/PrimeListbox.vue'
+import PrimePassword from './components/PrimePassword.vue'
+import PrimeRadioButton from './components/PrimeRadioButton.vue'
+import PrimeRating from './components/PrimeRating.vue'
+import PrimeSlider from './components/PrimeSlider.vue'
+import PrimeToggleButton from './components/PrimeToggleButton.vue'
+import PrimeTreeSelect from './components/PrimeTreeSelect.vue'
+import PrimeSelectButton from './components/PrimeSelectButton.vue'
+import PrimeTriStateCheckbox from './components/PrimeTriStateCheckbox.vue'
+
+import { useFormKitSchema } from './composables'
 
 export const primeAutoCompleteDefinition: FormKitTypeDefinition = createInput(PrimeAutoComplete, {
   props: [],
@@ -142,4 +144,8 @@ export const primeInputs = {
   primeTriStateCheckbox: primeTriStateCheckboxDefinition,
   primeCascadeSelect: primeCascadeSelectDefinition,
   primeTreeSelect: primeTreeSelectDefinition,
+}
+
+export {
+  useFormKitSchema,
 }

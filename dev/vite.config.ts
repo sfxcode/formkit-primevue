@@ -4,9 +4,8 @@ import Vue from '@vitejs/plugin-vue'
 import Pages from 'vite-plugin-pages'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
-import dts from 'vite-plugin-dts'
 import Unocss from 'unocss/vite'
-import pkg from './package.json'
+import pkg from '../package.json'
 
 process.env.VITE_APP_BUILD_EPOCH = new Date().getTime().toString()
 process.env.VITE_APP_VERSION = pkg.version
@@ -21,25 +20,6 @@ export default defineConfig({
       path: '/ws',
     },
   },
-  build: {
-    manifest: true,
-    lib: {
-      entry: path.resolve(__dirname, 'src/formkit/index.ts'),
-      name: 'formkit-primevue',
-      fileName: format => `formkit-primevue.${format}.js`,
-    },
-    rollupOptions: {
-      external: ['vue'],
-      output: {
-        // Provide global variables to use in the UMD build
-        // Add external deps here
-        globals: {
-          vue: 'Vue',
-        },
-      },
-    },
-  },
-
   // https://github.com/antfu/vite-ssg
   ssgOptions: {
     script: 'async',
@@ -80,13 +60,10 @@ export default defineConfig({
         },
       },
     }),
-    dts({
-      copyDtsFiles: false,
-      insertTypesEntry: true,
 
-    }),
     Components({
-      dts: 'src/components.d.ts',
+      dirs: ['components'],
+      dts: 'components.d.ts',
       resolvers: [
       ],
     }),
@@ -101,12 +78,11 @@ export default defineConfig({
       exclude: [
         '**/dist/**',
       ],
-      dts: 'src/auto-import.d.ts',
+      dts: 'auto-import.d.ts',
     }),
     Pages({
-      // pagesDir: ['src/pages', 'src/pages2'],
       dirs: [
-        { dir: 'src/pages', baseRoute: '' },
+        { dir: 'pages', baseRoute: '' },
       ],
       extensions: ['vue', 'md'],
       extendRoute(route) {
@@ -128,8 +104,10 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, '.'),
       '~': path.resolve(__dirname, 'node_modules/'),
+      'my-library': path.resolve(__dirname, '../src'),
+
     },
   },
 

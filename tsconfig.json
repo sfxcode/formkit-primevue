@@ -1,38 +1,3 @@
 {
-  "compilerOptions": {
-    "baseUrl": ".",
-    "module": "ESNext",
-    "target": "es2016",
-    "moduleResolution": "node",
-    "lib": ["es5" ,"DOM", "ESNext"],
-    "strict": true,
-    "esModuleInterop": true,
-    "incremental": false,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "noUnusedLocals": true,
-    "strictNullChecks": true,
-    "allowSyntheticDefaultImports": true,
-    "importHelpers": true,
-    "forceConsistentCasingInFileNames": true,
-    "types": [
-      "vite/client",
-      "vite-plugin-pages/client",
-    ],
-    "paths": {
-      "@/*": ["./src/*"],
-      "tslib" : ["./node_modules/tslib/tslib.d.ts"]
-    }
-
-  },
-  "include": [
-    "src/**/*.ts",
-    "cypress/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "auto-imports.d.ts",
-    "components.d.ts"
-  ],
-  "exclude": ["dist", "node_modules", "cypress"]
+  "extends": "@vue/tsconfig/tsconfig.dom.json"
 }

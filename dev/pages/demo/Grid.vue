@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { useFormKitSchema } from '@/formkit/useFormKitSchema'
+import { useFormKitSchema } from 'my-library'
 
 const { addElement } = useFormKitSchema()
 
