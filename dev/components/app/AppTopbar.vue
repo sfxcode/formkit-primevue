@@ -15,8 +15,6 @@ function redirectToDocs() {
   window.open('https://sfxcode.github.io/formkit-primevue/', '_blank')
 }
 
-const version = ref(import.meta.env.VITE_APP_VERSION)
-
 const items = ref([
   {
     label: 'Demo -> ',

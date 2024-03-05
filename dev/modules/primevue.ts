@@ -98,7 +98,7 @@ import ToastService from 'primevue/toastservice'
 import type { UserModule } from '@/types'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const install: UserModule = ({ app, router, isClient }) => {
+export const install: UserModule = ({ app }) => {
   // directives
 
   app.directive('badge', BadgeDirective)
