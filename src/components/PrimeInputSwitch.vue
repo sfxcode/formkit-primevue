@@ -1,32 +1,58 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
+import { type PropType, computed } from 'vue';
+import { type FormKitFrameworkContext } from '@formkit/core';
+import { type InputSwitchProps } from 'primevue/inputswitch'
+
+export type FormKitPrimeInputSwitchProps = {
+  trueValue?: InputSwitchProps['trueValue'];
+  falseValue?: InputSwitchProps['falseValue'];
+  pt?: InputSwitchProps['pt'];
+  ptOptions?: InputSwitchProps['ptOptions'];
+  unstyled?: InputSwitchProps['unstyled'];
+  labelLeft?: string;
+  labelRight?: string;
+}
 
 const props = defineProps({
-  context: Object,
+  context: {
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeInputSwitchProps>,
+    required: true,
+  },
 })
 
-const context = props.context
-const attrs = computed(() => context?.attrs)
-
 function handleInput(e: any) {
-  context?.node.input(props.context?._value)
+  props.context?.node.input(props.context?._value)
 }
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+
+function handleBlur(e: Event) {
+  props.context?.handlers.blur(e)
+}
+
+const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
-  <div :class="attrs.option_class" class="p-formkit">
-    <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.attrs.labelLeft }}</span>
+  <div :class="context?.attrs.option_class" class="p-formkit">
+    <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
     <InputSwitch
       v-model="context._value"
-      v-bind="attrs"
+      v-bind='context.attrs'
       :input-id="context.id"
-      :disabled="attrs._disabled ?? !!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :input-style="attrs.style"
+      :disabled="!!context?.disabled"
+      :readonly="context?.attrs._readonly ?? false"
+      :input-style="context?.attrs.style"
       :input-class="styleClass"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
+      :true-value="context.trueValue ?? undefined"
+      :false-value="context.falseValue ?? undefined"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @change="handleInput"
+      @blur='handleBlur'
     />
-    <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.attrs.labelRight }}</span>
+    <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.labelRight }}</span>
   </div>
 </template>

@@ -1,35 +1,53 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
+import { type PropType, computed } from 'vue';
+import { type FormKitFrameworkContext } from '@formkit/core';
+import { type RadioButtonProps } from 'primevue/radiobutton'
 
-const props = defineProps({
-  context: Object,
-})
-
-const context = props.context
-const attrs = computed(() => context?.attrs)
-
-function handleChange(e: any) {
-  context?.node.input(props.context?._value)
+export type FormKitPrimeRadioButtonProps = {
+  pt?: RadioButtonProps['pt'];
+  ptOptions?: RadioButtonProps['ptOptions'];
+  unstyled?: RadioButtonProps['unstyled'];
+  options?: { label: string, value: any }[];
+  options_class?: string;
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const props = defineProps({
+  context: {
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeRadioButtonProps>,
+    required: true,
+  },
+})
+
+function handleChange(e: any) {
+  props.context?.node.input(props.context?._value)
+}
+
+function handleBlur(e: Event) {
+  props.context?.handlers.blur(e)
+}
+
+const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
-  <div :class="attrs.options_class" class="p-formkit">
-    <div v-for="option in attrs.options" :key="option.value" :class="attrs.option_class">
+  <div :class="context.options_class" class="p-formkit">
+    <div v-for="option in context.options" :key="option.value" :class="context.option_class">
       <RadioButton
         :id="context.id"
         v-model="context._value"
-        v-bind="attrs"
-        :disabled="attrs._disabled ?? !!context?.disabled"
-        :readonly="attrs._readonly ?? false"
-        :name="attrs.name"
+        v-bind='context.attrs'
+        :disabled="!!context?.disabled"
+        :readonly="context?.attrs._readonly ?? false"
+        :name="context?.attrs.name"
         :value="option.value"
-        :input-style="attrs.style"
+        :input-style="context?.attrs.style"
         :input-class="styleClass"
+        :pt="context.pt"
+        :pt-options="context.ptOptions"
+        :unstyled="context.unstyled ?? false"
         @click="handleChange"
         @change="handleChange"
+        @blur="handleChange"
       />
       <label :for="option.value">{{ option.label }}</label>
     </div>

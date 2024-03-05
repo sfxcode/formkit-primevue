@@ -1,25 +1,35 @@
-<script setup lang='ts'>
-import { computed } from 'vue'
-
+<script setup lang="ts">
 import type { EditorSelectionChangeEvent } from 'primevue/editor'
+import { type PropType, computed } from 'vue';
+import { type FormKitFrameworkContext } from '@formkit/core';
+import { type EditorProps } from 'primevue/editor'
+
+export type FormKitPrimeEditorProps = {
+  placeholder?: EditorProps['placeholder'];
+  formats?: EditorProps['formats'];
+  modules?: EditorProps['modules'];
+  pt?: EditorProps['pt'];
+  ptOptions?: EditorProps['ptOptions'];
+  unstyled?: EditorProps['unstyled'];
+}
 
 const props = defineProps({
-  context: Object,
+  context: {
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeEditorProps>,
+    required: true,
+  },
 })
 
-const context = props.context
-const attrs = computed(() => context?.attrs)
-
 function handleInput(e: any) {
-  context?.node.input(e.htmlValue)
+  props.context?.node.input(e.htmlValue)
 }
 
 function handleSelection(e: EditorSelectionChangeEvent) {
   if (e.range === null)
-    context?.handlers.blur(e.htmlValue)
+    props.context?.handlers.blur(e.htmlValue)
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
@@ -27,11 +37,20 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <Editor
       :id="context.id"
       v-model="context._value"
-      v-bind="attrs"
-      :disabled="attrs._disabled ?? !!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :editor-style="attrs.style"
+      v-bind='context.attrs'
+      :disabled="!!context?.disabled"
+      :readonly="context?.attrs._readonly ?? false"
+      :editor-style="context?.attrs.style"
       :class="styleClass"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
+      :placeholder="context.placeholder"
+      :formats="context.formats"
+      :modules="context.modules"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @text-change="handleInput"
       @selection-change="handleSelection"
     />

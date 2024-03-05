@@ -1,18 +1,36 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
+import { type PropType, computed } from 'vue';
+import { type FormKitFrameworkContext } from '@formkit/core';
+import { type SliderProps } from 'primevue/slider'
+
+export type FormKitPrimeSliderProps = {
+  pt?: SliderProps['pt'];
+  ptOptions?: SliderProps['ptOptions'];
+  unstyled?: SliderProps['unstyled'];
+  min?: SliderProps['min'];
+  max?: SliderProps['max'];
+  step?: SliderProps['step'];
+  range?: SliderProps['range'];
+  orientation?: SliderProps['orientation'];
+}
 
 const props = defineProps({
-  context: Object,
+  context: {
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeSliderProps>,
+    required: true,
+  },
 })
 
-const context = props.context
-const attrs = computed(() => context?.attrs)
-
 function handleInput(e: any) {
-  context?.node.input(e)
-  context?.handlers.blur(e)
+  props.context?.node.input(e)
+  props.context?.handlers.blur(e)
 }
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+
+function handleBlur(e: Event) {
+  props.context?.handlers.blur(e)
+}
+
+const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
@@ -20,12 +38,24 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <Slider
       :id="context.id"
       v-model="context._value"
-      v-bind="attrs"
-      :disabled="attrs._disabled ?? !!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :style="attrs.style"
+      v-bind='context.attrs'
+      :disabled="!!context?.disabled"
+      :readonly="context?.attrs._readonly ?? false"
+      :style="context?.attrs.style"
       :class="styleClass"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
+      :min="context.min ?? 0"
+      :max="context.max ?? 100"
+      :step="context.step ?? undefined"
+      :range="context.range ?? false"
+      :orientation="context.orientation ?? 'horizontal'"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @change="handleInput"
+      @blur="handleBlur"
     />
   </div>
 </template>

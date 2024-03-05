@@ -1,24 +1,41 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
+import { type PropType, computed, ref } from 'vue';
+import type { FormKitFrameworkContext } from '@formkit/core';
+import type {
+  AutoCompleteCompleteEvent,
+  AutoCompleteProps,
+} from 'primevue/autocomplete'
+
+export type FormKitPrimeAutoCompleteProps = {
+  pt?: AutoCompleteProps['pt'];
+  ptOptions?: AutoCompleteProps['ptOptions'];
+  unstyled?: AutoCompleteProps['unstyled'];
+  dropdown?: AutoCompleteProps['dropdown'];
+  multiple?: AutoCompleteProps['multiple'];
+};
 
 const props = defineProps({
-  context: Object,
+  context: {
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeAutoCompleteProps>,
+    required: true,
+  },
 })
-
-const context = props.context
-const attrs = computed(() => context?.attrs)
 
 const suggestions = ref([])
 
-function search(event) {
-  suggestions.value = attrs.value.complete(event.query)
+function search(event: AutoCompleteCompleteEvent) {
+  suggestions.value = props.context?.attrs.complete(event.query)
 }
 
 function handleInput(e: any) {
-  context?.node.input(props.context?._value)
+  props.context?.node.input(props.context?._value)
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const handleBlur = (event: Event) => {
+  props.context?.handlers.blur(event);
+}
+
+const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
@@ -26,12 +43,20 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <AutoComplete
       :id="context.id"
       v-model="context._value"
-      v-bind="attrs"
-      :disabled="attrs._disabled ?? !!context?.disabled"
-      :class="styleClass"
+      v-bind='context?.attrs'
+      :disabled="!!context?.disabled"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
       :suggestions="suggestions"
+      :dropdown="context?.dropdown ?? false"
+      :multiple="context?.multiple ?? false"
+      :pt="context?.pt"
+      :pt-options="context?.ptOptions"
+      :unstyled="context?.unstyled ?? false"
       @complete="search"
       @change="handleInput"
+      @blur="handleBlur"
     />
   </div>
 </template>

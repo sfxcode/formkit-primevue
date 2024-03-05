@@ -1,18 +1,37 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
+import { type PropType, computed } from 'vue';
+import { type FormKitFrameworkContext } from '@formkit/core';
+import { SelectButtonProps } from 'primevue/selectbutton'
 
-const props = defineProps({
-  context: Object,
-})
-
-const context = props.context
-const attrs = computed(() => context?.attrs)
-
-function handleChange(e: any) {
-  context?.node.input(props.context?._value)
+export type FormKitPrimeSelectButtonProps = {
+  pt?: SelectButtonProps['pt'];
+  ptOptions?: SelectButtonProps['ptOptions'];
+  unstyled?: SelectButtonProps['unstyled'];
+  optionLabel?: SelectButtonProps['optionLabel'];
+  optionValue?: SelectButtonProps['optionValue'];
+  optionDisabled?: SelectButtonProps['optionDisabled'];
+  multiple?: SelectButtonProps['multiple'];
+  unselectable?: SelectButtonProps['unselectable'];
+  dataKey?: SelectButtonProps['dataKey'];
+  options?: SelectButtonProps['options'];
 }
 
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const props = defineProps({
+  context: {
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeSelectButtonProps>,
+    required: true,
+  },
+})
+
+function handleChange(e: any) {
+  props.context?.node.input(props.context?._value)
+}
+
+function handleBlur(e: Event) {
+  props.context?.handlers.blur(e)
+}
+
+const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
@@ -20,12 +39,26 @@ const styleClass = computed(() => (context?.state.validationVisible && !context?
     <SelectButton
       :id="context.id"
       v-model="context._value"
-      v-bind="attrs"
-      :disabled="attrs._disabled ?? !!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :style="attrs.style"
+      v-bind='context.attrs'
+      :disabled="!!context?.disabled"
+      :readonly="context?.attrs._readonly ?? false"
+      :style="context?.attrs.style"
       :class="styleClass"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
+      :options="context.options"
+      :option-label="context.optionLabel"
+      :option-value="context.optionValue"
+      :option-disabled="context.optionDisabled"
+      :multiple="context.multiple ?? false"
+      :unselectable="context.unselectable ?? true"
+      :data-key="context.dataKey"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @change="handleChange"
+      @blur="handleBlur"
     />
   </div>
 </template>

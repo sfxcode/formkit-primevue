@@ -1,32 +1,60 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
+import { type PropType, computed } from 'vue';
+import { type FormKitFrameworkContext } from '@formkit/core';
+import { type ToggleButtonProps } from 'primevue/togglebutton'
+
+export type FormKitPrimeToggleButtonProps = {
+  pt?: ToggleButtonProps['pt'];
+  ptOptions?: ToggleButtonProps['ptOptions'];
+  unstyled?: ToggleButtonProps['unstyled'];
+  onLabel?: ToggleButtonProps['onLabel'];
+  offLabel?: ToggleButtonProps['offLabel'];
+  onIcon?: ToggleButtonProps['onIcon'];
+  offIcon?: ToggleButtonProps['offIcon'];
+  iconPos?: ToggleButtonProps['iconPos'];
+}
 
 const props = defineProps({
-  context: Object,
+  context: {
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeToggleButtonProps>,
+    required: true,
+  },
 })
 
-const context = props.context
-const attrs = computed(() => context?.attrs)
-
 function handleChange(e: any) {
-  context?.node.input(props.context?._value)
+  props.context?.node.input(props.context?._value)
 }
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+
+function handleBlur(e: Event) {
+  props.context?.handlers.blur(e)
+}
+
+const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
   <div class="p-formkit">
     <ToggleButton
       v-model="context._value"
-      v-bind="attrs"
+      v-bind='context.attrs'
       :input-id="context.id"
-      :disabled="attrs._disabled ?? !!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :input-style="attrs.style"
+      :disabled="!!context?.disabled"
+      :readonly="context?.attrs._readonly ?? false"
+      :input-style="context?.attrs.style"
       :input-class="styleClass"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
+      :on-label="context.onLabel ?? 'Yes'"
+      :off-label="context.offLabel ?? 'No'"
       :on-icon="context.onIcon ?? 'pi pi-check'"
       :off-icon="context.offIcon ?? 'pi pi-times'"
+      :icon-pos="context.iconPos ?? 'left'"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @change="handleChange"
+      @blur="handleBlur"
     />
   </div>
 </template>

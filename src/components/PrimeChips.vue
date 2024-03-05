@@ -1,29 +1,53 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
+import { type PropType, computed } from 'vue';
+import { type FormKitFrameworkContext } from '@formkit/core';
+import { ChipsProps } from 'primevue/chips'
+
+export type FormKitPrimeChipsProps = {
+  allowDuplicate?: ChipsProps['allowDuplicate'];
+  addOnBlur?: ChipsProps['addOnBlur'];
+  max?: ChipsProps['max'];
+  placeholder?: ChipsProps['placeholder'];
+  separator?: ChipsProps['separator'];
+  pt?: ChipsProps['pt'];
+  ptOptions?: ChipsProps['ptOptions'];
+  unstyled?: ChipsProps['unstyled'];
+}
 
 const props = defineProps({
-  context: Object,
+  context: {
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeChipsProps>,
+    required: true,
+  },
 })
 
-const context = props.context
-const attrs = computed(() => context?.attrs)
-
 function handleInput(e: any) {
-  context?.node.input(props.context?._value)
+  props.context?.node.input(props.context?._value)
 }
-const styleClass = computed(() => (context?.state.validationVisible && !context?.state.valid) ? `${attrs.value?.class} p-invalid` : attrs.value?.class)
+const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
   <div class="p-formkit">
     <Chips
       v-model="context._value"
-      v-bind="attrs"
+      v-bind='context.attrs'
       :input-id="context.id"
-      :disabled="attrs._disabled ?? !!context?.disabled"
-      :readonly="attrs._readonly ?? false"
-      :input-style="attrs.style"
+      :disabled="!!context?.disabled"
+      :readonly="context?.attrs._readonly ?? false"
+      :input-style="context?.attrs.style"
       :input-class="styleClass"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
+      :allow-duplicate="context.allowDuplicate ?? true"
+      :add-on-blur="context.addOnBlur ?? false"
+      :max="context.max ?? undefined"
+      :placeholder="context.placeholder"
+      :separator="context.separator"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
       @add="handleInput"
       @remove="handleInput"
     />
