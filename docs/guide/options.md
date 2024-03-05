@@ -2,7 +2,7 @@
 
 In some inputs options are needed. There are several ways to deal with the options.
 
-::: warning Important Note 
+::: warning Important Note
 Until  Version 1.5.x only Object Array / Select Object by key and value by key was possible. This is fixed from 1.6.x.
 :::
 
@@ -19,7 +19,6 @@ Until  Version 1.5.x only Object Array / Select Object by key and value by key w
 ### Simple Array
 
 ```vue
-
 const stringArray = ['refresh', 'hourly', 'daily']
 
 const schema
@@ -31,7 +30,6 @@ const schema
     options: stringArray,
     },
 ]
-
 ```
 
 ### Object Array / Select Object by key
@@ -39,7 +37,6 @@ const schema
 Here you have to select a property name for **optionLabel** as key.
 
 ```vue
-
 const cities = [
     { name: 'New York', code: 'NY' },
     { name: 'Rome', code: 'RM' },
@@ -57,16 +54,13 @@ const schema = [
     options: cities,
     },
 ]
-
 ```
 
 ### Object Array / Select Object by key and value by key
 
 Here you have to select a property name for **optionLabel** as key and a property name for **optionValue** as key.
 
-
 ```vue
-
 const options = [
     { label: 'Every page load', value: 'refresh' },
     { label: 'Every hour', value: 'hourly' },
@@ -85,5 +79,4 @@ const schema = [
     help: 'Cookie notice frequency ?',
     },
 ]
-
 ```

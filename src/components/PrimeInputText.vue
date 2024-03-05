@@ -1,15 +1,15 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { InputTextProps } from 'primevue/inputtext'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { InputTextProps } from 'primevue/inputtext'
 
-export type FormKitPrimeInputTextProps = {
-  pt?: InputTextProps['pt'];
-  ptOptions?: InputTextProps['ptOptions'];
-  unstyled?: InputTextProps['unstyled'];
-  placeholder?: InputTextProps['placeholder'];
-  iconLeft?: string;
-  iconRight?: string;
+export interface FormKitPrimeInputTextProps {
+  pt?: InputTextProps['pt']
+  ptOptions?: InputTextProps['ptOptions']
+  unstyled?: InputTextProps['unstyled']
+  placeholder?: InputTextProps['placeholder']
+  iconLeft?: string
+  iconRight?: string
 }
 
 const props = defineProps({
@@ -55,7 +55,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       <InputText
         :id="context.id"
         v-model="context._value"
-        v-bind='context.attrs'
+        v-bind="context.attrs"
         :disabled="!!context?.disabled"
         :readonly="context?.attrs._readonly ?? false"
         :style="context?.attrs.style"

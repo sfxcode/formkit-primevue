@@ -1,27 +1,26 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { InputNumberBlurEvent } from 'primevue/inputnumber'
-import { type InputNumberProps } from 'primevue/inputnumber'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { InputNumberBlurEvent, InputNumberProps } from 'primevue/inputnumber'
 
-export type FormKitPrimeInputNumberProps = {
-  useGrouping?: InputNumberProps['useGrouping'];
-  min?: InputNumberProps['min'];
-  max?: InputNumberProps['max'];
-  minFractionDigits?: InputNumberProps['minFractionDigits'];
-  maxFractionDigits?: InputNumberProps['maxFractionDigits'];
-  locale?: InputNumberProps['locale'];
-  mode?: InputNumberProps['mode'];
-  currency?: InputNumberProps['currency'];
-  prefix?: InputNumberProps['prefix'];
-  suffix?: InputNumberProps['suffix'];
-  showButtons?: InputNumberProps['showButtons'];
-  buttonLayout?: InputNumberProps['buttonLayout'];
-  step?: InputNumberProps['step'];
-  pt?: InputNumberProps['pt'];
-  ptOptions?: InputNumberProps['ptOptions'];
-  unstyled?: InputNumberProps['unstyled'];
-  placeholder?: InputNumberProps['placeholder'];
+export interface FormKitPrimeInputNumberProps {
+  useGrouping?: InputNumberProps['useGrouping']
+  min?: InputNumberProps['min']
+  max?: InputNumberProps['max']
+  minFractionDigits?: InputNumberProps['minFractionDigits']
+  maxFractionDigits?: InputNumberProps['maxFractionDigits']
+  locale?: InputNumberProps['locale']
+  mode?: InputNumberProps['mode']
+  currency?: InputNumberProps['currency']
+  prefix?: InputNumberProps['prefix']
+  suffix?: InputNumberProps['suffix']
+  showButtons?: InputNumberProps['showButtons']
+  buttonLayout?: InputNumberProps['buttonLayout']
+  step?: InputNumberProps['step']
+  pt?: InputNumberProps['pt']
+  ptOptions?: InputNumberProps['ptOptions']
+  unstyled?: InputNumberProps['unstyled']
+  placeholder?: InputNumberProps['placeholder']
 }
 
 const props = defineProps({
@@ -45,7 +44,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
   <div class="p-formkit">
     <InputNumber
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"

@@ -1,18 +1,18 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { CascadeSelectProps } from 'primevue/cascadeselect'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { CascadeSelectProps } from 'primevue/cascadeselect'
 
-export type FormKitPrimeCascadeSelectProps = {
-  options?: CascadeSelectProps['options'];
-  optionLabel?: CascadeSelectProps['optionLabel'];
-  optionValue?: CascadeSelectProps['optionValue'];
-  optionGroupLabel?: CascadeSelectProps['optionGroupLabel'];
-  optionGroupChildren?: CascadeSelectProps['optionGroupChildren'];
-  placeholder?: CascadeSelectProps['placeholder'];
-  pt?: CascadeSelectProps['pt'];
-  ptOptions?: CascadeSelectProps['ptOptions'];
-  unstyled?: CascadeSelectProps['unstyled'];
+export interface FormKitPrimeCascadeSelectProps {
+  options?: CascadeSelectProps['options']
+  optionLabel?: CascadeSelectProps['optionLabel']
+  optionValue?: CascadeSelectProps['optionValue']
+  optionGroupLabel?: CascadeSelectProps['optionGroupLabel']
+  optionGroupChildren?: CascadeSelectProps['optionGroupChildren']
+  placeholder?: CascadeSelectProps['placeholder']
+  pt?: CascadeSelectProps['pt']
+  ptOptions?: CascadeSelectProps['ptOptions']
+  unstyled?: CascadeSelectProps['unstyled']
 }
 
 const props = defineProps({
@@ -38,7 +38,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <CascadeSelect
       :id="context.id"
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
       :class="styleClass"

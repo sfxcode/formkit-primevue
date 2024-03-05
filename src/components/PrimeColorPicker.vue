@@ -1,15 +1,15 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { ColorPickerProps } from 'primevue/colorpicker'
+import type { PropType } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { ColorPickerProps } from 'primevue/colorpicker'
 
-export type FormKitPrimeColorPickerProps = {
-  defaultColor?: ColorPickerProps['defaultColor'];
-  inline?: ColorPickerProps['inline'];
-  format?: ColorPickerProps['format'];
-  pt?: ColorPickerProps['pt'];
-  ptOptions?: ColorPickerProps['ptOptions'];
-  unstyled?: ColorPickerProps['unstyled'];
+export interface FormKitPrimeColorPickerProps {
+  defaultColor?: ColorPickerProps['defaultColor']
+  inline?: ColorPickerProps['inline']
+  format?: ColorPickerProps['format']
+  pt?: ColorPickerProps['pt']
+  ptOptions?: ColorPickerProps['ptOptions']
+  unstyled?: ColorPickerProps['unstyled']
 }
 
 const props = defineProps({
@@ -28,7 +28,7 @@ function handleChange(e: any) {
   <div class="p-formkit">
     <ColorPicker
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
       :style="context?.attrs.style"

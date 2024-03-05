@@ -1,22 +1,22 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { type TreeSelectProps } from 'primevue/treeselect'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { TreeSelectProps } from 'primevue/treeselect'
 
-export type FormKitPrimeTreeSelectProps = {
-  options?: TreeSelectProps['options'];
-  placeholder?: TreeSelectProps['placeholder'];
-  selectionMode?: TreeSelectProps['selectionMode'];
-  pt?: TreeSelectProps['pt'];
-  ptOptions?: TreeSelectProps['ptOptions'];
-  unstyled?: TreeSelectProps['unstyled'];
-  emptyMessage?: TreeSelectProps['emptyMessage'];
-  display?: TreeSelectProps['display'];
-  metaKeySelection?: TreeSelectProps['metaKeySelection'];
-  appendTo?: TreeSelectProps['appendTo'];
-  scrollHeight?: TreeSelectProps['scrollHeight'];
-  panelClass?: TreeSelectProps['panelClass'];
-  variant?: TreeSelectProps['variant'];
+export interface FormKitPrimeTreeSelectProps {
+  options?: TreeSelectProps['options']
+  placeholder?: TreeSelectProps['placeholder']
+  selectionMode?: TreeSelectProps['selectionMode']
+  pt?: TreeSelectProps['pt']
+  ptOptions?: TreeSelectProps['ptOptions']
+  unstyled?: TreeSelectProps['unstyled']
+  emptyMessage?: TreeSelectProps['emptyMessage']
+  display?: TreeSelectProps['display']
+  metaKeySelection?: TreeSelectProps['metaKeySelection']
+  appendTo?: TreeSelectProps['appendTo']
+  scrollHeight?: TreeSelectProps['scrollHeight']
+  panelClass?: TreeSelectProps['panelClass']
+  variant?: TreeSelectProps['variant']
 }
 
 const props = defineProps({
@@ -41,7 +41,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
   <div class="p-formkit">
     <TreeSelect
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"

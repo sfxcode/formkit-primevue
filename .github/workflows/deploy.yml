@@ -16,7 +16,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm"
+          cache: pnpm
 
       - name: Install dependencies
         run: pnpm install
@@ -55,5 +55,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/.vitepress/dist
           # cname: example.com # if wanna deploy to custom domain
-
-

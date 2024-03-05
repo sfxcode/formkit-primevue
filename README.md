@@ -15,7 +15,6 @@ Helper classes for using [Formkit](https://formkit.com/) with the [PrimeVue UI F
 import { defaultConfig, plugin } from '@formkit/vue'
 import { primeInputs } from '@sfxcode/formkit-primevue'
 
-
   app.use(plugin, defaultConfig({
     locales: { de, en },
     // Define the active locale
@@ -74,8 +73,7 @@ You can use it or take it as base for your own styling.
 - RadioButton
 - TreeSelect
 
-## Demo 
+## Demo
 [Demo/Playground](https://formkit-primevue.netlify.app/)
 
 ![](formkit-primevue.png)
-

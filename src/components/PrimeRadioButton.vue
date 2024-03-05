@@ -1,14 +1,14 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { type RadioButtonProps } from 'primevue/radiobutton'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { RadioButtonProps } from 'primevue/radiobutton'
 
-export type FormKitPrimeRadioButtonProps = {
-  pt?: RadioButtonProps['pt'];
-  ptOptions?: RadioButtonProps['ptOptions'];
-  unstyled?: RadioButtonProps['unstyled'];
-  options?: { label: string, value: any }[];
-  options_class?: string;
+export interface FormKitPrimeRadioButtonProps {
+  pt?: RadioButtonProps['pt']
+  ptOptions?: RadioButtonProps['ptOptions']
+  unstyled?: RadioButtonProps['unstyled']
+  options?: { label: string, value: any }[]
+  options_class?: string
 }
 
 const props = defineProps({
@@ -35,7 +35,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       <RadioButton
         :id="context.id"
         v-model="context._value"
-        v-bind='context.attrs'
+        v-bind="context.attrs"
         :disabled="!!context?.disabled"
         :readonly="context?.attrs._readonly ?? false"
         :name="context?.attrs.name"

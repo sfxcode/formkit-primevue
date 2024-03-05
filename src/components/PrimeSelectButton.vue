@@ -1,19 +1,19 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { SelectButtonProps } from 'primevue/selectbutton'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { SelectButtonProps } from 'primevue/selectbutton'
 
-export type FormKitPrimeSelectButtonProps = {
-  pt?: SelectButtonProps['pt'];
-  ptOptions?: SelectButtonProps['ptOptions'];
-  unstyled?: SelectButtonProps['unstyled'];
-  optionLabel?: SelectButtonProps['optionLabel'];
-  optionValue?: SelectButtonProps['optionValue'];
-  optionDisabled?: SelectButtonProps['optionDisabled'];
-  multiple?: SelectButtonProps['multiple'];
-  unselectable?: SelectButtonProps['unselectable'];
-  dataKey?: SelectButtonProps['dataKey'];
-  options?: SelectButtonProps['options'];
+export interface FormKitPrimeSelectButtonProps {
+  pt?: SelectButtonProps['pt']
+  ptOptions?: SelectButtonProps['ptOptions']
+  unstyled?: SelectButtonProps['unstyled']
+  optionLabel?: SelectButtonProps['optionLabel']
+  optionValue?: SelectButtonProps['optionValue']
+  optionDisabled?: SelectButtonProps['optionDisabled']
+  multiple?: SelectButtonProps['multiple']
+  unselectable?: SelectButtonProps['unselectable']
+  dataKey?: SelectButtonProps['dataKey']
+  options?: SelectButtonProps['options']
 }
 
 const props = defineProps({
@@ -39,7 +39,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <SelectButton
       :id="context.id"
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
       :style="context?.attrs.style"

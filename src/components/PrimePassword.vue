@@ -1,23 +1,23 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { type PasswordProps } from 'primevue/password'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { PasswordProps } from 'primevue/password'
 
-export type FormKitPrimePasswordProps = {
-  mediumRegex?: PasswordProps['mediumRegex'];
-  strongRegex?: PasswordProps['strongRegex'];
-  promptLabel?: PasswordProps['promptLabel'];
-  weakLabel?: PasswordProps['weakLabel'];
-  mediumLabel?: PasswordProps['mediumLabel'];
-  strongLabel?: PasswordProps['strongLabel'];
-  hideIcon?: PasswordProps['hideIcon'];
-  showIcon?: PasswordProps['showIcon'];
-  pt?: PasswordProps['pt'];
-  ptOptions?: PasswordProps['ptOptions'];
-  unstyled?: PasswordProps['unstyled'];
-  placeholder?: PasswordProps['placeholder'];
-  feedback?: PasswordProps['feedback'];
-  toggleMask?: PasswordProps['toggleMask'];
+export interface FormKitPrimePasswordProps {
+  mediumRegex?: PasswordProps['mediumRegex']
+  strongRegex?: PasswordProps['strongRegex']
+  promptLabel?: PasswordProps['promptLabel']
+  weakLabel?: PasswordProps['weakLabel']
+  mediumLabel?: PasswordProps['mediumLabel']
+  strongLabel?: PasswordProps['strongLabel']
+  hideIcon?: PasswordProps['hideIcon']
+  showIcon?: PasswordProps['showIcon']
+  pt?: PasswordProps['pt']
+  ptOptions?: PasswordProps['ptOptions']
+  unstyled?: PasswordProps['unstyled']
+  placeholder?: PasswordProps['placeholder']
+  feedback?: PasswordProps['feedback']
+  toggleMask?: PasswordProps['toggleMask']
 }
 
 const props = defineProps({
@@ -42,7 +42,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
   <div class="p-formkit">
     <Password
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"

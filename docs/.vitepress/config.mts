@@ -20,7 +20,7 @@ export default defineConfig({
     },
     nav: nav(),
     search: {
-      provider: 'local'
+      provider: 'local',
     },
     sidebar: {
       '/guide/': sidebarGuide(),

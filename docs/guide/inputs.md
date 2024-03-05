@@ -8,7 +8,6 @@ Used inputs by FormKit must be imported global (default).
 They are referenced in the startup phase, if FormKit is enabled.
 :::
 
-
 ## Naming in FormKit
 Inputs are used in schema with **prime** as prefix and the **input name** as suffix.
 
@@ -38,4 +37,3 @@ E.g. InputMask -> primeInputMask
 - TriStateCheckbox
 - RadioButton
 - TreeSelect
-

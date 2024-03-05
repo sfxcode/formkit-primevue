@@ -1,16 +1,16 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { type InputSwitchProps } from 'primevue/inputswitch'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { InputSwitchProps } from 'primevue/inputswitch'
 
-export type FormKitPrimeInputSwitchProps = {
-  trueValue?: InputSwitchProps['trueValue'];
-  falseValue?: InputSwitchProps['falseValue'];
-  pt?: InputSwitchProps['pt'];
-  ptOptions?: InputSwitchProps['ptOptions'];
-  unstyled?: InputSwitchProps['unstyled'];
-  labelLeft?: string;
-  labelRight?: string;
+export interface FormKitPrimeInputSwitchProps {
+  trueValue?: InputSwitchProps['trueValue']
+  falseValue?: InputSwitchProps['falseValue']
+  pt?: InputSwitchProps['pt']
+  ptOptions?: InputSwitchProps['ptOptions']
+  unstyled?: InputSwitchProps['unstyled']
+  labelLeft?: string
+  labelRight?: string
 }
 
 const props = defineProps({
@@ -36,7 +36,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
     <InputSwitch
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
@@ -51,7 +51,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       :pt-options="context.ptOptions"
       :unstyled="context.unstyled ?? false"
       @change="handleInput"
-      @blur='handleBlur'
+      @blur="handleBlur"
     />
     <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.labelRight }}</span>
   </div>

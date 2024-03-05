@@ -1,17 +1,17 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { type SliderProps } from 'primevue/slider'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { SliderProps } from 'primevue/slider'
 
-export type FormKitPrimeSliderProps = {
-  pt?: SliderProps['pt'];
-  ptOptions?: SliderProps['ptOptions'];
-  unstyled?: SliderProps['unstyled'];
-  min?: SliderProps['min'];
-  max?: SliderProps['max'];
-  step?: SliderProps['step'];
-  range?: SliderProps['range'];
-  orientation?: SliderProps['orientation'];
+export interface FormKitPrimeSliderProps {
+  pt?: SliderProps['pt']
+  ptOptions?: SliderProps['ptOptions']
+  unstyled?: SliderProps['unstyled']
+  min?: SliderProps['min']
+  max?: SliderProps['max']
+  step?: SliderProps['step']
+  range?: SliderProps['range']
+  orientation?: SliderProps['orientation']
 }
 
 const props = defineProps({
@@ -38,7 +38,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <Slider
       :id="context.id"
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
       :style="context?.attrs.style"

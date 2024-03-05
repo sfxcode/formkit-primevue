@@ -13,4 +13,3 @@ If you are using this package in your project, please let me know or create a PR
 ## Nuxt 3
 
 [Nuxt 3 PrimeVue Starter](https://github.com/sfxcode/nuxt3-primevue-starter)
-

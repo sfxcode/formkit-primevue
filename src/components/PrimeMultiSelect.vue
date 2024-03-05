@@ -1,45 +1,45 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { MultiSelectProps } from 'primevue/multiselect'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { MultiSelectProps } from 'primevue/multiselect'
 
-export type FormKitPrimeMultiSelectProps = {
-  options?: MultiSelectProps['options'];
-  optionLabel?: MultiSelectProps['optionLabel'];
-  optionValue?: MultiSelectProps['optionValue'];
-  optionDisabled?: MultiSelectProps['optionDisabled'];
-  optionGroupLabel?: MultiSelectProps['optionGroupLabel'];
-  optionGroupChildren?: MultiSelectProps['optionGroupChildren'];
-  scrollHeight?: MultiSelectProps['scrollHeight'];
-  inputProps?: MultiSelectProps['inputProps'];
-  closeButtonProps?: MultiSelectProps['closeButtonProps'];
-  dataKey?: MultiSelectProps['dataKey'];
-  filter?: MultiSelectProps['filter'];
-  filterPlaceholder?: MultiSelectProps['filterPlaceholder'];
-  filterLocale?: MultiSelectProps['filterLocale'];
-  filterMatchMode?: MultiSelectProps['filterMatchMode'];
-  filterFields?: MultiSelectProps['filterFields'];
-  appendTo?: MultiSelectProps['appendTo'];
-  display?: MultiSelectProps['display'];
-  maxSelectedLabels?: MultiSelectProps['maxSelectedLabels'];
-  selectedItemsLabel?: MultiSelectProps['selectedItemsLabel'];
-  selectionLimit?: MultiSelectProps['selectionLimit'];
-  showToggleAll?: MultiSelectProps['showToggleAll'];
-  loading?: MultiSelectProps['loading'];
-  selectAll?: MultiSelectProps['selectAll'];
-  resetFilterOnHide?: MultiSelectProps['resetFilterOnHide'];
-  virtualScrollerOptions?: MultiSelectProps['virtualScrollerOptions'];
-  autoOptionFocus?: MultiSelectProps['autoOptionFocus'];
-  autoFilterFocus?: MultiSelectProps['autoFilterFocus'];
-  filterMessage?: MultiSelectProps['filterMessage'];
-  selectionMessage?: MultiSelectProps['selectionMessage'];
-  emptySelectionMessage?: MultiSelectProps['emptySelectionMessage'];
-  emptyFilterMessage?: MultiSelectProps['emptyFilterMessage'];
-  emptyMessage?: MultiSelectProps['emptyMessage'];
-  pt?: MultiSelectProps['pt'];
-  placeholder?: MultiSelectProps['placeholder'];
-  ptOptions?: MultiSelectProps['ptOptions'];
-  unstyled?: MultiSelectProps['unstyled'];
+export interface FormKitPrimeMultiSelectProps {
+  options?: MultiSelectProps['options']
+  optionLabel?: MultiSelectProps['optionLabel']
+  optionValue?: MultiSelectProps['optionValue']
+  optionDisabled?: MultiSelectProps['optionDisabled']
+  optionGroupLabel?: MultiSelectProps['optionGroupLabel']
+  optionGroupChildren?: MultiSelectProps['optionGroupChildren']
+  scrollHeight?: MultiSelectProps['scrollHeight']
+  inputProps?: MultiSelectProps['inputProps']
+  closeButtonProps?: MultiSelectProps['closeButtonProps']
+  dataKey?: MultiSelectProps['dataKey']
+  filter?: MultiSelectProps['filter']
+  filterPlaceholder?: MultiSelectProps['filterPlaceholder']
+  filterLocale?: MultiSelectProps['filterLocale']
+  filterMatchMode?: MultiSelectProps['filterMatchMode']
+  filterFields?: MultiSelectProps['filterFields']
+  appendTo?: MultiSelectProps['appendTo']
+  display?: MultiSelectProps['display']
+  maxSelectedLabels?: MultiSelectProps['maxSelectedLabels']
+  selectedItemsLabel?: MultiSelectProps['selectedItemsLabel']
+  selectionLimit?: MultiSelectProps['selectionLimit']
+  showToggleAll?: MultiSelectProps['showToggleAll']
+  loading?: MultiSelectProps['loading']
+  selectAll?: MultiSelectProps['selectAll']
+  resetFilterOnHide?: MultiSelectProps['resetFilterOnHide']
+  virtualScrollerOptions?: MultiSelectProps['virtualScrollerOptions']
+  autoOptionFocus?: MultiSelectProps['autoOptionFocus']
+  autoFilterFocus?: MultiSelectProps['autoFilterFocus']
+  filterMessage?: MultiSelectProps['filterMessage']
+  selectionMessage?: MultiSelectProps['selectionMessage']
+  emptySelectionMessage?: MultiSelectProps['emptySelectionMessage']
+  emptyFilterMessage?: MultiSelectProps['emptyFilterMessage']
+  emptyMessage?: MultiSelectProps['emptyMessage']
+  pt?: MultiSelectProps['pt']
+  placeholder?: MultiSelectProps['placeholder']
+  ptOptions?: MultiSelectProps['ptOptions']
+  unstyled?: MultiSelectProps['unstyled']
 }
 
 const props = defineProps({
@@ -64,7 +64,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
   <div class="p-formkit">
     <MultiSelect
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"

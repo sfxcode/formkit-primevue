@@ -1,15 +1,15 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { type TriStateCheckboxProps } from 'primevue/tristatecheckbox'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { TriStateCheckboxProps } from 'primevue/tristatecheckbox'
 
-export type FormKitPrimeTriStateCheckboxProps = {
-  pt?: TriStateCheckboxProps['pt'];
-  ptOptions?: TriStateCheckboxProps['ptOptions'];
-  unstyled?: TriStateCheckboxProps['unstyled'];
-  variant?: TriStateCheckboxProps['variant'];
-  labelLeft?: string;
-  labelRight?: string;
+export interface FormKitPrimeTriStateCheckboxProps {
+  pt?: TriStateCheckboxProps['pt']
+  ptOptions?: TriStateCheckboxProps['ptOptions']
+  unstyled?: TriStateCheckboxProps['unstyled']
+  variant?: TriStateCheckboxProps['variant']
+  labelLeft?: string
+  labelRight?: string
 }
 
 const props = defineProps({
@@ -35,7 +35,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
     <TriStateCheckbox
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"

@@ -1,42 +1,42 @@
 <script setup lang="ts">
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { type DropdownProps } from 'primevue/dropdown'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { DropdownProps } from 'primevue/dropdown'
 
-export type FormKitPrimeDropdownProps = {
-  options?: DropdownProps['options'];
-  optionLabel?: DropdownProps['optionLabel'];
-  optionValue?: DropdownProps['optionValue'];
-  optionDisabled?: DropdownProps['optionDisabled'];
-  optionGroupLabel?: DropdownProps['optionGroupLabel'];
-  optionGroupChildren?: DropdownProps['optionGroupChildren'];
-  scrollHeight?: DropdownProps['scrollHeight'];
-  filter?: DropdownProps['filter'];
-  filterPlaceholder?: DropdownProps['filterPlaceholder'];
-  filterLocale?: DropdownProps['filterLocale'];
-  filterMatchMode?: DropdownProps['filterMatchMode'];
-  filterFields?: DropdownProps['filterFields'];
-  filterInputProps?: DropdownProps['filterInputProps'];
-  editable?: DropdownProps['editable'];
-  placeholder?: DropdownProps['placeholder'];
-  dataKey?: DropdownProps['dataKey'];
-  showClear?: DropdownProps['showClear'];
-  panelStyle?: DropdownProps['panelStyle'];
-  panelClass?: DropdownProps['panelClass'];
-  panelProps?: DropdownProps['panelProps'];
-  appendTo?: DropdownProps['appendTo'];
-  resetFilterOnHide?: DropdownProps['resetFilterOnHide'];
-  virtualScrollerOptions?: DropdownProps['virtualScrollerOptions'];
-  autoOptionFocus?: DropdownProps['autoOptionFocus'];
-  selectOnFocus?: DropdownProps['selectOnFocus'];
-  filterMessage?: DropdownProps['filterMessage'];
-  selectionMessage?: DropdownProps['selectionMessage'];
-  emptySelectionMessage?: DropdownProps['emptySelectionMessage'];
-  emptyFilterMessage?: DropdownProps['emptyFilterMessage'];
-  emptyMessage?: DropdownProps['emptyMessage'];
-  pt?: DropdownProps['pt'];
-  ptOptions?: DropdownProps['ptOptions'];
-  unstyled?: DropdownProps['unstyled'];
+export interface FormKitPrimeDropdownProps {
+  options?: DropdownProps['options']
+  optionLabel?: DropdownProps['optionLabel']
+  optionValue?: DropdownProps['optionValue']
+  optionDisabled?: DropdownProps['optionDisabled']
+  optionGroupLabel?: DropdownProps['optionGroupLabel']
+  optionGroupChildren?: DropdownProps['optionGroupChildren']
+  scrollHeight?: DropdownProps['scrollHeight']
+  filter?: DropdownProps['filter']
+  filterPlaceholder?: DropdownProps['filterPlaceholder']
+  filterLocale?: DropdownProps['filterLocale']
+  filterMatchMode?: DropdownProps['filterMatchMode']
+  filterFields?: DropdownProps['filterFields']
+  filterInputProps?: DropdownProps['filterInputProps']
+  editable?: DropdownProps['editable']
+  placeholder?: DropdownProps['placeholder']
+  dataKey?: DropdownProps['dataKey']
+  showClear?: DropdownProps['showClear']
+  panelStyle?: DropdownProps['panelStyle']
+  panelClass?: DropdownProps['panelClass']
+  panelProps?: DropdownProps['panelProps']
+  appendTo?: DropdownProps['appendTo']
+  resetFilterOnHide?: DropdownProps['resetFilterOnHide']
+  virtualScrollerOptions?: DropdownProps['virtualScrollerOptions']
+  autoOptionFocus?: DropdownProps['autoOptionFocus']
+  selectOnFocus?: DropdownProps['selectOnFocus']
+  filterMessage?: DropdownProps['filterMessage']
+  selectionMessage?: DropdownProps['selectionMessage']
+  emptySelectionMessage?: DropdownProps['emptySelectionMessage']
+  emptyFilterMessage?: DropdownProps['emptyFilterMessage']
+  emptyMessage?: DropdownProps['emptyMessage']
+  pt?: DropdownProps['pt']
+  ptOptions?: DropdownProps['ptOptions']
+  unstyled?: DropdownProps['unstyled']
 }
 
 const props = defineProps({
@@ -59,7 +59,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
   <div class="p-formkit">
     <Dropdown
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"

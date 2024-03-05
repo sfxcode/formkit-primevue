@@ -1,54 +1,53 @@
 <script setup lang='ts'>
-import type { CalendarBlurEvent } from 'primevue/calendar'
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { CalendarProps } from 'primevue/calendar'
+import type { CalendarBlurEvent, CalendarProps } from 'primevue/calendar'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
 
-export type FormKitPrimeCalendarProps = {
-  dateFormat?: CalendarProps['dateFormat'];
-  placeholder?: CalendarProps['placeholder'];
-  selectionMode?: CalendarProps['selectionMode'];
-  inline?: CalendarProps['inline'];
-  icon?: CalendarProps['icon'];
-  showOtherMonths?: CalendarProps['showOtherMonths'];
-  selectOtherMonths?: CalendarProps['selectOtherMonths'];
-  showIcon?: CalendarProps['showIcon'];
-  previousIcon?: CalendarProps['previousIcon'];
-  nextIcon?: CalendarProps['nextIcon'];
-  incrementIcon?: CalendarProps['incrementIcon'];
-  decrementIcon?: CalendarProps['decrementIcon'];
-  numberOfMonths?: CalendarProps['numberOfMonths'];
-  responsiveOptions?: CalendarProps['responsiveOptions'];
-  view?: CalendarProps['view'];
-  touchUI?: CalendarProps['touchUI'];
-  minDate?: CalendarProps['minDate'];
-  maxDate?: CalendarProps['maxDate'];
-  disabledDates?: CalendarProps['disabledDates'];
-  disabledDays?: CalendarProps['disabledDays'];
-  maxDateCount?: CalendarProps['maxDateCount'];
-  showOnFocus?: CalendarProps['showOnFocus'];
-  autoZIndex?: CalendarProps['autoZIndex'];
-  baseZIndex?: CalendarProps['baseZIndex'];
-  showButtonBar?: CalendarProps['showButtonBar'];
-  showTime?: CalendarProps['showTime'];
-  timeOnly?: CalendarProps['timeOnly'];
-  shortYearCutoff?: CalendarProps['shortYearCutoff'];
-  hourFormat?: CalendarProps['hourFormat'];
-  stepHour?: CalendarProps['stepHour'];
-  stepMinute?: CalendarProps['stepMinute'];
-  stepSecond?: CalendarProps['stepSecond'];
-  showSeconds?: CalendarProps['showSeconds'];
-  hideOnDateTimeSelect?: CalendarProps['hideOnDateTimeSelect'];
-  hideOnRangeSelection?: CalendarProps['hideOnRangeSelection'];
-  timeSeparator?: CalendarProps['timeSeparator'];
-  showWeek?: CalendarProps['showWeek'];
-  manualInput?: CalendarProps['manualInput'];
-  appendTo?: CalendarProps['appendTo'];
-  panelStyle?: CalendarProps['panelStyle'];
-  panelClass?: CalendarProps['panelClass'];
-  pt?: CalendarProps['pt'];
-  ptOptions?: CalendarProps['ptOptions'];
-  unstyled?: CalendarProps['unstyled'];
+export interface FormKitPrimeCalendarProps {
+  dateFormat?: CalendarProps['dateFormat']
+  placeholder?: CalendarProps['placeholder']
+  selectionMode?: CalendarProps['selectionMode']
+  inline?: CalendarProps['inline']
+  icon?: CalendarProps['icon']
+  showOtherMonths?: CalendarProps['showOtherMonths']
+  selectOtherMonths?: CalendarProps['selectOtherMonths']
+  showIcon?: CalendarProps['showIcon']
+  previousIcon?: CalendarProps['previousIcon']
+  nextIcon?: CalendarProps['nextIcon']
+  incrementIcon?: CalendarProps['incrementIcon']
+  decrementIcon?: CalendarProps['decrementIcon']
+  numberOfMonths?: CalendarProps['numberOfMonths']
+  responsiveOptions?: CalendarProps['responsiveOptions']
+  view?: CalendarProps['view']
+  touchUI?: CalendarProps['touchUI']
+  minDate?: CalendarProps['minDate']
+  maxDate?: CalendarProps['maxDate']
+  disabledDates?: CalendarProps['disabledDates']
+  disabledDays?: CalendarProps['disabledDays']
+  maxDateCount?: CalendarProps['maxDateCount']
+  showOnFocus?: CalendarProps['showOnFocus']
+  autoZIndex?: CalendarProps['autoZIndex']
+  baseZIndex?: CalendarProps['baseZIndex']
+  showButtonBar?: CalendarProps['showButtonBar']
+  showTime?: CalendarProps['showTime']
+  timeOnly?: CalendarProps['timeOnly']
+  shortYearCutoff?: CalendarProps['shortYearCutoff']
+  hourFormat?: CalendarProps['hourFormat']
+  stepHour?: CalendarProps['stepHour']
+  stepMinute?: CalendarProps['stepMinute']
+  stepSecond?: CalendarProps['stepSecond']
+  showSeconds?: CalendarProps['showSeconds']
+  hideOnDateTimeSelect?: CalendarProps['hideOnDateTimeSelect']
+  hideOnRangeSelection?: CalendarProps['hideOnRangeSelection']
+  timeSeparator?: CalendarProps['timeSeparator']
+  showWeek?: CalendarProps['showWeek']
+  manualInput?: CalendarProps['manualInput']
+  appendTo?: CalendarProps['appendTo']
+  panelStyle?: CalendarProps['panelStyle']
+  panelClass?: CalendarProps['panelClass']
+  pt?: CalendarProps['pt']
+  ptOptions?: CalendarProps['ptOptions']
+  unstyled?: CalendarProps['unstyled']
 }
 
 const props = defineProps({
@@ -81,7 +80,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
   <div class="p-formkit">
     <Calendar
       v-model="context._value"
-      v-bind='context?.attrs'
+      v-bind="context?.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"

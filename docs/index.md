@@ -3,7 +3,7 @@ layout: home
 
 hero:
   name: FormKit PrimeVue
-  text: Schema based Validation 
+  text: Schema based Validation
   tagline: Use PrimeVue and FormKit Validation
   actions:
     - theme: brand
@@ -21,4 +21,3 @@ features:
 - title: "FormKit"
   details: A Vue form building framework that simplifies form structure, generation, validation, theming, submission, error handling, and more.
 ---
-

@@ -1,20 +1,20 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { type InputMaskProps } from 'primevue/inputmask'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { InputMaskProps } from 'primevue/inputmask'
 
-export type FormKitPrimeInputMaskProps = {
-  mask?: InputMaskProps['mask'];
-  slotChar?: InputMaskProps['slotChar'];
-  autoClear?: InputMaskProps['autoClear'];
-  unmask?: InputMaskProps['unmask'];
-  pt?: InputMaskProps['pt'];
-  ptOptions?: InputMaskProps['ptOptions'];
-  unstyled?: InputMaskProps['unstyled'];
-  invalid?: InputMaskProps['invalid'];
-  variant?: InputMaskProps['variant'];
-  iconLeft?: string;
-  iconRight?: string;
+export interface FormKitPrimeInputMaskProps {
+  mask?: InputMaskProps['mask']
+  slotChar?: InputMaskProps['slotChar']
+  autoClear?: InputMaskProps['autoClear']
+  unmask?: InputMaskProps['unmask']
+  pt?: InputMaskProps['pt']
+  ptOptions?: InputMaskProps['ptOptions']
+  unstyled?: InputMaskProps['unstyled']
+  invalid?: InputMaskProps['invalid']
+  variant?: InputMaskProps['variant']
+  iconLeft?: string
+  iconRight?: string
 }
 
 const props = defineProps({
@@ -57,7 +57,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       <InputMask
         :id="context.id"
         v-model="context._value"
-        v-bind='context.attrs'
+        v-bind="context.attrs"
         :disabled="!!context?.disabled"
         :readonly="context?.attrs._readonly ?? false"
         :class="styleClass"

@@ -1,22 +1,22 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { KnobProps } from 'primevue/knob'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { KnobProps } from 'primevue/knob'
 
-export type FormKitPrimeKnobProps = {
-  pt?: KnobProps['pt'];
-  ptOptions?: KnobProps['ptOptions'];
-  unstyled?: KnobProps['unstyled'];
-  min?: KnobProps['min'];
-  max?: KnobProps['max'];
-  step?: KnobProps['step'];
-  size?: KnobProps['size'];
-  strokeWidth?: KnobProps['strokeWidth'];
-  showValue?: KnobProps['showValue'];
-  valueColor?: KnobProps['valueColor'];
-  rangeColor?: KnobProps['rangeColor'];
-  textColor?: KnobProps['textColor'];
-  valueTemplate?: KnobProps['valueTemplate'];
+export interface FormKitPrimeKnobProps {
+  pt?: KnobProps['pt']
+  ptOptions?: KnobProps['ptOptions']
+  unstyled?: KnobProps['unstyled']
+  min?: KnobProps['min']
+  max?: KnobProps['max']
+  step?: KnobProps['step']
+  size?: KnobProps['size']
+  strokeWidth?: KnobProps['strokeWidth']
+  showValue?: KnobProps['showValue']
+  valueColor?: KnobProps['valueColor']
+  rangeColor?: KnobProps['rangeColor']
+  textColor?: KnobProps['textColor']
+  valueTemplate?: KnobProps['valueTemplate']
 }
 
 const props = defineProps({
@@ -43,7 +43,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <Knob
       :id="context.id"
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
       :style="context?.attrs.style"

@@ -1,17 +1,17 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { type RatingProps } from 'primevue/rating'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { RatingProps } from 'primevue/rating'
 
-export type FormKitPrimeRatingProps = {
-  unstyled?: RatingProps['unstyled'];
-  stars?: RatingProps['stars'];
-  cancel?: RatingProps['cancel'];
-  onIcon?: RatingProps['onIcon'];
-  offIcon?: RatingProps['offIcon'];
-  cancelIcon?: RatingProps['cancelIcon'];
-  ptOptions?: RatingProps['ptOptions'];
-  pt?: RatingProps['pt'];
+export interface FormKitPrimeRatingProps {
+  unstyled?: RatingProps['unstyled']
+  stars?: RatingProps['stars']
+  cancel?: RatingProps['cancel']
+  onIcon?: RatingProps['onIcon']
+  offIcon?: RatingProps['offIcon']
+  cancelIcon?: RatingProps['cancelIcon']
+  ptOptions?: RatingProps['ptOptions']
+  pt?: RatingProps['pt']
 }
 
 const props = defineProps({
@@ -37,7 +37,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <Rating
       :id="context.id"
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
       :style="context?.attrs.style"

@@ -1,17 +1,17 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { CheckboxProps } from 'primevue/checkbox'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { CheckboxProps } from 'primevue/checkbox'
 
-export type FormKitPrimeCheckboxProps = {
-  binary?: CheckboxProps['binary'];
-  trueValue?: CheckboxProps['trueValue'];
-  falseValue?: CheckboxProps['falseValue'];
-  pt?: CheckboxProps['pt'];
-  ptOptions?: CheckboxProps['ptOptions'];
-  unstyled?: CheckboxProps['unstyled'];
-  labelLeft?: string;
-  labelRight?: string;
+export interface FormKitPrimeCheckboxProps {
+  binary?: CheckboxProps['binary']
+  trueValue?: CheckboxProps['trueValue']
+  falseValue?: CheckboxProps['falseValue']
+  pt?: CheckboxProps['pt']
+  ptOptions?: CheckboxProps['ptOptions']
+  unstyled?: CheckboxProps['unstyled']
+  labelLeft?: string
+  labelRight?: string
 }
 
 const props = defineProps({
@@ -37,7 +37,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <span v-if="context.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
     <Checkbox
       v-model="context._value"
-      v-bind='context?.attrs'
+      v-bind="context?.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"

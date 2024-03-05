@@ -1,16 +1,15 @@
 <script setup lang="ts">
-import type { EditorSelectionChangeEvent } from 'primevue/editor'
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { type EditorProps } from 'primevue/editor'
+import type { EditorProps, EditorSelectionChangeEvent } from 'primevue/editor'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
 
-export type FormKitPrimeEditorProps = {
-  placeholder?: EditorProps['placeholder'];
-  formats?: EditorProps['formats'];
-  modules?: EditorProps['modules'];
-  pt?: EditorProps['pt'];
-  ptOptions?: EditorProps['ptOptions'];
-  unstyled?: EditorProps['unstyled'];
+export interface FormKitPrimeEditorProps {
+  placeholder?: EditorProps['placeholder']
+  formats?: EditorProps['formats']
+  modules?: EditorProps['modules']
+  pt?: EditorProps['pt']
+  ptOptions?: EditorProps['ptOptions']
+  unstyled?: EditorProps['unstyled']
 }
 
 const props = defineProps({
@@ -37,7 +36,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <Editor
       :id="context.id"
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
       :editor-style="context?.attrs.style"

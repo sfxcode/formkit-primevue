@@ -1,23 +1,23 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { ListboxProps } from 'primevue/listbox'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { ListboxProps } from 'primevue/listbox'
 
-export type FormKitPrimeListboxProps = {
-  pt?: ListboxProps['pt'];
-  ptOptions?: ListboxProps['ptOptions'];
-  unstyled?: ListboxProps['unstyled'];
-  options?: ListboxProps['options'];
-  optionLabel?: ListboxProps['optionLabel'];
-  optionValue?: ListboxProps['optionValue'];
-  multiple?: ListboxProps['multiple'];
-  filter?: ListboxProps['filter'];
-  filterIcon?: ListboxProps['filterIcon'];
-  filterPlaceholder?: ListboxProps['filterPlaceholder'];
-  filterLocale?: ListboxProps['filterLocale'];
-  filterMatchMode?: ListboxProps['filterMatchMode'];
-  autoOptionFocus?: ListboxProps['autoOptionFocus'];
-  selectOnFocus?: ListboxProps['selectOnFocus'];
+export interface FormKitPrimeListboxProps {
+  pt?: ListboxProps['pt']
+  ptOptions?: ListboxProps['ptOptions']
+  unstyled?: ListboxProps['unstyled']
+  options?: ListboxProps['options']
+  optionLabel?: ListboxProps['optionLabel']
+  optionValue?: ListboxProps['optionValue']
+  multiple?: ListboxProps['multiple']
+  filter?: ListboxProps['filter']
+  filterIcon?: ListboxProps['filterIcon']
+  filterPlaceholder?: ListboxProps['filterPlaceholder']
+  filterLocale?: ListboxProps['filterLocale']
+  filterMatchMode?: ListboxProps['filterMatchMode']
+  autoOptionFocus?: ListboxProps['autoOptionFocus']
+  selectOnFocus?: ListboxProps['selectOnFocus']
 }
 
 const props = defineProps({
@@ -43,7 +43,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <Listbox
       :id="context.id"
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
       :list-style="context?.attrs.style"
@@ -66,7 +66,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       :pt-options="context.ptOptions"
       :unstyled="context.unstyled ?? false"
       @change="handleInput"
-      @blur='handleBlur'
+      @blur="handleBlur"
     />
   </div>
 </template>

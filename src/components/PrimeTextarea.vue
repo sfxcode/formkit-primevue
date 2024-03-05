@@ -1,15 +1,15 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue';
-import { type FormKitFrameworkContext } from '@formkit/core';
-import { type TextareaProps } from 'primevue/textarea'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { TextareaProps } from 'primevue/textarea'
 
-export type FormKitPrimeTextareaProps = {
-  pt?: TextareaProps['pt'];
-  ptOptions?: TextareaProps['ptOptions'];
-  unstyled?: TextareaProps['unstyled'];
-  autoResize?: TextareaProps['autoResize'];
-  rows?: TextareaProps['rows'];
-  placeholder?: TextareaProps['placeholder'];
+export interface FormKitPrimeTextareaProps {
+  pt?: TextareaProps['pt']
+  ptOptions?: TextareaProps['ptOptions']
+  unstyled?: TextareaProps['unstyled']
+  autoResize?: TextareaProps['autoResize']
+  rows?: TextareaProps['rows']
+  placeholder?: TextareaProps['placeholder']
 }
 
 const props = defineProps({
@@ -34,7 +34,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <Textarea
       :id="context.id"
       v-model="context._value"
-      v-bind='context.attrs'
+      v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
       :style="context?.attrs.style"
