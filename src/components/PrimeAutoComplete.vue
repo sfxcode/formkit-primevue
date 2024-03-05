@@ -1,18 +1,18 @@
 <script setup lang='ts'>
-import { type PropType, computed, ref } from 'vue';
-import type { FormKitFrameworkContext } from '@formkit/core';
+import { type PropType, computed, ref } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
 import type {
   AutoCompleteCompleteEvent,
   AutoCompleteProps,
 } from 'primevue/autocomplete'
 
-export type FormKitPrimeAutoCompleteProps = {
-  pt?: AutoCompleteProps['pt'];
-  ptOptions?: AutoCompleteProps['ptOptions'];
-  unstyled?: AutoCompleteProps['unstyled'];
-  dropdown?: AutoCompleteProps['dropdown'];
-  multiple?: AutoCompleteProps['multiple'];
-};
+export interface FormKitPrimeAutoCompleteProps {
+  pt?: AutoCompleteProps['pt']
+  ptOptions?: AutoCompleteProps['ptOptions']
+  unstyled?: AutoCompleteProps['unstyled']
+  dropdown?: AutoCompleteProps['dropdown']
+  multiple?: AutoCompleteProps['multiple']
+}
 
 const props = defineProps({
   context: {
@@ -31,8 +31,8 @@ function handleInput(e: any) {
   props.context?.node.input(props.context?._value)
 }
 
-const handleBlur = (event: Event) => {
-  props.context?.handlers.blur(event);
+function handleBlur(event: Event) {
+  props.context?.handlers.blur(event)
 }
 
 const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
@@ -43,8 +43,9 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <AutoComplete
       :id="context.id"
       v-model="context._value"
-      v-bind='context?.attrs'
+      v-bind="context?.attrs"
       :disabled="!!context?.disabled"
+      :class="styleClass"
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
