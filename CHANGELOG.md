@@ -1,3 +1,26 @@
+## [v1.9.0] - 2024-03-05
+### :sparkles: New Features
+- [`45dc148`](https://github.com/sfxcode/formkit-primevue/commit/45dc148b568e574da2e49d6bd25c974f56b466d1) - import deps and add formkit prop type
+- [`de9a026`](https://github.com/sfxcode/formkit-primevue/commit/de9a0265ec966ae845511aa2e5084e39f56c8ed2) - use handle blur correct
+- [`ed015f3`](https://github.com/sfxcode/formkit-primevue/commit/ed015f3c7bd887d1acf429f7b8ddb9972f0ca0f2) - add types (for intellisense) and allow to have kebab-cased component attributes instead of formkit attrs
+- [`ca65896`](https://github.com/sfxcode/formkit-primevue/commit/ca658965c550f78da6909b4a62cf1f7d2a22d8fd) - add icon left right on input mask
+
+### :bug: Bug Fixes
+- [`2d62a4b`](https://github.com/sfxcode/formkit-primevue/commit/2d62a4b87c23c9c3694062f6934899d1daf40b4b) - use only formkit disabled state instead of attrs which could lead into false disabled states
+- [`ba3aff9`](https://github.com/sfxcode/formkit-primevue/commit/ba3aff9cc32cd641baf241e5ddd7522125712fe7) - do not store attrs in a variable, otherwise reactivity on attrs are not working
+- [`4ebc0a8`](https://github.com/sfxcode/formkit-primevue/commit/4ebc0a89e7db74be2b803b752cbd87b4bc15f177) - cleanup and reactivity fixes
+- [`be8e01e`](https://github.com/sfxcode/formkit-primevue/commit/be8e01e9a51ffec15306efe412346ba45b03d9f4) - move components to correct destination, which had wrong path due to rebase
+- [`41f3235`](https://github.com/sfxcode/formkit-primevue/commit/41f3235ed3124dd93321abcb4230bd9b7c20546a) - rebase conflicts
+- [`aea515a`](https://github.com/sfxcode/formkit-primevue/commit/aea515a24dc239d8990ef25f87128be227867847) - **PrimeAutoComplete**: add styleClass *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`bdd82fb`](https://github.com/sfxcode/formkit-primevue/commit/bdd82fbd565634ac119a87bf03514996e912573a) - **components**: :value should be preferred instead of v-bind *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`73d5b98`](https://github.com/sfxcode/formkit-primevue/commit/73d5b98b6061e7c145271e19b9f2075da2b056fb) - **linting**: remove lint problems with lint:fix *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`173e2b7`](https://github.com/sfxcode/formkit-primevue/commit/173e2b74eb380b1d1bb07afcfa708e58e3aa6724) - **linting**: fix some issues *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`8037d57`](https://github.com/sfxcode/formkit-primevue/commit/8037d572a0c5d24b47d067085cb84019693ae971) - fix some minor issues *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`787889f`](https://github.com/sfxcode/formkit-primevue/commit/787889f337ab3887f1938ab5728c9625cbba1ffd) - **release**: New Version *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.8.6] - 2024-03-04
 ### :recycle: Refactors
 - [`8fd602f`](https://github.com/sfxcode/formkit-primevue/commit/8fd602f5d7aa1d39f781fae2930e3c0ba84681e0) - **components**: cosmetics *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -527,3 +550,4 @@
 [v1.8.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.0...v1.8.1
 [v1.8.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.1...v1.8.5
 [v1.8.6]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.5...v1.8.6
+[v1.9.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.6...v1.9.0
