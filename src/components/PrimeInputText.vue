@@ -8,8 +8,7 @@ export interface FormKitPrimeInputTextProps {
   ptOptions?: InputTextProps['ptOptions']
   unstyled?: InputTextProps['unstyled']
   placeholder?: InputTextProps['placeholder']
-  iconLeft?: string
-  iconRight?: string
+  icon?: string
 }
 
 const props = defineProps({
@@ -19,21 +18,8 @@ const props = defineProps({
   },
 })
 
-function hasLeftIcon() {
-  return props.context?.iconLeft && props.context?.iconLeft.length > 0
-}
-
-function hasRightIcon() {
-  return props.context?.iconRight && props.context?.iconRight.length > 0
-}
-
-function spanClass() {
-  let result = ''
-  if (hasLeftIcon())
-    result = `p-formkit-icon ${result}p-input-icon-left `
-  if (hasRightIcon())
-    result = `p-formkit-icon ${result}p-input-icon-right `
-  return result
+function hasIcon() {
+  return props.context?.attrs?.icon && props.context?.attrs?.icon.length > 0
 }
 
 function handleBlur(e: Event) {
@@ -49,13 +35,13 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
 
 <template>
   <div class="p-formkit">
-    <span :class="spanClass()">
-      <i v-if="hasLeftIcon()" :class="context?.iconLeft" />
-
+    {{ context.attrs.icon }}
+    <IconField v-if="hasIcon()" :icon-position="context?.attrs.iconPosition">
+      <InputIcon :class="context.attrs.icon" />
       <InputText
         :id="context.id"
         v-model="context._value"
-        v-bind="context.attrs"
+        v-bind="context?.attrs"
         :disabled="!!context?.disabled"
         :readonly="context?.attrs._readonly ?? false"
         :style="context?.attrs.style"
@@ -70,7 +56,25 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
         @input="handleInput"
         @blur="handleBlur"
       />
-      <i v-if="hasRightIcon()" :class="context?.iconRight" />
-    </span>
+    </IconField>
+    <InputText
+      v-else
+      :id="context.id"
+      v-model="context._value"
+      v-bind="context?.attrs"
+      :disabled="!!context?.disabled"
+      :readonly="context?.attrs._readonly ?? false"
+      :style="context?.attrs.style"
+      :class="styleClass"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
+      :placeholder="context.placeholder"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
+      @input="handleInput"
+      @blur="handleBlur"
+    />
   </div>
 </template>

@@ -31,7 +31,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
   <div class="p-formkit">
     <Chips
       v-model="context._value"
-      v-bind="context.attrs"
+      v-bind="context?.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
