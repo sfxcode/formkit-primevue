@@ -43,6 +43,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <AutoComplete
       :id="context.id"
       v-model="context._value"
+      v-bind='context?.attrs'
       :disabled="!!context?.disabled"
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"

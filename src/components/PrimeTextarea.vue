@@ -34,6 +34,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <Textarea
       :id="context.id"
       v-model="context._value"
+      v-bind='context.attrs'
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
       :style="context?.attrs.style"

@@ -35,7 +35,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
     <TriStateCheckbox
       v-model="context._value"
-      v-bind="attrs"
+      v-bind='context.attrs'
       :input-id="context.id"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
