@@ -22,7 +22,7 @@ const props = defineProps({
   },
 })
 
-function handleInput(e: any) {
+function handleInput(_: any) {
   props.context?.node.input(props.context?._value)
 }
 
@@ -37,7 +37,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
   <div class="p-formkit">
     <CascadeSelect
       :id="context.id"
-      v-model="context._value"
+      :value="context._value"
       v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"

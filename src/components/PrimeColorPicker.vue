@@ -19,7 +19,7 @@ const props = defineProps({
   },
 })
 
-function handleChange(e: any) {
+function handleChange(_: any) {
   props.context?.node.input(props.context?._value)
 }
 </script>
@@ -27,7 +27,7 @@ function handleChange(e: any) {
 <template>
   <div class="p-formkit">
     <ColorPicker
-      v-model="context._value"
+      :value="context._value"
       v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"

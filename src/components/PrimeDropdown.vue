@@ -58,7 +58,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
 <template>
   <div class="p-formkit">
     <Dropdown
-      v-model="context._value"
+      :value="context._value"
       v-bind="context.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"

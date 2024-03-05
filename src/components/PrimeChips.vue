@@ -21,7 +21,7 @@ const props = defineProps({
   },
 })
 
-function handleInput(e: any) {
+function handleInput(_: any) {
   props.context?.node.input(props.context?._value)
 }
 const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
@@ -30,7 +30,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
 <template>
   <div class="p-formkit">
     <Chips
-      v-model="context._value"
+      :value="context._value"
       v-bind="context.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
