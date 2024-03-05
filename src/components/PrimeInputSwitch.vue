@@ -20,7 +20,7 @@ const props = defineProps({
   },
 })
 
-function handleInput(e: any) {
+function handleInput(_: any) {
   props.context?.node.input(props.context?._value)
 }
 
@@ -35,7 +35,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
   <div :class="context?.attrs.option_class" class="p-formkit">
     <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
     <InputSwitch
-      v-model="context._value"
+      :value="context._value"
       v-bind="context.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"

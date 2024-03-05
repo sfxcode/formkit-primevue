@@ -42,7 +42,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
   <div class="p-formkit">
     <Knob
       :id="context.id"
-      v-model="context._value"
+      :value="context._value"
       v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
