@@ -23,7 +23,7 @@ const props = defineProps({
   },
 })
 
-function handleChange(_: any) {
+function handleChange(e: any) {
   props.context?.node.input(props.context?._value)
 }
 
@@ -38,7 +38,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
   <div class="p-formkit">
     <SelectButton
       :id="context.id"
-      :value="context._value"
+      v-model="context._value"
       v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"
