@@ -27,7 +27,7 @@ const props = defineProps({
   },
 })
 
-function handleInput(_: any) {
+function handleInput(e: any) {
   props.context?.node.input(props.context?._value)
 }
 
@@ -42,7 +42,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
   <div class="p-formkit">
     <Listbox
       :id="context.id"
-      :value="context._value"
+      v-model="context._value"
       v-bind="context.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs._readonly ?? false"

@@ -56,7 +56,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
 
       <InputMask
         :id="context.id"
-        :value="context._value"
+        v-model="context._value"
         v-bind="context.attrs"
         :disabled="!!context?.disabled"
         :readonly="context?.attrs._readonly ?? false"

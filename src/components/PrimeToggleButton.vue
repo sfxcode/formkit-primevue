@@ -21,7 +21,7 @@ const props = defineProps({
   },
 })
 
-function handleChange(_: any) {
+function handleChange(e: any) {
   props.context?.node.input(props.context?._value)
 }
 
@@ -35,7 +35,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
 <template>
   <div class="p-formkit">
     <ToggleButton
-      :value="context._value"
+      v-model="context._value"
       v-bind="context.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"

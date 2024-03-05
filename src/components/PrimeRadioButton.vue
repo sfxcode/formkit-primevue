@@ -18,8 +18,12 @@ const props = defineProps({
   },
 })
 
-function handleChange(_: any) {
+function handleChange(e: any) {
   props.context?.node.input(props.context?._value)
+}
+
+function handleBlur(e: Event) {
+  props.context?.handlers.blur(e)
 }
 
 const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
@@ -30,11 +34,12 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
     <div v-for="option in context.options" :key="option.value" :class="context.option_class">
       <RadioButton
         :id="context.id"
-        :value="context._value"
+        v-model="context._value"
         v-bind="context.attrs"
         :disabled="!!context?.disabled"
         :readonly="context?.attrs._readonly ?? false"
         :name="context?.attrs.name"
+        :value="option.value"
         :input-style="context?.attrs.style"
         :input-class="styleClass"
         :pt="context.pt"
