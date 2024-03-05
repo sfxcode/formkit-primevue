@@ -24,7 +24,7 @@ const props = defineProps({
   },
 })
 
-function handleInput(e: Event) {
+function handleInput(e: FocusEvent) {
   props.context?.node.input(props.context?._value)
   props.context?.handlers.blur(e)
 }
