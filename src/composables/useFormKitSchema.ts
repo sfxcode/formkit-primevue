@@ -46,14 +46,14 @@ export function useFormKitSchema() {
     }
   }
 
-  function addListGroupFunctions(data: any) {
+  function addListGroupFunctions(data: any, addNodeDefaultObject: object = {}) {
     const swapElements = (array: any[], index1: number, index2: number) => {
       array[index1] = array.splice(index2, 1, array[index1])[0]
       return array
     }
 
     data.addNode = (node: any) => (): void => {
-      const newArray: any[] = [...node.value, { }]
+      const newArray: any[] = [...node.value, addNodeDefaultObject]
       node.input(newArray, false)
     }
     data.removeNode = (node: any, index: number) => (): void => {
@@ -69,7 +69,7 @@ export function useFormKitSchema() {
       if (index < array.length - 1)
         node.input(swapElements(array, index, index + 1), false)
     }
-    data.insertDuplicate = (node: any, index: number) => (): void => {
+    data.copyNode = (node: any, index: number) => (): void => {
       const obj: any = node.value[index]
       const newArray: any[] = [...node.value, { ...obj }]
       node.input(newArray, false)
