@@ -37,7 +37,7 @@ async function submitHandler() {
       {{ header }}
     </h2>
     <slot />
-    <div class="flex flex-wrap gap-12">
+    <div class="flex flex-wrap gap-8">
       <div class="min-w-30rem basis-1/3 md:basis-1/4">
         <FormKit
           id="form"

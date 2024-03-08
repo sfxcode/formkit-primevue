@@ -23,6 +23,11 @@ import { primeInputs } from '@sfxcode/formkit-primevue'
   }))
 ```
 
+### Schema Helper Functions
+
+[useFormKitSchema](https://github.com/sfxcode/formkit-primevue/blob/main/src/composables/useFormKitSchema.ts) provide functions to simplify the usage of elements, components, lists, ...
+
+
 ### Basic Styling
 
 Basic styling is provided with the **formkit-primevue.scss** file.
@@ -40,7 +45,14 @@ You can use it or take it as base for your own styling.
 - All inputs are wrapped in a div with a **p-formkit** class
 - Most Prime Components have access to class / styles attributes
 - PT and PTOptions are available ([https://primevue.org/passthrough/](https://primevue.org/passthrough/))
-- [Styling](https://formkit-primevue.netlify.app/demo/styling), [Grid](https://formkit-primevue.netlify.app/demo/grid) and [PT](https://formkit-primevue.netlify.app/demo/passThrough) demo available
+- [Styling](https://formkit-primevue.netlify.app/demo/styling) and [PT](https://formkit-primevue.netlify.app/demo/passThrough) demo available
+
+### Samples 
+
+Some samples for common tasks are available
+
+- Repeater (with the help of the useFormKitSchema compsable)
+- Grid
 
 ## Showcases
 
@@ -50,9 +62,11 @@ You can use it or take it as base for your own styling.
 
 ## Supported Inputs
 
+- AutoComplete
 - Calendar
 - CascadeSelect
 - Checkbox
+- Chips
 - Dropdown
 - Editor (HTML Editor)
 - InputMask
@@ -63,7 +77,6 @@ You can use it or take it as base for your own styling.
 - MultiSelect
 - Password
 - Ranking
-- Chips
 - Knob
 - ColorPicker
 - Listbox
