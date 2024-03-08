@@ -30,7 +30,7 @@ import { primeInputs } from '@sfxcode/formkit-primevue'
 
 ### Basic Styling
 
-Basic styling is provided with the **formkit-primevue.scss** file.
+Basic styling is provided with the [formkit-primevue.scss](https://github.com/sfxcode/formkit-primevue/blob/main/src/sass/formkit-primevue.scss) file.
 
 Features:
 
@@ -45,14 +45,14 @@ You can use it or take it as base for your own styling.
 - All inputs are wrapped in a div with a **p-formkit** class
 - Most Prime Components have access to class / styles attributes
 - PT and PTOptions are available ([https://primevue.org/passthrough/](https://primevue.org/passthrough/))
-- [Styling](https://formkit-primevue.netlify.app/demo/styling) and [PT](https://formkit-primevue.netlify.app/demo/passThrough) demo available
+- [Styling](https://formkit-primevue.netlify.app/styling/base) and [PT](https://formkit-primevue.netlify.app/styling/passThrough) demo available
 
 ### Samples 
 
 Some samples for common tasks are available
 
-- Repeater (with the help of the useFormKitSchema compsable)
-- Grid
+- [Repeater](https://formkit-primevue.netlify.app/samples/repeater) (with the help of the useFormKitSchema composable)
+- [Grid](https://formkit-primevue.netlify.app/samples/grid)
 
 ## Showcases
 
