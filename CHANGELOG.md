@@ -1,3 +1,19 @@
+## [v1.9.1] - 2024-03-08
+### :sparkles: New Features
+- [`ce10c14`](https://github.com/sfxcode/formkit-primevue/commit/ce10c14396c187819742af5adf000ac223d37909) - **addListGroupFunctions**: add default object for add node- change insertNode to copyNode *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`73ce845`](https://github.com/sfxcode/formkit-primevue/commit/73ce8453be0c7281200c7679d0f6abfe079f86b1) - **demo**: add schema based repeater demo *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :bug: Bug Fixes
+- [`65162c9`](https://github.com/sfxcode/formkit-primevue/commit/65162c9db9e29af05939dfe17e09fec7c2cb9ebe) - **addListGroupFunctions**: insertDuplicate should clone existing object *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :recycle: Refactors
+- [`2021561`](https://github.com/sfxcode/formkit-primevue/commit/2021561772e7f117620def931157ede8bf523d0f) - **demo**: update paths *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`a27b427`](https://github.com/sfxcode/formkit-primevue/commit/a27b42723fc855fd1015996bae4a44880c405aca) - **linting**: fix issues *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`6317ae2`](https://github.com/sfxcode/formkit-primevue/commit/6317ae2931f764502f1363945b682cdb80fe03da) - **dependencies**: update all *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.9.0] - 2024-03-05
 ### :sparkles: New Features
 - [`45dc148`](https://github.com/sfxcode/formkit-primevue/commit/45dc148b568e574da2e49d6bd25c974f56b466d1) - import deps and add formkit prop type
@@ -551,3 +567,4 @@
 [v1.8.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.1...v1.8.5
 [v1.8.6]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.5...v1.8.6
 [v1.9.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.6...v1.9.0
+[v1.9.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.0...v1.9.1
