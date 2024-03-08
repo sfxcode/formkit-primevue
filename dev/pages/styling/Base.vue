@@ -33,7 +33,7 @@ const data = { name: 'Some Text in Green', name2: 'Some bold Text in Gray' }
           <br>
           Direct styling by the style attribute.
           <br>
-          In this demo elements with the  p-formkit class use only 60% of the parent width.
+          In this demo elements with the p-formkit class use the parent width.
         </span>
       </div>
     </PrimeInput>
