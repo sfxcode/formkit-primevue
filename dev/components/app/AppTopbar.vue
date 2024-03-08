@@ -114,7 +114,14 @@ const items = ref([
         </router-link>
       </template>
 
-      <template #center />
+      <template #center>
+        <div class="text-lg">
+          <span class="text-yellow-600 font-bold">New: </span>
+          <router-link to="/samples/repeater" class="">
+            <span class="">Repeater</span>
+          </router-link>
+        </div>
+      </template>
 
       <template #end>
         <Button label="FormKit" class="mr-2" @click="redirectToFormKit" />
@@ -124,20 +131,22 @@ const items = ref([
       </template>
     </Toolbar>
   </nav>
-  <MegaMenu :model="items" class="w-134">
-    <template #item="{ item }">
-      <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
-        <a v-ripple :href="href" class="text-lg" @click="navigate">
+  <div>
+    <MegaMenu :model="items" class="w-134">
+      <template #item="{ item }">
+        <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
+          <a v-ripple :href="href" class="text-lg" @click="navigate">
+            <span :class="item.icon" />
+            <span class="ml-2">{{ item.label }}</span>
+          </a>
+        </router-link>
+        <a v-else v-ripple :href="item.url" :target="item.target">
           <span :class="item.icon" />
           <span class="ml-2">{{ item.label }}</span>
         </a>
-      </router-link>
-      <a v-else v-ripple :href="item.url" :target="item.target">
-        <span :class="item.icon" />
-        <span class="ml-2">{{ item.label }}</span>
-      </a>
-    </template>
-  </MegaMenu>
+      </template>
+    </MegaMenu>
+  </div>
 </template>
 
 <style scoped lang='scss'>
