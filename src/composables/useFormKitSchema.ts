@@ -71,7 +71,7 @@ export function useFormKitSchema() {
     }
     data.insertDuplicate = (node: any, index: number) => (): void => {
       const obj: any = node.value[index]
-      const newArray: any[] = [...node.value, obj]
+      const newArray: any[] = [...node.value, { ...obj }]
       node.input(newArray, false)
     }
   }
