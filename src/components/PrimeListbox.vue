@@ -27,7 +27,7 @@ const props = defineProps({
   },
 })
 
-function handleInput(e: any) {
+function handleInput(_: any) {
   props.context?.node.input(props.context?._value)
 }
 

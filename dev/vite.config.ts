@@ -7,7 +7,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
 import pkg from '../package.json'
 
+// eslint-disable-next-line node/prefer-global/process
 process.env.VITE_APP_BUILD_EPOCH = new Date().getTime().toString()
+// eslint-disable-next-line node/prefer-global/process
 process.env.VITE_APP_VERSION = pkg.version
 
 /**
@@ -92,10 +94,6 @@ export default defineConfig({
         if (route.name === 'components') {
           return {
             ...route,
-            beforeEnter: (route) => {
-
-              // console.log(route)
-            },
           }
         }
       },

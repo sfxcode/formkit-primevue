@@ -27,7 +27,7 @@ function search(event: AutoCompleteCompleteEvent) {
   suggestions.value = props.context?.attrs.complete(event.query)
 }
 
-function handleInput(e: any) {
+function handleInput(_: any) {
   props.context?.node.input(props.context?._value)
 }
 

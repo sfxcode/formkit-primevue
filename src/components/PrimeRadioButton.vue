@@ -18,7 +18,7 @@ const props = defineProps({
   },
 })
 
-function handleChange(e: any) {
+function handleChange(_: any) {
   props.context?.node.input(props.context?._value)
 }
 
@@ -47,7 +47,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
         :unstyled="context.unstyled ?? false"
         @click="handleChange"
         @change="handleChange"
-        @blur="handleChange"
+        @blur="handleBlur"
       />
       <label :for="option.value" class="p-formkit-radio-label">{{ option.label }}</label>
     </div>

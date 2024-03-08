@@ -7,6 +7,9 @@ export default antfu(
   },
   {
     rules: {
+      'vue/no-mutating-props': ['error', {
+        shallowOnly: true,
+      }],
     },
   },
 )

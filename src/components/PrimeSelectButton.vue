@@ -23,7 +23,7 @@ const props = defineProps({
   },
 })
 
-function handleChange(e: any) {
+function handleChange(_: any) {
   props.context?.node.input(props.context?._value)
 }
 

@@ -21,7 +21,7 @@ const props = defineProps({
   },
 })
 
-function handleInput(e: any) {
+function handleInput(_: any) {
   props.context?.node.input(props.context?._value)
 }
 const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
