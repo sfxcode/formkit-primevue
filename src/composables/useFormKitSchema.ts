@@ -52,27 +52,27 @@ export function useFormKitSchema() {
       return array
     }
 
-    data.addNode = (node: any) => (): void => {
-      const newArray: any[] = [...node.value, addNodeDefaultObject]
-      node.input(newArray, false)
+    data.addNode = (parentNode: any) => (): void => {
+      const newArray: any[] = [...parentNode.value, addNodeDefaultObject]
+      parentNode.input(newArray, false)
     }
-    data.removeNode = (node: any, index: number) => (): void => {
-      node.input(node._value.filter((_: any, i: number): boolean => i !== index), false)
+    data.removeNode = (parentNode: any, index: number) => (): void => {
+      parentNode.input(parentNode._value.filter((_: any, i: number): boolean => i !== index), false)
     }
-    data.moveNodeUp = (node: any, index: number) => (): void => {
-      const array: any[] = [...node.value]
+    data.moveNodeUp = (parentNode: any, index: number) => (): void => {
+      const array: any[] = [...parentNode.value]
       if (index > 0)
-        node.input(swapElements(array, index - 1, index), false)
+        parentNode.input(swapElements(array, index - 1, index), false)
     }
-    data.moveNodeDown = (node: any, index: number) => (): void => {
-      const array: any[] = [...node.value]
+    data.moveNodeDown = (parentNode: any, index: number) => (): void => {
+      const array: any[] = [...parentNode.value]
       if (index < array.length - 1)
-        node.input(swapElements(array, index, index + 1), false)
+        parentNode.input(swapElements(array, index, index + 1), false)
     }
-    data.copyNode = (node: any, index: number) => (): void => {
-      const obj: any = node.value[index]
-      const newArray: any[] = [...node.value, { ...obj }]
-      node.input(newArray, false)
+    data.copyNode = (parentNode: any, index: number) => (): void => {
+      const obj: any = parentNode.value[index]
+      const newArray: any[] = [...parentNode.value, { ...obj }]
+      parentNode.input(newArray, false)
     }
   }
 
