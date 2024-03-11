@@ -1,5 +1,8 @@
 <script setup lang='ts'>
 import { ref } from 'vue'
+import { useFormKitSchema } from 'my-library'
+
+const { addElement } = useFormKitSchema()
 
 const options = [
   { label: 'Every page load', value: 'refresh' },
@@ -9,14 +12,8 @@ const options = [
 
 const schema = reactive(
   [
-    {
-      $el: 'h2',
-      children: ['Register ', '$email'],
-    },
-    {
-      $el: 'h3',
-      children: 'Header Text H3',
-    },
+    addElement('h2', ['Register ', '$email']),
+    addElement('h3', 'Header Text H3'),
     {
       $formkit: 'primeInputText',
       name: 'email',
