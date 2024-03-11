@@ -31,7 +31,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
 
 <template>
   <div :class="context.options_class" class="p-formkit">
-    <div v-for="option in context.options" :key="option.value" :class="context.option_class">
+    <div v-for="option in context.options" :key="option.value" :class="context.attrs.option_class">
       <RadioButton
         :id="context.id"
         v-model="context._value"
