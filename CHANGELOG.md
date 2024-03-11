@@ -1,3 +1,14 @@
+## [v1.9.3] - 2024-03-11
+### :sparkles: New Features
+- [`adc032c`](https://github.com/sfxcode/formkit-primevue/commit/adc032cae5a28a3e357bd02b93e3930b6ab99268) - **addElement**: Allow single child as string *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :bug: Bug Fixes
+- [`639259b`](https://github.com/sfxcode/formkit-primevue/commit/639259b82b6f3a077875955eb9c467a69a58df8b) - **RadioButton**: option_class was not used *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`e6eb5ab`](https://github.com/sfxcode/formkit-primevue/commit/e6eb5ab7a9caa6945457437ce2ff87a95b4d8582) - **release**: New Version *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.9.2] - 2024-03-11
 ### :recycle: Refactors
 - [`a3c6a1b`](https://github.com/sfxcode/formkit-primevue/commit/a3c6a1ba9e1052c15c891d847e930313e7ab0553) - **addListGroupFunctions**: rename node parameter to parentNode *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -577,3 +588,4 @@
 [v1.9.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.6...v1.9.0
 [v1.9.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.0...v1.9.1
 [v1.9.2]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.1...v1.9.2
+[v1.9.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.2...v1.9.3
