@@ -1,3 +1,11 @@
+## [v1.9.2] - 2024-03-11
+### :recycle: Refactors
+- [`a3c6a1b`](https://github.com/sfxcode/formkit-primevue/commit/a3c6a1ba9e1052c15c891d847e930313e7ab0553) - **addListGroupFunctions**: rename node parameter to parentNode *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`8ddfafa`](https://github.com/sfxcode/formkit-primevue/commit/8ddfafa3b1de5b07babce57a19528a1de8dc2b2f) - **dependencies**: Update FormKit to 1.6.0 *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.9.1] - 2024-03-08
 ### :sparkles: New Features
 - [`ce10c14`](https://github.com/sfxcode/formkit-primevue/commit/ce10c14396c187819742af5adf000ac223d37909) - **addListGroupFunctions**: add default object for add node- change insertNode to copyNode *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -568,3 +576,4 @@
 [v1.8.6]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.5...v1.8.6
 [v1.9.0]: https://github.com/sfxcode/formkit-primevue/compare/v1.8.6...v1.9.0
 [v1.9.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.0...v1.9.1
+[v1.9.2]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.1...v1.9.2
