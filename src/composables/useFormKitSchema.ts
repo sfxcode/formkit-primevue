@@ -7,7 +7,7 @@ export function useFormKitSchema() {
     }
   }
 
-  const addElement = (element: string = 'div', children: any[] = [], attrs: object = {}, render: string = 'true') => {
+  const addElement = (element: string = 'div', children: any[] | string = [], attrs: object = {}, render: string = 'true') => {
     return {
       $el: element,
       if: render,
