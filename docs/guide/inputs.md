@@ -22,6 +22,7 @@ E.g. InputMask -> primeInputMask
 - Editor (HTML Editor)
 - InputMask
 - InputNumber
+- InputOtp
 - InputSwitch
 - InputText
 - InputTextarea

@@ -71,6 +71,7 @@ Some samples for common tasks are available
 - Editor (HTML Editor)
 - InputMask
 - InputNumber
+- InputOtp
 - InputSwitch
 - InputText
 - InputTextarea
