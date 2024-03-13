@@ -1,3 +1,14 @@
+## [v1.9.4] - 2024-03-13
+### :sparkles: New Features
+- [`5149d2f`](https://github.com/sfxcode/formkit-primevue/commit/5149d2ff589730e6a662498b0e141ef96009431b) - **RadioButton**: Add Label class [#37](https://github.com/sfxcode/formkit-primevue/pull/37) *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`da4c322`](https://github.com/sfxcode/formkit-primevue/commit/da4c3226d56581fd71102240009de20e953c1dd4) - **InputOtp**: Add new component *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`06d7fed`](https://github.com/sfxcode/formkit-primevue/commit/06d7fed46f808c7e2174f0e2f3821b79872298eb) - **RadioButton**: Add Label class [#37](https://github.com/sfxcode/formkit-primevue/pull/37) *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+### :wrench: Chores
+- [`0c495b3`](https://github.com/sfxcode/formkit-primevue/commit/0c495b30b6433ddc8c64f2a6be6b24445a62056c) - **dependencies**: Update *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`bde1bfb`](https://github.com/sfxcode/formkit-primevue/commit/bde1bfb1e70459bfd84ee136a318bc8a447ce13c) - **release**: New Version *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.9.3] - 2024-03-11
 ### :sparkles: New Features
 - [`adc032c`](https://github.com/sfxcode/formkit-primevue/commit/adc032cae5a28a3e357bd02b93e3930b6ab99268) - **addElement**: Allow single child as string *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -589,3 +600,4 @@
 [v1.9.1]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.0...v1.9.1
 [v1.9.2]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.1...v1.9.2
 [v1.9.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.2...v1.9.3
+[v1.9.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.3...v1.9.4
