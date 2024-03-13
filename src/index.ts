@@ -350,6 +350,8 @@ export const primeRadioButtonDefinition: FormKitTypeDefinition = createInput(Pri
     'unstyled',
     'options',
     'options_class',
+    'option_class',
+    'label_class',
   ],
 })
 
