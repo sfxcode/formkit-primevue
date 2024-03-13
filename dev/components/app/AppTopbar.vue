@@ -32,6 +32,7 @@ const items = ref([
             { label: 'InputText', icon: 'pi pi-fw pi-user-edit', route: '/inputs/inputText' },
             { label: 'Textarea', icon: 'pi pi-fw pi-user-edit', route: '/inputs/textArea' },
             { label: 'InputNumber', icon: 'pi pi-fw pi-user-edit', route: '/inputs/inputNumber' },
+            { label: 'InputOtp', icon: 'pi pi-fw pi-user-edit', route: '/inputs/inputOtp' },
             { label: 'InputMask', icon: 'pi pi-fw pi-user-edit', route: '/inputs/inputMask' },
             { label: 'Calendar', icon: 'pi pi-fw pi-user-edit', route: '/inputs/calendar' },
             { label: 'Chips', icon: 'pi pi-fw pi-user-edit', route: '/inputs/chips' },
