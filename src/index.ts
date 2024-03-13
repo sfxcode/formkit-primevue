@@ -12,6 +12,7 @@ import PrimeDropdown from './components/PrimeDropdown.vue'
 import PrimeEditor from './components/PrimeEditor.vue'
 import PrimeInputMask from './components/PrimeInputMask.vue'
 import PrimeInputNumber from './components/PrimeInputNumber.vue'
+import PrimeInputOtp from './components/PrimeInputOtp.vue'
 import PrimeInputSwitch from './components/PrimeInputSwitch.vue'
 import PrimeInputText from './components/PrimeInputText.vue'
 import PrimeTextarea from './components/PrimeTextarea.vue'
@@ -144,6 +145,18 @@ export const primeInputSwitchDefinition: FormKitTypeDefinition = createInput(Pri
     'unstyled',
     'labelLeft',
     'labelRight',
+  ],
+})
+
+export const primeInputOtpDefinition: FormKitTypeDefinition = createInput(PrimeInputOtp, {
+  props: [
+    'length',
+    'variant',
+    'mask',
+    'integerOnly',
+    'pt',
+    'ptOptions',
+    'unstyled',
   ],
 })
 
@@ -475,6 +488,7 @@ export const primeInputs = {
   primeTriStateCheckbox: primeTriStateCheckboxDefinition,
   primeCascadeSelect: primeCascadeSelectDefinition,
   primeTreeSelect: primeTreeSelectDefinition,
+  primeInputOtp: primeInputOtpDefinition,
 }
 
 export {

@@ -1,0 +1,58 @@
+<script setup lang='ts'>
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { InputOtpProps } from 'primevue/inputotp'
+
+export interface FormKitPrimeInputOtpProps {
+  unstyled?: InputOtpProps['unstyled']
+  ptOptions?: InputOtpProps['ptOptions']
+  pt?: InputOtpProps['pt']
+  length?: InputOtpProps['length']
+  variant?: InputOtpProps['variant']
+  mask?: InputOtpProps['mask']
+  integerOnly?: InputOtpProps['integerOnly']
+}
+
+const props = defineProps({
+  context: {
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeInputOtpProps>,
+    required: true,
+  },
+})
+
+function handleInput(_: any) {
+  props.context?.node.input(props.context?._value)
+}
+
+function handleBlur(e: Event) {
+  props.context?.handlers.blur(e)
+}
+
+const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
+</script>
+
+<template>
+  <div class="p-formkit">
+    <InputOtp
+      :id="context.id"
+      v-model="context._value"
+      v-bind="context?.attrs"
+      :disabled="!!context?.disabled"
+      :readonly="context?.attrs._readonly ?? false"
+      :style="context?.attrs.style"
+      :class="styleClass"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
+      :length="context.length"
+      :variant="context.variant"
+      :mask="context.mask"
+      :integer-only="context.integerOnly"
+      :pt="context.pt"
+      :pt-options="context.ptOptions"
+      :unstyled="context.unstyled ?? false"
+      @change="handleInput"
+      @blur="handleBlur"
+    />
+  </div>
+</template>

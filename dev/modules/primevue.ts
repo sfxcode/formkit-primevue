@@ -34,6 +34,7 @@ import InlineMessage from 'primevue/inlinemessage'
 import Inplace from 'primevue/inplace'
 import InputMask from 'primevue/inputmask'
 import InputNumber from 'primevue/inputnumber'
+import InputOtp from 'primevue/inputotp'
 import InputSwitch from 'primevue/inputswitch'
 import InputText from 'primevue/inputtext'
 import Knob from 'primevue/knob'
@@ -142,6 +143,7 @@ export const install: UserModule = ({ app }) => {
   app.component('Inplace', Inplace)
   app.component('InputMask', InputMask)
   app.component('InputNumber', InputNumber)
+  app.component('InputOtp', InputOtp)
   app.component('InputSwitch', InputSwitch)
   app.component('InputText', InputText)
   app.component('Galleria', Galleria)
