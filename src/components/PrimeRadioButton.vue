@@ -49,7 +49,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
         @change="handleChange"
         @blur="handleBlur"
       />
-      <label :for="option.value" class="p-formkit-radio-label">{{ option.label }}</label>
+      <label :for="option.value" :class="context.attrs.label_class" class="p-formkit-radio-label">{{ option.label }}</label>
     </div>
   </div>
 </template>
