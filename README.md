@@ -27,7 +27,6 @@ import { primeInputs } from '@sfxcode/formkit-primevue'
 
 [useFormKitSchema](https://github.com/sfxcode/formkit-primevue/blob/main/src/composables/useFormKitSchema.ts) provide functions to simplify the usage of elements, components, lists, ...
 
-
 ### Basic Styling
 
 Basic styling is provided with the [formkit-primevue.scss](https://github.com/sfxcode/formkit-primevue/blob/main/src/sass/formkit-primevue.scss) file.
@@ -47,7 +46,7 @@ You can use it or take it as base for your own styling.
 - PT and PTOptions are available ([https://primevue.org/passthrough/](https://primevue.org/passthrough/))
 - [Styling](https://formkit-primevue.netlify.app/styling/base) and [PT](https://formkit-primevue.netlify.app/styling/passThrough) demo available
 
-### Samples 
+### Samples
 
 Some samples for common tasks are available
 

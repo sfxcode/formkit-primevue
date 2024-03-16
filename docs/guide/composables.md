@@ -11,39 +11,40 @@ Sometimes it provides a little more concise syntax or provide the needed helper 
 ### addComponent
 
 ```ts
-  const { addComponent } = useFormKitSchema()
+const { addComponent } = useFormKitSchema()
 
-  const addButtonComponent = (onClick: string = '', label: string = '', icon: string = '', severity: string = '', render: string = 'true', styleClass: string = 'p-button-sm ml-2'): object => {
-    return addComponent('Button', { onClick, label, icon, class: styleClass, severity }, render)
-  }
+function addButtonComponent(onClick: string = '', label: string = '', icon: string = '', severity: string = '', render: string = 'true', styleClass: string = 'p-button-sm ml-2'): object {
+  return addComponent('Button', { onClick, label, icon, class: styleClass, severity }, render)
+}
 ```
 
 ### addElement
 
-Following json in the schema 
+Following json in the schema
 
 ```json
-    [
-      {
-        $el: 'h2',
-        children: ['Register ', '$email'],
-      },
-      {
-        $el: 'h3',
-        children: 'Header Text H3',
-      }
-    ]
+[
+  {
+    "$el": "h2",
+    "children": ["Register ", "$email"]
+  },
+  {
+    "$el": "h3",
+    "children": "Header Text H3"
+  }
+]
 ```
 
 can be replaced by:
 
 ```ts
-  const { addElement } = useFormKitSchema()
+const { addElement } = useFormKitSchema()
 
-    [
-        addElement('h2', ['Register ', '$email']), 
-        addElement('h3', 'Header Text H3')
-    ]
+const formData = ref([
+  addElement('h2', ['Register ', '$email']),
+  addElement('h3', 'Header Text H3')
+  // more form elements ...
+])
 ```
 
 ### Repeater
