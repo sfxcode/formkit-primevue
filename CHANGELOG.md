@@ -1,3 +1,10 @@
+## [v1.9.5] - 2024-03-16
+### :wrench: Chores
+- [`c75fb09`](https://github.com/sfxcode/formkit-primevue/commit/c75fb09e184a54c1b93cb5bb421c02a4ac219401) - **dependencies**: Update PrimeVue to 3.50 *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`36899b7`](https://github.com/sfxcode/formkit-primevue/commit/36899b79b18ce8d75e9f1cb013cef6a3aba5f9e7) - **linting**: fix some issues *(commit by [@sfxcode](https://github.com/sfxcode))*
+- [`cd9e896`](https://github.com/sfxcode/formkit-primevue/commit/cd9e89628bfa58072e870279d817d09ea8c83965) - **release**: New Version *(commit by [@sfxcode](https://github.com/sfxcode))*
+
+
 ## [v1.9.4] - 2024-03-13
 ### :sparkles: New Features
 - [`5149d2f`](https://github.com/sfxcode/formkit-primevue/commit/5149d2ff589730e6a662498b0e141ef96009431b) - **RadioButton**: Add Label class [#37](https://github.com/sfxcode/formkit-primevue/pull/37) *(commit by [@sfxcode](https://github.com/sfxcode))*
@@ -601,3 +608,4 @@
 [v1.9.2]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.1...v1.9.2
 [v1.9.3]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.2...v1.9.3
 [v1.9.4]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.3...v1.9.4
+[v1.9.5]: https://github.com/sfxcode/formkit-primevue/compare/v1.9.4...v1.9.5
