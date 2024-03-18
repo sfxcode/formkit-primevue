@@ -14,7 +14,7 @@ const schema
     {
       $formkit: 'primeInputText',
       id: 'icon',
-      name: 'icon',
+      name: 'iconLeft',
       label: 'Icon Left',
       help: '',
       placeholder: 'icon',
@@ -23,7 +23,7 @@ const schema
     },
     {
       $formkit: 'primeInputText',
-      name: 'icon',
+      name: 'iconRight',
       label: 'Icon Right (Disabled)',
       help: 'Right Icon Demo',
       icon: 'pi pi-check',
@@ -32,7 +32,7 @@ const schema
 
   ]
 
-const data = { name: 'tom', icon: 'Some Text ...' }
+const data = { name: 'Harry Potter', iconLeft: 'Some Text ...', iconRight: 'Another Text ...' }
 </script>
 
 <template>
