@@ -2,6 +2,7 @@
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 import type { InputTextProps } from 'primevue/inputtext'
+import type { IconFieldProps } from 'primevue/iconfield'
 
 export interface FormKitPrimeInputTextProps {
   pt?: InputTextProps['pt']
@@ -9,6 +10,7 @@ export interface FormKitPrimeInputTextProps {
   unstyled?: InputTextProps['unstyled']
   placeholder?: InputTextProps['placeholder']
   icon?: string
+  iconPosition?: IconFieldProps['iconPosition']
 }
 
 const props = defineProps({
@@ -24,7 +26,15 @@ const hasIcon = computed(() => {
   }
 
   return props.context?.attrs?.icon && props.context?.attrs?.icon.length > 0
-}
+})
+
+const icon = computed(() => {
+  return props.context?.icon ?? props.context?.attrs?.icon
+})
+
+const iconPosition = computed(() => {
+  return props.context?.attrs?.iconPosition ?? undefined;
+})
 
 function handleBlur(e: Event) {
   props.context?.handlers.blur(e)
@@ -39,8 +49,8 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
 
 <template>
   <div class="p-formkit">
-    <IconField v-if="hasIcon" :icon-position="context?.attrs.iconPosition">
-      <InputIcon :class="context.attrs.icon" />
+    <IconField v-if="hasIcon" :icon-position="iconPosition">
+      <InputIcon :class="icon" />
       <InputText
         :id="context.id"
         v-model="context._value"

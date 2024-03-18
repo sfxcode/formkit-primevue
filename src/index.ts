@@ -46,12 +46,11 @@ export const primeAutoCompleteDefinition: FormKitTypeDefinition = createInput(Pr
 })
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
   props: [
-    'iconRight',
-    'iconLeft',
     'pt',
     'ptOptions',
     'unstyled',
     'placeholder',
+    'icon',
   ],
 })
 
