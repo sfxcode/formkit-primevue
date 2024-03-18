@@ -39,7 +39,6 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
 
 <template>
   <div class="p-formkit">
-    {{ context.attrs.icon }}
     <IconField v-if="hasIcon" :icon-position="context?.attrs.iconPosition">
       <InputIcon :class="context.attrs.icon" />
       <InputText
