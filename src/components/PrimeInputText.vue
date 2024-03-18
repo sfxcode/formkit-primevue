@@ -21,9 +21,8 @@ const props = defineProps({
 })
 
 const hasIcon = computed(() => {
-  if (props.context?.icon && props.context?.icon.length > 0) {
+  if (props.context?.icon && props.context?.icon.length > 0)
     return true
-  }
 
   return props.context?.attrs?.icon && props.context?.attrs?.icon.length > 0
 })
@@ -33,7 +32,7 @@ const icon = computed(() => {
 })
 
 const iconPosition = computed(() => {
-  return props.context?.attrs?.iconPosition ?? undefined;
+  return props.context?.attrs?.iconPosition ?? undefined
 })
 
 function handleBlur(e: Event) {
