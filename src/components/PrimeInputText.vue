@@ -18,7 +18,11 @@ const props = defineProps({
   },
 })
 
-function hasIcon() {
+const hasIcon = computed(() => {
+  if (props.context?.icon && props.context?.icon.length > 0) {
+    return true
+  }
+
   return props.context?.attrs?.icon && props.context?.attrs?.icon.length > 0
 }
 
@@ -36,7 +40,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
 <template>
   <div class="p-formkit">
     {{ context.attrs.icon }}
-    <IconField v-if="hasIcon()" :icon-position="context?.attrs.iconPosition">
+    <IconField v-if="hasIcon" :icon-position="context?.attrs.iconPosition">
       <InputIcon :class="context.attrs.icon" />
       <InputText
         :id="context.id"
