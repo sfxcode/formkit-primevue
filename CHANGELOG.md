@@ -1,3 +1,26 @@
+## v1.9.6
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.9.5...v1.9.6)
+
+### 🩹 Fixes
+
+- Allow reactivity of icon attribute ([34feb7a](https://github.com/sfxcode/formkit-primevue/commit/34feb7a))
+- Remove debug output in html ([d9b4ca6](https://github.com/sfxcode/formkit-primevue/commit/d9b4ca6))
+- Use icon and iconPosition prop defined in formkit component, to allow kebab-cased props in non-schema definitions ([c7d61b4](https://github.com/sfxcode/formkit-primevue/commit/c7d61b4))
+
+### 📖 Documentation
+
+- Update CHANGELOG.md for v1.9.5 [skip ci] ([b801812](https://github.com/sfxcode/formkit-primevue/commit/b801812))
+
+### 🏡 Chore
+
+- **release:** Add unjs / changelogen ([0a318c7](https://github.com/sfxcode/formkit-primevue/commit/0a318c7))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+- Kswzr <kevin@wzr.es>
+
 ## [v1.9.5] - 2024-03-16
 ### :wrench: Chores
 - [`c75fb09`](https://github.com/sfxcode/formkit-primevue/commit/c75fb09e184a54c1b93cb5bb421c02a4ac219401) - **dependencies**: Update PrimeVue to 3.50 *(commit by [@sfxcode](https://github.com/sfxcode))*
