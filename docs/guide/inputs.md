@@ -15,26 +15,4 @@ E.g. InputMask -> primeInputMask
 
 ## Supported Inputs
 
-- Calendar
-- CascadeSelect
-- Checkbox
-- Dropdown
-- Editor (HTML Editor)
-- InputMask
-- InputNumber
-- InputOtp
-- InputSwitch
-- InputText
-- InputTextarea
-- MultiSelect
-- Password
-- Ranking
-- Chips
-- Knob
-- ColorPicker
-- Listbox
-- ToggleButton
-- SelectButton
-- TriStateCheckbox
-- RadioButton
-- TreeSelect
+<DisplayComponents />

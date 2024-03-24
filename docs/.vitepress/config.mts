@@ -8,7 +8,7 @@ export default defineConfig({
   base: '/formkit-primevue/',
   themeConfig: {
     footer: {
-      message: 'Nuxt 3 PrimeVue Module',
+      message: 'FormKit PrimeVue Module',
       copyright: 'Copyright © 2023 SFXCode',
     },
     socialLinks: [
@@ -45,12 +45,12 @@ function nav() {
   return [
     { text: 'Guide', link: '/guide/', activeMatch: '/guide/' },
     {
+      text: 'Playground',
+      link: 'https://formkit-primevue.netlify.app',
+    },
+    {
       text: 'External Docs',
       items: [
-        {
-          text: 'Playground',
-          link: 'https://formkit-primevue.netlify.app',
-        },
         {
           text: 'PrimeVue',
           link: 'https://www.primefaces.org/primevue',
