@@ -1,3 +1,20 @@
+## v1.9.8
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.9.6...v1.9.8)
+
+### 💅 Refactors
+
+- **build:** Move definitions to own folder ([e525a13](https://github.com/sfxcode/formkit-primevue/commit/e525a13))
+- **build:** Move definitions to own folder ([df375f0](https://github.com/sfxcode/formkit-primevue/commit/df375f0))
+
+### 🏡 Chore
+
+- **dependencies:** Update FormKit to 1.6.1 ([61b1467](https://github.com/sfxcode/formkit-primevue/commit/61b1467))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v1.9.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.9.5...v1.9.6)
