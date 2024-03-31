@@ -2,7 +2,7 @@ import { defaultConfig, plugin } from '@formkit/vue'
 import { createAutoAnimatePlugin } from '@formkit/addons'
 
 import { de, en } from '@formkit/i18n'
-import { primeInputs } from 'my-library'
+import { primeInputs } from 'my-library/definitions'
 import type { UserModule } from '@/types'
 
 export const install: UserModule = ({ app }) => {

@@ -1,7 +1,7 @@
 {
   "name": "@sfxcode/formkit-primevue",
   "type": "module",
-  "version": "1.9.6",
+  "version": "1.9.7",
   "author": {
     "name": "Tom",
     "email": "tom@sfxcode.com"
@@ -27,6 +27,11 @@
       "types": "./dist/composables/index.d.ts",
       "import": "./dist/composables/index.mjs",
       "require": "./dist/composables/index.js"
+    },
+    "./definitions": {
+      "types": "./dist/definitions/index.d.ts",
+      "import": "./dist/definitions/index.mjs",
+      "require": "./dist/definitions/index.js"
     },
     "./dist/sass/formkit-primevue.scss": {
       "import": "./dist/sass/formkit-primevue.scss",
