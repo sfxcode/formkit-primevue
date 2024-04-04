@@ -18,7 +18,6 @@ export const install: UserModule = ({ app }) => {
           // default:
           duration: 250,
           easing: 'ease-in-out',
-          delay: 0,
         },
         {
           /* optional animation targets object */
