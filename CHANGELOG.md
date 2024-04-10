@@ -1,3 +1,15 @@
+## v1.9.11
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.9.10...v1.9.11)
+
+### 🏡 Chore
+
+- **dependencies:** Update FormKit to 1.6.2 ([ad0afb9](https://github.com/sfxcode/formkit-primevue/commit/ad0afb9))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v1.9.10
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.9.8...v1.9.10)
