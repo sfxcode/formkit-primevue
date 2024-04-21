@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest'
-import {useFormKitSchema} from '../src/composables/useFormKitSchema.ts'
+import {useFormKitSchema} from '../src/composables'
 
 function renderToBoolean(element: any):boolean {
     return new Boolean(element?.if).valueOf()
@@ -20,4 +20,13 @@ test('add element', () => {
     expect( renderToBoolean(e2)).toBe(false)
     expect(e2.children?.length).toBe(1)
     expect(e2.attrs?.name).toBe('test')
+})
+
+test('add component', () => {
+    const {addComponent} = useFormKitSchema()
+
+    const c1 = addComponent()
+    expect( c1.$cmp).toBe('Button')
+    console.log(c1)
+    expect(renderToBoolean(c1)).toBe(true)
 })
