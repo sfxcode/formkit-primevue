@@ -1,3 +1,6 @@
 {
-  "extends": "@vue/tsconfig/tsconfig.dom.json"
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "types": ["vitest/globals"]
+  }
 }
