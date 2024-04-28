@@ -1,3 +1,23 @@
+## v1.9.12
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.9.11...v1.9.12)
+
+### 🏡 Chore
+
+- **dependencies:** Update and remove .eslintignore file - since eslint 9 it is not supported anymore ([93f7843](https://github.com/sfxcode/formkit-primevue/commit/93f7843))
+- **dependencies:** Update all ([3eb7e25](https://github.com/sfxcode/formkit-primevue/commit/3eb7e25))
+- **dependencies:** Update PrimeVue to 3.52 ([f8604f6](https://github.com/sfxcode/formkit-primevue/commit/f8604f6))
+- **linting:** Fix some issues ([421a35c](https://github.com/sfxcode/formkit-primevue/commit/421a35c))
+
+### ✅ Tests
+
+- **vitest:** Create config and first test ([2684d25](https://github.com/sfxcode/formkit-primevue/commit/2684d25))
+- **coverage:** Create coverage config ([54411fd](https://github.com/sfxcode/formkit-primevue/commit/54411fd))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v1.9.11
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.9.10...v1.9.11)
