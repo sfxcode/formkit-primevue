@@ -24,7 +24,7 @@ function addGroupButtons() {
 const data = ref()
 
 function createDefaultValue(): object {
-  return { name: 'Sword', damage: '2D20' }
+  return { name: 'Bow', damage: '1D6+4' }
 }
 
 onMounted(() => {
