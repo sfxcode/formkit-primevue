@@ -11,16 +11,15 @@ Helper classes for using [Formkit](https://formkit.com/) with the [PrimeVue UI F
 ## Usage
 
 ```typescript
-
 import { defaultConfig, plugin } from '@formkit/vue'
 import { primeInputs } from '@sfxcode/formkit-primevue'
 
-  app.use(plugin, defaultConfig({
-    locales: { de, en },
-    // Define the active locale
-    locale: 'en',
-    inputs: primeInputs,
-  }))
+app.use(plugin, defaultConfig({
+  locales: { de, en },
+  // Define the active locale
+  locale: 'en',
+  inputs: primeInputs,
+}))
 ```
 
 ### Schema Helper Functions
