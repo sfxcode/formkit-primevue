@@ -28,7 +28,7 @@ const schema
       $formkit: 'primeTextarea',
       name: 'name',
       placeholder: 'Read Only',
-      _readonly: true,
+      readonly: true,
     },
 
   ]

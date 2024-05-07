@@ -30,7 +30,7 @@ function handleChange(_: any) {
       v-model="context._value"
       v-bind="context?.attrs"
       :disabled="!!context?.disabled"
-      :readonly="context?.attrs._readonly ?? false"
+      :readonly="context?.attrs.readonly ?? false"
       :style="context?.attrs.style"
       :panel-class="context?.attrs.class"
       :tabindex="context?.attrs.tabindex"

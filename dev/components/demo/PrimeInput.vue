@@ -61,7 +61,7 @@ async function submitHandler() {
           <TabPanel v-if="primeAttributes || customAttributes" header="Supported Attributes">
             <h4>Base Attributes</h4>
             <div>
-              <span>disabled, _readonly, style, class, tabindex, ariaLabel, ariaLabelledby, pt, ptOptions, unstyled</span>
+              <span>disabled, readonly, style, class, tabindex, ariaLabel, ariaLabelledby, pt, ptOptions, unstyled</span>
             </div>
             <h4>PrimeVue Attributes</h4>
             <div>

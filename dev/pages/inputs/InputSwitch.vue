@@ -28,7 +28,7 @@ const schema
       $formkit: 'primeInputSwitch',
       name: 'readonly',
       label: 'readonly',
-      _readonly: true,
+      readonly: true,
     },
     {
       $formkit: 'primeInputSwitch',
