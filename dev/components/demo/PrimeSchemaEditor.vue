@@ -81,6 +81,8 @@ const schemaResult = computed(() => editorDataToSchema(formData))
           </FormKit>
           <h3>Generated Formkit Schema</h3>
           <pre>{{ schemaResult }}</pre>
+          <h3>Generated Formkit Data</h3>
+          <pre>{{ data }}</pre>
         </div>
       </div>
     </div>

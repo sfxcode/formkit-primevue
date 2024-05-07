@@ -9,14 +9,16 @@ export function useInputEditorSchema() {
     return { label: name, value: `prime${name}` }
   })
 
+  const selectOptions = [
+    { label: 'Base', value: 'showBasic' },
+    { label: 'Validation', value: 'showValidation' },
+    { label: 'Display', value: 'showDisplay' },
+    { label: 'Prime', value: 'showPrime' },
+  ]
+
   function editorDataToSchema(data: any): any {
     const formkitInput = data?._dollar_formkit
-    return { ...data, $formkit: formkitInput, _dollar_formkit: undefined, slots: undefined, showBasic: undefined, showBase: undefined, showValidation: undefined, showDisplay: undefined }
-  }
-
-  function jsonDataToSchema(data: any): any {
-    const formkitInput = data?._dollar_formkit
-    return { ...data, $formkit: formkitInput, _dollar_formkit: undefined, slots: undefined, showBasic: undefined, showBase: undefined, showValidation: undefined, showDisplay: undefined }
+    return { ...data, $formkit: formkitInput, _dollar_formkit: undefined, slots: undefined, selectButton: undefined }
   }
 
   function editorDataToJson(data: any): string {
@@ -34,27 +36,6 @@ export function useInputEditorSchema() {
 
   const editorSchema
         = [
-          addElement('div', [
-            {
-              $formkit: 'primeCheckbox',
-              name: 'showBase',
-              id: 'showBase',
-              value: true,
-              labelLeft: 'Base',
-            },
-            {
-              $formkit: 'primeCheckbox',
-              name: 'showValidation',
-              id: 'showValidation',
-              labelLeft: 'Validation',
-            },
-            {
-              $formkit: 'primeCheckbox',
-              name: 'showDisplay',
-              id: 'showDisplay',
-              labelLeft: 'Display',
-            },
-          ], { class: 'flex gap-4' }),
           {
             $formkit: 'primeDropdown',
             id: 'inputSelection',
@@ -65,73 +46,117 @@ export function useInputEditorSchema() {
             optionValue: 'value',
             options: inputOptions,
           },
-          addElement('h4', ['Base'], {}, '$get(showBase).value'),
+          {
+            $formkit: 'primeSelectButton',
+            id: 'selectButton',
+            name: 'selectButton',
+            options: selectOptions,
+            optionLabel: 'label',
+            optionValue: 'value',
+            value: 'showBasic',
+          },
 
           {
             $formkit: 'primeInputText',
-            if: '$get(showBase).value',
+            if: '$get(selectButton).value === \'showBasic\'',
             name: 'name',
             label: 'Field Name',
             validation: 'required',
+            validationVisibility: 'live',
+            key: 'name',
+            preserve: true,
           },
           {
             $formkit: 'primeInputText',
-            if: '$get(showBase).value',
-            name: 'value',
-            label: 'Input Value',
-          },
-          {
-            $formkit: 'primeInputText',
-            if: '$get(showBase).value',
-            name: 'id',
-            label: 'Input ID',
-          },
-          {
-            $formkit: 'primeInputText',
-            if: '$get(showBase).value',
+            if: '$get(selectButton).value === \'showBasic\'',
             name: 'label',
             label: 'Input Label',
+            key: 'label',
+            preserve: true,
           },
           {
             $formkit: 'primeInputText',
-            if: '$get(showBase).value',
+            if: '$get(selectButton).value === \'showBasic\'',
             name: 'help',
             label: 'Input Help',
+            key: 'help',
+            preserve: true,
           },
-          addElement('h4', ['Validation'], {}, '$get(showValidation).value'),
           {
             $formkit: 'primeInputText',
-            if: '$get(showValidation).value',
+            if: '$get(selectButton).value === \'showBasic\'',
+            name: 'id',
+            label: 'Input ID',
+            key: 'id',
+            preserve: true,
+          },
+          {
+            $formkit: 'primeInputText',
+            if: '$get(selectButton).value === \'showBasic\'',
+            name: 'value',
+            label: 'Input Value',
+            key: 'value',
+            preserve: true,
+          },
+          {
+            $formkit: 'primeInputText',
+            if: '$get(selectButton).value === \'showValidation\'',
             name: 'validation',
             label: 'Field Validation',
+            key: 'validation',
+            preserve: true,
           },
           {
             $formkit: 'primeInputText',
-            if: '$get(showValidation).value',
+            if: '$get(selectButton).value === \'showValidation\'',
             name: 'validation-visibility',
             value: 'blur',
             label: 'Field Validation Visibility',
+            key: 'validation-visibility',
+            preserve: true,
           },
-          addElement('h4', ['Display'], {}, '$get(showDisplay).value'),
           {
             $formkit: 'primeInputText',
-            if: '$get(showDisplay).value',
+            if: '$get(selectButton).value === \'showValidation\'',
+            name: 'validation-label',
+            label: 'Field Validation Visibility',
+            key: 'validation-label',
+            preserve: true,
+          },
+          {
+            $formkit: 'primeInputText',
+            if: '$get(selectButton).value === \'showDisplay\'',
+            name: 'tabindex',
+            label: 'Tab Index',
+            key: 'tabindex',
+            preserve: true,
+          },
+          {
+            $formkit: 'primeInputText',
+            if: '$get(selectButton).value === \'showDisplay\'',
             name: 'if',
             label: 'Should Render',
+            key: 'if',
+            preserve: true,
           },
+
           {
             $formkit: 'primeInputText',
-            if: '$get(showDisplay).value',
+            if: '$get(selectButton).value === \'showDisplay\'',
             name: 'style',
             label: 'Input Style',
+            key: 'style',
+            preserve: true,
           },
           {
             $formkit: 'primeInputText',
-            if: '$get(showDisplay).value',
+            if: '$get(selectButton).value === \'showDisplay\'',
             name: 'class',
             label: 'Input StyleClass',
+            key: 'class',
+            preserve: true,
           },
         ]
 
-  return { editorSchema, inputNames, inputOptions, editorDataToSchema, jsonDataToSchema, editorDataToJson, editorDataToCode, schemaToEditorData }
+  return { editorSchema, inputNames, inputOptions, editorDataToSchema, editorDataToJson, editorDataToCode, schemaToEditorData }
 }
