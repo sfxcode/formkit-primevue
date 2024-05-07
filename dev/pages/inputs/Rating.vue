@@ -15,7 +15,7 @@ const schema
       label: 'Select Rating',
       name: 'ratingDisabled',
       value: 3,
-      _disabled: true,
+      disabled: true,
     },
     {
       $formkit: 'primeRating',

@@ -24,7 +24,7 @@ const schema
       $formkit: 'primeCheckbox',
       name: 'readonly',
       label: 'readonly',
-      _readonly: true,
+      readonly: true,
     },
     {
       $formkit: 'primeCheckbox',

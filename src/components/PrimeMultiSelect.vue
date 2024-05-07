@@ -67,7 +67,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       v-bind="context?.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"
-      :readonly="context?.attrs._readonly ?? false"
+      :readonly="context?.attrs.readonly ?? false"
       :list-style="context?.attrs.style"
       :class="styleClass"
       :tabindex="context?.attrs.tabindex"

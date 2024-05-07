@@ -18,7 +18,7 @@ const schema
       value: 1234,
       class: 'customClass',
       style: 'background:gray;',
-      _readonly: true,
+      readonly: true,
     },
   ]
 

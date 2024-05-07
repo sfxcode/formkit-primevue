@@ -35,7 +35,6 @@ it('add group', () => {
   expect(group.$formkit).toBe('group')
   expect(renderToBoolean(group)).toBe(true)
   expect(group.name).toBe('name')
-
 })
 
 it('add list', () => {
@@ -45,5 +44,4 @@ it('add list', () => {
   expect(list.$formkit).toBe('list')
   expect(renderToBoolean(list)).toBe(true)
   expect(list.name).toBe('name')
-
 })

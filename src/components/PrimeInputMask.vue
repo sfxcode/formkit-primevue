@@ -59,7 +59,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
         v-model="context._value"
         v-bind="context?.attrs"
         :disabled="!!context?.disabled"
-        :readonly="context?.attrs._readonly ?? false"
+        :readonly="context?.attrs.readonly ?? false"
         :class="styleClass"
         :tabindex="context?.attrs.tabindex"
         :aria-label="context?.attrs.ariaLabel"

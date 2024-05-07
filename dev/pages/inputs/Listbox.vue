@@ -35,7 +35,7 @@ const schema
         { label: 'Every hour', value: 'hourly' },
         { label: 'Every day', value: 'daily' },
       ],
-      _disabled: true,
+      disabled: true,
     },
     {
       $formkit: 'primeListbox',
