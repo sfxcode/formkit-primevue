@@ -1,3 +1,31 @@
+## v1.10.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.9.12...v1.10.1)
+
+### 🩹 Fixes
+
+- **demo:** _disabled replaced by disabled ([8435268](https://github.com/sfxcode/formkit-primevue/commit/8435268))
+- **demo:** _disabled replaced by disabled ([697f835](https://github.com/sfxcode/formkit-primevue/commit/697f835))
+
+### 💅 Refactors
+
+- **attributes:** Change _readonly to readonly ([97865b8](https://github.com/sfxcode/formkit-primevue/commit/97865b8))
+
+### 🏡 Chore
+
+- **dependencies:** Update all ([d2f4dbb](https://github.com/sfxcode/formkit-primevue/commit/d2f4dbb))
+- **dependencies:** Update all ([630d4b6](https://github.com/sfxcode/formkit-primevue/commit/630d4b6))
+- **dependencies:** Update all ([043e205](https://github.com/sfxcode/formkit-primevue/commit/043e205))
+- **lint:** Fixes ([771da34](https://github.com/sfxcode/formkit-primevue/commit/771da34))
+
+### ✅ Tests
+
+- **useFormKitSchema:** Add tests for group and list ([c909c59](https://github.com/sfxcode/formkit-primevue/commit/c909c59))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v1.9.12
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.9.11...v1.9.12)
