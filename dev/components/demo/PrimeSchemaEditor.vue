@@ -13,6 +13,7 @@ const props = defineProps<{
   data: object
 }>()
 
+// key is used for reflecting changes to the output - editorDataToSchema will remove schemaResultFormKey from generated schema output
 const schemaResultFormKey = ref(0)
 
 const { editorDataToSchema, editorDataToJson, editorDataToCode } = useInputEditorSchema()
