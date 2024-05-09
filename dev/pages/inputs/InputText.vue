@@ -27,6 +27,7 @@ const schema
       label: 'Icon Right (Disabled)',
       help: 'Right Icon Demo',
       icon: 'pi pi-check',
+      iconPosition: 'right',
       disabled: true,
     },
 

@@ -1,22 +1,22 @@
 <script setup lang='ts'>
-import { useInputEditorSchema } from 'my-library'
+import { useFormKitSchema, useInputEditorSchema } from 'my-library'
 
 const { editorSchema, schemaToEditorData } = useInputEditorSchema()
+const { addListGroupFunctions } = useFormKitSchema()
 
-const data1 = reactive(schemaToEditorData({
+const data = reactive(schemaToEditorData({
   $formkit: 'primeInputText',
   name: 'field',
-  label: 'Some Label',
-  help: 'Help Text.',
+  options: [{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }],
 }))
 
-const data = JSON.parse('{"$formkit":"primeInputText","name":"field2","label":"Some Label","help":"Help Text."}')
+addListGroupFunctions(data)
 </script>
 
 <template>
-  <div>
+  <div class="ml-2">
     <PrimeSchemaEditor
-      header="Prime Input Editor" :schema="editorSchema" :data="data"
+      header="Prime Input Editor" :schema="editorSchema()" :data="data"
     />
   </div>
 </template>

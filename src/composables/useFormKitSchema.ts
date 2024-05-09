@@ -1,41 +1,45 @@
 export function useFormKitSchema() {
-  const addComponent = (component: string = 'Button', props: object = {}, render: string = 'true'): object => {
+  const addComponent = (component: string = 'Button', props: object = {}, render: string = 'true', formKitAttrs: object = {}): object => {
     return {
       $cmp: component,
       if: render,
       props,
+      ...formKitAttrs,
     }
   }
 
-  const addElement = (element: string = 'div', children: any[] | string = [], attrs: object = {}, render: string = 'true') => {
+  const addElement = (element: string = 'div', children: any[] | string = [], attrs: object = {}, render: string = 'true', formKitAttrs: object = {}) => {
     return {
       $el: element,
       if: render,
       attrs,
       children,
+      ...formKitAttrs,
     }
   }
 
-  const addGroup = (name: string, children: object[] = [], render: string = 'true') => {
+  const addGroup = (name: string, children: object[] = [], render: string = 'true', formKitAttrs: object = {}) => {
     return {
       $formkit: 'group',
       if: render,
       name,
       children,
+      ...formKitAttrs,
     }
   }
 
-  const addList = (name: string, children: object[], dynamic: boolean = true, render: string = 'true') => {
+  const addList = (name: string, children: object[], dynamic: boolean = true, render: string = 'true', formKitAttrs: object = {}) => {
     return {
       $formkit: 'list',
       if: render,
       name,
       dynamic,
       children,
+      ...formKitAttrs,
     }
   }
 
-  const addListGroup = (children: object[] = [], render: string = 'true') => {
+  const addListGroup = (children: object[] = [], render: string = 'true', formKitAttrs: object = {}) => {
     return {
       $formkit: 'group',
       if: render,
@@ -43,6 +47,7 @@ export function useFormKitSchema() {
       key: '$item',
       index: '$index',
       children,
+      ...formKitAttrs,
     }
   }
 
