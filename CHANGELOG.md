@@ -1,3 +1,21 @@
+## v1.11.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.10.1...v1.11.0)
+
+### 🚀 Enhancements
+
+- **schema:** Input Editor from schema ([599f57b](https://github.com/sfxcode/formkit-primevue/commit/599f57b))
+- **schema:** Input Editor add key =s in schema for conditional parts ([61a764b](https://github.com/sfxcode/formkit-primevue/commit/61a764b))
+- **schema:** Editor output tuning ([be8ff8c](https://github.com/sfxcode/formkit-primevue/commit/be8ff8c))
+
+### 📖 Documentation
+
+- **readme:** Add useInputEditorSchema ([c43dbfe](https://github.com/sfxcode/formkit-primevue/commit/c43dbfe))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v1.10.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.9.12...v1.10.1)
