@@ -1,3 +1,19 @@
+## v1.11.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.11.0...v1.11.1)
+
+### 📖 Documentation
+
+- **readme:** Add Limitation Entry #43 ([#43](https://github.com/sfxcode/formkit-primevue/issues/43))
+
+### 🏡 Chore
+
+- **formkit:** Update to 1.6.3 ([483132a](https://github.com/sfxcode/formkit-primevue/commit/483132a))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v1.11.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.10.1...v1.11.0)
