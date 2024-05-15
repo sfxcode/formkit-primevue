@@ -22,6 +22,10 @@ app.use(plugin, defaultConfig({
 }))
 ```
 
+## Limitations
+
+Prefixing of the PrimeVue component names is not supported.
+
 ### Schema Helper Functions
 
 [useFormKitSchema](https://github.com/sfxcode/formkit-primevue/blob/main/src/composables/useFormKitSchema.ts) provide functions to simplify the usage of elements, components, lists, ...
@@ -53,6 +57,7 @@ Some samples for common tasks are available
 
 - [Repeater](https://formkit-primevue.netlify.app/samples/repeater) (with the help of the useFormKitSchema composable)
 - [Grid](https://formkit-primevue.netlify.app/samples/grid)
+- [Input Editor](https://formkit-primevue.netlify.app/samples/inputEditor) (let you test the configurations in your schema file)
 
 ## Showcases
 
