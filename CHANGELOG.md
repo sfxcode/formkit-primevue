@@ -1,3 +1,22 @@
+## v2.0.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.11.3...v2.0.0)
+
+### 💅 Refactors
+
+- **primevue:** Update to primevue 4 ([2987e55](https://github.com/sfxcode/formkit-primevue/commit/2987e55))
+- **primevue:** Update to primevue 4 ([765d9e1](https://github.com/sfxcode/formkit-primevue/commit/765d9e1))
+
+### 🏡 Chore
+
+- **dependencies:** Update all ([3c826c5](https://github.com/sfxcode/formkit-primevue/commit/3c826c5))
+- **dependencies:** Update all ([ca00768](https://github.com/sfxcode/formkit-primevue/commit/ca00768))
+- **dependencies:** Update all ([6dbde4b](https://github.com/sfxcode/formkit-primevue/commit/6dbde4b))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v1.11.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.11.1...v1.11.3)
