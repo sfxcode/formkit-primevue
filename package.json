@@ -90,7 +90,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "2.21.1",
     "@formkit/core": "^1.6.5",
-    "@types/node": "^20.14.2",
+    "@types/node": "^20.14.7",
     "@unocss/preset-icons": "0.61.0",
     "@unocss/preset-uno": "0.61.0",
     "@vitejs/plugin-vue": "^5.0.5",
@@ -108,13 +108,13 @@
     "chart.js": "^4.4.3",
     "consola": "^3.2.3",
     "eslint": "^9.5.0",
-    "happy-dom": "^14.12.0",
+    "happy-dom": "^14.12.3",
     "json-editor-vue": "^0.15.1",
-    "mkdist": "^1.5.1",
+    "mkdist": "^1.5.2",
     "quill": "^2.0.2",
-    "sass": "^1.77.5",
+    "sass": "^1.77.6",
     "tslib": "^2.6.3",
-    "typescript": "^5.4.5",
+    "typescript": "^5.5.2",
     "unbuild": "2.0.0",
     "unocss": "0.61.0",
     "unplugin-auto-import": "^0.17.6",
@@ -129,7 +129,7 @@
     "vitest": "^1.6.0",
     "vue": "^3.4.29",
     "vue-demi": "^0.14.8",
-    "vue-router": "^4.3.3",
+    "vue-router": "^4.4.0",
     "vue-tsc": "^2.0.21"
   }
 }
