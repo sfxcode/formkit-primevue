@@ -2,6 +2,13 @@
 
 Helper classes for using [Formkit](https://formkit.com/) with the [PrimeVue UI Framework](https://www.primefaces.org/primevue/#/)
 
+## PrimeVue Versions
+
+Actual PrimeVue Version in main branch is 3.x. PrimeVue 4 RC2 is prepared in the prime4 branch.
+First published release for PrimeVue 4 is 2.0.0 (actually built with primevue 4.0.0-rc.2).
+After Release of PrimeVue 4 Final prime4 will be merged in the main branch.
+Feel free to test it ot ...
+
 ## Docs
 
 [Docs](https://sfxcode.github.io/formkit-primevue/)
