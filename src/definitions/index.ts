@@ -2,7 +2,7 @@ import type { FormKitTypeDefinition } from '@formkit/core'
 import { createInput } from '@formkit/vue'
 
 import PrimeAutoComplete from '../components/PrimeAutoComplete.vue'
-import PrimeCalendar from '../components/PrimeCalendar.vue'
+import PrimeDatePicker from '../components/PrimeDatePicker.vue'
 import PrimeCascadeSelect from '../components/PrimeCascadeSelect.vue'
 import PrimeCheckbox from '../components/PrimeCheckbox.vue'
 import PrimeChips from '../components/PrimeChips.vue'
@@ -254,7 +254,7 @@ export const primeListboxDefinition: FormKitTypeDefinition = createInput(PrimeLi
   ],
 })
 
-export const primeCalendarDefinition: FormKitTypeDefinition = createInput(PrimeCalendar, {
+export const primeDatePickerDefinition: FormKitTypeDefinition = createInput(PrimeDatePicker, {
   props: [
     'dateFormat',
     'placeholder',
@@ -462,7 +462,7 @@ export const primeInputs = {
   primeEditor: primeEditorDefinition,
   primeDropdown: primeDropdownDefinition,
   primeMultiSelect: primeMultiSelectDefinition,
-  primeCalendar: primeCalendarDefinition,
+  primeDatePicker: primeDatePickerDefinition,
   primeSlider: primeSliderDefinition,
   primeChips: primeChipsDefinition,
   primeKnob: primeKnobDefinition,

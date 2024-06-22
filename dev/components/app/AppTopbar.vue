@@ -34,7 +34,7 @@ const items = ref([
             { label: 'InputNumber', icon: 'pi pi-fw pi-user-edit', route: '/inputs/inputNumber' },
             { label: 'InputOtp', icon: 'pi pi-fw pi-user-edit', route: '/inputs/inputOtp' },
             { label: 'InputMask', icon: 'pi pi-fw pi-user-edit', route: '/inputs/inputMask' },
-            { label: 'Calendar', icon: 'pi pi-fw pi-user-edit', route: '/inputs/calendar' },
+            { label: 'DatePicker', icon: 'pi pi-fw pi-user-edit', route: '/inputs/datePicker' },
             { label: 'Chips', icon: 'pi pi-fw pi-user-edit', route: '/inputs/chips' },
             { label: 'Editor', icon: 'pi pi-fw pi-user-edit', route: '/inputs/editor' },
             { label: 'Password', icon: 'pi pi-fw pi-user-edit', route: '/inputs/password' },

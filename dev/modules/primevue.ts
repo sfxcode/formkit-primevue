@@ -1,12 +1,10 @@
 import AutoComplete from 'primevue/autocomplete'
 import Accordion from 'primevue/accordion'
-import AccordionTab from 'primevue/accordiontab'
 import Avatar from 'primevue/avatar'
 import AvatarGroup from 'primevue/avatargroup'
 import Badge from 'primevue/badge'
 import Button from 'primevue/button'
 import Breadcrumb from 'primevue/breadcrumb'
-import Calendar from 'primevue/calendar'
 import Card from 'primevue/card'
 import Carousel from 'primevue/carousel'
 import CascadeSelect from 'primevue/cascadeselect'
@@ -21,7 +19,7 @@ import ConfirmPopup from 'primevue/confirmpopup'
 import ContextMenu from 'primevue/contextmenu'
 import DataTable from 'primevue/datatable'
 import DataView from 'primevue/dataview'
-import DataViewLayoutOptions from 'primevue/dataviewlayoutoptions'
+import DatePicker from 'primevue/datepicker'
 import Dialog from 'primevue/dialog'
 import Divider from 'primevue/divider'
 import Editor from 'primevue/editor'
@@ -79,10 +77,9 @@ import ToggleButton from 'primevue/togglebutton'
 import Tree from 'primevue/tree'
 import TreeTable from 'primevue/treetable'
 import TreeSelect from 'primevue/treeselect'
-import TriStateCheckbox from 'primevue/tristatecheckbox'
 
-import 'primevue/resources/primevue.min.css'
 import 'primeicons/primeicons.css'
+import Aura from '@primevue/themes/aura'
 
 import PrimeVue from 'primevue/config'
 
@@ -108,14 +105,12 @@ export const install: UserModule = ({ app }) => {
 
   // components
   app.component('Accordion', Accordion)
-  app.component('AccordionTab', AccordionTab)
   app.component('AutoComplete', AutoComplete)
   app.component('Avatar', Avatar)
   app.component('AvatarGroup', AvatarGroup)
   app.component('Badge', Badge)
   app.component('Breadcrumb', Breadcrumb)
   app.component('Button', Button)
-  app.component('Calendar', Calendar)
   app.component('Card', Card)
   app.component('Carousel', Carousel)
   app.component('CascadeSelect', CascadeSelect)
@@ -130,7 +125,7 @@ export const install: UserModule = ({ app }) => {
   app.component('ContextMenu', ContextMenu)
   app.component('DataTable', DataTable)
   app.component('DataView', DataView)
-  app.component('DataViewLayoutOptions', DataViewLayoutOptions)
+  app.component('DatePicker', DatePicker)
   app.component('Dialog', Dialog)
   app.component('Divider', Divider)
   app.component('Dropdown', Dropdown)
@@ -188,9 +183,16 @@ export const install: UserModule = ({ app }) => {
   app.component('Tree', Tree)
   app.component('TreeTable', TreeTable)
   app.component('TreeSelect', TreeSelect)
-  app.component('TriStateCheckbox', TriStateCheckbox)
 
-  app.use(PrimeVue, { ripple: false })
+  app.use(PrimeVue, {
+    theme: {
+      preset: Aura,
+      options: {
+        darkModeSelector: '.p-dark',
+      },
+    },
+    ripple: false,
+  })
 
   // services
   app.use(ConfirmationService)

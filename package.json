@@ -85,11 +85,12 @@
     "@formkit/i18n": "^1.6.5",
     "@formkit/vue": "^1.6.5",
     "primeicons": "^7.0.0",
-    "primevue": "^3.52.0"
+    "primevue": "^4.0.0-rc.2"
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.21.1",
     "@formkit/core": "^1.6.5",
+    "@primevue/themes": "4.0.0-rc.2",
     "@types/node": "^20.14.7",
     "@unocss/preset-icons": "0.61.0",
     "@unocss/preset-uno": "0.61.0",

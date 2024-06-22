@@ -1,5 +1,5 @@
 import PrimeAutoComplete from './PrimeAutoComplete.vue'
-import PrimeCalendar from './PrimeCalendar.vue'
+import PrimeDatePicker from './PrimeDatePicker.vue'
 import PrimeCascadeSelect from './PrimeCascadeSelect.vue'
 import PrimeCheckbox from './PrimeCheckbox.vue'
 import PrimeChips from './PrimeChips.vue'
@@ -25,7 +25,7 @@ import PrimeTriStateCheckbox from './PrimeTriStateCheckbox.vue'
 
 export {
   PrimeAutoComplete,
-  PrimeCalendar,
+  PrimeDatePicker,
   PrimeCascadeSelect,
   PrimeCheckbox,
   PrimeChips,
