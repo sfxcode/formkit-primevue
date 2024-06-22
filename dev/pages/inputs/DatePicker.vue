@@ -15,7 +15,7 @@ const schema
       $formkit: 'primeDatePicker',
       name: 'styled',
       label: 'Styled',
-      style: 'background:gray;',
+      style: { background: 'gray' },
       class: 'customClass',
       showIcon: true,
     },

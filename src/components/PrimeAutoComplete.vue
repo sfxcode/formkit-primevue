@@ -12,6 +12,7 @@ export interface FormKitPrimeAutoCompleteProps {
   unstyled?: AutoCompleteProps['unstyled']
   dropdown?: AutoCompleteProps['dropdown']
   multiple?: AutoCompleteProps['multiple']
+  typeahead?: AutoCompleteProps['typeahead']
 }
 
 const props = defineProps({
@@ -52,6 +53,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       :suggestions="suggestions"
       :dropdown="context?.dropdown ?? false"
       :multiple="context?.multiple ?? false"
+      :typeahead="context?.typeahead ?? true"
       :pt="context?.pt"
       :pt-options="context?.ptOptions"
       :unstyled="context?.unstyled ?? false"

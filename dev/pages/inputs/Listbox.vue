@@ -14,7 +14,7 @@ const schema
     {
       $formkit: 'primeListbox',
       name: 'cookie_notice',
-      label: 'Cookie notice Dropdown',
+      label: 'Cookie notice',
       value: 'hourly',
       optionLabel: 'label',
       optionValue: 'value',
@@ -26,7 +26,7 @@ const schema
       name: 'styled',
       label: 'Styled and Diabled',
       value: 'hourly',
-      style: 'background:gray;',
+      style: { background: 'gray' },
       class: 'customClass',
       optionLabel: 'label',
       optionValue: 'value',

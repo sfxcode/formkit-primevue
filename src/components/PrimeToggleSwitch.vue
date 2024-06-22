@@ -1,21 +1,21 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { InputSwitchProps } from 'primevue/inputswitch'
+import type { ToggleSwitchProps } from 'primevue/toggleswitch'
 
-export interface FormKitPrimeInputSwitchProps {
-  trueValue?: InputSwitchProps['trueValue']
-  falseValue?: InputSwitchProps['falseValue']
-  pt?: InputSwitchProps['pt']
-  ptOptions?: InputSwitchProps['ptOptions']
-  unstyled?: InputSwitchProps['unstyled']
+export interface FormKitPrimeToggleSwitchProps {
+  trueValue?: ToggleSwitchProps['trueValue']
+  falseValue?: ToggleSwitchProps['falseValue']
+  pt?: ToggleSwitchProps['pt']
+  ptOptions?: ToggleSwitchProps['ptOptions']
+  unstyled?: ToggleSwitchProps['unstyled']
   labelLeft?: string
   labelRight?: string
 }
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeInputSwitchProps>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeToggleSwitchProps>,
     required: true,
   },
 })
@@ -34,7 +34,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
 <template>
   <div :class="context?.attrs.option_class" class="p-formkit">
     <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
-    <InputSwitch
+    <ToggleSwitch
       v-model="context._value"
       v-bind="context?.attrs"
       :input-id="context.id"

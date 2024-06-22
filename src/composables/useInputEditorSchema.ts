@@ -91,7 +91,7 @@ export function useInputEditorSchema() {
   function editorSchema(inputOptions: any[] = primeInputOptions(primeInputNames)) {
     return [
       {
-        $formkit: 'primeDropdown',
+        $formkit: 'primeSelect',
         id: 'inputSelection',
         name: '_dollar_formkit',
         label: 'Prime Input',
@@ -181,7 +181,7 @@ export function useInputEditorSchema() {
         preserve: true,
       },
       {
-        $formkit: 'primeDropdown',
+        $formkit: 'primeSelect',
         if: '$get(selectButton).value === \'showValidation\'',
         name: 'validation-visibility',
         label: 'Field Validation Visibility',
@@ -242,7 +242,7 @@ export function useInputEditorSchema() {
         preserve: true,
       },
       {
-        $formkit: 'primeDropdown',
+        $formkit: 'primeSelect',
         if: '$get(selectButton).value === \'showDisplay\'',
         name: 'iconPosition',
         label: 'Icon Position',

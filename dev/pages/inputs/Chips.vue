@@ -17,7 +17,7 @@ const schema
       $formkit: 'primeChips',
       name: 'styled',
       label: 'Styled',
-      style: 'background:gray;',
+      style: { background: 'gray' },
       class: 'customClass',
     },
     {
@@ -37,7 +37,7 @@ const data = { }
 <template>
   <div>
     <PrimeInput
-      header="PrimeChips" :schema="schema" :data="data"
+      header="PrimeChips (Deprecated in PrimeVue 4)" :schema="schema" :data="data"
       :prime-attributes="primeAttributes"
     />
   </div>

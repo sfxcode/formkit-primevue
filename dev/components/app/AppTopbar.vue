@@ -45,7 +45,7 @@ const items = ref([
           items: [
             { label: 'Checkbox', icon: 'pi pi-fw pi-user-edit', route: '/inputs/checkBox' },
             { label: 'TriStateCheckbox', icon: 'pi pi-fw pi-user-edit', route: '/inputs/triStateCheckbox' },
-            { label: 'InputSwitch', icon: 'pi pi-fw pi-user-edit', route: '/inputs/inputSwitch' },
+            { label: 'ToggleSwitch', icon: 'pi pi-fw pi-user-edit', route: '/inputs/toggleSwitch' },
           ],
         },
       ],
@@ -54,7 +54,7 @@ const items = ref([
           label: 'Select',
           items: [
             { label: 'CascadeSelect', icon: 'pi pi-fw pi-user-edit', route: '/inputs/cascadeSelect' },
-            { label: 'Dropdown', icon: 'pi pi-fw pi-user-edit', route: '/inputs/dropdown' },
+            { label: 'Select', icon: 'pi pi-fw pi-user-edit', route: '/inputs/select' },
             { label: 'Listbox', icon: 'pi pi-fw pi-user-edit', route: '/inputs/listbox' },
             { label: 'MultiSelect', icon: 'pi pi-fw pi-user-edit', route: '/inputs/multiSelect' },
             { label: 'RadioButton', icon: 'pi pi-fw pi-user-edit', route: '/inputs/radioButton' },

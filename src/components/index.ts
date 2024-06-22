@@ -4,11 +4,11 @@ import PrimeCascadeSelect from './PrimeCascadeSelect.vue'
 import PrimeCheckbox from './PrimeCheckbox.vue'
 import PrimeChips from './PrimeChips.vue'
 import PrimeColorPicker from './PrimeColorPicker.vue'
-import PrimeDropdown from './PrimeDropdown.vue'
+import PrimeSelect from './PrimeSelect.vue'
 import PrimeEditor from './PrimeEditor.vue'
 import PrimeInputMask from './PrimeInputMask.vue'
 import PrimeInputNumber from './PrimeInputNumber.vue'
-import PrimeInputSwitch from './PrimeInputSwitch.vue'
+import PrimeInputSwitch from './PrimeToggleSwitch.vue'
 import PrimeInputText from './PrimeInputText.vue'
 import PrimeTextarea from './PrimeTextarea.vue'
 import PrimeKnob from './PrimeKnob.vue'
@@ -30,7 +30,7 @@ export {
   PrimeCheckbox,
   PrimeChips,
   PrimeColorPicker,
-  PrimeDropdown,
+  PrimeSelect,
   PrimeEditor,
   PrimeInputMask,
   PrimeInputNumber,

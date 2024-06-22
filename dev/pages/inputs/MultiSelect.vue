@@ -24,7 +24,7 @@ const schema
       $formkit: 'primeMultiSelect',
       name: 'styled',
       label: 'Styled',
-      style: 'background:gray;',
+      style: { background: 'gray' },
       class: 'customClass',
       optionLabel: 'label',
       optionValue: 'value',

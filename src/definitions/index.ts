@@ -7,12 +7,12 @@ import PrimeCascadeSelect from '../components/PrimeCascadeSelect.vue'
 import PrimeCheckbox from '../components/PrimeCheckbox.vue'
 import PrimeChips from '../components/PrimeChips.vue'
 import PrimeColorPicker from '../components/PrimeColorPicker.vue'
-import PrimeDropdown from '../components/PrimeDropdown.vue'
+import PrimeSelect from '../components/PrimeSelect.vue'
 import PrimeEditor from '../components/PrimeEditor.vue'
 import PrimeInputMask from '../components/PrimeInputMask.vue'
 import PrimeInputNumber from '../components/PrimeInputNumber.vue'
 import PrimeInputOtp from '../components/PrimeInputOtp.vue'
-import PrimeInputSwitch from '../components/PrimeInputSwitch.vue'
+import PrimeToggleSwitch from '../components/PrimeToggleSwitch.vue'
 import PrimeInputText from '../components/PrimeInputText.vue'
 import PrimeTextarea from '../components/PrimeTextarea.vue'
 import PrimeKnob from '../components/PrimeKnob.vue'
@@ -28,7 +28,7 @@ import PrimeSelectButton from '../components/PrimeSelectButton.vue'
 import PrimeTriStateCheckbox from '../components/PrimeTriStateCheckbox.vue'
 
 export const primeAutoCompleteDefinition: FormKitTypeDefinition = createInput(PrimeAutoComplete, {
-  props: ['pt', 'ptOptions', 'unstyled', 'dropdown', 'multiple'],
+  props: ['pt', 'ptOptions', 'unstyled', 'Select', 'multiple'],
 })
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
   props: [
@@ -121,7 +121,7 @@ export const primeCheckboxDefinition: FormKitTypeDefinition = createInput(PrimeC
   ],
 })
 
-export const primeInputSwitchDefinition: FormKitTypeDefinition = createInput(PrimeInputSwitch, {
+export const primeToggleSwitchDefinition: FormKitTypeDefinition = createInput(PrimeToggleSwitch, {
   props: [
     'trueValue',
     'falseValue',
@@ -156,7 +156,7 @@ export const primeEditorDefinition: FormKitTypeDefinition = createInput(PrimeEdi
   ],
 })
 
-export const primeDropdownDefinition: FormKitTypeDefinition = createInput(PrimeDropdown, {
+export const primeSelectDefinition: FormKitTypeDefinition = createInput(PrimeSelect, {
   props: [
     'options',
     'optionLabel',
@@ -457,10 +457,10 @@ export const primeInputs = {
   primeInputMask: primeInputMaskDefinition,
   primePassword: primePasswordDefinition,
   primeCheckbox: primeCheckboxDefinition,
-  primeInputSwitch: primeInputSwitchDefinition,
+  primeToggleSwitch: primeToggleSwitchDefinition,
   primeTextarea: primeTextareaDefinition,
   primeEditor: primeEditorDefinition,
-  primeDropdown: primeDropdownDefinition,
+  primeSelect: primeSelectDefinition,
   primeMultiSelect: primeMultiSelectDefinition,
   primeDatePicker: primeDatePickerDefinition,
   primeSlider: primeSliderDefinition,
