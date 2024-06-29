@@ -1,3 +1,19 @@
+## v2.0.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.0.0...v2.0.1)
+
+### 🩹 Fixes
+
+- **PrimeInputText:** Remove iconPosition from IconField - property no longer exists in V4 ([314bf89](https://github.com/sfxcode/formkit-primevue/commit/314bf89))
+
+### 🏡 Chore
+
+- **dependencies:** Update to primevue 4 RC 3 ([485318b](https://github.com/sfxcode/formkit-primevue/commit/485318b))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.0.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.11.3...v2.0.0)
