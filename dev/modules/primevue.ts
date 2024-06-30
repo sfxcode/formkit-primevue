@@ -4,11 +4,9 @@ import Card from 'primevue/card'
 import CascadeSelect from 'primevue/cascadeselect'
 import Checkbox from 'primevue/checkbox'
 import Chip from 'primevue/chip'
-import Chips from 'primevue/chips'
 import ColorPicker from 'primevue/colorpicker'
 import DatePicker from 'primevue/datepicker'
 import Editor from 'primevue/editor'
-import Dropdown from 'primevue/dropdown'
 import Fieldset from 'primevue/fieldset'
 import IconField from 'primevue/iconfield'
 import InputIcon from 'primevue/inputicon'
@@ -21,7 +19,6 @@ import Listbox from 'primevue/listbox'
 import MegaMenu from 'primevue/megamenu'
 import Message from 'primevue/message'
 import MultiSelect from 'primevue/multiselect'
-import OverlayPanel from 'primevue/overlaypanel'
 import Password from 'primevue/password'
 import Rating from 'primevue/rating'
 import RadioButton from 'primevue/radiobutton'
@@ -64,7 +61,7 @@ export const install: UserModule = ({ app }) => {
   app.directive('badge', BadgeDirective)
   app.directive('ripple', Ripple)
   app.directive('tooltip', Tooltip)
-  app.directive('styleclass', StyleClass)
+  app.directive('style-class', StyleClass)
 
   // components
   app.component('AutoComplete', AutoComplete)
@@ -73,11 +70,9 @@ export const install: UserModule = ({ app }) => {
   app.component('CascadeSelect', CascadeSelect)
   app.component('Checkbox', Checkbox)
   app.component('Chip', Chip)
-  app.component('Chips', Chips)
   app.component('ColorPicker', ColorPicker)
   app.component('DataView', DataView)
   app.component('DatePicker', DatePicker)
-  app.component('Dropdown', Dropdown)
   app.component('Editor', Editor)
   app.component('Fieldset', Fieldset)
   app.component('IconField', IconField)
@@ -91,7 +86,6 @@ export const install: UserModule = ({ app }) => {
   app.component('MegaMenu', MegaMenu)
   app.component('Message', Message)
   app.component('MultiSelect', MultiSelect)
-  app.component('OverlayPanel', OverlayPanel)
   app.component('Password', Password)
   app.component('RadioButton', RadioButton)
   app.component('Rating', Rating)

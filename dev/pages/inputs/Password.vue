@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-const primeAttributes = 'placeholder, feedback, mediumRegex, strongRegex, promptLabel, weakLabel, mediumLabel, strongLabel, hideIcon, showIcon, toggleMask'
+const primeAttributes = 'placeholder, feedback, mediumRegex, strongRegex, promptLabel, weakLabel, mediumLabel, strongLabel, toggleMask'
 const schema
   = [
     {

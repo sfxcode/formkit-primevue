@@ -5,7 +5,6 @@ import PrimeAutoComplete from '../components/PrimeAutoComplete.vue'
 import PrimeDatePicker from '../components/PrimeDatePicker.vue'
 import PrimeCascadeSelect from '../components/PrimeCascadeSelect.vue'
 import PrimeCheckbox from '../components/PrimeCheckbox.vue'
-import PrimeChips from '../components/PrimeChips.vue'
 import PrimeColorPicker from '../components/PrimeColorPicker.vue'
 import PrimeSelect from '../components/PrimeSelect.vue'
 import PrimeEditor from '../components/PrimeEditor.vue'
@@ -25,7 +24,6 @@ import PrimeSlider from '../components/PrimeSlider.vue'
 import PrimeToggleButton from '../components/PrimeToggleButton.vue'
 import PrimeTreeSelect from '../components/PrimeTreeSelect.vue'
 import PrimeSelectButton from '../components/PrimeSelectButton.vue'
-import PrimeTriStateCheckbox from '../components/PrimeTriStateCheckbox.vue'
 
 export const primeAutoCompleteDefinition: FormKitTypeDefinition = createInput(PrimeAutoComplete, {
   props: ['pt', 'ptOptions', 'unstyled', 'Select', 'multiple'],
@@ -340,19 +338,6 @@ export const primeRadioButtonDefinition: FormKitTypeDefinition = createInput(Pri
   ],
 })
 
-export const primeChipsDefinition: FormKitTypeDefinition = createInput(PrimeChips, {
-  props: [
-    'allowDuplicate',
-    'addOnBlur',
-    'max',
-    'placeholder',
-    'seperator',
-    'pt',
-    'ptOptions',
-    'unstyled',
-  ],
-})
-
 export const primeKnobDefinition: FormKitTypeDefinition = createInput(PrimeKnob, {
   props: [
     'pt',
@@ -409,16 +394,7 @@ export const primeSelectButtonDefinition: FormKitTypeDefinition = createInput(Pr
     'options',
   ],
 })
-export const primeTriStateCheckboxDefinition: FormKitTypeDefinition = createInput(PrimeTriStateCheckbox, {
-  props: [
-    'pt',
-    'ptOptions',
-    'unstyled',
-    'variant',
-    'labelRight',
-    'labelLeft',
-  ],
-})
+
 export const primeCascadeSelectDefinition: FormKitTypeDefinition = createInput(PrimeCascadeSelect, {
   props: [
     'options',
@@ -464,7 +440,6 @@ export const primeInputs = {
   primeMultiSelect: primeMultiSelectDefinition,
   primeDatePicker: primeDatePickerDefinition,
   primeSlider: primeSliderDefinition,
-  primeChips: primeChipsDefinition,
   primeKnob: primeKnobDefinition,
   primeRating: primeRatingDefinition,
   primeRadioButton: primeRadioButtonDefinition,
