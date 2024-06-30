@@ -1,13 +1,13 @@
 # Formkit - Primevue
 
-Helper classes for using [Formkit](https://formkit.com/) with the [PrimeVue UI Framework](https://www.primefaces.org/primevue/#/)
+Helper classes for using [FormKit](https://formkit.com/) with the [PrimeVue UI Framework](https://www.primefaces.org/primevue/#/)
 
 ## PrimeVue Versions
 
-Actual PrimeVue Version in main branch is 3.x. PrimeVue 4 RC2 is prepared in the prime4 branch.
-First published release for PrimeVue 4 is 2.0.0 (actually built with primevue 4.0.0-rc.2).
+Actual PrimeVue Version in main branch is 3.x. PrimeVue 4 RC23is prepared in the prime4 branch.
+Last published release for PrimeVue 4 is 2.0.2 (actually built with primevue 4.0.0-rc.3).
 After Release of PrimeVue 4 Final prime4 will be merged in the main branch.
-Feel free to test it ot ...
+Feel free to test it out ...
 
 ## Docs
 
