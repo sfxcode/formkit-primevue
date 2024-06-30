@@ -447,7 +447,6 @@ export const primeInputs = {
   primeToggleButton: primeToggleButtonDefinition,
   primeListbox: primeListboxDefinition,
   primeSelectButton: primeSelectButtonDefinition,
-  primeTriStateCheckbox: primeTriStateCheckboxDefinition,
   primeCascadeSelect: primeCascadeSelectDefinition,
   primeTreeSelect: primeTreeSelectDefinition,
   primeInputOtp: primeInputOtpDefinition,

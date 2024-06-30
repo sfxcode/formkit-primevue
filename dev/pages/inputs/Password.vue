@@ -15,6 +15,7 @@ const schema
       label: 'Confirm password',
       help: 'Enter your new password again.',
       validation: 'required|confirm',
+      toggleMask: true,
       validationLabel: 'password confirmation',
     },
   ]
