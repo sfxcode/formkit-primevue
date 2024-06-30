@@ -26,7 +26,7 @@ const documentationLink = `https://primevue.org/${props.header.replace('Prime', 
 
 async function submitHandler() {
   await new Promise(resolve => setTimeout(resolve, 2000))
-  showMessage('success', 'Form Submitted ...', 'Form submitted successfully')
+  showMessage('success', 'Form Submitted ...', `${props.header} submitted successfully`)
 }
 </script>
 
