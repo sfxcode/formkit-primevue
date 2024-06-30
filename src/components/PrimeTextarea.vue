@@ -1,6 +1,8 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+
+import Textarea from 'primevue/textarea'
 import type { TextareaProps } from 'primevue/textarea'
 
 export interface FormKitPrimeTextareaProps {

@@ -1,6 +1,8 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+
+import InputMask from 'primevue/inputmask'
 import type { InputMaskProps } from 'primevue/inputmask'
 
 export interface FormKitPrimeInputMaskProps {

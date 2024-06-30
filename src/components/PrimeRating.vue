@@ -1,15 +1,15 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+
+import Rating from 'primevue/rating'
 import type { RatingProps } from 'primevue/rating'
 
 export interface FormKitPrimeRatingProps {
   unstyled?: RatingProps['unstyled']
   stars?: RatingProps['stars']
-  cancel?: RatingProps['cancel']
   onIcon?: RatingProps['onIcon']
   offIcon?: RatingProps['offIcon']
-  cancelIcon?: RatingProps['cancelIcon']
   ptOptions?: RatingProps['ptOptions']
   pt?: RatingProps['pt']
 }
@@ -46,10 +46,8 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
       :stars="context.stars ?? 5"
-      :cancel="context.cancel ?? false"
       :on-icon="context.onIcon ?? 'pi pi-star-fill'"
       :off-icon="context.offIcon ?? 'pi pi-star'"
-      :cancel-icon="context.cancelIcon ?? 'pi pi-ban'"
       :pt="context.pt"
       :pt-options="context.ptOptions"
       :unstyled="context.unstyled ?? false"

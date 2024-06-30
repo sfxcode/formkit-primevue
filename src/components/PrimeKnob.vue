@@ -1,6 +1,8 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+
+import Knob from 'primevue/knob'
 import type { KnobProps } from 'primevue/knob'
 
 export interface FormKitPrimeKnobProps {

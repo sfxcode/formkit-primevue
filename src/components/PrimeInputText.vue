@@ -1,6 +1,8 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+
+import InputText from 'primevue/inputtext'
 import type { InputTextProps } from 'primevue/inputtext'
 
 export interface FormKitPrimeInputTextProps {

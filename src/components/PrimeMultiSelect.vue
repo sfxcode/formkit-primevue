@@ -1,6 +1,8 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+
+import MultiSelect from 'primevue/multiselect'
 import type { MultiSelectProps } from 'primevue/multiselect'
 
 export interface FormKitPrimeMultiSelectProps {
@@ -11,8 +13,7 @@ export interface FormKitPrimeMultiSelectProps {
   optionGroupLabel?: MultiSelectProps['optionGroupLabel']
   optionGroupChildren?: MultiSelectProps['optionGroupChildren']
   scrollHeight?: MultiSelectProps['scrollHeight']
-  inputProps?: MultiSelectProps['inputProps']
-  closeButtonProps?: MultiSelectProps['closeButtonProps']
+  closeIcon?: MultiSelectProps['closeIcon']
   dataKey?: MultiSelectProps['dataKey']
   filter?: MultiSelectProps['filter']
   filterPlaceholder?: MultiSelectProps['filterPlaceholder']
@@ -81,8 +82,6 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       :option-group-label="context.optionGroupLabel"
       :option-group-children="context.optionGroupChildren"
       :scroll-height="context.scrollHeight"
-      :input-props="context.inputProps"
-      :close-button-props="context.closeButtonProps"
       :data-key="context.dataKey"
       :filter="context.filter ?? false"
       :filter-placeholder="context.filterPlaceholder"
@@ -90,6 +89,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       :filter-match-mode="context.filterMatchMode"
       :fitler-fields="context.filterFields"
       :append-to="context.appendTo"
+      :close-icon="context.closeIcon"
       :display="context.display"
       :max-selected-labels="context.maxSelectedLabels"
       :selected-items-label="context.selectedItemsLabel"

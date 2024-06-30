@@ -1,10 +1,9 @@
 <script setup lang='ts'>
 import { type PropType, computed, ref } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type {
-  AutoCompleteCompleteEvent,
-  AutoCompleteProps,
-} from 'primevue/autocomplete'
+
+import AutoComplete from 'primevue/autocomplete'
+import type { AutoCompleteCompleteEvent, AutoCompleteProps } from 'primevue/autocomplete'
 
 export interface FormKitPrimeAutoCompleteProps {
   pt?: AutoCompleteProps['pt']
