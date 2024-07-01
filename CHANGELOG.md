@@ -1,3 +1,15 @@
+## v2.0.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.0.2...v2.0.3)
+
+### 🩹 Fixes
+
+- **imports:** Removed direct import of PrimeVue components - ([6ef02e8](https://github.com/sfxcode/formkit-primevue/commit/6ef02e8))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.0.2
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.0.1...v2.0.2)
