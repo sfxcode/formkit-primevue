@@ -2,7 +2,6 @@
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
-import Checkbox from 'primevue/checkbox'
 import type { CheckboxProps } from 'primevue/checkbox'
 
 export interface FormKitPrimeCheckboxProps {

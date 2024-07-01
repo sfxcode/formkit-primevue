@@ -2,7 +2,6 @@
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
-import MultiSelect from 'primevue/multiselect'
 import type { MultiSelectProps } from 'primevue/multiselect'
 
 export interface FormKitPrimeMultiSelectProps {

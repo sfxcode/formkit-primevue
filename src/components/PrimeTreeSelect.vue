@@ -2,7 +2,6 @@
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
-import TreeSelect from 'primevue/treeselect'
 import type { TreeSelectProps } from 'primevue/treeselect'
 
 export interface FormKitPrimeTreeSelectProps {

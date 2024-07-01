@@ -2,7 +2,6 @@
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
-import CascadeSelect from 'primevue/cascadeselect'
 import type { CascadeSelectProps } from 'primevue/cascadeselect'
 
 export interface FormKitPrimeCascadeSelectProps {

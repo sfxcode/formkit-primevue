@@ -2,7 +2,6 @@
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
-import Rating from 'primevue/rating'
 import type { RatingProps } from 'primevue/rating'
 
 export interface FormKitPrimeRatingProps {

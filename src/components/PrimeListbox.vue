@@ -2,7 +2,6 @@
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
-import Listbox from 'primevue/listbox'
 import type { ListboxProps } from 'primevue/listbox'
 
 export interface FormKitPrimeListboxProps {

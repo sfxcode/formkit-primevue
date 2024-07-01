@@ -2,7 +2,6 @@
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
-import Editor from 'primevue/editor'
 import type { EditorProps, EditorSelectionChangeEvent } from 'primevue/editor'
 
 export interface FormKitPrimeEditorProps {

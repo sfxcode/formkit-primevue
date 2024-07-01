@@ -2,7 +2,6 @@
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
-import Password from 'primevue/password'
 import type { PasswordProps } from 'primevue/password'
 
 export interface FormKitPrimePasswordProps {

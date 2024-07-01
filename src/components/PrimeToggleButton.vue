@@ -2,7 +2,6 @@
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
-import ToggleButton from 'primevue/togglebutton'
 import type { ToggleButtonProps } from 'primevue/togglebutton'
 
 export interface FormKitPrimeToggleButtonProps {

@@ -2,7 +2,6 @@
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
-import Select from 'primevue/select'
 import type { SelectProps } from 'primevue/select'
 
 export interface FormKitPrimeSelectProps {

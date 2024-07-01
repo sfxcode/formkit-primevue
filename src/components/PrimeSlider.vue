@@ -2,7 +2,6 @@
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
-import Slider from 'primevue/slider'
 import type { SliderProps } from 'primevue/slider'
 
 export interface FormKitPrimeSliderProps {
