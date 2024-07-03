@@ -57,7 +57,7 @@ const schema = reactive(
       label: 'Are you a european citizen?',
     },
     {
-      $formkit: 'primeDropdown',
+      $formkit: 'primeSelect',
       if: '$get(eu).value', // 👀 Oooo, conditionals!
       name: 'cookie_notice',
       label: 'Cookie notice frequency',

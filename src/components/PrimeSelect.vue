@@ -1,47 +1,46 @@
 <script setup lang="ts">
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { DropdownProps } from 'primevue/dropdown'
 
-export interface FormKitPrimeDropdownProps {
-  options?: DropdownProps['options']
-  optionLabel?: DropdownProps['optionLabel']
-  optionValue?: DropdownProps['optionValue']
-  optionDisabled?: DropdownProps['optionDisabled']
-  optionGroupLabel?: DropdownProps['optionGroupLabel']
-  optionGroupChildren?: DropdownProps['optionGroupChildren']
-  scrollHeight?: DropdownProps['scrollHeight']
-  filter?: DropdownProps['filter']
-  filterPlaceholder?: DropdownProps['filterPlaceholder']
-  filterLocale?: DropdownProps['filterLocale']
-  filterMatchMode?: DropdownProps['filterMatchMode']
-  filterFields?: DropdownProps['filterFields']
-  filterInputProps?: DropdownProps['filterInputProps']
-  editable?: DropdownProps['editable']
-  placeholder?: DropdownProps['placeholder']
-  dataKey?: DropdownProps['dataKey']
-  showClear?: DropdownProps['showClear']
-  panelStyle?: DropdownProps['panelStyle']
-  panelClass?: DropdownProps['panelClass']
-  panelProps?: DropdownProps['panelProps']
-  appendTo?: DropdownProps['appendTo']
-  resetFilterOnHide?: DropdownProps['resetFilterOnHide']
-  virtualScrollerOptions?: DropdownProps['virtualScrollerOptions']
-  autoOptionFocus?: DropdownProps['autoOptionFocus']
-  selectOnFocus?: DropdownProps['selectOnFocus']
-  filterMessage?: DropdownProps['filterMessage']
-  selectionMessage?: DropdownProps['selectionMessage']
-  emptySelectionMessage?: DropdownProps['emptySelectionMessage']
-  emptyFilterMessage?: DropdownProps['emptyFilterMessage']
-  emptyMessage?: DropdownProps['emptyMessage']
-  pt?: DropdownProps['pt']
-  ptOptions?: DropdownProps['ptOptions']
-  unstyled?: DropdownProps['unstyled']
+import type { SelectProps } from 'primevue/select'
+
+export interface FormKitPrimeSelectProps {
+  options?: SelectProps['options']
+  optionLabel?: SelectProps['optionLabel']
+  optionValue?: SelectProps['optionValue']
+  optionDisabled?: SelectProps['optionDisabled']
+  optionGroupLabel?: SelectProps['optionGroupLabel']
+  optionGroupChildren?: SelectProps['optionGroupChildren']
+  scrollHeight?: SelectProps['scrollHeight']
+  filter?: SelectProps['filter']
+  filterPlaceholder?: SelectProps['filterPlaceholder']
+  filterLocale?: SelectProps['filterLocale']
+  filterMatchMode?: SelectProps['filterMatchMode']
+  filterFields?: SelectProps['filterFields']
+  editable?: SelectProps['editable']
+  placeholder?: SelectProps['placeholder']
+  dataKey?: SelectProps['dataKey']
+  showClear?: SelectProps['showClear']
+  panelStyle?: SelectProps['panelStyle']
+  panelClass?: SelectProps['panelClass']
+  appendTo?: SelectProps['appendTo']
+  resetFilterOnHide?: SelectProps['resetFilterOnHide']
+  virtualScrollerOptions?: SelectProps['virtualScrollerOptions']
+  autoOptionFocus?: SelectProps['autoOptionFocus']
+  selectOnFocus?: SelectProps['selectOnFocus']
+  filterMessage?: SelectProps['filterMessage']
+  selectionMessage?: SelectProps['selectionMessage']
+  emptySelectionMessage?: SelectProps['emptySelectionMessage']
+  emptyFilterMessage?: SelectProps['emptyFilterMessage']
+  emptyMessage?: SelectProps['emptyMessage']
+  pt?: SelectProps['pt']
+  ptOptions?: SelectProps['ptOptions']
+  unstyled?: SelectProps['unstyled']
 }
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeDropdownProps>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeSelectProps>,
     required: true,
   },
 })
@@ -57,7 +56,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
 
 <template>
   <div class="p-formkit">
-    <Dropdown
+    <Select
       v-model="context._value"
       v-bind="context?.attrs"
       :input-id="context.id"

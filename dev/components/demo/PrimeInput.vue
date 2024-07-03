@@ -25,8 +25,8 @@ const formData = ref(props.data)
 const documentationLink = `https://primevue.org/${props.header.replace('Prime', '').toLowerCase()}`
 
 async function submitHandler() {
-  showMessage('success', 'Form Submitted ...', 'Form submitted successfully')
   await new Promise(resolve => setTimeout(resolve, 2000))
+  showMessage('success', 'Form Submitted ...', `${props.header} submitted successfully`)
 }
 </script>
 
@@ -54,36 +54,49 @@ async function submitHandler() {
         <pre>{{ formData }}</pre>
       </div>
       <div class="">
-        <TabView>
+        <Tabs>
+          <TabList>
+            <Tab value="0">
+              Supported Attributes
+            </Tab>
+            <Tab value="1">
+              Schema Editor
+            </Tab>
+            <Tab value="2">
+              Data Editor
+            </Tab>
+          </TabList>
           <TabPanel header="Schema">
             <pre>{{ formSchema }}</pre>
           </TabPanel>
-          <TabPanel v-if="primeAttributes || customAttributes" header="Supported Attributes">
-            <h4>Base Attributes</h4>
-            <div>
-              <span>disabled, readonly, style, class, tabindex, ariaLabel, ariaLabelledby, pt, ptOptions, unstyled</span>
-            </div>
-            <h4>PrimeVue Attributes</h4>
-            <div>
-              <a :href="documentationLink" target="_blank" class="text-xl">Open Documentation</a>
-            </div>
-            <div class="mt-2">
-              <span>{{ primeAttributes }}</span>
-            </div>
-            <h4 v-if="customAttributes">
-              Custom Attributes
-            </h4>
-            <div>
-              <span v-if="customAttributes">{{ customAttributes }}</span>
-            </div>
-          </TabPanel>
-          <TabPanel header="Schema Editor">
-            <JsonEditorVue v-model="formSchema" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
-          </TabPanel>
-          <TabPanel header="Data Editor">
-            <JsonEditorVue v-model="formData" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
-          </TabPanel>
-        </TabView>
+          <TabPanels>
+            <TabPanel v-if="primeAttributes || customAttributes" value="0">
+              <h4>Base Attributes</h4>
+              <div>
+                <span>disabled, readonly, style, class, tabindex, ariaLabel, ariaLabelledby, pt, ptOptions, unstyled</span>
+              </div>
+              <h4>PrimeVue Attributes</h4>
+              <div>
+                <a :href="documentationLink" target="_blank" class="text-xl">Open Documentation</a>
+              </div>
+              <div class="mt-2">
+                <span>{{ primeAttributes }}</span>
+              </div>
+              <h4 v-if="customAttributes">
+                Custom Attributes
+              </h4>
+              <div>
+                <span v-if="customAttributes">{{ customAttributes }}</span>
+              </div>
+            </TabPanel>
+            <TabPanel value="1">
+              <JsonEditorVue v-model="formSchema" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
+            </TabPanel>
+            <TabPanel value="2">
+              <JsonEditorVue v-model="formData" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
+            </TabPanel>
+          </TabPanels>
+        </Tabs>
       </div>
     </div>
   </div>

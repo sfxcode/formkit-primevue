@@ -21,7 +21,7 @@ const schema
       $formkit: 'primeTextarea',
       name: 'name',
       placeholder: 'Styled',
-      style: 'background:gray;',
+      style: { background: 'gray' },
       class: 'customClass',
     },
     {

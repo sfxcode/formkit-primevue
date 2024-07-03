@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+
 import type { PasswordProps } from 'primevue/password'
 
 export interface FormKitPrimePasswordProps {
@@ -10,8 +11,8 @@ export interface FormKitPrimePasswordProps {
   weakLabel?: PasswordProps['weakLabel']
   mediumLabel?: PasswordProps['mediumLabel']
   strongLabel?: PasswordProps['strongLabel']
-  hideIcon?: PasswordProps['hideIcon']
-  showIcon?: PasswordProps['showIcon']
+  maskIcon?: PasswordProps['maskIcon']
+  unmaskIcon?: PasswordProps['unmaskIcon']
   pt?: PasswordProps['pt']
   ptOptions?: PasswordProps['ptOptions']
   unstyled?: PasswordProps['unstyled']
@@ -58,8 +59,8 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       :weak-label="context.weakLabel"
       :medium-label="context.mediumLabel"
       :strong-label="context.strongLabel"
-      :hide-icon="context.hideIcon ?? 'pi pi-eye-slash'"
-      :show-icon="context.showIcon ?? 'pi pi-eye'"
+      :mask-icon="context.maskIcon ?? 'pi pi-eye-slash'"
+      :unmask-icon="context.unmaskIcon ?? 'pi pi-eye'"
       :feedback="context.feedback ?? false"
       :toggle-mask="context.toggleMask ?? false"
       :pt="context.pt"

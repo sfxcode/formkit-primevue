@@ -34,7 +34,7 @@ const items = ref([
             { label: 'InputNumber', icon: 'pi pi-fw pi-user-edit', route: '/inputs/inputNumber' },
             { label: 'InputOtp', icon: 'pi pi-fw pi-user-edit', route: '/inputs/inputOtp' },
             { label: 'InputMask', icon: 'pi pi-fw pi-user-edit', route: '/inputs/inputMask' },
-            { label: 'Calendar', icon: 'pi pi-fw pi-user-edit', route: '/inputs/calendar' },
+            { label: 'DatePicker', icon: 'pi pi-fw pi-user-edit', route: '/inputs/datePicker' },
             { label: 'Chips', icon: 'pi pi-fw pi-user-edit', route: '/inputs/chips' },
             { label: 'Editor', icon: 'pi pi-fw pi-user-edit', route: '/inputs/editor' },
             { label: 'Password', icon: 'pi pi-fw pi-user-edit', route: '/inputs/password' },
@@ -44,8 +44,7 @@ const items = ref([
           label: 'Check',
           items: [
             { label: 'Checkbox', icon: 'pi pi-fw pi-user-edit', route: '/inputs/checkBox' },
-            { label: 'TriStateCheckbox', icon: 'pi pi-fw pi-user-edit', route: '/inputs/triStateCheckbox' },
-            { label: 'InputSwitch', icon: 'pi pi-fw pi-user-edit', route: '/inputs/inputSwitch' },
+            { label: 'ToggleSwitch', icon: 'pi pi-fw pi-user-edit', route: '/inputs/toggleSwitch' },
           ],
         },
       ],
@@ -54,7 +53,7 @@ const items = ref([
           label: 'Select',
           items: [
             { label: 'CascadeSelect', icon: 'pi pi-fw pi-user-edit', route: '/inputs/cascadeSelect' },
-            { label: 'Dropdown', icon: 'pi pi-fw pi-user-edit', route: '/inputs/dropdown' },
+            { label: 'Select', icon: 'pi pi-fw pi-user-edit', route: '/inputs/select' },
             { label: 'Listbox', icon: 'pi pi-fw pi-user-edit', route: '/inputs/listbox' },
             { label: 'MultiSelect', icon: 'pi pi-fw pi-user-edit', route: '/inputs/multiSelect' },
             { label: 'RadioButton', icon: 'pi pi-fw pi-user-edit', route: '/inputs/radioButton' },

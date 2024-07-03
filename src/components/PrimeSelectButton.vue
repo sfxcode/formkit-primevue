@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+
 import type { SelectButtonProps } from 'primevue/selectbutton'
 
 export interface FormKitPrimeSelectButtonProps {
@@ -11,7 +12,6 @@ export interface FormKitPrimeSelectButtonProps {
   optionValue?: SelectButtonProps['optionValue']
   optionDisabled?: SelectButtonProps['optionDisabled']
   multiple?: SelectButtonProps['multiple']
-  unselectable?: SelectButtonProps['unselectable']
   dataKey?: SelectButtonProps['dataKey']
   options?: SelectButtonProps['options']
 }
@@ -52,7 +52,6 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       :option-value="context.optionValue"
       :option-disabled="context.optionDisabled"
       :multiple="context.multiple ?? false"
-      :unselectable="context.unselectable ?? true"
       :data-key="context.dataKey"
       :pt="context.pt"
       :pt-options="context.ptOptions"

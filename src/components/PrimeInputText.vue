@@ -1,8 +1,10 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+
+import IconField from 'primevue/iconfield'
+import InputIcon from 'primevue/inputicon'
 import type { InputTextProps } from 'primevue/inputtext'
-import type { IconFieldProps } from 'primevue/iconfield'
 
 export interface FormKitPrimeInputTextProps {
   pt?: InputTextProps['pt']
@@ -10,7 +12,6 @@ export interface FormKitPrimeInputTextProps {
   unstyled?: InputTextProps['unstyled']
   placeholder?: InputTextProps['placeholder']
   icon?: string
-  iconPosition?: IconFieldProps['iconPosition']
 }
 
 const props = defineProps({

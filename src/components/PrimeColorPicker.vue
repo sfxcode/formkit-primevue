@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+
 import type { ColorPickerProps } from 'primevue/colorpicker'
 
 export interface FormKitPrimeColorPickerProps {

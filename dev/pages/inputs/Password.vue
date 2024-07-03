@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-const primeAttributes = 'placeholder, feedback, mediumRegex, strongRegex, promptLabel, weakLabel, mediumLabel, strongLabel, hideIcon, showIcon, toggleMask'
+const primeAttributes = 'placeholder, feedback, mediumRegex, strongRegex, promptLabel, weakLabel, mediumLabel, strongLabel, toggleMask'
 const schema
   = [
     {
@@ -15,6 +15,7 @@ const schema
       label: 'Confirm password',
       help: 'Enter your new password again.',
       validation: 'required|confirm',
+      toggleMask: true,
       validationLabel: 'password confirmation',
     },
   ]

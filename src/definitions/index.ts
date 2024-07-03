@@ -2,17 +2,16 @@ import type { FormKitTypeDefinition } from '@formkit/core'
 import { createInput } from '@formkit/vue'
 
 import PrimeAutoComplete from '../components/PrimeAutoComplete.vue'
-import PrimeCalendar from '../components/PrimeCalendar.vue'
+import PrimeDatePicker from '../components/PrimeDatePicker.vue'
 import PrimeCascadeSelect from '../components/PrimeCascadeSelect.vue'
 import PrimeCheckbox from '../components/PrimeCheckbox.vue'
-import PrimeChips from '../components/PrimeChips.vue'
 import PrimeColorPicker from '../components/PrimeColorPicker.vue'
-import PrimeDropdown from '../components/PrimeDropdown.vue'
+import PrimeSelect from '../components/PrimeSelect.vue'
 import PrimeEditor from '../components/PrimeEditor.vue'
 import PrimeInputMask from '../components/PrimeInputMask.vue'
 import PrimeInputNumber from '../components/PrimeInputNumber.vue'
 import PrimeInputOtp from '../components/PrimeInputOtp.vue'
-import PrimeInputSwitch from '../components/PrimeInputSwitch.vue'
+import PrimeToggleSwitch from '../components/PrimeToggleSwitch.vue'
 import PrimeInputText from '../components/PrimeInputText.vue'
 import PrimeTextarea from '../components/PrimeTextarea.vue'
 import PrimeKnob from '../components/PrimeKnob.vue'
@@ -25,10 +24,9 @@ import PrimeSlider from '../components/PrimeSlider.vue'
 import PrimeToggleButton from '../components/PrimeToggleButton.vue'
 import PrimeTreeSelect from '../components/PrimeTreeSelect.vue'
 import PrimeSelectButton from '../components/PrimeSelectButton.vue'
-import PrimeTriStateCheckbox from '../components/PrimeTriStateCheckbox.vue'
 
 export const primeAutoCompleteDefinition: FormKitTypeDefinition = createInput(PrimeAutoComplete, {
-  props: ['pt', 'ptOptions', 'unstyled', 'dropdown', 'multiple'],
+  props: ['pt', 'ptOptions', 'unstyled', 'Select', 'multiple'],
 })
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
   props: [
@@ -121,7 +119,7 @@ export const primeCheckboxDefinition: FormKitTypeDefinition = createInput(PrimeC
   ],
 })
 
-export const primeInputSwitchDefinition: FormKitTypeDefinition = createInput(PrimeInputSwitch, {
+export const primeToggleSwitchDefinition: FormKitTypeDefinition = createInput(PrimeToggleSwitch, {
   props: [
     'trueValue',
     'falseValue',
@@ -156,7 +154,7 @@ export const primeEditorDefinition: FormKitTypeDefinition = createInput(PrimeEdi
   ],
 })
 
-export const primeDropdownDefinition: FormKitTypeDefinition = createInput(PrimeDropdown, {
+export const primeSelectDefinition: FormKitTypeDefinition = createInput(PrimeSelect, {
   props: [
     'options',
     'optionLabel',
@@ -254,7 +252,7 @@ export const primeListboxDefinition: FormKitTypeDefinition = createInput(PrimeLi
   ],
 })
 
-export const primeCalendarDefinition: FormKitTypeDefinition = createInput(PrimeCalendar, {
+export const primeDatePickerDefinition: FormKitTypeDefinition = createInput(PrimeDatePicker, {
   props: [
     'dateFormat',
     'placeholder',
@@ -340,19 +338,6 @@ export const primeRadioButtonDefinition: FormKitTypeDefinition = createInput(Pri
   ],
 })
 
-export const primeChipsDefinition: FormKitTypeDefinition = createInput(PrimeChips, {
-  props: [
-    'allowDuplicate',
-    'addOnBlur',
-    'max',
-    'placeholder',
-    'seperator',
-    'pt',
-    'ptOptions',
-    'unstyled',
-  ],
-})
-
 export const primeKnobDefinition: FormKitTypeDefinition = createInput(PrimeKnob, {
   props: [
     'pt',
@@ -409,16 +394,7 @@ export const primeSelectButtonDefinition: FormKitTypeDefinition = createInput(Pr
     'options',
   ],
 })
-export const primeTriStateCheckboxDefinition: FormKitTypeDefinition = createInput(PrimeTriStateCheckbox, {
-  props: [
-    'pt',
-    'ptOptions',
-    'unstyled',
-    'variant',
-    'labelRight',
-    'labelLeft',
-  ],
-})
+
 export const primeCascadeSelectDefinition: FormKitTypeDefinition = createInput(PrimeCascadeSelect, {
   props: [
     'options',
@@ -457,14 +433,13 @@ export const primeInputs = {
   primeInputMask: primeInputMaskDefinition,
   primePassword: primePasswordDefinition,
   primeCheckbox: primeCheckboxDefinition,
-  primeInputSwitch: primeInputSwitchDefinition,
+  primeToggleSwitch: primeToggleSwitchDefinition,
   primeTextarea: primeTextareaDefinition,
   primeEditor: primeEditorDefinition,
-  primeDropdown: primeDropdownDefinition,
+  primeSelect: primeSelectDefinition,
   primeMultiSelect: primeMultiSelectDefinition,
-  primeCalendar: primeCalendarDefinition,
+  primeDatePicker: primeDatePickerDefinition,
   primeSlider: primeSliderDefinition,
-  primeChips: primeChipsDefinition,
   primeKnob: primeKnobDefinition,
   primeRating: primeRatingDefinition,
   primeRadioButton: primeRadioButtonDefinition,
@@ -472,7 +447,6 @@ export const primeInputs = {
   primeToggleButton: primeToggleButtonDefinition,
   primeListbox: primeListboxDefinition,
   primeSelectButton: primeSelectButtonDefinition,
-  primeTriStateCheckbox: primeTriStateCheckboxDefinition,
   primeCascadeSelect: primeCascadeSelectDefinition,
   primeTreeSelect: primeTreeSelectDefinition,
   primeInputOtp: primeInputOtpDefinition,

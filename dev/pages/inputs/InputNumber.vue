@@ -17,7 +17,7 @@ const schema
       label: 'Input Number',
       value: 1234,
       class: 'customClass',
-      style: 'background:gray;',
+      style: { background: 'gray' },
       readonly: true,
     },
   ]

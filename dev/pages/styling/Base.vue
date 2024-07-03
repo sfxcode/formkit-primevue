@@ -15,7 +15,7 @@ const schema
       label: 'Styling by class',
       help: 'Required.',
       validation: 'required',
-      style: 'color: gray;font-weight: 700;',
+      style: { color: 'gray', fontWeight: 700 },
     },
 
   ]

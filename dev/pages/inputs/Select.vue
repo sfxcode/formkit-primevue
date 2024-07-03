@@ -22,9 +22,9 @@ const stringArray = ['refresh', 'hourly', 'daily']
 const schema
   = [
     {
-      $formkit: 'primeDropdown',
+      $formkit: 'primeSelect',
       name: 'selectValue',
-      label: 'Cookie notice Dropdown',
+      label: 'Cookie notice Select',
       value: 'hourly',
       optionLabel: 'label',
       optionValue: 'value',
@@ -32,24 +32,24 @@ const schema
       help: 'Cookie notice frequency ?',
     },
     {
-      $formkit: 'primeDropdown',
+      $formkit: 'primeSelect',
       name: 'selectObjectByLabel',
-      label: 'Select Object Dropdown',
+      label: 'Select Object',
       optionLabel: 'name',
       options: cities,
     },
     {
-      $formkit: 'primeDropdown',
+      $formkit: 'primeSelect',
       name: 'selectString',
-      label: 'Simple String Array Dropdown',
+      label: 'Simple String Array Select',
       options: stringArray,
     },
     {
-      $formkit: 'primeDropdown',
+      $formkit: 'primeSelect',
       name: 'styled',
       label: 'Styled',
       value: 'hourly',
-      style: 'background:gray;',
+      style: { background: 'gray' },
       class: 'customClass',
       optionLabel: 'label',
       optionValue: 'value',
@@ -61,7 +61,7 @@ const schema
       disabled: true,
     },
     {
-      $formkit: 'primeDropdown',
+      $formkit: 'primeSelect',
       name: 'custom',
       label: 'With Clear and Filter',
       showClear: true,
@@ -80,7 +80,7 @@ const data = { }
 <template>
   <div>
     <PrimeInput
-      header="PrimeDropdown" :schema="schema" :data="data"
+      header="PrimeSelect" :schema="schema" :data="data"
       :prime-attributes="primeAttributes"
     />
   </div>

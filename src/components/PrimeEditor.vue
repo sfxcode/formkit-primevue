@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import type { EditorProps, EditorSelectionChangeEvent } from 'primevue/editor'
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+
+import type { EditorProps, EditorSelectionChangeEvent } from 'primevue/editor'
 
 export interface FormKitPrimeEditorProps {
   placeholder?: EditorProps['placeholder']

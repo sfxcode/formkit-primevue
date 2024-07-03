@@ -4,7 +4,7 @@ const primeAttributes = 'dateFormat, showIcon, icon, .... (see documentation)'
 const schema
   = [
     {
-      $formkit: 'primeCalendar',
+      $formkit: 'primeDatePicker',
       id: 'basic',
       name: 'basic',
       label: 'Basic',
@@ -12,15 +12,15 @@ const schema
       validation: 'required',
     },
     {
-      $formkit: 'primeCalendar',
+      $formkit: 'primeDatePicker',
       name: 'styled',
       label: 'Styled',
-      style: 'background:gray;',
+      style: { background: 'gray' },
       class: 'customClass',
       showIcon: true,
     },
     {
-      $formkit: 'primeCalendar',
+      $formkit: 'primeDatePicker',
       name: 'icon',
       label: 'Custom Icon',
       dateFormat: 'yy-mm',
@@ -35,7 +35,7 @@ const data = { }
 <template>
   <div>
     <PrimeInput
-      header="PrimeCalendar" :schema="schema" :data="data"
+      header="PrimeDatePicker" :schema="schema" :data="data"
       :prime-attributes="primeAttributes"
     />
   </div>

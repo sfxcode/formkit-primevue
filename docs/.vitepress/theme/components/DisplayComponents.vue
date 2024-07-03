@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { ref } from 'vue'
 
-const inputs = ['CascadeSelect', 'Checkbox', 'Dropdown', 'Editor (HTML Editor)', 'InputMask', 'InputNumber', 'InputOtp', 'InputSwitch', 'InputText', 'InputTextarea', 'MultiSelect', 'Password', 'Ranking', 'Chips', 'Knob', 'ColorPicker', 'Listbox', 'ToggleButton', 'SelectButton', 'TriStateCheckbox', 'RadioButton', 'TreeSelect']
+const inputs = ['CascadeSelect', 'Checkbox', 'Select', 'Editor (HTML Editor)', 'InputMask', 'InputNumber', 'InputOtp', 'InputSwitch', 'InputText', 'InputTextarea', 'MultiSelect', 'Password', 'Ranking', 'Chips', 'Knob', 'ColorPicker', 'Listbox', 'ToggleButton', 'SelectButton', 'TriStateCheckbox', 'RadioButton', 'TreeSelect']
 const names = ref(inputs.sort((a, b) => a.localeCompare(b)))
 </script>
 

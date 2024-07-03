@@ -58,7 +58,7 @@ const schema
               $formkit: 'primeInputText',
               label: 'Damage',
               name: 'damage',
-              style: 'width:70px;',
+              style: { width: '70px' },
             },
             addGroupButtons(),
           ]),

@@ -1,58 +1,58 @@
 <script setup lang='ts'>
-import type { CalendarBlurEvent, CalendarProps } from 'primevue/calendar'
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
-export interface FormKitPrimeCalendarProps {
-  dateFormat?: CalendarProps['dateFormat']
-  placeholder?: CalendarProps['placeholder']
-  selectionMode?: CalendarProps['selectionMode']
-  inline?: CalendarProps['inline']
-  icon?: CalendarProps['icon']
-  showOtherMonths?: CalendarProps['showOtherMonths']
-  selectOtherMonths?: CalendarProps['selectOtherMonths']
-  showIcon?: CalendarProps['showIcon']
-  previousIcon?: CalendarProps['previousIcon']
-  nextIcon?: CalendarProps['nextIcon']
-  incrementIcon?: CalendarProps['incrementIcon']
-  decrementIcon?: CalendarProps['decrementIcon']
-  numberOfMonths?: CalendarProps['numberOfMonths']
-  responsiveOptions?: CalendarProps['responsiveOptions']
-  view?: CalendarProps['view']
-  touchUI?: CalendarProps['touchUI']
-  minDate?: CalendarProps['minDate']
-  maxDate?: CalendarProps['maxDate']
-  disabledDates?: CalendarProps['disabledDates']
-  disabledDays?: CalendarProps['disabledDays']
-  maxDateCount?: CalendarProps['maxDateCount']
-  showOnFocus?: CalendarProps['showOnFocus']
-  autoZIndex?: CalendarProps['autoZIndex']
-  baseZIndex?: CalendarProps['baseZIndex']
-  showButtonBar?: CalendarProps['showButtonBar']
-  showTime?: CalendarProps['showTime']
-  timeOnly?: CalendarProps['timeOnly']
-  shortYearCutoff?: CalendarProps['shortYearCutoff']
-  hourFormat?: CalendarProps['hourFormat']
-  stepHour?: CalendarProps['stepHour']
-  stepMinute?: CalendarProps['stepMinute']
-  stepSecond?: CalendarProps['stepSecond']
-  showSeconds?: CalendarProps['showSeconds']
-  hideOnDateTimeSelect?: CalendarProps['hideOnDateTimeSelect']
-  hideOnRangeSelection?: CalendarProps['hideOnRangeSelection']
-  timeSeparator?: CalendarProps['timeSeparator']
-  showWeek?: CalendarProps['showWeek']
-  manualInput?: CalendarProps['manualInput']
-  appendTo?: CalendarProps['appendTo']
-  panelStyle?: CalendarProps['panelStyle']
-  panelClass?: CalendarProps['panelClass']
-  pt?: CalendarProps['pt']
-  ptOptions?: CalendarProps['ptOptions']
-  unstyled?: CalendarProps['unstyled']
+import type { DatePickerBlurEvent, DatePickerProps } from 'primevue/datepicker'
+
+export interface FormKitPrimeDatePickerProps {
+  dateFormat?: DatePickerProps['dateFormat']
+  placeholder?: DatePickerProps['placeholder']
+  selectionMode?: DatePickerProps['selectionMode']
+  inline?: DatePickerProps['inline']
+  icon?: DatePickerProps['icon']
+  showOtherMonths?: DatePickerProps['showOtherMonths']
+  selectOtherMonths?: DatePickerProps['selectOtherMonths']
+  showIcon?: DatePickerProps['showIcon']
+  prevIcon?: DatePickerProps['prevIcon']
+  nextIcon?: DatePickerProps['nextIcon']
+  incrementIcon?: DatePickerProps['incrementIcon']
+  decrementIcon?: DatePickerProps['decrementIcon']
+  numberOfMonths?: DatePickerProps['numberOfMonths']
+  responsiveOptions?: DatePickerProps['responsiveOptions']
+  view?: DatePickerProps['view']
+  minDate?: DatePickerProps['minDate']
+  maxDate?: DatePickerProps['maxDate']
+  disabledDates?: DatePickerProps['disabledDates']
+  disabledDays?: DatePickerProps['disabledDays']
+  maxDateCount?: DatePickerProps['maxDateCount']
+  showOnFocus?: DatePickerProps['showOnFocus']
+  autoZIndex?: DatePickerProps['autoZIndex']
+  baseZIndex?: DatePickerProps['baseZIndex']
+  showButtonBar?: DatePickerProps['showButtonBar']
+  showTime?: DatePickerProps['showTime']
+  timeOnly?: DatePickerProps['timeOnly']
+  shortYearCutoff?: DatePickerProps['shortYearCutoff']
+  hourFormat?: DatePickerProps['hourFormat']
+  stepHour?: DatePickerProps['stepHour']
+  stepMinute?: DatePickerProps['stepMinute']
+  stepSecond?: DatePickerProps['stepSecond']
+  showSeconds?: DatePickerProps['showSeconds']
+  hideOnDateTimeSelect?: DatePickerProps['hideOnDateTimeSelect']
+  hideOnRangeSelection?: DatePickerProps['hideOnRangeSelection']
+  timeSeparator?: DatePickerProps['timeSeparator']
+  showWeek?: DatePickerProps['showWeek']
+  manualInput?: DatePickerProps['manualInput']
+  appendTo?: DatePickerProps['appendTo']
+  panelStyle?: DatePickerProps['panelStyle']
+  panelClass?: DatePickerProps['panelClass']
+  pt?: DatePickerProps['pt']
+  ptOptions?: DatePickerProps['ptOptions']
+  unstyled?: DatePickerProps['unstyled']
 }
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeCalendarProps>,
+    type: Object as PropType<FormKitFrameworkContext & FormKitPrimeDatePickerProps>,
     required: true,
   },
 })
@@ -65,7 +65,7 @@ function handleSelect(e: any) {
   props.context?.node.input(e)
 }
 
-function handleBlur(e: CalendarBlurEvent) {
+function handleBlur(e: DatePickerBlurEvent) {
   props.context?.handlers.blur(e.originalEvent)
 }
 
@@ -78,7 +78,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
 
 <template>
   <div class="p-formkit">
-    <Calendar
+    <DatePicker
       v-model="context._value"
       v-bind="context?.attrs"
       :input-id="context.id"

@@ -1,3 +1,75 @@
+## v2.0.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.0.2...v2.0.3)
+
+### 🩹 Fixes
+
+- **imports:** Removed direct import of PrimeVue components - ([6ef02e8](https://github.com/sfxcode/formkit-primevue/commit/6ef02e8))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
+## v2.0.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.0.1...v2.0.2)
+
+### 🩹 Fixes
+
+- **primevue4:** Remove TriStateCheckBox and add direct import of components ([fd8f4a9](https://github.com/sfxcode/formkit-primevue/commit/fd8f4a9))
+- **primevue4:** Remove TriStateCheckBox and add direct import of components ([7562160](https://github.com/sfxcode/formkit-primevue/commit/7562160))
+- **PrimeInputText:** Add imports ([57d8a39](https://github.com/sfxcode/formkit-primevue/commit/57d8a39))
+
+### 💅 Refactors
+
+- **primevue4:** Remove Imports for input components used by formkit ([f7411f5](https://github.com/sfxcode/formkit-primevue/commit/f7411f5))
+- **primevue4:** Some changes in demo app ([4231bbb](https://github.com/sfxcode/formkit-primevue/commit/4231bbb))
+- **primevue4:** Some changes in demo app ([c94c961](https://github.com/sfxcode/formkit-primevue/commit/c94c961))
+- **Toast:** Show header in meessage ([7a53172](https://github.com/sfxcode/formkit-primevue/commit/7a53172))
+
+### 🏡 Chore
+
+- **build:** Add pnpm as default package manager ([96facc6](https://github.com/sfxcode/formkit-primevue/commit/96facc6))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
+## v2.0.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.0.0...v2.0.1)
+
+### 🩹 Fixes
+
+- **PrimeInputText:** Remove iconPosition from IconField - property no longer exists in V4 ([314bf89](https://github.com/sfxcode/formkit-primevue/commit/314bf89))
+
+### 🏡 Chore
+
+- **dependencies:** Update to primevue 4 RC 3 ([485318b](https://github.com/sfxcode/formkit-primevue/commit/485318b))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
+## v2.0.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.11.3...v2.0.0)
+
+### 💅 Refactors
+
+- **primevue:** Update to primevue 4 ([2987e55](https://github.com/sfxcode/formkit-primevue/commit/2987e55))
+- **primevue:** Update to primevue 4 ([765d9e1](https://github.com/sfxcode/formkit-primevue/commit/765d9e1))
+
+### 🏡 Chore
+
+- **dependencies:** Update all ([3c826c5](https://github.com/sfxcode/formkit-primevue/commit/3c826c5))
+- **dependencies:** Update all ([ca00768](https://github.com/sfxcode/formkit-primevue/commit/ca00768))
+- **dependencies:** Update all ([6dbde4b](https://github.com/sfxcode/formkit-primevue/commit/6dbde4b))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v1.11.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v1.11.1...v1.11.3)

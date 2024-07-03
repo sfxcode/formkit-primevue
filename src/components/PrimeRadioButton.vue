@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+
 import type { RadioButtonProps } from 'primevue/radiobutton'
 
 export interface FormKitPrimeRadioButtonProps {

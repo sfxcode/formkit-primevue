@@ -1,14 +1,13 @@
 import PrimeAutoComplete from './PrimeAutoComplete.vue'
-import PrimeCalendar from './PrimeCalendar.vue'
+import PrimeDatePicker from './PrimeDatePicker.vue'
 import PrimeCascadeSelect from './PrimeCascadeSelect.vue'
 import PrimeCheckbox from './PrimeCheckbox.vue'
-import PrimeChips from './PrimeChips.vue'
 import PrimeColorPicker from './PrimeColorPicker.vue'
-import PrimeDropdown from './PrimeDropdown.vue'
+import PrimeSelect from './PrimeSelect.vue'
 import PrimeEditor from './PrimeEditor.vue'
 import PrimeInputMask from './PrimeInputMask.vue'
 import PrimeInputNumber from './PrimeInputNumber.vue'
-import PrimeInputSwitch from './PrimeInputSwitch.vue'
+import PrimeInputSwitch from './PrimeToggleSwitch.vue'
 import PrimeInputText from './PrimeInputText.vue'
 import PrimeTextarea from './PrimeTextarea.vue'
 import PrimeKnob from './PrimeKnob.vue'
@@ -21,16 +20,14 @@ import PrimeSlider from './PrimeSlider.vue'
 import PrimeToggleButton from './PrimeToggleButton.vue'
 import PrimeTreeSelect from './PrimeTreeSelect.vue'
 import PrimeSelectButton from './PrimeSelectButton.vue'
-import PrimeTriStateCheckbox from './PrimeTriStateCheckbox.vue'
 
 export {
   PrimeAutoComplete,
-  PrimeCalendar,
+  PrimeDatePicker,
   PrimeCascadeSelect,
   PrimeCheckbox,
-  PrimeChips,
   PrimeColorPicker,
-  PrimeDropdown,
+  PrimeSelect,
   PrimeEditor,
   PrimeInputMask,
   PrimeInputNumber,
@@ -47,5 +44,4 @@ export {
   PrimeToggleButton,
   PrimeTreeSelect,
   PrimeSelectButton,
-  PrimeTriStateCheckbox,
 }

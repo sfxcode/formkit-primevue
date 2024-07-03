@@ -4,7 +4,7 @@ const primeAttributes = 'placeholder, separator, allowDuplicate, max, addOnBlur'
 const list = ['Hello', 'Hero', 'House', 'World']
 
 function search(query: string) {
-  return list.filter(i => i.toLowerCase().includes(query.toLowerCase()))
+  return [...list.filter(i => i.toLowerCase().includes(query.toLowerCase())), query]
 }
 
 const schema
@@ -15,6 +15,15 @@ const schema
       name: 'basic',
       complete: search,
       label: 'Basic AutoComplete - Use [h]ello',
+    },
+    {
+      $formkit: 'primeAutoComplete',
+      id: 'chips',
+      name: 'chips',
+      multiple: true,
+      typeahead: false,
+      complete: search,
+      label: 'Chips Replacement',
     },
   ]
 
