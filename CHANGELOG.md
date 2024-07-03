@@ -1,3 +1,25 @@
+## v2.0.5
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.0.3...v2.0.5)
+
+### 🩹 Fixes
+
+- **imports:** Removed direct import of PrimeVue components - ([b77c679](https://github.com/sfxcode/formkit-primevue/commit/b77c679))
+- **imports:** Removed direct import of PrimeVue components - ([c8ee640](https://github.com/sfxcode/formkit-primevue/commit/c8ee640))
+
+### 📖 Documentation
+
+- **readme:** Hint to Version 2.0.0 for PrimeVue 4 ([78bd380](https://github.com/sfxcode/formkit-primevue/commit/78bd380))
+- **readme:** Hint to Version 2.0.0 for PrimeVue 4 ([b935a73](https://github.com/sfxcode/formkit-primevue/commit/b935a73))
+
+### 🏡 Chore
+
+- **build:** Add pnpm as default package manager ([0ab7f8b](https://github.com/sfxcode/formkit-primevue/commit/0ab7f8b))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.0.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.0.2...v2.0.3)
