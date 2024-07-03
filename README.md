@@ -4,7 +4,7 @@ Helper classes for using [FormKit](https://formkit.com/) with the [PrimeVue UI F
 
 ## PrimeVue Versions
 
-Actual PrimeVue Version in the main branch is 4.x. 
+Actual PrimeVue Version in the main branch is 4.x.
 
 PrimeVue 3 is in the prime3 branch.
 
