@@ -2,10 +2,6 @@
 
 In some inputs options are needed. There are several ways to deal with the options.
 
-::: warning Important Note
-Until  Version 1.5.x only Object Array / Select Object by key and value by key was possible. This is fixed from 1.6.x.
-:::
-
 ## Option based Inputs
 
 - Dropdown

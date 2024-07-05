@@ -1,10 +1,12 @@
 # Formkit - Primevue
 
-Helper classes for using [FormKit](https://formkit.com/) with the [PrimeVue UI Framework](https://www.primefaces.org/primevue/#/)
+PrimeVue based formkit inputs for using [FormKit](https://formkit.com/) with the [PrimeVue UI Framework](https://www.primefaces.org/primevue/#/).
+
+Main focus of this project is to provide configuration based forms with validation.
 
 ## PrimeVue Versions
 
-Actual PrimeVue Version in the main branch is 4.x.
+Actual PrimeVue Version in the main branch is *4.x.*
 
 PrimeVue 3 is in the prime3 branch.
 
@@ -16,6 +18,11 @@ PrimeVue 3 is in the prime3 branch.
 
 ## Usage
 
+### Configuration
+
+Add *formkit.config.ts*
+
+
 ```typescript
 import { defaultConfig, plugin } from '@formkit/vue'
 import { primeInputs } from '@sfxcode/formkit-primevue'
@@ -26,6 +33,32 @@ app.use(plugin, defaultConfig({
   locale: 'en',
   inputs: primeInputs,
 }))
+```
+
+### Nuxt
+
+Important: use *autoimport: false* if using primevue formkit validation and include or
+exclude not needed components as usual.
+
+Autoimport true prevents elements lookup correctly. 
+
+Example:
+```typescript
+  primevue: {
+  autoImport: false,
+    components: {
+    exclude: ['Chart', 'Editor'],
+  },
+  options: {
+    theme: {
+      preset: Aura,
+        options: {
+        darkModeSelector: '.dark',
+      },
+    },
+    ripple: true,
+  },
+},
 ```
 
 ## Limitations

@@ -15,7 +15,7 @@ hero:
 
 features:
 - title: "Formkit-PrimeVue"
-  details: PrimeVue support for the FormKit validation Framwork. PrimeVue inputs are prepared for seamless FormKit integration.
+  details: PrimeVue support for the FormKit validation Framework. PrimeVue inputs are prepared for seamless FormKit integration.
 - title: "PrimeVue"
   details: Next Generation Vue UI Component Library. Rich set of open source native components for Vue.
 - title: "FormKit"
