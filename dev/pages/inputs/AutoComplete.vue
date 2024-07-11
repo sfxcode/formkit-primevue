@@ -14,6 +14,7 @@ const schema
       id: 'basic',
       name: 'basic',
       complete: search,
+      dropdown: true,
       label: 'Basic AutoComplete - Use [h]ello',
     },
     {
@@ -22,7 +23,6 @@ const schema
       name: 'chips',
       multiple: true,
       typeahead: false,
-      complete: search,
       label: 'Chips Replacement',
     },
   ]
