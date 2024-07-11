@@ -104,31 +104,30 @@ Some samples for common tasks are available
 
 [Nuxt 3 PrimeVue Starter](https://github.com/sfxcode/nuxt3-primevue-starter) and [Vite PrimeVue Starter](https://github.com/sfxcode/vite-primevue-starter) with Formkit support available.
 
-## Supported Inputs
+## Supported Inputs for PrimeVue 4
 
 - AutoComplete
-- Calendar
 - CascadeSelect
 - Checkbox
-- Chips
-- Dropdown
+- ColorPicker
+- DatePicker
 - Editor (HTML Editor)
 - InputMask
 - InputNumber
 - InputOtp
-- InputSwitch
 - InputText
-- InputTextarea
+- Knob
+- Listbox
 - MultiSelect
 - Password
-- Ranking
-- Knob
-- ColorPicker
-- Listbox
-- ToggleButton
-- SelectButton
-- TriStateCheckbox
 - RadioButton
+- Rating
+- Select
+- SelectButton
+- Slider
+- Textarea
+- ToggleButton
+- ToggleSwitch
 - TreeSelect
 
 ## Demo

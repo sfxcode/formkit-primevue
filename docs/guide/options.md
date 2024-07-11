@@ -4,10 +4,10 @@ In some inputs options are needed. There are several ways to deal with the optio
 
 ## Option based Inputs
 
-- Dropdown
 - Listbox
 - MultiSelect
 - RadioButton
+- Select
 - SelectButton
 
 ## Ways of Usage

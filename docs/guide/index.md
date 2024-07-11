@@ -1,6 +1,6 @@
 # Formkit PrimeVue
 
-**formkit-primevue** combines the [PrimeVue](https://www.primefaces.org/primevue) component framework with the validation power of [Formkit](https://formkit.com/) in your Vue/Nuxt application.
+**formkit-primevue** combines the [PrimeVue](https://www.primefaces.org/primevue) component framework (V4) with the validation power of [Formkit](https://formkit.com/) in your Vue/Nuxt application.
 
 The main motivation for this project is to use Formkit Validation by Schema with form elements provided by PrimeVue.
 
