@@ -1,3 +1,20 @@
+## v2.0.6
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.0.5...v2.0.6)
+
+### 🩹 Fixes
+
+- **autocomplete:** Typeahead and prevent submit on enter ([4d39672](https://github.com/sfxcode/formkit-primevue/commit/4d39672))
+- **autocomplete:** Typeahead and prevent submit on enter ([7a0965a](https://github.com/sfxcode/formkit-primevue/commit/7a0965a))
+
+### 📖 Documentation
+
+- **readme:** Update for PrimeVue 4 ([87e37d5](https://github.com/sfxcode/formkit-primevue/commit/87e37d5))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.0.5
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.0.3...v2.0.5)
