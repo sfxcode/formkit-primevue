@@ -28,6 +28,12 @@ const schema
     },
     {
       $formkit: 'primeCheckbox',
+      name: 'indeterminate',
+      label: 'indeterminate',
+      indeterminate: true,
+    },
+    {
+      $formkit: 'primeCheckbox',
       name: 'custom',
       label: 'custom values',
       trueValue: 'A',
