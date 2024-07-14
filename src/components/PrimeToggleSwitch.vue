@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { ToggleSwitchProps } from 'primevue/toggleswitch'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeToggleSwitchProps {
   trueValue?: ToggleSwitchProps['trueValue']
@@ -12,6 +13,7 @@ export interface FormKitPrimeToggleSwitchProps {
   unstyled?: ToggleSwitchProps['unstyled']
   labelLeft?: string
   labelRight?: string
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -21,20 +23,12 @@ const props = defineProps({
   },
 })
 
-function handleInput(_: any) {
-  props.context?.node.input(props.context?._value)
-}
-
-function handleBlur(e: Event) {
-  props.context?.handlers.blur(e)
-}
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
+const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div :class="context?.attrs.option_class" class="p-formkit">
-    <span v-if="context.attrs.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
+  <div :class="wrapperClass">
+    <span v-if="context.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
     <ToggleSwitch
       v-model="context._value"
       v-bind="context?.attrs"
@@ -54,6 +48,6 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       @change="handleInput"
       @blur="handleBlur"
     />
-    <span v-if="context.attrs.labelRight" class="formkit-prime-right">{{ context.labelRight }}</span>
+    <span v-if="context.labelRight" class="formkit-prime-right">{{ context.labelRight }}</span>
   </div>
 </template>
