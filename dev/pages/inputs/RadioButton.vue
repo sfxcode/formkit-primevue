@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 const primeAttributes = 'options, optionLabel, optionValue'
-const customAttributes = 'options_class, option_class'
+const customAttributes = 'optionClass'
 
 const schema
   = [
@@ -9,9 +9,9 @@ const schema
       id: 'basic',
       label: 'Select',
       name: 'basic',
-      options_class: 'mt-1 flex flex-col space-y-2',
-      option_class: 'flex space-x-2',
-      label_class: 'font-bold',
+      wrapperClass: 'mt-1 flex flex-col space-y-2',
+      optionClass: 'flex space-x-2',
+      labelClass: 'font-bold',
       optionLabel: 'label',
       optionValue: 'value',
       options: [
