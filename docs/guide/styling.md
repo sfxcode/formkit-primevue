@@ -21,6 +21,8 @@ Make sure to add a class selector for **p-invalid**.
 ## Extended Styling
 
 - All inputs are wrapped in a div with a **p-formkit** class
+- Use *wrapperClass* to add additional styleclasses to wrapper div
 - Most Prime Components have access to class / styles attributes
+- Some Components have addtional properties for the rendered inputs (eg: optionClass, labelClass in primeRadioButton)
 - PT and PTOptions are available ([https://primevue.org/passthrough/](https://primevue.org/passthrough/))
 - [Styling](https://formkit-primevue.netlify.app/demo/styling), [Grid](https://formkit-primevue.netlify.app/demo/grid) and [PT](https://formkit-primevue.netlify.app/demo/passThrough) demo available

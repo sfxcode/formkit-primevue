@@ -9,7 +9,7 @@ export default defineConfig({
   themeConfig: {
     footer: {
       message: 'FormKit PrimeVue Module',
-      copyright: 'Copyright © 2023 SFXCode',
+      copyright: 'Copyright © 2024 SFXCode',
     },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/sfxcode/formkit-primevue' },
