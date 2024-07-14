@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { MultiSelectProps } from 'primevue/multiselect'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeMultiSelectProps {
   options?: MultiSelectProps['options']
@@ -40,6 +41,7 @@ export interface FormKitPrimeMultiSelectProps {
   placeholder?: MultiSelectProps['placeholder']
   ptOptions?: MultiSelectProps['ptOptions']
   unstyled?: MultiSelectProps['unstyled']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -49,19 +51,11 @@ const props = defineProps({
   },
 })
 
-function handleChange(_: any) {
-  props.context?.node.input(props.context?._value)
-}
-
-function handleBlur(e: Event) {
-  props.context?.handlers.blur(e)
-}
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
+const { styleClass, wrapperClass, handleBlur, handleChange } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <MultiSelect
       v-model="context._value"
       v-bind="context?.attrs"

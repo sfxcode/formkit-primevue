@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { TreeSelectProps } from 'primevue/treeselect'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeTreeSelectProps {
   options?: TreeSelectProps['options']
@@ -18,6 +19,7 @@ export interface FormKitPrimeTreeSelectProps {
   scrollHeight?: TreeSelectProps['scrollHeight']
   panelClass?: TreeSelectProps['panelClass']
   variant?: TreeSelectProps['variant']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -27,19 +29,11 @@ const props = defineProps({
   },
 })
 
-function handleInput(_: any) {
-  props.context?.node.input(props.context?._value)
-}
-
-function handleBlur(e: Event) {
-  props.context?.handlers.blur(e)
-}
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
+const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <TreeSelect
       v-model="context._value"
       v-bind="context?.attrs"

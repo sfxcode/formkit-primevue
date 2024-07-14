@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { SelectProps } from 'primevue/select'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeSelectProps {
   options?: SelectProps['options']
@@ -36,6 +37,7 @@ export interface FormKitPrimeSelectProps {
   pt?: SelectProps['pt']
   ptOptions?: SelectProps['ptOptions']
   unstyled?: SelectProps['unstyled']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -45,17 +47,11 @@ const props = defineProps({
   },
 })
 
-function handleBlur(e: Event) {
-  props.context?.handlers.blur(e)
-}
-function handleInput(e: any) {
-  props.context?.node.input(e.value)
-}
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
+const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <Select
       v-model="context._value"
       v-bind="context?.attrs"

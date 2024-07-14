@@ -1,8 +1,9 @@
 <script setup lang="ts">
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { EditorProps, EditorSelectionChangeEvent } from 'primevue/editor'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeEditorProps {
   placeholder?: EditorProps['placeholder']
@@ -11,6 +12,7 @@ export interface FormKitPrimeEditorProps {
   pt?: EditorProps['pt']
   ptOptions?: EditorProps['ptOptions']
   unstyled?: EditorProps['unstyled']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -20,20 +22,16 @@ const props = defineProps({
   },
 })
 
-function handleInput(e: any) {
-  props.context?.node.input(e.htmlValue)
-}
+const { styleClass, wrapperClass, handleInput } = useFormKitInput(props.context)
 
 function handleSelection(e: EditorSelectionChangeEvent) {
   if (e.range === null)
     props.context?.handlers.blur(e.htmlValue)
 }
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <Editor
       :id="context.id"
       v-model="context._value"

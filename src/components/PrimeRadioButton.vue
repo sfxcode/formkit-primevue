@@ -1,15 +1,18 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { RadioButtonProps } from 'primevue/radiobutton'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeRadioButtonProps {
   pt?: RadioButtonProps['pt']
   ptOptions?: RadioButtonProps['ptOptions']
   unstyled?: RadioButtonProps['unstyled']
   options?: { label: string, value: any }[]
-  options_class?: string
+  optionClass?: string
+  labelClass?: string
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -19,20 +22,12 @@ const props = defineProps({
   },
 })
 
-function handleChange(_: any) {
-  props.context?.node.input(props.context?._value)
-}
-
-function handleBlur(e: Event) {
-  props.context?.handlers.blur(e)
-}
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
+const { styleClass, wrapperClass, handleChange, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div :class="context.options_class" class="p-formkit">
-    <div v-for="option in context.options" :key="option.value" :class="context.option_class">
+  <div :class="wrapperClass">
+    <div v-for="option in context.options" :key="option.value" :class="context.optionClass">
       <RadioButton
         :id="context.id"
         v-model="context._value"
@@ -50,7 +45,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
         @change="handleChange"
         @blur="handleBlur"
       />
-      <label :for="option.value" :class="context.label_class" class="p-formkit-radio-label">{{ option.label }}</label>
+      <label :for="option.value" :class="context.labelClass" class="p-formkit-radio-label">{{ option.label }}</label>
     </div>
   </div>
 </template>

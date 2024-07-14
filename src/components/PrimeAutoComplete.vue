@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed, ref } from 'vue'
+import { type PropType, ref } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { AutoCompleteCompleteEvent, AutoCompleteProps } from 'primevue/autocomplete'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeAutoCompleteProps {
   pt?: AutoCompleteProps['pt']
@@ -11,6 +12,7 @@ export interface FormKitPrimeAutoCompleteProps {
   dropdown?: AutoCompleteProps['dropdown']
   multiple?: AutoCompleteProps['multiple']
   typeahead?: AutoCompleteProps['typeahead']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -20,25 +22,17 @@ const props = defineProps({
   },
 })
 
+const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
+
 const suggestions = ref([])
 
 function search(event: AutoCompleteCompleteEvent) {
   suggestions.value = props.context?.attrs.complete(event.query)
 }
-
-function handleInput(_: any) {
-  props.context?.node.input(props.context?._value)
-}
-
-function handleBlur(event: Event) {
-  props.context?.handlers.blur(event)
-}
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <AutoComplete
       :id="context.id"
       v-model="context._value"
@@ -51,7 +45,7 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       :suggestions="suggestions"
       :dropdown="context?.dropdown ?? false"
       :multiple="context?.multiple ?? false"
-      :typeahead="context?.attrs.typeahead ?? true"
+      :typeahead="context?.typeahead ?? true"
       :pt="context?.pt"
       :pt-options="context?.ptOptions"
       :unstyled="context?.unstyled ?? false"

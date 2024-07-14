@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { TextareaProps } from 'primevue/textarea'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeTextareaProps {
   pt?: TextareaProps['pt']
@@ -11,6 +12,7 @@ export interface FormKitPrimeTextareaProps {
   autoResize?: TextareaProps['autoResize']
   rows?: TextareaProps['rows']
   placeholder?: TextareaProps['placeholder']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -20,18 +22,11 @@ const props = defineProps({
   },
 })
 
-function handleBlur(e: Event) {
-  props.context?.handlers.blur(e)
-}
-
-function handleInput(e: any) {
-  props.context?.node.input(e.target.value)
-}
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
+const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <Textarea
       :id="context.id"
       v-model="context._value"

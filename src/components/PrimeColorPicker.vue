@@ -3,6 +3,7 @@ import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { ColorPickerProps } from 'primevue/colorpicker'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeColorPickerProps {
   defaultColor?: ColorPickerProps['defaultColor']
@@ -11,6 +12,7 @@ export interface FormKitPrimeColorPickerProps {
   pt?: ColorPickerProps['pt']
   ptOptions?: ColorPickerProps['ptOptions']
   unstyled?: ColorPickerProps['unstyled']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -20,13 +22,11 @@ const props = defineProps({
   },
 })
 
-function handleChange(_: any) {
-  props.context?.node.input(props.context?._value)
-}
+const { wrapperClass, handleChange } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <ColorPicker
       v-model="context._value"
       v-bind="context?.attrs"

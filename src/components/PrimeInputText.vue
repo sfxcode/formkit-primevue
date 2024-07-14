@@ -5,6 +5,7 @@ import type { FormKitFrameworkContext } from '@formkit/core'
 import IconField from 'primevue/iconfield'
 import InputIcon from 'primevue/inputicon'
 import type { InputTextProps } from 'primevue/inputtext'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeInputTextProps {
   pt?: InputTextProps['pt']
@@ -12,6 +13,7 @@ export interface FormKitPrimeInputTextProps {
   unstyled?: InputTextProps['unstyled']
   placeholder?: InputTextProps['placeholder']
   icon?: string
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -20,6 +22,8 @@ const props = defineProps({
     required: true,
   },
 })
+
+const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
 
 const hasIcon = computed(() => {
   if (props.context?.icon && props.context?.icon.length > 0)
@@ -35,20 +39,10 @@ const icon = computed(() => {
 const iconPosition = computed(() => {
   return props.context?.attrs?.iconPosition ?? undefined
 })
-
-function handleBlur(e: Event) {
-  props.context?.handlers.blur(e)
-}
-
-function handleInput(e: any) {
-  props.context?.node.input(e.target.value)
-}
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <IconField v-if="hasIcon" :icon-position="iconPosition">
       <InputIcon :class="icon" />
       <InputText

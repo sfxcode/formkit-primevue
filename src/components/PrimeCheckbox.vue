@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { CheckboxProps } from 'primevue/checkbox'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeCheckboxProps {
   binary?: CheckboxProps['binary']
@@ -11,8 +12,11 @@ export interface FormKitPrimeCheckboxProps {
   pt?: CheckboxProps['pt']
   ptOptions?: CheckboxProps['ptOptions']
   unstyled?: CheckboxProps['unstyled']
+  indeterminate?: CheckboxProps['indeterminate']
+  variant?: CheckboxProps['variant']
   labelLeft?: string
   labelRight?: string
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -22,19 +26,11 @@ const props = defineProps({
   },
 })
 
-function handleInput(_: any) {
-  props.context?.node.input(props.context?._value)
-}
-
-function handleBlur(e: Event) {
-  props.context?.handlers.blur(e)
-}
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
+const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <span v-if="context.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
     <Checkbox
       v-model="context._value"
@@ -47,7 +43,9 @@ const styleClass = computed(() => (props.context?.state.validationVisible && !pr
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :indeterminate="context.indeterminate ?? null"
       :binary="context.binary ?? true"
+      :variant="context.variant ?? 'outlined'"
       :true-value="context.trueValue ?? undefined"
       :false-value="context.falseValue ?? undefined"
       :pt="context.pt"

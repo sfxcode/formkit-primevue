@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { DatePickerBlurEvent, DatePickerProps } from 'primevue/datepicker'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeDatePickerProps {
   dateFormat?: DatePickerProps['dateFormat']
@@ -48,6 +49,7 @@ export interface FormKitPrimeDatePickerProps {
   pt?: DatePickerProps['pt']
   ptOptions?: DatePickerProps['ptOptions']
   unstyled?: DatePickerProps['unstyled']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -57,13 +59,7 @@ const props = defineProps({
   },
 })
 
-function handleInput(_: any) {
-  props.context?.node.input(props.context?._value)
-}
-
-function handleSelect(e: any) {
-  props.context?.node.input(e)
-}
+const { styleClass, wrapperClass, handleInput, handleSelect } = useFormKitInput(props.context)
 
 function handleBlur(e: DatePickerBlurEvent) {
   props.context?.handlers.blur(e.originalEvent)
@@ -72,12 +68,10 @@ function handleBlur(e: DatePickerBlurEvent) {
 function handleClearClick() {
   props.context?.node.input(null)
 }
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <DatePicker
       v-model="context._value"
       v-bind="context?.attrs"

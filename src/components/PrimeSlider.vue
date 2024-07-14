@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { SliderProps } from 'primevue/slider'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeSliderProps {
   pt?: SliderProps['pt']
@@ -13,6 +14,7 @@ export interface FormKitPrimeSliderProps {
   step?: SliderProps['step']
   range?: SliderProps['range']
   orientation?: SliderProps['orientation']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -22,20 +24,16 @@ const props = defineProps({
   },
 })
 
+const { styleClass, wrapperClass, handleBlur } = useFormKitInput(props.context)
+
 function handleInput(e: any) {
   props.context?.node.input(e)
   props.context?.handlers.blur(e)
 }
-
-function handleBlur(e: Event) {
-  props.context?.handlers.blur(e)
-}
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <Slider
       :id="context.id"
       v-model="context._value"

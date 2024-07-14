@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { InputNumberBlurEvent, InputNumberProps } from 'primevue/inputnumber'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeInputNumberProps {
   useGrouping?: InputNumberProps['useGrouping']
@@ -22,6 +23,7 @@ export interface FormKitPrimeInputNumberProps {
   ptOptions?: InputNumberProps['ptOptions']
   unstyled?: InputNumberProps['unstyled']
   placeholder?: InputNumberProps['placeholder']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -31,18 +33,15 @@ const props = defineProps({
   },
 })
 
+const { styleClass, wrapperClass, handleInput } = useFormKitInput(props.context)
+
 function handleBlur(e: InputNumberBlurEvent) {
   props.context?.handlers.blur(e.originalEvent)
 }
-
-function handleInput(e: any) {
-  props.context?.node.input(e.value)
-}
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <InputNumber
       v-model="context._value"
       v-bind="context?.attrs"

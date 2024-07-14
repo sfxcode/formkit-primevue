@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { InputMaskProps } from 'primevue/inputmask'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeInputMaskProps {
   mask?: InputMaskProps['mask']
@@ -16,6 +17,7 @@ export interface FormKitPrimeInputMaskProps {
   variant?: InputMaskProps['variant']
   iconLeft?: string
   iconRight?: string
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -24,6 +26,8 @@ const props = defineProps({
     required: true,
   },
 })
+
+const { styleClass, wrapperClass } = useFormKitInput(props.context)
 
 function handleInput(e: FocusEvent) {
   props.context?.node.input(props.context?._value)
@@ -46,12 +50,10 @@ function spanClass() {
     result = `${result}p-input-icon-right `
   return result
 }
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <span :class="spanClass()">
       <i v-if="hasLeftIcon()" :class="context.iconLeft" />
 

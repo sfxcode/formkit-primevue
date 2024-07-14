@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { ListboxProps } from 'primevue/listbox'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeListboxProps {
   pt?: ListboxProps['pt']
@@ -19,6 +20,7 @@ export interface FormKitPrimeListboxProps {
   filterMatchMode?: ListboxProps['filterMatchMode']
   autoOptionFocus?: ListboxProps['autoOptionFocus']
   selectOnFocus?: ListboxProps['selectOnFocus']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -28,19 +30,11 @@ const props = defineProps({
   },
 })
 
-function handleInput(_: any) {
-  props.context?.node.input(props.context?._value)
-}
-
-function handleBlur(e: Event) {
-  props.context?.handlers.blur(e)
-}
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
+const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <Listbox
       :id="context.id"
       v-model="context._value"

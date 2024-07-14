@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { PasswordProps } from 'primevue/password'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimePasswordProps {
   mediumRegex?: PasswordProps['mediumRegex']
@@ -19,6 +20,7 @@ export interface FormKitPrimePasswordProps {
   placeholder?: PasswordProps['placeholder']
   feedback?: PasswordProps['feedback']
   toggleMask?: PasswordProps['toggleMask']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -28,19 +30,11 @@ const props = defineProps({
   },
 })
 
-function handleBlur(e: Event) {
-  props.context?.handlers.blur(e)
-}
-
-function handleInput(e: any) {
-  props.context?.node.input(e.target.value)
-}
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
+const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <Password
       v-model="context._value"
       v-bind="context?.attrs"

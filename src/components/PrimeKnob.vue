@@ -1,8 +1,9 @@
 <script setup lang='ts'>
-import { type PropType, computed } from 'vue'
+import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { KnobProps } from 'primevue/knob'
+import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeKnobProps {
   pt?: KnobProps['pt']
@@ -18,6 +19,7 @@ export interface FormKitPrimeKnobProps {
   rangeColor?: KnobProps['rangeColor']
   textColor?: KnobProps['textColor']
   valueTemplate?: KnobProps['valueTemplate']
+  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -27,6 +29,8 @@ const props = defineProps({
   },
 })
 
+const { styleClass, wrapperClass } = useFormKitInput(props.context)
+
 function handleInput(e: any) {
   props.context?.node.input(e)
   props.context?.handlers.blur(e)
@@ -35,12 +39,10 @@ function handleInput(e: any) {
 function updateValue(n: number) {
   props.context?.node.input(n)
 }
-
-const styleClass = computed(() => (props.context?.state.validationVisible && !props.context?.state.valid) ? `${props.context?.attrs?.class} p-invalid` : props.context?.attrs?.class)
 </script>
 
 <template>
-  <div class="p-formkit">
+  <div :class="wrapperClass">
     <Knob
       :id="context.id"
       v-model="context._value"
