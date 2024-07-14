@@ -1,3 +1,36 @@
+## v2.2.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.0.6...v2.2.0)
+
+### 🚀 Enhancements
+
+- Add missing definitions ([39e1ea9](https://github.com/sfxcode/formkit-primevue/commit/39e1ea9))
+
+### 🩹 Fixes
+
+- PrimeInputSwitch => primeToggleSwitch ([529c603](https://github.com/sfxcode/formkit-primevue/commit/529c603))
+
+### 💅 Refactors
+
+- **demo:** Remove chips ([695bc64](https://github.com/sfxcode/formkit-primevue/commit/695bc64))
+- Move styleClasses functions from useFormKitInput ([a09d242](https://github.com/sfxcode/formkit-primevue/commit/a09d242))
+- Move styleClasses functions from useFormKitInput ([12368c0](https://github.com/sfxcode/formkit-primevue/commit/12368c0))
+- Use styleClass and some functions from useFormKitInput ([71aae45](https://github.com/sfxcode/formkit-primevue/commit/71aae45))
+- Add composable for common input functions ([111fd1e](https://github.com/sfxcode/formkit-primevue/commit/111fd1e))
+- Use new wrapperClass and add some new samples ([8b32d18](https://github.com/sfxcode/formkit-primevue/commit/8b32d18))
+
+### 📖 Documentation
+
+- **readme:** Update for PrimeVue 4 ([0e7f0f8](https://github.com/sfxcode/formkit-primevue/commit/0e7f0f8))
+
+### 🏡 Chore
+
+- **release:** Prepare 2.1 Releases and update dependencies ([962f4fa](https://github.com/sfxcode/formkit-primevue/commit/962f4fa))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.0.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.0.5...v2.0.6)
