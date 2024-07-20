@@ -1,7 +1,8 @@
 <script setup lang='ts'>
-import { useFormKitSchema, useInputEditorSchema } from 'my-library'
+import { useFormKitSchema, useInputEditor, useInputEditorSchema } from 'my-library'
 
-const { editorSchema, schemaToEditorData } = useInputEditorSchema()
+const { schemaToEditorData } = useInputEditor()
+const { editorSchema } = useInputEditorSchema()
 const { addListGroupFunctions } = useFormKitSchema()
 
 const data = reactive(schemaToEditorData({

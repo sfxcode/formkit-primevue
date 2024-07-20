@@ -1,7 +1,9 @@
 import { useFormKitSchema } from './useFormKitSchema'
+import { useInputEditor } from './useInputEditor'
 
 export function useInputEditorSchema() {
   const { addElement, addList, addListGroup, addComponent } = useFormKitSchema()
+  const { primeInputNames } = useInputEditor()
   function addFlexElement(children: any[]) {
     return addElement('div', children, { style: 'max-width: 40rem;display: flex;gap: 1rem;' })
   }
@@ -22,10 +24,6 @@ export function useInputEditorSchema() {
       addElement('span', [], { style: 'margin-left: 0.5rem;margin-right: 2.5rem;' }, '$index == $node.value.length -1'),
     ], { style: 'padding-top: 1.5rem;' })
   }
-
-  const primeInputWithOptionNames = ['CascadeSelect', 'Listbox', 'MultiSelect', 'RadioButton', 'Select', 'SelectButton', 'TreeSelect']
-
-  const primeInputNames = [...primeInputWithOptionNames, 'AutoComplete', 'Checkbox', 'ColorPicker', 'DatePicker', 'Editor', 'InputMask', 'InputNumber', 'InputOtp', 'InputText', 'Knob', 'Password', 'Rating', 'Slider', 'Textarea', 'ToggleButton', 'ToggleSwitch'].sort()
 
   function primeInputOptions(list: string[]) {
     return list.map((name: string) => {
@@ -53,50 +51,6 @@ export function useInputEditorSchema() {
     { label: 'Right', value: 'right' },
 
   ]
-
-  function editorDataToSchema(data: any): any {
-    const formkitInput = data?._dollar_formkit
-    let tempData = { }
-    if (data.prime?.length > 0) {
-      const mapped = data.prime?.map((entry) => {
-        const key = entry.prime_key
-        let value = entry.prime_value
-        // some inputs require numbers
-        if (formkitInput === 'primeInputOtp' && key === 'length')
-          value = +value
-        return [key, value]
-      })
-      tempData = Object.assign(...mapped.map(([key, val]) => ({ [key]: val })))
-    }
-
-    const readonlyValue = data.readonly ? true : undefined
-    const disabledValue = data.disabled ? true : undefined
-    const preserveValue = data.preserve ? true : undefined
-
-    const defaultObject = { readonly: readonlyValue, disabled: disabledValue, preserve: preserveValue }
-
-    const undefinedObject = { prime: undefined, schemaResultFormKey: undefined, _dollar_formkit: undefined, slots: undefined, selectButton: undefined }
-
-    const useOptions = primeInputWithOptionNames.map(s => `prime${s}`).includes(formkitInput)
-
-    if (useOptions)
-      return { ...data, $formkit: formkitInput, ...tempData, ...undefinedObject, ...defaultObject, optionLabel: 'label', optionValue: 'value' }
-    else
-      return { ...data, $formkit: formkitInput, ...tempData, ...undefinedObject, ...defaultObject, options: undefined }
-  }
-
-  function editorDataToJson(data: any): string {
-    return JSON.stringify(editorDataToSchema(data))
-  }
-
-  function editorDataToObject(data: any): string {
-    return `{${Object.entries(JSON.parse(editorDataToJson(data))).map(([key, value]) => `${key}: '${value}'`).join()}}`
-  }
-
-  function schemaToEditorData(schema: any): any {
-    const formkitInput = schema?.$formkit
-    return { ...schema, _dollar_formkit: formkitInput }
-  }
 
   function editorSchema(inputOptions: any[] = primeInputOptions(primeInputNames)) {
     return [
@@ -338,5 +292,5 @@ export function useInputEditorSchema() {
     ]
   }
 
-  return { editorSchema, primeInputNames, primeInputOptions, editorDataToSchema, editorDataToJson, editorDataToCode: editorDataToObject, schemaToEditorData }
+  return { editorSchema, primeInputOptions }
 }

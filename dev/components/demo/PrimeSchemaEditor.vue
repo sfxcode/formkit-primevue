@@ -5,7 +5,7 @@ import { useToast } from 'primevue/usetoast'
 import type { ToastMessageOptions } from 'primevue/toast'
 import { useClipboard } from '@vueuse/core'
 
-import { useInputEditorSchema } from 'my-library'
+import { useInputEditor } from 'my-library'
 
 const props = defineProps<{
   header: string
@@ -16,7 +16,7 @@ const props = defineProps<{
 // key is used for reflecting changes to the output - editorDataToSchema will remove schemaResultFormKey from generated schema output
 const schemaResultFormKey = ref(0)
 
-const { editorDataToSchema, editorDataToJson, editorDataToCode } = useInputEditorSchema()
+const { editorDataToSchema, editorDataToJson, editorDataToCode } = useInputEditor()
 
 const toast = useToast()
 
