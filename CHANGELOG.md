@@ -1,3 +1,15 @@
+## v2.2.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.2.2...v2.2.3)
+
+### 💅 Refactors
+
+- **InputEditor:** Update to prime 4 and add some more styling ([06fd35a](https://github.com/sfxcode/formkit-primevue/commit/06fd35a))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.2.2
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.2.0...v2.2.2)
