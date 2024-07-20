@@ -1,3 +1,15 @@
+## v2.3.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.0...v2.3.1)
+
+### 🩹 Fixes
+
+- **InputEditor:** Options to JSON / code ([0c77410](https://github.com/sfxcode/formkit-primevue/commit/0c77410))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.3.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.2.3...v2.3.0)
