@@ -1,3 +1,15 @@
+## v2.3.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.2.3...v2.3.0)
+
+### 🚀 Enhancements
+
+- **plugins:** Add Asterisk Plugin ([4f4f91e](https://github.com/sfxcode/formkit-primevue/commit/4f4f91e))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.2.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.2.2...v2.2.3)
