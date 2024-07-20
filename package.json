@@ -34,6 +34,11 @@
       "import": "./dist/definitions/index.mjs",
       "require": "./dist/definitions/index.js"
     },
+    "./plugins": {
+      "types": "./dist/plugins/index.d.ts",
+      "import": "./dist/plugins/index.mjs",
+      "require": "./dist/plugins/index.js"
+    },
     "./dist/sass/formkit-primevue.scss": {
       "import": "./dist/sass/formkit-primevue.scss",
       "require": "./dist/sass/formkit-primevue.scss"

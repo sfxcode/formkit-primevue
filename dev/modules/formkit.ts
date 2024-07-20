@@ -3,6 +3,7 @@ import { createAutoAnimatePlugin } from '@formkit/addons'
 
 import { de, en } from '@formkit/i18n'
 import { primeInputs } from 'my-library/definitions'
+import { addPrimeAsteriskPlugin } from 'my-library/plugins'
 import type { UserModule } from '@/types'
 
 export const install: UserModule = ({ app }) => {
@@ -27,6 +28,7 @@ export const install: UserModule = ({ app }) => {
           repeater: ['items'],
         },
       ),
+      addPrimeAsteriskPlugin,
     ],
   }))
 }
