@@ -3,7 +3,10 @@ import { useFormKitSchema } from './useFormKitSchema'
 export function useInputEditorSchema() {
   const { addElement, addList, addListGroup, addComponent } = useFormKitSchema()
   function addFlexElement(children: any[]) {
-    return addElement('div', children, { style: 'min-width: 40rem;display: flex;gap: 1rem;' })
+    return addElement('div', children, { style: 'max-width: 40rem;display: flex;gap: 1rem;' })
+  }
+  function addGridElement(children: any[]) {
+    return addElement('div', children, { style: 'display: grid;grid-template-columns:repeat(2, minmax(0, 1fr));gap: 1rem;' })
   }
   function addGroupButtons() {
     const addButtonComponent = (onClick: string = '', label: string = '', icon: string = '', severity: string = '', render: string = 'true', styleClass: string = 'p-button-sm', style: string = 'margin-left: 0.5rem;'): object => {
@@ -20,9 +23,9 @@ export function useInputEditorSchema() {
     ], { style: 'padding-top: 1.5rem;' })
   }
 
-  const primeInputWithOptionNames = ['CascadeSelect', 'Dropdown', 'Listbox', 'MultiSelect', 'RadioButton', 'SelectButton', 'TreeSelect']
+  const primeInputWithOptionNames = ['CascadeSelect', 'Listbox', 'MultiSelect', 'RadioButton', 'Select', 'SelectButton', 'TreeSelect']
 
-  const primeInputNames = [...primeInputWithOptionNames, 'AutoComplete', 'Calendar', 'Checkbox', 'Chips', 'ColorPicker', 'Editor', 'InputMask', 'InputNumber', 'InputOtp', 'InputSwitch', 'InputText', 'Knob', 'Password', 'Rating', 'Slider', 'Textarea', 'ToggleButton', 'TriStateCheckbox'].sort()
+  const primeInputNames = [...primeInputWithOptionNames, 'AutoComplete', 'Checkbox', 'ColorPicker', 'DatePicker', 'Editor', 'InputMask', 'InputNumber', 'InputOtp', 'InputText', 'Knob', 'Password', 'Rating', 'Slider', 'Textarea', 'ToggleButton', 'ToggleSwitch'].sort()
 
   function primeInputOptions(list: string[]) {
     return list.map((name: string) => {
@@ -55,7 +58,14 @@ export function useInputEditorSchema() {
     const formkitInput = data?._dollar_formkit
     let tempData = { }
     if (data.prime?.length > 0) {
-      const mapped = data.prime?.map(entry => [entry.prime_key, entry.prime_value])
+      const mapped = data.prime?.map((entry) => {
+        const key = entry.prime_key
+        let value = entry.prime_value
+        // some inputs require numbers
+        if (formkitInput === 'primeInputOtp' && key === 'length')
+          value = +value
+        return [key, value]
+      })
       tempData = Object.assign(...mapped.map(([key, val]) => ({ [key]: val })))
     }
 
@@ -90,27 +100,30 @@ export function useInputEditorSchema() {
 
   function editorSchema(inputOptions: any[] = primeInputOptions(primeInputNames)) {
     return [
-      {
-        $formkit: 'primeSelect',
-        id: 'inputSelection',
-        name: '_dollar_formkit',
-        label: 'Prime Input',
-        value: 'primeInputText',
-        optionLabel: 'label',
-        optionValue: 'value',
-        options: inputOptions,
-        key: 'schema_inputSelection',
-        preserve: true,
-      },
-      {
-        $formkit: 'primeInputText',
-        name: 'name',
-        label: 'Field Name',
-        validation: 'required',
-        validationVisibility: 'live',
-        key: 'schema_name',
-        preserve: true,
-      },
+      addGridElement([
+
+        {
+          $formkit: 'primeSelect',
+          id: 'inputSelection',
+          name: '_dollar_formkit',
+          label: 'Prime Input',
+          value: 'primeInputText',
+          optionLabel: 'label',
+          optionValue: 'value',
+          options: inputOptions,
+          key: 'schema_inputSelection',
+          preserve: true,
+        },
+        {
+          $formkit: 'primeInputText',
+          name: 'name',
+          label: 'Field Name',
+          validation: 'required',
+          validationVisibility: 'live',
+          key: 'schema_name',
+          preserve: true,
+        },
+      ]),
       {
         $formkit: 'primeSelectButton',
         id: 'selectButton',
@@ -142,36 +155,46 @@ export function useInputEditorSchema() {
       {
         $formkit: 'primeInputText',
         if: '$get(selectButton).value === \'showBasic\'',
-        name: 'id',
-        label: 'Input ID',
-        key: 'schema_id',
-        preserve: true,
-      },
-      {
-        $formkit: 'primeInputText',
-        if: '$get(selectButton).value === \'showBasic\'',
         name: 'value',
         label: 'Input Value',
         key: 'schema_value',
         preserve: true,
       },
-      {
-        $formkit: 'primeInputText',
-        if: '$get(selectButton).value === \'showBasic\'',
-        name: 'key',
-        label: 'Input Key',
-        key: 'schema_key',
-        preserve: true,
-      },
-      {
-        $formkit: 'primeCheckbox',
-        if: '$get(selectButton).value === \'showBasic\'',
-        name: 'preserve',
-        label: 'Input Preserve',
-        key: 'schema_preserve',
-        value: false,
-        preserve: true,
-      },
+      addGridElement([
+        {
+          $formkit: 'primeInputText',
+          if: '$get(selectButton).value === \'showBasic\'',
+          name: 'id',
+          label: 'Input ID',
+          key: 'schema_id',
+          preserve: true,
+        },
+        {
+          $formkit: 'primeInputText',
+          if: '$get(selectButton).value === \'showBasic\'',
+          name: 'key',
+          label: 'Input Key',
+          key: 'schema_key',
+          preserve: true,
+        },
+        {
+          $formkit: 'primeInputText',
+          if: '$get(selectButton).value === \'showBasic\'',
+          name: 'tabindex',
+          label: 'Tab Index',
+          key: 'schema_tabindex',
+          preserve: true,
+        },
+        {
+          $formkit: 'primeCheckbox',
+          if: '$get(selectButton).value === \'showBasic\'',
+          name: 'preserve',
+          label: 'Input Preserve',
+          key: 'schema_preserve',
+          value: false,
+          preserve: true,
+        },
+      ]),
       {
         $formkit: 'primeInputText',
         if: '$get(selectButton).value === \'showValidation\'',
@@ -200,76 +223,72 @@ export function useInputEditorSchema() {
         key: 'schema_validation-label',
         preserve: true,
       },
-      {
-        $formkit: 'primeInputText',
-        if: '$get(selectButton).value === \'showDisplay\'',
-        name: 'tabindex',
-        label: 'Tab Index',
-        key: 'schema_tabindex',
-        preserve: true,
-      },
+      addGridElement([
+
+        {
+          $formkit: 'primeInputText',
+          if: '$get(selectButton).value === \'showDisplay\'',
+          name: 'class',
+          label: 'Input StyleClass',
+          key: 'schema_class',
+          preserve: true,
+        },
+        {
+          $formkit: 'primeInputText',
+          if: '$get(selectButton).value === \'showDisplay\'',
+          name: 'style',
+          label: 'Input Style',
+          key: 'schema_style',
+          preserve: true,
+        },
+      ]),
       {
         $formkit: 'primeInputText',
         if: '$get(selectButton).value === \'showDisplay\'',
         name: 'if',
-        label: 'Should Render',
+        label: 'Should Render (if-Expression)',
         key: 'schema_if',
         preserve: true,
       },
-
-      {
-        $formkit: 'primeInputText',
-        if: '$get(selectButton).value === \'showDisplay\'',
-        name: 'style',
-        label: 'Input Style',
-        key: 'schema_style',
-        preserve: true,
-      },
-      {
-        $formkit: 'primeInputText',
-        if: '$get(selectButton).value === \'showDisplay\'',
-        name: 'class',
-        label: 'Input StyleClass',
-        key: 'schema_class',
-        preserve: true,
-      },
-      {
-        $formkit: 'primeInputText',
-        if: '$get(selectButton).value === \'showDisplay\'',
-        name: 'icon',
-        label: 'Icon',
-        key: 'schema_icon',
-        preserve: true,
-      },
-      {
-        $formkit: 'primeSelect',
-        if: '$get(selectButton).value === \'showDisplay\'',
-        name: 'iconPosition',
-        label: 'Icon Position',
-        optionLabel: 'label',
-        optionValue: 'value',
-        options: positionOptions,
-        key: 'schema_iconPosition',
-        preserve: true,
-      },
-      {
-        $formkit: 'primeCheckbox',
-        if: '$get(selectButton).value === \'showDisplay\'',
-        name: 'disabled',
-        label: 'Input Disabled',
-        key: 'schema_disabled',
-        value: false,
-        preserve: true,
-      },
-      {
-        $formkit: 'primeCheckbox',
-        if: '$get(selectButton).value === \'showDisplay\'',
-        name: 'readonly',
-        label: 'Input Read Only',
-        key: 'schema_readonly',
-        value: false,
-        preserve: true,
-      },
+      addGridElement([
+        {
+          $formkit: 'primeInputText',
+          if: '$get(selectButton).value === \'showDisplay\'',
+          name: 'icon',
+          label: 'Icon',
+          key: 'schema_icon',
+          preserve: true,
+        },
+        {
+          $formkit: 'primeSelect',
+          if: '$get(selectButton).value === \'showDisplay\'',
+          name: 'iconPosition',
+          label: 'Icon Position',
+          optionLabel: 'label',
+          optionValue: 'value',
+          options: positionOptions,
+          key: 'schema_iconPosition',
+          preserve: true,
+        },
+        {
+          $formkit: 'primeCheckbox',
+          if: '$get(selectButton).value === \'showDisplay\'',
+          name: 'disabled',
+          label: 'Input Disabled',
+          key: 'schema_disabled',
+          value: false,
+          preserve: true,
+        },
+        {
+          $formkit: 'primeCheckbox',
+          if: '$get(selectButton).value === \'showDisplay\'',
+          name: 'readonly',
+          label: 'Input Read Only',
+          key: 'schema_readonly',
+          value: false,
+          preserve: true,
+        },
+      ]),
       addList('options', [
         addFlexElement([
           addComponent('Button', { onClick: '$addNode($node)', label: 'Add Option', class: 'p-button-sm', style: 'margin-bottom: 2rem;', icon: 'pi pi-plus' }, '$node.value.length == 0'),

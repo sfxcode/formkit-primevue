@@ -30,7 +30,7 @@ const formData = reactive(props.data)
 const data = ref({})
 
 async function submitHandler() {
-  showMessage('success', 'Form Submitted', 'Input creation completed successfully ...')
+  showMessage('success', `Form Input (${formData._dollar_formkit}) updated`, 'Input creation completed successfully ...')
 
   data.value = { }
   schemaResultFormKey.value += 1
@@ -38,7 +38,7 @@ async function submitHandler() {
 }
 
 async function submitHandler2() {
-
+  showMessage('success', `Data submitted`, data.value)
 }
 
 const schemaResult = computed(() => editorDataToSchema(formData))
@@ -61,8 +61,8 @@ function copyObject() {
       {{ header }}
     </h2>
     <slot />
-    <div class="flex flex-wrap gap-8">
-      <div class="min-w-40rem basis-1/2 md:basis-1/3">
+    <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
+      <div class="w-40rem basis-1/2 md:basis-1/3" mb-4>
         <h3>Create Formkit Input</h3>
         <FormKit
           v-model="formData"
@@ -77,28 +77,29 @@ function copyObject() {
         </FormKit>
         <pre v-if="false">{{ formSchema }}</pre>
       </div>
-      <div class="">
+      <div>
         <h3>Generated Formkit Input Preview</h3>
         <div class="mb-4">
           Some changes require to trigger the update of generated input
         </div>
         <div :key="schemaResultFormKey">
-          <FormKit
-            v-model="data"
-            type="form"
-            :submit-attrs="{
-              inputClass: 'p-button p-component',
-            }"
-            @submit="submitHandler2"
-          >
-            <FormKitSchema :schema="schemaResult" :data="data" />
-          </FormKit>
-          <div class="mt-4 mb-4">
-            <h3>Copy Schema to Clipboard - Supported: {{ isSupported }}</h3>
-            <Button label="Copy as JSON" class="mr-4" @click="copyJson" /><Button label="Copy as Object" @click="copyObject" />
+          <div class="max-w-100">
+            <FormKit
+              v-model="data"
+              type="form"
+              :submit-attrs="{
+                inputClass: 'p-button p-component',
+              }"
+              @submit="submitHandler2"
+            >
+              <FormKitSchema :schema="schemaResult" :data="data" />
+            </FormKit>
           </div>
           <h3>Generated Formkit Schema</h3>
           <pre>{{ schemaResult }}</pre>
+          <Button v-if="isSupported" label="Copy as JSON" class="mr-4" @click="copyJson" />
+          <Button v-if="isSupported" label="Copy as Object" @click="copyObject" />
+
           <h3>Generated Formkit Data</h3>
           <pre>{{ data }}</pre>
         </div>

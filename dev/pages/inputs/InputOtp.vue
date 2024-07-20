@@ -4,12 +4,18 @@ const schema
   = [
     {
       $formkit: 'primeInputOtp',
-      name: 'myInput',
+      name: 'firstInput',
       label: 'Input OTP',
       length: 6,
       integerOnly: true,
       mask: true,
       variant: 'outlined',
+    },
+    {
+      $formkit: 'primeInputOtp',
+      name: 'secondInput',
+      label: 'Input OTP',
+      length: 3,
     },
   ]
 
