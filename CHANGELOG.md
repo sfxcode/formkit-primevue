@@ -1,3 +1,16 @@
+## v2.3.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.1...v2.3.2)
+
+### 🚀 Enhancements
+
+- **FormEditor:** First version ([1cc6bfd](https://github.com/sfxcode/formkit-primevue/commit/1cc6bfd))
+- **FormEditor:** First version ([0f75a0b](https://github.com/sfxcode/formkit-primevue/commit/0f75a0b))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.3.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.0...v2.3.1)
