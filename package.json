@@ -88,21 +88,22 @@
   },
   "dependencies": {
     "@formkit/addons": "^1.6.5",
+    "@formkit/drag-and-drop": "^0.1.6",
     "@formkit/i18n": "^1.6.5",
     "@formkit/vue": "^1.6.5",
     "primeicons": "^7.0.0",
-    "primevue": "4.0.0"
+    "primevue": "4.0.1"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "2.23.0",
+    "@antfu/eslint-config": "2.23.2",
     "@formkit/core": "^1.6.5",
-    "@primevue/themes": "4.0.0",
+    "@primevue/themes": "4.0.1",
     "@types/node": "^20.14.11",
     "@unocss/preset-icons": "0.61.5",
     "@unocss/preset-uno": "0.61.5",
     "@vitejs/plugin-vue": "^5.0.5",
-    "@vitest/coverage-v8": "^2.0.3",
-    "@vitest/ui": "^2.0.3",
+    "@vitest/coverage-v8": "^2.0.4",
+    "@vitest/ui": "^2.0.4",
     "@vue/compiler-sfc": "^3.4.33",
     "@vue/server-renderer": "^3.4.33",
     "@vue/test-utils": "^2.4.6",
@@ -119,7 +120,7 @@
     "json-editor-vue": "^0.15.1",
     "mkdist": "^1.5.4",
     "quill": "^2.0.2",
-    "sass": "^1.77.8",
+    "sass": "^1.76.0",
     "tslib": "^2.6.3",
     "typescript": "^5.5.3",
     "unbuild": "2.0.0",
@@ -133,10 +134,10 @@
     "vite-plugin-pages": "^0.32.3",
     "vite-ssg": "^0.23.8",
     "vitepress": "1.3.1",
-    "vitest": "^2.0.3",
+    "vitest": "^2.0.4",
     "vue": "^3.4.33",
     "vue-demi": "^0.14.8",
     "vue-router": "^4.4.0",
-    "vue-tsc": "^2.0.26"
+    "vue-tsc": "^2.0.28"
   }
 }

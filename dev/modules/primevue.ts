@@ -36,6 +36,7 @@ import Aura from '@primevue/themes/aura'
 
 import PrimeVue from 'primevue/config'
 // directives
+import Tooltip from 'primevue/tooltip'
 
 // services
 import ConfirmationService from 'primevue/confirmationservice'
@@ -48,6 +49,7 @@ import type { UserModule } from '@/types'
 export const install: UserModule = ({ app }) => {
   // directives
   app.directive('ripple', Ripple)
+  app.directive('tooltip', Tooltip)
   app.component('Button', Button)
 
   // input components
