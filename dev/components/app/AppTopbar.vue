@@ -118,8 +118,8 @@ const items = ref([
       <template #center>
         <div class="text-lg">
           <span class="text-yellow-600 font-bold">New: </span>
-          <router-link to="/samples/inputEditor" class="">
-            <span class="">Prime Input Editor</span>
+          <router-link to="/samples/formEditor" class="">
+            <span class="">Form Editor</span>
           </router-link>
         </div>
       </template>
