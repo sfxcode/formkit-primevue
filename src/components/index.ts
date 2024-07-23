@@ -20,8 +20,14 @@ import PrimeSlider from './PrimeSlider.vue'
 import PrimeToggleButton from './PrimeToggleButton.vue'
 import PrimeTreeSelect from './PrimeTreeSelect.vue'
 import PrimeSelectButton from './PrimeSelectButton.vue'
+import FormKitDataDebug from './FormKitDebug.vue'
+import FormKitDataView from './FormKitDataView.vue'
+import FormKitDataEdit from './FormKitDataEdit.vue'
 
 export {
+  FormKitDataDebug,
+  FormKitDataEdit,
+  FormKitDataView,
   PrimeAutoComplete,
   PrimeDatePicker,
   PrimeCascadeSelect,
