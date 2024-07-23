@@ -12,6 +12,7 @@ declare module 'vue' {
     PrimeEditor: typeof import('./components/demo/PrimeEditor.vue')['default']
     PrimeEditorInput: typeof import('./components/demo/PrimeEditorInput.vue')['default']
     PrimeInput: typeof import('./components/demo/PrimeInput.vue')['default']
+    PrimeOutput: typeof import('./components/demo/PrimeOutput.vue')['default']
     PrimeSchemaEditor: typeof import('./components/demo/PrimeSchemaEditor.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

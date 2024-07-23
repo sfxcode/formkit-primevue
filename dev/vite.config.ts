@@ -105,6 +105,7 @@ export default defineConfig({
       '@': path.resolve(__dirname, '.'),
       '~': path.resolve(__dirname, 'node_modules/'),
       'my-library': path.resolve(__dirname, '../src'),
+      'my-library-components': path.resolve(__dirname, '../src/components'),
 
     },
   },

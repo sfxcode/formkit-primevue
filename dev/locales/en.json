@@ -1,0 +1,11 @@
+{
+  "welcome": "Welcome",
+  "save": "Save",
+  "search": "Search",
+  "formkit": {
+    "prime": {
+      "true": "Yes",
+      "false": "No"
+    }
+  }
+}

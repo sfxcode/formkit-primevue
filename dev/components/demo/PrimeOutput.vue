@@ -1,9 +1,7 @@
 <script setup lang='ts'>
 import { ref } from 'vue'
 import JsonEditorVue from 'json-editor-vue'
-import { useToast } from 'primevue/usetoast'
-import type { ToastMessageOptions } from 'primevue/toast'
-import { FormKitDataEdit } from 'my-library-components'
+import { FormKitDataView } from 'my-library-components'
 
 const props = defineProps<{
   header: string
@@ -13,20 +11,8 @@ const props = defineProps<{
   customAttributes?: string
 }>()
 
-const toast = useToast()
-
-function showMessage(severity: ToastMessageOptions['severity'], summary: string, detail: string) {
-  toast.add({ severity, summary, detail, life: 1000 })
-}
-
 const formSchema = ref(props.schema)
 const formData = ref(props.data)
-
-const documentationLink = `https://primevue.org/${props.header.replace('Prime', '').toLowerCase()}`
-
-async function submitHandler() {
-  showMessage('success', 'Form Submitted ...', `${props.header} submitted successfully`)
-}
 </script>
 
 <template>
@@ -38,7 +24,7 @@ async function submitHandler() {
     <slot />
     <div class="flex flex-wrap gap-8">
       <div class="min-w-30rem basis-1/3 md:basis-1/4">
-        <FormKitDataEdit :schema="formSchema" :data="formData" :debug-schema="false" :debug-data="true" @data-saved="submitHandler" />
+        <FormKitDataView :schema="formSchema" :data="formData" :debug-schema="false" :debug-data="true" />
       </div>
       <div class="">
         <Tabs>
@@ -60,12 +46,9 @@ async function submitHandler() {
             <TabPanel v-if="primeAttributes || customAttributes" value="0">
               <h4>Base Attributes</h4>
               <div>
-                <span>disabled, readonly, style, class, tabindex, ariaLabel, ariaLabelledby, pt, ptOptions, unstyled</span>
+                <span>id, style, class</span>
               </div>
               <h4>PrimeVue Attributes</h4>
-              <div>
-                <a :href="documentationLink" target="_blank" class="text-xl">Open Documentation</a>
-              </div>
               <div class="mt-2">
                 <span>{{ primeAttributes }}</span>
               </div>

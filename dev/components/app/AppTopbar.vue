@@ -82,6 +82,20 @@ const items = ref([
     items: [
       [
         {
+          label: 'Outputs',
+          items: [
+            { label: 'Output Text', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputText' },
+            { label: 'Output Number', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputNumber' },
+            { label: 'Output Date', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputDate' },
+            { label: 'Output Link', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputLink' },
+            { label: 'Output List', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputList' },
+            { label: 'Output Boolean', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputBoolean' },
+            { label: 'Output Duration', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputDuration' },
+          ],
+        },
+      ],
+      [
+        {
           label: 'Styling',
           items: [
             { label: 'Basic', icon: 'pi pi-fw pi-user-edit', route: '/styling/base' },
