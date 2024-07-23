@@ -1,3 +1,24 @@
+## v2.3.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.2...v2.3.3)
+
+### 🚀 Enhancements
+
+- **Outputs:** Add Form Output (Some outputs need https://vue-i18n.intlify.dev/ for formatting reasons) ([17a0094](https://github.com/sfxcode/formkit-primevue/commit/17a0094))
+- **Outputs:** Add demos ([079eeba](https://github.com/sfxcode/formkit-primevue/commit/079eeba))
+
+### 🩹 Fixes
+
+- **InputText:** Icons ([9f0df8c](https://github.com/sfxcode/formkit-primevue/commit/9f0df8c))
+
+### 🏡 Chore
+
+- **linting:** Fix errors ([0820bf2](https://github.com/sfxcode/formkit-primevue/commit/0820bf2))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.3.2
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.1...v2.3.2)
