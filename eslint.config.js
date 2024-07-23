@@ -3,7 +3,7 @@ import antfu from '@antfu/eslint-config'
 
 export default antfu(
   {
-    // Configures for antfu's config
+    ignores: ['README.md'],
   },
   {
     rules: {
@@ -11,5 +11,6 @@ export default antfu(
         shallowOnly: true,
       }],
     },
+
   },
 )

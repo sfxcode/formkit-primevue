@@ -16,6 +16,7 @@ const converted = computed(() => {
     try {
       result = n(props?.context?._value, format)
     }
+    // eslint-disable-next-line unused-imports/no-unused-vars
     catch (e) {
     }
     return result

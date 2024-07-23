@@ -49,8 +49,6 @@ function actionUpdateInputs() {
 }
 
 const schemaResult = computed(() => editorDataToSchema(formData.value))
-
-const schemaItems = computed(() => editorDataToSchema(formInputList.value))
 </script>
 
 <template>

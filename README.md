@@ -22,7 +22,6 @@ PrimeVue 3 is in the prime3 branch.
 
 Add *formkit.config.ts*
 
-
 ```typescript
 import { defaultConfig, plugin } from '@formkit/vue'
 import { primeInputs } from '@sfxcode/formkit-primevue'
@@ -40,7 +39,7 @@ app.use(plugin, defaultConfig({
 Important: use *autoimport: false* if using primevue formkit validation and include or
 exclude not needed components as usual.
 
-Autoimport true prevents elements lookup correctly. 
+Autoimport true prevents elements lookup correctly.
 
 Example:
 ```typescript
