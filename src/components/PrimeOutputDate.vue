@@ -1,4 +1,6 @@
 <script setup lang='ts'>
+import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
 import { useFormKitIcon, useFormKitOutput } from '../composables'
 
 const props = defineProps({
