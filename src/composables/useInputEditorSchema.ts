@@ -3,7 +3,7 @@ import { useInputEditor } from './useInputEditor'
 
 export function useInputEditorSchema() {
   const { addElement, addList, addListGroup, addComponent } = useFormKitSchema()
-  const { primeInputNames } = useInputEditor()
+  const { primeInputNames, primeOutputNames } = useInputEditor()
   function addFlexElement(children: any[]) {
     return addElement('div', children, { style: 'max-width: 40rem;display: flex;gap: 1rem;' })
   }
@@ -52,7 +52,7 @@ export function useInputEditorSchema() {
 
   ]
 
-  function editorSchema(inputOptions: any[] = primeInputOptions(primeInputNames)) {
+  function editorSchema(inputOptions: any[] = primeInputOptions([...primeInputNames, ...primeOutputNames])) {
     return [
       addGridElement([
 
@@ -65,6 +65,7 @@ export function useInputEditorSchema() {
           optionLabel: 'label',
           optionValue: 'value',
           options: inputOptions,
+          filter: true,
           key: 'schema_inputSelection',
           preserve: true,
         },
@@ -208,20 +209,33 @@ export function useInputEditorSchema() {
         {
           $formkit: 'primeInputText',
           if: '$get(selectButton).value === \'showDisplay\'',
-          name: 'icon',
-          label: 'Icon',
-          key: 'schema_icon',
+          name: 'prefixIcon',
+          label: 'Prefix Icon',
+          key: 'schema_prefix_icon',
           preserve: true,
         },
         {
-          $formkit: 'primeSelect',
+          $formkit: 'primeInputText',
           if: '$get(selectButton).value === \'showDisplay\'',
-          name: 'iconPosition',
-          label: 'Icon Position',
-          optionLabel: 'label',
-          optionValue: 'value',
-          options: positionOptions,
-          key: 'schema_iconPosition',
+          name: 'prefix',
+          label: 'Prefix',
+          key: 'schema_prefix',
+          preserve: true,
+        },
+        {
+          $formkit: 'primeInputText',
+          if: '$get(selectButton).value === \'showDisplay\'',
+          name: 'suffix',
+          label: 'Suffix',
+          key: 'schema_suffix',
+          preserve: true,
+        },
+        {
+          $formkit: 'primeInputText',
+          if: '$get(selectButton).value === \'showDisplay\'',
+          name: 'suffixIcon',
+          label: 'Suffix Icon',
+          key: 'schema_suffix_icon',
           preserve: true,
         },
         {

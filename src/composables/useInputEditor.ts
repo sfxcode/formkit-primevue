@@ -3,6 +3,8 @@ export function useInputEditor() {
 
   const primeInputNames = [...primeInputWithOptionNames, 'AutoComplete', 'Checkbox', 'ColorPicker', 'DatePicker', 'Editor', 'InputMask', 'InputNumber', 'InputOtp', 'InputText', 'Knob', 'Password', 'Rating', 'Slider', 'Textarea', 'ToggleButton', 'ToggleSwitch'].sort()
 
+  const primeOutputNames = ['OutputBoolean', 'OutputDate', 'OutputDuration', 'OutputLink', 'OutputList', 'OutputNumber', 'OutputText']
+
   function generateSchemaItemId(): string {
     return `id-${Math.random().toString(36).substring(2, 15)}`
   }
@@ -84,5 +86,5 @@ export function useInputEditor() {
     return { ...schema, _dollar_formkit: formkitInput }
   }
 
-  return { primeInputNames, generateSchemaItemId, editorDataToSchema, editorDataToJson, editorDataToCode: editorDataToObject, schemaToEditorData }
+  return { primeInputNames, primeOutputNames, generateSchemaItemId, editorDataToSchema, editorDataToJson, editorDataToCode: editorDataToObject, schemaToEditorData }
 }
