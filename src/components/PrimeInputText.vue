@@ -5,7 +5,7 @@ import type { FormKitFrameworkContext } from '@formkit/core'
 import IconField from 'primevue/iconfield'
 import InputIcon from 'primevue/inputicon'
 import type { InputTextProps } from 'primevue/inputtext'
-import { useFormKitIcon, useFormKitInput } from '../composables'
+import { useFormKitInput, useFormKitSection } from '../composables'
 
 export interface FormKitPrimeInputTextProps {
   pt?: InputTextProps['pt']
@@ -24,13 +24,13 @@ const props = defineProps({
 })
 
 const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
-const { hasIcon, icon, iconPosition } = useFormKitIcon(props.context)
+const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
 </script>
 
 <template>
   <div class="p-formkit">
     <IconField>
-      <InputIcon v-if="hasIcon && iconPosition === 'left'" :class="icon" />
+      <InputIcon v-if="hasPrefixIcon" :class="context?.prefixIcon" />
       <InputText
         :id="context.id"
         v-model="context._value"
@@ -49,7 +49,7 @@ const { hasIcon, icon, iconPosition } = useFormKitIcon(props.context)
         @input="handleInput"
         @blur="handleBlur"
       />
-      <InputIcon v-if="hasIcon && iconPosition === 'right'" :class="icon" />
+      <InputIcon v-if="hasSuffixIcon" :class="context?.suffixIcon" />
     </IconField>
   </div>
 </template>

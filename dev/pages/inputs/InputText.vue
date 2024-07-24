@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 const primeAttributes = 'placeholder'
-const customAttributes = 'icon, icon'
+const customAttributes = 'prefixIcon, suffixIcon'
 
 const schema
   = [
@@ -18,16 +18,14 @@ const schema
       label: 'Icon Left',
       help: '',
       placeholder: 'icon',
-      icon: 'pi pi-check',
-      iconPosition: 'left',
+      prefixIcon: 'pi pi-check',
     },
     {
       $formkit: 'primeInputText',
       name: 'iconRight',
       label: 'Icon Right (Disabled)',
       help: 'Right Icon Demo',
-      icon: 'pi pi-check',
-      iconPosition: 'right',
+      suffixIcon: 'pi pi-check',
       disabled: true,
     },
 
