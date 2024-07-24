@@ -58,9 +58,7 @@ const schemaResult = computed(() => editorDataToSchema(formData.value))
         <Button v-if="false" icon="pi pi-plus" class="mr-2" severity="secondary" text />
         <Button v-if="false" icon="pi pi-print" class="mr-2" severity="secondary" text />
         <Button v-if="false" icon="pi pi-upload" severity="secondary" text />
-      </template>
-
-      <template #center>
+      </template>  <template #center>
         Form Editor
       </template>
       <template #end />
@@ -95,7 +93,6 @@ const schemaResult = computed(() => editorDataToSchema(formData.value))
       </div>
       <div v-if="formData" class="mt-4">
         <FormKit
-
           v-model="formData"
           type="form"
           :submit-attrs="{

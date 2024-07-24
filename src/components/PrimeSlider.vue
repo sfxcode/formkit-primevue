@@ -14,7 +14,7 @@ export interface FormKitPrimeSliderProps {
   step?: SliderProps['step']
   range?: SliderProps['range']
   orientation?: SliderProps['orientation']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -24,7 +24,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleBlur } = useFormKitInput(props.context)
+const { styleClass, handleBlur } = useFormKitInput(props.context)
 
 function handleInput(e: any) {
   props.context?.node.input(e)
@@ -33,7 +33,7 @@ function handleInput(e: any) {
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <Slider
       :id="context.id"
       v-model="context._value"

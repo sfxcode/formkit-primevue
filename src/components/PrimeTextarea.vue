@@ -12,7 +12,7 @@ export interface FormKitPrimeTextareaProps {
   autoResize?: TextareaProps['autoResize']
   rows?: TextareaProps['rows']
   placeholder?: TextareaProps['placeholder']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -22,11 +22,11 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
+const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <Textarea
       :id="context.id"
       v-model="context._value"

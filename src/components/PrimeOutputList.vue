@@ -1,10 +1,9 @@
 <script setup lang='ts'>
-import { useFormKitIcon, useFormKitOutput } from '../composables'
+import { useFormKitIcon } from '../composables'
 
 const props = defineProps({
   context: Object,
 })
-const { wrapperClass } = useFormKitOutput(props.context, 'p-output-list')
 const { hasIcon, icon, iconPosition } = useFormKitIcon(props.context)
 
 function listValue(index: number, value: string): string {
@@ -17,7 +16,7 @@ function listValue(index: number, value: string): string {
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit p-output-list">
     <i v-if="hasIcon && iconPosition === 'left'" :class="icon" class="p-formkit-icon-left" />
     <span :id="context?.id" :style="context?.attrs?.style" :class="context?.attrs?.class">
       <template v-for="(value, index) of context?._value" :key="index">

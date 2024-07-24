@@ -1,18 +1,17 @@
 <script setup lang='ts'>
 import { computed } from 'vue'
-import { useFormKitIcon, useFormKitOutput } from '../composables'
+import { useFormKitIcon } from '../composables'
 
 const props = defineProps({
   context: Object,
 })
-const { wrapperClass } = useFormKitOutput(props.context, 'p-output-link')
 const { hasIcon, icon, iconPosition } = useFormKitIcon(props.context)
 
 const url = computed(() => props.context?._value.indexOf('http') > -1 ? props.context?._value : `https://${props.context?._value}`)
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit p-output-link">
     <i v-if="hasIcon && iconPosition === 'left'" :class="icon" class="p-formkit-icon-left" />
     <a
       :id="context?.id"

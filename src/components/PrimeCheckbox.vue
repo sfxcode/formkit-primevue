@@ -16,7 +16,7 @@ export interface FormKitPrimeCheckboxProps {
   variant?: CheckboxProps['variant']
   labelLeft?: string
   labelRight?: string
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -26,11 +26,11 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
+const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <span v-if="context.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
     <Checkbox
       v-model="context._value"

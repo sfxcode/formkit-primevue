@@ -49,7 +49,7 @@ export interface FormKitPrimeDatePickerProps {
   pt?: DatePickerProps['pt']
   ptOptions?: DatePickerProps['ptOptions']
   unstyled?: DatePickerProps['unstyled']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -59,7 +59,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleInput, handleSelect } = useFormKitInput(props.context)
+const { styleClass, handleInput, handleSelect } = useFormKitInput(props.context)
 
 function handleBlur(e: DatePickerBlurEvent) {
   props.context?.handlers.blur(e.originalEvent)
@@ -71,7 +71,7 @@ function handleClearClick() {
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <DatePicker
       v-model="context._value"
       v-bind="context?.attrs"

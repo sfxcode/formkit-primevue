@@ -8,9 +8,7 @@ const schema
       $formkit: 'primeOutputDate',
       name: 'date1',
       label: 'Basic',
-      wrapperClass: 'myClass',
     },
-
     {
       $formkit: 'primeOutputDate',
       id: 'date2',

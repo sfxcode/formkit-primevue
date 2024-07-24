@@ -12,7 +12,7 @@ export interface FormKitPrimeColorPickerProps {
   pt?: ColorPickerProps['pt']
   ptOptions?: ColorPickerProps['ptOptions']
   unstyled?: ColorPickerProps['unstyled']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -22,11 +22,11 @@ const props = defineProps({
   },
 })
 
-const { wrapperClass, handleChange } = useFormKitInput(props.context)
+const { handleChange } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <ColorPicker
       v-model="context._value"
       v-bind="context?.attrs"

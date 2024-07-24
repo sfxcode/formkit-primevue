@@ -23,7 +23,7 @@ export interface FormKitPrimeInputNumberProps {
   ptOptions?: InputNumberProps['ptOptions']
   unstyled?: InputNumberProps['unstyled']
   placeholder?: InputNumberProps['placeholder']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -33,7 +33,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleInput } = useFormKitInput(props.context)
+const { styleClass, handleInput } = useFormKitInput(props.context)
 
 function handleBlur(e: InputNumberBlurEvent) {
   props.context?.handlers.blur(e.originalEvent)
@@ -41,7 +41,7 @@ function handleBlur(e: InputNumberBlurEvent) {
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <InputNumber
       v-model="context._value"
       v-bind="context?.attrs"

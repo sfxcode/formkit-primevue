@@ -12,7 +12,7 @@ export interface FormKitPrimeRatingProps {
   offIcon?: RatingProps['offIcon']
   ptOptions?: RatingProps['ptOptions']
   pt?: RatingProps['pt']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -22,11 +22,11 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
+const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <Rating
       :id="context.id"
       v-model="context._value"

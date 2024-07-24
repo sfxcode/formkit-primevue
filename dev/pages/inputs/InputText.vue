@@ -10,9 +10,7 @@ const schema
       label: 'Basic',
       help: 'Required.',
       validation: 'required',
-      wrapperClass: 'myClass',
     },
-
     {
       $formkit: 'primeInputText',
       id: 'icon',

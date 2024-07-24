@@ -17,7 +17,7 @@ export interface FormKitPrimeInputMaskProps {
   variant?: InputMaskProps['variant']
   iconLeft?: string
   iconRight?: string
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -27,7 +27,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass } = useFormKitInput(props.context)
+const { styleClass } = useFormKitInput(props.context)
 
 function handleInput(e: FocusEvent) {
   props.context?.node.input(props.context?._value)
@@ -53,11 +53,9 @@ function spanClass() {
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <span :class="spanClass()">
-      <i v-if="hasLeftIcon()" :class="context.iconLeft" />
-
-      <InputMask
+      <i v-if="hasLeftIcon()" :class="context.iconLeft" />  <InputMask
         :id="context.id"
         v-model="context._value"
         v-bind="context?.attrs"
@@ -77,9 +75,7 @@ function spanClass() {
         :pt-options="context.ptOptions"
         :unstyled="context.unstyled ?? false"
         @blur="handleInput"
-      />
-
-      <i v-if="hasRightIcon" :class="context.iconRight" />
+      />  <i v-if="hasRightIcon" :class="context.iconRight" />
     </span>
   </div>
 </template>

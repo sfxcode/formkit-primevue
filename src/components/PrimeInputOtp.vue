@@ -13,7 +13,7 @@ export interface FormKitPrimeInputOtpProps {
   variant?: InputOtpProps['variant']
   mask?: InputOtpProps['mask']
   integerOnly?: InputOtpProps['integerOnly']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -23,11 +23,11 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleBlur, handleInput } = useFormKitInput(props.context)
+const { styleClass, handleBlur, handleInput } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <InputOtp
       :id="context.id"
       v-model="context._value"

@@ -15,7 +15,7 @@ export interface FormKitPrimeSelectButtonProps {
   multiple?: SelectButtonProps['multiple']
   dataKey?: SelectButtonProps['dataKey']
   options?: SelectButtonProps['options']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -25,11 +25,11 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleChange, handleBlur } = useFormKitInput(props.context)
+const { styleClass, handleChange, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <SelectButton
       :id="context.id"
       v-model="context._value"

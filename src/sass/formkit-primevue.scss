@@ -13,24 +13,16 @@
   margin: 0;
   padding-bottom: 0.8rem;
 
-  .formkit-inner {
-
-    .p-formkit {
-
-      .p-formkit-icon {
+  .formkit-inner {.p-formkit {  .p-formkit-icon {
         box-sizing: border-box;
         width: 100%;
-      }
-
-      .p-inputtext, .p-textarea, .p-password, .p-multiselect, .p-select, .p-editor {
+      }  .p-inputtext, .p-textarea, .p-password, .p-multiselect, .p-select, .p-editor {
         box-sizing: border-box;
         width: 100%;
         &.p-colorpicker-preview {
           width: 2rem;
         }
-      }
-
-    }
+      }}
   }
 
   ul {
@@ -38,9 +30,7 @@
     margin-block-end: 2px;
   }
   .formkit-messages {
-    padding: 4px 0 0 0;
-
-    .formkit-message {
+    padding: 4px 0 0 0;.formkit-message {
       padding: 0;
       margin: 0;
       color: var(--formkit-error-color);
@@ -51,14 +41,10 @@
 }
 
 .formkit-outer[data-type="primeToggleSwitch"], .formkit-outer[data-type="primeCheckbox"], .formkit-outer[data-type="primeTriStateCheckbox"], .formkit-outer[data-type="primeRadioButton"] {
-  .formkit-inner {
-
-    .formkit-prime-right {
+  .formkit-inner {.formkit-prime-right {
       margin-left: 10px;
       font-size: 1rem;
-    }
-
-    .formkit-prime-left {
+    }.formkit-prime-left {
       margin-right: 10px;
       font-size: 1rem;
     }

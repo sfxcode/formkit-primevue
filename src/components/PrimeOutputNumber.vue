@@ -2,12 +2,11 @@
 import { useI18n } from 'vue-i18n'
 import { computed } from 'vue'
 
-import { useFormKitIcon, useFormKitOutput } from '../composables'
+import { useFormKitIcon } from '../composables'
 
 const props = defineProps({
   context: Object,
 })
-const { wrapperClass } = useFormKitOutput(props.context, 'p-output-number')
 const { hasIcon, icon, iconPosition } = useFormKitIcon(props.context)
 
 const { n } = useI18n()
@@ -31,7 +30,7 @@ const converted = computed(() => {
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit p-output-number">
     <i v-if="hasIcon && iconPosition === 'left'" :class="icon" class="p-formkit-icon-left" />
     <span :id="context?.id" :style="context?.attrs?.style" :class="context?.attrs?.class">
       {{ converted }}

@@ -17,7 +17,6 @@ const schema
         $formkit: 'primeInputText',
         name: 'name2',
         label: 'Col 2',
-
       },
     ], { class: 'flex gap-4' }),
   ]

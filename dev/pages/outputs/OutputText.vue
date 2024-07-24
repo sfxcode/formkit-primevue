@@ -8,9 +8,7 @@ const schema
       $formkit: 'primeOutputText',
       name: 'name',
       label: 'Basic',
-      wrapperClass: 'myClass',
     },
-
     {
       $formkit: 'primeOutputText',
       id: 'icon',

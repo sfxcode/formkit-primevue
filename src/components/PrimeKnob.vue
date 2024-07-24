@@ -19,7 +19,7 @@ export interface FormKitPrimeKnobProps {
   rangeColor?: KnobProps['rangeColor']
   textColor?: KnobProps['textColor']
   valueTemplate?: KnobProps['valueTemplate']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -29,7 +29,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass } = useFormKitInput(props.context)
+const { styleClass } = useFormKitInput(props.context)
 
 function handleInput(e: any) {
   props.context?.node.input(e)
@@ -42,7 +42,7 @@ function updateValue(n: number) {
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <Knob
       :id="context.id"
       v-model="context._value"

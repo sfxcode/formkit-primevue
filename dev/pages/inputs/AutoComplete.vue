@@ -24,7 +24,6 @@ const schema
       multiple: true,
       typeahead: false,
       label: 'Chips Replacement',
-      wrapperClass: 'myClass',
     },
   ]
 

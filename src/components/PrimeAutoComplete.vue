@@ -12,7 +12,6 @@ export interface FormKitPrimeAutoCompleteProps {
   dropdown?: AutoCompleteProps['dropdown']
   multiple?: AutoCompleteProps['multiple']
   typeahead?: AutoCompleteProps['typeahead']
-  wrapperClass?: string
 }
 
 const props = defineProps({
@@ -22,7 +21,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
+const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
 
 const suggestions = ref([])
 
@@ -32,7 +31,7 @@ function search(event: AutoCompleteCompleteEvent) {
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <AutoComplete
       :id="context.id"
       v-model="context._value"

@@ -41,7 +41,7 @@ export interface FormKitPrimeMultiSelectProps {
   placeholder?: MultiSelectProps['placeholder']
   ptOptions?: MultiSelectProps['ptOptions']
   unstyled?: MultiSelectProps['unstyled']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -51,11 +51,11 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleBlur, handleChange } = useFormKitInput(props.context)
+const { styleClass, handleBlur, handleChange } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <MultiSelect
       v-model="context._value"
       v-bind="context?.attrs"

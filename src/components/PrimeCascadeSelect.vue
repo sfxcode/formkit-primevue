@@ -15,7 +15,7 @@ export interface FormKitPrimeCascadeSelectProps {
   pt?: CascadeSelectProps['pt']
   ptOptions?: CascadeSelectProps['ptOptions']
   unstyled?: CascadeSelectProps['unstyled']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -25,11 +25,11 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
+const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <CascadeSelect
       :id="context.id"
       v-model="context._value"

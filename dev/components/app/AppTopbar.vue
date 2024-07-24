@@ -78,7 +78,6 @@ const items = ref([
     label: 'More',
     icon: 'pi pi-box',
     class: 'ml-2',
-
     items: [
       [
         {
@@ -127,18 +126,14 @@ const items = ref([
         <router-link to="/" class="">
           <span class="text-3xl">Formkit PrimeVue Demo</span>
         </router-link>
-      </template>
-
-      <template #center>
+      </template>  <template #center>
         <div class="text-lg">
           <span class="text-yellow-600 font-bold">New: </span>
           <router-link to="/samples/formEditor" class="">
             <span class="">Form Editor</span>
           </router-link>
         </div>
-      </template>
-
-      <template #end>
+      </template>  <template #end>
         <Button label="FormKit" class="mr-2" @click="redirectToFormKit" />
         <Button icon="pi pi-prime" label="PrimeVue" class="mr-2" @click="redirectToPrimeVue" />
         <Button icon="pi pi-book" label="Docs" class="mr-2" @click="redirectToDocs" />

@@ -99,7 +99,6 @@ function copyObject() {
           <pre>{{ schemaResult }}</pre>
           <Button v-if="isSupported" label="Copy as JSON" class="mr-4" @click="copyJson" />
           <Button v-if="isSupported" label="Copy as Object" @click="copyObject" />
-
           <h3>Generated Formkit Data</h3>
           <pre>{{ data }}</pre>
         </div>

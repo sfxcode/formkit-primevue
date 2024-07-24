@@ -13,7 +13,7 @@ export interface FormKitPrimeInputTextProps {
   unstyled?: InputTextProps['unstyled']
   placeholder?: InputTextProps['placeholder']
   icon?: string
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -23,12 +23,12 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
+const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
 const { hasIcon, icon, iconPosition } = useFormKitIcon(props.context)
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <IconField>
       <InputIcon v-if="hasIcon && iconPosition === 'left'" :class="icon" />
       <InputText

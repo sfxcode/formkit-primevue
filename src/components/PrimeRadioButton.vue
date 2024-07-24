@@ -12,7 +12,7 @@ export interface FormKitPrimeRadioButtonProps {
   options?: { label: string, value: any }[]
   optionClass?: string
   labelClass?: string
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -22,11 +22,11 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleChange, handleBlur } = useFormKitInput(props.context)
+const { styleClass, handleChange, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <div v-for="option in context.options" :key="option.value" :class="context.optionClass">
       <RadioButton
         :id="context.id"

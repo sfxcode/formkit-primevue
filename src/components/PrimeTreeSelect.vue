@@ -19,7 +19,7 @@ export interface FormKitPrimeTreeSelectProps {
   scrollHeight?: TreeSelectProps['scrollHeight']
   panelClass?: TreeSelectProps['panelClass']
   variant?: TreeSelectProps['variant']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -29,11 +29,11 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleInput, handleBlur } = useFormKitInput(props.context)
+const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <TreeSelect
       v-model="context._value"
       v-bind="context?.attrs"

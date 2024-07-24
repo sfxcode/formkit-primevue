@@ -5,10 +5,6 @@ export function useFormKitInput(context: any) {
     return (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class
   })
 
-  const wrapperClass = computed(() => {
-    return context?.wrapperClass ? `p-formkit ${context?.wrapperClass}` : 'p-formkit '
-  })
-
   function handleBlur(event: Event) {
     context?.handlers.blur(event)
   }
@@ -25,5 +21,5 @@ export function useFormKitInput(context: any) {
     context?.node.input(e)
   }
 
-  return { styleClass, wrapperClass, handleBlur, handleChange, handleInput, handleSelect }
+  return { styleClass, handleBlur, handleChange, handleInput, handleSelect }
 }

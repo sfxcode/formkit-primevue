@@ -12,7 +12,7 @@ export interface FormKitPrimeEditorProps {
   pt?: EditorProps['pt']
   ptOptions?: EditorProps['ptOptions']
   unstyled?: EditorProps['unstyled']
-  wrapperClass?: string
+
 }
 
 const props = defineProps({
@@ -22,7 +22,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, wrapperClass, handleInput } = useFormKitInput(props.context)
+const { styleClass, handleInput } = useFormKitInput(props.context)
 
 function handleSelection(e: EditorSelectionChangeEvent) {
   if (e.range === null)
@@ -31,7 +31,7 @@ function handleSelection(e: EditorSelectionChangeEvent) {
 </script>
 
 <template>
-  <div :class="wrapperClass">
+  <div class="p-formkit">
     <Editor
       :id="context.id"
       v-model="context._value"

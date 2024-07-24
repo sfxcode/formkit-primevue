@@ -9,9 +9,7 @@ const schema
       name: 'mumber1',
       format: 'decimal',
       label: 'Basic',
-      wrapperClass: 'myClass',
     },
-
     {
       $formkit: 'primeOutputNumber',
       name: 'number2',
