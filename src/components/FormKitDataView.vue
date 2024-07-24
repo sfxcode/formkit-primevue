@@ -11,6 +11,10 @@ const props = defineProps({
     type: Object,
     default: null,
   },
+  formClass: {
+    type: String,
+    default: '',
+  },
   debugData: {
     type: Boolean,
     default: false,
@@ -30,6 +34,7 @@ const formData = ref(props.data)
     <FormKit
       v-model="formData"
       type="form"
+      :form-class="formClass"
       :submit-attrs="{
         style: 'display: none;',
       }"

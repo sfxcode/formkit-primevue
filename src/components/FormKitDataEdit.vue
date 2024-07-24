@@ -23,6 +23,10 @@ const props = defineProps({
     type: String,
     default: 'Save',
   },
+  formClass: {
+    type: String,
+    default: '',
+  },
 })
 
 const emit = defineEmits(['dataSaved'])
@@ -40,11 +44,13 @@ function handleSave() {
     <FormKit
       id="form"
       v-model="formData"
+      :form-class="formClass"
       type="form"
       :submit-label="submitLabel"
       :submit-attrs="{
         inputClass: 'p-button p-component p-formkit-button',
       }"
+
       @submit="handleSave"
     >
       <FormKitSchema :schema="formSchema" :data="formData" />
