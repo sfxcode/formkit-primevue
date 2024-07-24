@@ -1,3 +1,24 @@
+## v2.3.6
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.5...v2.3.6)
+
+### 🚀 Enhancements
+
+- **output:** Add components to editor ([629bc39](https://github.com/sfxcode/formkit-primevue/commit/629bc39))
+
+### 🩹 Fixes
+
+- **components:** Remove wrapperClass because of clash with fromkit class handling ([4f4f640](https://github.com/sfxcode/formkit-primevue/commit/4f4f640))
+
+### 💅 Refactors
+
+- **components:** Use formkit notation for icons ([8e7e2cf](https://github.com/sfxcode/formkit-primevue/commit/8e7e2cf))
+- **PrimeInputText:** Use forkit notation for icons ([c2ba491](https://github.com/sfxcode/formkit-primevue/commit/c2ba491))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.3.5
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.4...v2.3.5)
