@@ -1,3 +1,16 @@
+## v2.3.5
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.4...v2.3.5)
+
+### 🩹 Fixes
+
+- **i18n:** Add missing import ([b13acef](https://github.com/sfxcode/formkit-primevue/commit/b13acef))
+- **components:** Add missing import ([c5d87d9](https://github.com/sfxcode/formkit-primevue/commit/c5d87d9))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.3.4
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.3...v2.3.4)
