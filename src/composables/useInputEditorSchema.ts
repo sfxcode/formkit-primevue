@@ -46,12 +46,6 @@ export function useInputEditorSchema() {
     { label: 'Submit', value: 'submit' },
   ]
 
-  const positionOptions = [
-    { label: 'Left', value: 'left' },
-    { label: 'Right', value: 'right' },
-
-  ]
-
   function editorSchema(inputOptions: any[] = primeInputOptions([...primeInputNames, ...primeOutputNames])) {
     return [
       addGridElement([
@@ -107,14 +101,25 @@ export function useInputEditorSchema() {
         key: 'schema_help',
         preserve: true,
       },
-      {
-        $formkit: 'primeInputText',
-        if: '$get(selectButton).value === \'showBasic\'',
-        name: 'value',
-        label: 'Input Value',
-        key: 'schema_value',
-        preserve: true,
-      },
+      addGridElement([
+
+        {
+          $formkit: 'primeInputText',
+          if: '$get(selectButton).value === \'showBasic\'',
+          name: 'value',
+          label: 'Input Value',
+          key: 'schema_value',
+          preserve: true,
+        },
+        {
+          $formkit: 'primeInputText',
+          if: '$get(selectButton).value === \'showBasic\'',
+          name: 'format',
+          label: 'Value Format',
+          key: 'schema_format',
+          preserve: true,
+        },
+      ]),
       addGridElement([
         {
           $formkit: 'primeInputText',

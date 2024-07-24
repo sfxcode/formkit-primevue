@@ -12,14 +12,21 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
 const { n } = useI18n()
 
 const converted = computed(() => {
-  if (props?.context?._value) {
+  const value = props?.context?._value
+  if (value) {
     let result = ''
     const format = props?.context?.attrs?.format ? props?.context?.attrs?.format : 'short'
     try {
-      result = n(props?.context?._value, format)
+      result = n(value, format)
     }
     // eslint-disable-next-line unused-imports/no-unused-vars
     catch (e) {
+      try {
+        result = n(+value, format)
+      }
+      // eslint-disable-next-line unused-imports/no-unused-vars
+      catch (e) {
+      }
     }
     return result
   }
