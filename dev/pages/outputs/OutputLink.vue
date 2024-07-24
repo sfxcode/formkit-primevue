@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 const primeAttributes = ''
-const customAttributes = 'icon, iconPosition (left, right)'
+const customAttributes = 'prefixIcon, prefix, suffix, suffixIcon'
 
 const schema
   = [

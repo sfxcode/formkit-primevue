@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 const primeAttributes = ''
-const customAttributes = 'icon, iconPosition (left, right)'
+const customAttributes = 'prefixIcon, prefix, suffix, suffixIcon'
 
 const schema
   = [
@@ -15,16 +15,14 @@ const schema
       name: 'date2',
       label: 'Icon Left',
       help: '',
-      icon: 'pi pi-check',
-      iconPosition: 'left',
+      prefixIcon: 'pi pi-check',
     },
     {
       $formkit: 'primeOutputDate',
       name: 'date3',
       label: 'Icon Right',
       help: 'Right Icon Demo',
-      icon: 'pi pi-check text-yellow-500',
-      iconPosition: 'right',
+      suffixIcon: 'pi pi-check text-yellow-500',
     },
 
   ]

@@ -1,18 +1,21 @@
 <script setup lang='ts'>
 import { computed } from 'vue'
-import { useFormKitIcon } from '../composables'
+import { useFormKitSection } from '../composables'
 
 const props = defineProps({
   context: Object,
 })
-const { hasIcon, icon, iconPosition } = useFormKitIcon(props.context)
+const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection(props.context)
 
 const url = computed(() => props.context?._value.indexOf('http') > -1 ? props.context?._value : `https://${props.context?._value}`)
 </script>
 
 <template>
   <div class="p-formkit p-output-link">
-    <i v-if="hasIcon && iconPosition === 'left'" :class="icon" class="p-formkit-icon-left" />
+    <i v-if="hasPrefixIcon" class="formkit-prefix-icon" :class="context?.prefixIcon" />
+    <span v-if="hasPrefix" class="formkit-prefix">
+      {{ context?.attrs?.prefix }}
+    </span>
     <a
       :id="context?.id"
       :style="context?.attrs?.style"
@@ -22,6 +25,9 @@ const url = computed(() => props.context?._value.indexOf('http') > -1 ? props.co
     >
       {{ context?._value }}
     </a>
-    <i v-if="hasIcon && iconPosition === 'right'" :class="icon" class="p-formkit-icon-right" />
+    <span v-if="hasSuffix" class="formkit-suffix">
+      {{ context?.attrs?.suffix }}
+    </span>
+    <i v-if="hasSuffixIcon" class="formkit-suffix-icon" :class="context?.suffixIcon" />
   </div>
 </template>

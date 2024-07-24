@@ -1,18 +1,32 @@
 <script setup lang='ts'>
 const primeAttributes = ''
-const customAttributes = 'icon, iconPosition (left, right)'
+const customAttributes = 'prefixIcon, prefix, suffix, suffixIcon'
 
 const schema
   = [
     {
       $formkit: 'primeOutputBoolean',
       name: 'trueValue',
-      label: 'True',
+      label: 'True Example',
+      prefix: 'MyValue',
+      prefixIcon: 'pi pi-check',
+
     },
     {
       $formkit: 'primeOutputBoolean',
       name: 'falseValue',
       label: 'False',
+      suffix: 'MyValue',
+      suffixIcon: 'pi pi-check',
+    },
+    {
+      $formkit: 'primeOutputBoolean',
+      name: 'falseValue',
+      label: 'False',
+      prefix: 'prefix',
+      prefixIcon: 'pi pi-check',
+      suffix: 'suffix',
+      suffixIcon: 'pi pi-times',
     },
 
   ]

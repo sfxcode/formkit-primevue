@@ -114,8 +114,25 @@
 
 .p-formkit-icon-right {
   padding-left: 0.5rem;
-  float: right;
 }
+
+.formkit-prefix-icon {
+  padding-right: 0.5rem;
+}
+
+.formkit-prefix {
+  padding-right: 0.5rem;
+}
+
+.formkit-suffix-icon {
+  padding-left: 0.5rem;
+}
+
+.formkit-suffix {
+  padding-left: 0.5rem;
+}
+
+
 
 .p-formkit-data-debug {
   pre, span {
