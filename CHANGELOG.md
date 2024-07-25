@@ -1,3 +1,15 @@
+## v2.3.8
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.7...v2.3.8)
+
+### 💅 Refactors
+
+- **data:** Data Edit / View ([ab95443](https://github.com/sfxcode/formkit-primevue/commit/ab95443))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.3.7
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.6...v2.3.7)
