@@ -4,17 +4,15 @@ const schema
     {
       $formkit: 'primeInputText',
       name: 'name',
-      label: 'Styling by class',
+      label: 'Styling outer class',
       help: 'Required.',
-      validation: 'required',
       outerClass: 'stylingOuterClass',
     },
     {
       $formkit: 'primeInputText',
       name: 'name2',
-      label: 'Styling by class',
+      label: 'Styling inner class',
       help: 'Required.',
-      validation: 'required',
       innerClass: 'stylingSampleClass',
 
     },
@@ -27,7 +25,7 @@ const data = { name: 'Some Label in Green', name2: 'Some Text in Green' }
 <template>
   <div class="">
     <PrimeInput
-      header="Styling" :schema="schema" form-class="grid grid-cols-2 gap-4" :data="data"
+      header="Styling by FormKit Classes" :schema="schema" form-class="grid grid-cols-2 gap-4" :data="data"
     >
       <div class="pb-8" />
     </PrimeInput>

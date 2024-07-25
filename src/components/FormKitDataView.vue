@@ -35,9 +35,7 @@ const formData = ref(props.data)
       v-model="formData"
       type="form"
       :form-class="formClass"
-      :submit-attrs="{
-        style: 'display: none;',
-      }"
+      :actions="false"
     >
       <FormKitSchema :schema="formSchema" :data="formData" />
     </FormKit>

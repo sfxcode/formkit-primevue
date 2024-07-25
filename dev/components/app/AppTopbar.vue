@@ -81,7 +81,7 @@ const items = ref([
     items: [
       [
         {
-          label: 'Outputs',
+          label: 'Output Components',
           items: [
             { label: 'Output Text', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputText' },
             { label: 'Output Number', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputNumber' },
@@ -99,6 +99,8 @@ const items = ref([
           items: [
             { label: 'Basic', icon: 'pi pi-fw pi-user-edit', route: '/styling/base' },
             { label: 'Pass Through', icon: 'pi pi-fw pi-user-edit', route: '/styling/passThrough' },
+            { label: 'FormKit Class', icon: 'pi pi-fw pi-user-edit', route: '/styling/class' },
+            { label: 'Grid based Form', icon: 'pi pi-fw pi-user-edit', route: '/styling/grid' },
           ],
         },
       ],

@@ -19,9 +19,17 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  inputClass: {
+    type: String,
+    default: 'p-button p-component p-formkit-button',
+  },
   submitLabel: {
     type: String,
     default: 'Save',
+  },
+  actionsClass: {
+    type: String,
+    default: '',
   },
   formClass: {
     type: String,
@@ -45,12 +53,12 @@ function handleSave() {
       id="form"
       v-model="formData"
       :form-class="formClass"
+      :actions-class="actionsClass"
       type="form"
       :submit-label="submitLabel"
       :submit-attrs="{
-        inputClass: 'p-button p-component p-formkit-button',
+        inputClass,
       }"
-
       @submit="handleSave"
     >
       <FormKitSchema :schema="formSchema" :data="formData" />
