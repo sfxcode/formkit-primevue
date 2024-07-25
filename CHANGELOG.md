@@ -1,3 +1,16 @@
+## v2.3.7
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.6...v2.3.7)
+
+### 🚀 Enhancements
+
+- **data:** Add formClass to DataEdit and DataView - add demo for formkit class styling ([b656541](https://github.com/sfxcode/formkit-primevue/commit/b656541))
+- **editor:** Add option to display a text as number if possible ([e281dd1](https://github.com/sfxcode/formkit-primevue/commit/e281dd1))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.3.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.5...v2.3.6)
