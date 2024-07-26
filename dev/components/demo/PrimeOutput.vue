@@ -23,7 +23,7 @@ const formData = ref(props.data)
     </h2>
     <slot />
     <div class="flex flex-wrap gap-8">
-      <div class="min-w-30rem basis-1/3 md:basis-1/4">
+      <div class="min-w-35rem basis-1/3 md:basis-1/4">
         <FormKitDataView :schema="formSchema" :data="formData" :debug-schema="false" :debug-data="true" />
       </div>
       <div class="">

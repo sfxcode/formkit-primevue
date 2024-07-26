@@ -51,35 +51,13 @@ export function useFormKitSchema() {
     }
   }
 
-  function addListGroupFunctions(data: any, addNodeDefaultObject: object = {}) {
-    const swapElements = (array: any[], index1: number, index2: number) => {
-      array[index1] = array.splice(index2, 1, array[index1])[0]
-      return array
-    }
-
-    data.addNode = (parentNode: any) => (): void => {
-      const newArray: any[] = [...parentNode.value, addNodeDefaultObject]
-      parentNode.input(newArray, false)
-    }
-    data.removeNode = (parentNode: any, index: number) => (): void => {
-      parentNode.input(parentNode._value.filter((_: any, i: number): boolean => i !== index), false)
-    }
-    data.moveNodeUp = (parentNode: any, index: number) => (): void => {
-      const array: any[] = [...parentNode.value]
-      if (index > 0)
-        parentNode.input(swapElements(array, index - 1, index), false)
-    }
-    data.moveNodeDown = (parentNode: any, index: number) => (): void => {
-      const array: any[] = [...parentNode.value]
-      if (index < array.length - 1)
-        parentNode.input(swapElements(array, index, index + 1), false)
-    }
-    data.copyNode = (parentNode: any, index: number) => (): void => {
-      const obj: any = parentNode.value[index]
-      const newArray: any[] = [...parentNode.value, { ...obj }]
-      parentNode.input(newArray, false)
-    }
+  const addElementsInOuterDiv = (children: object[] = [], innerClass: string = '', outerClass: string = '', label: string = '', help: string = '', render: string = 'true') => {
+    const inner = addElement('div', children, { class: `formkit-inner ${innerClass}`, style: 'position: relative;' })
+    const labelDiv = addElement('label', [label], { class: 'formkit-label' })
+    const wrapperDiv = addElement('div', [labelDiv, inner], { class: 'formkit-wrapper' })
+    const helpDiv = addElement('div', [help], { class: 'formkit-help' })
+    return addElement('div', [wrapperDiv, helpDiv], { class: `formkit-outer ${outerClass}`, style: 'position: relative;' }, render)
   }
 
-  return { addComponent, addElement, addGroup, addList, addListGroup, addListGroupFunctions }
+  return { addComponent, addElement, addGroup, addList, addListGroup, addElementsInOuterDiv }
 }

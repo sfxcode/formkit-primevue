@@ -1,14 +1,14 @@
-import { useFormKitIcon } from './useFormKitIcon'
 import { useFormKitInput } from './useFormKitInput'
 import { useFormKitSchema } from './useFormKitSchema'
+import { useFormKitRepeater } from './useFormKitRepeater'
 import { useFormKitSection } from './useFormKitSection'
 import { useInputEditor } from './useInputEditor'
 import { useInputEditorSchema } from './useInputEditorSchema'
 import { useOutputDuration } from './useOutputDuration'
 
 export {
-  useFormKitIcon,
   useFormKitInput,
+  useFormKitRepeater,
   useFormKitSchema,
   useFormKitSection,
   useInputEditor,

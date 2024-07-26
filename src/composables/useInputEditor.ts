@@ -33,15 +33,24 @@ export function useInputEditor() {
 
     const defaultObject = { readonly: readonlyValue, disabled: disabledValue, preserve: preserveValue }
 
-    const undefinedObject = { prime: undefined, schemaResultFormKey: undefined, _dollar_formkit: undefined, slots: undefined, selectButton: undefined }
+    let outerClass: string | undefined = ''
+    if (data.outerClassGrid && data.outerClassGrid !== 'col-12')
+      outerClass = `${outerClass} ${data.outerClassGrid}`
+    if (data.outerClass)
+      outerClass = outerClass + data.outerClass
+
+    if (outerClass.trim().length === 0)
+      outerClass = undefined
+
+    const undefinedObject = { prime: undefined, schemaResultFormKey: undefined, _dollar_formkit: undefined, slots: undefined, selectButton: undefined, outerClassGrid: undefined }
 
     const useOptions = primeInputWithOptionNames.map(s => `prime${s}`).includes(formkitInput)
 
     let result = {}
     if (useOptions)
-      result = { ...data, $formkit: formkitInput, ...tempData, ...undefinedObject, ...defaultObject, optionLabel: 'label', optionValue: 'value' }
+      result = { ...data, $formkit: formkitInput, ...tempData, ...undefinedObject, ...defaultObject, outerClass, optionLabel: 'label', optionValue: 'value' }
     else
-      result = { ...data, $formkit: formkitInput, ...tempData, ...undefinedObject, ...defaultObject, options: undefined }
+      result = { ...data, $formkit: formkitInput, ...tempData, ...undefinedObject, ...defaultObject, outerClass, options: undefined }
 
     return result
   }

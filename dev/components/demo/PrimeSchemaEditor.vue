@@ -61,8 +61,8 @@ function copyObject() {
       {{ header }}
     </h2>
     <slot />
-    <div class="grid grid-cols-1 xl:grid-cols-2 gap-8">
-      <div class="w-40rem basis-1/2 md:basis-1/3" mb-4>
+    <div class="flex gap-12 flex-wrap">
+      <div class="w-40rem">
         <h3>Create Formkit Input</h3>
         <FormKit
           v-model="formData"

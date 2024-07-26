@@ -1,15 +1,17 @@
 <script setup lang='ts'>
-import { useFormKitSchema, useInputEditor, useInputEditorSchema } from 'my-library'
+import { useFormKitRepeater, useInputEditor, useInputEditorSchema } from 'my-library'
 
 const { schemaToEditorData } = useInputEditor()
 const { editorSchema } = useInputEditorSchema()
-const { addListGroupFunctions } = useFormKitSchema()
+const { addListGroupFunctions } = useFormKitRepeater()
 
-const data = reactive(schemaToEditorData({
-  $formkit: 'primeInputText',
-  name: 'field',
-  options: [{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }],
-}))
+const data = reactive(schemaToEditorData(
+  {
+    $formkit: 'primeInputText',
+    name: 'field',
+    options: [{ label: 'Option 1', value: 'option1' }, { label: 'Option 2', value: 'option2' }],
+  },
+))
 
 addListGroupFunctions(data)
 </script>
