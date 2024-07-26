@@ -2,7 +2,7 @@ import { computed } from 'vue'
 
 export function useFormKitSection(context: any) {
   const hasPrefix = computed(() => {
-    return context?.attrs?.prefix && context?.attrs?.prefix.length > 0
+    return context?.prefix && context?.prefix.length > 0
   })
 
   const hasPrefixIcon = computed(() => {
@@ -14,7 +14,7 @@ export function useFormKitSection(context: any) {
   })
 
   const hasSuffix = computed(() => {
-    return context?.attrs?.suffix && context?.attrs?.suffix.length > 0
+    return context?.suffix && context?.suffix.length > 0
   })
 
   return { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon }

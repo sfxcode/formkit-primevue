@@ -33,7 +33,7 @@ export const primeAutoCompleteDefinition: FormKitTypeDefinition = createInput(Pr
     'Select',
     'multiple',
     'typeahead',
-    'wrapperClass',
+
   ],
 })
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
@@ -43,7 +43,7 @@ export const primeInputTextDefinition: FormKitTypeDefinition = createInput(Prime
     'unstyled',
     'placeholder',
     'icon',
-    'wrapperClass',
+
   ],
 })
 
@@ -66,7 +66,7 @@ export const primeInputNumberDefinition: FormKitTypeDefinition = createInput(Pri
     'ptOptions',
     'unstyled',
     'placeholder',
-    'wrapperClass',
+
   ],
 })
 
@@ -83,7 +83,7 @@ export const primeInputMaskDefinition: FormKitTypeDefinition = createInput(Prime
     'variant',
     'iconLeft',
     'iconRight',
-    'wrapperClass',
+
   ],
 })
 
@@ -103,7 +103,6 @@ export const primePasswordDefinition: FormKitTypeDefinition = createInput(PrimeP
     'placeholder',
     'feedback',
     'toggleMask',
-    'wrapperClass',
   ],
 })
 
@@ -115,7 +114,6 @@ export const primeTextareaDefinition: FormKitTypeDefinition = createInput(PrimeT
     'autoResize',
     'rows',
     'placeholder',
-    'wrapperClass',
   ],
 })
 
@@ -129,9 +127,9 @@ export const primeCheckboxDefinition: FormKitTypeDefinition = createInput(PrimeC
     'unstyled',
     'indeterminate',
     'variant',
-    'labelLeft',
-    'labelRight',
-    'wrapperClass',
+    'prefix',
+    'suffix',
+
   ],
 })
 
@@ -142,9 +140,9 @@ export const primeToggleSwitchDefinition: FormKitTypeDefinition = createInput(Pr
     'pt',
     'ptOptions',
     'unstyled',
-    'labelLeft',
-    'labelRight',
-    'wrapperClass',
+    'prefix',
+    'suffix',
+
   ],
 })
 
@@ -157,7 +155,7 @@ export const primeInputOtpDefinition: FormKitTypeDefinition = createInput(PrimeI
     'pt',
     'ptOptions',
     'unstyled',
-    'wrapperClass',
+
   ],
 })
 
@@ -169,7 +167,7 @@ export const primeEditorDefinition: FormKitTypeDefinition = createInput(PrimeEdi
     'pt',
     'ptOptions',
     'unstyled',
-    'wrapperClass',
+
   ],
 })
 
@@ -208,7 +206,7 @@ export const primeSelectDefinition: FormKitTypeDefinition = createInput(PrimeSel
     'pt',
     'ptOptions',
     'unstyled',
-    'wrapperClass',
+
   ],
 })
 
@@ -250,7 +248,7 @@ export const primeMultiSelectDefinition: FormKitTypeDefinition = createInput(Pri
     'placeholder',
     'ptOptions',
     'unstyled',
-    'wrapperClass',
+
   ],
 })
 
@@ -270,7 +268,7 @@ export const primeListboxDefinition: FormKitTypeDefinition = createInput(PrimeLi
     'filterMatchMode',
     'autoOptionFocus',
     'selectOnFocus',
-    'wrapperClass',
+
   ],
 })
 
@@ -320,7 +318,7 @@ export const primeDatePickerDefinition: FormKitTypeDefinition = createInput(Prim
     'pt',
     'ptOptions',
     'unstyled',
-    'wrapperClass',
+
   ],
 })
 
@@ -334,7 +332,7 @@ export const primeSliderDefinition: FormKitTypeDefinition = createInput(PrimeSli
     'step',
     'range',
     'orientation',
-    'wrapperClass',
+
   ],
 })
 
@@ -348,7 +346,7 @@ export const primeRatingDefinition: FormKitTypeDefinition = createInput(PrimeRat
     'cancelIcon',
     'ptOptions',
     'pt',
-    'wrapperClass',
+
   ],
 })
 export const primeRadioButtonDefinition: FormKitTypeDefinition = createInput(PrimeRadioButton, {
@@ -357,9 +355,9 @@ export const primeRadioButtonDefinition: FormKitTypeDefinition = createInput(Pri
     'ptOptions',
     'unstyled',
     'options',
+    'optionsClass',
     'optionClass',
-    'labelClass',
-    'wrapperClass',
+
   ],
 })
 
@@ -378,7 +376,7 @@ export const primeKnobDefinition: FormKitTypeDefinition = createInput(PrimeKnob,
     'rangeColor',
     'textColor',
     'valueTemplate',
-    'wrapperClass',
+
   ],
 })
 
@@ -390,7 +388,7 @@ export const primeColorPickerDefinition: FormKitTypeDefinition = createInput(Pri
     'pt',
     'ptOptions',
     'unstyled',
-    'wrapperClass',
+
   ],
 })
 
@@ -404,7 +402,7 @@ export const primeToggleButtonDefinition: FormKitTypeDefinition = createInput(Pr
     'onIcon',
     'offIcon',
     'iconPos',
-    'wrapperClass',
+
   ],
 })
 
@@ -420,7 +418,7 @@ export const primeSelectButtonDefinition: FormKitTypeDefinition = createInput(Pr
     'unselectable',
     'dataKey',
     'options',
-    'wrapperClass',
+
   ],
 })
 
@@ -435,7 +433,7 @@ export const primeCascadeSelectDefinition: FormKitTypeDefinition = createInput(P
     'pt',
     'ptOptions',
     'unstyled',
-    'wrapperClass',
+
   ],
 })
 
@@ -454,7 +452,7 @@ export const primeTreeSelectDefinition: FormKitTypeDefinition = createInput(Prim
     'scrollHeight',
     'panelClass',
     'variant',
-    'wrapperClass',
+
   ],
 })
 

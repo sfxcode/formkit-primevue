@@ -3,7 +3,7 @@ import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { CheckboxProps } from 'primevue/checkbox'
-import { useFormKitInput } from '../composables'
+import { useFormKitInput, useFormKitSection } from '../composables'
 
 export interface FormKitPrimeCheckboxProps {
   binary?: CheckboxProps['binary']
@@ -14,9 +14,6 @@ export interface FormKitPrimeCheckboxProps {
   unstyled?: CheckboxProps['unstyled']
   indeterminate?: CheckboxProps['indeterminate']
   variant?: CheckboxProps['variant']
-  labelLeft?: string
-  labelRight?: string
-
 }
 
 const props = defineProps({
@@ -26,12 +23,16 @@ const props = defineProps({
   },
 })
 
+const { hasPrefix, hasSuffix } = useFormKitSection(props.context)
+
 const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
   <div class="p-formkit">
-    <span v-if="context.labelLeft" class="formkit-prime-left">{{ context.labelLeft }}</span>
+    <span v-if="hasPrefix" class="formkit-prefix">
+      {{ context?.prefix }}
+    </span>
     <Checkbox
       v-model="context._value"
       v-bind="context?.attrs"
@@ -54,6 +55,8 @@ const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
       @change="handleInput"
       @blur="handleBlur"
     />
-    <span v-if="context.labelRight" class="formkit-prime-right">{{ context.labelRight }}</span>
+    <span v-if="hasSuffix" class="formkit-suffix">
+      {{ context?.suffix }}
+    </span>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 const primeAttributes = 'binary (dfault = true), trueValue, falseValue'
-const customAttributes = 'labelLeft, labelRight'
+const customAttributes = 'prefix, suffix'
 
 const schema
   = [
@@ -13,12 +13,12 @@ const schema
     {
       $formkit: 'primeCheckbox',
       id: 'eu',
-      labelLeft: 'Are you a european citizen: ',
+      prefix: 'Are you a european citizen: ',
     },
     {
       $formkit: 'primeCheckbox',
       id: 'taxes',
-      labelRight: 'Taxes includes ',
+      suffix: 'Taxes includes ',
     },
     {
       $formkit: 'primeCheckbox',

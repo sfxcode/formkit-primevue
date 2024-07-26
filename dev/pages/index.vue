@@ -41,6 +41,7 @@ const schema = reactive(
       help: 'Enter your new password.',
       validation: 'required|length:5,16',
       feedback: true,
+      outerClass: 'col-6',
     },
     {
       $formkit: 'primePassword',
@@ -49,12 +50,14 @@ const schema = reactive(
       help: 'Enter your new password again.',
       validation: 'required|confirm',
       validationLabel: 'password confirmation',
+      outerClass: 'col-6',
     },
     {
       $formkit: 'primeCheckbox',
       name: 'eu_citizen',
       id: 'eu',
-      label: 'Are you a european citizen?',
+      prefix: 'Are you a european citizen?',
+      outerClass: 'col-6',
     },
     {
       $formkit: 'primeSelect',
@@ -65,6 +68,7 @@ const schema = reactive(
       optionValue: 'value',
       options,
       help: 'How often should we display a cookie notice?',
+      outerClass: 'col-6',
     },
   ],
 )
