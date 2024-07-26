@@ -1,3 +1,18 @@
+## v2.3.9
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.8...v2.3.9)
+
+### 💅 Refactors
+
+- **inputs:** Use prefix and suffix instead of labelLeft and labelRight ([206fbea](https://github.com/sfxcode/formkit-primevue/commit/206fbea))
+- **RadioButton:** Use flex styling for better aligning in default ([68c7950](https://github.com/sfxcode/formkit-primevue/commit/68c7950))
+- **Outputs:** Add prefix, prefixIcon, suffix, suffixIcon to definition ([3b1579a](https://github.com/sfxcode/formkit-primevue/commit/3b1579a))
+- **editor:** Use Columns ([433439d](https://github.com/sfxcode/formkit-primevue/commit/433439d))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.3.8
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.7...v2.3.8)
