@@ -1,141 +1,175 @@
+@use 'sass:math';
+
+$gutter-width: 0.5rem;
+
+// Breakpoints e.g. https://tailwindcss.com/docs/responsive-design
+$grid-breakpoints: (
+        sm: 640px,
+        md: 768px,
+        lg: 1024px,
+        xl: 1280px,
+        xxl: 1536px
+) !default;
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
 :root {
   --formkit-error-color: #ef9a9a;
 }
 
-.formkit-form > .formkit-messages {
-  margin: 4px 0;
+.formkit-form {
+  // General message item styling
+  .formkit-messages {
+    margin: 0.125rem 0;
+    padding-top: 0.25rem;
+    padding-left: 0;
+  }
+
   .formkit-message {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--formkit-error-color);
     font-size: 0.8rem;
   }
-}
 
-.formkit-outer {
-  margin: 0;
-  padding-bottom: 0.8rem;
+  // Single form element
+  .formkit-outer {
+    padding-bottom: 0.8rem;
 
-  .formkit-inner {.p-formkit {  .p-formkit-icon {
-        box-sizing: border-box;
-        width: 100%;
-      }  .p-inputtext, .p-textarea, .p-password, .p-multiselect, .p-select, .p-editor {
-        box-sizing: border-box;
-        width: 100%;
-        &.p-colorpicker-preview {
-          width: 2rem;
+    .formkit-inner {
+      .p-formkit {
+        .p-formkit-icon {
+          box-sizing: border-box;
+          width: 100%;
         }
-      }}
-  }
 
-  ul {
-    margin-block-start: 2px;
-    margin-block-end: 2px;
-  }
-  .formkit-messages {
-    padding: 4px 0 0 0;.formkit-message {
-      padding: 0;
-      margin: 0;
-      color: var(--formkit-error-color);
-      list-style: none;
+        .p-inputtext, .p-textarea, .p-password, .p-multiselect, .p-select, .p-editor {
+          box-sizing: border-box;
+          width: 100%;
+
+          &.p-colorpicker-preview {
+            width: 2rem;
+          }
+        }
+
+      }
+    }
+
+    .formkit-help {
+      margin: 0.25rem 0 0 0;
       font-size: 0.8rem;
+      color: var(--text-color-secondary);
+    }
+
+  }
+
+  // Label for single form element
+  .formkit-label {
+    display: block;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+
+  // Wrapper for input element plus prefix, suffix and icons
+  .p-formkit {
+    > * {
+      margin-right: 0.5rem;
+
+      &:last-child, &:only-child {
+        margin-right: 0;
+      }
     }
   }
-}
 
-.formkit-outer[data-type="primeToggleSwitch"], .formkit-outer[data-type="primeCheckbox"], .formkit-outer[data-type="primeTriStateCheckbox"], .formkit-outer[data-type="primeRadioButton"] {
-  .formkit-inner {.formkit-prime-right {
-      margin-left: 10px;
-      font-size: 1rem;
-    }.formkit-prime-left {
-      margin-right: 10px;
-      font-size: 1rem;
+  // Used in Prime RadioButton
+  .p-formkit-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .p-formkit-option  {
+      display: flex;
+      align-items: center;
+      label {
+        margin-left: 0.5rem;
+      }
     }
   }
-}
 
-.formkit-label {
-  display: block;
-  margin: 0;
-  padding-bottom: 0.5rem;
-  font-weight: bold;
-  font-size: 0.8rem;
-}
-
-.formkit-fieldset {
-  margin: 0;
-  padding: 0;
-  border-radius: 0;
-  border: 0;
-
-  &:focus-within {
+  // Do we need this?
+  .formkit-fieldset {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
     border: 0;
+
+    &:focus-within {
+      border: 0;
+    }
+
+    & > .formkit-help {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
   }
 
-  & > .formkit-help {
-    margin-top: 0;
-    margin-bottom: 0;
+  // Do we need this?
+  .formkit-legend {
+    display: block;
+    margin: 0;
+    padding: 0;
   }
-}
 
-.formkit-legend {
-  display: block;
-  margin: 0;
-  padding: 0;
-}
+  // Submit button etc.
+  .formkit-actions {
+    padding-top: 0.5rem;
+  }
 
-.formkit-help {
-  margin: 4px 0 0 0 ;
-  font-size: 0.8rem;
-  color: var(--text-color-secondary);
-}
-
-.formkit-messages {
-  padding: 0;
-}
-
-.formkit-message {
-  padding: 0;
-  margin: 0;
-  color: var(--formkit-error-color);
-  list-style: none;
-  font-size: 0.8rem;
-}
-
-.formkit-actions {
-  padding-top: 0.5rem;
-
-}
-
-.p-formkit-radio-label {
-  margin-left: 1rem;
-}
-
-.formkit-prefix-icon {
-  padding-right: 0.5rem;
-}
-
-.formkit-prefix {
-  padding-right: 0.5rem;
-}
-
-.formkit-suffix-icon {
-  padding-left: 0.5rem;
-}
-
-.formkit-suffix {
-  padding-left: 0.5rem;
-}
-
-
-
-.p-formkit-data-debug {
-  pre, span {
-    font-size: 0.75rem;line-height: 1rem;
+  // Debug
+  .p-formkit-data-debug {
+    pre, span {
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
   }
 }
 
-.p-formkit-data-view {
+// Change column behaviour in larger views
+@include media-breakpoint-up(lg) {
+  .formkit-form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gutter-width;
+    margin-right: -$gutter-width;
 
-}
-
-.p-formkit-data-edit {
-
+    & > * {
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 100%;
+      padding-left: $gutter-width;
+      padding-right: $gutter-width;
+    }
+  }
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      width: percentage(math.div($i, 12));
+    }
+  }
 }

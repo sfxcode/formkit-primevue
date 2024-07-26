@@ -10,9 +10,8 @@ export interface FormKitPrimeRadioButtonProps {
   ptOptions?: RadioButtonProps['ptOptions']
   unstyled?: RadioButtonProps['unstyled']
   options?: { label: string, value: any }[]
+  optionsClass?: string
   optionClass?: string
-  labelClass?: string
-
 }
 
 const props = defineProps({
@@ -26,8 +25,8 @@ const { styleClass, handleChange, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
-  <div class="p-formkit">
-    <div v-for="option in context.options" :key="option.value" :class="context.optionClass">
+  <div class="p-formkit p-formkit-options" :class="context.optionsClass">
+    <div v-for="option in context.options" :key="option.value" class="p-formkit-option" :class="context.optionClass">
       <RadioButton
         :id="context.id"
         v-model="context._value"
@@ -45,7 +44,7 @@ const { styleClass, handleChange, handleBlur } = useFormKitInput(props.context)
         @change="handleChange"
         @blur="handleBlur"
       />
-      <label :for="option.value" :class="context.labelClass" class="p-formkit-radio-label">{{ option.label }}</label>
+      <label :for="option.value" :class="context.labelClass">{{ option.label }}</label>
     </div>
   </div>
 </template>
