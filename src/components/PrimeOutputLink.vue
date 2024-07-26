@@ -1,10 +1,15 @@
 <script setup lang='ts'>
-import { computed } from 'vue'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
 import { useFormKitSection } from '../composables'
 
 const props = defineProps({
-  context: Object,
+  context: {
+    type: Object as PropType<FormKitFrameworkContext>,
+    required: true,
+  },
 })
+
 const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection(props.context)
 
 const url = computed(() => props.context?._value.indexOf('http') > -1 ? props.context?._value : `https://${props.context?._value}`)

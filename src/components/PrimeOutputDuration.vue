@@ -1,10 +1,14 @@
 <script setup lang='ts'>
+import type { PropType } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
 import { useFormKitSection, useOutputDuration } from '../composables'
 
 const props = defineProps({
-  context: Object,
+  context: {
+    type: Object as PropType<FormKitFrameworkContext>,
+    required: true,
+  },
 })
-
 const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection(props.context)
 
 const { formattedDuration } = useOutputDuration()

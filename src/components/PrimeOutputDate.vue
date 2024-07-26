@@ -1,10 +1,14 @@
 <script setup lang='ts'>
 import { useI18n } from 'vue-i18n'
-import { computed } from 'vue'
+import { type PropType, computed } from 'vue'
+import type { FormKitFrameworkContext } from '@formkit/core'
 import { useFormKitSection } from '../composables'
 
 const props = defineProps({
-  context: Object,
+  context: {
+    type: Object as PropType<FormKitFrameworkContext>,
+    required: true,
+  },
 })
 const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection(props.context)
 
