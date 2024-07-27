@@ -41,14 +41,14 @@ const schema
           name: 'damage',
           outerClass: 'col-2',
         },
-        addGroupButtons(),
+        addGroupButtons('', 'col-6', 'Actions'),
       ]),
     ], true, 'true'),
   ]
 </script>
 
 <template>
-  <div v-if="data" class="">
+  <div v-if="data" class="mt-1">
     <PrimeInput
       header="Repeater" :schema="schema" :data="data"
     />

@@ -39,8 +39,8 @@ export function useFormKitRepeater() {
     }
   }
 
-  function addGroupButtons(innerClass: string = 'mt-1', outerClass: string = 'col-4', label: string = 'Actions', help: string = '', render: string = 'true') {
-    const addButtonComponent = (onClick: string = '', label: string = '', icon: string = '', severity: string = '', render: string = 'true', styleClass: string = 'p-button-sm mr-2'): object => {
+  function addGroupButtons(innerClass: string = '', outerClass: string = 'col-6', label: string = 'Actions', help: string = '', render: string = 'true') {
+    const addButtonComponent = (onClick: string = '', label: string = '', icon: string = '', severity: string = '', render: string = 'true', styleClass: string = 'p-button-sm'): object => {
       return addComponent('Button', { onClick, label, icon, class: styleClass, severity }, render)
     }
 
@@ -48,10 +48,10 @@ export function useFormKitRepeater() {
       addButtonComponent('$removeNode($node, $index)', '', 'pi pi-times', 'danger'),
       addButtonComponent('$copyNode($node, $index)', '', 'pi pi-plus'),
       addButtonComponent('$moveNodeUp($node, $index)', '', 'pi pi-arrow-up', 'secondary', '$index != 0'),
-      addElement('span', [], { class: 'mr-12' }, '$index == 0'),
+      addElement('span', [], { class: 'p-space' }, '$index == 0'),
       addButtonComponent('$moveNodeDown($node, $index)', '', 'pi pi-arrow-down', 'secondary', '$index < $node.value.length -1'),
-      addElement('span', [], { class: 'mr-12' }, '$index == $node.value.length -1'),
-    ], innerClass, outerClass, label, help, render)
+      addElement('span', [], { class: 'p-space' }, '$index == $node.value.length -1'),
+    ], `p-action-buttons ${innerClass}`, outerClass, label, help, render)
   }
 
   return { addInsertButton, addGroupButtons, addListGroupFunctions }

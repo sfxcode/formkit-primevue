@@ -149,6 +149,16 @@ $grid-breakpoints: (
       line-height: 1rem;
     }
   }
+
+  .p-action-buttons  {
+    margin-top: 0.25rem;
+    .p-button {
+      margin-right: 0.5rem;
+    }
+    span.p-space {
+      margin-right: 3rem;
+    }
+  }
 }
 
 // Change column behaviour in larger views
