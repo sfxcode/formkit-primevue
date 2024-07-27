@@ -1,3 +1,19 @@
+## v2.3.10
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.9...v2.3.10)
+
+### 🩹 Fixes
+
+- **samples:** Some minor fixes ([953d78d](https://github.com/sfxcode/formkit-primevue/commit/953d78d))
+
+### 💅 Refactors
+
+- **repeater:** Style by class ([d166f6d](https://github.com/sfxcode/formkit-primevue/commit/d166f6d))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.3.9
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.8...v2.3.9)
