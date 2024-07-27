@@ -2,11 +2,12 @@
 import { useDragAndDrop } from '@formkit/drag-and-drop/vue'
 import { FormKitSchema } from '@formkit/vue'
 import { ref } from 'vue'
-import { useInputEditor, useInputEditorSchema } from 'my-library'
+import { useFormKitRepeater, useInputEditor, useInputEditorSchema } from 'my-library'
 import { blueprint, formkitPreset } from '../../utils/presets'
 
 const { editorSchema } = useInputEditorSchema()
 const { generateSchemaItemId, schemaToEditorData, editorDataToSchema } = useInputEditor()
+const { addListGroupFunctions } = useFormKitRepeater()
 
 const formSchema = ref(editorSchema)
 const formData = ref(null)
@@ -26,7 +27,9 @@ function actionDelete(schema: any) {
 }
 
 function actionEdit(schema: any) {
-  formData.value = schemaToEditorData({ ...schema })
+  const data = schemaToEditorData({ ...schema })
+  addListGroupFunctions(data)
+  formData.value = data
 }
 
 function actionInsert(schema: any) {
@@ -66,7 +69,7 @@ const schemaResult = computed(() => editorDataToSchema(formData.value))
     <div class="grid grid-cols-2 xl:grid-cols-3 gap-10">
       <div>
         <ul ref="formInputRef" class="list-none">
-          <li v-for="formInput in formInputList" :key="formInput" class="mb-1">
+          <li v-for="formInput in formInputList" :key="formInput" class="mt-4">
             <div class="" style="box-sizing: border-box;">
               <div class="min-w-100 mr-4 flex gap-2">
                 <span class="block  p-drag-handle"><i class="pi pi-bars text-[color:var(--primary-color)]" /></span>

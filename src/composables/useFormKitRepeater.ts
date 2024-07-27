@@ -39,7 +39,7 @@ export function useFormKitRepeater() {
     }
   }
 
-  function addGroupButtons(innerClass: string = '', outerClass: string = 'col-6', label: string = 'Actions', help: string = '', render: string = 'true') {
+  function addGroupButtons(innerClass: string = '', outerClass: string = 'col-4', label: string = 'Actions', help: string = '', render: string = 'true') {
     const addButtonComponent = (onClick: string = '', label: string = '', icon: string = '', severity: string = '', render: string = 'true', styleClass: string = 'p-button-sm'): object => {
       return addComponent('Button', { onClick, label, icon, class: styleClass, severity }, render)
     }

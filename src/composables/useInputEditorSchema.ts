@@ -315,7 +315,7 @@ export function useInputEditorSchema() {
           [
             {
               $formkit: 'primeInputText',
-              label: 'PrimeVue Property',
+              label: 'PrimeVue Key',
               name: 'prime_key',
               outerClass: 'col-3',
             },

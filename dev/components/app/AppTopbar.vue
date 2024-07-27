@@ -100,7 +100,7 @@ const items = ref([
             { label: 'Basic', icon: 'pi pi-fw pi-user-edit', route: '/styling/base' },
             { label: 'Pass Through', icon: 'pi pi-fw pi-user-edit', route: '/styling/passThrough' },
             { label: 'FormKit Class', icon: 'pi pi-fw pi-user-edit', route: '/styling/class' },
-            { label: 'Grid based Form', icon: 'pi pi-fw pi-user-edit', route: '/styling/grid' },
+            { label: 'Grid', icon: 'pi pi-fw pi-user-edit', route: '/styling/grid' },
           ],
         },
       ],
@@ -108,10 +108,9 @@ const items = ref([
         {
           label: 'Samples',
           items: [
+            { label: 'Repeater', icon: 'pi pi-fw pi-user-edit', route: '/samples/repeater' },
             { label: 'Input Editor', icon: 'pi pi-fw pi-user-edit', route: '/samples/inputEditor' },
             { label: 'Form Editor', icon: 'pi pi-fw pi-user-edit', route: '/samples/formEditor' },
-            { label: 'Grid', icon: 'pi pi-fw pi-user-edit', route: '/samples/grid' },
-            { label: 'Repeater', icon: 'pi pi-fw pi-user-edit', route: '/samples/repeater' },
           ],
         },
       ],
