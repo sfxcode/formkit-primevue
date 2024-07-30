@@ -93,13 +93,14 @@
     "@formkit/vue": "^1.6.5",
     "primeicons": "^7.0.0",
     "primevue": "4.0.2",
+    "uuid": "^10.0.0",
     "vue-i18n": "9.13.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "2.23.2",
     "@formkit/core": "^1.6.5",
     "@primevue/themes": "4.0.2",
-    "@types/node": "^20.14.12",
+    "@types/node": "^20.14.13",
     "@unocss/preset-icons": "0.61.6",
     "@unocss/preset-uno": "0.61.6",
     "@vitejs/plugin-vue": "^5.1.1",
