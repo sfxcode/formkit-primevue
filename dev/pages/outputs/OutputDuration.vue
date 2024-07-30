@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 const primeAttributes = ''
-const customAttributes = 'prefixIcon, prefix, suffix, suffixIcon'
+const customAttributes = 'iconPrefix, prefix, suffix, iconSuffix'
 
 const schema
   = [

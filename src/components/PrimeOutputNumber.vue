@@ -42,7 +42,7 @@ const converted = computed(() => {
 
 <template>
   <div class="p-formkit p-output-number">
-    <i v-if="hasPrefixIcon" class="formkit-prefix-icon" :class="context?.prefixIcon" />
+    <i v-if="hasPrefixIcon" class="formkit-prefix-icon" :class="context?.iconPrefix" />
     <span v-if="hasPrefix" class="formkit-prefix">
       {{ context?.attrs?.prefix }}
     </span>
@@ -52,6 +52,6 @@ const converted = computed(() => {
     <span v-if="hasSuffix" class="formkit-suffix">
       {{ context?.attrs?.suffix }}
     </span>
-    <i v-if="hasSuffixIcon" class="formkit-suffix-icon" :class="context?.suffixIcon" />
+    <i v-if="hasSuffixIcon" class="formkit-suffix-icon" :class="context?.iconSuffix" />
   </div>
 </template>

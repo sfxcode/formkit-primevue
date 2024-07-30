@@ -3,7 +3,9 @@ import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
 
 import type { InputMaskProps } from 'primevue/inputmask'
-import { useFormKitInput } from '../composables'
+import InputIcon from 'primevue/inputicon'
+import IconField from 'primevue/iconfield'
+import { useFormKitInput, useFormKitSection } from '../composables'
 
 export interface FormKitPrimeInputMaskProps {
   mask?: InputMaskProps['mask']
@@ -15,9 +17,6 @@ export interface FormKitPrimeInputMaskProps {
   unstyled?: InputMaskProps['unstyled']
   invalid?: InputMaskProps['invalid']
   variant?: InputMaskProps['variant']
-  iconLeft?: string
-  iconRight?: string
-
 }
 
 const props = defineProps({
@@ -27,35 +26,15 @@ const props = defineProps({
   },
 })
 
-const { styleClass } = useFormKitInput(props.context)
-
-function handleInput(e: FocusEvent) {
-  props.context?.node.input(props.context?._value)
-  props.context?.handlers.blur(e)
-}
-
-function hasLeftIcon() {
-  return props.context?.iconLeft && props.context?.iconLeft.length > 0
-}
-
-function hasRightIcon() {
-  return props.context?.iconRight && props.context?.iconRight.length > 0
-}
-
-function spanClass() {
-  let result = ''
-  if (hasLeftIcon())
-    result = `${result}p-input-icon-left `
-  if (hasRightIcon())
-    result = `${result}p-input-icon-right `
-  return result
-}
+const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
+const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
 </script>
 
 <template>
   <div class="p-formkit">
-    <span :class="spanClass()">
-      <i v-if="hasLeftIcon()" :class="context.iconLeft" />  <InputMask
+    <IconField>
+      <InputIcon v-if="hasPrefixIcon" :class="context?.iconPrefix" />
+      <InputMask
         :id="context.id"
         v-model="context._value"
         v-bind="context?.attrs"
@@ -74,8 +53,10 @@ function spanClass() {
         :variant="context.variant"
         :pt-options="context.ptOptions"
         :unstyled="context.unstyled ?? false"
-        @blur="handleInput"
-      />  <i v-if="hasRightIcon" :class="context.iconRight" />
-    </span>
+        @input="handleInput"
+        @blur="handleBlur"
+      />
+      <InputIcon v-if="hasSuffixIcon" :class="context?.iconSuffix" />
+    </IconField>
   </div>
 </template>

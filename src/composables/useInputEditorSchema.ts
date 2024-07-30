@@ -183,7 +183,7 @@ export function useInputEditorSchema() {
       {
         $formkit: 'primeInputText',
         if: '$get(selectButton).value === \'showDisplay\'',
-        name: 'prefixIcon',
+        name: 'iconPrefix',
         label: 'Prefix Icon',
         key: 'schema_prefix_icon',
         outerClass: 'col-6',
@@ -210,7 +210,7 @@ export function useInputEditorSchema() {
       {
         $formkit: 'primeInputText',
         if: '$get(selectButton).value === \'showDisplay\'',
-        name: 'suffixIcon',
+        name: 'iconSuffix',
         label: 'Suffix Icon',
         key: 'schema_suffix_icon',
         outerClass: 'col-6',

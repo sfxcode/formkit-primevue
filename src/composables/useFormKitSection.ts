@@ -7,11 +7,11 @@ export function useFormKitSection(context: any) {
   })
 
   const hasPrefixIcon = computed(() => {
-    return context?.prefixIcon && context?.prefixIcon.length > 0
+    return context?.iconPrefix && context?.iconPrefix.length > 0
   })
 
   const hasSuffixIcon = computed(() => {
-    return context?.suffixIcon && context?.suffixIcon.length > 0
+    return context?.iconSuffix && context?.iconSuffix.length > 0
   })
 
   const hasSuffix = computed(() => {

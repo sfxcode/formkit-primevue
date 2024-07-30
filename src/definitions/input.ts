@@ -42,8 +42,8 @@ export const primeInputTextDefinition: FormKitTypeDefinition = createInput(Prime
     'ptOptions',
     'unstyled',
     'placeholder',
-    'icon',
-
+    'iconPrefix',
+    'iconSuffix',
   ],
 })
 
@@ -81,8 +81,8 @@ export const primeInputMaskDefinition: FormKitTypeDefinition = createInput(Prime
     'unstyled',
     'invalid',
     'variant',
-    'iconLeft',
-    'iconRight',
+    'iconPrefix',
+    'iconSuffix',
 
   ],
 })

@@ -12,8 +12,6 @@ export interface FormKitPrimeInputTextProps {
   ptOptions?: InputTextProps['ptOptions']
   unstyled?: InputTextProps['unstyled']
   placeholder?: InputTextProps['placeholder']
-  icon?: string
-
 }
 
 const props = defineProps({
@@ -30,7 +28,7 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
 <template>
   <div class="p-formkit">
     <IconField>
-      <InputIcon v-if="hasPrefixIcon" :class="context?.prefixIcon" />
+      <InputIcon v-if="hasPrefixIcon" :class="context?.iconPrefix" />
       <InputText
         :id="context.id"
         v-model="context._value"
@@ -49,7 +47,7 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
         @input="handleInput"
         @blur="handleBlur"
       />
-      <InputIcon v-if="hasSuffixIcon" :class="context?.suffixIcon" />
+      <InputIcon v-if="hasSuffixIcon" :class="context?.iconSuffix" />
     </IconField>
   </div>
 </template>

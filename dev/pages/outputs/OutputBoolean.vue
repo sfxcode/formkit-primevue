@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 const primeAttributes = ''
-const customAttributes = 'prefixIcon, prefix, suffix, suffixIcon'
+const customAttributes = 'iconPrefix, prefix, suffix, iconSuffix'
 
 const schema
   = [
@@ -9,7 +9,7 @@ const schema
       name: 'trueValue',
       label: 'True Example',
       prefix: 'MyValue',
-      prefixIcon: 'pi pi-check',
+      iconPrefix: 'pi pi-check',
 
     },
     {
@@ -17,16 +17,16 @@ const schema
       name: 'falseValue',
       label: 'False',
       suffix: 'MyValue',
-      suffixIcon: 'pi pi-check',
+      iconSuffix: 'pi pi-check',
     },
     {
       $formkit: 'primeOutputBoolean',
       name: 'falseValue',
       label: 'False',
       prefix: 'prefix',
-      prefixIcon: 'pi pi-check',
+      iconPrefix: 'pi pi-check',
       suffix: 'suffix',
-      suffixIcon: 'pi pi-times',
+      iconSuffix: 'pi pi-times',
     },
 
   ]

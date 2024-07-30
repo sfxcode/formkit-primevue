@@ -17,7 +17,7 @@ const url = computed(() => props.context?._value.indexOf('http') > -1 ? props.co
 
 <template>
   <div class="p-formkit p-output-link">
-    <i v-if="hasPrefixIcon" class="formkit-prefix-icon" :class="context?.prefixIcon" />
+    <i v-if="hasPrefixIcon" class="formkit-prefix-icon" :class="context?.iconPrefix" />
     <span v-if="hasPrefix" class="formkit-prefix">
       {{ context?.attrs?.prefix }}
     </span>
@@ -33,6 +33,6 @@ const url = computed(() => props.context?._value.indexOf('http') > -1 ? props.co
     <span v-if="hasSuffix" class="formkit-suffix">
       {{ context?.attrs?.suffix }}
     </span>
-    <i v-if="hasSuffixIcon" class="formkit-suffix-icon" :class="context?.suffixIcon" />
+    <i v-if="hasSuffixIcon" class="formkit-suffix-icon" :class="context?.iconSuffix" />
   </div>
 </template>

@@ -9,29 +9,29 @@ import PrimeOutputDuration from '../components/PrimeOutputDuration.vue'
 import PrimeOutputList from '../components/PrimeOutputList.vue'
 
 export const primeOutputTextDefinition: FormKitTypeDefinition = createInput(PrimeOutputText, {
-  props: ['prefix', 'suffix', 'prefixIcon', 'suffixIcon'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
 })
 
 export const primeOutputDateDefinition: FormKitTypeDefinition = createInput(PrimeOutputDate, {
-  props: ['prefix', 'suffix', 'prefixIcon', 'suffixIcon'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
 })
 
 export const primeOutputNumberDefinition: FormKitTypeDefinition = createInput(PrimeOutputNumber, {
-  props: ['prefix', 'suffix', 'prefixIcon', 'suffixIcon'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
 })
 
 export const primeOutputLinkDefinition: FormKitTypeDefinition = createInput(PrimeOutputLink, {
-  props: ['prefix', 'suffix', 'prefixIcon', 'suffixIcon'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
 })
 
 export const primeOutputBooleanDefinition: FormKitTypeDefinition = createInput(PrimeOutputBoolean, {
-  props: ['prefix', 'suffix', 'prefixIcon', 'suffixIcon'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
 })
 
 export const primeOutputDurationDefinition: FormKitTypeDefinition = createInput(PrimeOutputDuration, {
-  props: ['prefix', 'suffix', 'prefixIcon', 'suffixIcon'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
 })
 
 export const primeOutputListDefinition: FormKitTypeDefinition = createInput(PrimeOutputList, {
-  props: ['prefix', 'suffix', 'prefixIcon', 'suffixIcon'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
 })

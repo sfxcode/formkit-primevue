@@ -16,7 +16,8 @@ const schema
       name: 'custom',
       label: 'Input Mask',
       mask: '(999) 999-9999',
-      unmask: true,
+      iconPrefix: 'pi pi-check',
+      iconSuffix: 'pi pi-check',
     },
     {
       $formkit: 'primeInputMask',
