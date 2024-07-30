@@ -5,10 +5,6 @@ export function useInputEditor() {
 
   const primeOutputNames = ['OutputBoolean', 'OutputDate', 'OutputDuration', 'OutputLink', 'OutputList', 'OutputNumber', 'OutputText']
 
-  function generateSchemaItemId(): string {
-    return `id-${Math.random().toString(36).substring(2, 15)}`
-  }
-
   function editorDataToSchema(data: any): any {
     if (!data)
       return {}
@@ -35,9 +31,9 @@ export function useInputEditor() {
 
     let outerClass: string | undefined = ''
     if (data.outerClassGrid && data.outerClassGrid !== 'col-12')
-      outerClass = `${outerClass} ${data.outerClassGrid}`
+      outerClass = data.outerClassGrid
     if (data.outerClass)
-      outerClass = outerClass + data.outerClass
+      outerClass = `${outerClass} ${data.outerClass}`
 
     if (outerClass.trim().length === 0)
       outerClass = undefined
@@ -95,5 +91,5 @@ export function useInputEditor() {
     return { ...schema, _dollar_formkit: formkitInput }
   }
 
-  return { primeInputNames, primeOutputNames, generateSchemaItemId, editorDataToSchema, editorDataToJson, editorDataToCode: editorDataToObject, schemaToEditorData }
+  return { primeInputNames, primeOutputNames, editorDataToSchema, editorDataToJson, editorDataToCode: editorDataToObject, schemaToEditorData }
 }
