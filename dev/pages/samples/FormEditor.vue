@@ -4,10 +4,12 @@ import { FormKitSchema } from '@formkit/vue'
 import { ref } from 'vue'
 import { useFormKitRepeater, useInputEditor, useInputEditorSchema } from 'my-library'
 import { blueprint, formkitPreset } from '../../utils/presets'
+import { useFormKitSection } from '../../../src/composables'
 
 const { editorSchema } = useInputEditorSchema()
-const { generateSchemaItemId, schemaToEditorData, editorDataToSchema } = useInputEditor()
+const { schemaToEditorData, editorDataToSchema } = useInputEditor()
 const { addListGroupFunctions } = useFormKitRepeater()
+const { generateId } = useFormKitSection()
 
 const formSchema = ref(editorSchema)
 const formData = ref(null)
@@ -15,7 +17,7 @@ const formData = ref(null)
 function enhanceValuesForInputList(values: any[]): any[] {
   const result = []
   values.forEach((value) => {
-    result.push({ ...value, editableItemId: generateSchemaItemId(), selectButton: 'showBasic' })
+    result.push({ ...value, editableItemId: generateId(), selectButton: 'showBasic' })
   })
   return result
 }
@@ -34,13 +36,13 @@ function actionEdit(schema: any) {
 
 function actionInsert(schema: any) {
   const index = formInputList.value.indexOf(schema) + 1
-  const schemaToInsert = { ...blueprint, editableItemId: generateSchemaItemId(), selectButton: 'showBasic' }
+  const schemaToInsert = { ...blueprint, editableItemId: generateId(), selectButton: 'showBasic' }
   formInputList.value.splice(index, 0, schemaToInsert)
 }
 
 function actionCopy(schema: any) {
   const index = formInputList.value.indexOf(schema) + 1
-  const copyOfSchema = { ...schema, editableItemId: generateSchemaItemId() }
+  const copyOfSchema = { ...schema, editableItemId: generateId() }
   formInputList.value.splice(index, 0, copyOfSchema)
 }
 
