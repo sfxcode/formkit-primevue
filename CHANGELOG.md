@@ -1,3 +1,27 @@
+## v2.3.11
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.10...v2.3.11)
+
+### 🩹 Fixes
+
+- **style:** Move p-formkit-data-debug to upper level ([2f1d09d](https://github.com/sfxcode/formkit-primevue/commit/2f1d09d))
+
+### 💅 Refactors
+
+- **uuid:** Use uuid 4 from uuid packacke ([03c60f2](https://github.com/sfxcode/formkit-primevue/commit/03c60f2))
+- **uuid:** Use uuid 4 from uuid package ([805cf3c](https://github.com/sfxcode/formkit-primevue/commit/805cf3c))
+- **uuid:** Use uuid 4 from uuid package ([75d7655](https://github.com/sfxcode/formkit-primevue/commit/75d7655))
+- Use only p-formkit-data-debug for styling ([24f6df3](https://github.com/sfxcode/formkit-primevue/commit/24f6df3))
+- **checkbox:** Use Label class for suffix and prefix ([22415f6](https://github.com/sfxcode/formkit-primevue/commit/22415f6))
+
+### 🏡 Chore
+
+- **dependencies:** Add UUID ([d19eaa6](https://github.com/sfxcode/formkit-primevue/commit/d19eaa6))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.3.10
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.9...v2.3.10)
