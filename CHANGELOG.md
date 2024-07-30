@@ -1,3 +1,15 @@
+## v2.4.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.11...v2.4.0)
+
+### 💅 Refactors
+
+- **icons:** Breaking change name of leftIcon property to iconPrefix and right icon property to iconSuffix to prevent conflicts with formkits icon resolver #49 ([#49](https://github.com/sfxcode/formkit-primevue/issues/49))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.3.11
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.10...v2.3.11)
