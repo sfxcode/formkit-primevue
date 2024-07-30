@@ -1,4 +1,5 @@
 import { computed } from 'vue'
+import { v4 as uuidv4 } from 'uuid'
 
 export function useFormKitSection(context: any) {
   const hasPrefix = computed(() => {
@@ -17,5 +18,9 @@ export function useFormKitSection(context: any) {
     return context?.suffix && context?.suffix.length > 0
   })
 
-  return { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon }
+  function generateId() {
+    return uuidv4()
+  }
+
+  return { generateId, hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon }
 }
