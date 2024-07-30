@@ -1,3 +1,23 @@
+## v2.4.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.0...v2.4.1)
+
+### 🩹 Fixes
+
+- **imports:** Add missing imports for FormKitDataEdit and FormKitDataView ([41e9068](https://github.com/sfxcode/formkit-primevue/commit/41e9068))
+
+### 📖 Documentation
+
+- **vitepress:** Update files and add new content ([ed228ff](https://github.com/sfxcode/formkit-primevue/commit/ed228ff))
+
+### 🏡 Chore
+
+- Switch release to patch ([0f22987](https://github.com/sfxcode/formkit-primevue/commit/0f22987))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.3.11...v2.4.0)
