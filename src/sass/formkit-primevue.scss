@@ -142,14 +142,6 @@ $grid-breakpoints: (
     padding-top: 0.5rem;
   }
 
-  // Debug
-  .p-formkit-data-debug {
-    pre, span {
-      font-size: 0.75rem;
-      line-height: 1rem;
-    }
-  }
-
   .p-action-buttons  {
     margin-top: 0.25rem;
     .p-button {
@@ -158,6 +150,14 @@ $grid-breakpoints: (
     span.p-space {
       margin-right: 3rem;
     }
+  }
+}
+
+// Debug
+.p-formkit-data-debug {
+  pre, span {
+    font-size: 0.75rem;
+    line-height: 1rem;
   }
 }
 
