@@ -23,20 +23,22 @@ const props = defineProps({
   },
 })
 
-const { hasPrefix, hasSuffix } = useFormKitSection(props.context)
+const { hasPrefix, hasSuffix, generateId } = useFormKitSection(props.context)
 
 const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
+
+const generatedId = generateId()
 </script>
 
 <template>
   <div class="p-formkit">
-    <span v-if="hasPrefix" class="formkit-prefix">
+    <label v-if="hasPrefix" :for="generatedId" class="formkit-prefix">
       {{ context?.prefix }}
-    </span>
+    </label>
     <Checkbox
       v-model="context._value"
       v-bind="context?.attrs"
-      :input-id="context.id"
+      :input-id="generatedId"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"
       :input-style="context?.attrs.style"
@@ -55,8 +57,8 @@ const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
       @change="handleInput"
       @blur="handleBlur"
     />
-    <span v-if="hasSuffix" class="formkit-suffix">
+    <label v-if="hasSuffix" :for="generatedId" class="formkit-suffix">
       {{ context?.suffix }}
-    </span>
+    </label>
   </div>
 </template>

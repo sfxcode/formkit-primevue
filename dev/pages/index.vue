@@ -57,7 +57,6 @@ const schema = reactive(
       name: 'eu_citizen',
       id: 'eu',
       prefix: 'Are you a european citizen?',
-      outerClass: 'col-6',
     },
     {
       $formkit: 'primeSelect',
@@ -68,7 +67,6 @@ const schema = reactive(
       optionValue: 'value',
       options,
       help: 'How often should we display a cookie notice?',
-      outerClass: 'col-6',
     },
   ],
 )
