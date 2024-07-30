@@ -88,11 +88,15 @@ function sidebarGuide() {
       collapsible: true,
       items: [
         { text: 'Usage', link: '/guide/usage' },
-        { text: 'PrimeVue Inputs', link: '/guide/inputs' },
+        { text: 'Input Components', link: '/guide/inputs' },
+        { text: 'Output Components', link: '/guide/outputs' },
+        { text: 'Data Components', link: '/guide/data' },
         { text: 'Options', link: '/guide/options' },
         { text: 'Composables', link: '/guide/composables' },
         { text: 'Styling', link: '/guide/styling' },
+        { text: 'Prefix/Suffix', link: '/guide/prefix' },
         { text: 'Sample Apps', link: '/guide/examples' },
+        { text: 'History', link: '/guide/history' },
       ],
     },
   ]

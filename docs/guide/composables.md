@@ -47,12 +47,23 @@ const formData = ref([
 ])
 ```
 
-### Repeater
+## useFormkitRepeater
 
 To simplify the build of a repeater you can use:
 
-- addList
-- addListGroup
+- addInsertButton
+- addGroupButtons
 - addListGroupFunctions
+
+```vue
+
+<script setup lang='ts'>
+import { useFormKitRepeater } from '@sfxcode/formkit-primevue/comosables'
+
+const { addInsertButton, addGroupButtons, addListGroupFunctions } = useFormKitRepeater()
+
+</script>
+
+```
 
 A working example can be found in the [repeater demo](https://github.com/sfxcode/formkit-primevue/blob/main/dev/pages/samples/Repeater.vue).

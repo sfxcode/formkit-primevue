@@ -1,4 +1,4 @@
-# PrimeVue Inputs
+# Input Components
 
 formkit-primevue tries to integrate as much PrimeVue inputs as possible.
 
@@ -15,4 +15,4 @@ E.g. InputMask -> primeInputMask
 
 ## Supported Inputs
 
-<DisplayComponents />
+<DisplayComponents :full="true" />

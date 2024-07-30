@@ -39,7 +39,7 @@ async function submitHandler() {
     <slot />
     <div class="flex flex-wrap gap-8">
       <div class="min-w-30rem basis-1/3 xl:basis-1/4">
-        <FormKitDataEdit :form-class="formClass" :schema="formSchema" :data="formData" :debug-schema="false" :debug-data="true" form-class="data-edit" @data-saved="submitHandler" />
+        <FormKitDataEdit :form-class="formClass" :schema="formSchema" :data="formData" :debug-schema="false" :debug-data="true" @data-saved="submitHandler" />
       </div>
       <div class="">
         <Tabs>

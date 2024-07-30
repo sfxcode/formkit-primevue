@@ -4,11 +4,7 @@ In some inputs options are needed. There are several ways to deal with the optio
 
 ## Option based Inputs
 
-- Listbox
-- MultiSelect
-- RadioButton
-- Select
-- SelectButton
+<DisplayComponents :full="false" />
 
 ## Ways of Usage
 
