@@ -17,9 +17,9 @@ const { t } = useI18n()
 
 const translated = computed(() => {
   if (props.context?._value)
-    return t('formkit.prime.true', 'true')
+    return props.context?.trueValue ?? t('formkit.prime.true', 'true')
   else
-    return t('formkit.prime.false', 'false')
+    return props.context?.falseValue ?? t('formkit.prime.false', 'false')
 })
 </script>
 
