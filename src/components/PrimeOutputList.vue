@@ -11,14 +11,6 @@ const props = defineProps({
 })
 
 const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection(props.context)
-
-function listValue(index: number, value: string): string {
-  const divider = props.context?.attrs?.divider || ', '
-  if (index === 0)
-    return value
-  else
-    return `${divider}${value}`
-}
 </script>
 
 <template>
@@ -27,9 +19,10 @@ function listValue(index: number, value: string): string {
     <span v-if="hasPrefix" class="formkit-prefix">
       {{ context?.attrs?.prefix }}
     </span>
-    <span :id="context?.id" :style="context?.attrs?.style" :class="context?.attrs?.class">
+    <span :id="context?.id" :style="context?.attrs?.style" class="p-output-list-items" :class="context?.attrs?.class">
       <template v-for="(value, index) of context?._value" :key="index">
-        <span class="p-output-list-item">{{ listValue(index, value) }}</span>
+        <span v-if="index !== 0" class="p-output-list-divider" :class="context?.dividerClass">{{ context?.divider ?? ', ' }}</span>
+        <span class="p-output-list-item" :class="context?.itemClass">{{ value }}</span>
       </template>
     </span>
     <span v-if="hasSuffix" class="formkit-suffix">

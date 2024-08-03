@@ -7,13 +7,27 @@ const schema
     {
       $formkit: 'primeOutputList',
       name: 'list1',
-      label: 'list1',
+      label: 'Default Divider',
+    },
+    {
+      $formkit: 'primeOutputList',
+      name: 'list1',
+      label: 'Custom Divider',
+      divider: ' ',
     },
     {
       $formkit: 'primeOutputList',
       name: 'list2',
+      label: 'Custom Divider with Prefix Icon',
+      iconPrefix: 'pi pi-list',
       divider: ' - ',
-      label: 'list2',
+    },
+    {
+      $formkit: 'primeOutputList',
+      name: 'list2',
+      label: 'Use Chips from PrimeVue',
+      itemClass: 'p-chip',
+      divider: ' ',
     },
 
   ]
@@ -24,7 +38,7 @@ const data = { list1: ['Hello', 'World'], list2: ['FormKit', 'meets', 'PrimeVue'
 <template>
   <div class="">
     <PrimeOutput
-      header="PrimeOutputBoolean" :schema="schema" :data="data"
+      header="PrimeOutputList" :schema="schema" :data="data"
       :prime-attributes="primeAttributes" :custom-attributes="customAttributes"
     />
   </div>
