@@ -7,28 +7,47 @@ const schema
     {
       $formkit: 'primeOutputBoolean',
       name: 'trueValue',
-      label: 'True Example',
-      prefix: 'MyValue',
-      iconPrefix: 'pi pi-check',
-
+      label: 'Default',
+    },
+    {
+      $formkit: 'primeOutputBoolean',
+      name: 'trueValue',
+      prefix: 'Boolean Value:',
     },
     {
       $formkit: 'primeOutputBoolean',
       name: 'falseValue',
-      label: 'False',
-      suffix: 'MyValue',
+      label: 'False Example',
+    },
+
+    {
+      $formkit: 'primeOutputBoolean',
+      name: 'trueValue',
+      label: 'True with custom Text',
+      trueValue: 'Sure',
+    },
+    {
+      $formkit: 'primeOutputBoolean',
+      name: 'falseValue',
+      label: 'False with custom Text',
+      falseValue: 'Never',
+    },
+    {
+      $formkit: 'primeOutputBoolean',
+      name: 'trueValue',
+      label: 'Conditional true - only Icon',
+      if: '$trueValue',
+      trueValue: '',
       iconSuffix: 'pi pi-check',
     },
     {
       $formkit: 'primeOutputBoolean',
       name: 'falseValue',
-      label: 'False',
-      prefix: 'prefix',
-      iconPrefix: 'pi pi-check',
-      suffix: 'suffix',
-      iconSuffix: 'pi pi-times',
+      label: 'Conditional false - only Icon',
+      if: '!$falseValue',
+      falseValue: '',
+      iconSuffix: 'pi pi-minus',
     },
-
   ]
 
 const data = { trueValue: true, falseValue: false }
