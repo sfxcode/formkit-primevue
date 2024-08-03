@@ -125,7 +125,7 @@
     "sass": "^1.77.8",
     "tslib": "^2.6.3",
     "typescript": "^5.5.4",
-    "unbuild": "2.0.0",
+    "unbuild": "3.0.0-rc.7",
     "unocss": "0.61.9",
     "unplugin-auto-import": "^0.18.2",
     "unplugin-vue-components": "^0.27.3",
