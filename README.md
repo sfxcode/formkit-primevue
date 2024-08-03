@@ -1,14 +1,16 @@
 # Formkit - Primevue
 
-PrimeVue based formkit inputs for using [FormKit](https://formkit.com/) with the [PrimeVue UI Framework](https://www.primefaces.org/primevue/#/).
+PrimeVue based [FormKit Inputs](https://sfxcode.github.io/formkit-primevue/guide/inputs.html) for using [FormKit](https://formkit.com/) with the [PrimeVue UI Framework](https://www.primefaces.org/primevue/#/).
 
 Main focus of this project is to provide configuration based forms with validation.
 
+In addition, you can use the same pattern for **data output** from **schema** using [PrimeOutputs](https://sfxcode.github.io/formkit-primevue/guide/outputs.html).
+
 ## PrimeVue Versions
 
-Actual PrimeVue Version in the main branch is *4.x.*
+Actual PrimeVue Version of the main branch is *4.x.*
 
-PrimeVue 3 is in the prime3 branch.
+PrimeVue 3 is in the prime3 branch, but future development will only focus on PrimeVue 4
 
 ## Docs
 
@@ -30,13 +32,29 @@ app.use(plugin, defaultConfig({
   locales: { de, en },
   // Define the active locale
   locale: 'en',
-  inputs: primeInputs,
+  inputs: primeInputs, 
 }))
 ```
 
+or if using also the output part
+
+```typescript
+import { defaultConfig, plugin } from '@formkit/vue'
+import { primeInputs, primeOutputs } from '@sfxcode/formkit-primevue'
+
+app.use(plugin, defaultConfig({
+  locales: { de, en },
+  // Define the active locale
+  locale: 'en',
+    inputs: { ...primeInputs, ...primeOutputs },
+}))
+```
+
+Important: output elements depends on vue-i18n to style numbers, dates, ...
+
 ### Nuxt
 
-Important: use *autoimport: false* if using primevue formkit validation and include or
+Important: use *autoimport: false* if using PrimeVue-FormKit validation and include or
 exclude not needed components as usual.
 
 Autoimport true prevents elements lookup correctly.
@@ -72,7 +90,7 @@ Prefixing of the PrimeVue component names is not supported.
 
 ### Basic Styling
 
-Basic styling is provided with the [formkit-primevue.scss](https://github.com/sfxcode/formkit-primevue/blob/main/src/sass/formkit-primevue.scss) file.
+Basic styling is provided with the [formkit-primevue.scss](https://github.com/sfxcode/formkit-primevue/blob/main/src/sass/formkit-primevue.scss) file or the corresponding css file in the package.
 
 Features:
 
@@ -84,20 +102,20 @@ You can use it or take it as base for your own styling.
 
 ### Extended Styling
 
-- All inputs are wrapped in a div with a **p-formkit** class
-- Use *wrapperClass* to add additional styleclasses to wrapper div
-- Most Prime Components have access to class / styles attributes
-- Most Prime Components have access to class / styles attributes
+- Styling outerClas, innerClass .... is provided by FormKit
+- All inputs, outputs are wrapped in a div with a **p-formkit** class
+- Most of the Prime Input Components have access to class / styles attributes
 - PT and PTOptions are available ([https://primevue.org/passthrough/](https://primevue.org/passthrough/))
 - [Styling](https://formkit-primevue.netlify.app/styling/base) and [PT](https://formkit-primevue.netlify.app/styling/passThrough) demo available
+- [Grid](https://formkit-primevue.netlify.app/styling/grid) Demo of the provided grid styling (col-[1-12])
 
 ### Samples
 
 Some samples for common tasks are available
 
-- [Repeater](https://formkit-primevue.netlify.app/samples/repeater) (with the help of the useFormKitSchema composable)
-- [Grid](https://formkit-primevue.netlify.app/samples/grid)
-- [Input Editor](https://formkit-primevue.netlify.app/samples/inputEditor) (let you test the configurations in your schema file)
+- [Repeater](https://formkit-primevue.netlify.app/samples/repeater) Use Repeater composable for using repeating values in your schema
+- [Input Editor](https://formkit-primevue.netlify.app/samples/inputEditor) Edit FormKit schema on the based on a provided composable
+- [Form Editor](https://formkit-primevue.netlify.app/samples/formEditor) Basic demo as starter to create Forms visually
 
 ## Showcases
 
@@ -130,8 +148,5 @@ Some samples for common tasks are available
 - ToggleButton
 - ToggleSwitch
 - TreeSelect
-
-## Demo
-[Demo/Playground](https://formkit-primevue.netlify.app/)
 
 ![](formkit-primevue.png)
