@@ -39,13 +39,6 @@ const items = ref([
             { label: 'Password', icon: 'pi pi-fw pi-user-edit', route: '/inputs/password' },
           ],
         },
-        {
-          label: 'Check',
-          items: [
-            { label: 'Checkbox', icon: 'pi pi-fw pi-user-edit', route: '/inputs/checkBox' },
-            { label: 'ToggleSwitch', icon: 'pi pi-fw pi-user-edit', route: '/inputs/toggleSwitch' },
-          ],
-        },
       ],
       [
         {
@@ -61,6 +54,17 @@ const items = ref([
             { label: 'TreeSelect', icon: 'pi pi-fw pi-user-edit', route: '/inputs/treeSelect' },
           ],
         },
+      ],
+      [
+        {
+          label: 'Check',
+          items: [
+            { label: 'Checkbox', icon: 'pi pi-fw pi-user-edit', route: '/inputs/checkBox' },
+            { label: 'ToggleSwitch', icon: 'pi pi-fw pi-user-edit', route: '/inputs/toggleSwitch' },
+          ],
+        },
+      ],
+      [
         {
           label: 'Misc',
           items: [
