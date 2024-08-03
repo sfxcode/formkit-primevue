@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as t}from"./chunks/framework.-wPYvEFr.js";const y=JSON.parse('{"title":"Data","description":"","frontmatter":{},"headers":[],"relativePath":"guide/data.md","filePath":"guide/data.md"}'),n={name:"guide/data.md"},h=t("",8),k=[h];function l(p,e,E,r,d,g){return a(),i("div",null,k)}const F=s(n,[["render",l]]);export{y as __pageData,F as default};
