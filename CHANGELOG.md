@@ -1,3 +1,28 @@
+## v2.4.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.1...v2.4.2)
+
+### 🚀 Enhancements
+
+- **PrimeOutputBoolean:** Add new Properties trueValue and falseValue ([417f20a](https://github.com/sfxcode/formkit-primevue/commit/417f20a))
+- **PrimeOutputBoolean:** Add new Properties trueValue and falseValue ([185aad1](https://github.com/sfxcode/formkit-primevue/commit/185aad1))
+- **PrimeOutputList:** Introduce Divider and more styling options - Add Chips Demo ([d5f6eca](https://github.com/sfxcode/formkit-primevue/commit/d5f6eca))
+
+### 💅 Refactors
+
+- **Menu:** Update Input Matrix ([00651a0](https://github.com/sfxcode/formkit-primevue/commit/00651a0))
+
+### 🏡 Chore
+
+- **dependencies:** Update to PrimeVue 4.0.3 ([cdf4cab](https://github.com/sfxcode/formkit-primevue/commit/cdf4cab))
+- **dependencies:** Update to PrimeVue 4.0.4 ([598826e](https://github.com/sfxcode/formkit-primevue/commit/598826e))
+- **dependencies:** Switch to unbuild 3 ([cdbb1c6](https://github.com/sfxcode/formkit-primevue/commit/cdbb1c6))
+- Use linting ([0e25c05](https://github.com/sfxcode/formkit-primevue/commit/0e25c05))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.0...v2.4.1)
