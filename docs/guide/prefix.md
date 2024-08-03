@@ -11,11 +11,9 @@ To prevent the behavior for this framework the property names are switched to **
 ## Sample Definition
 
 ```ts
-
 export const primeOutputTextDefinition: FormKitTypeDefinition = createInput(PrimeOutputText, {
-    props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
 })
-
 ```
 
 Icons are rendered in an i-Tag and requires a class and text in a span-Tag.
@@ -25,18 +23,14 @@ Icons are rendered in an i-Tag and requires a class and text in a span-Tag.
 ```ts
 const schema
 = [
-    {
-        $formkit: 'primeOutputBoolean',
-        name: 'falseValue',
-        label: 'False',
-        prefix: 'prefix',
-        iconPrefix: 'pi pi-check',
-        suffix: 'suffix',
-        iconSuffix: 'pi pi-times',
-    }
+  {
+    $formkit: 'primeOutputBoolean',
+    name: 'falseValue',
+    label: 'False',
+    prefix: 'prefix',
+    iconPrefix: 'pi pi-check',
+    suffix: 'suffix',
+    iconSuffix: 'pi pi-times',
+  }
 ]
-
 ```
-
-
-

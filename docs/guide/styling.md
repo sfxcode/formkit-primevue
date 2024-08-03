@@ -25,25 +25,25 @@ Make sure to add a class selector for **p-invalid**.
 For example to place 2 elements side by side give both of them the **outerClass** value **col-6**.
 
 ```ts
-  const formkitItems =  [
-    {
-        $formkit: 'primePassword',
-        name: 'password',
-        label: 'Password',
-        help: 'Enter your new password.',
-        validation: 'required|length:5,16',
-        feedback: true,
-        outerClass: 'col-6',
-    },
-    {
-        $formkit: 'primePassword',
-        name: 'password_confirm',
-        label: 'Confirm password',
-        help: 'Enter your new password again.',
-        validation: 'required|confirm',
-        validationLabel: 'password confirmation',
-        outerClass: 'col-6',
-    },
+const formkitItems = [
+  {
+    $formkit: 'primePassword',
+    name: 'password',
+    label: 'Password',
+    help: 'Enter your new password.',
+    validation: 'required|length:5,16',
+    feedback: true,
+    outerClass: 'col-6',
+  },
+  {
+    $formkit: 'primePassword',
+    name: 'password_confirm',
+    label: 'Confirm password',
+    help: 'Enter your new password again.',
+    validation: 'required|confirm',
+    validationLabel: 'password confirmation',
+    outerClass: 'col-6',
+  },
 ]
 ```
 

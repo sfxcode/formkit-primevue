@@ -4,7 +4,7 @@ Only some topics are mentioned ....
 
 ## 0.x to 1.0.0 (2023-03-08)
 
-- First version of this framework with PrimeVue 3 
+- First version of this framework with PrimeVue 3
 
 ## 1.1.x
 
@@ -18,7 +18,6 @@ Only some topics are mentioned ....
 
 - **FormKit 1.0**
 
-
 ## 1.4.x
 
 - more styling by sass
@@ -30,7 +29,7 @@ Only some topics are mentioned ....
 - add missing props to some components
 - **FormKit 1.5**
 
-## 1.6.x 
+## 1.6.x
 
 - Better Option Handling
 - Provide simple option usage
