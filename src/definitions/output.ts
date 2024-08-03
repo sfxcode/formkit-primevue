@@ -25,7 +25,7 @@ export const primeOutputLinkDefinition: FormKitTypeDefinition = createInput(Prim
 })
 
 export const primeOutputBooleanDefinition: FormKitTypeDefinition = createInput(PrimeOutputBoolean, {
-  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'trueValue', 'falseValue'],
 })
 
 export const primeOutputDurationDefinition: FormKitTypeDefinition = createInput(PrimeOutputDuration, {
@@ -33,5 +33,5 @@ export const primeOutputDurationDefinition: FormKitTypeDefinition = createInput(
 })
 
 export const primeOutputListDefinition: FormKitTypeDefinition = createInput(PrimeOutputList, {
-  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'divider', 'itemClass', 'dividerClass'],
 })
