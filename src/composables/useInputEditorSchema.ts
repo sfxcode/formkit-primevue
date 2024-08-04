@@ -29,21 +29,6 @@ export function useInputEditorSchema() {
     { label: 'Submit', value: 'submit' },
   ]
 
-  const colOptions = [
-    { label: 'Col-1', value: 'col-1' },
-    { label: 'Col-2', value: 'col-2' },
-    { label: 'Col-3', value: 'col-3' },
-    { label: 'Col-4', value: 'col-4' },
-    { label: 'Col-5', value: 'col-5' },
-    { label: 'Col-6', value: 'col-6' },
-    { label: 'Col-7', value: 'col-7' },
-    { label: 'Col-8', value: 'col-8' },
-    { label: 'Col-9', value: 'col-9' },
-    { label: 'Col-10', value: 'col-10' },
-    { label: 'Col-11', value: 'col-11' },
-    { label: 'Col-12', value: 'col-12' },
-  ]
-
   function editorSchema(inputOptions: any[] = primeInputOptions([...primeInputNames, ...primeOutputNames])) {
     return [
       {
@@ -242,20 +227,22 @@ export function useInputEditorSchema() {
         name: 'outerClass',
         label: 'Outer Class',
         key: 'schema_outerClass',
-        outerClass: 'col-6',
         preserve: true,
       },
       {
-        $formkit: 'primeSelect',
+        $formkit: 'primeInputText',
         if: '$get(selectButton).value === \'showStyle\'',
-        name: 'outerClassGrid',
-        value: 'col-12',
-        label: 'Grid Options',
-        optionLabel: 'label',
-        optionValue: 'value',
-        options: colOptions,
-        key: 'schema_outer-class-grid',
-        outerClass: 'col-6',
+        name: 'wrapperClass',
+        label: 'Wrapper Class',
+        key: 'schema_wrapperClass',
+        preserve: true,
+      },
+      {
+        $formkit: 'primeInputText',
+        if: '$get(selectButton).value === \'showStyle\'',
+        name: 'innerClass',
+        label: 'Inner Class',
+        key: 'schema_innerClass',
         preserve: true,
       },
       {
@@ -272,7 +259,6 @@ export function useInputEditorSchema() {
         if: '$get(selectButton).value === \'showValidation\'',
         name: 'validation-visibility',
         label: 'Field Validation Visibility',
-        value: 'blur',
         optionLabel: 'label',
         optionValue: 'value',
         options: validationOptions,

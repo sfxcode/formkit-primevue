@@ -29,24 +29,39 @@ export function useInputEditor() {
 
     const defaultObject = { readonly: readonlyValue, disabled: disabledValue, preserve: preserveValue }
 
+    // outer class
     let outerClass: string | undefined = ''
-    if (data.outerClassGrid && data.outerClassGrid !== 'col-12')
-      outerClass = data.outerClassGrid
     if (data.outerClass)
-      outerClass = `${outerClass} ${data.outerClass}`
+      outerClass = `${outerClass} ${data.outerClass}`.trim()
 
-    if (outerClass.trim().length === 0)
-      outerClass = undefined
+    // wrapper class
+    let wrapperClass: string | undefined = ''
+    if (data.wrapperClass)
+      wrapperClass = `${wrapperClass} ${data.wrapperClass}`.trim()
 
-    const undefinedObject = { prime: undefined, schemaResultFormKey: undefined, _dollar_formkit: undefined, slots: undefined, selectButton: undefined, outerClassGrid: undefined }
+    // inner class
+    let innerClass: string | undefined = ''
+    if (data.innerClass)
+      innerClass = `${innerClass} ${data.innerClass}`.trim()
+
+    const undefinedObject = { prime: undefined, schemaResultFormKey: undefined, _dollar_formkit: undefined, slots: undefined, selectButton: undefined }
 
     const useOptions = primeInputWithOptionNames.map(s => `prime${s}`).includes(formkitInput)
 
     let result = {}
     if (useOptions)
-      result = { ...data, $formkit: formkitInput, ...tempData, ...undefinedObject, ...defaultObject, outerClass, optionLabel: 'label', optionValue: 'value' }
+      result = { ...data, $formkit: formkitInput, ...tempData, ...undefinedObject, ...defaultObject, outerClass, wrapperClass, innerClass, optionLabel: 'label', optionValue: 'value' }
     else
-      result = { ...data, $formkit: formkitInput, ...tempData, ...undefinedObject, ...defaultObject, outerClass, options: undefined }
+      result = { ...data, $formkit: formkitInput, ...tempData, ...undefinedObject, ...defaultObject, outerClass, wrapperClass, innerClass, options: undefined }
+
+    // cleanup empty values
+    for (const key in result) {
+      const value = result[key]
+      if ((typeof value === 'string' || value instanceof String)) {
+        if (value.trim().length === 0)
+          result[key] = undefined
+      }
+    }
 
     return result
   }
