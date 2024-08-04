@@ -26,7 +26,7 @@ export const primeOutputLinkDefinition: FormKitTypeDefinition = createInput(Prim
 })
 
 export const primeOutputReferenceDefinition: FormKitTypeDefinition = createInput(PrimeOutputReference, {
-  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'reference', 'internal', 'linkComponentName'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'reference', 'internal', 'linkComponentName', 'title'],
 })
 
 export const primeOutputBooleanDefinition: FormKitTypeDefinition = createInput(PrimeOutputBoolean, {
