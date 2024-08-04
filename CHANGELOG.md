@@ -1,3 +1,23 @@
+## v2.4.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.2...v2.4.3)
+
+### 💅 Refactors
+
+- **Outputs:** Add some more properties and add new PrimeOutputReference component ([730f20e](https://github.com/sfxcode/formkit-primevue/commit/730f20e))
+- **demo:** Update Output demos ([0e8db2d](https://github.com/sfxcode/formkit-primevue/commit/0e8db2d))
+- **OutputReference:** Add title in definition ([1c34a31](https://github.com/sfxcode/formkit-primevue/commit/1c34a31))
+- **InputEditor:** Better handling of empty values - add innerClass and wrapperClass to Style section ([c7ef469](https://github.com/sfxcode/formkit-primevue/commit/c7ef469))
+- **FormEditor:** Update UI ([f0a46e8](https://github.com/sfxcode/formkit-primevue/commit/f0a46e8))
+
+### 📖 Documentation
+
+- **README:** Add PrimeOutputs and some minor text changes ([774572f](https://github.com/sfxcode/formkit-primevue/commit/774572f))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.2
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.1...v2.4.2)
