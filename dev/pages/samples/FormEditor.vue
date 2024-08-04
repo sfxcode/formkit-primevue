@@ -84,9 +84,11 @@ const schemaResult = computed(() => editorDataToSchema(formData.value))
                   v-if="formInput.if && formInput.if.length > 0" v-tooltip="`condition: ${formInput.if}`"
                   class="pi pi-question-circle text-yellow-700"
                 />
+                <span class="text-xs text-[color:var(--primary-color)]">{{ formInput.$formkit }}</span>
+                <span class="text-gray-700">|</span>
                 <span class="text-xs text-yellow-500">{{ formInput.name }}</span>
               </div>
-              <div class="min-w-100">
+              <div class="formkit-form min-w-100">
                 <FormKitSchema :schema="formInput" :data="{}" />
               </div>
             </div>
