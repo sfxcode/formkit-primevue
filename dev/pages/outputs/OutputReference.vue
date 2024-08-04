@@ -13,7 +13,8 @@ const schema
     {
       $formkit: 'primeOutputReference',
       name: 'externalValue',
-      label: 'Another External Link',
+      label: 'External Link with custom title',
+      title: 'Show on GitHub',
       reference: 'https://github.com/sfxcode/{{valueNameNotImportant}}',
     },
     {
@@ -23,10 +24,18 @@ const schema
       internal: true,
       reference: '/outputs/{{value}}',
     },
+    {
+      $formkit: 'primeOutputReference',
+      name: 'internalLink',
+      label: 'Internal Link with custom title',
+      internal: true,
+      title: 'Show: {{value}}',
+      reference: '/outputs/{{value}}',
+    },
 
   ]
 
-const data = { externalId: 42, externalValue: 'formkit', internalLink: 'outputLink' }
+const data = { externalId: 42, externalValue: 'formkit-primevue', internalLink: 'outputLink' }
 </script>
 
 <template>

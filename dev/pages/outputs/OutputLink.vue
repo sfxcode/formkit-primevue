@@ -12,7 +12,7 @@ const schema
     {
       $formkit: 'primeOutputLink',
       name: 'link2',
-      label: 'Ensure protocol with custom title',
+      label: 'Ensure protocol and use custom title',
       title: 'Click me',
     },
 
