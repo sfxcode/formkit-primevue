@@ -31,6 +31,7 @@ import {
   primeOutputLinkDefinition,
   primeOutputListDefinition,
   primeOutputNumberDefinition,
+  primeOutputReferenceDefinition,
   primeOutputTextDefinition,
 } from './output'
 
@@ -63,6 +64,7 @@ export const primeInputs = {
 export const primeOutputs = {
   primeOutputText: primeOutputTextDefinition,
   primeOutputLink: primeOutputLinkDefinition,
+  primeOutputReference: primeOutputReferenceDefinition,
   primeOutputNumber: primeOutputNumberDefinition,
   primeOutputDate: primeOutputDateDefinition,
   primeOutputBoolean: primeOutputBooleanDefinition,

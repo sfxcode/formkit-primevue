@@ -17,7 +17,7 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
   <div class="p-formkit p-output-list">
     <i v-if="hasPrefixIcon" class="formkit-prefix-icon" :class="context?.iconPrefix" />
     <span v-if="hasPrefix" class="formkit-prefix">
-      {{ context?.attrs?.prefix }}
+      {{ context?.prefix }}
     </span>
     <span :id="context?.id" :style="context?.attrs?.style" class="p-output-list-items" :class="context?.attrs?.class">
       <template v-for="(value, index) of context?._value" :key="index">
@@ -26,7 +26,7 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
       </template>
     </span>
     <span v-if="hasSuffix" class="formkit-suffix">
-      {{ context?.attrs?.suffix }}
+      {{ context?.suffix }}
     </span>
     <i v-if="hasSuffixIcon" class="formkit-suffix-icon" :class="context?.iconSuffix" />
   </div>

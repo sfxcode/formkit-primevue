@@ -11,6 +11,18 @@ const schema
     },
     {
       $formkit: 'primeOutputText',
+      name: 'html',
+      label: 'HTML as Text (Default)',
+    },
+    {
+      $formkit: 'primeOutputText',
+      name: 'html',
+      html: true,
+      label: 'HTML Output (v-html)',
+      help: 'Only use on trusted content or sanitize after input !',
+    },
+    {
+      $formkit: 'primeOutputText',
       id: 'icon',
       name: 'iconLeft',
       label: 'Icon Left',
@@ -27,7 +39,7 @@ const schema
 
   ]
 
-const data = { name: 'Harry Potter', iconLeft: 'Some Text ...', iconRight: 'Another Text ...' }
+const data = { name: 'Harry Potter', iconLeft: 'Some Text ...', iconRight: 'Another Text ...', html: '<b style="color: gold">Bold Hello World</b>' }
 </script>
 
 <template>

@@ -94,6 +94,7 @@ const items = ref([
             { label: 'Output List', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputList' },
             { label: 'Output Boolean', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputBoolean' },
             { label: 'Output Duration', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputDuration' },
+            { label: 'Output Reference', icon: 'pi pi-fw pi-user-edit', route: '/outputs/outputReference' },
           ],
         },
       ],

@@ -7,9 +7,10 @@ import PrimeOutputLink from '../components/PrimeOutputLink.vue'
 import PrimeOutputBoolean from '../components/PrimeOutputBoolean.vue'
 import PrimeOutputDuration from '../components/PrimeOutputDuration.vue'
 import PrimeOutputList from '../components/PrimeOutputList.vue'
+import PrimeOutputReference from '../components/PrimeOutputReference.vue'
 
 export const primeOutputTextDefinition: FormKitTypeDefinition = createInput(PrimeOutputText, {
-  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'html'],
 })
 
 export const primeOutputDateDefinition: FormKitTypeDefinition = createInput(PrimeOutputDate, {
@@ -21,7 +22,11 @@ export const primeOutputNumberDefinition: FormKitTypeDefinition = createInput(Pr
 })
 
 export const primeOutputLinkDefinition: FormKitTypeDefinition = createInput(PrimeOutputLink, {
-  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'title'],
+})
+
+export const primeOutputReferenceDefinition: FormKitTypeDefinition = createInput(PrimeOutputReference, {
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'reference', 'internal', 'linkComponentName'],
 })
 
 export const primeOutputBooleanDefinition: FormKitTypeDefinition = createInput(PrimeOutputBoolean, {

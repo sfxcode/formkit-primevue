@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+import { RouterLink } from 'vue-router'
 import { useFormKitSection } from '../composables'
 
 const props = defineProps({
@@ -12,28 +13,46 @@ const props = defineProps({
 
 const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection(props.context)
 
-const url = computed(() => props.context?._value.indexOf('http') > -1 ? props.context?._value : `https://${props.context?._value}`)
+const reference = computed(() => {
+  const value = props.context?._value ?? ''
+  let result = props.context?.reference ? `${props.context?.reference}` : 'reference-must-be-set'
+  if (!props.context?.internal && !result.includes('http'))
+    result = `https://${result}`
+  return result.replace(/\{\{.*\}\}/, value)
+})
 
 const title = computed(() => {
   const value = props.context?._value ?? ''
-  return props.context?.title ?? value
+  const result = props.context?.title ?? value
+  return `${result}`.replace(/\{\{.*\}\}/, value)
 })
 </script>
 
 <template>
-  <div class="p-formkit p-output-link">
+  <div class="p-formkit p-output-reference">
     <i v-if="hasPrefixIcon" class="formkit-prefix-icon" :class="context?.iconPrefix" />
     <span v-if="hasPrefix" class="formkit-prefix">
       {{ context?.prefix }}
     </span>
+    <component
+      :is="context?.linkComponentName ? context?.linkComponentName : RouterLink"
+      v-if="context?.internal"
+      :style="context?.attrs?.style"
+      :class="context?.attrs?.class"
+      :to="reference"
+      v-bind="context?.attrs"
+    >
+      {{ title }}
+    </component>
     <a
+      v-else
       :id="context?.id"
       :style="context?.attrs?.style"
       :class="context?.attrs?.class"
-      :href="url"
+      :href="reference"
       :target="context?.attrs?.target ?? '_new'"
     >
-      <span>{{ title }}</span>
+      {{ title }}
     </a>
     <span v-if="hasSuffix" class="formkit-suffix">
       {{ context?.suffix }}

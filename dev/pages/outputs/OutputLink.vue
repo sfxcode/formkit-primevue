@@ -7,12 +7,13 @@ const schema
     {
       $formkit: 'primeOutputLink',
       name: 'link1',
-      label: 'Link',
+      label: 'External Link',
     },
     {
       $formkit: 'primeOutputLink',
       name: 'link2',
-      label: 'No prefix',
+      label: 'Ensure protocol with custom title',
+      title: 'Click me',
     },
 
   ]

@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { ref } from 'vue'
 
-const primeOutputNames = ['OutputBoolean', 'OutputDate', 'OutputDuration', 'OutputLink', 'OutputList', 'OutputNumber', 'OutputText']
+const primeOutputNames = ['OutputBoolean', 'OutputDate', 'OutputDuration', 'OutputLink', 'OutputList', 'OutputNumber', 'OutputReference', 'OutputText']
 
 const names = ref(primeOutputNames.sort((a, b) => a.localeCompare(b)))
 </script>
