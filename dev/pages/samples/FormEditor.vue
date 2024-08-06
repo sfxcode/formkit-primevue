@@ -74,17 +74,17 @@ const schemaResult = computed(() => editorDataToSchema(formData.value))
           <li v-for="formInput in formInputList" :key="formInput" class="mt-4">
             <div class="" style="box-sizing: border-box;">
               <div class="min-w-100 mr-4 flex gap-2">
-                <span class="block  p-drag-handle"><i class="pi pi-bars text-[color:var(--primary-color)]" /></span>
-                <i class="pi pi-file-edit text-[color:var(--primary-color)] mb-2" @click="actionEdit(formInput)" />
-                <i class="pi pi-copy text-[color:var(--primary-color)] mb-2" @click="actionCopy(formInput)" />
-                <i class="pi pi-plus text-[color:var(--primary-color)] mb-2" @click="actionInsert(formInput)" />
-                <i class="pi pi-trash text-[color:var(--primary-color)]" @click="actionDelete(formInput)" />
+                <span class="block  p-drag-handle"><i class="pi pi-bars text-[color:var(--p-primary-color)]" /></span>
+                <i class="pi pi-file-edit text-[color:var(--p-primary-color)] mb-2" @click="actionEdit(formInput)" />
+                <i class="pi pi-copy text-[color:var(--p-primary-color)] mb-2" @click="actionCopy(formInput)" />
+                <i class="pi pi-plus text-[color:var(--p-primary-color)] mb-2" @click="actionInsert(formInput)" />
+                <i class="pi pi-trash text-[color:var(--p-primary-color)]" @click="actionDelete(formInput)" />
                 <span class="text-gray-700">|</span>
                 <i
                   v-if="formInput.if && formInput.if.length > 0" v-tooltip="`condition: ${formInput.if}`"
                   class="pi pi-question-circle text-yellow-700"
                 />
-                <span class="text-xs text-[color:var(--primary-color)]">{{ formInput.$formkit }}</span>
+                <span class="text-xs text-[color:var(--p-primary-color)]">{{ formInput.$formkit }}</span>
                 <span class="text-gray-700">|</span>
                 <span class="text-xs text-yellow-500">{{ formInput.name }}</span>
               </div>

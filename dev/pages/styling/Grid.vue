@@ -57,14 +57,14 @@ const data = { name: 'Hey Some Value', name2: 'Another value !', name3: 42 }
 </script>
 
 <template>
-  <h2 class="text-color-[var(--primary-color)]">
+  <h2 class="text-color-[var(--p-primary-color)]">
     Grid in Data Edit
   </h2>
   <h4>12 Column Grid used</h4>
   <div class="w-1/3">
     <FormKitDataEdit :schema="schema" :data="data" :debug-schema="false" :debug-data="false" />
   </div>
-  <h2 class="text-color-[var(--primary-color)]">
+  <h2 class="text-color-[var(--p-primary-color)]">
     Grid in Data View
   </h2>
   <div class="w-1/3">

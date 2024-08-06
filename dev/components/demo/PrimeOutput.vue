@@ -18,7 +18,7 @@ const formData = ref(props.data)
 <template>
   <div>
     <Toast position="bottom-right" />
-    <h2 class="text-color-[var(--primary-color)] pb-2">
+    <h2 class="text-color-[var(--p-primary-color)] pb-2">
       {{ header }}
     </h2>
     <slot />

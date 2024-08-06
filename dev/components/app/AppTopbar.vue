@@ -167,6 +167,6 @@ const items = ref([
 
 <style scoped lang='scss'>
 a {
-  color: var(--primary-color);
+  color: var(--p-primary-color);
 }
 </style>
