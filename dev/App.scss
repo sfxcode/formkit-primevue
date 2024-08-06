@@ -1,5 +1,13 @@
 @import "../src/sass/formkit-primevue";
 
+:root {
+  font-family: "Inter var", sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  font-variation-settings: normal;
+  --font-family: "Inter var", sans-serif;
+  --font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
 html {
   height: 100%;
   font-size: 16px;
