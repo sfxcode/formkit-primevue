@@ -1,1 +1,0 @@
-import{_ as s,c as i,o as a,a4 as n}from"./chunks/framework.DaIUfkBY.js";const F=JSON.parse('{"title":"Usage","description":"","frontmatter":{},"headers":[],"relativePath":"guide/usage.md","filePath":"guide/usage.md"}'),h={name:"guide/usage.md"},l=n("",6),k=[l];function t(p,E,e,r,d,g){return a(),i("div",null,k)}const c=s(h,[["render",t]]);export{F as __pageData,c as default};
