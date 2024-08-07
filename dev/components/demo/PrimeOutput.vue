@@ -40,37 +40,18 @@ const formData = ref(props.data)
         <Tabs value="0">
           <TabList>
             <Tab value="0">
-              Supported Attributes
-            </Tab>
-            <Tab value="1">
               Schema Editor
             </Tab>
-            <Tab value="2">
+            <Tab value="1">
               Data Editor
             </Tab>
           </TabList>
           <TabPanels>
-            <TabPanel v-if="primeAttributes || customAttributes" value="0">
-              <h4>Base Attributes</h4>
-              <div>
-                <span>id, style, class</span>
-              </div>
-              <h4>PrimeVue Attributes</h4>
-              <div class="mt-2">
-                <span>{{ primeAttributes }}</span>
-              </div>
-              <h4 v-if="customAttributes">
-                Custom Attributes
-              </h4>
-              <div>
-                <span v-if="customAttributes">{{ customAttributes }}</span>
-              </div>
+            <TabPanel value="0">
+              <JsonEditorVue v-model="formSchema" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
             </TabPanel>
             <TabPanel value="1">
-              <JsonEditorVue v-model="formSchema" v-bind="{ }" class="jse-theme-dark" />
-            </TabPanel>
-            <TabPanel value="2">
-              <JsonEditorVue v-model="formData" v-bind="{ }" class="jse-theme-dark" />
+              <JsonEditorVue v-model="formData" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
             </TabPanel>
           </TabPanels>
         </Tabs>

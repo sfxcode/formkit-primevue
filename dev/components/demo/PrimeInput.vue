@@ -25,7 +25,7 @@ const formSchema = ref(props.schema)
 const formData = ref(props.data)
 
 const documentationLink = `https://primevue.org/${props.header.replace('Prime', '').toLowerCase()}`
-
+const inputClass = 'p-button p-component p-formkit-button'
 async function submitHandler() {
   showMessage('success', 'Form Submitted ...', `${props.header} submitted successfully`)
 }
@@ -46,6 +46,10 @@ async function submitHandler() {
             v-model="formData"
             :form-class="formClass"
             type="form"
+            submit-label="Save"
+            :submit-attrs="{
+              inputClass,
+            }"
             @submit="submitHandler"
           >
             <FormKitSchema :schema="formSchema" :data="formData" />
@@ -57,17 +61,23 @@ async function submitHandler() {
         <Tabs value="0">
           <TabList>
             <Tab value="0">
-              Supported Attributes
-            </Tab>
-            <Tab value="1">
               Schema Editor
             </Tab>
-            <Tab value="2">
+            <Tab value="1">
               Data Editor
+            </Tab>
+            <Tab v-if="primeAttributes || customAttributes" value="2">
+              Supported Attributes
             </Tab>
           </TabList>
           <TabPanels>
-            <TabPanel v-if="primeAttributes || customAttributes" value="0">
+            <TabPanel value="0">
+              <JsonEditorVue v-model="formSchema" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
+            </TabPanel>
+            <TabPanel value="1">
+              <JsonEditorVue v-model="formData" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
+            </TabPanel>
+            <TabPanel v-if="primeAttributes || customAttributes" value="2">
               <h4>Base Attributes</h4>
               <div>
                 <span>disabled, readonly, style, class, tabindex, ariaLabel, ariaLabelledby, pt, ptOptions, unstyled</span>
@@ -85,12 +95,6 @@ async function submitHandler() {
               <div>
                 <span v-if="customAttributes">{{ customAttributes }}</span>
               </div>
-            </TabPanel>
-            <TabPanel value="1">
-              <JsonEditorVue v-model="formSchema" v-bind="{ }" class="jse-theme-dark" />
-            </TabPanel>
-            <TabPanel value="2">
-              <JsonEditorVue v-model="formData" v-bind="{ }" class="jse-theme-dark" />
             </TabPanel>
           </TabPanels>
         </Tabs>
