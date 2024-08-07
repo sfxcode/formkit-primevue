@@ -25,8 +25,8 @@ const schema
     {
       $formkit: 'primeOutputList',
       name: 'list2',
-      label: 'Use Chips from PrimeVue',
-      itemClass: 'p-chip',
+      label: 'Use Chip Item Class',
+      itemClass: 'p-chip-item',
       divider: ' ',
     },
 

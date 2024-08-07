@@ -147,9 +147,19 @@ $grid-breakpoints: (
     .p-button {
       margin-right: 0.5rem;
     }
-    span.p-space {
-      margin-right: 3rem;
+    span {
+      .p-space {
+        margin-right: 3rem;
+      }
     }
+  }
+
+  .p-chip-item {
+    align-items: center;
+    background: var(--p-surface-500);
+    color: var(--p-surface-0);
+    border-radius: 1rem;
+    padding: 0.2rem 0.5rem;
   }
 }
 

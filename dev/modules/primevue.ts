@@ -10,6 +10,7 @@ import Toolbar from 'primevue/toolbar'
 import AutoComplete from 'primevue/autocomplete'
 import CascadeSelect from 'primevue/cascadeselect'
 import Checkbox from 'primevue/checkbox'
+import Chip from 'primevue/chip'
 import ColorPicker from 'primevue/colorpicker'
 import DatePicker from 'primevue/datepicker'
 import Editor from 'primevue/editor'
@@ -56,6 +57,7 @@ export const install: UserModule = ({ app }) => {
   app.component('AutoComplete', AutoComplete)
   app.component('CascadeSelect', CascadeSelect)
   app.component('Checkbox', Checkbox)
+  app.component('Chip', Chip)
   app.component('ColorPicker', ColorPicker)
   app.component('DatePicker', DatePicker)
   app.component('Editor', Editor)
