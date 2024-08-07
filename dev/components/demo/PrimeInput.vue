@@ -3,7 +3,8 @@ import { ref } from 'vue'
 import JsonEditorVue from 'json-editor-vue'
 import { useToast } from 'primevue/usetoast'
 import type { ToastMessageOptions } from 'primevue/toast'
-import { FormKitDataEdit } from 'my-library-components'
+import { FormKit, FormKitSchema } from '@formkit/vue'
+import FormKitDebug from '../../../src/components/FormKitDebug.vue'
 
 const props = defineProps<{
   header: string
@@ -39,10 +40,21 @@ async function submitHandler() {
     <slot />
     <div class="flex flex-wrap gap-8">
       <div class="min-w-30rem basis-1/3 xl:basis-1/4">
-        <FormKitDataEdit :form-class="formClass" :schema="formSchema" :data="formData" :debug-schema="false" :debug-data="true" @data-saved="submitHandler" />
+        <div class="p-formkit-data-edit">
+          <FormKit
+            id="form"
+            v-model="formData"
+            :form-class="formClass"
+            type="form"
+            @submit="submitHandler"
+          >
+            <FormKitSchema :schema="formSchema" :data="formData" />
+          </FormKit>
+          <FormKitDebug :data="formData" header="Data" />
+        </div>
       </div>
       <div class="">
-        <Tabs>
+        <Tabs value="0">
           <TabList>
             <Tab value="0">
               Supported Attributes
@@ -54,9 +66,6 @@ async function submitHandler() {
               Data Editor
             </Tab>
           </TabList>
-          <TabPanel header="Schema">
-            <pre>{{ formSchema }}</pre>
-          </TabPanel>
           <TabPanels>
             <TabPanel v-if="primeAttributes || customAttributes" value="0">
               <h4>Base Attributes</h4>
@@ -78,10 +87,10 @@ async function submitHandler() {
               </div>
             </TabPanel>
             <TabPanel value="1">
-              <JsonEditorVue v-model="formSchema" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
+              <JsonEditorVue v-model="formSchema" v-bind="{ }" class="jse-theme-dark" />
             </TabPanel>
             <TabPanel value="2">
-              <JsonEditorVue v-model="formData" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
+              <JsonEditorVue v-model="formData" v-bind="{ }" class="jse-theme-dark" />
             </TabPanel>
           </TabPanels>
         </Tabs>
