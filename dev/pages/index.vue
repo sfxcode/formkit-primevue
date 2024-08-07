@@ -20,6 +20,7 @@ const schema = reactive(
       label: 'Email',
       help: 'This will be used for your account.',
       validation: 'required|email',
+      outerClass: 'col-6',
     },
     {
       $formkit: 'primeTextarea',
@@ -67,6 +68,7 @@ const schema = reactive(
       optionValue: 'value',
       options,
       help: 'How often should we display a cookie notice?',
+      outerClass: 'col-6',
     },
   ],
 )
