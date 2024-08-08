@@ -13,6 +13,7 @@ const props = defineProps<{
   primeAttributes?: string
   customAttributes?: string
   formClass?: string
+  hideTabs?: boolean
 }>()
 
 const toast = useToast()
@@ -38,8 +39,8 @@ async function submitHandler() {
       {{ header }}
     </h2>
     <slot />
-    <div class="flex flex-wrap gap-8">
-      <div class="min-w-30rem basis-1/3 xl:basis-1/4">
+    <div class="flex flex-wrap">
+      <div class="min-w-32rem basis-1/2 xl:basis-1/3">
         <div class="p-formkit-data-edit">
           <FormKit
             id="form"
@@ -57,8 +58,8 @@ async function submitHandler() {
           <FormKitDebug :data="formData" header="Data" />
         </div>
       </div>
-      <div class="">
-        <Tabs value="0">
+      <div class="basis-1/2 xl:basis-1/3">
+        <Tabs v-if="!hideTabs" value="0" class="ml-4">
           <TabList>
             <Tab value="0">
               Schema Editor

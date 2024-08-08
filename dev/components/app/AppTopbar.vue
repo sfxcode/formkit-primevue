@@ -106,6 +106,7 @@ const items = ref([
             { label: 'Pass Through', icon: 'pi pi-fw pi-user-edit', route: '/styling/passThrough' },
             { label: 'FormKit Class', icon: 'pi pi-fw pi-user-edit', route: '/styling/class' },
             { label: 'Grid', icon: 'pi pi-fw pi-user-edit', route: '/styling/grid' },
+            { label: 'Horizontal', icon: 'pi pi-fw pi-user-edit', route: '/styling/horizontal' },
           ],
         },
       ],

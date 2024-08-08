@@ -193,3 +193,78 @@ $grid-breakpoints: (
     }
   }
 }
+
+@include media-breakpoint-up(md) {
+  .formkit-form {
+
+    &.form-horizontal {
+
+      .formkit-wrapper {
+        display: flex;
+
+        label {
+          display: inline-block;
+          padding: 0 0.25rem 0 0;
+          font-size: inherit;
+
+          &:after {
+            content: ":";
+          }
+        }
+      }
+    }
+
+    .p-formkit-data-view & {
+      &.form-horizontal {
+        label {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .p-formkit-data-edit & {
+
+      &.form-horizontal {
+
+        .formkit-outer {
+          width: 100%;
+
+          label {
+            @apply w-4/12;
+            padding-top: 0.25rem;
+            line-height: normal;
+          }
+
+          .formkit-inner {
+            @apply w-8/12;
+          }
+        }
+
+        div[data-type="primeCheckbox"] {
+          .formkit-inner {
+            margin-left: auto;
+
+            .p-formkit {
+              display: flex
+            }
+
+            label {
+              width: auto;
+              padding: 0;
+            }
+          }
+        }
+
+
+        .formkit-help, .formkit-messages {
+          @apply w-8/12;
+          margin-left: auto;
+        }
+      }
+
+    }
+
+
+  }
+}
+
