@@ -1,3 +1,27 @@
+## v2.4.4
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.3...v2.4.4)
+
+### 🩹 Fixes
+
+- **demo:** JsonEditorVue Live Update was broken ([da72199](https://github.com/sfxcode/formkit-primevue/commit/da72199))
+- **demo:** JsonEditorVue Live Update was broken ([4dd6702](https://github.com/sfxcode/formkit-primevue/commit/4dd6702))
+- **demo:** Update Styling Homepage ([b4edb49](https://github.com/sfxcode/formkit-primevue/commit/b4edb49))
+
+### 💅 Refactors
+
+- **css:** Remove unused css ([43602a3](https://github.com/sfxcode/formkit-primevue/commit/43602a3))
+- **css:** Use css by Aura Theme ([d8e4a43](https://github.com/sfxcode/formkit-primevue/commit/d8e4a43))
+- **OutputList:** Use custom p-chip-item styling from sass ([64a7344](https://github.com/sfxcode/formkit-primevue/commit/64a7344))
+
+### 🏡 Chore
+
+- Update dependencies ([521ce8c](https://github.com/sfxcode/formkit-primevue/commit/521ce8c))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.2...v2.4.3)
