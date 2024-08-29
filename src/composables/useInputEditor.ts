@@ -93,7 +93,7 @@ export function useInputEditor() {
       }
       else {
         return `${key}: '${value}'`
-}
+      }
     }).join()}}`
   }
 
