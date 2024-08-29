@@ -1,3 +1,20 @@
+## v2.4.5
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.4...v2.4.5)
+
+### 💅 Refactors
+
+- **OutputReference:** Remove the direct import for vue router RouterLink and use only the component name as default #50 ([#50](https://github.com/sfxcode/formkit-primevue/issues/50))
+
+### 🏡 Chore
+
+- Update dependencies to latest primevue version ([f1ddf55](https://github.com/sfxcode/formkit-primevue/commit/f1ddf55))
+- Linting ([4bf4b22](https://github.com/sfxcode/formkit-primevue/commit/4bf4b22))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.4
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.3...v2.4.4)
