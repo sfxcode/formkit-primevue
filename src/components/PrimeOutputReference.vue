@@ -1,7 +1,6 @@
 <script setup lang='ts'>
 import { type PropType, computed } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
-import { RouterLink } from 'vue-router'
 import { useFormKitSection } from '../composables'
 
 const props = defineProps({
@@ -35,7 +34,7 @@ const title = computed(() => {
       {{ context?.prefix }}
     </span>
     <component
-      :is="context?.linkComponentName ? context?.linkComponentName : RouterLink"
+      :is="context?.linkComponentName ? context?.linkComponentName : 'RouterLink'"
       v-if="context?.internal"
       :style="context?.attrs?.style"
       :class="context?.attrs?.class"
