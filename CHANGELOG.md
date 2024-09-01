@@ -1,3 +1,24 @@
+## v2.4.6
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.5...v2.4.6)
+
+### 🚀 Enhancements
+
+- **primeInputs:** Create composable for easy setup of the needed components ([104976a](https://github.com/sfxcode/formkit-primevue/commit/104976a))
+
+### 💅 Refactors
+
+- **demo:** Update Footer ([78435d3](https://github.com/sfxcode/formkit-primevue/commit/78435d3))
+- **demo:** Add usePrimeInputs ([2a9d8e0](https://github.com/sfxcode/formkit-primevue/commit/2a9d8e0))
+
+### 🏡 Chore
+
+- Update dependencies ([b887014](https://github.com/sfxcode/formkit-primevue/commit/b887014))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.5
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.4...v2.4.5)
