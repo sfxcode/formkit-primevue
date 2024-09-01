@@ -27,6 +27,7 @@ const formData = ref(props.data)
 
 const documentationLink = `https://primevue.org/${props.header.replace('Prime', '').toLowerCase()}`
 const inputClass = 'p-button p-component p-formkit-button'
+
 async function submitHandler() {
   showMessage('success', 'Form Submitted ...', `${props.header} submitted successfully`)
 }
@@ -39,7 +40,7 @@ async function submitHandler() {
       {{ header }}
     </h2>
     <slot />
-    <div class="flex flex-wrap">
+    <div class="flex gap-8 flex-wrap">
       <div class="min-w-32rem basis-1/2 xl:basis-1/3">
         <div class="p-formkit-data-edit">
           <FormKit

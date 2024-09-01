@@ -47,27 +47,11 @@ export default defineConfig({
     Unocss(),
     Vue({
       include: [/\.vue$/, /\.md$/],
-      template: {
-        compilerOptions: {
-          directiveTransforms: {
-            styleclass: () => ({
-              props: [],
-              needRuntime: true,
-            }),
-            ripple: () => ({
-              props: [],
-              needRuntime: true,
-            }),
-          },
-        },
-      },
     }),
 
     Components({
       dirs: ['components'],
       dts: 'components.d.ts',
-      resolvers: [
-      ],
     }),
 
     AutoImport({
