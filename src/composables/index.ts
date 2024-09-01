@@ -5,6 +5,7 @@ import { useFormKitSection } from './useFormKitSection'
 import { useInputEditor } from './useInputEditor'
 import { useInputEditorSchema } from './useInputEditorSchema'
 import { useOutputDuration } from './useOutputDuration'
+import { usePrimeInputs } from './usePrimeInputs'
 
 export {
   useFormKitInput,
@@ -14,4 +15,5 @@ export {
   useInputEditor,
   useInputEditorSchema,
   useOutputDuration,
+  usePrimeInputs,
 }
