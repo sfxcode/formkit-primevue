@@ -118,7 +118,7 @@
     "chart.js": "^4.4.4",
     "consola": "^3.2.3",
     "eslint": "^9.9.1",
-    "happy-dom": "^15.4.2",
+    "happy-dom": "^15.7.2",
     "json-editor-vue": "^0.15.2",
     "mkdist": "^1.5.4",
     "quill": "^2.0.2",
@@ -140,6 +140,6 @@
     "vue": "^3.4.38",
     "vue-demi": "^0.14.10",
     "vue-router": "^4.4.3",
-    "vue-tsc": "^2.1.2"
+    "vue-tsc": "^2.1.4"
   }
 }
