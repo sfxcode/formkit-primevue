@@ -2,7 +2,7 @@
   "name": "@sfxcode/formkit-primevue",
   "type": "module",
   "version": "2.4.6",
-  "packageManager": "pnpm@9.4.0+sha256.b6fd0bfda555e7e584ad7e56b30c68b01d5a04f9ee93989f4b93ca8473c49c74",
+  "packageManager": "pnpm@9.9.0+sha256.7a4261e50d9a44d9240baf6c9d6e10089dcf0a79d0007f2a26985a6927324177",
   "author": {
     "name": "Tom",
     "email": "tom@sfxcode.com"
@@ -106,7 +106,7 @@
     "@vitejs/plugin-vue": "^5.1.3",
     "@vitest/coverage-v8": "^2.0.5",
     "@vitest/ui": "^2.0.5",
-    "@vue/compiler-sfc": "^3.4.38",
+    "@vue/compiler-sfc": "3.4.38",
     "@vue/server-renderer": "^3.4.38",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.5.1",
@@ -137,7 +137,7 @@
     "vite-ssg": "^0.23.8",
     "vitepress": "1.3.4",
     "vitest": "^2.0.5",
-    "vue": "^3.4.38",
+    "vue": "3.4.38",
     "vue-demi": "^0.14.10",
     "vue-router": "^4.4.3",
     "vue-tsc": "^2.1.4"

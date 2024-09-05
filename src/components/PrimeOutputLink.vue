@@ -12,7 +12,12 @@ const props = defineProps({
 
 const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection(props.context)
 
-const url = computed(() => props.context?._value.indexOf('http') > -1 ? props.context?._value : `https://${props.context?._value}`)
+const url = computed(() => {
+  if (props.context?._value)
+    return props.context?._value.indexOf('http') > -1 ? props.context?._value : `https://${props.context?._value}`
+  else
+    return ''
+})
 
 const title = computed(() => {
   const value = props.context?._value ?? ''
@@ -27,6 +32,7 @@ const title = computed(() => {
       {{ context?.prefix }}
     </span>
     <a
+      v-if="context?.value"
       :id="context?.id"
       :style="context?.attrs?.style"
       :class="context?.attrs?.class"
