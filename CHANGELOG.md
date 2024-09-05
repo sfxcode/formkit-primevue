@@ -1,3 +1,15 @@
+## v2.4.7
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.6...v2.4.7)
+
+### 🩹 Fixes
+
+- Null safe value for PrimeOutputLink ([73d0115](https://github.com/sfxcode/formkit-primevue/commit/73d0115))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.5...v2.4.6)
