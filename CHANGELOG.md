@@ -1,3 +1,15 @@
+## v2.4.9
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.8...v2.4.9)
+
+### 🏡 Chore
+
+- Dependencies use intlify 9.14 ([777e770](https://github.com/sfxcode/formkit-primevue/commit/777e770))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.8
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.7...v2.4.8)
