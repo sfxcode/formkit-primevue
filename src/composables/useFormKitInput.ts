@@ -1,6 +1,10 @@
 import { computed } from 'vue'
 
 export function useFormKitInput(context: any) {
+  const isInvalid = computed(() => {
+    return context?.state.validationVisible && !context?.state.valid
+  })
+
   const styleClass = computed(() => {
     return (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class
   })
@@ -21,5 +25,5 @@ export function useFormKitInput(context: any) {
     context?.node.input(e)
   }
 
-  return { styleClass, handleBlur, handleChange, handleInput, handleSelect }
+  return { isInvalid, styleClass, handleBlur, handleChange, handleInput, handleSelect }
 }

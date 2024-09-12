@@ -51,7 +51,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, handleBlur, handleChange } = useFormKitInput(props.context)
+const { isInvalid, handleBlur, handleChange } = useFormKitInput(props.context)
 </script>
 
 <template>
@@ -63,7 +63,8 @@ const { styleClass, handleBlur, handleChange } = useFormKitInput(props.context)
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"
       :list-style="context?.attrs.style"
-      :class="styleClass"
+      :class="context?.attrs?.class"
+      :invalid="isInvalid"
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"

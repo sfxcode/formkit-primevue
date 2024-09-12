@@ -21,7 +21,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
+const { isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
 
 const suggestions = ref([])
 
@@ -37,7 +37,8 @@ function search(event: AutoCompleteCompleteEvent) {
       v-model="context._value"
       v-bind="context?.attrs"
       :disabled="!!context?.disabled"
-      :class="styleClass"
+      :class="context?.attrs?.class"
+      :invalid="isInvalid"
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"

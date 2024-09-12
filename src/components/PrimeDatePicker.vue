@@ -59,7 +59,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, handleInput, handleSelect } = useFormKitInput(props.context)
+const { isInvalid, handleInput, handleSelect } = useFormKitInput(props.context)
 
 function handleBlur(e: DatePickerBlurEvent) {
   props.context?.handlers.blur(e.originalEvent)
@@ -79,7 +79,8 @@ function handleClearClick() {
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"
       :input-style="context?.attrs.style"
-      :input-class="styleClass"
+      :input-class="context?.attrs?.class"
+      :invalid="isInvalid"
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"

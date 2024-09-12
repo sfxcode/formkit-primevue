@@ -29,7 +29,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass } = useFormKitInput(props.context)
+const { isInvalid } = useFormKitInput(props.context)
 
 function handleInput(e: any) {
   props.context?.node.input(e)
@@ -50,7 +50,8 @@ function updateValue(n: number) {
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"
       :style="context?.attrs.style"
-      :class="styleClass"
+      :class="context?.attrs?.class"
+      :invalid="isInvalid"
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"

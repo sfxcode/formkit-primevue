@@ -22,7 +22,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, handleInput } = useFormKitInput(props.context)
+const { isInvalid, handleInput } = useFormKitInput(props.context)
 
 function handleSelection(e: EditorSelectionChangeEvent) {
   if (e.range === null)
@@ -39,7 +39,8 @@ function handleSelection(e: EditorSelectionChangeEvent) {
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"
       :editor-style="context?.attrs.style"
-      :class="styleClass"
+      :class="context?.attrs?.class"
+      :invalid="isInvalid"
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"

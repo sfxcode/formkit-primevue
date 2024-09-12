@@ -22,7 +22,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
+const { isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
@@ -34,7 +34,8 @@ const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"
       :style="context?.attrs.style"
-      :class="styleClass"
+      :class="context?.attrs?.class"
+      :invalid="isInvalid"
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"

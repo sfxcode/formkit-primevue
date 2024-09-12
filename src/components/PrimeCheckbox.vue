@@ -25,7 +25,7 @@ const props = defineProps({
 
 const { hasPrefix, hasSuffix, generateId } = useFormKitSection(props.context)
 
-const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
+const { isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
 
 const generatedId = generateId()
 </script>
@@ -42,7 +42,8 @@ const generatedId = generateId()
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"
       :input-style="context?.attrs.style"
-      :input-class="styleClass"
+      :input-class="context?.attrs?.class"
+      :invalid="isInvalid"
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"

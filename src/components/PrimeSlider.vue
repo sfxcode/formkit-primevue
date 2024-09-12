@@ -24,7 +24,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, handleBlur } = useFormKitInput(props.context)
+const { isInvalid, handleBlur } = useFormKitInput(props.context)
 
 function handleInput(e: any) {
   props.context?.node.input(e)
@@ -41,7 +41,8 @@ function handleInput(e: any) {
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"
       :style="context?.attrs.style"
-      :class="styleClass"
+      :class="context?.attrs?.class"
+      :invalid="isInvalid"
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"

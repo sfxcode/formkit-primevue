@@ -26,7 +26,7 @@ const props = defineProps({
   },
 })
 
-const { styleClass, handleInput, handleBlur } = useFormKitInput(props.context)
+const { isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
 const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
 </script>
 
@@ -40,7 +40,8 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
         v-bind="context?.attrs"
         :disabled="!!context?.disabled"
         :readonly="context?.attrs.readonly ?? false"
-        :class="styleClass"
+        :class="context?.attrs?.class"
+        :invalid="isInvalid"
         :tabindex="context?.attrs.tabindex"
         :aria-label="context?.attrs.ariaLabel"
         :aria-labelledby="context?.attrs.ariaLabelledby"
@@ -49,7 +50,6 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
         :auto-clear="context.autoClear ?? true"
         :unmask="context.unmask ?? false"
         :pt="context.pt"
-        :invalid="context.invalid"
         :variant="context.variant"
         :pt-options="context.ptOptions"
         :unstyled="context.unstyled ?? false"
