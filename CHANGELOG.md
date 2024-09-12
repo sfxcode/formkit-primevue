@@ -1,3 +1,16 @@
+## v2.4.8
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.7...v2.4.8)
+
+### 🏡 Chore
+
+- Update dependencies Vue 3.5, FormKit 1.6.6, PrimeVue 4.0.7 ([f59dcf6](https://github.com/sfxcode/formkit-primevue/commit/f59dcf6))
+- Linting ([fd823aa](https://github.com/sfxcode/formkit-primevue/commit/fd823aa))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.7
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.6...v2.4.7)
