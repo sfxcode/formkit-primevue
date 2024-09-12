@@ -12,6 +12,12 @@ Actual PrimeVue Version of the main branch is *4.x.*
 
 PrimeVue 3 is in the prime3 branch, but future development will only focus on PrimeVue 4
 
+## Build
+
+https://github.com/sfxcode/formkit-primevue/actions/workflows/deploy.yml/badge.svg
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/6142cb73-02e0-4b2a-9ca3-25496f59ba9b/deploy-status)](https://app.netlify.com/sites/formkit-primevue/deploys)
+
 ## Docs
 
 [Docs](https://sfxcode.github.io/formkit-primevue/)
