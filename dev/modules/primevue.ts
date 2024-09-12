@@ -1,26 +1,26 @@
-import Tab from 'primevue/tab'
-import TabList from 'primevue/tablist'
-import Tabs from 'primevue/tabs'
-import TabPanels from 'primevue/tabpanels'
-import TabPanel from 'primevue/tabpanel'
-import MegaMenu from 'primevue/megamenu'
-import Ripple from 'primevue/ripple'
-import Toast from 'primevue/toast'
-import Toolbar from 'primevue/toolbar'
-import Tooltip from 'primevue/tooltip'
-
-import 'primeicons/primeicons.css'
-
 import Aura from '@primevue/themes/aura'
 import PrimeVue from 'primevue/config'
+import MegaMenu from 'primevue/megamenu'
+import Ripple from 'primevue/ripple'
+import Tab from 'primevue/tab'
+import TabList from 'primevue/tablist'
+import TabPanel from 'primevue/tabpanel'
+import TabPanels from 'primevue/tabpanels'
+import Tabs from 'primevue/tabs'
+import Toast from 'primevue/toast'
+
+import Toolbar from 'primevue/toolbar'
+
+import Tooltip from 'primevue/tooltip'
+import 'primeicons/primeicons.css'
 
 // services
 
+import type { UserModule } from '@/types'
+import Button from 'primevue/button'
 import ConfirmationService from 'primevue/confirmationservice'
 import ToastService from 'primevue/toastservice'
-import Button from 'primevue/button'
 import { usePrimeInputs } from '../../src/composables'
-import type { UserModule } from '@/types'
 
 export const install: UserModule = ({ app }) => {
   // directives

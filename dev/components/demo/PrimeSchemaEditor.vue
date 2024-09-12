@@ -1,11 +1,11 @@
 <script setup lang='ts'>
-import { FormKitSchema } from '@formkit/vue'
-import { ref } from 'vue'
-import { useToast } from 'primevue/usetoast'
 import type { ToastMessageOptions } from 'primevue/toast'
+import { FormKitSchema } from '@formkit/vue'
 import { useClipboard } from '@vueuse/core'
-
 import { useInputEditor } from 'my-library'
+import { useToast } from 'primevue/usetoast'
+
+import { ref } from 'vue'
 
 const props = defineProps<{
   header: string

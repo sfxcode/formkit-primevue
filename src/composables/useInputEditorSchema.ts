@@ -1,6 +1,6 @@
+import { useFormKitRepeater } from './useFormKitRepeater'
 import { useFormKitSchema } from './useFormKitSchema'
 import { useInputEditor } from './useInputEditor'
-import { useFormKitRepeater } from './useFormKitRepeater'
 
 export function useInputEditorSchema() {
   const { addList, addListGroup } = useFormKitSchema()

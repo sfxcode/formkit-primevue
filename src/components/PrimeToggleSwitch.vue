@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
-
 import type { ToggleSwitchProps } from 'primevue/toggleswitch'
+
+import type { PropType } from 'vue'
 import { useFormKitInput, useFormKitSection } from '../composables'
 
 export interface FormKitPrimeToggleSwitchProps {

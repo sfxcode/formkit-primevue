@@ -1,10 +1,10 @@
 <script setup lang='ts'>
-import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+import type { InputTextProps } from 'primevue/inputtext'
 
+import type { PropType } from 'vue'
 import IconField from 'primevue/iconfield'
 import InputIcon from 'primevue/inputicon'
-import type { InputTextProps } from 'primevue/inputtext'
 import { useFormKitInput, useFormKitSection } from '../composables'
 
 export interface FormKitPrimeInputTextProps {

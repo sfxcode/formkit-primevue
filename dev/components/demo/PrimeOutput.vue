@@ -1,7 +1,7 @@
 <script setup lang='ts'>
-import { ref } from 'vue'
-import JsonEditorVue from 'json-editor-vue'
 import { FormKit, FormKitSchema } from '@formkit/vue'
+import JsonEditorVue from 'json-editor-vue'
+import { ref } from 'vue'
 import FormKitDebug from '../../../src/components/FormKitDebug.vue'
 
 const props = defineProps<{

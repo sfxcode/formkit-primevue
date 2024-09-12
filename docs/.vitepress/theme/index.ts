@@ -1,10 +1,10 @@
-import DefaultTheme from 'vitepress/theme'
-import type { App } from 'vue'
-import 'uno.css'
 import type { Theme } from 'vitepress'
-import Todo from './components/Todo.vue'
+import type { App } from 'vue'
+import DefaultTheme from 'vitepress/theme'
 import DisplayComponents from './components/DisplayComponents.vue'
 import DisplayOutputComponents from './components/DisplayOutputComponents.vue'
+import Todo from './components/Todo.vue'
+import 'uno.css'
 
 export default {
   ...DefaultTheme,

@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import { useI18n } from 'vue-i18n'
-import { type PropType, computed } from 'vue'
-
 import type { FormKitFrameworkContext } from '@formkit/core'
+import { computed, type PropType } from 'vue'
+
+import { useI18n } from 'vue-i18n'
 import { useFormKitSection } from '../composables'
 
 const props = defineProps({

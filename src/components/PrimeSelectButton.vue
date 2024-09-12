@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
-
 import type { SelectButtonProps } from 'primevue/selectbutton'
+
+import type { PropType } from 'vue'
 import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeSelectButtonProps {

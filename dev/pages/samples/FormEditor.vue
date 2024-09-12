@@ -1,10 +1,10 @@
 <script setup lang='ts'>
 import { useDragAndDrop } from '@formkit/drag-and-drop/vue'
 import { FormKitSchema } from '@formkit/vue'
-import { ref } from 'vue'
 import { useFormKitRepeater, useInputEditor, useInputEditorSchema } from 'my-library'
-import { blueprint, formkitPreset } from '../../utils/presets'
+import { ref } from 'vue'
 import { useFormKitSection } from '../../../src/composables'
+import { blueprint, formkitPreset } from '../../utils/presets'
 
 const { editorSchema } = useInputEditorSchema()
 const { schemaToEditorData, editorDataToSchema } = useInputEditor()

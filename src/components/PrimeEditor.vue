@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
-
 import type { EditorProps, EditorSelectionChangeEvent } from 'primevue/editor'
+
+import type { PropType } from 'vue'
 import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeEditorProps {

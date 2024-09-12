@@ -1,9 +1,9 @@
 // register vue composition api globally
-import { ViteSSG } from 'vite-ssg'
+import type { UserModule } from '@/types'
 import generatedRoutes from 'virtual:generated-pages'
+import { ViteSSG } from 'vite-ssg'
 import App from './App.vue'
 import 'uno.css'
-import type { UserModule } from '@/types'
 
 const routes = generatedRoutes
 

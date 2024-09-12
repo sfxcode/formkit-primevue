@@ -1,10 +1,10 @@
 <script setup lang='ts'>
-import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
-
 import type { InputMaskProps } from 'primevue/inputmask'
-import InputIcon from 'primevue/inputicon'
+
+import type { PropType } from 'vue'
 import IconField from 'primevue/iconfield'
+import InputIcon from 'primevue/inputicon'
 import { useFormKitInput, useFormKitSection } from '../composables'
 
 export interface FormKitPrimeInputMaskProps {

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
+import type { PropType } from 'vue'
 import { useFormKitSection, useOutputDuration } from '../composables'
 
 const props = defineProps({

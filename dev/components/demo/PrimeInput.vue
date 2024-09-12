@@ -1,9 +1,9 @@
 <script setup lang='ts'>
-import { ref } from 'vue'
-import JsonEditorVue from 'json-editor-vue'
-import { useToast } from 'primevue/usetoast'
 import type { ToastMessageOptions } from 'primevue/toast'
 import { FormKit, FormKitSchema } from '@formkit/vue'
+import JsonEditorVue from 'json-editor-vue'
+import { useToast } from 'primevue/usetoast'
+import { ref } from 'vue'
 import FormKitDebug from '../../../src/components/FormKitDebug.vue'
 
 const props = defineProps<{

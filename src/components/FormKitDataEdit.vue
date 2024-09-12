@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-import { ref } from 'vue'
 import { FormKit, FormKitSchema } from '@formkit/vue'
+import { ref } from 'vue'
 import FormKitDebug from './FormKitDebug.vue'
 
 const props = defineProps({

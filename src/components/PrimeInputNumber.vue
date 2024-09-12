@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import type { PropType } from 'vue'
 import type { FormKitFrameworkContext } from '@formkit/core'
-
 import type { InputNumberBlurEvent, InputNumberProps } from 'primevue/inputnumber'
+
+import type { PropType } from 'vue'
 import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeInputNumberProps {

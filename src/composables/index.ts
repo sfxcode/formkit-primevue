@@ -1,6 +1,6 @@
 import { useFormKitInput } from './useFormKitInput'
-import { useFormKitSchema } from './useFormKitSchema'
 import { useFormKitRepeater } from './useFormKitRepeater'
+import { useFormKitSchema } from './useFormKitSchema'
 import { useFormKitSection } from './useFormKitSection'
 import { useInputEditor } from './useInputEditor'
 import { useInputEditorSchema } from './useInputEditorSchema'
