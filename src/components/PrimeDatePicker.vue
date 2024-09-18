@@ -59,7 +59,7 @@ const props = defineProps({
   },
 })
 
-const { isInvalid, handleInput, handleSelect } = useFormKitInput(props.context)
+const { unstyled, isInvalid, handleInput, handleSelect } = useFormKitInput(props.context)
 
 function handleBlur(e: DatePickerBlurEvent) {
   props.context?.handlers.blur(e.originalEvent)

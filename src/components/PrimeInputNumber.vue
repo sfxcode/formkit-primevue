@@ -33,7 +33,7 @@ const props = defineProps({
   },
 })
 
-const { isInvalid, handleInput } = useFormKitInput(props.context)
+const { unstyled, isInvalid, handleInput } = useFormKitInput(props.context)
 
 function handleBlur(e: InputNumberBlurEvent) {
   props.context?.handlers.blur(e.originalEvent)
@@ -70,7 +70,7 @@ function handleBlur(e: InputNumberBlurEvent) {
       :step="context.step ?? undefined"
       :pt="context.pt"
       :pt-options="context.ptOptions"
-      :unstyled="context.unstyled ?? false"
+      :unstyled="unstyled"
       @input="handleInput"
       @blur="handleBlur"
     />

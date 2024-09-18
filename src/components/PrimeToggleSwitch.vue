@@ -22,7 +22,7 @@ const props = defineProps({
 
 const { hasPrefix, hasSuffix } = useFormKitSection(props.context)
 
-const { isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
+const { unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
@@ -46,7 +46,7 @@ const { isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
       :false-value="context.falseValue ?? undefined"
       :pt="context.pt"
       :pt-options="context.ptOptions"
-      :unstyled="context.unstyled ?? false"
+      :unstyled="unstyled"
       @change="handleInput"
       @blur="handleBlur"
     />

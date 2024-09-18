@@ -22,7 +22,7 @@ const props = defineProps({
   },
 })
 
-const { isInvalid, handleInput } = useFormKitInput(props.context)
+const { unstyled, isInvalid, handleInput } = useFormKitInput(props.context)
 
 function handleSelection(e: EditorSelectionChangeEvent) {
   if (e.range === null)
@@ -49,7 +49,7 @@ function handleSelection(e: EditorSelectionChangeEvent) {
       :modules="context.modules"
       :pt="context.pt"
       :pt-options="context.ptOptions"
-      :unstyled="context.unstyled ?? false"
+      :unstyled="unstyled"
       @text-change="handleInput"
       @selection-change="handleSelection"
     />

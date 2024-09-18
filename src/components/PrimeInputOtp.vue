@@ -23,7 +23,7 @@ const props = defineProps({
   },
 })
 
-const { isInvalid, handleBlur, handleInput } = useFormKitInput(props.context)
+const { unstyled, isInvalid, handleBlur, handleInput } = useFormKitInput(props.context)
 </script>
 
 <template>
@@ -46,7 +46,7 @@ const { isInvalid, handleBlur, handleInput } = useFormKitInput(props.context)
       :integer-only="context.integerOnly"
       :pt="context.pt"
       :pt-options="context.ptOptions"
-      :unstyled="context.unstyled ?? false"
+      :unstyled="unstyled"
       @change="handleInput"
       @blur="handleBlur"
     />

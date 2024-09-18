@@ -29,7 +29,7 @@ const props = defineProps({
   },
 })
 
-const { isInvalid } = useFormKitInput(props.context)
+const { unstyled, isInvalid } = useFormKitInput(props.context)
 
 function handleInput(e: any) {
   props.context?.node.input(e)
@@ -67,7 +67,7 @@ function updateValue(n: number) {
       :value-template="context.valueTemplate ?? undefined"
       :pt="context.pt"
       :pt-options="context.ptOptions"
-      :unstyled="context.unstyled ?? false"
+      :unstyled="unstyled"
       @change="handleInput"
       @update:model-value="updateValue"
     />

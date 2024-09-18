@@ -21,7 +21,7 @@ const props = defineProps({
   },
 })
 
-const { isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
+const { unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
 
 const suggestions = ref([])
 
@@ -48,7 +48,7 @@ function search(event: AutoCompleteCompleteEvent) {
       :typeahead="context?.typeahead ?? true"
       :pt="context?.pt"
       :pt-options="context?.ptOptions"
-      :unstyled="context?.unstyled ?? false"
+      :unstyled="unstyled"
       @keydown.enter.prevent
       @complete="search"
       @change="handleInput"

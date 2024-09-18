@@ -1,12 +1,19 @@
+import { usePrimeVue } from 'primevue/config'
 import { computed } from 'vue'
 
 export function useFormKitInput(context: any) {
+  const primevue = usePrimeVue()
+
   const isInvalid = computed(() => {
     return context?.state.validationVisible && !context?.state.valid
   })
 
   const styleClass = computed(() => {
     return (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class
+  })
+
+  const unstyled = computed(() => {
+    return context?.unstyled ?? primevue?.config?.unstyled
   })
 
   function handleBlur(event: Event) {
@@ -25,5 +32,5 @@ export function useFormKitInput(context: any) {
     context?.node.input(e)
   }
 
-  return { isInvalid, styleClass, handleBlur, handleChange, handleInput, handleSelect }
+  return { isInvalid, styleClass, unstyled, handleBlur, handleChange, handleInput, handleSelect }
 }

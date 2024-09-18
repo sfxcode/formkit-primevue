@@ -24,7 +24,7 @@ const props = defineProps({
   },
 })
 
-const { isInvalid, handleBlur } = useFormKitInput(props.context)
+const { unstyled, isInvalid, handleBlur } = useFormKitInput(props.context)
 
 function handleInput(e: any) {
   props.context?.node.input(e)
@@ -53,7 +53,7 @@ function handleInput(e: any) {
       :orientation="context.orientation ?? 'horizontal'"
       :pt="context.pt"
       :pt-options="context.ptOptions"
-      :unstyled="context.unstyled ?? false"
+      :unstyled="unstyled"
       @change="handleInput"
       @blur="handleBlur"
     />

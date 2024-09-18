@@ -42,7 +42,7 @@ const { handleChange } = useFormKitInput(props.context)
       :format="context.format"
       :pt="context.pt"
       :pt-options="context.ptOptions"
-      :unstyled="context.unstyled ?? false"
+      :unstyled="unstyled"
       @change="handleChange"
     />
   </div>
