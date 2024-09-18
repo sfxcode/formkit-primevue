@@ -127,7 +127,7 @@ function handleClearClick() {
       :panel-class="context?.panelClass"
       :pt="context?.pt"
       :pt-options="context?.ptOptions"
-      :unstyled="context?.unstyled ?? false"
+      :unstyled="unstyled"
       @date-select="handleSelect"
       @input="handleInput"
       @blur="handleBlur"

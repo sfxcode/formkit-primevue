@@ -22,7 +22,7 @@ const props = defineProps({
   },
 })
 
-const { handleChange } = useFormKitInput(props.context)
+const { unstyled, handleChange } = useFormKitInput(props.context)
 </script>
 
 <template>
