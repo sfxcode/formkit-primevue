@@ -2,8 +2,6 @@ import { usePrimeVue } from 'primevue/config'
 import { computed } from 'vue'
 
 export function useFormKitInput(context: any) {
-  const primevue = usePrimeVue()
-
   const isInvalid = computed(() => {
     return context?.state.validationVisible && !context?.state.valid
   })
@@ -12,8 +10,20 @@ export function useFormKitInput(context: any) {
     return (context?.state.validationVisible && !context?.state.valid) ? `${context?.attrs?.class} p-invalid` : context?.attrs?.class
   })
 
+  function isGlobalUnstyledMode(): boolean {
+    let result = false
+    try {
+      const primevue = usePrimeVue()
+      result = primevue?.config?.unstyled || false
+    }
+    // eslint-disable-next-line unused-imports/no-unused-vars
+    catch (e) {
+    }
+    return result
+  }
+
   const unstyled = computed(() => {
-    return context?.unstyled ?? primevue?.config?.unstyled
+    return context?.unstyled ?? isGlobalUnstyledMode()
   })
 
   function handleBlur(event: Event) {
