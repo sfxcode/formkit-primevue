@@ -1,3 +1,15 @@
+## v2.4.11
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.10...v2.4.11)
+
+### 🚀 Enhancements
+
+- **unstyled:** Safer handling of usePrimeVue ([50b8af7](https://github.com/sfxcode/formkit-primevue/commit/50b8af7))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.10
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.9...v2.4.10)
