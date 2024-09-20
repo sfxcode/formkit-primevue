@@ -1,3 +1,16 @@
+## v2.4.12
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.11...v2.4.12)
+
+### 🩹 Fixes
+
+- **InputNumber:** Number was not updated correctly #53 ([#53](https://github.com/sfxcode/formkit-primevue/issues/53))
+- **InputMask:** Changes was not reflected properly ([46eee08](https://github.com/sfxcode/formkit-primevue/commit/46eee08))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.11
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.10...v2.4.11)
