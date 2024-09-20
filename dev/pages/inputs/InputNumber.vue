@@ -4,7 +4,7 @@ const schema
   = [
     {
       $formkit: 'primeInputNumber',
-      name: 'myInputNumber',
+      name: 'firstNumber',
       label: 'Input Number',
       value: 1234,
       validation: 'max:10000',
@@ -13,7 +13,16 @@ const schema
     },
     {
       $formkit: 'primeInputNumber',
-      name: 'myInputNumber',
+      name: 'secondNumber',
+      label: 'Input Number',
+      value: 999,
+      validation: 'min:900',
+      useGrouping: false,
+      minFractionDigits: 0,
+    },
+    {
+      $formkit: 'primeInputNumber',
+      name: 'fixedNumber',
       label: 'Input Number',
       value: 1234,
       class: 'customClass',
