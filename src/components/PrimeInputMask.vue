@@ -53,7 +53,7 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
         :variant="context.variant"
         :pt-options="context.ptOptions"
         :unstyled="unstyled"
-        @input="handleInput"
+        @update:model-value="handleInput"
         @blur="handleBlur"
       />
       <InputIcon v-if="hasSuffixIcon" :class="context?.iconSuffix" />
