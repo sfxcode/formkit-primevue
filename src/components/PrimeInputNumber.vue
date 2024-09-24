@@ -42,6 +42,27 @@ function handleBlur(e: InputNumberBlurEvent) {
 function handleInput(_: any) {
   props.context?.node.input(_.value)
 }
+
+function roundToDecimals(value: any, decimals: number) {
+  const factor = 10 ** decimals
+  return Math.round(value * factor) / factor
+}
+
+watch(
+  () => props.context._value,
+  (newValue) => {
+    if (newValue !== props.context.node.value) {
+      if (props.context.maxFractionDigits) {
+        // fix floating-point precision issues
+        props.context?.node.input(roundToDecimals(newValue, props.context.maxFractionDigits))
+      }
+      else {
+      // Only update if the value is different
+        props.context?.node.input(newValue)
+      }
+    }
+  },
+)
 </script>
 
 <template>

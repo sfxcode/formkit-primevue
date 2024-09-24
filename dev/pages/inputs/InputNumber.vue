@@ -29,6 +29,30 @@ const schema
       style: { background: 'gray' },
       readonly: true,
     },
+    // Case with Min Value
+    {
+      $formkit: 'primeInputNumber',
+      name: 'numberInputWithMinNumber',
+      label: 'Number Input with Min Value',
+      min: 10,
+    },
+    // Extensive case
+    {
+      $formkit: 'primeInputNumber',
+      name: 'customizedInputNumber',
+      label: 'Customized Input Number',
+      placeholder: 'Enter currency',
+      useGrouping: true,
+      minFractionDigits: 2,
+      maxFractionDigits: 4, // Maximum four decimal places
+      mode: 'currency', // Switch mode to currency
+      currency: 'USD', // Currency in dollars
+      locale: 'en-US', // Locale set to US
+      showButtons: true, // Show increment/decrement buttons
+      buttonLayout: 'horizontal', // Layout for the buttons
+      step: 0.01, // Increment by 0.01
+    },
+
   ]
 
 const data = { }
