@@ -1,3 +1,15 @@
+## v2.4.14
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.13...v2.4.14)
+
+### 🩹 Fixes
+
+- **InputNumber:** Number was not updated correctly when using min value, fix rounding issue #53 ([#53](https://github.com/sfxcode/formkit-primevue/issues/53))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.13
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.12...v2.4.13)
