@@ -1,5 +1,5 @@
 import { FormKitDataDebug, FormKitDataEdit, FormKitDataView } from './components'
-import { useFormKitRepeater, useFormKitSchema, useInputEditor, useInputEditorSchema } from './composables'
+import { useFormKitRepeater, useFormKitSchema, useInputEditor, useInputEditorSchema, usePrimeInputs } from './composables'
 import { primeInputs, primeOutputs } from './definitions'
 
 export {
@@ -12,4 +12,5 @@ export {
   useFormKitSchema,
   useInputEditor,
   useInputEditorSchema,
+  usePrimeInputs,
 }

@@ -17,10 +17,10 @@ import 'primeicons/primeicons.css'
 // services
 
 import type { UserModule } from '@/types'
+import { usePrimeInputs } from 'my-library'
 import Button from 'primevue/button'
 import ConfirmationService from 'primevue/confirmationservice'
 import ToastService from 'primevue/toastservice'
-import { usePrimeInputs } from '../../src/composables'
 
 export const install: UserModule = ({ app }) => {
   // directives
