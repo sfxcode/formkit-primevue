@@ -1,3 +1,15 @@
+## v2.4.16
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.15...v2.4.16)
+
+### 🚀 Enhancements
+
+- **registerInputs:** Move to index.ts ([003daef](https://github.com/sfxcode/formkit-primevue/commit/003daef))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.15
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.14...v2.4.15)
