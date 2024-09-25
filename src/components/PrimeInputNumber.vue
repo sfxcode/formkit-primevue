@@ -3,6 +3,7 @@ import type { FormKitFrameworkContext } from '@formkit/core'
 import type { InputNumberBlurEvent, InputNumberProps } from 'primevue/inputnumber'
 
 import type { PropType } from 'vue'
+import { watch } from 'vue'
 import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeInputNumberProps {
