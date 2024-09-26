@@ -1,3 +1,15 @@
+## v2.4.17
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.16...v2.4.17)
+
+### 🚀 Enhancements
+
+- **inputs:** Use no icon field wrapper if no icons are defined #54 ([#54](https://github.com/sfxcode/formkit-primevue/issues/54))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.16
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.15...v2.4.16)
