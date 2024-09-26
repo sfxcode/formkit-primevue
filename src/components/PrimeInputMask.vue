@@ -32,7 +32,7 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
 
 <template>
   <div class="p-formkit">
-    <IconField>
+    <IconField v-if="hasPrefixIcon || hasSuffixIcon">
       <InputIcon v-if="hasPrefixIcon" :class="context?.iconPrefix" />
       <InputMask
         :id="context.id"
@@ -58,5 +58,28 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
       />
       <InputIcon v-if="hasSuffixIcon" :class="context?.iconSuffix" />
     </IconField>
+    <InputMask
+      v-if="!hasPrefixIcon && !hasSuffixIcon"
+      :id="context.id"
+      v-model="context._value"
+      v-bind="context?.attrs"
+      :disabled="!!context?.disabled"
+      :readonly="context?.attrs.readonly ?? false"
+      :class="context?.attrs?.class"
+      :invalid="isInvalid"
+      :tabindex="context?.attrs.tabindex"
+      :aria-label="context?.attrs.ariaLabel"
+      :aria-labelledby="context?.attrs.ariaLabelledby"
+      :mask="context.mask ?? undefined"
+      :slot-char="context.slotChar ?? '_'"
+      :auto-clear="context.autoClear ?? true"
+      :unmask="context.unmask ?? false"
+      :pt="context.pt"
+      :variant="context.variant"
+      :pt-options="context.ptOptions"
+      :unstyled="unstyled"
+      @update:model-value="handleInput"
+      @blur="handleBlur"
+    />
   </div>
 </template>
