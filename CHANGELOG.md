@@ -1,3 +1,19 @@
+## v2.4.18
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.17...v2.4.18)
+
+### 🚀 Enhancements
+
+- **inputs:** Remove defaults in components pointing to prime icons because the actual default use svg #57 ([#57](https://github.com/sfxcode/formkit-primevue/issues/57))
+
+### 🏡 Chore
+
+- Update dependencies ([693ebbf](https://github.com/sfxcode/formkit-primevue/commit/693ebbf))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.17
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.16...v2.4.17)
