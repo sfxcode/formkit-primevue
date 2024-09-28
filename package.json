@@ -93,9 +93,9 @@
     "@formkit/vue": "^1.6.7",
     "primeicons": "^7.0.0",
     "primevue": "4.0.7",
+    "quill": "^2.0.2",
     "uuid": "^10.0.0",
-    "vue-i18n": "10.0.3",
-    "quill": "^2.0.2"
+    "vue-i18n": "10.0.3"
   },
   "devDependencies": {
     "@antfu/eslint-config": "3.7.3",
