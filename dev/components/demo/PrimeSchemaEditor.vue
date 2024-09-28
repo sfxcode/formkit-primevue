@@ -1,11 +1,10 @@
 <script setup lang='ts'>
-import type { ToastMessageOptions } from 'primevue/toast'
 import { FormKitSchema } from '@formkit/vue'
 import { useClipboard } from '@vueuse/core'
 import { useInputEditor } from 'my-library'
-import { useToast } from 'primevue/usetoast'
 
 import { ref } from 'vue'
+import { useMessages } from '../../composables/messages'
 
 const props = defineProps<{
   header: string
@@ -18,11 +17,7 @@ const schemaResultFormKey = ref(0)
 
 const { editorDataToSchema, editorDataToJson, editorDataToCode } = useInputEditor()
 
-const toast = useToast()
-
-function showMessage(severity: ToastMessageOptions['severity'], summary: string, detail: string) {
-  toast.add({ severity, summary, detail, life: 2000 })
-}
+const { showSuccessMessage } = useMessages()
 
 const formSchema = ref(props.schema)
 const formData = reactive(props.data)
@@ -30,7 +25,7 @@ const formData = reactive(props.data)
 const data = ref({})
 
 async function submitHandler() {
-  showMessage('success', `Form Input (${formData._dollar_formkit}) updated`, 'Input creation completed successfully ...')
+  showSuccessMessage(`Form Input (${formData._dollar_formkit}) updated`, 'Input creation completed successfully ...')
 
   data.value = { }
   schemaResultFormKey.value += 1
@@ -38,7 +33,7 @@ async function submitHandler() {
 }
 
 async function submitHandler2() {
-  showMessage('success', `Data submitted`, data.value)
+  showSuccessMessage(`Data submitted`, data.value.toString())
 }
 
 const schemaResult = computed(() => editorDataToSchema(formData))
@@ -56,7 +51,6 @@ function copyObject() {
 
 <template>
   <div>
-    <Toast position="bottom-right" />
     <h2 class="text-color-[var(--p-primary-color)] pb-2">
       {{ header }}
     </h2>

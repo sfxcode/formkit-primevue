@@ -5,6 +5,7 @@ import AppTopBar from '@/components/app/AppTopbar.vue'
 
 <template>
   <main class="p-2">
+    <Toast position="bottom-right" />
     <div class="">
       <AppTopBar />
       <div class="pl-2">

@@ -1,10 +1,9 @@
 <script setup lang='ts'>
-import type { ToastMessageOptions } from 'primevue/toast'
 import { FormKit, FormKitSchema } from '@formkit/vue'
 import JsonEditorVue from 'json-editor-vue'
-import { useToast } from 'primevue/usetoast'
 import { ref } from 'vue'
 import FormKitDebug from '../../../src/components/FormKitDebug.vue'
+import { useMessages } from '../../composables/messages'
 
 const props = defineProps<{
   header: string
@@ -16,11 +15,7 @@ const props = defineProps<{
   hideTabs?: boolean
 }>()
 
-const toast = useToast()
-
-function showMessage(severity: ToastMessageOptions['severity'], summary: string, detail: string) {
-  toast.add({ severity, summary, detail, life: 1000 })
-}
+const { showSuccessMessage } = useMessages()
 
 const formSchema = ref(props.schema)
 const formData = ref(props.data)
@@ -29,13 +24,12 @@ const documentationLink = `https://primevue.org/${props.header.replace('Prime', 
 const inputClass = 'p-button p-component p-formkit-button'
 
 async function submitHandler() {
-  showMessage('success', 'Form Submitted ...', `${props.header} submitted successfully`)
+  showSuccessMessage('Form Submitted ...', `${props.header} submitted successfully`)
 }
 </script>
 
 <template>
   <div>
-    <Toast position="bottom-right" />
     <h2 class="text-color-[var(--p-primary-color)] pb-2">
       {{ header }}
     </h2>
