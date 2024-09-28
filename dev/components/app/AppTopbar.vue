@@ -112,6 +112,15 @@ const items = ref([
       ],
       [
         {
+          label: 'Data',
+          items: [
+            { label: 'Edit', icon: 'pi pi-fw pi-user-edit', route: '/data/edit' },
+            { label: 'View', icon: 'pi pi-fw pi-user-edit', route: '/data/view' },
+            { label: 'Without Schema', icon: 'pi pi-fw pi-user-edit', route: '/data/withoutSchema' },
+            { label: 'Slots', icon: 'pi pi-fw pi-user-edit', route: '/data/slots' },
+          ],
+        },
+        {
           label: 'Samples',
           items: [
             { label: 'Repeater', icon: 'pi pi-fw pi-user-edit', route: '/samples/repeater' },
