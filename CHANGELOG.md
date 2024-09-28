@@ -1,3 +1,27 @@
+## v2.4.19
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.18...v2.4.19)
+
+### 🚀 Enhancements
+
+- **slots:** Support Slots ([87a3119](https://github.com/sfxcode/formkit-primevue/commit/87a3119))
+- **slots:** Add default slots to data components ([c4005f4](https://github.com/sfxcode/formkit-primevue/commit/c4005f4))
+- **demos:** Add Data Demos including Slots ([161acba](https://github.com/sfxcode/formkit-primevue/commit/161acba))
+
+### 💅 Refactors
+
+- **demos:** Update and create messages composable ([248e3dc](https://github.com/sfxcode/formkit-primevue/commit/248e3dc))
+
+### 🏡 Chore
+
+- **cleanup:** Remove unused files ([71097d1](https://github.com/sfxcode/formkit-primevue/commit/71097d1))
+- **dependencies:** Update and add quill as dependency #55 ([#55](https://github.com/sfxcode/formkit-primevue/issues/55))
+- **dependencies:** Update and add quill as dependency #55 ([#55](https://github.com/sfxcode/formkit-primevue/issues/55))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.18
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.17...v2.4.18)
