@@ -38,7 +38,8 @@ const formData = ref(props.data)
       :form-class="formClass"
       :actions="false"
     >
-      <FormKitSchema :schema="formSchema" :data="formData" />
+      <FormKitSchema v-if="formSchema" :schema="formSchema" :data="formData" />
+      <slot />
     </FormKit>
     <FormKitDebug v-if="debugData" :data="formData" header="Data" />
     <FormKitDebug v-if="debugSchema" :data="formSchema" header="Schema" />

@@ -62,7 +62,8 @@ function handleSave() {
       }"
       @submit="handleSave"
     >
-      <FormKitSchema :schema="formSchema" :data="formData" />
+      <FormKitSchema v-if="formSchema" :schema="formSchema" :data="formData" />
+      <slot />
     </FormKit>
     <FormKitDebug v-if="debugData" :data="formData" header="Data" />
     <FormKitDebug v-if="debugSchema" :data="formSchema" header="Schema" />
