@@ -25,7 +25,7 @@ const props = defineProps({
 
 const { hasPrefix, hasSuffix, generateId } = useFormKitSection(props.context)
 
-const { unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
+const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
 
 const generatedId = generateId()
 </script>
@@ -57,7 +57,11 @@ const generatedId = generateId()
       :unstyled="unstyled"
       @change="handleInput"
       @blur="handleBlur"
-    />
+    >
+      <template v-for="slotName in validSlotNames" :key="slotName" #[slotName]="slotProps">
+        <component :is="context?.slots[slotName]" v-bind="{ ...context, ...slotProps }" />
+      </template>
+    </Checkbox>
     <label v-if="hasSuffix" :for="generatedId" class="formkit-suffix">
       {{ context?.suffix }}
     </label>

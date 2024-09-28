@@ -30,7 +30,7 @@ const props = defineProps({
   },
 })
 
-const { unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
+const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
 </script>
 
 <template>
@@ -63,6 +63,10 @@ const { unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.c
       :unstyled="unstyled"
       @input="handleInput"
       @blur="handleBlur"
-    />
+    >
+      <template v-for="slotName in validSlotNames" :key="slotName" #[slotName]="slotProps">
+        <component :is="context?.slots[slotName]" v-bind="{ ...context, ...slotProps }" />
+      </template>
+    </Password>
   </div>
 </template>

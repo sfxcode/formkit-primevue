@@ -34,7 +34,7 @@ const props = defineProps({
   },
 })
 
-const { unstyled, isInvalid } = useFormKitInput(props.context)
+const { validSlotNames, unstyled, isInvalid } = useFormKitInput(props.context)
 
 function handleBlur(e: InputNumberBlurEvent) {
   props.context?.handlers.blur(e.originalEvent)
@@ -99,6 +99,10 @@ watch(
       :unstyled="unstyled"
       @input="handleInput"
       @blur="handleBlur"
-    />
+    >
+      <template v-for="slotName in validSlotNames" :key="slotName" #[slotName]="slotProps">
+        <component :is="context?.slots[slotName]" v-bind="{ ...context, ...slotProps }" />
+      </template>
+    </InputNumber>
   </div>
 </template>
