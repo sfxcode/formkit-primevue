@@ -22,10 +22,8 @@ const schema = reactive(
       label: 'Email',
       help: 'This will be used for your account.',
       validation: 'required|email',
-      prefix: 'test',
-      iconPrefix: 'pi pi-trash text-color-red',
-      suffix: 'ich suffix net',
-      iconSuffix: 'pi pi-trash text-color-blue',
+      iconPrefix: 'pi pi-book',
+      iconSuffix: 'pi pi-bullseye',
     },
     {
       $formkit: 'primeTextarea',
@@ -108,7 +106,8 @@ async function submitHandler() {
       :schema="schema"
       :submit-label="t('save')"
       :form-class="horizontal ? 'form-horizontal' : ''"
-      :debug-mode="true"
+      :debug-data="true"
+      :debug-schema="true"
       @data-saved="submitHandler"
     />
   </PrimeData>

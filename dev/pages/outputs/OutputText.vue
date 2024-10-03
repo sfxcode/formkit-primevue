@@ -11,6 +11,12 @@ const schema
     },
     {
       $formkit: 'primeOutputText',
+      name: 'toTranslate',
+      isTranslationKey: true,
+      label: 'Translated',
+    },
+    {
+      $formkit: 'primeOutputText',
       name: 'html',
       label: 'HTML as Text (Default)',
     },
@@ -39,7 +45,7 @@ const schema
 
   ]
 
-const data = { name: 'Harry Potter', iconLeft: 'Some Text ...', iconRight: 'Another Text ...', html: '<b style="color: gold">Bold Hello World</b>' }
+const data = { name: 'Harry Potter', toTranslate: 'sample', iconLeft: 'Some Text ...', iconRight: 'Another Text ...', html: '<b style="color: gold">Bold Hello World</b>' }
 </script>
 
 <template>
