@@ -1,3 +1,20 @@
+## v2.5.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.19...v2.5.0)
+
+### 🚀 Enhancements
+
+- **PrimeOutputText:** IsTranslationKey prop added and i18n handling ([cc51941](https://github.com/sfxcode/formkit-primevue/commit/cc51941))
+- **PrimeOutputText:** IsTranslationKey prop added and i18n handling ([69debed](https://github.com/sfxcode/formkit-primevue/commit/69debed))
+
+### 💅 Refactors
+
+- **FormKitDataEdit:** Use FormKit form slots and PrimeVue Button component - try to fix #59 - add some more styling ([#59](https://github.com/sfxcode/formkit-primevue/issues/59))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.4.19
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.4.18...v2.4.19)

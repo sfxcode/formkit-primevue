@@ -1,7 +1,7 @@
 {
   "name": "@sfxcode/formkit-primevue",
   "type": "module",
-  "version": "2.4.19",
+  "version": "2.5.0",
   "packageManager": "pnpm@9.11.0+sha256.1c0e33f70e5df9eede84a357bdfa0b1f9dba6e58194628d48a1055756f553754",
   "author": {
     "name": "Tom",
@@ -72,7 +72,7 @@
     "dev": "vite serve dev",
     "dev:build": "vite build dev",
     "dev:preview": "vite preview dev",
-    "release": "npm run lint && npm run build && changelogen --patch --release  && npm publish --access public && git push --follow-tags",
+    "release": "npm run lint && npm run build && changelogen --minor --release  && npm publish --access public && git push --follow-tags",
     "lint": "eslint ./src",
     "lint:fix": "eslint . --fix",
     "prepublishOnly": "pnpm build",
