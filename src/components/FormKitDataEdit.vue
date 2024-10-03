@@ -1,9 +1,13 @@
 <script setup lang='ts'>
-import { FormKit, FormKitSchema } from '@formkit/vue'
+import { FormKit, FormKitMessages, FormKitSchema } from '@formkit/vue'
 import { ref } from 'vue'
 import FormKitDebug from './FormKitDebug.vue'
 
 const props = defineProps({
+  id: {
+    type: String,
+    default: 'form',
+  },
   data: {
     type: Object,
     default: null,
@@ -28,6 +32,10 @@ const props = defineProps({
     type: String,
     default: 'Save',
   },
+  cancelLabel: {
+    type: String,
+    default: 'Cancel',
+  },
   actionsClass: {
     type: String,
     default: '',
@@ -51,19 +59,23 @@ function handleSave() {
 <template>
   <div class="p-formkit-data-edit">
     <FormKit
-      id="form"
+      :id="id"
       v-model="formData"
       :form-class="formClass"
       :actions-class="actionsClass"
       type="form"
-      :submit-label="submitLabel"
-      :submit-attrs="{
-        inputClass,
-      }"
       @submit="handleSave"
     >
-      <FormKitSchema v-if="formSchema" :schema="formSchema" :data="formData" />
-      <slot />
+      <template #default>
+        <FormKitSchema v-if="formSchema" :schema="formSchema" :data="formData" />
+        <slot />
+      </template>
+      <template #messages>
+        <FormKitMessages class="p-formkit-data-edit-messages" />
+      </template>
+      <template #submit>
+        <Button type="submit" :label="submitLabel" @submit="handleSave" />
+      </template>
     </FormKit>
     <FormKitDebug v-if="debugData" :data="formData" header="Data" />
     <FormKitDebug v-if="debugSchema" :data="formSchema" header="Schema" />

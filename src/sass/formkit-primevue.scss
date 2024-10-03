@@ -35,8 +35,8 @@ $grid-breakpoints: (
   // General message item styling
   .formkit-messages {
     margin: 0.125rem 0;
-    padding-top: 0.25rem;
-    padding-left: 0;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
   }
 
   .formkit-message {
@@ -50,6 +50,12 @@ $grid-breakpoints: (
   // Single form element
   .formkit-outer {
     padding-bottom: 0.8rem;
+
+    .formkit-messages {
+      margin: 0.125rem 0;
+      padding-top: 0.25rem;
+      padding-left: 0;
+    }
 
     .formkit-inner {
       .p-formkit {
@@ -162,6 +168,110 @@ $grid-breakpoints: (
     padding: 0.2rem 0.5rem;
   }
 }
+
+// data view only
+.p-formkit-data-view {
+  .formkit-form {
+    .formkit-outer {
+      padding-bottom: 0;
+    }
+
+    .formkit-help {
+      margin: 0;
+    }
+  }
+}
+
+// data edit only
+.p-formkit-data-edit {
+
+  .formkit-form {
+    .formkit-label {
+      //font-weight: normal;
+    }
+
+    // specific checkbox stylings
+    .formkit-outer[data-type="primeCheckbox"] {
+      //padding-left: 0;
+
+      .formkit-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+
+        .formkit-inner {
+          width: auto !important;
+        }
+
+        label {
+          width: auto;
+          order: 2;
+          padding: 0.125rem 0;
+
+          &:after {
+            content: "";
+          }
+
+          // styling of output when label is used in schema
+          + .formkit-inner {
+            margin-left: 0 !important;
+            order: 1;
+            flex-basis: 2rem;
+            flex-grow: 0;
+            flex-shrink: 0;
+            overflow: hidden;
+            // styling of suffix when suffix is used in addition to label
+            &:has( label) {
+              flex-grow: 1;
+              flex-basis: 100%;
+            }
+          }
+        }
+
+        // styling when both prefix and suffix are used in schema
+        label:first-child:nth-last-child(3), label:first-child:nth-last-child(3) ~ label {
+          width: auto;
+        }
+
+        label:first-child:nth-last-child(3) {
+          order: 1;
+
+          + div.p-checkbox {
+            order: 2;
+            width: auto;
+          }
+        }
+
+        label:first-child:nth-last-child(3) ~ label {
+          order: 3
+        }
+
+        // end styling when both prefix and suffix are used in schema
+
+
+        // styling of output when only suffix is used in schema
+        .formkit-inner:first-child {
+          margin-left: 0 !important;
+
+          .p-formkit {
+            display: flex;
+          }
+        }
+
+        .p-checkbox:not(:only-child) {
+          width: 2rem;
+          overflow: hidden;
+        }
+      }
+
+      .formkit-help {
+        width: auto !important;
+        //padding-left: 2rem;
+      }
+    }
+  }
+}
+
+
 
 // Debug
 .p-formkit-data-debug {
