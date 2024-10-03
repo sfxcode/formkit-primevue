@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
 import type { PropType } from 'vue'
+import { useI18n } from 'vue-i18n'
 import { useFormKitSection } from '../composables'
 
 const props = defineProps({
@@ -8,6 +9,20 @@ const props = defineProps({
     type: Object as PropType<FormKitFrameworkContext>,
     required: true,
   },
+})
+
+const textValue = computed(() => {
+  const value = props.context?._value
+  const { t } = useI18n()
+  if (value) {
+    if (props.context?.isTranslationKey)
+      return t(value)
+    else
+      return value
+  }
+  else {
+    return ''
+  }
 })
 
 const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection(props.context)
@@ -24,8 +39,8 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
       :style="context?.attrs?.style"
       :class="context?.attrs?.class"
     >
-      <span v-if="context?.html" v-html="context?._value" />
-      <span v-else v-text="context?._value" />
+      <span v-if="context?.html" v-html="textValue" />
+      <span v-else v-text="textValue" />
     </span>
     <span v-if="hasSuffix" class="formkit-suffix">
       {{ context?.suffix }}

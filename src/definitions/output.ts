@@ -10,7 +10,7 @@ import PrimeOutputReference from '../components/PrimeOutputReference.vue'
 import PrimeOutputText from '../components/PrimeOutputText.vue'
 
 export const primeOutputTextDefinition: FormKitTypeDefinition = createInput(PrimeOutputText, {
-  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'html'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'isTranslationKey', 'html'],
 })
 
 export const primeOutputDateDefinition: FormKitTypeDefinition = createInput(PrimeOutputDate, {
