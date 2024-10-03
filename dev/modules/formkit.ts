@@ -33,4 +33,4 @@ export const install: UserModule = ({ app }) => {
   }))
 }
 
-export {}
+
