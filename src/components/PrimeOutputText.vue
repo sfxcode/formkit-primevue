@@ -36,7 +36,7 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
       {{ context?.prefix }}
     </span>
     <span v-if="context?.html" :id="context?.id" :class="context?.attrs?.class" :style="context?.attrs?.style" v-html="textValue" />
-    <span v-else :id="context?.id" v-text="textValue" />
+    <span v-else :id="context?.id" :class="context?.attrs?.class" :style="context?.attrs?.style" v-text="textValue" />
     <span v-if="hasSuffix" class="formkit-suffix">
       {{ context?.suffix }}
     </span>
