@@ -1,3 +1,15 @@
+## v2.5.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.1...v2.5.2)
+
+### 🩹 Fixes
+
+- **PrimeOutputText:** Remove wrapper span ([db72166](https://github.com/sfxcode/formkit-primevue/commit/db72166))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.5.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.0...v2.5.1)
