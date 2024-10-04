@@ -344,13 +344,13 @@ $grid-breakpoints: (
           width: 100%;
 
           label {
-            @apply w-4/12;
+            width: 33.3333333333%;
             padding-top: 0.25rem;
             line-height: normal;
           }
 
           .formkit-inner {
-            @apply w-8/12;
+            width: 66.6666666667%;
           }
         }
 
@@ -369,16 +369,12 @@ $grid-breakpoints: (
           }
         }
 
-
         .formkit-help, .formkit-messages {
-          @apply w-8/12;
+          width: 66.6666666667%;
           margin-left: auto;
         }
       }
-
     }
-
-
   }
 }
 
