@@ -1,3 +1,15 @@
+## v2.5.5
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.4...v2.5.5)
+
+### 🎨 Styles
+
+- **sass:** Replace unocss apply with css expression ([3b176f3](https://github.com/sfxcode/formkit-primevue/commit/3b176f3))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.5.4
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.3...v2.5.4)
