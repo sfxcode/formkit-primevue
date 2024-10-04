@@ -95,7 +95,9 @@
     "primeicons": "^7.0.0",
     "primevue": "4.0.7",
     "quill": "^2.0.2",
-    "uuid": "^10.0.0"
+    "uuid": "^10.0.0",
+    "vue-i18n": "9.14.1"
+
   },
   "devDependencies": {
     "@antfu/eslint-config": "3.7.3",
