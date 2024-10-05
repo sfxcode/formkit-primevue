@@ -326,6 +326,15 @@ $grid-breakpoints: (
           }
         }
       }
+
+      &.form-horizontal-checkbox-indent {
+        .formkit-outer[data-type="primeCheckbox"] {
+          @include media-breakpoint-up(md) {
+            padding-left: calc((4 / 12) * 100%);
+          }
+        }
+      }
+
     }
 
     .p-formkit-data-view & {
@@ -344,13 +353,13 @@ $grid-breakpoints: (
           width: 100%;
 
           label {
-            width: 33.3333333333%;
+            width: calc((4 / 12) * 100%);
             padding-top: 0.25rem;
             line-height: normal;
           }
 
           .formkit-inner {
-            width: 66.6666666667%;
+            width: calc((8 / 12) * 100%);
           }
         }
 
@@ -370,7 +379,7 @@ $grid-breakpoints: (
         }
 
         .formkit-help, .formkit-messages {
-          width: 66.6666666667%;
+          width: calc((8 / 12) * 100%);
           margin-left: auto;
         }
       }

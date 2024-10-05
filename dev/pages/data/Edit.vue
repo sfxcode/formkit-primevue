@@ -5,6 +5,7 @@ import { useMessages } from '../../composables/messages'
 const { addElement } = useFormKitSchema()
 const { t } = useI18n()
 const horizontal = ref(false)
+const indentCheckboxes = ref(false)
 
 const options = [
   { label: 'Every page load', value: 'refresh' },
@@ -99,13 +100,18 @@ async function submitHandler() {
 <template>
   <PrimeData header="FormKitDataEdit Demo">
     <div class="flex gap-2 mb-4">
-      Horizontal  <ToggleSwitch v-model="horizontal" />
+      <div>Horizontal</div>
+      <ToggleSwitch v-model="horizontal" />
+      <div v-if="horizontal">
+        Indent Checkboxes
+      </div>
+      <ToggleSwitch v-if="horizontal" v-model="indentCheckboxes" />
     </div>
     <FormKitDataEdit
       :data="data"
       :schema="schema"
       :submit-label="t('save')"
-      :form-class="horizontal ? 'form-horizontal' : ''"
+      :form-class="(horizontal ? ' form-horizontal' : '') + (indentCheckboxes ? ' form-horizontal-checkbox-indent ' : '')"
       :debug-data="true"
       :debug-schema="true"
       @data-saved="submitHandler"
