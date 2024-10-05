@@ -36,11 +36,15 @@ const props = defineProps({
     type: String,
     default: 'Cancel',
   },
+  formClass: {
+    type: String,
+    default: '',
+  },
   actionsClass: {
     type: String,
     default: '',
   },
-  formClass: {
+  buttonClass: {
     type: String,
     default: '',
   },
@@ -74,7 +78,7 @@ function handleSave() {
         <FormKitMessages class="p-formkit-data-edit-messages" />
       </template>
       <template #submit>
-        <Button type="submit" :label="submitLabel" @submit="handleSave" />
+        <Button type="submit" :label="submitLabel" :class="buttonClass" @submit="handleSave" />
       </template>
     </FormKit>
     <FormKitDebug v-if="debugData" :data="formData" header="Data" />
