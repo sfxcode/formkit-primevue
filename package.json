@@ -2,7 +2,7 @@
   "name": "@sfxcode/formkit-primevue",
   "type": "module",
   "version": "2.5.6",
-  "packageManager": "pnpm@9.11.0+sha256.1c0e33f70e5df9eede84a357bdfa0b1f9dba6e58194628d48a1055756f553754",
+  "packageManager": "pnpm@9.12.1+sha256.91452fdfa46234ae447d46d5c4fc4e7e0a7058f90495c4b6f77f8beebbb154e3",
   "author": {
     "name": "Tom",
     "email": "tom@sfxcode.com"
@@ -127,7 +127,7 @@
     "sass": "1.78.0",
     "tslib": "^2.7.0",
     "typescript": "^5.6.2",
-    "unbuild": "3.0.0-rc.8",
+    "unbuild": "2.0.0",
     "unocss": "^0.63.4",
     "unplugin-auto-import": "^0.18.3",
     "unplugin-vue-components": "^0.27.4",
