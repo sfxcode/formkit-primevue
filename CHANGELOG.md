@@ -1,3 +1,28 @@
+## v2.5.7
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.6...v2.5.7)
+
+### 🚀 Enhancements
+
+- **PrimeAutoComplete:** Add options support with sample #61 ([#61](https://github.com/sfxcode/formkit-primevue/issues/61))
+
+### 💅 Refactors
+
+- **FormKitDataEdit:** Add button class prop ([d3aa040](https://github.com/sfxcode/formkit-primevue/commit/d3aa040))
+
+### 📦 Build
+
+- **dependencies:** Revert to unbuild 2.0.0 ([5bb44fc](https://github.com/sfxcode/formkit-primevue/commit/5bb44fc))
+
+### 🏡 Chore
+
+- **dependencies:** PrimeVue 4.1.0 ([d5a312a](https://github.com/sfxcode/formkit-primevue/commit/d5a312a))
+- **dependencies:** PrimeVue 4.1.0 ([1661cb2](https://github.com/sfxcode/formkit-primevue/commit/1661cb2))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.5.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.5...v2.5.6)
