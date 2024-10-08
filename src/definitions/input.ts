@@ -26,7 +26,7 @@ import PrimeToggleSwitch from '../components/PrimeToggleSwitch.vue'
 import PrimeTreeSelect from '../components/PrimeTreeSelect.vue'
 
 export const primeAutoCompleteDefinition: FormKitTypeDefinition = createInput(PrimeAutoComplete, {
-  props: ['pt', 'ptOptions', 'unstyled', 'Select', 'multiple', 'typeahead'],
+  props: ['pt', 'ptOptions', 'unstyled', 'Select', 'multiple', 'typeahead', 'optionLabel', 'options'],
 })
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
   props: ['pt', 'ptOptions', 'unstyled', 'placeholder', 'iconPrefix', 'iconSuffix'],

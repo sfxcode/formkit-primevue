@@ -12,6 +12,8 @@ export interface FormKitPrimeAutoCompleteProps {
   dropdown?: AutoCompleteProps['dropdown']
   multiple?: AutoCompleteProps['multiple']
   typeahead?: AutoCompleteProps['typeahead']
+  optionLabel?: AutoCompleteProps['optionLabel']
+  options?: any[] | undefined
 }
 
 const props = defineProps({
@@ -26,7 +28,14 @@ const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useForm
 const suggestions = ref([])
 
 function search(event: AutoCompleteCompleteEvent) {
-  suggestions.value = props.context?.attrs.complete(event.query)
+  if (props.context?.options && props.context?.optionLabel) {
+    suggestions.value = props.context.options.filter((option) => {
+      return option[`${props.context.optionLabel}`].toString().toLowerCase().includes(event.query.toLowerCase())
+    })
+  }
+  else {
+    suggestions.value = props.context?.attrs.complete(event.query)
+  }
 }
 </script>
 
@@ -43,6 +52,7 @@ function search(event: AutoCompleteCompleteEvent) {
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
       :suggestions="suggestions"
+      :option-label="context?.optionLabel"
       :dropdown="context?.dropdown ?? false"
       :multiple="context?.multiple ?? false"
       :typeahead="context?.typeahead ?? true"

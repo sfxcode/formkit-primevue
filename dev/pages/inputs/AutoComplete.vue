@@ -7,6 +7,11 @@ function search(query: string) {
   return [...list.filter(i => i.toLowerCase().includes(query.toLowerCase())), query]
 }
 
+const userList = [
+  { id: '1', name: 'Tom', value: '123' },
+  { id: '2', name: 'Tim', value: '124' },
+]
+
 const schema
   = [
     {
@@ -19,6 +24,15 @@ const schema
     },
     {
       $formkit: 'primeAutoComplete',
+      id: 'basic',
+      name: 'id',
+      dropdown: true,
+      label: 'Object AutoComplete - Use [t]om',
+      options: userList,
+      optionLabel: 'name',
+    },
+    {
+      $formkit: 'primeAutoComplete',
       id: 'chips',
       name: 'chips',
       multiple: true,
@@ -27,7 +41,7 @@ const schema
     },
   ]
 
-const data = { }
+const data = { id: { id: '1', name: 'Tom', value: '123' } }
 </script>
 
 <template>
