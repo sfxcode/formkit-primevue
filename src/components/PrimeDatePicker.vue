@@ -59,7 +59,7 @@ const props = defineProps({
   },
 })
 
-const { validSlotNames, unstyled, isInvalid, handleInput, handleSelect } = useFormKitInput(props.context)
+const { validSlotNames, unstyled, isInvalid, handleInput } = useFormKitInput(props.context)
 
 function handleBlur(e: DatePickerBlurEvent) {
   props.context?.handlers.blur(e.originalEvent)
@@ -67,6 +67,15 @@ function handleBlur(e: DatePickerBlurEvent) {
 
 function handleClearClick() {
   props.context?.node.input(null)
+}
+
+function handleSelect(e: any) {
+  if (props.context?.selectionMode === 'range' || props.context?.selectionMode === 'multiple') {
+    props.context?.node.input(props.context._value)
+  }
+  else {
+    props.context?.node.input(e)
+  }
 }
 </script>
 
