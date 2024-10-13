@@ -1,3 +1,19 @@
+## v2.5.8
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.7...v2.5.8)
+
+### 🩹 Fixes
+
+- **datepicker:** Multiple and range not working #62 ([#62](https://github.com/sfxcode/formkit-primevue/issues/62))
+
+### 🏡 Chore
+
+- **dependencies:** Vue 3.5.11 ([8c2ebbe](https://github.com/sfxcode/formkit-primevue/commit/8c2ebbe))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.5.7
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.6...v2.5.7)
