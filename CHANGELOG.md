@@ -1,3 +1,19 @@
+## v2.5.10
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.9...v2.5.10)
+
+### 🩹 Fixes
+
+- **typescript:** Use vue-tsc in build step / fix typescript errors in src  #41 ([#41](https://github.com/sfxcode/formkit-primevue/issues/41))
+
+### 🏡 Chore
+
+- **dependencies:** Update unocss and formkit  drag and drop ([efa9792](https://github.com/sfxcode/formkit-primevue/commit/efa9792))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.5.9
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.8...v2.5.9)
