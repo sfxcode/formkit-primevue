@@ -1,3 +1,15 @@
+## v2.5.11
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.10...v2.5.11)
+
+### 🩹 Fixes
+
+- **dependabot:** Fix cookie security issue ([fe84224](https://github.com/sfxcode/formkit-primevue/commit/fe84224))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.5.10
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.9...v2.5.10)
