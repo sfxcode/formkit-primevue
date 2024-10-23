@@ -62,7 +62,7 @@ const props = defineProps({
 const { validSlotNames, unstyled, isInvalid, handleInput } = useFormKitInput(props.context)
 
 function handleBlur(e: DatePickerBlurEvent) {
-  props.context?.handlers.blur(e.originalEvent)
+  props.context?.handlers.blur(e.originalEvent as FocusEvent)
 }
 
 function handleClearClick() {

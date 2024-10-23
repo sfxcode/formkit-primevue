@@ -13,7 +13,6 @@ export interface FormKitPrimeMultiSelectProps {
   optionGroupLabel?: MultiSelectProps['optionGroupLabel']
   optionGroupChildren?: MultiSelectProps['optionGroupChildren']
   scrollHeight?: MultiSelectProps['scrollHeight']
-  closeIcon?: MultiSelectProps['closeIcon']
   dataKey?: MultiSelectProps['dataKey']
   filter?: MultiSelectProps['filter']
   filterPlaceholder?: MultiSelectProps['filterPlaceholder']

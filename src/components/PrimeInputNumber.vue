@@ -37,7 +37,7 @@ const props = defineProps({
 const { validSlotNames, unstyled, isInvalid } = useFormKitInput(props.context)
 
 function handleBlur(e: InputNumberBlurEvent) {
-  props.context?.handlers.blur(e.originalEvent)
+  props.context?.handlers.blur(e.originalEvent as FocusEvent)
 }
 
 function handleInput(_: any) {

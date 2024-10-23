@@ -25,7 +25,8 @@ const props = defineProps({
 
 const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
 
-const suggestions = ref([])
+const suggestions = ref(['', {}])
+suggestions.value = []
 
 function search(event: AutoCompleteCompleteEvent) {
   if (props.context?.options && props.context?.optionLabel) {

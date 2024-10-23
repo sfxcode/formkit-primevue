@@ -1,22 +1,26 @@
-export function addPrimeAsteriskPlugin(node: any): any {
+import type { FormKitExtendableSchemaRoot, FormKitNode } from '@formkit/core'
+
+export function addPrimeAsteriskPlugin(node: FormKitNode): void {
   if (!node.props.type.startsWith('prime'))
     return
 
   node.on('created', () => {
-    const schemaFn = node.props.definition.schema
-    node.props.definition.schema = (sectionsSchema = {}) => {
-      sectionsSchema.label = {
-        children: ['$label', {
-          $el: 'span',
-          if: '$state.required',
-          attrs: {
-            class: 'p-formkit-asterisk',
-          },
-          children: ['*'],
-        }],
-      }
+    if (node.props.definition?.schema) {
+      const schemaFn = node.props.definition?.schema as FormKitExtendableSchemaRoot
+      node.props.definition!.schema = (sectionsSchema = {}) => {
+        sectionsSchema.label = {
+          children: ['$label', {
+            $el: 'span',
+            if: '$state.required',
+            attrs: {
+              class: 'p-formkit-asterisk',
+            },
+            children: ['*'],
+          }],
+        }
 
-      return schemaFn(sectionsSchema)
+        return schemaFn(sectionsSchema)
+      }
     }
   })
 }

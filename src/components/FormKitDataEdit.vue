@@ -1,4 +1,6 @@
 <script setup lang='ts'>
+import type { FormKitSchemaDefinition } from '@formkit/core'
+import type { PropType } from 'vue'
 import { FormKit, FormKitMessages, FormKitSchema } from '@formkit/vue'
 import { ref } from 'vue'
 import FormKitDebug from './FormKitDebug.vue'
@@ -13,7 +15,7 @@ const props = defineProps({
     default: null,
   },
   schema: {
-    type: Object,
+    type: Object as PropType<FormKitSchemaDefinition>,
     default: null,
   },
   debugData: {
@@ -82,7 +84,7 @@ function handleSave() {
       </template>
     </FormKit>
     <FormKitDebug v-if="debugData" :data="formData" header="Data" />
-    <FormKitDebug v-if="debugSchema" :data="formSchema" header="Schema" />
+    <FormKitDebug v-if="debugSchema" :data="formSchema as object" header="Schema" />
   </div>
 </template>
 

@@ -11,16 +11,17 @@ export function useInputEditor() {
 
     const formkitInput = data?._dollar_formkit
     let tempData = { }
-    if (data.prime && data.prime?.length > 0) {
-      const mapped = data.prime?.map((entry) => {
-        const key = entry.prime_key
-        let value = entry.prime_value
+    if (data.prime && data.prime.length > 0) {
+      const mapped = data.prime.map((entry: { prime_key: string, prime_value: any }) => {
+        const key: string = entry.prime_key
+        let value: any = entry.prime_value
         // some inputs require numbers
-        if (formkitInput === 'primeInputOtp' && key === 'length')
+        if (formkitInput === 'primeInputOtp' && key === 'length') {
           value = +value
-        return [key, value]
+        }
+        return [key, value] as [string, any]
       })
-      tempData = Object.assign(...mapped.map(([key, val]) => ({ [key]: val })))
+      tempData = Object.assign({}, ...mapped.map(([key, val]: [string, any]) => ({ [key]: val })))
     }
 
     const readonlyValue = data.readonly ? true : undefined
@@ -48,7 +49,7 @@ export function useInputEditor() {
 
     const useOptions = primeInputWithOptionNames.map(s => `prime${s}`).includes(formkitInput)
 
-    let result = {}
+    let result: { [key: string]: any } = {}
     if (useOptions)
       result = { ...data, $formkit: formkitInput, ...tempData, ...undefinedObject, ...defaultObject, outerClass, wrapperClass, innerClass, optionLabel: 'label', optionValue: 'value' }
     else
@@ -81,11 +82,11 @@ export function useInputEditor() {
     return JSON.stringify(dataToSchema(data))
   }
 
-  function objectToString(data: any) {
-    return `{${Object.entries(data).map(([key, value]) => {
-      if (key === 'options' && value.length > 0) {
+  function objectToString(data: Record<string, any>): string {
+    return `{${Object.entries(data).map(([key, value]: [string, any]) => {
+      if (key === 'options' && Array.isArray(value) && value.length > 0) {
         let result = '['
-        value.forEach(o => result = `${result + objectToString(o)}, `)
+        value.forEach((o: any) => result = `${result + objectToString(o)}, `)
         return `${key}: ${result.substring(0, result.length - 2)}]`
       }
       else if (key === 'primeInputOtp') {

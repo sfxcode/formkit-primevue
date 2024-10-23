@@ -26,7 +26,7 @@ const { unstyled, isInvalid, handleInput } = useFormKitInput(props.context)
 
 function handleSelection(e: EditorSelectionChangeEvent) {
   if (e.range === null)
-    props.context?.handlers.blur(e.htmlValue)
+    props.context?.node.input(props.context?._value)
 }
 </script>
 
