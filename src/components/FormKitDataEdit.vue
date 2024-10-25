@@ -77,10 +77,14 @@ function handleSave() {
         <slot />
       </template>
       <template #messages>
-        <FormKitMessages class="p-formkit-data-edit-messages" />
+        <slot name="messages">
+          <FormKitMessages class="p-formkit-data-edit-messages" />
+        </slot>
       </template>
       <template #submit>
-        <Button type="submit" :label="submitLabel" :class="buttonClass" @submit="handleSave" />
+        <slot name="submit">
+          <Button type="submit" :label="submitLabel" :class="buttonClass" @submit="handleSave" />
+        </slot>
       </template>
     </FormKit>
     <FormKitDebug v-if="debugData" :data="formData" header="Data" />

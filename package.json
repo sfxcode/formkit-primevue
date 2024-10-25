@@ -102,7 +102,7 @@
     "@antfu/eslint-config": "^3.8.0",
     "@formkit/core": "^1.6.7",
     "@primevue/themes": "^4.1.1",
-    "@types/node": "^22.7.9",
+    "@types/node": "^22.8.0",
     "@types/uuid": "^10.0.0",
     "@unocss/preset-icons": "^0.63.6",
     "@unocss/preset-uno": "^0.63.6",
@@ -120,6 +120,7 @@
     "changelogen": "^0.5.7",
     "chart.js": "^4.4.5",
     "consola": "^3.2.3",
+    "cookie": "^1.0.1",
     "eslint": "^9.13.0",
     "happy-dom": "^15.7.4",
     "json-editor-vue": "^0.17.2",
@@ -132,7 +133,7 @@
     "unocss": "^0.63.6",
     "unplugin-auto-import": "^0.18.3",
     "unplugin-vue-components": "^0.27.4",
-    "vanilla-jsoneditor": "^1.1.1",
+    "vanilla-jsoneditor": "^1.1.2",
     "vite": "^5.4.10",
     "vite-plugin-dts": "^4.3.0",
     "vite-plugin-eslint": "^1.8.1",
@@ -143,7 +144,6 @@
     "vue": "^3.5.12",
     "vue-demi": "^0.14.10",
     "vue-router": "^4.4.5",
-    "vue-tsc": "^2.1.6",
-    "cookie": ">=0.7.0"
+    "vue-tsc": "^2.1.6"
   }
 }

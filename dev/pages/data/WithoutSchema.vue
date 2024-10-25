@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { FormKit } from '@formkit/vue'
+import { FormKit, FormKitMessages } from '@formkit/vue'
 import { FormKitDataEdit } from 'my-library'
 import { useMessages } from '../../composables/messages'
 
@@ -35,6 +35,15 @@ async function submitHandler() {
         option-value="value"
         :options="options"
       />
+      <template #messages>
+        <div class="inline-flex items-center justify-center w-full">
+          <hr class="w-full h-px my-8 bg-[color:var(--p-primary-color)] border-0">
+        </div>
+        <FormKitMessages class="p-formkit-data-edit-messages" />
+      </template>
+      <template #submit>
+        <Button type="submit" label="Save" icon="pi pi-check" icon-pos="right" @submit="submitHandler" />
+      </template>
     </FormKitDataEdit>
   </PrimeData>
 </template>
