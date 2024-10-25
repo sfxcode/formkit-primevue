@@ -1,3 +1,15 @@
+## v2.5.12
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.11...v2.5.12)
+
+### 🚀 Enhancements
+
+- **FormKitDataEdit:** Add named slots for messages / submit ([976f184](https://github.com/sfxcode/formkit-primevue/commit/976f184))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.5.11
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.10...v2.5.11)
