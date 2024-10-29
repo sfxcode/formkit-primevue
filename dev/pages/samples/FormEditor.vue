@@ -13,11 +13,12 @@ const { generateId } = useFormKitSection()
 
 const formSchema = ref(editorSchema)
 const formData = ref(null)
+const lastSelection = ref('showBasic')
 
 function enhanceValuesForInputList(values: any[]): any[] {
-  const result = []
+  const result: any[] = []
   values.forEach((value) => {
-    result.push({ ...value, editableItemId: generateId(), selectButton: 'showBasic' })
+    result.push({ ...value, editableItemId: generateId(), selectButton: lastSelection.value })
   })
   return result
 }
@@ -31,7 +32,7 @@ function actionDelete(schema: any) {
 function actionEdit(schema: any) {
   const data = schemaToEditorData({ ...schema })
   addListGroupFunctions(data)
-  formData.value = data
+  formData.value = { ...data, selectButton: lastSelection.value }
 }
 
 function actionInsert(schema: any) {
@@ -50,6 +51,7 @@ function actionUpdateInputs() {
   const schema = formInputList.value.find(input => input.editableItemId === formData.value.editableItemId)
   const index = formInputList.value.indexOf(schema)
   formInputList.value.splice(index, 1, editorDataToSchema(formData.value))
+  lastSelection.value = formData.value ? formData.value.selectButton : 'showBasic'
   formData.value = null
 }
 
