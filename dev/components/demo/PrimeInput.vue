@@ -54,7 +54,7 @@ async function submitHandler() {
         </div>
       </div>
       <div class="basis-1/2 xl:basis-1/3">
-        <Tabs v-if="!hideTabs" value="0" class="ml-4">
+        <Tabs v-if="!hideTabs" value="0">
           <TabList>
             <Tab value="0">
               Schema Editor
@@ -66,8 +66,8 @@ async function submitHandler() {
               Supported Attributes
             </Tab>
           </TabList>
-          <TabPanels>
-            <TabPanel value="0">
+          <TabPanels class="">
+            <TabPanel value="0" class="w-full max-w-200">
               <JsonEditorVue v-model="formSchema" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
             </TabPanel>
             <TabPanel value="1">
@@ -101,7 +101,8 @@ async function submitHandler() {
 
 <style lang='scss' scoped>
 .jse-theme-dark {
-  /* over all fonts, sizes, and colors */
+
+ /* over all fonts, sizes, and colors */
   --jse-theme-color: #383e42;
   --jse-theme-color-highlight: #687177;
   --jse-background-color: #1e1e1e;
