@@ -17,6 +17,7 @@ it('add element', () => {
   expect(e2.$el).toBe('span')
   expect(renderToBoolean(e2)).toBe(false)
   expect(e2.children?.length).toBe(1)
+  // @ts-expect-error: name is not in the type`
   expect(e2.attrs?.name).toBe('test')
 })
 
@@ -24,6 +25,7 @@ it('add component', () => {
   const { addComponent } = useFormKitSchema()
 
   const component = addComponent()
+  // @ts-expect-error: $cmp is not in the type
   expect(component.$cmp).toBe('Button')
   expect(renderToBoolean(component)).toBe(true)
 })

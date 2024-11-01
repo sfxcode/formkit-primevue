@@ -1,37 +1,37 @@
 export function useFormKitSchema() {
-  const addComponent = (component: string = 'Button', props: object = {}, render: string = 'true', formKitAttrs: object = {}): object => {
+  const addComponent = (component: string = 'Button', props: object = {}, render: string | boolean = true, formKitAttrs: object = {}): object => {
     return {
       $cmp: component,
-      if: render,
+      if: render.toString(),
       props,
       ...formKitAttrs,
     }
   }
 
-  const addElement = (element: string = 'div', children: any[] | string = [], attrs: object = {}, render: string = 'true', formKitAttrs: object = {}) => {
+  const addElement = (element: string = 'div', children: any[] | string = [], attrs: object = {}, render: string | boolean = true, formKitAttrs: object = {}) => {
     return {
       $el: element,
-      if: render,
+      if: render.toString(),
       attrs,
       children,
       ...formKitAttrs,
     }
   }
 
-  const addGroup = (name: string, children: object[] = [], render: string = 'true', formKitAttrs: object = {}) => {
+  const addGroup = (name: string, children: object[] = [], render: string | boolean = true, formKitAttrs: object = {}) => {
     return {
       $formkit: 'group',
-      if: render,
+      if: render.toString(),
       name,
       children,
       ...formKitAttrs,
     }
   }
 
-  const addList = (name: string, children: object[], dynamic: boolean = true, render: string = 'true', formKitAttrs: object = {}) => {
+  const addList = (name: string, children: object[] = [], dynamic: boolean = true, render: string | boolean = true, formKitAttrs: object = {}) => {
     return {
       $formkit: 'list',
-      if: render,
+      if: render.toString(),
       name,
       dynamic,
       children,
@@ -39,10 +39,10 @@ export function useFormKitSchema() {
     }
   }
 
-  const addListGroup = (children: object[] = [], render: string = 'true', formKitAttrs: object = {}) => {
+  const addListGroup = (children: object[] = [], render: string | boolean = true, formKitAttrs: object = {}) => {
     return {
       $formkit: 'group',
-      if: render,
+      if: render.toString(),
       for: ['item', 'index', '$items'], // 👈 $items is in the slot’s scope
       key: '$item',
       index: '$index',
@@ -51,7 +51,7 @@ export function useFormKitSchema() {
     }
   }
 
-  const addElementsInOuterDiv = (children: object[] = [], innerClass: string = '', outerClass: string = '', label: string = '', help: string = '', render: string = 'true') => {
+  const addElementsInOuterDiv = (children: object[] = [], innerClass: string = '', outerClass: string = '', label: string = '', help: string = '', render: string | boolean = true) => {
     const inner = addElement('div', children, { class: `formkit-inner ${innerClass}`, style: 'position: relative;' })
     const labelDiv = addElement('label', [label], { class: 'formkit-label' })
     const wrapperDiv = addElement('div', [labelDiv, inner], { class: 'formkit-wrapper' })
