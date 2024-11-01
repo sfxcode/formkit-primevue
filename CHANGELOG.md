@@ -1,3 +1,25 @@
+## v2.6.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.12...v2.6.1)
+
+### 🚀 Enhancements
+
+- **FormEditor:** Remember last used Editor Tab ([931953e](https://github.com/sfxcode/formkit-primevue/commit/931953e))
+- **JsonEditor:** Prevent Table tab to expand to full width ([20c2475](https://github.com/sfxcode/formkit-primevue/commit/20c2475))
+- **useFormKitSchema:** Allow also boolean value for render ([eb11fde](https://github.com/sfxcode/formkit-primevue/commit/eb11fde))
+- **useFormKitSchema:** Allow also boolean value for render ([2f0b2b0](https://github.com/sfxcode/formkit-primevue/commit/2f0b2b0))
+- **useFormKitSchema:** Allow also boolean value for render property ([ac6ef3d](https://github.com/sfxcode/formkit-primevue/commit/ac6ef3d))
+
+### 🏡 Chore
+
+- **dependencies:** Update ([55fde26](https://github.com/sfxcode/formkit-primevue/commit/55fde26))
+- **dependencies:** PrimeVue 4.2.0 ([f6f1193](https://github.com/sfxcode/formkit-primevue/commit/f6f1193))
+- **dependencies:** PrimeVue 4.2.0 ([909b621](https://github.com/sfxcode/formkit-primevue/commit/909b621))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.5.12
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.11...v2.5.12)
