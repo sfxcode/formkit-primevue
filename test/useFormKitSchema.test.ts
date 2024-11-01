@@ -2,7 +2,7 @@ import { expect, it } from 'vitest'
 import { useFormKitSchema } from '../src/composables'
 
 function renderToBoolean(element: any): boolean {
-  return !!element?.if
+  return element.if === 'true'
 }
 
 it('add element', () => {
@@ -37,6 +37,9 @@ it('add group', () => {
   expect(group.$formkit).toBe('group')
   expect(renderToBoolean(group)).toBe(true)
   expect(group.name).toBe('name')
+
+  const hiddenGroup = addGroup('name', [], false)
+  expect(renderToBoolean(hiddenGroup)).toBe(false)
 })
 
 it('add list', () => {
