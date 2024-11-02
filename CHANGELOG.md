@@ -1,3 +1,19 @@
+## v2.6.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.1...v2.6.2)
+
+### 📦 Build
+
+- **release:** Add test step ([7af963b](https://github.com/sfxcode/formkit-primevue/commit/7af963b))
+
+### 🏡 Chore
+
+- **dependencies:** PrimeVue 4.2.1 ([0161169](https://github.com/sfxcode/formkit-primevue/commit/0161169))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.6.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.5.12...v2.6.1)
