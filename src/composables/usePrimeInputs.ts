@@ -1,4 +1,5 @@
 import AutoComplete from 'primevue/autocomplete'
+import Button from 'primevue/button'
 import CascadeSelect from 'primevue/cascadeselect'
 import Checkbox from 'primevue/checkbox'
 import Chip from 'primevue/chip'
@@ -26,6 +27,7 @@ import TreeSelect from 'primevue/treeselect'
 export function usePrimeInputs() {
   function registerInputs(app: any) {
     app.component('AutoComplete', AutoComplete)
+    app.component('Button', Button)
     app.component('CascadeSelect', CascadeSelect)
     app.component('Checkbox', Checkbox)
     app.component('Chip', Chip)
