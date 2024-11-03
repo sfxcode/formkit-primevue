@@ -60,29 +60,19 @@ Important: output elements depends on vue-i18n to style numbers, dates, ...
 
 ### Nuxt
 
-Important: use *autoimport: false* if using PrimeVue-FormKit validation and include or
-exclude not needed components as usual.
+[FormKit-PrimeVue-Nuxt](https://github.com/sfxcode/formkit-primevue-nuxt) module available.
 
-Autoimport true prevents elements lookup correctly.
+Features:
 
-Example:
-```typescript
-  primevue: {
-  autoImport: false,
-    components: {
-    exclude: ['Chart', 'Editor'],
-  },
-  options: {
-    theme: {
-      preset: Aura,
-        options: {
-        darkModeSelector: '.dark',
-      },
-    },
-    ripple: true,
-  },
-},
-```
+- add PrimeVue Nuxt Module
+- add FormKit Nuxt Module
+- add i18n Nuxt Module
+- Default Configuration for FormKit (with PrimeVue components) is provided (can be disabled if needed)
+- AutoImport of PrimeVue Form Components
+- PrimeIcons are loaded by Default
+- FormKit Styling of this package is loaded by default
+- AutoImport of Composables
+- AutoImport of Components
 
 ## Limitations
 

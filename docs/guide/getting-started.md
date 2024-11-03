@@ -12,13 +12,6 @@ $ pnpm add -D @sfxcode/formkit-primevue
 
 Make sure all components of PrimeVue you want to use are enabled in your configuration.
 
-::: warning Nuxt 3 / 4
-
-Important: use *autoimport: false* if using primevue formkit validation and include or
-exclude not needed components as usual.
-
-Autoimport true prevents elements lookup correctly.
-:::
 ### Formkit Config
 
 Add a formkit.config.ts to your root dir and register primeInputs for FormKit.
@@ -146,3 +139,7 @@ async function submitHandler() {
   </div>
 </template>
 ```
+
+## Nuxt
+
+[FormKit-PrimeVue-Nuxt](https://github.com/sfxcode/formkit-primevue-nuxt) module available.
