@@ -1,3 +1,15 @@
+## v2.6.4
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.3...v2.6.4)
+
+### 📖 Documentation
+
+- Update to [FormKit-PrimeVue-Nuxt](https://github.com/sfxcode/formkit-primevue-nuxt) ([0d5c891](https://github.com/sfxcode/formkit-primevue/commit/0d5c891))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.6.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.2...v2.6.3)
