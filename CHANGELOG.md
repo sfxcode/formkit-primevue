@@ -1,3 +1,20 @@
+## v2.6.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.2...v2.6.3)
+
+### 🚀 Enhancements
+
+- **usePrimeInputs:** Add Button ([cd5b2e9](https://github.com/sfxcode/formkit-primevue/commit/cd5b2e9))
+- **usePrimeInputs:** Add Button ([3ca892f](https://github.com/sfxcode/formkit-primevue/commit/3ca892f))
+
+### 📦 Build
+
+- **release:** Add test step ([10cd286](https://github.com/sfxcode/formkit-primevue/commit/10cd286))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.6.2
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.1...v2.6.2)
