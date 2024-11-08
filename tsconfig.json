@@ -6,6 +6,5 @@
   "include": [
     "src",
     "test",
-    "dev"
   ]
 }
