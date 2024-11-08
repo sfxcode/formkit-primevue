@@ -17,6 +17,9 @@ importers:
       '@formkit/i18n':
         specifier: ^1.6.7
         version: 1.6.7
+      '@formkit/inputs':
+        specifier: ^1.6.7
+        version: 1.6.7
       '@formkit/vue':
         specifier: ^1.6.7
         version: 1.6.7(unocss@0.64.0(postcss@8.4.47)(rollup@3.29.5)(vite@5.4.10(@types/node@22.9.0)(sass@1.78.0)(terser@5.36.0))(vue@3.5.12(typescript@5.6.3)))(vue@3.5.12(typescript@5.6.3))

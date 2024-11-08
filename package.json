@@ -88,6 +88,7 @@
   },
   "dependencies": {
     "@formkit/addons": "^1.6.7",
+    "@formkit/inputs": "^1.6.7",
     "@formkit/drag-and-drop": "^0.2.5",
     "@formkit/i18n": "^1.6.7",
     "@formkit/vue": "^1.6.7",
