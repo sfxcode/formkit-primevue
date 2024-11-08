@@ -4,6 +4,8 @@
     "types": ["vitest/globals"]
   },
   "include": [
-    "src", "test"
+    "src",
+    "test",
+    "dev"
   ]
 }
