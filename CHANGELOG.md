@@ -1,3 +1,23 @@
+## v2.6.5
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.4...v2.6.5)
+
+### 🚀 Enhancements
+
+- **inputs:** Add size attributes (introduced in primevue 4.2) ([e4382a5](https://github.com/sfxcode/formkit-primevue/commit/e4382a5))
+- **types:** Add custom component types #41 ([#41](https://github.com/sfxcode/formkit-primevue/issues/41))
+
+### 🏡 Chore
+
+- **dependencies:** Update ([5d2ff06](https://github.com/sfxcode/formkit-primevue/commit/5d2ff06))
+- **linting:** Add more directories ([d727617](https://github.com/sfxcode/formkit-primevue/commit/d727617))
+- **linting:** Exclude dev ([ecaabd6](https://github.com/sfxcode/formkit-primevue/commit/ecaabd6))
+- **linting:** Exclude dev ([3934715](https://github.com/sfxcode/formkit-primevue/commit/3934715))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.6.4
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.3...v2.6.4)
