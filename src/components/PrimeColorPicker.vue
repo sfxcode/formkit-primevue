@@ -12,7 +12,6 @@ export interface FormKitPrimeColorPickerProps {
   pt?: ColorPickerProps['pt']
   ptOptions?: ColorPickerProps['ptOptions']
   unstyled?: ColorPickerProps['unstyled']
-
 }
 
 const props = defineProps({

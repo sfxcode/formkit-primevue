@@ -14,6 +14,7 @@ export interface FormKitPrimeToggleButtonProps {
   onIcon?: ToggleButtonProps['onIcon']
   offIcon?: ToggleButtonProps['offIcon']
   iconPos?: ToggleButtonProps['iconPos']
+  size?: ToggleButtonProps['size']
 
 }
 
@@ -41,6 +42,7 @@ const { validSlotNames, unstyled, isInvalid, handleChange, handleBlur } = useFor
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :on-label="context.onLabel ?? 'Yes'"
       :off-label="context.offLabel ?? 'No'"
       :on-icon="context.onIcon"

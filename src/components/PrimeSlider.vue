@@ -14,7 +14,6 @@ export interface FormKitPrimeSliderProps {
   step?: SliderProps['step']
   range?: SliderProps['range']
   orientation?: SliderProps['orientation']
-
 }
 
 const props = defineProps({

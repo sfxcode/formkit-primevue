@@ -37,6 +37,7 @@ export interface FormKitPrimeSelectProps {
   pt?: SelectProps['pt']
   ptOptions?: SelectProps['ptOptions']
   unstyled?: SelectProps['unstyled']
+  size?: SelectProps['size']
 
 }
 
@@ -67,6 +68,7 @@ const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useForm
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :options="context.options"
       :option-label="context.optionLabel"
       :option-value="context.optionValue"

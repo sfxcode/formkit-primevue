@@ -10,6 +10,7 @@ const schema
       label: 'Basic',
       help: 'Required.',
       validation: 'required',
+
     },
     {
       $formkit: 'primeInputText',
@@ -23,10 +24,11 @@ const schema
     {
       $formkit: 'primeInputText',
       name: 'iconRight',
-      label: 'Icon Right (Disabled)',
+      label: 'Icon Right (Disabled) - smize: small',
       help: 'Right Icon Demo',
       iconSuffix: 'pi pi-check',
       disabled: true,
+      size: 'small',
     },
 
   ]

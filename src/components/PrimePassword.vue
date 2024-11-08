@@ -20,7 +20,7 @@ export interface FormKitPrimePasswordProps {
   placeholder?: PasswordProps['placeholder']
   feedback?: PasswordProps['feedback']
   toggleMask?: PasswordProps['toggleMask']
-
+  size?: PasswordProps['size']
 }
 
 const props = defineProps({
@@ -47,6 +47,7 @@ const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useForm
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :placeholder="context.placeholder"
       :medium-regex="context.mediumRegex ?? '^(((?=.*[a-z])(?=.*[A-Z]))|((?=.*[a-z])(?=.*[0-9]))|((?=.*[A-Z])(?=.*[0-9])))(?=.{6,})'"
       :strong-regex="context.strongRegex ?? '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.{8,})'"

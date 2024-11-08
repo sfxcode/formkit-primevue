@@ -14,6 +14,7 @@ export interface FormKitPrimeCheckboxProps {
   unstyled?: CheckboxProps['unstyled']
   indeterminate?: CheckboxProps['indeterminate']
   variant?: CheckboxProps['variant']
+  size?: CheckboxProps['size']
 }
 
 const props = defineProps({
@@ -47,6 +48,7 @@ const generatedId = generateId()
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :indeterminate="context.indeterminate ?? undefined"
       :binary="context.binary ?? true"
       :variant="context.variant ?? 'outlined'"

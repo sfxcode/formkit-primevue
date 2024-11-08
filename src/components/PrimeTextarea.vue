@@ -12,6 +12,7 @@ export interface FormKitPrimeTextareaProps {
   autoResize?: TextareaProps['autoResize']
   rows?: TextareaProps['rows']
   placeholder?: TextareaProps['placeholder']
+  size?: TextareaProps['size']
 
 }
 
@@ -39,6 +40,7 @@ const { unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.c
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :placeholder="context.placeholder"
       :rows="context.rows ?? 3"
       :auto-resize="context.autoResize ?? false"

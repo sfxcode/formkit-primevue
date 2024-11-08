@@ -15,6 +15,7 @@ export interface FormKitPrimeSelectButtonProps {
   multiple?: SelectButtonProps['multiple']
   dataKey?: SelectButtonProps['dataKey']
   options?: SelectButtonProps['options']
+  size?: SelectButtonProps['size']
 
 }
 
@@ -42,6 +43,7 @@ const { validSlotNames, unstyled, isInvalid, handleChange, handleBlur } = useFor
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :options="context.options"
       :option-label="context.optionLabel"
       :option-value="context.optionValue"

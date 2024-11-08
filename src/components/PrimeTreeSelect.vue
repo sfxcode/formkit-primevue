@@ -19,7 +19,7 @@ export interface FormKitPrimeTreeSelectProps {
   scrollHeight?: TreeSelectProps['scrollHeight']
   panelClass?: TreeSelectProps['panelClass']
   variant?: TreeSelectProps['variant']
-
+  size?: TreeSelectProps['size']
 }
 
 const props = defineProps({
@@ -46,6 +46,7 @@ const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useForm
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :options="context?.options"
       :placeholder="context.placeholder"
       :selection-mode="context.selectionMode"

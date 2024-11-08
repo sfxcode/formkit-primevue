@@ -17,6 +17,7 @@ export interface FormKitPrimeInputMaskProps {
   unstyled?: InputMaskProps['unstyled']
   invalid?: InputMaskProps['invalid']
   variant?: InputMaskProps['variant']
+  size?: InputMaskProps['size']
 }
 
 const props = defineProps({
@@ -45,6 +46,7 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
         :tabindex="context?.attrs.tabindex"
         :aria-label="context?.attrs.ariaLabel"
         :aria-labelledby="context?.attrs.ariaLabelledby"
+        :size="context?.size ?? undefined"
         :mask="context.mask ?? undefined"
         :slot-char="context.slotChar ?? '_'"
         :auto-clear="context.autoClear ?? true"
@@ -70,6 +72,7 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :mask="context.mask ?? undefined"
       :slot-char="context.slotChar ?? '_'"
       :auto-clear="context.autoClear ?? true"

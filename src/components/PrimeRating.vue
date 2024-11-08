@@ -12,7 +12,6 @@ export interface FormKitPrimeRatingProps {
   offIcon?: RatingProps['offIcon']
   ptOptions?: RatingProps['ptOptions']
   pt?: RatingProps['pt']
-
 }
 
 const props = defineProps({

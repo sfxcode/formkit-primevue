@@ -14,6 +14,7 @@ export interface FormKitPrimeAutoCompleteProps {
   typeahead?: AutoCompleteProps['typeahead']
   optionLabel?: AutoCompleteProps['optionLabel']
   options?: any[] | undefined
+  size?: AutoCompleteProps['size']
 }
 
 const props = defineProps({
@@ -52,6 +53,7 @@ function search(event: AutoCompleteCompleteEvent) {
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :suggestions="suggestions"
       :option-label="context?.optionLabel"
       :dropdown="context?.dropdown ?? false"

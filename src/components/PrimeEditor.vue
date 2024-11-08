@@ -12,7 +12,6 @@ export interface FormKitPrimeEditorProps {
   pt?: EditorProps['pt']
   ptOptions?: EditorProps['ptOptions']
   unstyled?: EditorProps['unstyled']
-
 }
 
 const props = defineProps({

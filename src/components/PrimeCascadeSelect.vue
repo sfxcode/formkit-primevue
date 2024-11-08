@@ -15,7 +15,7 @@ export interface FormKitPrimeCascadeSelectProps {
   pt?: CascadeSelectProps['pt']
   ptOptions?: CascadeSelectProps['ptOptions']
   unstyled?: CascadeSelectProps['unstyled']
-
+  size?: CascadeSelectProps['size']
 }
 
 const props = defineProps({
@@ -41,6 +41,7 @@ const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useForm
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :options="context?.options"
       :option-label="context?.optionLabel"
       :option-value="context.optionValue"

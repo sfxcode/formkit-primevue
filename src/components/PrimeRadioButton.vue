@@ -9,6 +9,7 @@ export interface FormKitPrimeRadioButtonProps {
   pt?: RadioButtonProps['pt']
   ptOptions?: RadioButtonProps['ptOptions']
   unstyled?: RadioButtonProps['unstyled']
+  size?: RadioButtonProps['size']
   options?: { label: string, value: any }[]
   optionsClass?: string
   optionClass?: string
@@ -38,6 +39,7 @@ const { unstyled, isInvalid, handleChange, handleBlur } = useFormKitInput(props.
         :input-style="context?.attrs.style"
         :input-class="context?.attrs?.class"
         :invalid="isInvalid"
+        :size="context?.size ?? undefined"
         :pt="context.pt"
         :pt-options="context.ptOptions"
         :unstyled="unstyled"

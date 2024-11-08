@@ -12,6 +12,7 @@ export interface FormKitPrimeInputTextProps {
   ptOptions?: InputTextProps['ptOptions']
   unstyled?: InputTextProps['unstyled']
   placeholder?: InputTextProps['placeholder']
+  size?: InputTextProps['size']
 }
 
 const props = defineProps({
@@ -41,6 +42,7 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
         :tabindex="context?.attrs.tabindex"
         :aria-label="context?.attrs.ariaLabel"
         :aria-labelledby="context?.attrs.ariaLabelledby"
+        :size="context?.size ?? undefined"
         :placeholder="context.placeholder"
         :pt="context.pt"
         :pt-options="context.ptOptions"
@@ -63,6 +65,7 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :placeholder="context.placeholder"
       :pt="context.pt"
       :pt-options="context.ptOptions"

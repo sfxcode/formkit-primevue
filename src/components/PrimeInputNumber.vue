@@ -24,7 +24,7 @@ export interface FormKitPrimeInputNumberProps {
   ptOptions?: InputNumberProps['ptOptions']
   unstyled?: InputNumberProps['unstyled']
   placeholder?: InputNumberProps['placeholder']
-
+  size?: InputNumberProps['size']
 }
 
 const props = defineProps({
@@ -80,6 +80,7 @@ watch(
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :placeholder="context.placeholder"
       :use-grouping="context.useGrouping ?? true"
       :min="context.min ?? undefined"

@@ -13,7 +13,7 @@ export interface FormKitPrimeInputOtpProps {
   variant?: InputOtpProps['variant']
   mask?: InputOtpProps['mask']
   integerOnly?: InputOtpProps['integerOnly']
-
+  size?: InputOtpProps['size']
 }
 
 const props = defineProps({
@@ -40,6 +40,7 @@ const { validSlotNames, unstyled, isInvalid, handleBlur, handleInput } = useForm
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :length="context.length"
       :variant="context.variant"
       :mask="context.mask"

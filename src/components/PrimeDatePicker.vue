@@ -49,7 +49,7 @@ export interface FormKitPrimeDatePickerProps {
   pt?: DatePickerProps['pt']
   ptOptions?: DatePickerProps['ptOptions']
   unstyled?: DatePickerProps['unstyled']
-
+  size?: DatePickerProps['size']
 }
 
 const props = defineProps({
@@ -93,6 +93,7 @@ function handleSelect(e: any) {
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :date-format="context?.dateFormat"
       :placeholder="context?.placeholder"
       :selection-mode="context?.selectionMode ?? 'single'"

@@ -40,6 +40,7 @@ export interface FormKitPrimeMultiSelectProps {
   placeholder?: MultiSelectProps['placeholder']
   ptOptions?: MultiSelectProps['ptOptions']
   unstyled?: MultiSelectProps['unstyled']
+  size?: MultiSelectProps['size']
 
 }
 
@@ -67,6 +68,7 @@ const { validSlotNames, unstyled, isInvalid, handleBlur, handleChange } = useFor
       :tabindex="context?.attrs.tabindex"
       :aria-label="context?.attrs.ariaLabel"
       :aria-labelledby="context?.attrs.ariaLabelledby"
+      :size="context?.size ?? undefined"
       :placeholder="context.placeholder"
       :options="context.options"
       :option-label="context.optionLabel"

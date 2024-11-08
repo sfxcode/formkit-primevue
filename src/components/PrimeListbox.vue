@@ -20,7 +20,6 @@ export interface FormKitPrimeListboxProps {
   filterMatchMode?: ListboxProps['filterMatchMode']
   autoOptionFocus?: ListboxProps['autoOptionFocus']
   selectOnFocus?: ListboxProps['selectOnFocus']
-
 }
 
 const props = defineProps({
