@@ -18,7 +18,6 @@ import 'primeicons/primeicons.css'
 
 import type { UserModule } from '@/types'
 import { usePrimeInputs } from 'my-library'
-import Button from 'primevue/button'
 import ConfirmationService from 'primevue/confirmationservice'
 import ToastService from 'primevue/toastservice'
 
@@ -32,7 +31,6 @@ export const install: UserModule = ({ app }) => {
   registerInputs(app)
 
   // other components
-  app.component('Button', Button)
   app.component('MegaMenu', MegaMenu)
   app.component('Tab', Tab)
   app.component('Tabs', Tabs)
