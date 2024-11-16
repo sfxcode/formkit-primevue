@@ -1,3 +1,15 @@
+## v2.6.7
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.6...v2.6.7)
+
+### 🏡 Chore
+
+- **dependencies:** FormKit 1.6.9 ([2612038](https://github.com/sfxcode/formkit-primevue/commit/2612038))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.6.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.5...v2.6.6)
