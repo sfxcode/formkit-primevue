@@ -1,3 +1,15 @@
+## v2.6.8
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.7...v2.6.8)
+
+### 🚀 Enhancements
+
+- **types:** Add options attribute to custom component types #66 ([#66](https://github.com/sfxcode/formkit-primevue/issues/66))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.6.7
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.6...v2.6.7)
