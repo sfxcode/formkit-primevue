@@ -1,4 +1,10 @@
 import type { FormKitInputs } from '@formkit/inputs'
+import type { CascadeSelectProps } from 'primevue/cascadeselect'
+import type { ListboxProps } from 'primevue/listbox'
+import type { MultiSelectProps } from 'primevue/multiselect'
+import type { SelectProps } from 'primevue/select'
+import type { SelectButtonProps } from 'primevue/selectbutton'
+import type { TreeSelectProps } from 'primevue/treeselect'
 import { FormKitDataDebug, FormKitDataEdit, FormKitDataView } from './components'
 import { useFormKitRepeater, useFormKitSchema, useInputEditor, useInputEditorSchema, usePrimeInputs } from './composables'
 import { primeInputs, primeOutputs } from './definitions'
@@ -47,9 +53,11 @@ declare module '@formkit/inputs' {
     }
     primeSelect: {
       type: 'primeSelect'
+      options?: SelectProps['options']
     }
     primeMultiSelect: {
       type: 'primeMultiSelect'
+      options?: MultiSelectProps['options']
     }
     primeDatePicker: {
       type: 'primeDatePicker'
@@ -74,15 +82,19 @@ declare module '@formkit/inputs' {
     }
     primeListbox: {
       type: 'primeListbox'
+      options?: ListboxProps['options']
     }
     primeSelectButton: {
       type: 'primeSelectButton'
+      options?: SelectButtonProps['options']
     }
     primeCascadeSelect: {
       type: 'primeCascadeSelect'
+      options?: CascadeSelectProps['options']
     }
     primeTreeSelect: {
       type: 'primeTreeSelect'
+      options?: TreeSelectProps['options']
     }
     primeInputOtp: {
       type: 'primeInputOtp'
