@@ -10,7 +10,6 @@ export interface FormKitPrimeTextareaProps {
   ptOptions?: TextareaProps['ptOptions']
   unstyled?: TextareaProps['unstyled']
   autoResize?: TextareaProps['autoResize']
-  rows?: TextareaProps['rows']
   placeholder?: TextareaProps['placeholder']
   size?: TextareaProps['size']
 
