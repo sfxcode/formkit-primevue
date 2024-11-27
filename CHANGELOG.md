@@ -1,3 +1,7 @@
+## v2.6.10
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.9...v2.6.10)
+
 ## v2.6.9
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.8...v2.6.9)
