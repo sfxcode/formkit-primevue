@@ -1,3 +1,20 @@
+## v2.6.9
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.8...v2.6.9)
+
+### 🩹 Fixes
+
+- **Textarea:** Property 'rows' does not exist on type 'TextareaProps' ([38862e4](https://github.com/sfxcode/formkit-primevue/commit/38862e4))
+
+### 🏡 Chore
+
+- **dependencies:** PrimeVue 4.2.4 ([3928ebd](https://github.com/sfxcode/formkit-primevue/commit/3928ebd))
+- **dependencies:** Revert to typescript 5.6 ([7fa6ae1](https://github.com/sfxcode/formkit-primevue/commit/7fa6ae1))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.6.8
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.7...v2.6.8)
