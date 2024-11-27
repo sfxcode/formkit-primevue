@@ -129,7 +129,7 @@
     "quill": "^2.0.2",
     "sass": "1.78.0",
     "tslib": "^2.8.1",
-    "typescript": "^5.7.2",
+    "typescript": "5.6.3",
     "unbuild": "2.0.0",
     "unocss": "^0.64.1",
     "unplugin-auto-import": "^0.18.6",
