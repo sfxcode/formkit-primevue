@@ -1,3 +1,19 @@
+## v2.6.11
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.10...v2.6.11)
+
+### 🚀 Enhancements
+
+- **InputText:** Add a prop to set the underlying input type #67 ([#67](https://github.com/sfxcode/formkit-primevue/issues/67))
+
+### 🏡 Chore
+
+- **dependencies:** Update ([565bc23](https://github.com/sfxcode/formkit-primevue/commit/565bc23))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.6.10
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.9...v2.6.10)
