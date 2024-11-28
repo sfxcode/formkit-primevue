@@ -13,6 +13,7 @@ export interface FormKitPrimeInputTextProps {
   unstyled?: InputTextProps['unstyled']
   placeholder?: InputTextProps['placeholder']
   size?: InputTextProps['size']
+  inputType?: string | undefined
 }
 
 const props = defineProps({
@@ -34,9 +35,10 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
         :id="context.id"
         v-model="context._value"
         v-bind="context?.attrs"
+        :type="context?.attrs?.inputType ?? 'text'"
         :disabled="!!context?.disabled"
         :readonly="context?.attrs.readonly ?? false"
-        :style="context?.attrs.style"
+        :style="context?.attrs?.style"
         :class="context?.attrs?.class"
         :invalid="isInvalid"
         :tabindex="context?.attrs.tabindex"
@@ -57,6 +59,7 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
       :id="context.id"
       v-model="context._value"
       v-bind="context?.attrs"
+      :type="context?.inputType ?? 'text'"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"
       :style="context?.attrs.style"

@@ -29,7 +29,7 @@ export const primeAutoCompleteDefinition: FormKitTypeDefinition = createInput(Pr
   props: ['pt', 'ptOptions', 'unstyled', 'Select', 'multiple', 'typeahead', 'optionLabel', 'options', 'size'],
 })
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
-  props: ['pt', 'ptOptions', 'unstyled', 'placeholder', 'iconPrefix', 'iconSuffix', 'size'],
+  props: ['pt', 'ptOptions', 'unstyled', 'placeholder', 'iconPrefix', 'iconSuffix', 'size', 'inputType'],
 })
 
 export const primeInputNumberDefinition: FormKitTypeDefinition = createInput(PrimeInputNumber, {

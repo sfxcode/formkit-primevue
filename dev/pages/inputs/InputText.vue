@@ -8,9 +8,15 @@ const schema
       $formkit: 'primeInputText',
       name: 'name',
       label: 'Basic',
-      help: 'Required.',
       validation: 'required',
 
+    },
+    {
+      $formkit: 'primeInputText',
+      name: 'telephone',
+      help: 'Input Type: tel',
+      label: 'Telephone',
+      inputType: 'tel',
     },
     {
       $formkit: 'primeInputText',
