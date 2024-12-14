@@ -1,7 +1,7 @@
 {
   "name": "@sfxcode/formkit-primevue",
   "type": "module",
-  "version": "2.6.11",
+  "version": "2.7.0",
   "packageManager": "pnpm@9.14.2",
   "author": {
     "name": "Tom",
