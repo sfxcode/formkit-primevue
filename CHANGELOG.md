@@ -1,3 +1,20 @@
+## v2.7.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.0...v2.7.1)
+
+### 💅 Refactors
+
+- **sass:** Use latest sass version and replace @import with @use in scss files ([33746bd](https://github.com/sfxcode/formkit-primevue/commit/33746bd))
+
+### 🏡 Chore
+
+- **release:** Switch back to patch releases ([107d89a](https://github.com/sfxcode/formkit-primevue/commit/107d89a))
+- **dependencies:** Update i18n to intlify version 10.x ([1905735](https://github.com/sfxcode/formkit-primevue/commit/1905735))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.7.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.6.11...v2.7.0)
