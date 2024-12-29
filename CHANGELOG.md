@@ -1,3 +1,15 @@
+## v2.7.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.2...v2.7.3)
+
+### 🚀 Enhancements
+
+- **wrappedPrimeInputs:** Move export to definitions ([c55efc6](https://github.com/sfxcode/formkit-primevue/commit/c55efc6))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.7.2
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.1...v2.7.2)
