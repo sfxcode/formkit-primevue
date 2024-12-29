@@ -1,3 +1,19 @@
+## v2.7.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.1...v2.7.2)
+
+### 🚀 Enhancements
+
+- **wrappedPrimeInputs:** List of PrimeVue inputs used by this Library plus Button needed for Form ([a683bb5](https://github.com/sfxcode/formkit-primevue/commit/a683bb5))
+
+### 🏡 Chore
+
+- **dependencies:** Update i18n to intlify version 11.x ([ab75afa](https://github.com/sfxcode/formkit-primevue/commit/ab75afa))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.7.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.0...v2.7.1)
