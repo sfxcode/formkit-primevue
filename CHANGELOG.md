@@ -1,3 +1,15 @@
+## v2.7.4
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.3...v2.7.4)
+
+### 🏡 Chore
+
+- **dependencies:** Update formkit drag and drop ([4a2550d](https://github.com/sfxcode/formkit-primevue/commit/4a2550d))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.7.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.2...v2.7.3)
