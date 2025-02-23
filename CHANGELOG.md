@@ -1,3 +1,28 @@
+## v2.7.6
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.5...v2.7.6)
+
+### 📦 Build
+
+- **github:** Update Workflow ([1ee7153](https://github.com/sfxcode/formkit-primevue/commit/1ee7153))
+- **github:** Update Workflow ([d7a257b](https://github.com/sfxcode/formkit-primevue/commit/d7a257b))
+
+### 🏡 Chore
+
+- **dependencies:** Update to latest versions ([f3f9001](https://github.com/sfxcode/formkit-primevue/commit/f3f9001))
+- **dependencies:** Update to latest versions ([a2ff1da](https://github.com/sfxcode/formkit-primevue/commit/a2ff1da))
+- **dependencies:** Update to latest versions ([26b29a6](https://github.com/sfxcode/formkit-primevue/commit/26b29a6))
+- **dependencies:** Update minor dependencies ([27e4038](https://github.com/sfxcode/formkit-primevue/commit/27e4038))
+- **dependencies:** Update minor dependencies - "@formkit/drag-and-drop 0.4.0 ([65fa1d7](https://github.com/sfxcode/formkit-primevue/commit/65fa1d7))
+
+### 🎨 Styles
+
+- **linting:** Fix lint problems ([4e746ae](https://github.com/sfxcode/formkit-primevue/commit/4e746ae))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.7.5
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.4...v2.7.5)
