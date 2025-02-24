@@ -1,3 +1,19 @@
+## v2.7.7
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.6...v2.7.7)
+
+### 🩹 Fixes
+
+- **Textarea:** Add rows to FormKitPrimeTextareaProps ([6a9e44f](https://github.com/sfxcode/formkit-primevue/commit/6a9e44f))
+
+### 🏡 Chore
+
+- **dependencies:** Update to primevue 4.3.0 ([5254c7f](https://github.com/sfxcode/formkit-primevue/commit/5254c7f))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](http://github.com/sfxcode))
+
 ## v2.7.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.5...v2.7.6)
