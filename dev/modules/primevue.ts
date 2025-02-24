@@ -1,5 +1,5 @@
 import type { UserModule } from '@/types'
-import Aura from '@primevue/themes/aura'
+import Aura from '@primeuix/themes/aura'
 import { usePrimeInputs } from 'my-library'
 import PrimeVue from 'primevue/config'
 import ConfirmationService from 'primevue/confirmationservice'
