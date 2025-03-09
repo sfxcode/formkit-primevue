@@ -1,3 +1,19 @@
+## v2.7.8
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.7...v2.7.8)
+
+### 🩹 Fixes
+
+- **linting:** Prefer typeof syntax ([e0cdd3b](https://github.com/sfxcode/formkit-primevue/commit/e0cdd3b))
+
+### 🏡 Chore
+
+- **dependencies:** Update dependencies to latest versions - PrimeVue 4.3.1 ([91d1fb2](https://github.com/sfxcode/formkit-primevue/commit/91d1fb2))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.7.7
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.6...v2.7.7)
