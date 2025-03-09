@@ -58,7 +58,7 @@ export function useInputEditor() {
     // cleanup empty values
     for (const key in result) {
       const value = result[key]
-      if ((typeof value === 'string' || value instanceof String)) {
+      if ((typeof value === 'string' || typeof value === 'string')) {
         if (value.trim().length === 0)
           result[key] = undefined
       }
