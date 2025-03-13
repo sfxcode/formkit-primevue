@@ -1,3 +1,15 @@
+## v2.7.9
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.8...v2.7.9)
+
+### 🏡 Chore
+
+- **dependencies:** Update to primevue 4.3.02 - Fixes Autocomplete Issues ([005ae09](https://github.com/sfxcode/formkit-primevue/commit/005ae09))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.7.8
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.7...v2.7.8)
