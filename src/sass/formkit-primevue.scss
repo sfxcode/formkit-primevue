@@ -147,6 +147,11 @@ $grid-breakpoints: (
   // Submit button etc.
   .formkit-actions {
     padding-top: 0.5rem;
+    display: flex;
+    button {
+      margin-right: 0.5rem;
+    }
+
   }
 
   .p-action-buttons  {

@@ -6,6 +6,7 @@ const { addElement } = useFormKitSchema()
 const { t } = useI18n()
 const horizontal = ref(false)
 const indentCheckboxes = ref(false)
+const showReset = ref(false)
 
 const options = [
   { label: 'Every page load', value: 'refresh' },
@@ -100,12 +101,14 @@ async function submitHandler() {
 <template>
   <PrimeData header="FormKitDataEdit Demo">
     <div class="flex gap-2 mb-4">
+      <div>Show Reset Button</div>
+      <Checkbox v-model="showReset" binary />
       <div>Horizontal</div>
-      <ToggleSwitch v-model="horizontal" />
+      <Checkbox v-model="horizontal" binary />
       <div v-if="horizontal">
         Indent Checkboxes
       </div>
-      <ToggleSwitch v-if="horizontal" v-model="indentCheckboxes" />
+      <Checkbox v-if="horizontal" v-model="indentCheckboxes" binary />
     </div>
     <FormKitDataEdit
       :data="data"
@@ -114,6 +117,7 @@ async function submitHandler() {
       :form-class="(horizontal ? ' form-horizontal' : '') + (indentCheckboxes ? ' form-horizontal-checkbox-indent ' : '')"
       :debug-data="true"
       :debug-schema="true"
+      :show-reset="showReset"
       @data-saved="submitHandler"
     />
   </PrimeData>

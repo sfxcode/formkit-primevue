@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import type { FormKitSchemaDefinition } from '@formkit/core'
 import type { PropType } from 'vue'
+import { reset } from '@formkit/core'
 import { FormKit, FormKitMessages, FormKitSchema } from '@formkit/vue'
 import { ref } from 'vue'
 import FormKitDebug from './FormKitDebug.vue'
@@ -8,7 +9,7 @@ import FormKitDebug from './FormKitDebug.vue'
 const props = defineProps({
   id: {
     type: String,
-    default: 'form',
+    default: 'formkit_form',
   },
   data: {
     type: Object,
@@ -18,26 +19,6 @@ const props = defineProps({
     type: Object as PropType<FormKitSchemaDefinition>,
     default: null,
   },
-  debugData: {
-    type: Boolean,
-    default: false,
-  },
-  debugSchema: {
-    type: Boolean,
-    default: false,
-  },
-  inputClass: {
-    type: String,
-    default: 'p-button p-component p-formkit-button',
-  },
-  submitLabel: {
-    type: String,
-    default: 'Save',
-  },
-  cancelLabel: {
-    type: String,
-    default: 'Cancel',
-  },
   formClass: {
     type: String,
     default: '',
@@ -46,9 +27,49 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  buttonClass: {
+  submitSeverity: {
     type: String,
     default: '',
+  },
+  submitClass: {
+    type: String,
+    default: '',
+  },
+  submitLabel: {
+    type: String,
+    default: 'Save',
+  },
+  submitIcon: {
+    type: String,
+    default: '',
+  },
+  showReset: {
+    type: Boolean,
+    default: false,
+  },
+  resetSeverity: {
+    type: String,
+    default: 'danger',
+  },
+  resetLabel: {
+    type: String,
+    default: 'Reset',
+  },
+  resetClass: {
+    type: String,
+    default: '',
+  },
+  resetIcon: {
+    type: String,
+    default: '',
+  },
+  debugData: {
+    type: Boolean,
+    default: false,
+  },
+  debugSchema: {
+    type: Boolean,
+    default: false,
   },
 })
 
@@ -59,6 +80,10 @@ const formData = ref(props.data)
 
 function handleSave() {
   emit('dataSaved', props.data)
+}
+
+function handleReset() {
+  reset(props.id)
 }
 </script>
 
@@ -83,7 +108,8 @@ function handleSave() {
       </template>
       <template #submit>
         <slot name="submit">
-          <Button type="submit" :label="submitLabel" :class="buttonClass" @submit="handleSave" />
+          <Button :icon="submitIcon" type="submit" :label="submitLabel" :class="submitClass" :severity="submitSeverity" @submit="handleSave" />
+          <Button v-if="showReset" type="reset" :icon="resetIcon" :label="resetLabel" :class="resetClass" :severity="resetSeverity" @click="handleReset" />
         </slot>
       </template>
     </FormKit>
