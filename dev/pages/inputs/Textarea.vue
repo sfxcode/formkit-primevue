@@ -6,6 +6,7 @@ const schema
       $formkit: 'primeTextarea',
       id: 'basic',
       name: 'name',
+      placeholder: 'Basic',
       label: 'Basic',
       help: 'Required.',
       validation: 'required',

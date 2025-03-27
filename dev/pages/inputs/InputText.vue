@@ -14,6 +14,7 @@ const schema
     {
       $formkit: 'primeInputText',
       name: 'telephone',
+      placeholder: 'telephone',
       help: 'Input Type: tel',
       label: 'Telephone',
       inputType: 'tel',

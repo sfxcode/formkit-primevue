@@ -11,7 +11,6 @@ export interface FormKitPrimeInputTextProps {
   pt?: InputTextProps['pt']
   ptOptions?: InputTextProps['ptOptions']
   unstyled?: InputTextProps['unstyled']
-  placeholder?: InputTextProps['placeholder']
   size?: InputTextProps['size']
   inputType?: string | undefined
 }

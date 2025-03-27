@@ -27,7 +27,7 @@ const props = defineProps({
   },
 })
 
-const formData = defineModel()
+const formData = defineModel<any>()
 
 if (props.data) {
   formData.value = props.data
