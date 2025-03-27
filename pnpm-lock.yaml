@@ -2321,8 +2321,8 @@ packages:
   alien-signals@0.4.14:
     resolution: {integrity: sha512-itUAVzhczTmP2U5yX67xVpsbbOiquusbWVyA9N+sy6+r6YVbFkahXvNCeEPWEOMhwDYwbVbGHFkVL03N9I5g+Q==}
 
-  alien-signals@1.0.8:
-    resolution: {integrity: sha512-5Tnk+Q3E7b4NgTgxAyoggQHeEzUicxgiZhcFvBQhM4catV+wFDTmoHPectL7FL5YzkCjz4zhB/y00Q7n3vwVGQ==}
+  alien-signals@1.0.9:
+    resolution: {integrity: sha512-2dQYgGZHrW4pOYv0BWiw4cH/ElhwmLnQDcj/fdnRRF2OO3YBqgJXSleI1EbbXdQsuC5oCvr6+VKAOEElsmcx4Q==}
 
   ansi-regex@5.0.1:
     resolution: {integrity: sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==}
@@ -2805,8 +2805,8 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
-  electron-to-chromium@1.5.125:
-    resolution: {integrity: sha512-A2+qEsSUc95QvyFDl7PNwkDDNphIKBVfBBtWWkPGRbiWEgzLo0SvLygYF6HgzVduHd+4WGPB/WD64POFgwzY3g==}
+  electron-to-chromium@1.5.127:
+    resolution: {integrity: sha512-Ke5OggqOtEqzCzcUyV+9jgO6L6sv1gQVKGtSExXHjD/FK0p4qzPZbrDsrCdy0DptcQprD0V80RCBYSWLMhTTgQ==}
 
   emoji-regex-xs@1.0.0:
     resolution: {integrity: sha512-LRlerrMYoIDrT6jgpeZ2YYl/L8EulRTt5hQcYjy5AInh7HWXKimpqx68aknBFpGL2+/IcogTcaydJEgaTmOpDg==}
@@ -7312,7 +7312,7 @@ snapshots:
       '@vue/compiler-dom': 3.5.13
       '@vue/compiler-vue2': 2.7.16
       '@vue/shared': 3.5.13
-      alien-signals: 1.0.8
+      alien-signals: 1.0.9
       minimatch: 9.0.5
       muggle-string: 0.4.1
       path-browserify: 1.0.1
@@ -7559,7 +7559,7 @@ snapshots:
 
   alien-signals@0.4.14: {}
 
-  alien-signals@1.0.8: {}
+  alien-signals@1.0.9: {}
 
   ansi-regex@5.0.1: {}
 
@@ -7628,7 +7628,7 @@ snapshots:
   browserslist@4.24.4:
     dependencies:
       caniuse-lite: 1.0.30001707
-      electron-to-chromium: 1.5.125
+      electron-to-chromium: 1.5.127
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.24.4)
 
@@ -8058,7 +8058,7 @@ snapshots:
       minimatch: 9.0.1
       semver: 7.7.1
 
-  electron-to-chromium@1.5.125: {}
+  electron-to-chromium@1.5.127: {}
 
   emoji-regex-xs@1.0.0: {}
 

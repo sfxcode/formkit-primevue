@@ -4,14 +4,14 @@ For the simple usage with schema and data values FormKitDataEdit and FormKitData
 
 <DisplayFormComponents />
 
-
 ## Usage
 
 To use the components there must be an import or global registration.
 
-```ts
-    <FormKitDataEdit v-model="formData" :schema="formSchema" 
-                     @data-saved="submitHandler"/>
+```vue
+    <FormKitDataEdit v-model="formData" :schema="formSchema"
+                     @data-saved="submitHandler"
+/>
 ```
 
 ### Debug
@@ -22,7 +22,7 @@ Use properties **:debug-schema="true"** and / or **:debug-data="true"** for debu
 
 ### Main Properties
 
-| Property      | Type      | Description                                             
+| Property      | Type      | Description
 |:--------------| :-------- |:--------------------------------------------------------|
 | v-model       | Object    | The data object to be edited with 2-Way-Binding         |
 | data          | Object    | The data object to be edited                            |
@@ -32,7 +32,7 @@ Use properties **:debug-schema="true"** and / or **:debug-data="true"** for debu
 | :show-reset   | Boolean   | Display some Button for resetting data to initial state |
 ### Style Properties
 
-| Property       | Type    | Description                                 
+| Property       | Type    | Description
 |:---------------|:--------|:--------------------------------------------|
 | formClass      | String  | Add additional classes to the form          |
 | actionsClass   | String  | Add additional classes to the action div    |
@@ -44,7 +44,6 @@ Use properties **:debug-schema="true"** and / or **:debug-data="true"** for debu
 | resetSeverity  | String  | PrimeVue Button severity                    |
 | resetLabel    | String  | Default: Reset                              |
 | resetIcon     | String  | PrimeVue Button icon                        |
-
 
 ### Example
 
@@ -62,7 +61,8 @@ async function submitHandler(data: any) {
 
 <template>
   <div>
-    <FormKitDataEdit v-model="formData" :schema="formSchema"
+    <FormKitDataEdit
+      v-model="formData" :schema="formSchema"
       :debug-schema="false" :debug-data="true"
       @data-saved="submitHandler"
     />

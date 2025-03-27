@@ -13,6 +13,6 @@ To use the AsteriskPlugin, you need to import it and add it to your FormKit conf
 
 ```ts
 plugins: [
-    addPrimeAsteriskPlugin,
+  addPrimeAsteriskPlugin,
 ]
 ```
