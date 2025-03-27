@@ -1,3 +1,19 @@
+## v2.8.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.8.0...v2.8.1)
+
+### 📖 Documentation
+
+- **vitepress:** Add additional documentation files ([895daf1](https://github.com/sfxcode/formkit-primevue/commit/895daf1))
+
+### 🏡 Chore
+
+- **release:** Change next version to patch ([593921f](https://github.com/sfxcode/formkit-primevue/commit/593921f))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.8.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.9...v2.8.0)
