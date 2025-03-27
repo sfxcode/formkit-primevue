@@ -140,6 +140,4 @@ async function submitHandler() {
 </template>
 ```
 
-## Nuxt
 
-[FormKit-PrimeVue-Nuxt](https://github.com/sfxcode/formkit-primevue-nuxt) module available.

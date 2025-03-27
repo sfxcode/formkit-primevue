@@ -24,6 +24,7 @@ export default defineConfig({
     },
     sidebar: {
       '/guide/': sidebarGuide(),
+      '/advanced/': sidebarGuide(),
       '/config/': sidebarConfig(),
     },
   },
@@ -44,6 +45,7 @@ export default defineConfig({
 function nav() {
   return [
     { text: 'Guide', link: '/guide/', activeMatch: '/guide/' },
+    { text: 'Advanced', link: '/advanced/', activeMatch: '/advanced/' },
     {
       text: 'Playground',
       link: 'https://formkit-primevue.netlify.app',
@@ -90,13 +92,21 @@ function sidebarGuide() {
         { text: 'Usage', link: '/guide/usage' },
         { text: 'Input Components', link: '/guide/inputs' },
         { text: 'Output Components', link: '/guide/outputs' },
-        { text: 'Data Components', link: '/guide/data' },
-        { text: 'Options', link: '/guide/options' },
-        { text: 'Composables', link: '/guide/composables' },
+        { text: 'Form Components', link: '/guide/form' },
+        { text: 'Input Options', link: '/guide/options' },
         { text: 'Styling', link: '/guide/styling' },
-        { text: 'Prefix/Suffix', link: '/guide/prefix' },
-        { text: 'Sample Apps', link: '/guide/examples' },
-        { text: 'History', link: '/guide/history' },
+        { text: 'Prefix / Suffix', link: '/guide/prefix' },
+        { text: 'Examples', link: '/guide/examples' },
+      ],
+    },
+    {
+      text: 'Advanced',
+      collapsible: true,
+      items: [
+        { text: 'Composables', link: '/advanced/composables' },
+        { text: 'Nuxt', link: '/advanced/nuxt' },
+        { text: 'Schema', link: '/advanced/schema' },
+        { text: 'Plugins', link: '/advanced/plugins' },
       ],
     },
   ]
