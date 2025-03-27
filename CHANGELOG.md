@@ -1,3 +1,25 @@
+## v2.8.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.9...v2.8.0)
+
+### 🚀 Enhancements
+
+- **reset:** Add reset to FormKitDataEdit component ([0afe6fc](https://github.com/sfxcode/formkit-primevue/commit/0afe6fc))
+- **components:** FormKitDataEdit / FormKitDataView - Add optional v-model for form data ([519d199](https://github.com/sfxcode/formkit-primevue/commit/519d199))
+
+### 🩹 Fixes
+
+- Typescript Errors ([109683c](https://github.com/sfxcode/formkit-primevue/commit/109683c))
+
+### 🏡 Chore
+
+- **dependencies:** Update to primevue 4.3.3 ([c1eb176](https://github.com/sfxcode/formkit-primevue/commit/c1eb176))
+- **release:** Change next version to minor ([8d72649](https://github.com/sfxcode/formkit-primevue/commit/8d72649))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.7.9
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.7.8...v2.7.9)
