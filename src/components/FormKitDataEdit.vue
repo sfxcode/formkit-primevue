@@ -4,6 +4,7 @@ import type { PropType } from 'vue'
 import { reset } from '@formkit/core'
 import { FormKit, FormKitMessages, FormKitSchema } from '@formkit/vue'
 import { ref } from 'vue'
+
 import FormKitDebug from './FormKitDebug.vue'
 
 const props = defineProps({
@@ -72,14 +73,18 @@ const props = defineProps({
     default: false,
   },
 })
-
 const emit = defineEmits(['dataSaved'])
 
+const formData = defineModel()
+
+if (props.data) {
+  formData.value = props.data
+}
+
 const formSchema = ref(props.schema)
-const formData = ref(props.data)
 
 function handleSave() {
-  emit('dataSaved', props.data)
+  emit('dataSaved', formSchema.value)
 }
 
 function handleReset() {

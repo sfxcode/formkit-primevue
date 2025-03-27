@@ -41,13 +41,21 @@ const outputSchema = ref(
   ],
 )
 const data = ref({ name: 'Tom', date: new Date(), number: 2222.33, text1: 'Ein Text', text2: 'Lorem Ipsum' })
+
+function updateData() {
+  if (data.value.name === 'Tom')
+    data.value = { name: 'Tim', date: new Date(), number: 42, text1: 'Some Text', text2: 'Lorem Ipsum' }
+  else
+    data.value = { name: 'Tom', date: new Date(), number: 2222.33, text1: 'Hello', text2: 'World' }
+}
 </script>
 
 <template>
   <PrimeData header="FormKitDataView Demo">
+    <Button label="changeData (using v-model)" size="small" class="mb-4" @click="updateData" />
     <div class="flex gap-2 mb-4">
       Horizontal  <ToggleSwitch v-model="horizontal" />
     </div>
-    <FormKitDataView :data="data" :schema="outputSchema" :debug-mode="true" :form-class="horizontal ? 'form-horizontal' : ''" />
+    <FormKitDataView v-model="data" :schema="outputSchema" :debug-mode="true" :form-class="horizontal ? 'form-horizontal' : ''" />
   </PrimeData>
 </template>

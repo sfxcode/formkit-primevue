@@ -2,7 +2,6 @@
 import type { FormKitSchemaDefinition } from '@formkit/core'
 import type { PropType } from 'vue'
 import { FormKit, FormKitSchema } from '@formkit/vue'
-import { ref } from 'vue'
 import FormKitDebug from './FormKitDebug.vue'
 
 const props = defineProps({
@@ -28,8 +27,11 @@ const props = defineProps({
   },
 })
 
-const formSchema = ref(props.schema)
-const formData = ref(props.data)
+const formData = defineModel()
+
+if (props.data) {
+  formData.value = props.data
+}
 </script>
 
 <template>
@@ -40,11 +42,11 @@ const formData = ref(props.data)
       :form-class="formClass"
       :actions="false"
     >
-      <FormKitSchema v-if="formSchema" :schema="formSchema" :data="formData" />
+      <FormKitSchema v-if="schema" :schema="schema" :data="formData" />
       <slot />
     </FormKit>
     <FormKitDebug v-if="debugData" :data="formData" header="Data" />
-    <FormKitDebug v-if="debugSchema" :data="formSchema as object" header="Schema" />
+    <FormKitDebug v-if="debugSchema" :data="schema as object" header="Schema" />
   </div>
 </template>
 

@@ -90,7 +90,7 @@ const schema = reactive(
   ],
 )
 
-const data = ref({ name: 'Tom', date: new Date(), number: 2222.33, text1: 'Ein Text', text2: 'Lorem Ipsum' })
+const data = ref({ date: new Date(), text: 'Lorem Ipsum' })
 
 const { showSuccessMessage } = useMessages()
 async function submitHandler() {
@@ -111,7 +111,7 @@ async function submitHandler() {
       <Checkbox v-if="horizontal" v-model="indentCheckboxes" binary />
     </div>
     <FormKitDataEdit
-      :data="data"
+      v-model="data"
       :schema="schema"
       :submit-label="t('save')"
       :form-class="(horizontal ? ' form-horizontal' : '') + (indentCheckboxes ? ' form-horizontal-checkbox-indent ' : '')"
