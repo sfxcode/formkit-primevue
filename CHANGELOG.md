@@ -1,3 +1,20 @@
+## v2.8.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.8.1...v2.8.2)
+
+### 🩹 Fixes
+
+- **FormKitDataEdit:** Data was not submitted by dataSaved ([6295920](https://github.com/sfxcode/formkit-primevue/commit/6295920))
+- **FormKitDataEdit:** Data was not submitted by dataSaved ([bfcc5dd](https://github.com/sfxcode/formkit-primevue/commit/bfcc5dd))
+
+### 📖 Documentation
+
+- **vitepress:** Add additional documentation files ([4cee2c5](https://github.com/sfxcode/formkit-primevue/commit/4cee2c5))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.8.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.8.0...v2.8.1)
