@@ -93,7 +93,8 @@ const schema = reactive(
 const data = ref({ date: new Date(), text: 'Lorem Ipsum' })
 
 const { showSuccessMessage } = useMessages()
-async function submitHandler() {
+async function submitHandler(data: any) {
+  console.log(data?.email)
   showSuccessMessage('Form Submitted ...', 'Form submitted successfully')
 }
 </script>

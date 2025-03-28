@@ -84,7 +84,7 @@ if (props.data) {
 const formSchema = ref(props.schema)
 
 function handleSave() {
-  emit('dataSaved', formSchema.value)
+  emit('dataSaved', formData.value)
 }
 
 function handleReset() {
