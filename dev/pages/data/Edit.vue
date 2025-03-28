@@ -94,8 +94,7 @@ const data = ref({ date: new Date(), text: 'Lorem Ipsum' })
 
 const { showSuccessMessage } = useMessages()
 async function submitHandler(data: any) {
-  console.log(data?.email)
-  showSuccessMessage('Form Submitted ...', 'Form submitted successfully')
+  showSuccessMessage(`Form Submitted ${data?.email}`, 'Form submitted successfully')
 }
 </script>
 
