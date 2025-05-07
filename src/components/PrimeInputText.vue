@@ -13,6 +13,7 @@ export interface FormKitPrimeInputTextProps {
   unstyled?: InputTextProps['unstyled']
   size?: InputTextProps['size']
   inputType?: string | undefined
+  placeholder?: string
 }
 
 const props = defineProps({
