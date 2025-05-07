@@ -1,3 +1,20 @@
+## v2.8.5
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.8.4...v2.8.5)
+
+### 💅 Refactors
+
+- **unocss:** Change to presetWind3 ([9e927fc](https://github.com/sfxcode/formkit-primevue/commit/9e927fc))
+- **components:** Add needed values for PrimeVue 4.3.4 ([3cad665](https://github.com/sfxcode/formkit-primevue/commit/3cad665))
+
+### 🏡 Chore
+
+- **dependencies:** Update to PrimeVue 4.3.4 ([6cd2f03](https://github.com/sfxcode/formkit-primevue/commit/6cd2f03))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.8.4
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.8.3...v2.8.4)
