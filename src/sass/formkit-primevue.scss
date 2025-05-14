@@ -179,7 +179,7 @@ $grid-breakpoints: (
 .p-formkit-data-view {
   .formkit-form {
     .formkit-outer {
-      padding-bottom:  0.25rem;
+      padding-bottom:  0.5rem;
     }
 
     &.form-horizontal {
@@ -187,7 +187,14 @@ $grid-breakpoints: (
     }
 
     .formkit-help {
+      padding-top:  0.25rem;
       margin: 0;
+    }
+
+    ul, ol {
+      padding-inline-start: 1rem;
+      margin-block-start: 0;
+      margin-block-end: 0;
     }
   }
 }

@@ -1,7 +1,7 @@
 import {
   defineConfig,
   presetIcons,
-  presetWind3,
+  presetWind4,
   transformerDirectives,
   transformerVariantGroup,
 } from 'unocss'
@@ -12,7 +12,7 @@ function convert(color: string) {
 
 export default defineConfig({
   presets: [
-    presetWind3(),
+    presetWind4(),
     presetIcons({
       scale: 1.2,
       unit: 'em',
