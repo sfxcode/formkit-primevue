@@ -145,8 +145,8 @@ const items = ref([
       </template>  <template #center>
         <div class="text-lg">
           <span class="text-yellow-600 font-bold">New: </span>
-          <router-link to="/samples/formEditor" class="">
-            <span class="">Form Editor</span>
+          <router-link to="/outputs/outputList" class="">
+            <span class="">Output List - listStyle</span>
           </router-link>
         </div>
       </template>  <template #end>
@@ -161,7 +161,7 @@ const items = ref([
     <MegaMenu :model="items" class="w-134">
       <template #item="{ item }">
         <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
-          <a v-ripple :href="href" class="text-lg" @click="navigate">
+          <a v-ripple :href="href" class="" @click="navigate">
             <span :class="item.icon" />
             <span class="ml-2">{{ item.label }}</span>
           </a>

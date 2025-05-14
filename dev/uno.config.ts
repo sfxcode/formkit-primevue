@@ -12,7 +12,11 @@ function convert(color: string) {
 
 export default defineConfig({
   presets: [
-    presetWind4(),
+    presetWind4({
+      preflights: {
+        reset: false,
+      },
+    }),
     presetIcons({
       scale: 1.2,
       unit: 'em',
