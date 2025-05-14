@@ -1,3 +1,27 @@
+## v2.8.7
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.8.6...v2.8.7)
+
+### 🚀 Enhancements
+
+- **primeOutputList:** Add listStyles: span, div, ul, ol ([4867beb](https://github.com/sfxcode/formkit-primevue/commit/4867beb))
+
+### 💅 Refactors
+
+- **header:** List Style featured ([3f792d0](https://github.com/sfxcode/formkit-primevue/commit/3f792d0))
+
+### 🏡 Chore
+
+- **dependencies:** Update dependencies ([5ba9ac1](https://github.com/sfxcode/formkit-primevue/commit/5ba9ac1))
+
+### 🎨 Styles
+
+- **linting:** Fix error ([b6f195b](https://github.com/sfxcode/formkit-primevue/commit/b6f195b))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.8.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.8.5...v2.8.6)
