@@ -1,10 +1,9 @@
 import type { UserModule } from '@/types'
-import en from '@/locales/en.json'
 import { createI18n } from 'vue-i18n'
+import en from '@/locales/en.json'
 
 export const install: UserModule = ({ app }) => {
   const i18n = createI18n({
-    legacy: false,
     locale: 'en',
     messages: {
       en,
