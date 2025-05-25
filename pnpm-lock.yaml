@@ -32,6 +32,9 @@ importers:
       uuid:
         specifier: ^11.1.0
         version: 11.1.0
+      vue-i18n:
+        specifier: ^11.1.4
+        version: 11.1.4(vue@3.5.14(typescript@5.8.3))
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^4.13.2
@@ -162,9 +165,6 @@ importers:
       vue-demi:
         specifier: ^0.14.10
         version: 0.14.10(vue@3.5.14(typescript@5.8.3))
-      vue-i18n:
-        specifier: ^11.1.4
-        version: 11.1.4(vue@3.5.14(typescript@5.8.3))
       vue-router:
         specifier: ^4.5.1
         version: 4.5.1(vue@3.5.14(typescript@5.8.3))
