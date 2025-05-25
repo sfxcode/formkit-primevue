@@ -5,7 +5,6 @@ import Checkbox from 'primevue/checkbox'
 import Chip from 'primevue/chip'
 import ColorPicker from 'primevue/colorpicker'
 import DatePicker from 'primevue/datepicker'
-import Editor from 'primevue/editor'
 import InputMask from 'primevue/inputmask'
 import InputNumber from 'primevue/inputnumber'
 import InputOtp from 'primevue/inputotp'
@@ -51,10 +50,5 @@ export function usePrimeInputs() {
     app.component('ToggleSwitch', ToggleSwitch)
     app.component('TreeSelect', TreeSelect)
   }
-
-  function registerEditorInputs(app: any) {
-    app.component('Editor', Editor)
-  }
-
-  return { registerInputs, registerEditorInputs }
+  return { registerInputs }
 }

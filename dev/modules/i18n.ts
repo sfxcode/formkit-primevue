@@ -5,6 +5,7 @@ import en from '@/locales/en.json'
 export const install: UserModule = ({ app }) => {
   const i18n = createI18n({
     locale: 'en',
+    legacy: false, // you must set `false`, to use Composition API
     messages: {
       en,
     },

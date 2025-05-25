@@ -3,15 +3,17 @@ import Aura from '@primeuix/themes/aura'
 import { usePrimeInputs } from 'my-library'
 import PrimeVue from 'primevue/config'
 import ConfirmationService from 'primevue/confirmationservice'
+import Editor from 'primevue/editor'
 import MegaMenu from 'primevue/megamenu'
+
 import Ripple from 'primevue/ripple'
 import Tab from 'primevue/tab'
 import TabList from 'primevue/tablist'
 import TabPanel from 'primevue/tabpanel'
-
 import TabPanels from 'primevue/tabpanels'
 
 import Tabs from 'primevue/tabs'
+
 import Toast from 'primevue/toast'
 
 // services
@@ -27,9 +29,8 @@ export const install: UserModule = ({ app }) => {
   app.directive('tooltip', Tooltip)
 
   // input components
-  const { registerInputs, registerEditorInputs } = usePrimeInputs()
+  const { registerInputs } = usePrimeInputs()
   registerInputs(app)
-  registerEditorInputs(app)
 
   // other components
   app.component('MegaMenu', MegaMenu)
@@ -40,6 +41,7 @@ export const install: UserModule = ({ app }) => {
   app.component('TabPanel', TabPanel)
   app.component('Toast', Toast)
   app.component('Toolbar', Toolbar)
+  app.component('Editor', Editor)
 
   app.use(PrimeVue, {
     theme: {
