@@ -1,3 +1,15 @@
+## v2.9.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.1...v2.9.2)
+
+### 💅 Refactors
+
+- **Editor:** Make Editor Optional ([fbe99d2](https://github.com/sfxcode/formkit-primevue/commit/fbe99d2))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.9.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.0...v2.9.1)
