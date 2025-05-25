@@ -48,6 +48,31 @@ const schema = reactive([
           },
         ],
       },
+      {
+        $formkit: 'step',
+        name: 'step3',
+        label: 'Step 3',
+        children: [
+
+          {
+            $formkit: 'primeInputText',
+            name: 'name',
+            label: 'Basic',
+            validation: 'required',
+
+          },
+          {
+            $formkit: 'primeInputText',
+            id: 'icon',
+            name: 'todo',
+            label: 'Todo',
+            help: '',
+            placeholder: 'todo',
+            iconPrefix: 'pi pi-check',
+            validation: 'required',
+          },
+        ],
+      },
     ],
   },
 ])
