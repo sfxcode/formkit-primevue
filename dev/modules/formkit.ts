@@ -3,7 +3,7 @@ import { createAutoAnimatePlugin } from '@formkit/addons'
 
 import { de, en } from '@formkit/i18n'
 import { defaultConfig, plugin } from '@formkit/vue'
-import { primeEditorInputs, primeInputs, primeOutputs } from 'my-library/definitions'
+import { primeInputs, primeOutputs } from 'my-library/definitions'
 import { addPrimeAsteriskPlugin } from 'my-library/plugins'
 
 export const install: UserModule = ({ app }) => {
@@ -11,7 +11,7 @@ export const install: UserModule = ({ app }) => {
     locales: { de, en },
     // Define the active locale
     locale: 'en',
-    inputs: { ...primeInputs, ...primeOutputs, ...primeEditorInputs },
+    inputs: { ...primeInputs, ...primeOutputs },
     plugins: [
       createAutoAnimatePlugin(
         {

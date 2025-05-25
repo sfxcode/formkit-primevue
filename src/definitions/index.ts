@@ -58,9 +58,6 @@ export const primeInputs = {
   primeCascadeSelect: primeCascadeSelectDefinition,
   primeTreeSelect: primeTreeSelectDefinition,
   primeInputOtp: primeInputOtpDefinition,
-}
-
-export const primeEditorInputs = {
   primeEditor: primeEditorDefinition,
 }
 
@@ -73,4 +70,5 @@ export const primeOutputs = {
   primeOutputBoolean: primeOutputBooleanDefinition,
   primeOutputDuration: primeOutputDurationDefinition,
   primeOutputList: primeOutputListDefinition,
+  primeEditor: primeEditorDefinition,
 }
