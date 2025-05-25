@@ -35,8 +35,6 @@ import {
   primeOutputTextDefinition,
 } from './output'
 
-export const wrappedPrimeInputs: string[] = ['AutoComplete', 'CascadeSelect', 'Checkbox', 'Chip', 'ColorPicker', 'DatePicker', 'Editor', 'InputMask', 'InputNumber', 'InputOtp', 'InputText', 'Knob', 'Listbox', 'MultiSelect', 'Password', 'RadioButton', 'Rating', 'Select', 'SelectButton', 'Slider', 'Textarea', 'ToggleButton', 'ToggleSwitch', 'TreeSelect']
-
 export const primeInputs = {
   primeAutoComplete: primeAutoCompleteDefinition,
   primeInputText: primeInputTextDefinition,
@@ -46,7 +44,6 @@ export const primeInputs = {
   primeCheckbox: primeCheckboxDefinition,
   primeToggleSwitch: primeToggleSwitchDefinition,
   primeTextarea: primeTextareaDefinition,
-  primeEditor: primeEditorDefinition,
   primeSelect: primeSelectDefinition,
   primeMultiSelect: primeMultiSelectDefinition,
   primeDatePicker: primeDatePickerDefinition,
@@ -61,6 +58,10 @@ export const primeInputs = {
   primeCascadeSelect: primeCascadeSelectDefinition,
   primeTreeSelect: primeTreeSelectDefinition,
   primeInputOtp: primeInputOtpDefinition,
+}
+
+export const primeEditorInputs = {
+  primeEditor: primeEditorDefinition,
 }
 
 export const primeOutputs = {

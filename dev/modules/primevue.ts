@@ -27,8 +27,9 @@ export const install: UserModule = ({ app }) => {
   app.directive('tooltip', Tooltip)
 
   // input components
-  const { registerInputs } = usePrimeInputs()
+  const { registerInputs, registerEditorInputs } = usePrimeInputs()
   registerInputs(app)
+  registerEditorInputs(app)
 
   // other components
   app.component('MegaMenu', MegaMenu)

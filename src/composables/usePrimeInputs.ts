@@ -33,7 +33,6 @@ export function usePrimeInputs() {
     app.component('Chip', Chip)
     app.component('ColorPicker', ColorPicker)
     app.component('DatePicker', DatePicker)
-    app.component('Editor', Editor)
     app.component('InputMask', InputMask)
     app.component('InputNumber', InputNumber)
     app.component('InputOtp', InputOtp)
@@ -53,5 +52,9 @@ export function usePrimeInputs() {
     app.component('TreeSelect', TreeSelect)
   }
 
-  return { registerInputs }
+  function registerEditorInputs(app: any) {
+    app.component('Editor', Editor)
+  }
+
+  return { registerInputs, registerEditorInputs }
 }
