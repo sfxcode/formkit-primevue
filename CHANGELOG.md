@@ -1,3 +1,27 @@
+## v2.9.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.8.7...v2.9.0)
+
+### 💅 Refactors
+
+- **Editor:** ⚠️  Make Editor Optional ([bd92474](https://github.com/sfxcode/formkit-primevue/commit/bd92474))
+- **dependencies:** ⚠️  Make @formkit/drag-and-drop Optional - because it is only used in demo app ([b27924d](https://github.com/sfxcode/formkit-primevue/commit/b27924d))
+- **dependencies:** ⚠️  Make vue-i18n Optional - because it is only used if register primeOutput components  - needs to be imported if needed ([0cf32cc](https://github.com/sfxcode/formkit-primevue/commit/0cf32cc))
+
+### 🏡 Chore
+
+- **release:** Change next version to minor ([76054a4](https://github.com/sfxcode/formkit-primevue/commit/76054a4))
+
+#### ⚠️ Breaking Changes
+
+- **Editor:** ⚠️  Make Editor Optional ([bd92474](https://github.com/sfxcode/formkit-primevue/commit/bd92474))
+- **dependencies:** ⚠️  Make @formkit/drag-and-drop Optional - because it is only used in demo app ([b27924d](https://github.com/sfxcode/formkit-primevue/commit/b27924d))
+- **dependencies:** ⚠️  Make vue-i18n Optional - because it is only used if register primeOutput components  - needs to be imported if needed ([0cf32cc](https://github.com/sfxcode/formkit-primevue/commit/0cf32cc))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.8.7
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.8.6...v2.8.7)
