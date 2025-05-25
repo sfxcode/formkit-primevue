@@ -8,6 +8,18 @@
   --font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
+:root {
+  --multistep-color-border: var(--p-primary-color);
+  --multistep-color-tab: var(--p-primary-active-color);
+  --multistep-color-tab-active: var(--p-primary-color);
+  --multistep-color-success: var(--p-primary-color);
+  --multistep-color-danger: #ef9a9a;
+  --multistep-color-tab-active-text: var(--p-button-primary-color);
+  --multistep-color-tab-text: var(--p-button-primary-color);
+  --multistep-radius: 0.4em;
+  --multistep-shadow: 0.25em 0.25em 1em 0 rgb(0 0 0 / 10%);
+}
+
 html {
   height: 100%;
   font-size: 16px;
@@ -16,6 +28,29 @@ html {
 a {
   text-decoration: none;
   color: var(--p-primary-color);
+}
+
+.formkit-step-actions {
+  button {
+    display: inline-flex;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    color: var(--p-button-primary-color);
+    background: var(--p-button-primary-background);
+    border: 1px solid var(--p-button-primary-border-color);
+    padding: var(--p-button-padding-y) var(--p-button-padding-x);
+    font-size: 1rem;
+    font-family: inherit;
+    font-feature-settings: inherit;
+    transition: background var(--p-button-transition-duration), color var(--p-button-transition-duration), border-color var(--p-button-transition-duration), outline-color var(--p-button-transition-duration), box-shadow var(--p-button-transition-duration);
+    border-radius: var(--p-button-border-radius);
+    outline-color: transparent;
+    gap: var(--p-button-gap);
+  }
 }
 
 

@@ -126,6 +126,7 @@ const items = ref([
             { label: 'Repeater', icon: 'pi pi-fw pi-user-edit', route: '/samples/repeater' },
             { label: 'Input Editor', icon: 'pi pi-fw pi-user-edit', route: '/samples/inputEditor' },
             { label: 'Form Editor', icon: 'pi pi-fw pi-user-edit', route: '/samples/formEditor' },
+            { label: 'MultiStep', icon: 'pi pi-fw pi-user-edit', route: '/samples/multiStep' },
           ],
         },
       ],
@@ -145,8 +146,8 @@ const items = ref([
       </template>  <template #center>
         <div class="text-lg">
           <span class="text-yellow-600 font-bold">New: </span>
-          <router-link to="/outputs/outputList" class="">
-            <span class="">Output List - listStyle</span>
+          <router-link to="/samples/multiStep" class="">
+            <span class="">MultiStep</span>
           </router-link>
         </div>
       </template>  <template #end>

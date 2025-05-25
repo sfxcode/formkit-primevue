@@ -1,10 +1,11 @@
 import type { UserModule } from '@/types'
-import { createAutoAnimatePlugin } from '@formkit/addons'
-
+import { createAutoAnimatePlugin, createMultiStepPlugin } from '@formkit/addons'
 import { de, en } from '@formkit/i18n'
+
 import { defaultConfig, plugin } from '@formkit/vue'
 import { primeInputs, primeOutputs } from 'my-library/definitions'
 import { addPrimeAsteriskPlugin } from 'my-library/plugins'
+import '@formkit/addons/css/multistep'
 
 export const install: UserModule = ({ app }) => {
   app.use(plugin, defaultConfig({
@@ -29,6 +30,7 @@ export const install: UserModule = ({ app }) => {
         },
       ),
       addPrimeAsteriskPlugin,
+      createMultiStepPlugin(),
     ],
   }))
 }

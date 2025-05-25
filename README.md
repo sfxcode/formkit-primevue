@@ -126,7 +126,7 @@ Some samples for common tasks are available
 - Checkbox
 - ColorPicker
 - DatePicker
-- Editor (HTML Editor)
+- Editor (HTML Editor - if you register the editor component, make sure to import quill)
 - InputMask
 - InputNumber
 - InputOtp
