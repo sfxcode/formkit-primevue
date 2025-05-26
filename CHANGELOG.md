@@ -1,3 +1,16 @@
+## v2.9.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.2...v2.9.3)
+
+### 🚀 Enhancements
+
+- **demo:** Add MultiStep sample ([11bca00](https://github.com/sfxcode/formkit-primevue/commit/11bca00))
+- **demo:** Add MultiStep sample ([53df6d2](https://github.com/sfxcode/formkit-primevue/commit/53df6d2))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.9.2
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.1...v2.9.2)
