@@ -3,19 +3,19 @@ import { computed } from 'vue'
 
 export function useFormKitSection(context: any) {
   const hasPrefix = computed(() => {
-    return context?.prefix && context?.prefix.length > 0
+    return Boolean(context?.prefix?.length > 0)
   })
 
   const hasPrefixIcon = computed(() => {
-    return context?.iconPrefix && context?.iconPrefix.length > 0
+    return Boolean(context?.iconPrefix?.length > 0)
   })
 
   const hasSuffixIcon = computed(() => {
-    return context?.iconSuffix && context?.iconSuffix.length > 0
+    return Boolean(context?.iconSuffix?.length > 0)
   })
 
   const hasSuffix = computed(() => {
-    return context?.suffix && context?.suffix.length > 0
+    return Boolean(context?.suffix?.length > 0)
   })
 
   function generateId() {
