@@ -1,3 +1,25 @@
+## v2.9.4
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.3...v2.9.4)
+
+### 💅 Refactors
+
+- Better deal with nullish values ([6299a59](https://github.com/sfxcode/formkit-primevue/commit/6299a59))
+- Make h and m case insensitive ([a9c1252](https://github.com/sfxcode/formkit-primevue/commit/a9c1252))
+- Tests ([5ac3b77](https://github.com/sfxcode/formkit-primevue/commit/5ac3b77))
+- Make code null safe and add tests ([fc23eba](https://github.com/sfxcode/formkit-primevue/commit/fc23eba))
+- Make code null safe ([899c244](https://github.com/sfxcode/formkit-primevue/commit/899c244))
+
+### 🎨 Styles
+
+- **linting:** Fix error ([2c39e2b](https://github.com/sfxcode/formkit-primevue/commit/2c39e2b))
+- **linting:** Fix error ([fa70814](https://github.com/sfxcode/formkit-primevue/commit/fa70814))
+- **linting:** Fix error ([d014e15](https://github.com/sfxcode/formkit-primevue/commit/d014e15))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.9.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.2...v2.9.3)
