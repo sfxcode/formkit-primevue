@@ -1,6 +1,27 @@
 import { describe, expect, it } from 'vitest'
 import { useFormKitSchema } from '../src/composables'
 
+interface FormKitComponent {
+  $cmp?: string
+  props?: Record<string, any>
+  validation?: string
+  validationVisibility?: string
+  validationLabel?: string
+  [key: string]: any
+}
+
+interface FormKitElement {
+  $el: string
+  attrs?: {
+    class?: string
+    style?: string
+    [key: string]: any
+  }
+  children?: any[]
+  validation?: string
+  validationVisibility?: string
+}
+
 it('add list group', () => {
   const { addListGroup } = useFormKitSchema()
 
@@ -21,14 +42,14 @@ it('add element with non-boolean render value', () => {
 it('add component with props', () => {
   const { addComponent } = useFormKitSchema()
   const props = { label: 'Save', severity: 'primary' }
-  const component = addComponent('Button', props)
+  const component = addComponent('Button', props) as FormKitComponent
   expect(component?.props).toEqual(props)
 })
 
 describe('addElementsInOuterDiv', () => {
   it('creates default structure with minimal params', () => {
     const { addElementsInOuterDiv } = useFormKitSchema()
-    const outerDiv = addElementsInOuterDiv()
+    const outerDiv = addElementsInOuterDiv() as FormKitElement
 
     expect(outerDiv?.$el).toBe('div')
     expect(outerDiv?.attrs?.class).toBe('formkit-outer ')
@@ -48,7 +69,7 @@ describe('addElementsInOuterDiv', () => {
 
   it('applies custom classes', () => {
     const { addElementsInOuterDiv } = useFormKitSchema()
-    const outerDiv = addElementsInOuterDiv([], 'custom-inner', 'custom-outer')
+    const outerDiv = addElementsInOuterDiv([], 'custom-inner', 'custom-outer') as FormKitElement
 
     expect(outerDiv?.attrs?.class).toBe('formkit-outer custom-outer')
 
@@ -60,7 +81,7 @@ describe('addElementsInOuterDiv', () => {
 it('combines formKitAttrs with element properties', () => {
   const { addElement } = useFormKitSchema()
   const formKitAttrs = { validation: 'required', validationVisibility: 'dirty' }
-  const element = addElement('div', [], {}, true, formKitAttrs)
+  const element = addElement('div', [], {}, true, formKitAttrs) as FormKitElement
 
   expect(element?.$el).toBe('div')
   expect(element?.validation).toBe('required')
@@ -70,7 +91,7 @@ it('combines formKitAttrs with element properties', () => {
 it('combines formKitAttrs with component properties', () => {
   const { addComponent } = useFormKitSchema()
   const formKitAttrs = { validation: 'required', validationLabel: 'Button' }
-  const component = addComponent('Button', {}, true, formKitAttrs)
+  const component = addComponent('Button', {}, true, formKitAttrs) as FormKitComponent
 
   expect(component?.$cmp).toBe('Button')
   expect(component?.validation).toBe('required')
