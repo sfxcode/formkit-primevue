@@ -1,3 +1,21 @@
+## v2.9.5
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.4...v2.9.5)
+
+### 🚀 Enhancements
+
+- **primeAutoComplete:** Enable async complete functions with loading state, add additional properties (minLength, placeholder, fluid) ([2fcd37a](https://github.com/sfxcode/formkit-primevue/commit/2fcd37a))
+- **primeAutoComplete:** Enable async complete functions with loading state, add additional properties (minLength, placeholder, fluid) ([a8d8535](https://github.com/sfxcode/formkit-primevue/commit/a8d8535))
+
+### 🏡 Chore
+
+- **dependencies:** Update to PrimeVue 4.3.5 ([18eced4](https://github.com/sfxcode/formkit-primevue/commit/18eced4))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+- Henry Jobst <github@jobst-berlin.de>
+
 ## v2.9.4
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.3...v2.9.4)
