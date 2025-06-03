@@ -16,6 +16,9 @@ export interface FormKitPrimeAutoCompleteProps {
   optionLabel?: AutoCompleteProps['optionLabel']
   options?: any[] | undefined
   size?: AutoCompleteProps['size']
+  minLength?: AutoCompleteProps['minLength']
+  placeholder?: AutoCompleteProps['placeholder']
+  fluid?: AutoCompleteProps['fluid']
 }
 
 const props = defineProps({
@@ -29,15 +32,27 @@ const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useForm
 
 const suggestions = ref(['', {}])
 suggestions.value = []
+const loading = ref(false)
 
-function search(event: AutoCompleteCompleteEvent) {
+async function search(event: AutoCompleteCompleteEvent) {
   if (props.context?.options && props.context?.optionLabel) {
     suggestions.value = props.context.options.filter((option) => {
       return option[`${props.context.optionLabel}`].toString().toLowerCase().includes(event.query.toLowerCase())
     })
   }
   else {
-    suggestions.value = props.context?.attrs.complete(event.query)
+    loading.value = true
+    try {
+      suggestions.value = await props.context?.attrs.complete(event.query)
+    }
+    catch (error) {
+      console.error('Error fetching suggestions:', error)
+      suggestions.value = []
+    }
+    finally {
+      loading.value = false
+    }
+    suggestions.value = await props.context?.attrs.complete(event.query)
   }
 }
 </script>
@@ -60,9 +75,13 @@ function search(event: AutoCompleteCompleteEvent) {
       :dropdown="context?.dropdown ?? false"
       :multiple="context?.multiple ?? false"
       :typeahead="context?.typeahead ?? true"
+      :min-length="context?.minLength ?? undefined"
+      :placeholder="context?.placeholder ?? undefined"
+      :fluid="context?.fluid ?? undefined"
       :pt="context?.pt"
       :pt-options="context?.ptOptions"
       :unstyled="unstyled"
+      :loading="loading"
       @keydown.enter.prevent
       @complete="search"
       @change="handleInput"
