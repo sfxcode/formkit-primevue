@@ -94,11 +94,10 @@
     "@intlify/core": "^11.1.5",
     "primeicons": "^7.0.0",
     "primevue": "^4.3.5",
-    "uuid": "^11.1.0",
     "vue-i18n": "^11.1.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^4.13.2",
+    "@antfu/eslint-config": "^4.13.3",
     "@formkit/core": "^1.6.9",
     "@formkit/drag-and-drop": "^0.5.3",
     "@primeuix/themes": "^1.1.1",
@@ -121,7 +120,7 @@
     "cookie": "^1.0.2",
     "esbuild": "^0.25.5",
     "eslint": "^9.28.0",
-    "happy-dom": "^17.6.1",
+    "happy-dom": "^17.6.3",
     "json-editor-vue": "^0.18.1",
     "mkdist": "^2.3.0",
     "quill": "^2.0.3",

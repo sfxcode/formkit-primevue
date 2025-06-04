@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid'
 import { computed } from 'vue'
 
 export function useFormKitSection(context: any) {
@@ -19,7 +18,7 @@ export function useFormKitSection(context: any) {
   })
 
   function generateId() {
-    return uuidv4()
+    return typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2)
   }
 
   return { generateId, hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon }
