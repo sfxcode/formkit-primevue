@@ -1,3 +1,19 @@
+## v2.9.6
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.5...v2.9.6)
+
+### 💅 Refactors
+
+- **useFormKitSection:** Replace uuid with crypto.randomUUID for ID generation ([48f27a0](https://github.com/sfxcode/formkit-primevue/commit/48f27a0))
+
+### 🏡 Chore
+
+- **dependencies:** Update package versions for improved compatibility ([6aeafcd](https://github.com/sfxcode/formkit-primevue/commit/6aeafcd))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.9.5
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.4...v2.9.5)
