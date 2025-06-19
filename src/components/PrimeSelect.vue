@@ -22,8 +22,8 @@ export interface FormKitPrimeSelectProps {
   placeholder?: SelectProps['placeholder']
   dataKey?: SelectProps['dataKey']
   showClear?: SelectProps['showClear']
-  panelStyle?: SelectProps['panelStyle']
-  panelClass?: SelectProps['panelClass']
+  overlayStyle?: SelectProps['overlayStyle']
+  overlayClass?: SelectProps['overlayClass']
   appendTo?: SelectProps['appendTo']
   resetFilterOnHide?: SelectProps['resetFilterOnHide']
   virtualScrollerOptions?: SelectProps['virtualScrollerOptions']
@@ -86,8 +86,8 @@ const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useForm
       :placeholder="context.placeholder"
       :data-key="context.dataKey"
       :show-clear="context.showClear ?? false"
-      :panel-style="context.panelStyle"
-      :panel-class="context.panelClass"
+      :overlay-style="context.overlayStyle"
+      :overlay-class="context.overlayClass"
       :panel-props="context.panelProps"
       :append-to="context.appendTo"
       :reset-filter-on-hide="context.resetFilterOnHide"

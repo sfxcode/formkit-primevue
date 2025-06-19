@@ -1,9 +1,14 @@
 <script setup lang='ts'>
-const primeAttributes = 'placeholder, separator, allowDuplicate, max, addOnBlur'
+const primeAttributes = 'placeholder, multiple, typeahead, optionLabel, size, minLength, fluid'
 
 const list = ['Hello', 'Hero', 'House', 'World']
 
 function search(query: string) {
+  return [...list.filter(i => i.toLowerCase().includes(query.toLowerCase())), query]
+}
+
+async function asyncSearch(query: string) {
+  await new Promise(resolve => setTimeout(resolve, 1000))
   return [...list.filter(i => i.toLowerCase().includes(query.toLowerCase())), query]
 }
 
@@ -21,6 +26,17 @@ const schema
       complete: search,
       dropdown: true,
       label: 'Basic AutoComplete - Use [h]ello',
+    },
+    {
+      $formkit: 'primeAutoComplete',
+      id: 'async',
+      name: 'async',
+      complete: asyncSearch,
+      dropdown: true,
+      label: 'Async AutoComplete - Use [he]llo',
+      minLength: 2,
+      placeholder: 'Type at least 2 characters',
+      fluid: true,
     },
     {
       $formkit: 'primeAutoComplete',
