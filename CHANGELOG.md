@@ -1,3 +1,20 @@
+## v2.9.7
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.6...v2.9.7)
+
+### 🚀 Enhancements
+
+- **demo:** Add another AutoComplete sample with async complete function and new props (fluid, placeholder, minLength) ([6a949e6](https://github.com/sfxcode/formkit-primevue/commit/6a949e6))
+- **primeSelect:** Replace deprecated properties panelStyle/panelClass with overlayStyle/overlayClass ([d33735b](https://github.com/sfxcode/formkit-primevue/commit/d33735b))
+
+### 🩹 Fixes
+
+- **primeAutoComplete:** Fix custom input definition for additional props (minLength, placeholder, fluid) ([52cf18a](https://github.com/sfxcode/formkit-primevue/commit/52cf18a))
+
+### ❤️ Contributors
+
+- Henry Jobst <github@jobst-berlin.de>
+
 ## v2.9.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.5...v2.9.6)
