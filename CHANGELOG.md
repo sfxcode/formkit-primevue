@@ -1,3 +1,25 @@
+## v2.9.9
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.8...v2.9.9)
+
+### 🚀 Enhancements
+
+- **PrimeAutoComplete:** Enhance paste handling to support direct value assignment when no separators are provided ([8d41299](https://github.com/sfxcode/formkit-primevue/commit/8d41299))
+
+### 🩹 Fixes
+
+- **PrimeAutoComplete:** Improve v-model synchronization and handle paste events with local state ([c65c4a6](https://github.com/sfxcode/formkit-primevue/commit/c65c4a6))
+- **AppTopbar:** Remove 'Form Editor' sample for the moment ([157618e](https://github.com/sfxcode/formkit-primevue/commit/157618e))
+
+### 🏡 Chore
+
+- **dependencies:** Update package versions for improved compatibility ([b5a8487](https://github.com/sfxcode/formkit-primevue/commit/b5a8487))
+- **dependencies:** Downgrade quill to version 1.3.7 and update related dependencies - fix dev:build error when importing Editor Component ([7c75a11](https://github.com/sfxcode/formkit-primevue/commit/7c75a11))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.9.8
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.7...v2.9.8)
