@@ -55,6 +55,15 @@ const schema
       typeahead: false,
       label: 'Chips Replacement',
     },
+    {
+      $formkit: 'primeAutoComplete',
+      id: 'chips',
+      name: 'chips',
+      multiple: true,
+      typeahead: false,
+      label: 'Chips - Paste separated values by comma or semicolon',
+      separators: [',', ';'],
+    },
   ]
 
 const data = { id: { id: '1', name: 'Tom', value: '123' } }
