@@ -10,9 +10,13 @@ export function useFormKitRepeater() {
   }
 
   function addListGroupFunctions(data: any, addNodeDefaultObject: object = {}) {
+    // Swap elements immutably
     const swapElements = (array: any[], index1: number, index2: number) => {
-      array[index1] = array.splice(index2, 1, array[index1])[0]
-      return array
+      const newArray = [...array]
+      const temp = newArray[index1]
+      newArray[index1] = newArray[index2]
+      newArray[index2] = temp
+      return newArray
     }
 
     data.addNode = (parentNode: any) => (): void => {

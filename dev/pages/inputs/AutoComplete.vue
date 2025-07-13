@@ -57,8 +57,8 @@ const schema
     },
     {
       $formkit: 'primeAutoComplete',
-      id: 'chips',
-      name: 'chips',
+      id: 'chips2',
+      name: 'chips2',
       multiple: true,
       typeahead: false,
       label: 'Chips - Paste separated values by comma or semicolon',
