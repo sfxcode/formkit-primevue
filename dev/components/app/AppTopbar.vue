@@ -125,7 +125,6 @@ const items = ref([
           items: [
             { label: 'Repeater', icon: 'pi pi-fw pi-user-edit', route: '/samples/repeater' },
             { label: 'Input Editor', icon: 'pi pi-fw pi-user-edit', route: '/samples/inputEditor' },
-            { label: 'Form Editor', icon: 'pi pi-fw pi-user-edit', route: '/samples/formEditor' },
             { label: 'MultiStep', icon: 'pi pi-fw pi-user-edit', route: '/samples/multiStep' },
           ],
         },
