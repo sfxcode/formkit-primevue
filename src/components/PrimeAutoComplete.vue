@@ -94,6 +94,7 @@ function handlePaste(event: ClipboardEvent) {
     ? props.context.separators
     : [',']
   const regex = new RegExp(`[${separators.map(s => s.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')).join('')}]`)
+  // If separators are provided, split the pasted text by them
   if (pastedText && regex.test(pastedText)) {
     event.preventDefault()
     const items = pastedText
@@ -106,6 +107,17 @@ function handlePaste(event: ClipboardEvent) {
     }
     else {
       localValue.value = items
+    }
+  }
+  // If no separators, just set the value directly
+  else if (pastedText) {
+    event.preventDefault()
+    // If no separators, just set the value directly
+    if (Array.isArray(localValue.value)) {
+      localValue.value = [...localValue.value, pastedText.trim()]
+    }
+    else {
+      localValue.value = [pastedText.trim()]
     }
   }
 }
