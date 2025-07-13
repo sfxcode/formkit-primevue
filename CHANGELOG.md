@@ -1,3 +1,19 @@
+## v2.9.8
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.7...v2.9.8)
+
+### 🚀 Enhancements
+
+- **PrimeAutoComplete:** Default use commas as separator on paste, add support for multiple custom separators in paste handling, ([2de6dca](https://github.com/sfxcode/formkit-primevue/commit/2de6dca))
+
+### 🏡 Chore
+
+- **dependencies:** Update package versions for improved compatibility ([493566e](https://github.com/sfxcode/formkit-primevue/commit/493566e))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v2.9.7
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.6...v2.9.7)
