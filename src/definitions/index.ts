@@ -4,7 +4,6 @@ import {
   primeCheckboxDefinition,
   primeColorPickerDefinition,
   primeDatePickerDefinition,
-  primeEditorDefinition,
   primeInputMaskDefinition,
   primeInputNumberDefinition,
   primeInputOtpDefinition,
@@ -58,7 +57,6 @@ export const primeInputs = {
   primeCascadeSelect: primeCascadeSelectDefinition,
   primeTreeSelect: primeTreeSelectDefinition,
   primeInputOtp: primeInputOtpDefinition,
-  primeEditor: primeEditorDefinition,
 }
 
 export const primeOutputs = {
@@ -70,5 +68,4 @@ export const primeOutputs = {
   primeOutputBoolean: primeOutputBooleanDefinition,
   primeOutputDuration: primeOutputDurationDefinition,
   primeOutputList: primeOutputListDefinition,
-  primeEditor: primeEditorDefinition,
 }

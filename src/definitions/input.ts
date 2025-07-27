@@ -6,7 +6,6 @@ import PrimeCascadeSelect from '../components/PrimeCascadeSelect.vue'
 import PrimeCheckbox from '../components/PrimeCheckbox.vue'
 import PrimeColorPicker from '../components/PrimeColorPicker.vue'
 import PrimeDatePicker from '../components/PrimeDatePicker.vue'
-import PrimeEditor from '../components/PrimeEditor.vue'
 import PrimeInputMask from '../components/PrimeInputMask.vue'
 import PrimeInputNumber from '../components/PrimeInputNumber.vue'
 import PrimeInputOtp from '../components/PrimeInputOtp.vue'
@@ -58,10 +57,6 @@ export const primeToggleSwitchDefinition: FormKitTypeDefinition = createInput(Pr
 
 export const primeInputOtpDefinition: FormKitTypeDefinition = createInput(PrimeInputOtp, {
   props: ['length', 'variant', 'mask', 'integerOnly', 'pt', 'ptOptions', 'unstyled', 'size'],
-})
-
-export const primeEditorDefinition: FormKitTypeDefinition = createInput(PrimeEditor, {
-  props: ['placeholder', 'formats', 'modules', 'pt', 'ptOptions', 'unstyled'],
 })
 
 export const primeSelectDefinition: FormKitTypeDefinition = createInput(PrimeSelect, {
@@ -124,7 +119,6 @@ export const primeInputs = {
   primeCheckbox: primeCheckboxDefinition,
   primeToggleSwitch: primeToggleSwitchDefinition,
   primeTextarea: primeTextareaDefinition,
-  primeEditor: primeEditorDefinition,
   primeSelect: primeSelectDefinition,
   primeMultiSelect: primeMultiSelectDefinition,
   primeDatePicker: primeDatePickerDefinition,

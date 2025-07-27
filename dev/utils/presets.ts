@@ -17,11 +17,6 @@ export const formkitPreset = [{
   validation: '',
   rows: '3',
 }, {
-  $formkit: 'primeEditor',
-  name: 'myEditor',
-  label: 'Editor',
-  style: 'height: 160px; margin-bottom:80px;',
-}, {
   $formkit: 'primePassword',
   name: 'password',
   label: 'Password',

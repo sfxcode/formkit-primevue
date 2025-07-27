@@ -73,12 +73,6 @@ const schema = reactive(
       rows: '3',
     },
     {
-      $formkit: 'primeEditor',
-      name: 'myEditor',
-      label: 'Editor',
-      style: 'height: 160px;',
-    },
-    {
       $formkit: 'primeInputText',
       name: 'password',
       label: 'Password',

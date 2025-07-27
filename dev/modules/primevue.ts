@@ -3,7 +3,6 @@ import Aura from '@primeuix/themes/aura'
 import { usePrimeInputs } from 'my-library'
 import PrimeVue from 'primevue/config'
 import ConfirmationService from 'primevue/confirmationservice'
-import Editor from 'primevue/editor'
 import MegaMenu from 'primevue/megamenu'
 
 import Ripple from 'primevue/ripple'
@@ -41,7 +40,6 @@ export const install: UserModule = ({ app }) => {
   app.component('TabPanel', TabPanel)
   app.component('Toast', Toast)
   app.component('Toolbar', Toolbar)
-  app.component('Editor', Editor)
 
   app.use(PrimeVue, {
     theme: {

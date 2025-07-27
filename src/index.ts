@@ -48,9 +48,6 @@ declare module '@formkit/inputs' {
     primeTextarea: {
       type: 'primeTextarea'
     }
-    primeEditor: {
-      type: 'primeEditor'
-    }
     primeSelect: {
       type: 'primeSelect'
       options?: SelectProps['options']

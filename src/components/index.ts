@@ -6,7 +6,6 @@ import PrimeCascadeSelect from './PrimeCascadeSelect.vue'
 import PrimeCheckbox from './PrimeCheckbox.vue'
 import PrimeColorPicker from './PrimeColorPicker.vue'
 import PrimeDatePicker from './PrimeDatePicker.vue'
-import PrimeEditor from './PrimeEditor.vue'
 import PrimeInputMask from './PrimeInputMask.vue'
 import PrimeInputNumber from './PrimeInputNumber.vue'
 import PrimeInputText from './PrimeInputText.vue'
@@ -33,7 +32,6 @@ export {
   PrimeCheckbox,
   PrimeColorPicker,
   PrimeDatePicker,
-  PrimeEditor,
   PrimeInputMask,
   PrimeInputNumber,
   PrimeInputSwitch,
