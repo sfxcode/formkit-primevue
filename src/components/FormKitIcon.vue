@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type { PropType } from 'vue'
 import { defineProps } from 'vue'
 
 export interface FormKitIconProps {
@@ -7,8 +8,11 @@ export interface FormKitIconProps {
 }
 
 defineProps({
-  iconClass: String,
-  onClick: Function,
+  iconClass: {
+    type: String,
+    default: '',
+  },
+  onClick: { type: Function as PropType<() => void>, default: undefined },
   position: {
     type: String,
     required: true,

@@ -8,10 +8,6 @@ import FormKitIcon from './FormKitIcon.vue'
 import FormKitPrefix from './FormKitPrefix.vue'
 import FormKitSuffix from './FormKitSuffix.vue'
 
-export interface FormKitOutputListProps {
-  listStyle?: 'div' | 'ul' | 'ol' | 'span'
-}
-
 const props = defineProps({
   context: {
     type: Object as PropType<FormKitFrameworkContext> & FormKitIconProps,
@@ -28,8 +24,8 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
 
 <template>
   <div class="p-formkit p-output-list">
-    <FormKitIcon v-if="hasPrefixIcon" :icon-class="context?.iconPrefix" :on-click="context?.onIconPrefixClicked" position="prefix" />
-    <FormKitPrefix v-if="hasPrefix && listStyle === 'span'" :prefix="context?.prefix" />
+    <FormKitIcon v-if="hasPrefixIcon" :icon-class="context?.iconPrefix as string" :on-click="context?.onIconPrefixClicked as (() => void)" position="prefix" />
+    <FormKitPrefix v-if="hasPrefix && listStyle === 'span'" :prefix="context?.prefix as string" />
     <span v-if="listStyle === 'span'" :id="context?.id" :style="context?.attrs?.style" class="p-output-list-items" :class="context?.attrs?.class">
       <template v-for="(value, index) of context?._value" :key="index">
         <span v-if="index !== 0" class="p-output-list-divider" :class="context?.dividerClass">{{ context?.divider ?? ', ' }}</span>
@@ -57,7 +53,7 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
         </span>
       </li>
     </ol>
-    <FormKitSuffix v-if="hasSuffix && listStyle === 'span'" :suffix="context?.suffix" />
-    <FormKitIcon v-if="hasSuffixIcon" :icon-class="context?.iconSuffix" :on-click="context?.onIconSuffixClicked" position="suffix" />
+    <FormKitSuffix v-if="hasSuffix && listStyle === 'span'" :suffix="context?.suffix as string" />
+    <FormKitIcon v-if="hasSuffixIcon" :icon-class="context?.iconSuffix as string" :on-click="context?.onIconSuffixClicked as (() => void)" position="suffix" />
   </div>
 </template>

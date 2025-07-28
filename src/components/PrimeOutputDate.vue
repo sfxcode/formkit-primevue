@@ -40,12 +40,12 @@ const converted = computed(() => {
 
 <template>
   <div class="p-formkit p-output-date">
-    <FormKitIcon v-if="hasPrefixIcon" :icon-class="context?.iconPrefix" :on-click="context?.onIconPrefixClicked" position="prefix" />
-    <FormKitPrefix v-if="hasPrefix" :prefix="context?.prefix" />
+    <FormKitIcon v-if="hasPrefixIcon" :icon-class="context?.iconPrefix as string" :on-click="context?.onIconPrefixClicked as (() => void)" position="prefix" />
+    <FormKitPrefix v-if="hasPrefix" :prefix="context?.prefix as string" />
     <span :id="context?.id" :style="context?.attrs?.style" :class="context?.attrs?.class">
       {{ converted }}
     </span>
-    <FormKitSuffix v-if="hasSuffix" :suffix="context?.suffix" />
-    <FormKitIcon v-if="hasSuffixIcon" :icon-class="context?.iconSuffix" :on-click="context?.onIconSuffixClicked" position="suffix" />
+    <FormKitSuffix v-if="hasSuffix" :suffix="context?.suffix as string" />
+    <FormKitIcon v-if="hasSuffixIcon" :icon-class="context?.iconSuffix as string" :on-click="context?.onIconSuffixClicked as (() => void)" position="suffix" />
   </div>
 </template>
