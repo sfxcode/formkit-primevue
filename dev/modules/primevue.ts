@@ -20,6 +20,7 @@ import Toast from 'primevue/toast'
 import ToastService from 'primevue/toastservice'
 import Toolbar from 'primevue/toolbar'
 import Tooltip from 'primevue/tooltip'
+import PrimeLabel from '../components/demo/PrimeLabel.vue'
 import 'primeicons/primeicons.css'
 
 export const install: UserModule = ({ app }) => {
@@ -40,6 +41,8 @@ export const install: UserModule = ({ app }) => {
   app.component('TabPanel', TabPanel)
   app.component('Toast', Toast)
   app.component('Toolbar', Toolbar)
+
+  app.component('PrimeLabel', PrimeLabel)
 
   app.use(PrimeVue, {
     theme: {

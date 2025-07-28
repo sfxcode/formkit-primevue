@@ -12,6 +12,7 @@ declare module 'vue' {
     AppTopbar: typeof import('./components/app/AppTopbar.vue')['default']
     PrimeData: typeof import('./components/demo/PrimeData.vue')['default']
     PrimeInput: typeof import('./components/demo/PrimeInput.vue')['default']
+    PrimeLabel: typeof import('./components/demo/PrimeLabel.vue')['default']
     PrimeOutput: typeof import('./components/demo/PrimeOutput.vue')['default']
     PrimeSchemaEditor: typeof import('./components/demo/PrimeSchemaEditor.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
