@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { PropType } from 'vue'
-import { defineProps } from 'vue'
 
 export interface FormKitIconProps {
   onIconPrefixClicked?: () => void
