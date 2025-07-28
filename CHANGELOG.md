@@ -1,3 +1,28 @@
+## v3.0.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.0...v3.0.1)
+
+### 🚀 Enhancements
+
+- Add prefix and suffix icon click handlers to output components ([838a607](https://github.com/sfxcode/formkit-primevue/commit/838a607))
+- Remove Editor route from AppTopbar navigation ([ee3e0f7](https://github.com/sfxcode/formkit-primevue/commit/ee3e0f7))
+- Replace FormKit components with custom FormKitDataEdit and FormKitDataView ([4a129a9](https://github.com/sfxcode/formkit-primevue/commit/4a129a9))
+- Add help text to InputText component ([014e4ea](https://github.com/sfxcode/formkit-primevue/commit/014e4ea))
+- Add demo label plugin for FormKit nodes with help text support by title and hide help section ([a44d2a2](https://github.com/sfxcode/formkit-primevue/commit/a44d2a2))
+- Add PrimeLabel component with help text support for FormKit nodes showing custom plugin sample for demo ([d4023e3](https://github.com/sfxcode/formkit-primevue/commit/d4023e3))
+- Remove unused inputClass variable from PrimeInput component ([bcf5b93](https://github.com/sfxcode/formkit-primevue/commit/bcf5b93))
+- Add type safety to iconClass and onClick props in FormKit components ([7dcd135](https://github.com/sfxcode/formkit-primevue/commit/7dcd135))
+- Remove unused imports of defineProps in FormKitIcon, FormKitPrefix, and FormKitSuffix components ([54e8dc6](https://github.com/sfxcode/formkit-primevue/commit/54e8dc6))
+
+### 🏡 Chore
+
+- **release:** Update release script to use patch versioning ([18affbb](https://github.com/sfxcode/formkit-primevue/commit/18affbb))
+- Update package versions in package.json and pnpm-lock.yaml ([12c112f](https://github.com/sfxcode/formkit-primevue/commit/12c112f))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.0.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v2.9.9...v3.0.0)
