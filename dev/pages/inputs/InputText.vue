@@ -9,7 +9,7 @@ const schema
       name: 'name',
       label: 'Basic',
       validation: 'required',
-
+      help: 'Some Help Text',
     },
     {
       $formkit: 'primeInputText',
