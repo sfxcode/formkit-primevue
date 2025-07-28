@@ -20,7 +20,6 @@ const formSchema = ref(props.schema)
 const formData = ref(props.data)
 
 const documentationLink = `https://primevue.org/${props.header.replace('Prime', '').toLowerCase()}`
-const inputClass = 'p-button p-component p-formkit-button'
 
 async function submitHandler() {
   showSuccessMessage('Form Submitted ...', `${props.header} submitted successfully`)
