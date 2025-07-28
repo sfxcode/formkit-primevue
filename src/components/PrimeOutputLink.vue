@@ -1,12 +1,16 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
 import type { PropType } from 'vue'
+import type { FormKitIconProps } from './FormKitIcon.vue'
 import { computed } from 'vue'
 import { useFormKitSection } from '../composables'
+import FormKitIcon from './FormKitIcon.vue'
+import FormKitPrefix from './FormKitPrefix.vue'
+import FormKitSuffix from './FormKitSuffix.vue'
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext> & FormKitIconProps,
     required: true,
   },
 })
@@ -28,10 +32,8 @@ const title = computed(() => {
 
 <template>
   <div class="p-formkit p-output-link">
-    <i v-if="hasPrefixIcon" class="formkit-prefix-icon" :class="context?.iconPrefix" />
-    <span v-if="hasPrefix" class="formkit-prefix">
-      {{ context?.prefix }}
-    </span>
+    <FormKitIcon v-if="hasPrefixIcon" :icon-class="context?.iconPrefix" :on-click="context?.onIconPrefixClicked" position="prefix" />
+    <FormKitPrefix v-if="hasPrefix" :prefix="context?.prefix" />
     <a
       v-if="context?.value"
       :id="context?.id"
@@ -42,9 +44,7 @@ const title = computed(() => {
     >
       <span>{{ title }}</span>
     </a>
-    <span v-if="hasSuffix" class="formkit-suffix">
-      {{ context?.suffix }}
-    </span>
-    <i v-if="hasSuffixIcon" class="formkit-suffix-icon" :class="context?.iconSuffix" />
+    <FormKitSuffix v-if="hasSuffix" :suffix="context?.suffix" />
+    <FormKitIcon v-if="hasSuffixIcon" :icon-class="context?.iconSuffix" :on-click="context?.onIconSuffixClicked" position="suffix" />
   </div>
 </template>

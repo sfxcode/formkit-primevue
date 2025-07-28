@@ -1,8 +1,12 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
 import type { PropType } from 'vue'
+import type { FormKitIconProps } from './FormKitIcon.vue'
 import { computed } from 'vue'
 import { useFormKitSection } from '../composables'
+import FormKitIcon from './FormKitIcon.vue'
+import FormKitPrefix from './FormKitPrefix.vue'
+import FormKitSuffix from './FormKitSuffix.vue'
 
 export interface FormKitOutputListProps {
   listStyle?: 'div' | 'ul' | 'ol' | 'span'
@@ -10,7 +14,7 @@ export interface FormKitOutputListProps {
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext & FormKitOutputListProps>,
+    type: Object as PropType<FormKitFrameworkContext> & FormKitIconProps,
     required: true,
   },
 })
@@ -24,10 +28,8 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
 
 <template>
   <div class="p-formkit p-output-list">
-    <i v-if="hasPrefixIcon" class="formkit-prefix-icon" :class="context?.iconPrefix" />
-    <span v-if="hasPrefix && listStyle === 'span'" class="formkit-prefix">
-      {{ context?.prefix }}
-    </span>
+    <FormKitIcon v-if="hasPrefixIcon" :icon-class="context?.iconPrefix" :on-click="context?.onIconPrefixClicked" position="prefix" />
+    <FormKitPrefix v-if="hasPrefix && listStyle === 'span'" :prefix="context?.prefix" />
     <span v-if="listStyle === 'span'" :id="context?.id" :style="context?.attrs?.style" class="p-output-list-items" :class="context?.attrs?.class">
       <template v-for="(value, index) of context?._value" :key="index">
         <span v-if="index !== 0" class="p-output-list-divider" :class="context?.dividerClass">{{ context?.divider ?? ', ' }}</span>
@@ -55,9 +57,7 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
         </span>
       </li>
     </ol>
-    <span v-if="hasSuffix && listStyle === 'span'" class="formkit-suffix">
-      {{ context?.suffix }}
-    </span>
-    <i v-if="hasSuffixIcon" class="formkit-suffix-icon" :class="context?.iconSuffix" />
+    <FormKitSuffix v-if="hasSuffix && listStyle === 'span'" :suffix="context?.suffix" />
+    <FormKitIcon v-if="hasSuffixIcon" :icon-class="context?.iconSuffix" :on-click="context?.onIconSuffixClicked" position="suffix" />
   </div>
 </template>

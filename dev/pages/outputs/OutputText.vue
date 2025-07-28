@@ -2,6 +2,13 @@
 const primeAttributes = ''
 const customAttributes = 'iconPrefix, prefix, suffix, iconSuffix'
 
+function prefixClicked() {
+  console.error('Prefix Icon Clicked')
+}
+
+function suffixClicked() {
+  console.error('Suffix Icon Clicked')
+}
 const schema
   = [
     {
@@ -34,6 +41,7 @@ const schema
       label: 'Icon Left',
       help: '',
       iconPrefix: 'pi pi-check',
+      onIconPrefixClicked: prefixClicked,
     },
     {
       $formkit: 'primeOutputText',
@@ -41,6 +49,7 @@ const schema
       label: 'Icon Right',
       help: 'Right Icon Demo',
       iconSuffix: 'pi pi-check text-yellow-500',
+      onIconSuffixClicked: suffixClicked,
     },
 
   ]

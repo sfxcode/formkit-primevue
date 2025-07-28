@@ -1,14 +1,19 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
 import type { PropType } from 'vue'
+import type { FormKitIconProps } from './FormKitIcon.vue'
 import { useFormKitSection, useOutputDuration } from '../composables'
+import FormKitIcon from './FormKitIcon.vue'
+import FormKitPrefix from './FormKitPrefix.vue'
+import FormKitSuffix from './FormKitSuffix.vue'
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext>,
+    type: Object as PropType<FormKitFrameworkContext> & FormKitIconProps,
     required: true,
   },
 })
+
 const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection(props.context)
 
 const { formattedDuration } = useOutputDuration()
@@ -16,16 +21,12 @@ const { formattedDuration } = useOutputDuration()
 
 <template>
   <div class="p-formkit p-output-duration">
-    <i v-if="hasPrefixIcon" class="formkit-prefix-icon" :class="context?.iconPrefix" />
-    <span v-if="hasPrefix" class="formkit-prefix">
-      {{ context?.prefix }}
-    </span>
+    <FormKitIcon v-if="hasPrefixIcon" :icon-class="context?.iconPrefix" :on-click="context?.onIconPrefixClicked" position="prefix" />
+    <FormKitPrefix v-if="hasPrefix" :prefix="context?.prefix" />
     <span :id="context?.id" :style="context?.attrs?.style" :class="context?.attrs?.class">
       {{ formattedDuration(context?._value) }}
     </span>
-    <span v-if="hasSuffix" class="formkit-suffix">
-      {{ context?.suffix }}
-    </span>
-    <i v-if="hasSuffixIcon" class="formkit-suffix-icon" :class="context?.iconSuffix" />
+    <FormKitSuffix v-if="hasSuffix" :suffix="context?.suffix" />
+    <FormKitIcon v-if="hasSuffixIcon" :icon-class="context?.iconSuffix" :on-click="context?.onIconSuffixClicked" position="suffix" />
   </div>
 </template>
