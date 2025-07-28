@@ -1,8 +1,7 @@
 <script setup lang='ts'>
-import { FormKit, FormKitSchema } from '@formkit/vue'
 import JsonEditorVue from 'json-editor-vue'
+import { FormKitDataEdit } from 'my-library'
 import { ref } from 'vue'
-import FormKitDebug from '../../../src/components/FormKitDebug.vue'
 import { useMessages } from '../../composables/messages'
 
 const props = defineProps<{
@@ -36,21 +35,8 @@ async function submitHandler() {
     <slot />
     <div class="flex gap-8 flex-wrap">
       <div class="min-w-32rem basis-1/2 xl:basis-1/3">
-        <div class="p-formkit-data-edit">
-          <FormKit
-            id="form"
-            v-model="formData"
-            :form-class="formClass"
-            type="form"
-            submit-label="Save"
-            :submit-attrs="{
-              inputClass,
-            }"
-            @submit="submitHandler"
-          >
-            <FormKitSchema :schema="formSchema" :data="formData" />
-          </FormKit>
-          <FormKitDebug :data="formData" header="Data" />
+        <div>
+          <FormKitDataEdit :data="formData" :schema="formSchema" debug-data @data-saved="submitHandler" />
         </div>
       </div>
       <div class="basis-1/2 xl:basis-1/3">

@@ -1,8 +1,8 @@
 <script setup lang='ts'>
-import { FormKit, FormKitSchema } from '@formkit/vue'
 import JsonEditorVue from 'json-editor-vue'
+import { FormKitDataView } from 'my-library'
+
 import { ref } from 'vue'
-import FormKitDebug from '../../../src/components/FormKitDebug.vue'
 
 const props = defineProps<{
   header: string
@@ -24,15 +24,8 @@ const formData = ref(props.data)
     <slot />
     <div class="flex flex-wrap gap-8">
       <div class="min-w-30rem basis-1/3 md:basis-1/4">
-        <div class="p-formkit-data-view">
-          <FormKit
-            v-model="formData"
-            type="form"
-            :actions="false"
-          >
-            <FormKitSchema :schema="formSchema" :data="formData" />
-          </FormKit>
-          <FormKitDebug :data="formData" header="Data" />
+        <div>
+          <FormKitDataView :data="formData" :schema="formSchema" debug-data />
         </div>
       </div>
       <div class="">
