@@ -1,3 +1,15 @@
+## v3.0.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.1...v3.0.2)
+
+### 🏡 Chore
+
+- Update primevue, @primeuix/themes, and typescript versions in package.json ([7042268](https://github.com/sfxcode/formkit-primevue/commit/7042268))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.0.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.0...v3.0.1)
