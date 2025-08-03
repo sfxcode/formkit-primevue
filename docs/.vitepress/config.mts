@@ -46,6 +46,7 @@ function nav() {
   return [
     { text: 'Guide', link: '/guide/', activeMatch: '/guide/' },
     { text: 'Advanced', link: '/advanced/', activeMatch: '/advanced/' },
+    { text: 'Components', link: '/component/', activeMatch: '/component/' },
     {
       text: 'Playground',
       link: 'https://formkit-primevue.netlify.app',
@@ -55,7 +56,7 @@ function nav() {
       items: [
         {
           text: 'PrimeVue',
-          link: 'https://www.primefaces.org/primevue',
+          link: 'https://primevue.org/',
         },
         {
           text: 'Formkit',

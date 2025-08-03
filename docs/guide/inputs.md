@@ -39,5 +39,3 @@ Below is a list of all supported PrimeVue input components. Click on a component
 - [PrimeToggleButton](../component/PrimeToggleButton.md) ([Live Example](https://formkit-primevue.netlify.app/inputs/togglebutton))
 - [PrimeToggleSwitch](../component/PrimeToggleSwitch.md) ([Live Example](https://formkit-primevue.netlify.app/inputs/toggleswitch))
 - [PrimeTreeSelect](../component/PrimeTreeSelect.md) ([Live Example](https://formkit-primevue.netlify.app/inputs/treeselect))
-
-<DisplayComponents :full="true" />
