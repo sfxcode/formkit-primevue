@@ -38,5 +38,5 @@ export const primeOutputDurationDefinition: FormKitTypeDefinition = createInput(
 })
 
 export const primeOutputListDefinition: FormKitTypeDefinition = createInput(PrimeOutputList, {
-  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'divider', 'itemClass', 'dividerClass', 'listStyle', 'onIconPrefixClicked', 'onIconSuffixClicked'],
+  props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'divider', 'itemClass', 'dividerClass', 'listStyle', 'onIconPrefixClicked', 'onIconSuffixClicked', 'convertValue'],
 })

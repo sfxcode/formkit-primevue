@@ -5,6 +5,18 @@ const primeAttributes = ''
 const customAttributes = 'iconPrefix, prefix, suffix, iconSuffix'
 const { addElement } = useFormKitSchema()
 
+function convertValues(value: string[]): string[] {
+  return value.map(item => item.toUpperCase())
+}
+
+function convertValuesCharCount(value: string[]): string[] {
+  return value.map(item => `${item} (${item.length})`)
+}
+
+function convertValuesSortedReverse(value: string[]): string[] {
+  return value.sort((a, b) => a.localeCompare(b)).reverse()
+}
+
 const schema
   = [
     addElement('h3', ['Default (listStyle: span)']),
@@ -27,6 +39,28 @@ const schema
       iconPrefix: 'pi pi-list',
       divider: ' - ',
     },
+    addElement('h3', ['Converter']),
+
+    {
+      $formkit: 'primeOutputList',
+      name: 'list1',
+      label: 'Converter Function',
+      convertValue: convertValues,
+      divider: ' - ',
+    },
+    {
+      $formkit: 'primeOutputList',
+      name: 'list2',
+      label: 'Converter Function - Char Count',
+      convertValue: convertValuesCharCount,
+    },
+    {
+      $formkit: 'primeOutputList',
+      name: 'list2',
+      label: 'Converter Function - Sorted Reverse',
+      convertValue: convertValuesSortedReverse,
+    },
+    addElement('h3', ['Chips']),
     {
       $formkit: 'primeOutputList',
       name: 'list2',
