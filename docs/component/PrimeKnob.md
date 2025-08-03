@@ -41,4 +41,4 @@ const data = {}
 | textColor    | string    | Text color |
 | valueTemplate| string    | Value template |
 
-See [PrimeVue Knob docs](https://www.primefaces.org/primevue/knob/) for more details.
+See [PrimeVue Knob docs](https://primevue.org/knob/) for more details.

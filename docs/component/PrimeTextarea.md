@@ -37,4 +37,4 @@ const data = {}
 | placeholder  | string    | Placeholder text |
 | rows         | number    | Number of rows |
 
-See [PrimeVue Textarea docs](https://www.primefaces.org/primevue/textarea/) for more details.
+See [PrimeVue Textarea docs](https://primevue.org/textarea/) for more details.

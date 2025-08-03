@@ -39,4 +39,4 @@ const data = { trueValue: true, falseValue: false }
 | iconPrefix   | string    | Icon for prefix |
 | iconSuffix   | string    | Icon for suffix |
 
-See [PrimeOutputBoolean source](../../src/components/PrimeOutputBoolean.vue) for more details.
+See [PrimeOutputBoolean source](https://github.com/sfxcode/formkit-primevue/tree/main/src/components/PrimeOutputBoolean.vue) for more details.

@@ -1,6 +1,6 @@
 # Formkit - Primevue
 
-PrimeVue based [FormKit Inputs](https://sfxcode.github.io/formkit-primevue/guide/inputs.html) for using [FormKit](https://formkit.com/) with the [PrimeVue UI Framework](https://www.primefaces.org/primevue/#/).
+PrimeVue based [FormKit Inputs](https://sfxcode.github.io/formkit-primevue/guide/inputs.html) for using [FormKit](https://formkit.com/) with the [PrimeVue UI Framework](https://primevue.org/#/).
 
 Main focus of this project is to provide configuration based forms with validation.
 

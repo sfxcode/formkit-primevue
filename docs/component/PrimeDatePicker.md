@@ -39,4 +39,4 @@ const data = {}
 | manualInput  | boolean   | Allow manual input |
 | ...          | ...       | See PrimeVue docs for all props |
 
-See [PrimeVue DatePicker docs](https://www.primefaces.org/primevue/datepicker/) for more details.
+See [PrimeVue DatePicker docs](https://primevue.org/datepicker/) for more details.

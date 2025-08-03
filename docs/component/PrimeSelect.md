@@ -55,4 +55,4 @@ const data = {}
 | size         | string    | Input size |
 | ...          | ...       | See PrimeVue docs for all props |
 
-See [PrimeVue Select docs](https://www.primefaces.org/primevue/select/) for more details.
+See [PrimeVue Select docs](https://primevue.org/select/) for more details.

@@ -48,4 +48,4 @@ const data = {}
 | autoOptionFocus | boolean | Auto focus option |
 | selectOnFocus | boolean  | Select on focus |
 
-See [PrimeVue Listbox docs](https://www.primefaces.org/primevue/listbox/) for more details.
+See [PrimeVue Listbox docs](https://primevue.org/listbox/) for more details.

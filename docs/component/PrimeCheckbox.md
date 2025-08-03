@@ -30,4 +30,4 @@ const data = { readonly: true }
 
 ## Props
 // ...existing code...
-See [PrimeVue Checkbox docs](https://www.primefaces.org/primevue/checkbox/) for more details.
+See [PrimeVue Checkbox docs](https://primevue.org/checkbox/) for more details.

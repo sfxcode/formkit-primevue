@@ -34,4 +34,4 @@ const data = { date1: new Date(), date2: new Date(), date3: new Date() }
 | suffix       | string    | Suffix text |
 | ...          | ...       | See PrimeOutputDate source for all props |
 
-See [PrimeOutputDate source](../../src/components/PrimeOutputDate.vue) for more details.
+See [PrimeOutputDate source](https://github.com/sfxcode/formkit-primevue/tree/main/src/components/PrimeOutputDate.vue) for more details.

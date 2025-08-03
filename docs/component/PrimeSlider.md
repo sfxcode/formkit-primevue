@@ -36,4 +36,4 @@ const data = {}
 | ptOptions    | object    | Pass-through options |
 | unstyled     | boolean   | Disable default styles |
 
-See [PrimeVue Slider docs](https://www.primefaces.org/primevue/slider/) for more details.
+See [PrimeVue Slider docs](https://primevue.org/slider/) for more details.

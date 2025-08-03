@@ -34,4 +34,4 @@ const data = { link1: 'https://github.com/sfxcode', link2: 'sfxcode.github.io/fo
 | suffix       | string    | Suffix text |
 | ...          | ...       | See PrimeOutputLink source for all props |
 
-See [PrimeOutputLink source](../../src/components/PrimeOutputLink.vue) for more details.
+See [PrimeOutputLink source](https://github.com/sfxcode/formkit-primevue/tree/main/src/components/PrimeOutputLink.vue) for more details.

@@ -38,4 +38,4 @@ const data = { externalId: 42, externalValue: 'formkit-primevue', internalLink: 
 | suffix       | string    | Suffix text |
 | ...          | ...       | See PrimeOutputReference source for all props |
 
-See [PrimeOutputReference source](../../src/components/PrimeOutputReference.vue) for more details.
+See [PrimeOutputReference source](https://github.com/sfxcode/formkit-primevue/tree/main/src/components/PrimeOutputReference.vue) for more details.

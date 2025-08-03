@@ -61,5 +61,5 @@ const schema = [
 | fluid        | boolean   | Full width input |
 | separators   | array     | Separators for multiple values |
 
-See [PrimeVue AutoComplete docs](https://www.primefaces.org/primevue/autocomplete/) for more details.
+See [PrimeVue AutoComplete docs](https://primevue.org/autocomplete/) for more details.
 

@@ -76,5 +76,5 @@ const schema = [
 | unstyled          | boolean | Disable default styles |
 | size              | string  | Input size |
 
-See [PrimeVue CascadeSelect docs](https://www.primefaces.org/primevue/cascadeselect/) for more details.
+See [PrimeVue CascadeSelect docs](https://primevue.org/cascadeselect/) for more details.
 

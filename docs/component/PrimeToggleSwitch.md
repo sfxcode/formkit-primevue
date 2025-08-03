@@ -36,4 +36,4 @@ const data = { readonly: true }
 | ptOptions    | object    | Pass-through options |
 | unstyled     | boolean   | Disable default styles |
 
-See [PrimeVue ToggleSwitch docs](https://www.primefaces.org/primevue/toggleswitch/) for more details.
+See [PrimeVue ToggleSwitch docs](https://primevue.org/toggleswitch/) for more details.

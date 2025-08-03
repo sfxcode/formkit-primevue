@@ -39,4 +39,4 @@ const data = {}
 | variant      | string    | Visual variant |
 | size         | string    | Input size |
 
-See [PrimeVue InputMask docs](https://www.primefaces.org/primevue/inputmask/) for more details.
+See [PrimeVue InputMask docs](https://primevue.org/inputmask/) for more details.

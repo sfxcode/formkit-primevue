@@ -55,4 +55,4 @@ const data = { list1: ['Hello', 'World'], list2: ['FormKit', 'meets', 'PrimeVue'
 | suffix       | string    | Suffix text |
 | ...          | ...       | See PrimeOutputList source for all props |
 
-See [PrimeOutputList source](../../src/components/PrimeOutputList.vue) for more details.
+See [PrimeOutputList source](https://github.com/sfxcode/formkit-primevue/tree/main/src/components/PrimeOutputList.vue) for more details.

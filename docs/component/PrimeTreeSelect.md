@@ -74,4 +74,4 @@ const data = {}
 | unstyled     | boolean   | Disable default styles |
 | ...          | ...       | See PrimeVue docs for all props |
 
-See [PrimeVue TreeSelect docs](https://www.primefaces.org/primevue/treeselect/) for more details.
+See [PrimeVue TreeSelect docs](https://primevue.org/treeselect/) for more details.

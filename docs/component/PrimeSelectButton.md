@@ -49,4 +49,4 @@ const data = {}
 | size         | string    | Input size |
 | ...          | ...       | See PrimeVue docs for all props |
 
-See [PrimeVue SelectButton docs](https://www.primefaces.org/primevue/selectbutton/) for more details.
+See [PrimeVue SelectButton docs](https://primevue.org/selectbutton/) for more details.

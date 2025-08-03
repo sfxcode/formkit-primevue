@@ -36,4 +36,4 @@ const data = { name: 'Harry Potter', iconLeft: 'Some Text ...', iconRight: 'Anot
 | inputType    | string    | Input type (e.g. text, tel) |
 | placeholder  | string    | Placeholder text |
 
-See [PrimeVue InputText docs](https://www.primefaces.org/primevue/inputtext/) for more details.
+See [PrimeVue InputText docs](https://primevue.org/inputtext/) for more details.

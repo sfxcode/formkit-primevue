@@ -45,4 +45,4 @@ const data = { name: 'Harry Potter', toTranslate: 'sample', iconLeft: 'Some Text
 | suffix       | string    | Suffix text |
 | ...          | ...       | See PrimeOutputText source for all props |
 
-See [PrimeOutputText source](../../src/components/PrimeOutputText.vue) for more details.
+See [PrimeOutputText source](https://github.com/sfxcode/formkit-primevue/tree/main/src/components/PrimeOutputText.vue) for more details.

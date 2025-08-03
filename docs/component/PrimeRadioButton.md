@@ -46,4 +46,4 @@ const data = { basic: 'refresh' }
 | size         | string    | Input size |
 | ...          | ...       | See PrimeVue docs for all props |
 
-See [PrimeVue RadioButton docs](https://www.primefaces.org/primevue/radiobutton/) for more details.
+See [PrimeVue RadioButton docs](https://primevue.org/radiobutton/) for more details.

@@ -44,4 +44,4 @@ const data = {}
 | size         | string    | Input size |
 | ...          | ...       | See PrimeVue docs for all props |
 
-See [PrimeVue MultiSelect docs](https://www.primefaces.org/primevue/multiselect/) for more details.
+See [PrimeVue MultiSelect docs](https://primevue.org/multiselect/) for more details.

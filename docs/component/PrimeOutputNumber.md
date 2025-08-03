@@ -35,4 +35,4 @@ const data = { mumber1: 12.2, number2: 42.0, number3: 20000 }
 | suffix       | string    | Suffix text |
 | ...          | ...       | See PrimeOutputNumber source for all props |
 
-See [PrimeOutputNumber source](../../src/components/PrimeOutputNumber.vue) for more details.
+See [PrimeOutputNumber source](https://github.com/sfxcode/formkit-primevue/tree/main/src/components/PrimeOutputNumber.vue) for more details.

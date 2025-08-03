@@ -35,4 +35,4 @@ const data = {}
 | ptOptions    | object    | Pass-through options |
 | unstyled     | boolean   | Disable default styles |
 
-See [PrimeVue ColorPicker docs](https://www.primefaces.org/primevue/colorpicker/) for more details.
+See [PrimeVue ColorPicker docs](https://primevue.org/colorpicker/) for more details.

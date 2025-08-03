@@ -37,4 +37,4 @@ const data = { duration1: '142', duration2: '4h35m', duration3: '3:47' }
 | suffix       | string    | Suffix text |
 | ...          | ...       | See PrimeOutputDuration source for all props |
 
-See [PrimeOutputDuration source](../../src/components/PrimeOutputDuration.vue) for more details.
+See [PrimeOutputDuration source](https://github.com/sfxcode/formkit-primevue/tree/main/src/components/PrimeOutputDuration.vue) for more details.

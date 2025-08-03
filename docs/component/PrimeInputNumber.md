@@ -49,4 +49,4 @@ const data = {}
 | placeholder       | string    | Placeholder text |
 | size              | string    | Input size |
 
-See [PrimeVue InputNumber docs](https://www.primefaces.org/primevue/inputnumber/) for more details.
+See [PrimeVue InputNumber docs](https://primevue.org/inputnumber/) for more details.

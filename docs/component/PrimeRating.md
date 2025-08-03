@@ -37,4 +37,4 @@ const data = {}
 | ptOptions    | object    | Pass-through options |
 | unstyled     | boolean   | Disable default styles |
 
-See [PrimeVue Rating docs](https://www.primefaces.org/primevue/rating/) for more details.
+See [PrimeVue Rating docs](https://primevue.org/rating/) for more details.

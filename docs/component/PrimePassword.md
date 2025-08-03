@@ -43,4 +43,4 @@ const data = {}
 | toggleMask   | boolean   | Show toggle mask button |
 | size         | string    | Input size |
 
-See [PrimeVue Password docs](https://www.primefaces.org/primevue/password/) for more details.
+See [PrimeVue Password docs](https://primevue.org/password/) for more details.

@@ -36,4 +36,4 @@ const data = {}
 | unstyled     | boolean   | Disable default styles |
 | size         | string    | Input size |
 
-See [PrimeVue InputOtp docs](https://www.primefaces.org/primevue/inputotp/) for more details.
+See [PrimeVue InputOtp docs](https://primevue.org/inputotp/) for more details.

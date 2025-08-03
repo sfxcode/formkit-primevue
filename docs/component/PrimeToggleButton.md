@@ -38,4 +38,4 @@ const data = {}
 | iconPos      | string    | Icon position |
 | size         | string    | Input size |
 
-See [PrimeVue ToggleButton docs](https://www.primefaces.org/primevue/togglebutton/) for more details.
+See [PrimeVue ToggleButton docs](https://primevue.org/togglebutton/) for more details.
