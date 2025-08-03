@@ -26,88 +26,110 @@ import PrimeTreeSelect from '../components/PrimeTreeSelect.vue'
 
 export const primeAutoCompleteDefinition: FormKitTypeDefinition = createInput(PrimeAutoComplete, {
   props: ['pt', 'ptOptions', 'unstyled', 'Select', 'multiple', 'typeahead', 'optionLabel', 'options', 'size', 'minLength', 'placeholder', 'fluid', 'separators'],
+  family: 'PrimeInput',
 })
 export const primeInputTextDefinition: FormKitTypeDefinition = createInput(PrimeInputText, {
   props: ['pt', 'ptOptions', 'unstyled', 'placeholder', 'iconPrefix', 'iconSuffix', 'size', 'inputType'],
+  family: 'PrimeInput',
 })
 
 export const primeInputNumberDefinition: FormKitTypeDefinition = createInput(PrimeInputNumber, {
   props: ['useGrouping', 'min', 'max', 'minFractionDigits', 'maxFractionDigits', 'locale', 'mode', 'currency', 'prefix', 'suffix', 'showButtons', 'buttonLayout', 'step', 'pt', 'ptOptions', 'unstyled', 'placeholder', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeInputMaskDefinition: FormKitTypeDefinition = createInput(PrimeInputMask, {
   props: ['mask', 'slotChar', 'autoClear', 'unmask', 'pt', 'ptOptions', 'unstyled', 'invalid', 'variant', 'iconPrefix', 'iconSuffix', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primePasswordDefinition: FormKitTypeDefinition = createInput(PrimePassword, {
   props: ['mediumRegex', 'strongRegex', 'promptLabel', 'weakLabel', 'mediumLabel', 'strongLabel', 'hideIcon', 'showIcon', 'pt', 'ptOptions', 'unstyled', 'placeholder', 'feedback', 'toggleMask', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeTextareaDefinition: FormKitTypeDefinition = createInput(PrimeTextarea, {
   props: ['pt', 'ptOptions', 'unstyled', 'autoResize', 'rows', 'placeholder', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeCheckboxDefinition: FormKitTypeDefinition = createInput(PrimeCheckbox, {
   props: ['binary', 'trueValue', 'falseValue', 'pt', 'ptOptions', 'unstyled', 'indeterminate', 'variant', 'prefix', 'suffix', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeToggleSwitchDefinition: FormKitTypeDefinition = createInput(PrimeToggleSwitch, {
   props: ['trueValue', 'falseValue', 'pt', 'ptOptions', 'unstyled', 'prefix', 'suffix'],
+  family: 'PrimeInput',
 })
 
 export const primeInputOtpDefinition: FormKitTypeDefinition = createInput(PrimeInputOtp, {
   props: ['length', 'variant', 'mask', 'integerOnly', 'pt', 'ptOptions', 'unstyled', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeSelectDefinition: FormKitTypeDefinition = createInput(PrimeSelect, {
   props: ['options', 'optionLabel', 'optionValue', 'optionDisabled', 'optionGroupLabel', 'optionGroupChildren', 'scrollHeight', 'filter', 'filterPlaceholder', 'filterLocale', 'filterMatchMode', 'filterFields', 'filterInputProps', 'editable', 'placeholder', 'dataKey', 'showClear', 'panelStyle', 'panelClass', 'panelProps', 'appendTo', 'resetFilterOnHide', 'virtualScrollerOptions', 'autoOptionFocus', 'selectOnFocus', 'filterMessage', 'selectionMessage', 'emptySelectionMessage', 'emptyFilterMessage', 'emptyMessage', 'pt', 'ptOptions', 'unstyled', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeMultiSelectDefinition: FormKitTypeDefinition = createInput(PrimeMultiSelect, {
   props: ['options', 'optionLabel', 'optionValue', 'optionDisabled', 'optionGroupLabel', 'optionGroupChildren', 'scrollHeight', 'inputProps', 'closeButtonProps', 'dataKey', 'filter', 'filterPlaceholder', 'filterLocale', 'filterMatchMode', 'filterFields', 'appendTo', 'display', 'maxSelectedLabels', 'selectedItemsLabel', 'selectionLimit', 'showToggleAll', 'loading', 'selectAll', 'resetFilterOnHide', 'virtualScrollerOptions', 'autoOptionFocus', 'autoFilterFocus', 'filterMessage', 'selectionMessage', 'emptySelectionMessage', 'emptyFilterMessage', 'emptyMessage', 'pt', 'placeholder', 'ptOptions', 'unstyled', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeListboxDefinition: FormKitTypeDefinition = createInput(PrimeListbox, {
   props: ['pt', 'ptOptions', 'unstyled', 'options', 'optionLabel', 'optionValue', 'multiple', 'filter', 'filterIcon', 'filterPlaceholder', 'filterLocale', 'filterMatchMode', 'autoOptionFocus', 'selectOnFocus'],
+  family: 'PrimeInput',
 })
 
 export const primeDatePickerDefinition: FormKitTypeDefinition = createInput(PrimeDatePicker, {
   props: ['dateFormat', 'placeholder', 'selectionMode', 'inline', 'icon', 'showOtherMonths', 'selectOtherMonths', 'showIcon', 'previousIcon', 'nextIcon', 'incrementIcon', 'decrementIcon', 'numberOfMonths', 'responsiveOptions', 'view', 'touchUI', 'minDate', 'maxDate', 'disabledDates', 'disabledDays', 'maxDateCount', 'showOnFocus', 'autoZIndex', 'baseZIndex', 'showButtonBar', 'showTime', 'timeOnly', 'shortYearCutoff', 'hourFormat', 'stepHour', 'stepMinute', 'stepSecond', 'showSeconds', 'hideOnDateTimeSelect', 'hideOnRangeSelection', 'timeSeparator', 'showWeek', 'manualInput', 'appendTo', 'panelStyle', 'panelClass', 'pt', 'ptOptions', 'unstyled', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeSliderDefinition: FormKitTypeDefinition = createInput(PrimeSlider, {
   props: ['pt', 'ptOptions', 'unstyled', 'min', 'max', 'step', 'range', 'orientation'],
+  family: 'PrimeInput',
 })
 
 export const primeRatingDefinition: FormKitTypeDefinition = createInput(PrimeRating, {
   props: ['unstyled', 'stars', 'cancel', 'onIcon', 'offIcon', 'cancelIcon', 'ptOptions', 'pt'],
+  family: 'PrimeInput',
 })
 export const primeRadioButtonDefinition: FormKitTypeDefinition = createInput(PrimeRadioButton, {
   props: ['pt', 'ptOptions', 'unstyled', 'options', 'optionsClass', 'optionClass', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeKnobDefinition: FormKitTypeDefinition = createInput(PrimeKnob, {
   props: ['pt', 'ptOptions', 'unstyled', 'min', 'max', 'step', 'size', 'strokeWidth', 'showValue', 'valueColor', 'rangeColor', 'textColor', 'valueTemplate'],
+  family: 'PrimeInput',
 })
 
 export const primeColorPickerDefinition: FormKitTypeDefinition = createInput(PrimeColorPicker, {
   props: ['defaultColor', 'inline', 'format', 'pt', 'ptOptions', 'unstyled'],
+  family: 'PrimeInput',
 })
 
 export const primeToggleButtonDefinition: FormKitTypeDefinition = createInput(PrimeToggleButton, {
   props: ['pt', 'ptOptions', 'unstyled', 'onLabel', 'offLabel', 'onIcon', 'offIcon', 'iconPos', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeSelectButtonDefinition: FormKitTypeDefinition = createInput(PrimeSelectButton, {
   props: ['pt', 'ptOptions', 'unstyled', 'optionLabel', 'optionValue', 'optionDisabled', 'multiple', 'unselectable', 'dataKey', 'options', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeCascadeSelectDefinition: FormKitTypeDefinition = createInput(PrimeCascadeSelect, {
   props: ['options', 'optionLabel', 'optionValue', 'optionGroupLabel', 'optionGroupChildren', 'placeholder', 'pt', 'ptOptions', 'unstyled', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeTreeSelectDefinition: FormKitTypeDefinition = createInput(PrimeTreeSelect, {
   props: ['options', 'placeholder', 'selectionMode', 'pt', 'ptOptions', 'unstyled', 'emptyMessage', 'display', 'metaKeySelection', 'appendTo', 'scrollHeight', 'panelClass', 'variant', 'size'],
+  family: 'PrimeInput',
 })
 
 export const primeInputs = {

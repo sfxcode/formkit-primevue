@@ -19,24 +19,30 @@ export const primeOutputDateDefinition: FormKitTypeDefinition = createInput(Prim
 
 export const primeOutputNumberDefinition: FormKitTypeDefinition = createInput(PrimeOutputNumber, {
   props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'onIconPrefixClicked', 'onIconSuffixClicked'],
+  family: 'PrimeOutput',
 })
 
 export const primeOutputLinkDefinition: FormKitTypeDefinition = createInput(PrimeOutputLink, {
   props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'title', 'onIconPrefixClicked', 'onIconSuffixClicked'],
+  family: 'PrimeOutput',
 })
 
 export const primeOutputReferenceDefinition: FormKitTypeDefinition = createInput(PrimeOutputReference, {
   props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'reference', 'internal', 'linkComponentName', 'title', 'onIconPrefixClicked', 'onIconSuffixClicked'],
+  family: 'PrimeOutput',
 })
 
 export const primeOutputBooleanDefinition: FormKitTypeDefinition = createInput(PrimeOutputBoolean, {
   props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'trueValue', 'falseValue', 'onIconPrefixClicked', 'onIconSuffixClicked'],
+  family: 'PrimeOutput',
 })
 
 export const primeOutputDurationDefinition: FormKitTypeDefinition = createInput(PrimeOutputDuration, {
   props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'onIconPrefixClicked', 'onIconSuffixClicked'],
+  family: 'PrimeOutput',
 })
 
 export const primeOutputListDefinition: FormKitTypeDefinition = createInput(PrimeOutputList, {
   props: ['prefix', 'suffix', 'iconPrefix', 'iconSuffix', 'divider', 'itemClass', 'dividerClass', 'listStyle', 'onIconPrefixClicked', 'onIconSuffixClicked', 'convertValue'],
+  family: 'PrimeOutput',
 })
