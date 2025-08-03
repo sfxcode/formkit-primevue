@@ -55,3 +55,148 @@ const formkitItems = [
 - Some Components have addtional properties for the rendered inputs (eg: optionClass, labelClass in primeRadioButton)
 - PT and PTOptions are available ([https://primevue.org/passthrough/](https://primevue.org/passthrough/))
 - [Styling](https://formkit-primevue.netlify.app/demo/styling), [Grid](https://formkit-primevue.netlify.app/demo/grid) and [PT](https://formkit-primevue.netlify.app/demo/passThrough) demo available
+
+## Advanced Styling Examples
+
+### Styling by Class and Style Attribute
+
+You can apply custom classes or direct style attributes to your FormKit PrimeVue components:
+
+```js
+const schema = [
+  {
+    $formkit: 'primeInputText',
+    name: 'name',
+    label: 'Styling by class',
+    class: 'stylingSampleClass',
+  },
+  {
+    $formkit: 'primeInputText',
+    name: 'name2',
+    label: 'Styling by style attribute',
+    style: { color: 'gray', fontWeight: 700 },
+  },
+]
+```
+
+```scss
+.p-formkit {
+  .stylingSampleClass {
+    color: green;
+  }
+}
+```
+
+This allows you to use either a CSS class or inline styles for flexible customization.
+
+---
+
+### Using outerClass and innerClass
+
+You can target the outer or inner wrapper of a component for more granular styling:
+
+```js
+const schema = [
+  {
+    $formkit: 'primeInputText',
+    name: 'name',
+    label: 'Styling outer class',
+    outerClass: 'stylingOuterClass',
+  },
+  {
+    $formkit: 'primeInputText',
+    name: 'name2',
+    label: 'Styling inner class',
+    innerClass: 'stylingSampleClass',
+  },
+]
+```
+
+```scss
+.stylingOuterClass {
+  color: yellowgreen;
+}
+.stylingSampleClass input {
+  color: green;
+}
+```
+
+---
+
+### Grid Layout
+
+Use the grid system by assigning `outerClass` values like `col-6`, `col-8`, etc., to arrange fields responsively:
+
+```js
+const schema = [
+  {
+    $formkit: 'primeInputText',
+    name: 'name',
+    label: 'col-8',
+    outerClass: 'col-8',
+  },
+  {
+    $formkit: 'primeInputText',
+    name: 'name2',
+    label: 'col-4',
+    outerClass: 'col-4',
+  },
+]
+```
+
+---
+
+### Horizontal Forms
+
+Combine grid classes and custom layout for horizontal forms:
+
+```js
+const schema = [
+  {
+    $formkit: 'primeInputText',
+    name: 'email',
+    label: 'Email',
+    outerClass: 'col-6',
+  },
+  {
+    $formkit: 'primePassword',
+    name: 'password',
+    label: 'Password',
+    outerClass: 'col-5',
+  },
+  // ...
+]
+```
+
+---
+
+### PassThrough Styling
+
+You can use the `pt` property to pass styles or classes directly to PrimeVue components:
+
+```js
+const pt_content = {
+  root: { style: 'font-weight: 600;color: green;' },
+}
+const pt_content_style_class = {
+  root: { class: '!text-red-500' },
+}
+const schema = [
+  {
+    $formkit: 'primeInputText',
+    name: 'name',
+    label: 'PassThrough with style',
+    pt: pt_content,
+  },
+  {
+    $formkit: 'primeInputText',
+    name: 'name2',
+    label: 'PassThrough with tailwind like style class',
+    pt: pt_content_style_class,
+  },
+]
+```
+
+---
+
+These examples demonstrate the flexibility of FormKit PrimeVue components for advanced styling, including class-based, inline, grid, horizontal, and pass-through customizations.

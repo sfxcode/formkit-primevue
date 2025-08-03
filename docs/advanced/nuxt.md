@@ -27,3 +27,4 @@ That's it! You can now use FormKit PrimeVue Nuxt Module in your Nuxt app ✨
 - **includeStyles** (default: `true`): Add custom FormKit CSS to the project.
 - **installI18N** (default: `true`): Install nuxt i18n module automatically.
 - **installFormKit** (default: `true`): Install nuxt formkit module automatically.
+

@@ -20,4 +20,5 @@ features:
   details: Next Generation Vue UI Component Library. Rich set of open source native components for Vue.
 - title: "FormKit"
   details: A Vue form building framework that simplifies form structure, generation, validation, theming, submission, error handling, and more.
----
+- title: "Components"
+  details: This project currently provides 18 input components and 7 output components, making it easy to build and display forms with PrimeVue and FormKit.
