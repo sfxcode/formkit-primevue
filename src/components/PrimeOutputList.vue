@@ -28,7 +28,7 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
 const getListValues = computed(() => {
   const values = Array.isArray(props.context?._value) ? props.context._value : []
   if (typeof props.context?.convertValue === 'function') {
-    return [props.context.convertValue([...values])]
+    return props.context.convertValue([...values])
   }
   return values
 })
