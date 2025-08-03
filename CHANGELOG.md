@@ -1,3 +1,15 @@
+## v3.0.4
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.3...v3.0.4)
+
+### 🩹 Fixes
+
+- **PrimeOutputList:** Simplify return value in getListValues computed property ([5fcb69e](https://github.com/sfxcode/formkit-primevue/commit/5fcb69e))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.0.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.2...v3.0.3)
