@@ -1,3 +1,25 @@
+## v3.0.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.2...v3.0.3)
+
+### 🚀 Enhancements
+
+- **PrimeOutputList:** Add converter functions for output list and update props to support conversion ([a09d3de](https://github.com/sfxcode/formkit-primevue/commit/a09d3de))
+- Add family property to input and output definitions for PrimeInput and PrimeOutput ([a71932a](https://github.com/sfxcode/formkit-primevue/commit/a71932a))
+
+### 🩹 Fixes
+
+- Update type check for prime input nodes in addPrimeAsteriskPlugin ([0e041d0](https://github.com/sfxcode/formkit-primevue/commit/0e041d0))
+
+### 🏡 Chore
+
+- Update @antfu/eslint-config, vue-tsc, and other dependencies in package.json and pnpm-lock.yaml ([cb627fc](https://github.com/sfxcode/formkit-primevue/commit/cb627fc))
+- Update unocss and related dependencies to version 66.4.0 ([812a8a3](https://github.com/sfxcode/formkit-primevue/commit/812a8a3))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.0.2
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.1...v3.0.2)
