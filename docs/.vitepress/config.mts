@@ -109,6 +109,7 @@ function sidebarGuide() {
         { text: 'Plugins', link: '/advanced/plugins' },
       ],
     },
+    ...sidebarComponent(),
   ]
 }
 
@@ -118,6 +119,53 @@ function sidebarConfig() {
       text: 'Config',
       items: [
         { text: 'Introduction', link: '/config/' },
+      ],
+    },
+  ]
+}
+
+function sidebarComponent() {
+  return [
+    {
+      text: 'Input Components',
+      collapsible: true,
+      items: [
+        { text: 'PrimeAutoComplete', link: '/component/PrimeAutoComplete' },
+        { text: 'PrimeCascadeSelect', link: '/component/PrimeCascadeSelect' },
+        { text: 'PrimeCheckbox', link: '/component/PrimeCheckbox' },
+        { text: 'PrimeColorPicker', link: '/component/PrimeColorPicker' },
+        { text: 'PrimeDatePicker', link: '/component/PrimeDatePicker' },
+        { text: 'PrimeInputMask', link: '/component/PrimeInputMask' },
+        { text: 'PrimeInputNumber', link: '/component/PrimeInputNumber' },
+        { text: 'PrimeInputOtp', link: '/component/PrimeInputOtp' },
+        { text: 'PrimeInputText', link: '/component/PrimeInputText' },
+        { text: 'PrimeKnob', link: '/component/PrimeKnob' },
+        { text: 'PrimeListbox', link: '/component/PrimeListbox' },
+        { text: 'PrimeMultiSelect', link: '/component/PrimeMultiSelect' },
+        { text: 'PrimePassword', link: '/component/PrimePassword' },
+        { text: 'PrimeRadioButton', link: '/component/PrimeRadioButton' },
+        { text: 'PrimeRating', link: '/component/PrimeRating' },
+        { text: 'PrimeSelect', link: '/component/PrimeSelect' },
+        { text: 'PrimeSelectButton', link: '/component/PrimeSelectButton' },
+        { text: 'PrimeSlider', link: '/component/PrimeSlider' },
+        { text: 'PrimeTextarea', link: '/component/PrimeTextarea' },
+        { text: 'PrimeToggleButton', link: '/component/PrimeToggleButton' },
+        { text: 'PrimeToggleSwitch', link: '/component/PrimeToggleSwitch' },
+        { text: 'PrimeTreeSelect', link: '/component/PrimeTreeSelect' },
+      ],
+    },
+    {
+      text: 'Output Components',
+      collapsible: true,
+      items: [
+        { text: 'PrimeOutputBoolean', link: '/component/PrimeOutputBoolean' },
+        { text: 'PrimeOutputDate', link: '/component/PrimeOutputDate' },
+        { text: 'PrimeOutputDuration', link: '/component/PrimeOutputDuration' },
+        { text: 'PrimeOutputLink', link: '/component/PrimeOutputLink' },
+        { text: 'PrimeOutputList', link: '/component/PrimeOutputList' },
+        { text: 'PrimeOutputNumber', link: '/component/PrimeOutputNumber' },
+        { text: 'PrimeOutputReference', link: '/component/PrimeOutputReference' },
+        { text: 'PrimeOutputText', link: '/component/PrimeOutputText' },
       ],
     },
   ]
