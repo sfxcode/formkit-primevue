@@ -62,4 +62,3 @@ const schema = [
 | separators   | array     | Separators for multiple values |
 
 See [PrimeVue AutoComplete docs](https://primevue.org/autocomplete/) for more details.
-

@@ -39,4 +39,3 @@ Below is a list of all supported PrimeVue output components. Click on a componen
 - [PrimeOutputNumber](../component/PrimeOutputNumber.md) ([Live Example](https://formkit-primevue.netlify.app/outputs/outputnumber))
 - [PrimeOutputReference](../component/PrimeOutputReference.md) ([Live Example](https://formkit-primevue.netlify.app/outputs/outputreference))
 - [PrimeOutputText](../component/PrimeOutputText.md) ([Live Example](https://formkit-primevue.netlify.app/outputs/outputtext))
-

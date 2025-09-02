@@ -22,15 +22,15 @@ Icons are rendered in an i-Tag and requires a class and text in a span-Tag.
 
 ```ts
 const schema
-= [
-  {
-    $formkit: 'primeOutputBoolean',
-    name: 'falseValue',
-    label: 'False',
-    prefix: 'prefix',
-    iconPrefix: 'pi pi-check',
-    suffix: 'suffix',
-    iconSuffix: 'pi pi-times',
-  }
-]
+  = [
+    {
+      $formkit: 'primeOutputBoolean',
+      name: 'falseValue',
+      label: 'False',
+      prefix: 'prefix',
+      iconPrefix: 'pi pi-check',
+      suffix: 'suffix',
+      iconSuffix: 'pi pi-times',
+    }
+  ]
 ```
