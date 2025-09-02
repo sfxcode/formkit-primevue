@@ -1,12 +1,14 @@
 export function useOutputDuration() {
   function durationToMinutes(duration: string): number {
-    let hours: number = 0
-    let minutes: number = 0
+    let hours = 0
+    let minutes = 0
 
     const lowerDuration = duration.toLowerCase()
 
     if (lowerDuration.includes(':')) {
-      [hours, minutes] = lowerDuration.split(':').map(part => +(part?.trim() || '0'))
+      const [h, m] = lowerDuration.split(':').map(part => +(part?.trim() || '0'))
+      hours = h ?? 0
+      minutes = m ?? 0
     }
     else {
       if (lowerDuration.includes('h')) {
