@@ -1,25 +1,25 @@
 export function useOutputDuration() {
   function durationToMinutes(duration: string): number {
-    let hours = 0
-    let minutes = 0
+    let hours: number = 0
+    let minutes: number = 0
 
     const lowerDuration = duration.toLowerCase()
 
     if (lowerDuration.includes(':')) {
-      [hours, minutes] = lowerDuration.split(':').map(part => +part.trim())
+      [hours, minutes] = lowerDuration.split(':').map(part => +(part?.trim() || '0'))
     }
     else {
       if (lowerDuration.includes('h')) {
-        hours = +lowerDuration.split('h')[0].trim()
+        hours = +(lowerDuration.split('h')[0]?.trim() || '0')
         const remainder = lowerDuration.split('h')[1] || ''
 
         if (remainder.includes('m'))
-          minutes = +remainder.split('m')[0].trim()
+          minutes = +(remainder.split('m')[0]?.trim() || '0')
         else if (/^\d+$/.test(remainder))
           minutes = +remainder
       }
       else if (lowerDuration.includes('m')) {
-        minutes = +lowerDuration.split('m')[0].trim()
+        minutes = +(lowerDuration.split('m')[0]?.trim() || '0')
       }
       else if (/^\d+$/.test(lowerDuration)) {
         minutes = +lowerDuration
