@@ -1,3 +1,32 @@
+## v3.0.5
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.4...v3.0.5)
+
+### 🚀 Enhancements
+
+- Add PrimeVue input and output components documentation ([6ded983](https://github.com/sfxcode/formkit-primevue/commit/6ded983))
+- Add PrimeVue input and output components documentation ([053aee3](https://github.com/sfxcode/formkit-primevue/commit/053aee3))
+- Add i18n documentation and update guide with new I18n section ([bc2e97c](https://github.com/sfxcode/formkit-primevue/commit/bc2e97c))
+
+### 🩹 Fixes
+
+- Correct formatting and remove trailing newlines in documentation files ([e6ac329](https://github.com/sfxcode/formkit-primevue/commit/e6ac329))
+- Handle undefined values in duration parsing for useOutputDuration function ([c0ef710](https://github.com/sfxcode/formkit-primevue/commit/c0ef710))
+- Improve duration parsing by using destructuring and default values ([47bddc2](https://github.com/sfxcode/formkit-primevue/commit/47bddc2))
+
+### 💅 Refactors
+
+- Remove unused DisplayComponents and DisplayOutputComponents ([f40fbc0](https://github.com/sfxcode/formkit-primevue/commit/f40fbc0))
+
+### 🏡 Chore
+
+- Use linting ([bc41862](https://github.com/sfxcode/formkit-primevue/commit/bc41862))
+- Update package dependencies and package manager version including primevue 4.3.8 ([b9e884d](https://github.com/sfxcode/formkit-primevue/commit/b9e884d))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.0.4
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.3...v3.0.4)
