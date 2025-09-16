@@ -1,3 +1,19 @@
+## v3.0.7
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.6...v3.0.7)
+
+### 🩹 Fixes
+
+- Remove iconPos attribute from ToggleButton and PrimeToggleButton components ([b838ce1](https://github.com/sfxcode/formkit-primevue/commit/b838ce1))
+
+### 🏡 Chore
+
+- Update package dependencies to latest versions ([9492307](https://github.com/sfxcode/formkit-primevue/commit/9492307))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.0.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.5...v3.0.6)
