@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import PrimeInput from '@/components/demo/PrimeInput.vue'
 
-const primeAttributes = 'onLabel, offLabel, onIcon, offIcon, iconPos'
+const primeAttributes = 'onLabel, offLabel, onIcon, offIcon'
 
 const schema
   = [

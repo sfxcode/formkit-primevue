@@ -13,7 +13,6 @@ export interface FormKitPrimeToggleButtonProps {
   offLabel?: ToggleButtonProps['offLabel']
   onIcon?: ToggleButtonProps['onIcon']
   offIcon?: ToggleButtonProps['offIcon']
-  iconPos?: ToggleButtonProps['iconPos']
   size?: ToggleButtonProps['size']
 
 }
@@ -47,7 +46,6 @@ const { validSlotNames, unstyled, isInvalid, handleChange, handleBlur } = useFor
       :off-label="context.offLabel ?? 'No'"
       :on-icon="context.onIcon"
       :off-icon="context.offIcon"
-      :icon-pos="context.iconPos"
       :pt="context.pt"
       :pt-options="context.ptOptions"
       :unstyled="unstyled"
