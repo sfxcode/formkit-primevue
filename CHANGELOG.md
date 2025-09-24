@@ -1,3 +1,20 @@
+## v3.0.9
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.8...v3.0.9)
+
+### 🩹 Fixes
+
+- **PrimeDatePicker:** Update event binding for PrimeDatePicker component #78 ([#78](https://github.com/sfxcode/formkit-primevue/issues/78))
+
+### 💅 Refactors
+
+- **formkit:** Replace addPrimeLabelPlugin with addPrimeAsteriskPlugin ([0ac159a](https://github.com/sfxcode/formkit-primevue/commit/0ac159a))
+- **DatePicker:** Update date format and enhance labels for clarity ([6b9de57](https://github.com/sfxcode/formkit-primevue/commit/6b9de57))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.0.8
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.7...v3.0.8)
