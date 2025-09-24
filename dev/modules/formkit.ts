@@ -5,6 +5,7 @@ import { createAutoAnimatePlugin, createMultiStepPlugin } from '@formkit/addons'
 import { de, en } from '@formkit/i18n'
 import { defaultConfig, plugin } from '@formkit/vue'
 import { primeInputs, primeOutputs } from 'my-library/definitions'
+import { addPrimeAsteriskPlugin } from '../../src/plugins'
 import '@formkit/addons/css/multistep'
 
 export function addPrimeLabelPlugin(node: FormKitNode): void {
@@ -57,7 +58,7 @@ export const install: UserModule = ({ app }) => {
           repeater: ['items'],
         },
       ),
-      addPrimeLabelPlugin,
+      addPrimeAsteriskPlugin,
       createMultiStepPlugin(),
     ],
   }))
