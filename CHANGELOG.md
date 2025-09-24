@@ -1,3 +1,19 @@
+## v3.0.8
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.7...v3.0.8)
+
+### 📖 Documentation
+
+- Remove outdated examples from styling documentation ([0d7c3ee](https://github.com/sfxcode/formkit-primevue/commit/0d7c3ee))
+
+### 🏡 Chore
+
+- **dependencies:** Update devDependencies to latest versions ([3e0b4ad](https://github.com/sfxcode/formkit-primevue/commit/3e0b4ad))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.0.7
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.6...v3.0.7)
