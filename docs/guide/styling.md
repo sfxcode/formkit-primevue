@@ -198,5 +198,3 @@ const schema = [
 ```
 
 ---
-
-These examples demonstrate the flexibility of FormKit PrimeVue components for advanced styling, including class-based, inline, grid, horizontal, and pass-through customizations.
