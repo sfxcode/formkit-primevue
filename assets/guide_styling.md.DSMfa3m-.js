@@ -98,4 +98,4 @@ import{_ as i,c as a,o as n,ag as l}from"./chunks/framework.BcvvSuxm.js";const g
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    label: </span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF;">&#39;PassThrough with tailwind like style class&#39;</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">,</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">    pt: pt_content_style_class,</span></span>
 <span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">  },</span></span>
-<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]</span></span></code></pre></div><hr><p>These examples demonstrate the flexibility of FormKit PrimeVue components for advanced styling, including class-based, inline, grid, horizontal, and pass-through customizations.</p>`,40)])])}const o=i(t,[["render",h]]);export{g as __pageData,o as default};
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8;">]</span></span></code></pre></div><hr>`,39)])])}const o=i(t,[["render",h]]);export{g as __pageData,o as default};
