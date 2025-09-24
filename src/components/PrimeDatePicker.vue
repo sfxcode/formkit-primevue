@@ -139,9 +139,9 @@ function handleSelect(e: any) {
       :pt-options="context?.ptOptions"
       :unstyled="unstyled"
       @date-select="handleSelect"
-      @input="handleInput"
       @blur="handleBlur"
       @clear-click="handleClearClick"
+      @value-change="handleInput"
     >
       <template v-for="slotName in validSlotNames" :key="slotName" #[slotName]="slotProps">
         <component :is="context?.slots[slotName]" v-bind="{ ...context, ...slotProps }" />
