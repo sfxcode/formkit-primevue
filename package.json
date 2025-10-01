@@ -93,7 +93,7 @@
     "@formkit/vue": "^1.6.9",
     "@intlify/core": "^11.1.12",
     "primeicons": "^7.0.0",
-    "primevue": "^4.3.9",
+    "primevue": "^4.4.0",
     "vue-i18n": "^11.1.12"
   },
   "devDependencies": {
