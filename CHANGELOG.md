@@ -1,3 +1,15 @@
+## v3.0.10
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.9...v3.0.10)
+
+### 🚀 Enhancements
+
+- **PrimeDatePicker:** Add updateModelType prop for enhanced model binding ([fdb5f27](https://github.com/sfxcode/formkit-primevue/commit/fdb5f27))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.0.9
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.8...v3.0.9)
