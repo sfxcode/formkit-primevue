@@ -50,6 +50,7 @@ export interface FormKitPrimeDatePickerProps {
   ptOptions?: DatePickerProps['ptOptions']
   unstyled?: DatePickerProps['unstyled']
   size?: DatePickerProps['size']
+  updateModelType?: DatePickerProps['updateModelType']
 }
 
 const props = defineProps({
@@ -138,6 +139,7 @@ function handleSelect(e: any) {
       :pt="context?.pt"
       :pt-options="context?.ptOptions"
       :unstyled="unstyled"
+      :update-model-type="context?.updateModelType ?? 'date'"
       @date-select="handleSelect"
       @blur="handleBlur"
       @clear-click="handleClearClick"

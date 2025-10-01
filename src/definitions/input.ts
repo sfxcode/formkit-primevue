@@ -84,7 +84,7 @@ export const primeListboxDefinition: FormKitTypeDefinition = createInput(PrimeLi
 })
 
 export const primeDatePickerDefinition: FormKitTypeDefinition = createInput(PrimeDatePicker, {
-  props: ['dateFormat', 'placeholder', 'selectionMode', 'inline', 'icon', 'showOtherMonths', 'selectOtherMonths', 'showIcon', 'previousIcon', 'nextIcon', 'incrementIcon', 'decrementIcon', 'numberOfMonths', 'responsiveOptions', 'view', 'touchUI', 'minDate', 'maxDate', 'disabledDates', 'disabledDays', 'maxDateCount', 'showOnFocus', 'autoZIndex', 'baseZIndex', 'showButtonBar', 'showTime', 'timeOnly', 'shortYearCutoff', 'hourFormat', 'stepHour', 'stepMinute', 'stepSecond', 'showSeconds', 'hideOnDateTimeSelect', 'hideOnRangeSelection', 'timeSeparator', 'showWeek', 'manualInput', 'appendTo', 'panelStyle', 'panelClass', 'pt', 'ptOptions', 'unstyled', 'size'],
+  props: ['dateFormat', 'placeholder', 'selectionMode', 'inline', 'icon', 'showOtherMonths', 'selectOtherMonths', 'showIcon', 'previousIcon', 'nextIcon', 'incrementIcon', 'decrementIcon', 'numberOfMonths', 'responsiveOptions', 'view', 'touchUI', 'minDate', 'maxDate', 'disabledDates', 'disabledDays', 'maxDateCount', 'showOnFocus', 'autoZIndex', 'baseZIndex', 'showButtonBar', 'showTime', 'timeOnly', 'shortYearCutoff', 'hourFormat', 'stepHour', 'stepMinute', 'stepSecond', 'showSeconds', 'hideOnDateTimeSelect', 'hideOnRangeSelection', 'timeSeparator', 'showWeek', 'manualInput', 'appendTo', 'panelStyle', 'panelClass', 'pt', 'ptOptions', 'unstyled', 'size', 'updateModelType'],
   family: 'PrimeInput',
 })
 
