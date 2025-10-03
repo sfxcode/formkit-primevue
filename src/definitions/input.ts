@@ -79,7 +79,7 @@ export const primeMultiSelectDefinition: FormKitTypeDefinition = createInput(Pri
 })
 
 export const primeListboxDefinition: FormKitTypeDefinition = createInput(PrimeListbox, {
-  props: ['pt', 'ptOptions', 'unstyled', 'options', 'optionLabel', 'optionValue', 'multiple', 'filter', 'filterIcon', 'filterPlaceholder', 'filterLocale', 'filterMatchMode', 'autoOptionFocus', 'selectOnFocus'],
+  props: ['pt', 'ptOptions', 'unstyled', 'options', 'optionLabel', 'optionValue', 'multiple', 'filter', 'filterIcon', 'filterPlaceholder', 'filterLocale', 'filterMatchMode', 'autoOptionFocus', 'selectOnFocus', 'optionDisabled', 'optionGroupLabel', 'optionGroupChildren', 'dataKey', 'metaKeySelection', 'virtualScrollerOptions'],
   family: 'PrimeInput',
 })
 

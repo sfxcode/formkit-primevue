@@ -1,7 +1,6 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 import type { FormKitFrameworkContext } from '@formkit/core'
 import type { ListboxProps } from 'primevue/listbox'
-
 import type { PropType } from 'vue'
 import { useFormKitInput } from '../composables'
 
@@ -20,6 +19,16 @@ export interface FormKitPrimeListboxProps {
   filterMatchMode?: ListboxProps['filterMatchMode']
   autoOptionFocus?: ListboxProps['autoOptionFocus']
   selectOnFocus?: ListboxProps['selectOnFocus']
+  optionDisabled?: ListboxProps['optionDisabled']
+  optionGroupLabel?: ListboxProps['optionGroupLabel']
+  optionGroupChildren?: ListboxProps['optionGroupChildren']
+  listStyle?: ListboxProps['listStyle']
+  dataKey?: ListboxProps['dataKey']
+  metaKeySelection?: ListboxProps['metaKeySelection']
+  virtualScrollerOptions?: ListboxProps['virtualScrollerOptions']
+  tabindex?: ListboxProps['tabindex']
+  ariaLabel?: ListboxProps['ariaLabel']
+  ariaLabelledby?: ListboxProps['ariaLabelledby']
 }
 
 const props = defineProps({
@@ -49,6 +58,9 @@ const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useForm
       :options="context?.options"
       :option-label="context.optionLabel"
       :option-value="context.optionValue"
+      :option-disabled="context.optionDisabled"
+      :option-group-label="context.optionGroupLabel"
+      :option-group-children="context.optionGroupChildren"
       :multiple="context.multiple ?? false"
       :filter="context.filter ?? false"
       :filter-icon="context.filterIcon"
@@ -57,6 +69,9 @@ const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useForm
       :filter-match-mode="context.filterMatchMode"
       :auto-option-focus="context.autoOptionFocus ?? true"
       :select-on-focus="context.selectOnFocus ?? false"
+      :data-key="context.dataKey"
+      :meta-key-selection="context.metaKeySelection ?? false"
+      :virtual-scroller-options="context.virtualScrollerOptions"
       :pt="context.pt"
       :pt-options="context.ptOptions"
       :unstyled="unstyled"
