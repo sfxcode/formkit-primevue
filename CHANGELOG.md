@@ -1,3 +1,16 @@
+## v3.0.11
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.10...v3.0.11)
+
+### 🚀 Enhancements
+
+- **PrimeListbox:** Add additional props for enhanced functionality ([595a5f3](https://github.com/sfxcode/formkit-primevue/commit/595a5f3))
+- **PrimeOutputText:** Add convertValue prop for custom value transformation ([2a1869a](https://github.com/sfxcode/formkit-primevue/commit/2a1869a))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.0.10
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.9...v3.0.10)
