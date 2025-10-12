@@ -9,9 +9,15 @@ import FormKitIcon from './FormKitIcon.vue'
 import FormKitPrefix from './FormKitPrefix.vue'
 import FormKitSuffix from './FormKitSuffix.vue'
 
+export interface FormKitOutputTextProps {
+  html?: boolean
+  isTranslationKey?: boolean
+  convertValue?: (value: string) => string
+}
+
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext> & FormKitIconProps,
+    type: Object as PropType<FormKitFrameworkContext> & FormKitIconProps & FormKitOutputTextProps,
     required: true,
   },
 })
@@ -20,10 +26,15 @@ const textValue = computed(() => {
   const value = props.context?._value
   const { t } = useI18n()
   if (value) {
-    if (props.context?.isTranslationKey)
+    if (props.context?.isTranslationKey) {
       return t(value)
-    else
+    }
+    else if (typeof props.context?.convertValue === 'function') {
+      return props.context?.convertValue(value)
+    }
+    else {
       return value
+    }
   }
   else {
     return ''

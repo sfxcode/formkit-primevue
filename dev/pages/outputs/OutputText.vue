@@ -9,6 +9,10 @@ function prefixClicked() {
 function suffixClicked() {
   console.error('Suffix Icon Clicked')
 }
+
+function toUpper(value: string) {
+  return value.toUpperCase()
+}
 const schema
   = [
     {
@@ -50,6 +54,12 @@ const schema
       help: 'Right Icon Demo',
       iconSuffix: 'pi pi-check text-yellow-500',
       onIconSuffixClicked: suffixClicked,
+    },
+    {
+      $formkit: 'primeOutputText',
+      name: 'name',
+      label: 'Connvert to Uppercase',
+      convertValue: toUpper,
     },
 
   ]
