@@ -1,3 +1,15 @@
+## v3.0.12
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.11...v3.0.12)
+
+### 🩹 Fixes
+
+- **PrimeInputNumber:** Ensure input handling only processes valid number values - fixes #80 ([#80](https://github.com/sfxcode/formkit-primevue/issues/80))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.0.11
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.10...v3.0.11)
