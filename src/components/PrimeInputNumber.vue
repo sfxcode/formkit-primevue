@@ -41,7 +41,8 @@ function handleBlur(e: InputNumberBlurEvent) {
 }
 
 function handleInput(_: any) {
-  props.context?.node.input(_.value)
+  if (typeof _.value === 'number' || _.value === null)
+    props.context?.node.input(_.value)
 }
 
 function roundToDecimals(value: any, decimals: number) {
@@ -52,13 +53,13 @@ function roundToDecimals(value: any, decimals: number) {
 watch(
   () => props.context._value,
   (newValue) => {
-    if (newValue !== props.context.node.value) {
-      if (props.context.maxFractionDigits) {
+    // Only update if the value is different
+    if (newValue !== props.context.node.value && typeof newValue === 'number') {
+      if (props.context.maxFractionDigits && props.context.maxFractionDigits > 0) {
         // fix floating-point precision issues
         props.context?.node.input(roundToDecimals(newValue, props.context.maxFractionDigits))
       }
       else {
-      // Only update if the value is different
         props.context?.node.input(newValue)
       }
     }
