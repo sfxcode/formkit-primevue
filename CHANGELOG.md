@@ -1,3 +1,21 @@
+## v3.1.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.12...v3.1.0)
+
+### 💅 Refactors
+
+- **AppFooter:** Update PrimeVue version and year in footer ([126e945](https://github.com/sfxcode/formkit-primevue/commit/126e945))
+
+### 🏡 Chore
+
+- **dependencies:** Update chart.js, vite, vitepress, and vue-router to latest versions ([cb838a8](https://github.com/sfxcode/formkit-primevue/commit/cb838a8))
+- **dependencies:** Update pnpm to version 10.18.3 ([b07afbc](https://github.com/sfxcode/formkit-primevue/commit/b07afbc))
+- **release:** Update release script to use minor versioning ([e717d6e](https://github.com/sfxcode/formkit-primevue/commit/e717d6e))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.0.12
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.11...v3.0.12)
