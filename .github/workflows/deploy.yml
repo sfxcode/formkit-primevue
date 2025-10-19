@@ -1,4 +1,4 @@
-name: Deploy
+pnpname: Deploy
 
 on:
   push:
@@ -17,7 +17,7 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - run: pnpm build
+      - run: pnpm -r run build
 
       - run: pnpm docs:build
 

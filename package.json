@@ -1,5 +1,5 @@
 {
-  "name": "@sfxcode/formkit-primevue",
+  "name": "@sfxcode/formkit-libs",
   "type": "module",
   "version": "3.1.0",
   "packageManager": "pnpm@10.18.3+sha512.bbd16e6d7286fd7e01f6b3c0b3c932cda2965c06a908328f74663f10a9aea51f1129eea615134bf992831b009eabe167ecb7008b597f40ff9bc75946aadfb08d",
@@ -13,60 +13,6 @@
   "license": "MIT",
   "homepage": "https://github.com/sfxcode/formkit-primevue",
   "repository": "https://github.com/sfxcode/formkit-primevue",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.mjs",
-      "require": "./dist/index.js"
-    },
-    "./components": {
-      "types": "./dist/components/index.d.ts",
-      "import": "./dist/components/index.mjs",
-      "require": "./dist/components/index.js"
-    },
-    "./composables": {
-      "types": "./dist/composables/index.d.ts",
-      "import": "./dist/composables/index.mjs",
-      "require": "./dist/composables/index.js"
-    },
-    "./definitions": {
-      "types": "./dist/definitions/index.d.ts",
-      "import": "./dist/definitions/index.mjs",
-      "require": "./dist/definitions/index.js"
-    },
-    "./plugins": {
-      "types": "./dist/plugins/index.d.ts",
-      "import": "./dist/plugins/index.mjs",
-      "require": "./dist/plugins/index.js"
-    },
-    "./dist/sass/formkit-primevue.scss": {
-      "import": "./dist/sass/formkit-primevue.scss",
-      "require": "./dist/sass/formkit-primevue.scss"
-    },
-    "./dist/style.css": {
-      "import": "./dist/style.css",
-      "require": "./dist/style.css"
-    }
-  },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "*",
-        "dist/*",
-        "dist/*.d.ts",
-        "dist/*/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "*.css",
-    "*.scss",
-    "components.d.ts",
-    "dist"
-  ],
   "scripts": {
     "build": "vue-tsc --build --force && unbuild",
     "dev": "vite serve playgrounds/primevue",
