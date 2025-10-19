@@ -13,6 +13,8 @@ dist-ssr
 *.local
 coverage
 
+.github/workflows
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
