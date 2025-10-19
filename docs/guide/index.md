@@ -19,21 +19,6 @@ Navigate the guide to learn about all features and usage:
 - [Usage](usage.md): General usage tips and best practices.
 - [History](history.md): Changelog and project history.
 
-## Formkit Schema
-
-[Formkit Schema Documentation](https://formkit.com/essentials/schema)
-
-::: info
-FormKit's schema is a JSON-serializable data format for storing DOM structures and component implementations, including FormKit forms. Although created specifically for implementing and generating forms, the format is capable of generating any HTML markup or using any third-party components.
-:::
-
-PrimeVue inputs are prefixed with prime and try to use as many properties as possible from their definition.
-
-```ts
-const schema = reactive(
-  [
-    {
-      $el: 'h2',
       children: ['Register ', '$email'],
     },
     {
