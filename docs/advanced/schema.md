@@ -8,4 +8,4 @@ However, if you do not want to use the schema, you can also use the FormKit comp
 
 ## FormKit Components
 
-<<< ../../dev/pages/data/WithoutSchema.vue{vue}
+<<< ../../playgrounds/primevue/pages/data/WithoutSchema.vue{vue}

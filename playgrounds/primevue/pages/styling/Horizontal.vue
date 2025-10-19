@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-import { useFormKitSchema } from 'my-library'
 import { ref } from 'vue'
+import { useFormKitSchema } from '../../../../packages/formkit-primevue/src'
 
 const { addElement } = useFormKitSchema()
 

@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { useFormKitSchema } from 'my-library'
+import { useFormKitSchema } from '../../../../packages/formkit-primevue/src'
 
 const primeAttributes = ''
 const customAttributes = 'iconPrefix, prefix, suffix, iconSuffix'

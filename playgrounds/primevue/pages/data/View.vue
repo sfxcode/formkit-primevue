@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FormKitDataView, useFormKitSchema } from 'my-library'
+import { FormKitDataView, useFormKitSchema } from '../../../../packages/formkit-primevue/src'
 
 const { addElement } = useFormKitSchema()
 const horizontal = ref(false)

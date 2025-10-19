@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FormKitDataEdit, useFormKitSchema } from 'my-library'
+import { FormKitDataEdit, useFormKitSchema } from '../../../../packages/formkit-primevue/src'
 import { useMessages } from '../../composables/messages'
 
 const { addElement } = useFormKitSchema()

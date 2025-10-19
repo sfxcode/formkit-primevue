@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { useFormKitRepeater, useInputEditor, useInputEditorSchema } from 'my-library'
+import { useFormKitRepeater, useInputEditor, useInputEditorSchema } from '../../../../packages/formkit-primevue/src'
 
 const { schemaToEditorData } = useInputEditor()
 const { editorSchema } = useInputEditorSchema()

@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { useFormKitRepeater, useFormKitSchema } from 'my-library'
+import { useFormKitRepeater, useFormKitSchema } from '../../../../packages/formkit-primevue/src'
 
 const { addElement, addList, addListGroup } = useFormKitSchema()
 const { addInsertButton, addGroupButtons, addListGroupFunctions } = useFormKitRepeater()

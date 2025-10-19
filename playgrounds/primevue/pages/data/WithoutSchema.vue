@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-import { FormKit } from '@formkit/vue'
-import { FormKitDataEdit } from 'my-library'
+import { FormKit, FormKitMessages } from '@formkit/vue'
+import { FormKitDataEdit } from '../../../../packages/formkit-primevue/src'
 import { useMessages } from '../../composables/messages'
 
 const data = ref({ option: 'hourly' })
@@ -18,8 +18,14 @@ async function submitHandler() {
 </script>
 
 <template>
-  <PrimeData header="Slot Demo">
+  <PrimeData header="FormKitDataEdit without Schema Demo">
     <FormKitDataEdit :data="data" :debug-data="true" @data-saved="submitHandler">
+      <FormKit
+        type="primeInputText"
+        name="name"
+        validation="required"
+        label="Name"
+      />
       <FormKit
         type="primeSelect"
         name="option"
@@ -28,23 +34,16 @@ async function submitHandler() {
         option-label="label"
         option-value="value"
         :options="options"
-      >
-        <template #option="slotProps">
-          <div class="flex items-center">
-            <div>Option: {{ slotProps.option.label }}</div>
-          </div>
-        </template>
-        <template #header>
-          <div class="p-4">
-            Select Option:
-          </div>
-        </template>
-        <template #footer>
-          <div class="p-4 color-gray-400">
-            More Options to come soon ...
-          </div>
-        </template>
-      </FormKit>
+      />
+      <template #messages>
+        <div class="inline-flex items-center justify-center w-full">
+          <hr class="w-full h-px my-8 bg-[color:var(--p-primary-color)] border-0">
+        </div>
+        <FormKitMessages class="p-formkit-data-edit-messages" />
+      </template>
+      <template #submit>
+        <Button type="submit" label="Save" icon="pi pi-check" icon-pos="right" @submit="submitHandler" />
+      </template>
     </FormKitDataEdit>
   </PrimeData>
 </template>

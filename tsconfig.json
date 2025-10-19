@@ -4,7 +4,7 @@
     "types": ["vitest/globals"]
   },
   "include": [
-    "src",
-    "test"
+    "packages/formkit-primevue/src",
+    "packages/formkit-primevue/test"
   ]
 }

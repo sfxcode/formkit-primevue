@@ -1,9 +1,9 @@
 <script setup lang='ts'>
 import { FormKitSchema } from '@formkit/vue'
 import { useClipboard } from '@vueuse/core'
-import { useInputEditor } from 'my-library'
-
 import { ref } from 'vue'
+
+import { useInputEditor } from '../../../../packages/formkit-primevue/src'
 import { useMessages } from '../../composables/messages'
 
 const props = defineProps<{

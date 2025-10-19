@@ -1,25 +1,25 @@
 import type { UserModule } from '@/types'
 import Aura from '@primeuix/themes/aura'
-import { usePrimeInputs } from 'my-library'
 import PrimeVue from 'primevue/config'
 import ConfirmationService from 'primevue/confirmationservice'
 import MegaMenu from 'primevue/megamenu'
-
 import Ripple from 'primevue/ripple'
+
 import Tab from 'primevue/tab'
 import TabList from 'primevue/tablist'
 import TabPanel from 'primevue/tabpanel'
 import TabPanels from 'primevue/tabpanels'
-
 import Tabs from 'primevue/tabs'
 
 import Toast from 'primevue/toast'
 
+import ToastService from 'primevue/toastservice'
+
 // services
 
-import ToastService from 'primevue/toastservice'
 import Toolbar from 'primevue/toolbar'
 import Tooltip from 'primevue/tooltip'
+import { usePrimeInputs } from '../../../packages/formkit-primevue/src'
 import PrimeLabel from '../components/demo/PrimeLabel.vue'
 import 'primeicons/primeicons.css'
 

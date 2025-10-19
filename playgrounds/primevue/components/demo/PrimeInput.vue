@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import JsonEditorVue from 'json-editor-vue'
-import { FormKitDataEdit } from 'my-library'
 import { ref } from 'vue'
+import { FormKitDataEdit } from '../../../../packages/formkit-primevue/src'
 import { useMessages } from '../../composables/messages'
 
 const props = defineProps<{

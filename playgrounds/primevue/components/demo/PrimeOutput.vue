@@ -1,8 +1,8 @@
 <script setup lang='ts'>
 import JsonEditorVue from 'json-editor-vue'
-import { FormKitDataView } from 'my-library'
-
 import { ref } from 'vue'
+
+import { FormKitDataView } from '../../../../packages/formkit-primevue/src'
 
 const props = defineProps<{
   header: string

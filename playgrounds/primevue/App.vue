@@ -17,5 +17,5 @@ import AppTopBar from '@/components/app/AppTopbar.vue'
 </template>
 
 <style lang='scss'>
-@use 'App.scss';
+@use 'App';
 </style>
