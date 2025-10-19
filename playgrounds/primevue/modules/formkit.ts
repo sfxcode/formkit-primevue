@@ -1,11 +1,10 @@
 import type { FormKitExtendableSchemaRoot, FormKitNode } from '@formkit/core'
 import type { UserModule } from '@/types'
 import { createAutoAnimatePlugin, createMultiStepPlugin } from '@formkit/addons'
-
 import { de, en } from '@formkit/i18n'
 import { defaultConfig, plugin } from '@formkit/vue'
-import { primeInputs, primeOutputs } from 'my-library/definitions'
-import { addPrimeAsteriskPlugin } from '../../../packages/formkit-primevue/src/plugins'
+import { primeInputs, primeOutputs } from '@sfxcode/formkit-primevue/definitions'
+import { addPrimeAsteriskPlugin } from '@sfxcode/formkit-primevue/plugins'
 import '@formkit/addons/css/multistep'
 
 export function addPrimeLabelPlugin(node: FormKitNode): void {

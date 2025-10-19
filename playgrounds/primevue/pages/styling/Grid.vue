@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { FormKitDataEdit, FormKitDataView } from 'my-library-components'
+import { FormKitDataEdit, FormKitDataView } from '@sfxcode/formkit-primevue/components'
 
 const schema
   = [

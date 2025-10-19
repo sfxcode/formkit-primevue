@@ -1,0 +1,54 @@
+{
+  "name": "@sfxcode/formkit-libs",
+  "type": "module",
+  "version": "3.1.0",
+  "scripts": {
+    "dev": "vite serve",
+    "dev:build": "vite build",
+    "dev:preview": "vite preview",
+    "release": "npm run lint && npm run build && changelogen --patch --release  && npm publish --access public && git push --follow-tags",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "dependencies": {
+    "@sfxcode/formkit-primevue": "workspace:*"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:dev",
+    "@formkit/drag-and-drop": "catalog:dev",
+    "@primeuix/themes": "catalog:dev",
+    "@types/node": "catalog:types",
+    "@unocss/preset-icons": "catalog:dev",
+    "@unocss/preset-uno": "catalog:dev",
+    "@vitejs/plugin-vue": "catalog:dev",
+    "@vue/compiler-sfc": "catalog:dev",
+    "@vue/server-renderer": "catalog:dev",
+    "@vue/tsconfig": "catalog:dev",
+    "@vueuse/core": "catalog:dev",
+    "@vueuse/head": "catalog:dev",
+    "chart.js": "catalog:dev",
+    "consola": "catalog:dev",
+    "cookie": "catalog:dev",
+    "esbuild": "catalog:dev",
+    "eslint": "catalog:dev",
+    "json-editor-vue": "catalog:dev",
+    "mkdist": "catalog:dev",
+    "sass": "catalog:dev",
+    "tslib": "catalog:dev",
+    "typescript": "catalog:dev",
+    "unocss": "catalog:dev",
+    "unplugin-auto-import": "catalog:dev",
+    "unplugin-vue-components": "catalog:dev",
+    "vite": "catalog:dev",
+    "vite-plugin-dts": "catalog:dev",
+    "vite-plugin-eslint": "catalog:dev",
+    "vite-plugin-pages": "catalog:dev",
+    "vite-ssg": "catalog:dev",
+    "vue": "catalog:dev",
+    "vue-router": "catalog:dev",
+    "vue-tsc": "catalog:dev"
+  }
+}
