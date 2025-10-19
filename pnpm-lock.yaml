@@ -325,6 +325,163 @@ importers:
         specifier: catalog:dev
         version: 3.1.1(typescript@5.9.3)
 
+  packages/formkit-primevue:
+    dependencies:
+      '@formkit/addons':
+        specifier: catalog:formkit
+        version: 1.6.9
+      '@formkit/core':
+        specifier: catalog:formkit
+        version: 1.6.9
+      '@formkit/i18n':
+        specifier: catalog:formkit
+        version: 1.6.9
+      '@formkit/inputs':
+        specifier: catalog:formkit
+        version: 1.6.9
+      '@formkit/vue':
+        specifier: catalog:formkit
+        version: 1.6.9(unocss@66.5.4(postcss@8.5.6)(vite@7.1.10(@types/node@24.8.1)(jiti@2.6.1)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)))(vue@3.5.22(typescript@5.9.3))
+      '@intlify/core':
+        specifier: catalog:i18n
+        version: 11.1.12
+      primeicons:
+        specifier: catalog:primevue
+        version: 7.0.0
+      primevue:
+        specifier: catalog:primevue
+        version: 4.4.1(vue@3.5.22(typescript@5.9.3))
+      vue-i18n:
+        specifier: catalog:i18n
+        version: 11.1.12(vue@3.5.22(typescript@5.9.3))
+    devDependencies:
+      '@antfu/eslint-config':
+        specifier: catalog:dev
+        version: 6.0.0(@vue/compiler-sfc@3.5.22)(eslint@9.38.0(jiti@2.6.1))(typescript@5.9.3)(vitest@3.2.4)
+      '@formkit/drag-and-drop':
+        specifier: catalog:dev
+        version: 0.5.3
+      '@primeuix/themes':
+        specifier: catalog:dev
+        version: 1.2.5
+      '@types/node':
+        specifier: catalog:types
+        version: 24.8.1
+      '@unocss/preset-icons':
+        specifier: catalog:dev
+        version: 66.5.4
+      '@unocss/preset-uno':
+        specifier: catalog:dev
+        version: 66.5.4
+      '@vitejs/plugin-vue':
+        specifier: catalog:dev
+        version: 6.0.1(vite@7.1.10(@types/node@24.8.1)(jiti@2.6.1)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1))(vue@3.5.22(typescript@5.9.3))
+      '@vitest/coverage-v8':
+        specifier: catalog:test
+        version: 3.2.4(vitest@3.2.4)
+      '@vitest/ui':
+        specifier: catalog:test
+        version: 3.2.4(vitest@3.2.4)
+      '@vue/compiler-sfc':
+        specifier: catalog:dev
+        version: 3.5.22
+      '@vue/server-renderer':
+        specifier: catalog:dev
+        version: 3.5.22(vue@3.5.22(typescript@5.9.3))
+      '@vue/test-utils':
+        specifier: catalog:test
+        version: 2.4.6
+      '@vue/tsconfig':
+        specifier: catalog:dev
+        version: 0.8.1(typescript@5.9.3)(vue@3.5.22(typescript@5.9.3))
+      '@vueuse/core':
+        specifier: catalog:dev
+        version: 13.9.0(vue@3.5.22(typescript@5.9.3))
+      '@vueuse/head':
+        specifier: catalog:dev
+        version: 2.0.0(vue@3.5.22(typescript@5.9.3))
+      changelogen:
+        specifier: catalog:dev
+        version: 0.6.2(magicast@0.3.5)
+      chart.js:
+        specifier: catalog:dev
+        version: 4.5.1
+      consola:
+        specifier: catalog:dev
+        version: 3.4.2
+      cookie:
+        specifier: catalog:dev
+        version: 1.0.2
+      esbuild:
+        specifier: catalog:dev
+        version: 0.25.11
+      eslint:
+        specifier: catalog:dev
+        version: 9.38.0(jiti@2.6.1)
+      happy-dom:
+        specifier: catalog:test
+        version: 20.0.5
+      json-editor-vue:
+        specifier: catalog:dev
+        version: 0.18.1(vue@3.5.22(typescript@5.9.3))
+      mkdist:
+        specifier: catalog:dev
+        version: 2.4.1(sass@1.93.2)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))(vue@3.5.22(typescript@5.9.3))
+      sass:
+        specifier: catalog:dev
+        version: 1.93.2
+      tslib:
+        specifier: catalog:dev
+        version: 2.8.1
+      typescript:
+        specifier: catalog:dev
+        version: 5.9.3
+      unbuild:
+        specifier: catalog:dev
+        version: 3.6.1(sass@1.93.2)(typescript@5.9.3)(vue-tsc@3.1.1(typescript@5.9.3))(vue@3.5.22(typescript@5.9.3))
+      unocss:
+        specifier: catalog:dev
+        version: 66.5.4(postcss@8.5.6)(vite@7.1.10(@types/node@24.8.1)(jiti@2.6.1)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1))
+      unplugin-auto-import:
+        specifier: catalog:dev
+        version: 20.2.0(@vueuse/core@13.9.0(vue@3.5.22(typescript@5.9.3)))
+      unplugin-vue-components:
+        specifier: catalog:dev
+        version: 29.1.0(@babel/parser@7.28.4)(vue@3.5.22(typescript@5.9.3))
+      vite:
+        specifier: catalog:dev
+        version: 7.1.10(@types/node@24.8.1)(jiti@2.6.1)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
+      vite-plugin-dts:
+        specifier: catalog:dev
+        version: 4.5.4(@types/node@24.8.1)(rollup@4.52.5)(typescript@5.9.3)(vite@7.1.10(@types/node@24.8.1)(jiti@2.6.1)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1))
+      vite-plugin-eslint:
+        specifier: catalog:dev
+        version: 1.8.1(eslint@9.38.0(jiti@2.6.1))(vite@7.1.10(@types/node@24.8.1)(jiti@2.6.1)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1))
+      vite-plugin-pages:
+        specifier: catalog:dev
+        version: 0.33.1(@vue/compiler-sfc@3.5.22)(vite@7.1.10(@types/node@24.8.1)(jiti@2.6.1)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1))(vue-router@4.6.3(vue@3.5.22(typescript@5.9.3)))
+      vite-ssg:
+        specifier: catalog:dev
+        version: 28.2.1(postcss@8.5.6)(unhead@2.0.19)(vite@7.1.10(@types/node@24.8.1)(jiti@2.6.1)(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1))(vue-router@4.6.3(vue@3.5.22(typescript@5.9.3)))(vue@3.5.22(typescript@5.9.3))
+      vitepress:
+        specifier: catalog:docs
+        version: 2.0.0-alpha.12(@types/node@24.8.1)(change-case@5.4.4)(fuse.js@7.1.0)(jiti@2.6.1)(postcss@8.5.6)(sass@1.93.2)(terser@5.44.0)(typescript@5.9.3)(yaml@2.8.1)
+      vitest:
+        specifier: catalog:test
+        version: 3.2.4(@types/debug@4.1.12)(@types/node@24.8.1)(@vitest/ui@3.2.4)(happy-dom@20.0.5)(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(sass@1.93.2)(terser@5.44.0)(yaml@2.8.1)
+      vue:
+        specifier: catalog:dev
+        version: 3.5.22(typescript@5.9.3)
+      vue-demi:
+        specifier: catalog:dev
+        version: 0.14.10(vue@3.5.22(typescript@5.9.3))
+      vue-router:
+        specifier: catalog:dev
+        version: 4.6.3(vue@3.5.22(typescript@5.9.3))
+      vue-tsc:
+        specifier: catalog:dev
+        version: 3.1.1(typescript@5.9.3)
+
 packages:
 
   '@ampproject/remapping@2.3.0':
