@@ -1,6 +1,23 @@
 <script setup lang='ts'>
+import type { FormKitFrameworkContext } from '@formkit/core'
+import type { PropType } from 'vue'
+import type { FormKitIconProps } from './FormKitIcon.vue'
 import { computed } from 'vue'
 import { useFormKitSection } from '../composables'
+import FormKitIcon from './FormKitIcon.vue'
+import FormKitPrefix from './FormKitPrefix.vue'
+import FormKitSuffix from './FormKitSuffix.vue'
+
+export interface PrimeOutputListProps {
+  convertValue?: (array: []) => []
+}
+
+const props = defineProps({
+  context: {
+    type: Object as PropType<FormKitFrameworkContext> & FormKitIconProps & PrimeOutputListProps,
+    required: true,
+  },
+})
 
 const listStyle = computed(() => {
   return props.context?.listStyle || 'span'
