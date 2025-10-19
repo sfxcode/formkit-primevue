@@ -38,6 +38,7 @@ catalogs:
     vue: ^3.5.22
     vue-demi: ^0.14.10
     vue-router: ^4.6.3
+    vue-sfc-transformer: ^0.1.17
     vue-tsc: ^3.1.1
   docs:
     vitepress: 2.0.0-alpha.12
