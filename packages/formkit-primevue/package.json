@@ -69,16 +69,10 @@
   ],
   "scripts": {
     "build": "vue-tsc --build --force && unbuild",
-    "dev": "vite serve playgrounds/primevue",
-    "dev:build": "vite build playgrounds/primevue",
-    "dev:preview": "vite preview playgrounds/primevue",
     "release": "npm run lint && npm run build && changelogen --patch --release  && npm publish --access public && git push --follow-tags",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepublishOnly": "pnpm build",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage"
