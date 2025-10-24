@@ -1,3 +1,21 @@
+## v3.1.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.1.0...v3.1.1)
+
+### 🩹 Fixes
+
+- **plugin:** Refine prime input condition in addPrimeAsteriskPlugin ([9d85e2a](https://github.com/sfxcode/formkit-primevue/commit/9d85e2a))
+
+### 🏡 Chore
+
+- **release:** Update release script to use patch versioning ([14f21e4](https://github.com/sfxcode/formkit-primevue/commit/14f21e4))
+- **dependencies:** Update dependencies and improve type imports ([622bbc4](https://github.com/sfxcode/formkit-primevue/commit/622bbc4))
+- **dependencies:** Update packageManager version to pnpm@10.19.0 ([b5c753a](https://github.com/sfxcode/formkit-primevue/commit/b5c753a))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.1.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.0.12...v3.1.0)
