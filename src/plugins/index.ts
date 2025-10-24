@@ -1,7 +1,7 @@
 import type { FormKitExtendableSchemaRoot, FormKitNode } from '@formkit/core'
 
 export function addPrimeAsteriskPlugin(node: FormKitNode): void {
-  if (!node.props.type.startsWith('primeInput'))
+  if (!node.props.type.startsWith('prime') || node.props.type.startsWith('primeOutput'))
     return
 
   node.on('created', () => {
