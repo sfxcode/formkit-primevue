@@ -1,3 +1,21 @@
+## v3.1.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.1.1...v3.1.2)
+
+### 🚀 Enhancements
+
+- Add onReset event emission in FormKitDataEdit component ([c47e361](https://github.com/sfxcode/formkit-primevue/commit/c47e361))
+
+### 🏡 Chore
+
+- **dependencies:** Update dependencies to latest versions ([8353525](https://github.com/sfxcode/formkit-primevue/commit/8353525))
+- **types:** Update linting directives in components.d.ts ([a90ff48](https://github.com/sfxcode/formkit-primevue/commit/a90ff48))
+- **dependencies:** Update packageManager version to pnpm@10.24.0 ([929f125](https://github.com/sfxcode/formkit-primevue/commit/929f125))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.1.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.1.0...v3.1.1)
