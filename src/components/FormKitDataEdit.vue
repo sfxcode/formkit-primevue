@@ -73,7 +73,7 @@ const props = defineProps({
     default: false,
   },
 })
-const emit = defineEmits(['dataSaved'])
+const emit = defineEmits(['dataSaved', 'onReset'])
 
 const formData = defineModel<any>()
 
@@ -89,6 +89,7 @@ function handleSave() {
 
 function handleReset() {
   reset(props.id)
+  emit('onReset')
 }
 </script>
 

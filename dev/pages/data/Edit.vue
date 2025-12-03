@@ -119,6 +119,7 @@ async function submitHandler(data: any) {
       :debug-schema="true"
       :show-reset="showReset"
       @data-saved="submitHandler"
+      @on-reset="() => { console.log('Form Reset') }"
     />
   </PrimeData>
 </template>
