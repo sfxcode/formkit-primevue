@@ -1,3 +1,20 @@
+## v3.1.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.1.2...v3.1.3)
+
+### 🩹 Fixes
+
+- **scss:** Improve breakpoint-min function for better readability ([7980513](https://github.com/sfxcode/formkit-primevue/commit/7980513))
+
+### 🏡 Chore
+
+- **dependencies:** Update packageManager version to pnpm@10.25.0 ([a145455](https://github.com/sfxcode/formkit-primevue/commit/a145455))
+- **dependencies:** Update primevue, eslint-config, @types/node, sass, vite, and vue-tsc versions ([146563d](https://github.com/sfxcode/formkit-primevue/commit/146563d))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.1.2
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.1.1...v3.1.2)
