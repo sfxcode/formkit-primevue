@@ -1,3 +1,16 @@
+## v3.2.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.0...v3.2.1)
+
+### 🏡 Chore
+
+- Update repository field in package.json to use object format ([c8b1775](https://github.com/sfxcode/formkit-primevue/commit/c8b1775))
+- Update release script to use patch versioning ([2f1e903](https://github.com/sfxcode/formkit-primevue/commit/2f1e903))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.2.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.1.4...v3.2.0)
