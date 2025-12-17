@@ -12,7 +12,10 @@
   ],
   "license": "MIT",
   "homepage": "https://github.com/sfxcode/formkit-primevue",
-  "repository": "https://github.com/sfxcode/formkit-primevue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfxcode/formkit-primevue.git"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
