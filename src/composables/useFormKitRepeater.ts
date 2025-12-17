@@ -5,7 +5,7 @@ export function useFormKitRepeater() {
 
   function addInsertButton(label: string = 'Add', innerClass: string = '', outerClass: string = '', buttonClass: string = 'p-button-sm', iconClass: string = 'pi pi-plus') {
     return addElementsInOuterDiv([
-      addComponent('Button', { onClick: '$addNode($node)', label, class: buttonClass, icon: iconClass }, '$node.value.length == 0'),
+      addComponent('Button', { onClick: '$addNode($node.parent)', label, class: buttonClass, icon: iconClass }, '$node.parent.value.length == 0'),
     ], innerClass, outerClass)
   }
 
@@ -49,12 +49,12 @@ export function useFormKitRepeater() {
     }
 
     return addElementsInOuterDiv([
-      addButtonComponent('$removeNode($node, $index)', '', 'pi pi-times', 'danger'),
-      addButtonComponent('$copyNode($node, $index)', '', 'pi pi-plus'),
-      addButtonComponent('$moveNodeUp($node, $index)', '', 'pi pi-arrow-up', 'secondary', '$index != 0'),
+      addButtonComponent('$removeNode($node.parent, $index)', '', 'pi pi-times', 'danger'),
+      addButtonComponent('$copyNode($node.parent, $index)', '', 'pi pi-plus'),
+      addButtonComponent('$moveNodeUp($node.parent, $index)', '', 'pi pi-arrow-up', 'secondary', '$index != 0'),
       addElement('span', [], { class: 'p-space' }, '$index == 0'),
-      addButtonComponent('$moveNodeDown($node, $index)', '', 'pi pi-arrow-down', 'secondary', '$index < $node.value.length -1'),
-      addElement('span', [], { class: 'p-space' }, '$index == $node.value.length -1'),
+      addButtonComponent('$moveNodeDown($node.parent, $index)', '', 'pi pi-arrow-down', 'secondary', '$index < $node.parent.value.length -1'),
+      addElement('span', [], { class: 'p-space' }, '$index == $node.parent.value.length -1'),
     ], `p-action-buttons ${innerClass}`, outerClass, label, help, render)
   }
 
