@@ -75,7 +75,7 @@
     "dev": "vite serve dev",
     "dev:build": "vite build dev",
     "dev:preview": "vite preview dev",
-    "release": "npm run lint && npm run build && changelogen --minor --release  && npm publish --access public && git push --follow-tags",
+    "release": "npm run lint && npm run build && changelogen --patch --release  && npm publish --access public && git push --follow-tags",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepublishOnly": "pnpm build",
