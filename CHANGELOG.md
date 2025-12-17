@@ -1,3 +1,15 @@
+## v3.2.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.1...v3.2.2)
+
+### 🩹 Fixes
+
+- Update button actions to reference parent node in useFormKitRepeater -  (needed to work with formkit 1.7) ([86d8922](https://github.com/sfxcode/formkit-primevue/commit/86d8922))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.2.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.0...v3.2.1)
