@@ -87,11 +87,11 @@
     "vue": "^3.4.0"
   },
   "dependencies": {
-    "@formkit/addons": "^1.6.9",
-    "@formkit/core": "^1.6.9",
-    "@formkit/i18n": "^1.6.9",
-    "@formkit/inputs": "^1.6.9",
-    "@formkit/vue": "^1.6.9",
+    "@formkit/addons": "^1.7.0",
+    "@formkit/core": "^1.7.0",
+    "@formkit/i18n": "^1.7.0",
+    "@formkit/inputs": "^1.7.0",
+    "@formkit/vue": "^1.7.0",
     "@intlify/core": "^11.2.2",
     "primeicons": "^7.0.0",
     "primevue": "^4.5.3",

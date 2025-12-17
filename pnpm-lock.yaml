@@ -9,19 +9,19 @@ importers:
   .:
     dependencies:
       '@formkit/addons':
-        specifier: ^1.6.9
+        specifier: ^1.7.0
         version: 1.7.0
       '@formkit/core':
-        specifier: ^1.6.9
+        specifier: ^1.7.0
         version: 1.7.0
       '@formkit/i18n':
-        specifier: ^1.6.9
+        specifier: ^1.7.0
         version: 1.7.0
       '@formkit/inputs':
-        specifier: ^1.6.9
+        specifier: ^1.7.0
         version: 1.7.0
       '@formkit/vue':
-        specifier: ^1.6.9
+        specifier: ^1.7.0
         version: 1.7.0(vue@3.5.25(typescript@5.9.3))
       '@intlify/core':
         specifier: ^11.2.2
