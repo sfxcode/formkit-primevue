@@ -1,3 +1,19 @@
+## v3.2.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.1.4...v3.2.0)
+
+### 🏡 Chore
+
+- **dependencies:** Update eslint, sass, vite, and other devDependencies to latest versions ([d018596](https://github.com/sfxcode/formkit-primevue/commit/d018596))
+- **dependencies:** Update @formkit packages to version 1.7.0 ([5632581](https://github.com/sfxcode/formkit-primevue/commit/5632581))
+- **dependencies:** Update packageManager to pnpm@10.26.0 ([38a4e8a](https://github.com/sfxcode/formkit-primevue/commit/38a4e8a))
+- **release:** Update release script to use minor versioning ([97acf1b](https://github.com/sfxcode/formkit-primevue/commit/97acf1b))
+- Update AppFooter to reflect Formkit and PrimeVue version changes ([f8cd3c6](https://github.com/sfxcode/formkit-primevue/commit/f8cd3c6))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.1.4
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.1.3...v3.1.4)
