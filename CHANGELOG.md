@@ -1,3 +1,15 @@
+## v3.2.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.2...v3.2.3)
+
+### 🏡 Chore
+
+- Update dependencies to latest versions for improved stability and performance - formkit 1.7.1 ([b53b487](https://github.com/sfxcode/formkit-primevue/commit/b53b487))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.2.2
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.1...v3.2.2)
