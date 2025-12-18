@@ -90,14 +90,14 @@
     "vue": "^3.4.0"
   },
   "dependencies": {
-    "@formkit/addons": "^1.7.0",
-    "@formkit/core": "^1.7.0",
-    "@formkit/i18n": "^1.7.0",
-    "@formkit/inputs": "^1.7.0",
-    "@formkit/vue": "^1.7.0",
+    "@formkit/addons": "^1.7.1",
+    "@formkit/core": "^1.7.1",
+    "@formkit/i18n": "^1.7.1",
+    "@formkit/inputs": "^1.7.1",
+    "@formkit/vue": "^1.7.1",
     "@intlify/core": "^11.2.2",
     "primeicons": "^7.0.0",
-    "primevue": "^4.5.3",
+    "primevue": "^4.5.4",
     "vue-i18n": "^11.2.2"
   },
   "devDependencies": {
@@ -111,8 +111,8 @@
     "@vitejs/plugin-vue": "^6.0.3",
     "@vitest/coverage-v8": "^4.0.16",
     "@vitest/ui": "^4.0.16",
-    "@vue/compiler-sfc": "^3.5.25",
-    "@vue/server-renderer": "^3.5.25",
+    "@vue/compiler-sfc": "^3.5.26",
+    "@vue/server-renderer": "^3.5.26",
     "@vue/test-utils": "^2.4.6",
     "@vue/tsconfig": "^0.8.1",
     "@vueuse/core": "^14.1.0",
@@ -140,7 +140,7 @@
     "vite-ssg": "^28.2.2",
     "vitepress": "2.0.0-alpha.12",
     "vitest": "^4.0.16",
-    "vue": "^3.5.25",
+    "vue": "^3.5.26",
     "vue-demi": "^0.14.10",
     "vue-router": "^4.6.4",
     "vue-tsc": "^3.1.8"
