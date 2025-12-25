@@ -1,3 +1,20 @@
+## v3.2.4
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.3...v3.2.4)
+
+### 📖 Documentation
+
+- Add GitHub Copilot instructions for Vue, FormKit and Vite development ([4d224ca](https://github.com/sfxcode/formkit-primevue/commit/4d224ca))
+- Enhance Copilot instructions with best practices for Vue, Vite, TypeScript, and FormKit integration ([eb160d3](https://github.com/sfxcode/formkit-primevue/commit/eb160d3))
+
+### 🏡 Chore
+
+- Update dependencies to latest versions for improved stability and performance - formkit 1.7.2, intlify 11.2.7, vue-i18n 11.2.7, eslint-config 6.7.3, sass 1.97.1, vue-tsc 3.2.1 ([58627cd](https://github.com/sfxcode/formkit-primevue/commit/58627cd))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.2.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.2...v3.2.3)
