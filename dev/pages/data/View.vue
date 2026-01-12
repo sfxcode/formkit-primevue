@@ -56,6 +56,6 @@ function updateData() {
     <div class="flex gap-2 mb-4">
       Horizontal  <ToggleSwitch v-model="horizontal" />
     </div>
-    <FormKitDataView v-model="data" :schema="outputSchema" :debug-mode="true" :form-class="horizontal ? 'form-horizontal' : ''" />
+    <FormKitDataView id="FormKitDataViewId" v-model="data" :schema="outputSchema" debug-data debug-schema :form-class="horizontal ? 'form-horizontal' : ''" />
   </PrimeData>
 </template>

@@ -1,22 +1,22 @@
 import type { UserModule } from '@/types'
 import Aura from '@primeuix/themes/aura'
 import { usePrimeInputs } from 'my-library'
+import { Fieldset } from 'primevue'
 import PrimeVue from 'primevue/config'
 import ConfirmationService from 'primevue/confirmationservice'
-import MegaMenu from 'primevue/megamenu'
 
+import MegaMenu from 'primevue/megamenu'
 import Ripple from 'primevue/ripple'
-import Tab from 'primevue/tab'
 import TabList from 'primevue/tablist'
 import TabPanel from 'primevue/tabpanel'
+
 import TabPanels from 'primevue/tabpanels'
 
 import Tabs from 'primevue/tabs'
 
-import Toast from 'primevue/toast'
-
 // services
 
+import Toast from 'primevue/toast'
 import ToastService from 'primevue/toastservice'
 import Toolbar from 'primevue/toolbar'
 import Tooltip from 'primevue/tooltip'
@@ -34,7 +34,7 @@ export const install: UserModule = ({ app }) => {
 
   // other components
   app.component('MegaMenu', MegaMenu)
-  app.component('Tab', Tab)
+  app.component('Fieldset', Fieldset)
   app.component('Tabs', Tabs)
   app.component('TabList', TabList)
   app.component('TabPanels', TabPanels)

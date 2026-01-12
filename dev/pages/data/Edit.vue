@@ -111,13 +111,14 @@ async function submitHandler(data: any) {
       <Checkbox v-if="horizontal" v-model="indentCheckboxes" binary />
     </div>
     <FormKitDataEdit
+      id="FormKitDataEditId"
       v-model="data"
-      :schema="schema"
-      :submit-label="t('save')"
-      :form-class="(horizontal ? ' form-horizontal' : '') + (indentCheckboxes ? ' form-horizontal-checkbox-indent ' : '')"
       :debug-data="true"
       :debug-schema="true"
+      :form-class="(horizontal ? ' form-horizontal' : '') + (indentCheckboxes ? ' form-horizontal-checkbox-indent ' : '')"
+      :schema="schema"
       :show-reset="showReset"
+      :submit-label="t('save')"
       @data-saved="submitHandler"
       @on-reset="() => { console.log('Form Reset') }"
     />
