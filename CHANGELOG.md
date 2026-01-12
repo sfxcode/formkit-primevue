@@ -1,3 +1,15 @@
+## v3.2.6
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.5...v3.2.6)
+
+### 🩹 Fixes
+
+- Revert vue-sfc-transformer ([9b4c75e](https://github.com/sfxcode/formkit-primevue/commit/9b4c75e))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.2.5
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.4...v3.2.5)
