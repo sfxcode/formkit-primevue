@@ -12,12 +12,11 @@ defineProps({
 </script>
 
 <template>
-  <div class="p-formkit-data-debug">
-    <h3>{{ header }}</h3>
+  <Fieldset class="p-formkit-data-debug" :legend="header" :toggleable="true" :collapsed="true">
     <slot />
     <pre v-if="data">{{ data }}</pre>
     <span v-else>No Data available</span>
-  </div>
+  </Fieldset>
 </template>
 
 <style scoped>

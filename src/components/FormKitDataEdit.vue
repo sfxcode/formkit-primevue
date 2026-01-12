@@ -94,34 +94,32 @@ function handleReset() {
 </script>
 
 <template>
-  <div class="p-formkit-data-edit">
-    <FormKit
-      :id="id"
-      v-model="formData"
-      :form-class="formClass"
-      :actions-class="actionsClass"
-      type="form"
-      @submit="handleSave"
-    >
-      <template #default>
-        <FormKitSchema v-if="formSchema" :schema="formSchema" :data="formData" />
-        <slot />
-      </template>
-      <template #messages>
-        <slot name="messages">
-          <FormKitMessages class="p-formkit-data-edit-messages" />
-        </slot>
-      </template>
-      <template #submit>
-        <slot name="submit">
-          <Button :icon="submitIcon" type="submit" :label="submitLabel" :class="submitClass" :severity="submitSeverity" @submit="handleSave" />
-          <Button v-if="showReset" type="reset" :icon="resetIcon" :label="resetLabel" :class="resetClass" :severity="resetSeverity" @click="handleReset" />
-        </slot>
-      </template>
-    </FormKit>
-    <FormKitDebug v-if="debugData" :data="formData" header="Data" />
-    <FormKitDebug v-if="debugSchema" :data="formSchema as object" header="Schema" />
-  </div>
+  <FormKit
+    :id="id"
+    v-model="formData"
+    :actions-class="actionsClass"
+    :form-class="`p-formkit-data-edit ${formClass}`"
+    type="form"
+    @submit="handleSave"
+  >
+    <template #default>
+      <FormKitSchema v-if="formSchema" :schema="formSchema" :data="formData" />
+      <slot />
+      <FormKitDebug v-if="debugData" :data="formData" header="Debug Mode - Data" />
+      <FormKitDebug v-if="debugSchema" :data="formSchema as object" header="Debug Mode - Schema" />
+    </template>
+    <template #messages>
+      <slot name="messages">
+        <FormKitMessages class="p-formkit-data-edit-messages" />
+      </slot>
+    </template>
+    <template #submit>
+      <slot name="submit">
+        <Button :icon="submitIcon" type="submit" :label="submitLabel" :class="submitClass" :severity="submitSeverity" @submit="handleSave" />
+        <Button v-if="showReset" type="reset" :icon="resetIcon" :label="resetLabel" :class="resetClass" :severity="resetSeverity" @click="handleReset" />
+      </slot>
+    </template>
+  </FormKit>
 </template>
 
 <style scoped>

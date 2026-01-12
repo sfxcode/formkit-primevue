@@ -181,7 +181,6 @@ $grid-breakpoints: (
 
 // data view only
 .p-formkit-data-view {
-  .formkit-form {
     .formkit-outer {
       padding-bottom:  0.5rem;
     }
@@ -200,13 +199,10 @@ $grid-breakpoints: (
       margin-block-start: 0;
       margin-block-end: 0;
     }
-  }
 }
 
 // data edit only
 .p-formkit-data-edit {
-
-  .formkit-form {
     .formkit-label {
       //font-weight: normal;
     }
@@ -289,7 +285,6 @@ $grid-breakpoints: (
         //padding-left: 2rem;
       }
     }
-  }
 }
 
 
