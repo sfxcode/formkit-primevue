@@ -1,3 +1,24 @@
+## v3.2.5
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.4...v3.2.5)
+
+### 🚀 Enhancements
+
+- Enhance FormKit components with new Fieldset and improved data handling in Edit and View ([ec57931](https://github.com/sfxcode/formkit-primevue/commit/ec57931))
+- Add vue-sfc-transformer and update sass import syntax ([a5976bc](https://github.com/sfxcode/formkit-primevue/commit/a5976bc))
+
+### 💅 Refactors
+
+- Improve structure and debugging features in FormKit components ([66a4d7c](https://github.com/sfxcode/formkit-primevue/commit/66a4d7c))
+
+### 🏡 Chore
+
+- Update dependencies in package.json to latest versions ([d8a5954](https://github.com/sfxcode/formkit-primevue/commit/d8a5954))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.2.4
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.3...v3.2.4)
