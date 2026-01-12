@@ -96,11 +96,9 @@
     "@formkit/inputs": "^1.7.2",
     "@formkit/vue": "^1.7.2",
     "@intlify/core": "^11.2.8",
-    "@vue/compiler-core": "^3.5.26",
     "primeicons": "^7.0.0",
     "primevue": "^4.5.4",
-    "vue-i18n": "^11.2.8",
-    "vue-sfc-transformer": "^0.1.17"
+    "vue-i18n": "^11.2.8"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.7.3",

@@ -26,9 +26,6 @@ importers:
       '@intlify/core':
         specifier: ^11.2.8
         version: 11.2.8
-      '@vue/compiler-core':
-        specifier: ^3.5.26
-        version: 3.5.26
       primeicons:
         specifier: ^7.0.0
         version: 7.0.0
@@ -38,9 +35,6 @@ importers:
       vue-i18n:
         specifier: ^11.2.8
         version: 11.2.8(vue@3.5.26(typescript@5.9.3))
-      vue-sfc-transformer:
-        specifier: ^0.1.17
-        version: 0.1.17(@vue/compiler-core@3.5.26)(esbuild@0.27.2)(vue@3.5.26(typescript@5.9.3))
     devDependencies:
       '@antfu/eslint-config':
         specifier: ^6.7.3
@@ -9232,6 +9226,7 @@ snapshots:
       '@vue/compiler-core': 3.5.26
       esbuild: 0.27.2
       vue: 3.5.26(typescript@5.9.3)
+    optional: true
 
   vue-tsc@3.2.2(typescript@5.9.3):
     dependencies:
