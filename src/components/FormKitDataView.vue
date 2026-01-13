@@ -1,8 +1,10 @@
 <script setup lang='ts'>
 import type { FormKitSchemaDefinition } from '@formkit/core'
 import type { PropType } from 'vue'
+
 import { FormKit, FormKitSchema } from '@formkit/vue'
 import { ref } from 'vue'
+import FormKitDataDebug from './FormKitDataDebug.vue'
 
 const props = defineProps({
   data: {
@@ -46,16 +48,8 @@ if (props.data) {
   >
     <FormKitSchema v-if="schema" :schema="formSchema" :data="formData" />
     <slot />
-    <Fieldset class="p-formkit-data-debug" legend="Debug Mode - Data" :toggleable="true" :collapsed="true">
-      <slot />
-      <pre v-if="data">{{ data }}</pre>
-      <span v-else>No Data available</span>
-    </Fieldset>
-    <Fieldset class="p-formkit-data-debug" legend="Debug Mode - Schema" :toggleable="true" :collapsed="true">
-      <slot />
-      <pre v-if="formSchema">{{ formSchema }}</pre>
-      <span v-else>No Data available</span>
-    </Fieldset>
+    <FormKitDataDebug v-if="debugData" :data="formData" header="Debug Mode - Data" />
+    <FormKitDataDebug v-if="debugSchema" :data="formSchema as object" header="Debug Mode - Schema" />
   </FormKit>
 </template>
 
