@@ -1,6 +1,6 @@
 # Form Components
 
-For the simple usage with schema and data values FormKitDataEdit and FormKitDataView (and FormkitDebug) components are available.
+For the simple usage with schema and data values FormKitDataEdit and FormKitDataView components are available.
 
 <DisplayFormComponents />
 

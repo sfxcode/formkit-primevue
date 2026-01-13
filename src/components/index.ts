@@ -1,6 +1,5 @@
 import FormKitDataEdit from './FormKitDataEdit.vue'
 import FormKitDataView from './FormKitDataView.vue'
-import FormKitDataDebug from './FormKitDebug.vue'
 import PrimeAutoComplete from './PrimeAutoComplete.vue'
 import PrimeCascadeSelect from './PrimeCascadeSelect.vue'
 import PrimeCheckbox from './PrimeCheckbox.vue'
@@ -24,7 +23,6 @@ import PrimeInputSwitch from './PrimeToggleSwitch.vue'
 import PrimeTreeSelect from './PrimeTreeSelect.vue'
 
 export {
-  FormKitDataDebug,
   FormKitDataEdit,
   FormKitDataView,
   PrimeAutoComplete,

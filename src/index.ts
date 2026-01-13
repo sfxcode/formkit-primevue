@@ -5,12 +5,11 @@ import type { MultiSelectProps } from 'primevue/multiselect'
 import type { SelectProps } from 'primevue/select'
 import type { SelectButtonProps } from 'primevue/selectbutton'
 import type { TreeSelectProps } from 'primevue/treeselect'
-import { FormKitDataDebug, FormKitDataEdit, FormKitDataView } from './components'
+import { FormKitDataEdit, FormKitDataView } from './components'
 import { useFormKitRepeater, useFormKitSchema, useInputEditor, useInputEditorSchema, usePrimeInputs } from './composables'
 import { primeInputs, primeOutputs } from './definitions'
 
 export {
-  FormKitDataDebug,
   FormKitDataEdit,
   FormKitDataView,
   primeInputs,
