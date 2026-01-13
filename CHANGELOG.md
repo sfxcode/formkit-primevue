@@ -1,3 +1,15 @@
+## v3.2.8
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.7...v3.2.8)
+
+### 🩹 Fixes
+
+- Remove vue-sfc-transformer from dependencies in pnpm-lock.yaml ([0d99003](https://github.com/sfxcode/formkit-primevue/commit/0d99003))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.2.7
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.6...v3.2.7)
