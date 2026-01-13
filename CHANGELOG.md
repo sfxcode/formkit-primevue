@@ -1,3 +1,15 @@
+## v3.2.7
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.6...v3.2.7)
+
+### 💅 Refactors
+
+- Remove FormKitDebug component and replace with Fieldset for debug data display ([55b5266](https://github.com/sfxcode/formkit-primevue/commit/55b5266))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.2.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.5...v3.2.6)
