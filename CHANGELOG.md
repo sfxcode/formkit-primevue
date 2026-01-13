@@ -1,3 +1,15 @@
+## v3.2.9
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.8...v3.2.9)
+
+### 💅 Refactors
+
+- Add FormKitDataDebug component for improved debug data display ([e862919](https://github.com/sfxcode/formkit-primevue/commit/e862919))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.2.8
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.7...v3.2.8)
