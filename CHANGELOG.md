@@ -1,3 +1,24 @@
+## v3.2.10
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.9...v3.2.10)
+
+### 🚀 Enhancements
+
+- Add maxLength attribute to PrimeOutputText component for text truncation ([b7e8670](https://github.com/sfxcode/formkit-primevue/commit/b7e8670))
+
+### 🩹 Fixes
+
+- Streamline cleanup of empty string values in useInputEditor ([eededb0](https://github.com/sfxcode/formkit-primevue/commit/eededb0))
+
+### 🏡 Chore
+
+- Update pnpm package manager version to 10.29.2 ([1e97cc3](https://github.com/sfxcode/formkit-primevue/commit/1e97cc3))
+- Update devDependencies to latest versions ([4d90dfe](https://github.com/sfxcode/formkit-primevue/commit/4d90dfe))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.2.9
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.8...v3.2.9)
