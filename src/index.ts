@@ -1,4 +1,28 @@
-import type { FormKitInputs } from '@formkit/inputs'
+import type { FormKitBaseSlots, FormKitInputs } from '@formkit/inputs'
+import type {
+  AutoCompleteSlots,
+  CascadeSelectSlots,
+  CheckboxSlots,
+  ColorPickerSlots,
+  DatePickerSlots,
+  InputMaskSlots,
+  InputNumberSlots,
+  InputOtpSlots,
+  InputTextSlots,
+  KnobSlots,
+  ListboxSlots,
+  MultiSelectSlots,
+  PasswordSlots,
+  RadioButtonSlots,
+  RatingSlots,
+  SelectButtonSlots,
+  SelectSlots,
+  SliderSlots,
+  TextareaSlots,
+  ToggleButtonSlots,
+  ToggleSwitchSlots,
+  TreeSelectSlots,
+} from 'primevue'
 import type { CascadeSelectProps } from 'primevue/cascadeselect'
 import type { ListboxProps } from 'primevue/listbox'
 import type { MultiSelectProps } from 'primevue/multiselect'
@@ -20,6 +44,11 @@ export {
   useInputEditorSchema,
   usePrimeInputs,
 }
+
+/**
+ * Keeps all slots from 1st argument, add any slots from 2nd type which do not collide with the 1st's names.
+ */
+type MergeSlots<A, B> = A & Omit<B, keyof A>
 
 declare module '@formkit/inputs' {
   interface FormKitInputProps<Props extends FormKitInputs<Props>> {
@@ -119,5 +148,38 @@ declare module '@formkit/inputs' {
     primeOutputList: {
       type: 'primeOutputList'
     }
+  }
+
+  interface FormKitInputSlots<Props extends FormKitInputs<Props>> {
+    primeAutoComplete: MergeSlots<FormKitBaseSlots<Props>, AutoCompleteSlots>
+    primeCascadeSelect: MergeSlots<FormKitBaseSlots<Props>, CascadeSelectSlots>
+    primeCheckbox: MergeSlots<FormKitBaseSlots<Props>, CheckboxSlots>
+    primeColorPicker: MergeSlots<FormKitBaseSlots<Props>, ColorPickerSlots>
+    primeDatePicker: MergeSlots<FormKitBaseSlots<Props>, DatePickerSlots>
+    primeInputMask: MergeSlots<FormKitBaseSlots<Props>, InputMaskSlots>
+    primeInputNumber: MergeSlots<FormKitBaseSlots<Props>, InputNumberSlots>
+    primeInputOtp: MergeSlots<FormKitBaseSlots<Props>, InputOtpSlots>
+    primeInputText: MergeSlots<FormKitBaseSlots<Props>, InputTextSlots>
+    primeKnob: MergeSlots<FormKitBaseSlots<Props>, KnobSlots>
+    primeListbox: MergeSlots<FormKitBaseSlots<Props>, ListboxSlots>
+    primeMultiSelect: MergeSlots<FormKitBaseSlots<Props>, MultiSelectSlots>
+    primeOutputBoolean: FormKitBaseSlots<Props>
+    primeOutputDate: FormKitBaseSlots<Props>
+    primeOutputDuration: FormKitBaseSlots<Props>
+    primeOutputLink: FormKitBaseSlots<Props>
+    primeOutputList: FormKitBaseSlots<Props>
+    primeOutputNumber: FormKitBaseSlots<Props>
+    primeOutputReference: FormKitBaseSlots<Props>
+    primeOutputText: FormKitBaseSlots<Props>
+    primePassword: MergeSlots<FormKitBaseSlots<Props>, PasswordSlots>
+    primeRadioButton: MergeSlots<FormKitBaseSlots<Props>, RadioButtonSlots>
+    primeRating: MergeSlots<FormKitBaseSlots<Props>, RatingSlots>
+    primeSelect: MergeSlots<FormKitBaseSlots<Props>, SelectSlots>
+    primeSelectButton: MergeSlots<FormKitBaseSlots<Props>, SelectButtonSlots>
+    primeSlider: MergeSlots<FormKitBaseSlots<Props>, SliderSlots>
+    primeTextarea: MergeSlots<FormKitBaseSlots<Props>, TextareaSlots>
+    primeToggleButton: MergeSlots<FormKitBaseSlots<Props>, ToggleButtonSlots>
+    primeToggleSwitch: MergeSlots<FormKitBaseSlots<Props>, ToggleSwitchSlots>
+    primeTreeSelect: MergeSlots<FormKitBaseSlots<Props>, TreeSelectSlots>
   }
 }
