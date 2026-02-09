@@ -100,10 +100,10 @@ export function useInputEditor() {
     // cleanup empty values
     for (const key in result) {
       const value = result[key]
-      if (value !== null && value !== undefined
-        && (typeof value === 'string')) {
-        if (value.trim().length === 0)
+      if (value !== null && value !== undefined && typeof value === 'string') {
+        if (value.trim().length === 0) {
           result[key] = undefined
+        }
       }
     }
 
