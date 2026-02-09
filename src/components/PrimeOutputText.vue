@@ -13,6 +13,7 @@ export interface FormKitOutputTextProps {
   html?: boolean
   isTranslationKey?: boolean
   convertValue?: (value: string) => string
+  maxLength?: number
 }
 
 const props = defineProps({
@@ -25,20 +26,35 @@ const props = defineProps({
 const textValue = computed(() => {
   const value = props.context?._value
   const { t } = useI18n()
+  let result = ''
   if (value) {
     if (props.context?.isTranslationKey) {
-      return t(value)
+      result = t(value)
     }
     else if (typeof props.context?.convertValue === 'function') {
-      return props.context?.convertValue(value)
+      result = props.context?.convertValue(value)
     }
     else {
-      return value
+      result = value
     }
   }
-  else {
-    return ''
+
+  // Apply maxLength truncation if specified
+  const maxLength = props.context?.maxLength as number | undefined
+  if (result && maxLength && !props.context?.html && result.length > maxLength) {
+    // Try to truncate at word boundary
+    let truncated = result.substring(0, maxLength)
+    const lastSpaceIndex = truncated.lastIndexOf(' ')
+
+    // Only truncate at word boundary if there's a space, and it's not too far back
+    // (at least 80% of maxLength to avoid cutting too much)
+    if (lastSpaceIndex > maxLength * 0.8) {
+      truncated = truncated.substring(0, lastSpaceIndex)
+    }
+    result = `${truncated}...`
   }
+
+  return result
 })
 
 const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection(props.context)
