@@ -5,7 +5,7 @@ export function useFormKitRepeater() {
 
   function addInsertButton(label: string = 'Add', innerClass: string = '', outerClass: string = '', buttonClass: string = 'p-button-sm', iconClass: string = 'pi pi-plus') {
     return addElementsInOuterDiv([
-      addComponent('Button', { onClick: '$addNode($node.parent)', label, class: buttonClass, icon: iconClass }, '$node.parent.value.length == 0'),
+      addComponent('Button', { onClick: '$addNode($node)', label, class: buttonClass, icon: iconClass }, '$node.children.length == 0'),
     ], innerClass, outerClass)
   }
 
