@@ -21,13 +21,13 @@ const props = defineProps({
   },
 })
 
-const { unstyled, handleChange } = useFormKitInput(props.context)
+const { unstyled, handleChange, modelValue } = useFormKitInput(props.context)
 </script>
 
 <template>
   <div class="p-formkit">
     <ColorPicker
-      v-model="context._value"
+      v-model="modelValue"
       v-bind="context?.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"

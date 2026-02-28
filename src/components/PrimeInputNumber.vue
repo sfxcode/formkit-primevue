@@ -34,7 +34,7 @@ const props = defineProps({
   },
 })
 
-const { validSlotNames, unstyled, isInvalid } = useFormKitInput(props.context)
+const { validSlotNames, unstyled, isInvalid, modelValue } = useFormKitInput(props.context)
 
 function handleBlur(e: InputNumberBlurEvent) {
   props.context?.handlers.blur(e.originalEvent as FocusEvent)
@@ -70,7 +70,7 @@ watch(
 <template>
   <div class="p-formkit">
     <InputNumber
-      v-model="context._value"
+      v-model="modelValue"
       v-bind="context?.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"

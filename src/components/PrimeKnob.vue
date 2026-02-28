@@ -29,7 +29,7 @@ const props = defineProps({
   },
 })
 
-const { unstyled, isInvalid } = useFormKitInput(props.context)
+const { unstyled, isInvalid, modelValue } = useFormKitInput(props.context)
 
 function handleInput(e: any) {
   props.context?.node.input(e)
@@ -45,7 +45,7 @@ function updateValue(n: number) {
   <div class="p-formkit">
     <Knob
       :id="context.id"
-      v-model="context._value"
+      v-model="modelValue"
       v-bind="context?.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"

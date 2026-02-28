@@ -27,7 +27,7 @@ const props = defineProps({
   },
 })
 
-const { unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
+const { unstyled, isInvalid, handleInput, handleBlur, modelValue } = useFormKitInput(props.context)
 const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
 </script>
 
@@ -37,7 +37,7 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
       <InputIcon v-if="hasPrefixIcon" :class="context?.iconPrefix" />
       <InputMask
         :id="context.id"
-        v-model="context._value"
+        v-model="modelValue"
         v-bind="context?.attrs"
         :disabled="!!context?.disabled"
         :readonly="context?.attrs.readonly ?? false"
@@ -63,7 +63,7 @@ const { hasPrefixIcon, hasSuffixIcon } = useFormKitSection(props.context)
     <InputMask
       v-if="!hasPrefixIcon && !hasSuffixIcon"
       :id="context.id"
-      v-model="context._value"
+      v-model="modelValue"
       v-bind="context?.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"

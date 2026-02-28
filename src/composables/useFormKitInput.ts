@@ -51,5 +51,12 @@ export function useFormKitInput(context: any) {
     context?.node?.input?.(e)
   }
 
-  return { isInvalid, validSlotNames, styleClass, unstyled, handleBlur, handleChange, handleInput, handleSelect }
+  const modelValue = computed({
+    get: () => context._value,
+    set: (value) => {
+      context.node.input(value)
+    },
+  })
+
+  return { isInvalid, validSlotNames, styleClass, unstyled, handleBlur, handleChange, handleInput, handleSelect, modelValue }
 }

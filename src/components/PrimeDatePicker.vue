@@ -60,7 +60,7 @@ const props = defineProps({
   },
 })
 
-const { validSlotNames, unstyled, isInvalid, handleInput } = useFormKitInput(props.context)
+const { validSlotNames, unstyled, isInvalid, handleInput, modelValue } = useFormKitInput(props.context)
 
 function handleBlur(e: DatePickerBlurEvent) {
   props.context?.handlers.blur(e.originalEvent as FocusEvent)
@@ -83,7 +83,7 @@ function handleSelect(e: any) {
 <template>
   <div class="p-formkit">
     <DatePicker
-      v-model="context._value"
+      v-model="modelValue"
       v-bind="context?.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"

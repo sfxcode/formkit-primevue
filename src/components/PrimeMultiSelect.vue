@@ -51,13 +51,13 @@ const props = defineProps({
   },
 })
 
-const { validSlotNames, unstyled, isInvalid, handleBlur, handleChange } = useFormKitInput(props.context)
+const { validSlotNames, unstyled, isInvalid, handleBlur, handleChange, modelValue } = useFormKitInput(props.context)
 </script>
 
 <template>
   <div class="p-formkit">
     <MultiSelect
-      v-model="context._value"
+      v-model="modelValue"
       v-bind="context?.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"

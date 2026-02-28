@@ -22,7 +22,7 @@ const props = defineProps({
   },
 })
 
-const { unstyled, isInvalid, handleChange, handleBlur } = useFormKitInput(props.context)
+const { unstyled, isInvalid, handleChange, handleBlur, modelValue } = useFormKitInput(props.context)
 </script>
 
 <template>
@@ -30,7 +30,7 @@ const { unstyled, isInvalid, handleChange, handleBlur } = useFormKitInput(props.
     <div v-for="option in context.options" :key="option.value" class="p-formkit-option" :class="context.optionClass">
       <RadioButton
         :id="context.id"
-        v-model="context._value"
+        v-model="modelValue"
         v-bind="context?.attrs"
         :disabled="!!context?.disabled"
         :readonly="context?.attrs.readonly ?? false"

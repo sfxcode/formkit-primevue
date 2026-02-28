@@ -2,7 +2,7 @@
 import type { FormKitFrameworkContext } from '@formkit/core'
 import type { AutoCompleteCompleteEvent, AutoCompleteProps } from 'primevue/autocomplete'
 import type { PropType } from 'vue'
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeAutoCompleteProps {
@@ -28,33 +28,11 @@ const props = defineProps({
   },
 })
 
-const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
+const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur, modelValue } = useFormKitInput(props.context)
 
 const suggestions = ref(['', {}])
 suggestions.value = []
 const loading = ref(false)
-
-// Local value for v-model
-const localValue = ref(props.context._value)
-
-// Sync localValue with context._value
-watch(
-  () => props.context._value,
-  (newVal) => {
-    localValue.value = newVal
-  },
-)
-
-// Emit changes from localValue to context
-watch(
-  localValue,
-  (newVal) => {
-    if (newVal !== props.context._value) {
-      props.context._value = newVal
-      props.context?.node?.input?.(newVal)
-    }
-  },
-)
 
 /**
  * Searches for suggestions based on the input query.
@@ -102,22 +80,22 @@ function handlePaste(event: ClipboardEvent) {
       .map(item => item.trim())
       .filter(item => item.length > 0)
     // Use a local ref, never mutate context._value directly
-    if (Array.isArray(localValue.value)) {
-      localValue.value = [...localValue.value, ...items]
+    if (Array.isArray(modelValue.value)) {
+      modelValue.value = [...modelValue.value, ...items]
     }
     else {
-      localValue.value = items
+      modelValue.value = items
     }
   }
   // If no separators, just set the value directly
   else if (pastedText) {
     event.preventDefault()
     // If no separators, just set the value directly
-    if (Array.isArray(localValue.value)) {
-      localValue.value = [...localValue.value, pastedText.trim()]
+    if (Array.isArray(modelValue.value)) {
+      modelValue.value = [...modelValue.value, pastedText.trim()]
     }
     else {
-      localValue.value = [pastedText.trim()]
+      modelValue.value = [pastedText.trim()]
     }
   }
 }
@@ -127,7 +105,7 @@ function handlePaste(event: ClipboardEvent) {
   <div class="p-formkit">
     <AutoComplete
       :id="context.id"
-      v-model="localValue"
+      v-model="modelValue"
       v-bind="context?.attrs"
       :disabled="!!context?.disabled"
       :class="context?.attrs?.class"

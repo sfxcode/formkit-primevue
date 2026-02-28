@@ -26,7 +26,7 @@ const props = defineProps({
 
 const { hasPrefix, hasSuffix, generateId } = useFormKitSection(props.context)
 
-const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
+const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur, modelValue } = useFormKitInput(props.context)
 
 const generatedId = generateId()
 </script>
@@ -37,7 +37,7 @@ const generatedId = generateId()
       {{ context?.prefix }}
     </label>
     <Checkbox
-      v-model="context._value"
+      v-model="modelValue"
       v-bind="context?.attrs"
       :input-id="generatedId"
       :disabled="!!context?.disabled"

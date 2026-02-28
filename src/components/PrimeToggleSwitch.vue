@@ -22,7 +22,7 @@ const props = defineProps({
 
 const { hasPrefix, hasSuffix } = useFormKitSection(props.context)
 
-const { unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.context)
+const { unstyled, isInvalid, handleInput, handleBlur, modelValue } = useFormKitInput(props.context)
 </script>
 
 <template>
@@ -31,7 +31,7 @@ const { unstyled, isInvalid, handleInput, handleBlur } = useFormKitInput(props.c
       {{ context?.prefix }}
     </span>
     <ToggleSwitch
-      v-model="context._value"
+      v-model="modelValue"
       v-bind="context?.attrs"
       :input-id="context.id"
       :disabled="!!context?.disabled"

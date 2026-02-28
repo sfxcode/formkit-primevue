@@ -26,14 +26,14 @@ const props = defineProps({
   },
 })
 
-const { validSlotNames, unstyled, isInvalid, handleChange, handleBlur } = useFormKitInput(props.context)
+const { validSlotNames, unstyled, isInvalid, handleChange, handleBlur, modelValue } = useFormKitInput(props.context)
 </script>
 
 <template>
   <div class="p-formkit">
     <SelectButton
       :id="context.id"
-      v-model="context._value"
+      v-model="modelValue"
       v-bind="context?.attrs"
       :disabled="!!context?.disabled"
       :readonly="context?.attrs.readonly ?? false"
