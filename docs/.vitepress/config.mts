@@ -36,7 +36,7 @@ export default defineConfig({
   vite: {
     plugins: [
       Unocss({
-        configFile: '../../unocss.config.ts',
+        configFile: './docs/uno.config.ts',
       }),
     ],
   },

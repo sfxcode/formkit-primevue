@@ -44,7 +44,9 @@ export default defineConfig({
     ],
   },
   plugins: [
-    Unocss(),
+    Unocss({
+      configFile: './dev/uno.config.ts',
+    }),
     Vue({
       include: [/\.vue$/, /\.md$/],
     }),

@@ -138,7 +138,7 @@
     "vite-plugin-eslint": "^1.8.1",
     "vite-plugin-pages": "^0.33.3",
     "vite-ssg": "^28.3.0",
-    "vitepress": "2.0.0-alpha.12",
+    "vitepress": "2.0.0-alpha.16",
     "vitest": "^4.0.18",
     "vue": "^3.5.29",
     "vue-demi": "^0.14.10",
