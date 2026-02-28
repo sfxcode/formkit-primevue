@@ -3,6 +3,7 @@ import type { FormKitFrameworkContext } from '@formkit/core'
 import type { RadioButtonProps } from 'primevue/radiobutton'
 
 import type { PropType } from 'vue'
+import { computed } from 'vue'
 import { useFormKitInput } from '../composables'
 
 export interface FormKitPrimeRadioButtonProps {
@@ -23,11 +24,15 @@ const props = defineProps({
 })
 
 const { unstyled, isInvalid, handleChange, handleBlur, modelValue } = useFormKitInput(props.context)
+
+const optionsClass = computed(() => props.context?.optionsClass ?? '')
+const optionClass = computed(() => props.context?.optionClass ?? '')
+const labelClass = computed(() => props.context?.labelClass ?? '')
 </script>
 
 <template>
-  <div class="p-formkit p-formkit-options" :class="context.optionsClass">
-    <div v-for="option in context.options" :key="option.value" class="p-formkit-option" :class="context.optionClass">
+  <div class="p-formkit p-formkit-options" :class="optionsClass">
+    <div v-for="option in context.options" :key="option.value" class="p-formkit-option" :class="optionClass">
       <RadioButton
         :id="context.id"
         v-model="modelValue"
@@ -47,7 +52,7 @@ const { unstyled, isInvalid, handleChange, handleBlur, modelValue } = useFormKit
         @change="handleChange"
         @blur="handleBlur"
       />
-      <label :for="option.value" :class="context.labelClass">{{ option.label }}</label>
+      <label :for="option.value" :class="labelClass">{{ option.label }}</label>
     </div>
   </div>
 </template>

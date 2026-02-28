@@ -32,35 +32,39 @@ const getListValues = computed(() => {
   }
   return values
 })
+
+const dividerClass = computed(() => props.context?.dividerClass || '')
+const itemClass = computed(() => props.context?.itemClass || '')
+const listItemsClass = computed(() => props.context?.attrs?.class || '')
 </script>
 
 <template>
   <div class="p-formkit p-output-list">
     <FormKitIcon v-if="hasPrefixIcon" :icon-class="context?.iconPrefix as string" :on-click="context?.onIconPrefixClicked as (() => void)" position="prefix" />
     <FormKitPrefix v-if="hasPrefix && listStyle === 'span'" :prefix="context?.prefix as string" />
-    <span v-if="listStyle === 'span'" :id="context?.id" :style="context?.attrs?.style" class="p-output-list-items" :class="context?.attrs?.class">
+    <span v-if="listStyle === 'span'" :id="context?.id" :style="context?.attrs?.style" class="p-output-list-items" :class="listItemsClass">
       <template v-for="(value, index) of getListValues" :key="index">
-        <span v-if="index !== 0" class="p-output-list-divider" :class="context?.dividerClass">{{ context?.divider ?? ', ' }}</span>
-        <span class="p-output-list-item" :class="context?.itemClass">{{ value }}</span>
+        <span v-if="index !== 0" class="p-output-list-divider" :class="dividerClass">{{ context?.divider ?? ', ' }}</span>
+        <span class="p-output-list-item" :class="itemClass">{{ value }}</span>
       </template>
     </span>
-    <div v-if="listStyle === 'div'" :id="context?.id" :style="context?.attrs?.style" class="p-output-list-items" :class="context?.attrs?.class">
+    <div v-if="listStyle === 'div'" :id="context?.id" :style="context?.attrs?.style" class="p-output-list-items" :class="listItemsClass">
       <template v-for="(value, index) of getListValues" :key="index">
-        <div class="p-output-list-item" :class="context?.itemClass">
+        <div class="p-output-list-item" :class="itemClass">
           {{ value }}
         </div>
       </template>
     </div>
-    <ul v-if="listStyle === 'ul'" :id="context?.id" :style="context?.attrs?.style" class="p-output-list-items" :class="context?.attrs?.class">
+    <ul v-if="listStyle === 'ul'" :id="context?.id" :style="context?.attrs?.style" class="p-output-list-items" :class="listItemsClass">
       <li v-for="(value, index) of getListValues" :key="index">
-        <span class="p-output-list-item" :class="context?.itemClass">
+        <span class="p-output-list-item" :class="itemClass">
           {{ value }}
         </span>
       </li>
     </ul>
-    <ol v-if="listStyle === 'ol'" :id="context?.id" :style="context?.attrs?.style" class="p-output-list-items" :class="context?.attrs?.class">
+    <ol v-if="listStyle === 'ol'" :id="context?.id" :style="context?.attrs?.style" class="p-output-list-items" :class="listItemsClass">
       <li v-for="(value, index) of getListValues" :key="index">
-        <span class="p-output-list-item" :class="context?.itemClass">
+        <span class="p-output-list-item" :class="itemClass">
           {{ value }}
         </span>
       </li>
