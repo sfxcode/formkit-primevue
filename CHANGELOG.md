@@ -1,3 +1,23 @@
+## v3.3.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.10...v3.3.0)
+
+### 🩹 Fixes
+
+- Update addInsertButton logic to correctly handle node insertion ([43c9c21](https://github.com/sfxcode/formkit-primevue/commit/43c9c21))
+- Update v-model bindings to use computed modelValue for better reactivity and fix linting errors ([d287fbb](https://github.com/sfxcode/formkit-primevue/commit/d287fbb))
+- Update release script to use minor versioning for changelog generation ([c36738f](https://github.com/sfxcode/formkit-primevue/commit/c36738f))
+- Refactor class bindings in PrimeOutputList and PrimeRadioButton for improved reactivity ([c5f8a42](https://github.com/sfxcode/formkit-primevue/commit/c5f8a42))
+
+### 🏡 Chore
+
+- Update devDependencies to latest versions ([77b9950](https://github.com/sfxcode/formkit-primevue/commit/77b9950))
+- Update packageManager version to pnpm@10.30.3 ([b03233c](https://github.com/sfxcode/formkit-primevue/commit/b03233c))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.2.10
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.9...v3.2.10)
