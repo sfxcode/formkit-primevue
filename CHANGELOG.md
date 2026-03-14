@@ -1,3 +1,24 @@
+## v3.3.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.3.0...v3.3.3)
+
+### 🩹 Fixes
+
+- Update release script to use patch versioning for changelog generation ([e2aab8b](https://github.com/sfxcode/formkit-primevue/commit/e2aab8b))
+- Update Unocss configuration and upgrade vitepress to alpha.16 ([8485b06](https://github.com/sfxcode/formkit-primevue/commit/8485b06))
+- Update dependencies in package.json for improved compatibility and performance ([09c66de](https://github.com/sfxcode/formkit-primevue/commit/09c66de))
+- Refactor useInputEditor to improve data handling and type definitions ([232e07b](https://github.com/sfxcode/formkit-primevue/commit/232e07b))
+- Simplify VITE_APP_BUILD_EPOCH assignment using Date.now() ([8e6fa6a](https://github.com/sfxcode/formkit-primevue/commit/8e6fa6a))
+- Disable prefer-static-regex rule in ESLint configuration ([6cb835f](https://github.com/sfxcode/formkit-primevue/commit/6cb835f))
+- Update release script to remove minor version bump from changelogen ([caa8bd3](https://github.com/sfxcode/formkit-primevue/commit/caa8bd3))
+- Bump version to 3.3.1 in package.json ([6193944](https://github.com/sfxcode/formkit-primevue/commit/6193944))
+- Bump version to 3.3.2 in package.json ([972b46c](https://github.com/sfxcode/formkit-primevue/commit/972b46c))
+- Update release script to include --release flag for changelogen ([c4e928e](https://github.com/sfxcode/formkit-primevue/commit/c4e928e))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.3.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.2.10...v3.3.0)
