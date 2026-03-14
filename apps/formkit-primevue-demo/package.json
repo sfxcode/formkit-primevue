@@ -1,0 +1,83 @@
+{
+  "name": "@sfxcode/formkit-primevue",
+  "version": "3.3.0",
+  "homepage": "https://github.com/sfxcode/formkit-primevue",
+  "license": "MIT",
+  "author": {
+    "name": "Tom",
+    "email": "tom@sfxcode.com"
+  },
+  "contributors": [
+    "sfxcode <tom@sfxcode.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfxcode/formkit-primevue.git"
+  },
+  "files": [
+    "*.css",
+    "*.scss",
+    "components.d.ts",
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "vue-tsc --build --force && unbuild",
+    "dev": "vite serve src",
+    "dev:build": "vite build src",
+    "dev:preview": "vite preview src",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@formkit/addons": "catalog:",
+    "@formkit/core": "catalog:",
+    "@formkit/i18n": "catalog:",
+    "@formkit/inputs": "catalog:",
+    "@formkit/vue": "catalog:",
+    "consola": "catalog:",
+    "primeicons": "catalog:",
+    "primevue": "catalog:",
+    "vue-i18n": "catalog:"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:",
+    "@formkit/drag-and-drop": "catalog:",
+    "@primeuix/themes": "catalog:",
+    "@unocss/preset-icons": "catalog:",
+    "@unocss/preset-uno": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/compiler-sfc": "catalog:",
+    "@vue/server-renderer": "catalog:",
+    "@vue/tsconfig": "catalog:",
+    "@vueuse/core": "catalog:",
+    "@vueuse/head": "catalog:",
+    "chart.js": "catalog:",
+    "consola": "catalog:",
+    "cookie": "catalog:",
+    "esbuild": "catalog:",
+    "eslint": "catalog:",
+    "happy-dom": "catalog:",
+    "json-editor-vue": "catalog:",
+    "sass": "catalog:",
+    "tslib": "catalog:",
+    "typescript": "catalog:",
+    "unbuild": "catalog:",
+    "unocss": "catalog:",
+    "unplugin-auto-import": "catalog:",
+    "unplugin-vue-components": "catalog:",
+    "vite": "catalog:",
+    "vite-plugin-dts": "catalog:",
+    "vite-plugin-eslint": "catalog:",
+    "vite-plugin-pages": "catalog:",
+    "vite-ssg": "catalog:",
+    "vitest": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:",
+    "vue-tsc": "catalog:"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.0"
+  },
+  "packageManager": "pnpm@10.30.3+sha512.c961d1e0a2d8e354ecaa5166b822516668b7f44cb5bd95122d590dd81922f606f5473b6d23ec4a5be05e7fcd18e8488d47d978bbe981872f1145d06e9a740017"
+}

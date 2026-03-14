@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "formkit-primevue": ["../../../packages/formkit-primevue-core/src"]
+    },
+    "types": ["vite/client"]
+  },
+  "include": ["./**/*"]
+}
