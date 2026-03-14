@@ -1,0 +1,36 @@
+{
+  "name": "@sfxcode/formkit-primevue",
+  "type": "module",
+  "version": "3.3.3",
+  "author": {
+    "name": "Tom",
+    "email": "tom@sfxcode.com"
+  },
+  "contributors": [
+    "sfxcode <tom@sfxcode.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/sfxcode/formkit-primevue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfxcode/formkit-primevue.git"
+  },
+  "scripts": {
+    "ready": "vp fmt && vp lint && vp run test -r && vp run build -r",
+    "prepare": "vp config",
+    "docs:dev": "vitepress dev apps/docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "dependencies": {
+    "unocss": "catalog:",
+    "vitepress": "catalog:"
+  },
+  "devDependencies": {
+    "vite-plus": "catalog:"
+  },
+  "engines": {
+    "node": ">=24.14.0"
+  },
+  "packageManager": "pnpm@10.32.1"
+}
