@@ -8,7 +8,7 @@ import Pages from 'vite-plugin-pages'
 import pkg from '../package.json'
 
 // eslint-disable-next-line node/prefer-global/process
-process.env.VITE_APP_BUILD_EPOCH = new Date().getTime().toString()
+process.env.VITE_APP_BUILD_EPOCH = Date.now().toString()
 // eslint-disable-next-line node/prefer-global/process
 process.env.VITE_APP_VERSION = pkg.version
 
