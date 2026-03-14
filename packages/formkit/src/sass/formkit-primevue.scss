@@ -1,0 +1,399 @@
+@use "sass:math";
+@use "sass:map";
+
+$gutter-width: 0.5rem;
+
+// Breakpoints e.g. https://tailwindcss.com/docs/responsive-design
+$grid-breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+  xxl: 1536px,
+) !default;
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map.get($breakpoints, $name);
+  @if $min != 0 {
+    @return $min;
+  } @else {
+    @return null;
+  }
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+:root {
+  --formkit-error-color: #ef9a9a;
+}
+
+.formkit-form {
+  // General message item styling
+  .formkit-messages {
+    margin: 0.125rem 0;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .formkit-message {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    color: var(--formkit-error-color);
+    font-size: 0.8rem;
+  }
+
+  // Single form element
+  .formkit-outer {
+    padding-bottom: 0.8rem;
+
+    .formkit-messages {
+      margin: 0.125rem 0;
+      padding-top: 0.25rem;
+      padding-left: 0;
+    }
+
+    .formkit-inner {
+      .p-formkit {
+        .p-formkit-icon {
+          box-sizing: border-box;
+          width: 100%;
+        }
+
+        .p-inputtext,
+        .p-textarea,
+        .p-password,
+        .p-multiselect,
+        .p-select,
+        .p-editor {
+          box-sizing: border-box;
+          width: 100%;
+
+          &.p-colorpicker-preview {
+            width: 2rem;
+          }
+        }
+      }
+    }
+
+    .formkit-help {
+      margin: 0.25rem 0 0 0;
+      font-size: 0.8rem;
+      color: var(--text-color-secondary);
+    }
+  }
+
+  // Label for single form element
+  .formkit-label {
+    display: block;
+    margin: 0;
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+    font-size: 0.8rem;
+  }
+
+  // Wrapper for input element plus prefix, suffix and icons
+  .p-formkit {
+    > * {
+      margin-right: 0.5rem;
+
+      &:last-child,
+      &:only-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // Used in Prime RadioButton
+  .p-formkit-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .p-formkit-option {
+      display: flex;
+      align-items: center;
+      label {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+
+  // Do we need this?
+  .formkit-fieldset {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+
+    &:focus-within {
+      border: 0;
+    }
+
+    & > .formkit-help {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+
+  // Actually not needed
+  .formkit-legend {
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+  // Submit button etc.
+  .formkit-actions {
+    padding-top: 0.5rem;
+    display: flex;
+    button {
+      margin-right: 0.5rem;
+    }
+  }
+
+  .p-action-buttons {
+    margin-top: 0.25rem;
+    .p-button {
+      margin-right: 0.5rem;
+    }
+    span {
+      .p-space {
+        margin-right: 3rem;
+      }
+    }
+  }
+
+  .p-chip-item {
+    align-items: center;
+    background: var(--p-surface-500);
+    color: var(--p-surface-0);
+    border-radius: 1rem;
+    padding: 0.2rem 0.5rem;
+  }
+}
+
+// data view only
+.p-formkit-data-view {
+  .formkit-outer {
+    padding-bottom: 0.5rem;
+  }
+
+  &.form-horizontal {
+    padding-bottom: 0.8rem;
+  }
+
+  .formkit-help {
+    padding-top: 0.25rem;
+    margin: 0;
+  }
+
+  ul,
+  ol {
+    padding-inline-start: 1rem;
+    margin-block-start: 0;
+    margin-block-end: 0;
+  }
+}
+
+// data edit only
+.p-formkit-data-edit {
+  .formkit-label {
+    //font-weight: normal;
+  }
+
+  // specific checkbox stylings
+  .formkit-outer[data-type="primeCheckbox"] {
+    //padding-left: 0;
+
+    .formkit-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+
+      .formkit-inner {
+        width: auto !important;
+      }
+
+      label {
+        width: auto;
+        order: 2;
+        padding: 0.125rem 0;
+
+        &:after {
+          content: "";
+        }
+
+        // styling of output when label is used in schema
+        + .formkit-inner {
+          margin-left: 0 !important;
+          order: 1;
+          flex-basis: 2rem;
+          flex-grow: 0;
+          flex-shrink: 0;
+          overflow: hidden;
+          // styling of suffix when suffix is used in addition to label
+          &:has(label) {
+            flex-grow: 1;
+            flex-basis: 100%;
+          }
+        }
+      }
+
+      // styling when both prefix and suffix are used in schema
+      label:first-child:nth-last-child(3),
+      label:first-child:nth-last-child(3) ~ label {
+        width: auto;
+      }
+
+      label:first-child:nth-last-child(3) {
+        order: 1;
+
+        + div.p-checkbox {
+          order: 2;
+          width: auto;
+        }
+      }
+
+      label:first-child:nth-last-child(3) ~ label {
+        order: 3;
+      }
+
+      // end styling when both prefix and suffix are used in schema
+
+      // styling of output when only suffix is used in schema
+      .formkit-inner:first-child {
+        margin-left: 0 !important;
+
+        .p-formkit {
+          display: flex;
+        }
+      }
+
+      .p-checkbox:not(:only-child) {
+        width: 2rem;
+        overflow: hidden;
+      }
+    }
+
+    .formkit-help {
+      width: auto !important;
+      //padding-left: 2rem;
+    }
+  }
+}
+
+// Debug
+.p-formkit-data-debug {
+  pre,
+  span {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+}
+
+// Change column behaviour in larger views
+@include media-breakpoint-up(lg) {
+  .formkit-form {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -$gutter-width;
+    margin-right: -$gutter-width;
+
+    & > * {
+      flex-shrink: 0;
+      width: 100%;
+      max-width: 100%;
+      padding-left: $gutter-width;
+      padding-right: $gutter-width;
+    }
+  }
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      width: math.percentage(math.div($i, 12));
+    }
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .formkit-form {
+    &.form-horizontal {
+      .formkit-wrapper {
+        display: flex;
+
+        label {
+          display: inline-block;
+          padding: 0 0.25rem 0 0;
+          font-size: inherit;
+
+          &:after {
+            content: ":";
+          }
+        }
+      }
+
+      &.form-horizontal-checkbox-indent {
+        .formkit-outer[data-type="primeCheckbox"] {
+          @include media-breakpoint-up(md) {
+            padding-left: calc((4 / 12) * 100%);
+          }
+        }
+      }
+    }
+
+    .p-formkit-data-view & {
+      &.form-horizontal {
+        label {
+          white-space: nowrap;
+        }
+      }
+    }
+
+    .p-formkit-data-edit & {
+      &.form-horizontal {
+        .formkit-outer {
+          width: 100%;
+
+          label {
+            width: calc((4 / 12) * 100%);
+            padding-top: 0.25rem;
+            line-height: normal;
+          }
+
+          .formkit-inner {
+            width: calc((8 / 12) * 100%);
+          }
+        }
+
+        div[data-type="primeCheckbox"] {
+          .formkit-inner {
+            margin-left: auto;
+
+            .p-formkit {
+              display: flex;
+            }
+
+            label {
+              width: auto;
+              padding: 0;
+            }
+          }
+        }
+
+        .formkit-help,
+        .formkit-messages {
+          width: calc((8 / 12) * 100%);
+          margin-left: auto;
+        }
+      }
+    }
+  }
+}

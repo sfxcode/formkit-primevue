@@ -1,0 +1,111 @@
+{
+  "name": "@sfxcode/formkit-primevue",
+  "type": "module",
+  "version": "3.3.3",
+  "author": {
+    "name": "Tom",
+    "email": "tom@sfxcode.com"
+  },
+  "contributors": [
+    "sfxcode <tom@sfxcode.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/sfxcode/formkit-primevue",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfxcode/formkit-primevue.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.mjs",
+      "require": "./dist/components/index.js"
+    },
+    "./composables": {
+      "types": "./dist/composables/index.d.ts",
+      "import": "./dist/composables/index.mjs",
+      "require": "./dist/composables/index.js"
+    },
+    "./definitions": {
+      "types": "./dist/definitions/index.d.ts",
+      "import": "./dist/definitions/index.mjs",
+      "require": "./dist/definitions/index.js"
+    },
+    "./plugins": {
+      "types": "./dist/plugins/index.d.ts",
+      "import": "./dist/plugins/index.mjs",
+      "require": "./dist/plugins/index.js"
+    },
+    "./dist/sass/formkit-primevue.scss": {
+      "import": "./dist/sass/formkit-primevue.scss",
+      "require": "./dist/sass/formkit-primevue.scss"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "*",
+        "dist/*",
+        "dist/*.d.ts",
+        "dist/*/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "*.css",
+    "*.scss",
+    "components.d.ts",
+    "dist"
+  ],
+  "scripts": {
+    "build": "vue-tsc --build --force && unbuild",
+    "dev": "vue-tsc --build",
+    "dev:build": "vite build dev",
+    "dev:preview": "vite preview dev",
+    "release": "npm run lint && npm run build && changelogen --patch --release  && npm publish --access public && git push --follow-tags",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "@formkit/addons": "catalog:",
+    "@formkit/core": "catalog:",
+    "@formkit/inputs": "catalog:",
+    "@formkit/vue": "catalog:",
+    "primeicons": "catalog:",
+    "primevue": "catalog:",
+    "vue-i18n": "catalog:"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "catalog:",
+    "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "catalog:",
+    "@vue/tsconfig": "catalog:",
+    "add": "catalog:",
+    "bumpp": "^10.4.1",
+    "consola": "catalog:",
+    "fs-extra": "catalog:",
+    "sass": "catalog:",
+    "typescript": "catalog:",
+    "unbuild": "catalog:",
+    "unplugin-vue": "catalog:",
+    "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.11",
+    "vite-plus": "catalog:",
+    "vitest": "npm:@voidzero-dev/vite-plus-test@^0.1.11",
+    "vue": "catalog:",
+    "vue-sfc-transformer": "catalog:",
+    "vue-tsc": "catalog:"
+  }
+}
