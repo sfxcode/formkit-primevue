@@ -27,30 +27,30 @@ For example to place 2 elements side by side give both of them the **outerClass*
 ```ts
 const formkitItems = [
   {
-    $formkit: 'primePassword',
-    name: 'password',
-    label: 'Password',
-    help: 'Enter your new password.',
-    validation: 'required|length:5,16',
+    $formkit: "primePassword",
+    name: "password",
+    label: "Password",
+    help: "Enter your new password.",
+    validation: "required|length:5,16",
     feedback: true,
-    outerClass: 'col-6',
+    outerClass: "col-6",
   },
   {
-    $formkit: 'primePassword',
-    name: 'password_confirm',
-    label: 'Confirm password',
-    help: 'Enter your new password again.',
-    validation: 'required|confirm',
-    validationLabel: 'password confirmation',
-    outerClass: 'col-6',
+    $formkit: "primePassword",
+    name: "password_confirm",
+    label: "Confirm password",
+    help: "Enter your new password again.",
+    validation: "required|confirm",
+    validationLabel: "password confirmation",
+    outerClass: "col-6",
   },
-]
+];
 ```
 
 ## Extended Styling
 
 - All components are wrapped in a div with a **p-formkit** class
-- Use *outerClass*, *wrapperClass*, *innerClass* to add additional styleclasses to formkit generated classes
+- Use _outerClass_, _wrapperClass_, _innerClass_ to add additional styleclasses to formkit generated classes
 - Most Prime Components have access to class / styles attributes
 - Some Components have addtional properties for the rendered inputs (eg: optionClass, labelClass in primeRadioButton)
 - PT and PTOptions are available ([https://primevue.org/passthrough/](https://primevue.org/passthrough/))
@@ -65,18 +65,18 @@ You can apply custom classes or direct style attributes to your FormKit PrimeVue
 ```js
 const schema = [
   {
-    $formkit: 'primeInputText',
-    name: 'name',
-    label: 'Styling by class',
-    class: 'stylingSampleClass',
+    $formkit: "primeInputText",
+    name: "name",
+    label: "Styling by class",
+    class: "stylingSampleClass",
   },
   {
-    $formkit: 'primeInputText',
-    name: 'name2',
-    label: 'Styling by style attribute',
-    style: { color: 'gray', fontWeight: 700 },
+    $formkit: "primeInputText",
+    name: "name2",
+    label: "Styling by style attribute",
+    style: { color: "gray", fontWeight: 700 },
   },
-]
+];
 ```
 
 ```scss
@@ -98,18 +98,18 @@ You can target the outer or inner wrapper of a component for more granular styli
 ```js
 const schema = [
   {
-    $formkit: 'primeInputText',
-    name: 'name',
-    label: 'Styling outer class',
-    outerClass: 'stylingOuterClass',
+    $formkit: "primeInputText",
+    name: "name",
+    label: "Styling outer class",
+    outerClass: "stylingOuterClass",
   },
   {
-    $formkit: 'primeInputText',
-    name: 'name2',
-    label: 'Styling inner class',
-    innerClass: 'stylingSampleClass',
+    $formkit: "primeInputText",
+    name: "name2",
+    label: "Styling inner class",
+    innerClass: "stylingSampleClass",
   },
-]
+];
 ```
 
 ```scss
@@ -130,18 +130,18 @@ Use the grid system by assigning `outerClass` values like `col-6`, `col-8`, etc.
 ```js
 const schema = [
   {
-    $formkit: 'primeInputText',
-    name: 'name',
-    label: 'col-8',
-    outerClass: 'col-8',
+    $formkit: "primeInputText",
+    name: "name",
+    label: "col-8",
+    outerClass: "col-8",
   },
   {
-    $formkit: 'primeInputText',
-    name: 'name2',
-    label: 'col-4',
-    outerClass: 'col-4',
+    $formkit: "primeInputText",
+    name: "name2",
+    label: "col-4",
+    outerClass: "col-4",
   },
-]
+];
 ```
 
 ---
@@ -153,19 +153,19 @@ Combine grid classes and custom layout for horizontal forms:
 ```js
 const schema = [
   {
-    $formkit: 'primeInputText',
-    name: 'email',
-    label: 'Email',
-    outerClass: 'col-6',
+    $formkit: "primeInputText",
+    name: "email",
+    label: "Email",
+    outerClass: "col-6",
   },
   {
-    $formkit: 'primePassword',
-    name: 'password',
-    label: 'Password',
-    outerClass: 'col-5',
+    $formkit: "primePassword",
+    name: "password",
+    label: "Password",
+    outerClass: "col-5",
   },
   // ...
-]
+];
 ```
 
 ---
@@ -176,25 +176,25 @@ You can use the `pt` property to pass styles or classes directly to PrimeVue com
 
 ```js
 const pt_content = {
-  root: { style: 'font-weight: 600;color: green;' },
-}
+  root: { style: "font-weight: 600;color: green;" },
+};
 const pt_content_style_class = {
-  root: { class: '!text-red-500' },
-}
+  root: { class: "!text-red-500" },
+};
 const schema = [
   {
-    $formkit: 'primeInputText',
-    name: 'name',
-    label: 'PassThrough with style',
+    $formkit: "primeInputText",
+    name: "name",
+    label: "PassThrough with style",
     pt: pt_content,
   },
   {
-    $formkit: 'primeInputText',
-    name: 'name2',
-    label: 'PassThrough with tailwind like style class',
+    $formkit: "primeInputText",
+    name: "name2",
+    label: "PassThrough with tailwind like style class",
     pt: pt_content_style_class,
   },
-]
+];
 ```
 
 ---

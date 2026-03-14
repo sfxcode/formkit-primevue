@@ -3,7 +3,7 @@ import type { App } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import DisplayFormComponents from './components/DisplayFormComponents.vue'
 import Todo from './components/Todo.vue'
-import 'uno.css'
+// import 'uno.css'
 
 export default {
   ...DefaultTheme,

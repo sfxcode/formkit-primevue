@@ -12,7 +12,5 @@ This is useful for indicating to users that the field is required.
 To use the AsteriskPlugin, you need to import it and add it to your FormKit configuration file.
 
 ```ts
-plugins: [
-  addPrimeAsteriskPlugin,
-]
+plugins: [addPrimeAsteriskPlugin];
 ```

@@ -6,6 +6,3 @@ FormKit Schema usage was the main reason for this library. The schema is used to
 
 However, if you do not want to use the schema, you can also use the FormKit components directly.
 
-## FormKit Components
-
-<<< ../../dev/pages/data/WithoutSchema.vue{vue}

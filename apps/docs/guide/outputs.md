@@ -16,13 +16,14 @@ numberFormats / datetimeFormats from vue-i18n are used to display the values acc
 
 ```ts
 const formkitItem = {
-  $formkit: 'primeOutputNumber',
-  name: 'number',
-  format: 'decimal', // vue-i18n format
-}
+  $formkit: "primeOutputNumber",
+  name: "number",
+  format: "decimal", // vue-i18n format
+};
 ```
 
 ## Naming in FormKit
+
 Outputs are used in schema with **prime** as prefix and the **output name** as suffix.
 
 E.g. OutputText -> primeOutputText

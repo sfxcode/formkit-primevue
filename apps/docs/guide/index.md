@@ -30,30 +30,28 @@ FormKit's schema is a JSON-serializable data format for storing DOM structures a
 PrimeVue inputs are prefixed with prime and try to use as many properties as possible from their definition.
 
 ```ts
-const schema = reactive(
-  [
-    {
-      $el: 'h2',
-      children: ['Register ', '$email'],
-    },
-    {
-      $el: 'h3',
-      children: 'Header Text H3',
-    },
-    {
-      $formkit: 'primeInputText',
-      name: 'email',
-      label: 'Email',
-      help: 'This will be used for your account.',
-      validation: 'required|email',
-    },
-    {
-      $formkit: 'primeTextarea',
-      name: 'myText',
-      label: 'Text',
-      validation: '',
-      rows: '3',
-    }
-  ]
-)
+const schema = reactive([
+  {
+    $el: "h2",
+    children: ["Register ", "$email"],
+  },
+  {
+    $el: "h3",
+    children: "Header Text H3",
+  },
+  {
+    $formkit: "primeInputText",
+    name: "email",
+    label: "Email",
+    help: "This will be used for your account.",
+    validation: "required|email",
+  },
+  {
+    $formkit: "primeTextarea",
+    name: "myText",
+    label: "Text",
+    validation: "",
+    rows: "3",
+  },
+]);
 ```

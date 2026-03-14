@@ -1,6 +1,6 @@
 import Unocss from 'unocss/vite'
 import { defineConfig } from 'vitepress'
-import { version } from '../../package.json'
+import { version } from '../../../packages/formkit-primevue/package.json'
 
 export default defineConfig({
   title: 'FormKit-PrimeVue',
@@ -32,13 +32,6 @@ export default defineConfig({
     headers: {
       level: [0, 0],
     },
-  },
-  vite: {
-    plugins: [
-      Unocss({
-        configFile: './docs/uno.config.ts',
-      }),
-    ],
   },
 })
 
