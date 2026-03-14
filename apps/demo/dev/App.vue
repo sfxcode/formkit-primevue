@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import AppFooter from '@/components/app/AppFooter.vue'
-import AppTopBar from '@/components/app/AppTopbar.vue'
+import AppFooter from "@/components/app/AppFooter.vue";
+import AppTopBar from "@/components/app/AppTopbar.vue";
 </script>
 
 <template>
@@ -16,6 +16,6 @@ import AppTopBar from '@/components/app/AppTopbar.vue'
   </main>
 </template>
 
-<style lang='scss'>
-@use 'App.scss';
+<style lang="scss">
+@use "App.scss";
 </style>

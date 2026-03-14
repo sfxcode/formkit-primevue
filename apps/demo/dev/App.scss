@@ -1,4 +1,4 @@
-@use "../src/sass/formkit-primevue";
+@use "../../../packages/formkit/src/sass/formkit-primevue";
 
 :root {
   font-family: "Inter var", sans-serif;
@@ -46,11 +46,14 @@ a {
     font-size: 1rem;
     font-family: inherit;
     font-feature-settings: inherit;
-    transition: background var(--p-button-transition-duration), color var(--p-button-transition-duration), border-color var(--p-button-transition-duration), outline-color var(--p-button-transition-duration), box-shadow var(--p-button-transition-duration);
+    transition:
+      background var(--p-button-transition-duration),
+      color var(--p-button-transition-duration),
+      border-color var(--p-button-transition-duration),
+      outline-color var(--p-button-transition-duration),
+      box-shadow var(--p-button-transition-duration);
     border-radius: var(--p-button-border-radius);
     outline-color: transparent;
     gap: var(--p-button-gap);
   }
 }
-
-

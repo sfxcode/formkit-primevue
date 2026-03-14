@@ -2,7 +2,7 @@
   "extends": "../tsconfig.json",
   "compilerOptions": {
     "paths": {
-      "my-library": ["../src"]
+      "my-library": ["../../../packages/formkit/src"]
     },
     "types": ["vite/client"]
   },
