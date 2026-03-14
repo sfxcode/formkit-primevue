@@ -1,19 +1,19 @@
-<script setup lang='ts'>
-import { FormKit } from '@formkit/vue'
-import { FormKitDataEdit } from 'my-library'
-import { useMessages } from '../../composables/messages'
+<script setup lang="ts">
+import { FormKit } from "@formkit/vue";
+import { FormKitDataEdit } from "my-library";
+import { useMessages } from "../../composables/messages";
 
-const data = ref({ option: 'hourly' })
+const data = ref({ option: "hourly" });
 
 const options = [
-  { label: 'Every page load', value: 'refresh' },
-  { label: 'Every hour', value: 'hourly' },
-  { label: 'Every day', value: 'daily' },
-]
+  { label: "Every page load", value: "refresh" },
+  { label: "Every hour", value: "hourly" },
+  { label: "Every day", value: "daily" },
+];
 
-const { showSuccessMessage } = useMessages()
+const { showSuccessMessage } = useMessages();
 async function submitHandler() {
-  showSuccessMessage('Form Submitted ...', 'Form submitted successfully')
+  showSuccessMessage("Form Submitted ...", "Form submitted successfully");
 }
 </script>
 
@@ -35,20 +35,14 @@ async function submitHandler() {
           </div>
         </template>
         <template #header>
-          <div class="p-4">
-            Select Option:
-          </div>
+          <div class="p-4">Select Option:</div>
         </template>
         <template #footer>
-          <div class="p-4 color-gray-400">
-            More Options to come soon ...
-          </div>
+          <div class="p-4 color-gray-400">More Options to come soon ...</div>
         </template>
       </FormKit>
     </FormKitDataEdit>
   </PrimeData>
 </template>
 
-<style lang='scss' scoped>
-
-</style>
+<style lang="scss" scoped></style>

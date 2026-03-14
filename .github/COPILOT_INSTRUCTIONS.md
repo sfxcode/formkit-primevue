@@ -1,6 +1,7 @@
 # GitHub Copilot Instructions for Working with Vue and Vite
 
 ## General Guidelines
+
 - Use the Vue 3 Composition API for all new components and composables.
 - Prefer `<script setup lang="ts">` for single-file components (SFCs) - it's the recommended approach for Vue 3.
 - Use TypeScript for all code (components, composables, utils, etc.) with strict mode enabled.
@@ -12,6 +13,7 @@
 - Use generic components with `generic` attribute in `<script setup>` when needed for type safety.
 
 ## Vite
+
 - Use Vite for local development and builds (`pnpm dev`, `pnpm build`).
 - Place Vite config in `vite.config.ts` and use plugins as needed (e.g., Vue, UnoCSS).
 - Use Vite aliases (e.g., `@/` for `src/`) for imports when possible.
@@ -23,6 +25,7 @@
 - Use `vite-plugin-compression` for gzip/brotli compression in production builds.
 
 ## Styling
+
 - Use SCSS for styles and import shared variables/mixins from `src/sass/`.
 - Scope styles in components unless global styles are required.
 - Use CSS variables (custom properties) for theming and customization.
@@ -35,6 +38,7 @@
 - Optimize for dark mode with `prefers-color-scheme` media query and CSS variables.
 
 ## Best Practices
+
 - Use `defineProps` and `defineEmits` in `<script setup>` for props and events.
 - Use `defineModel()` for two-way binding (v-model) - simplifies prop/emit patterns.
 - Use `ref` and `reactive` for state management within components (prefer `ref` for primitives).
@@ -53,6 +57,7 @@
 - Use TypeScript generics in composables for better type inference.
 
 ## TypeScript Best Practices
+
 - Enable strict mode in `tsconfig.json` for maximum type safety.
 - Use `as const` for literal types and readonly objects/arrays.
 - Prefer `interface` over `type` for object shapes (better error messages).
@@ -67,6 +72,7 @@
 - Create custom type guards with `is` keyword for runtime type checking.
 
 ## Performance Best Practices
+
 - Use `v-once` for static content that never changes.
 - Use `v-memo` for expensive list rendering with memoization (Vue 3.2+).
 - Implement virtual scrolling for long lists (use libraries like `vue-virtual-scroller`).
@@ -82,6 +88,7 @@
 - Profile with Vue DevTools and Chrome DevTools Performance tab.
 
 ## Accessibility (a11y) Best Practices
+
 - Use semantic HTML elements (`<button>`, `<nav>`, `<main>`, etc.).
 - Provide proper ARIA labels and roles when semantic HTML isn't sufficient.
 - Ensure keyboard navigation works for all interactive elements.
@@ -97,6 +104,7 @@
 - Support prefers-reduced-motion for animations.
 
 ## Security Best Practices
+
 - Sanitize user input before rendering with `v-html` (prefer `v-text` when possible).
 - Use Content Security Policy (CSP) headers.
 - Validate and sanitize data on both client and server.
@@ -111,10 +119,12 @@
 - Use cryptographically secure random values (`crypto.randomUUID()`).
 
 ## Testing
+
 - Write unit tests for composables and components in the `test/` directory using Vitest.
 - Use the `@vue/test-utils` library for component testing.
 
 ## Vitest Best Practices
+
 - Place all test files in the `test/` directory and use the `.test.ts` or `.test.js` suffix.
 - Use descriptive test names and group related tests with `describe` blocks.
 - Prefer `import { describe, it, expect, vi } from 'vitest'` for consistency.
@@ -133,14 +143,17 @@
 - Document any custom test utilities or setup in a `test/README.md` if needed.
 
 ## Documentation
+
 - Document public APIs and complex logic with JSDoc/TSDoc comments.
 - Update the `docs/` directory for user-facing documentation.
 
 ## Histoire (Storybook Alternative)
+
 - Add stories for all components in the `stories/` directory using Histoire's `<Story>` and `<Variant>` blocks.
 - Use the `context` prop for output components to match FormKit conventions.
 
 ## PrimeVue Best Practices
+
 - Follow PrimeVue theming system with CSS variables for customization.
 - Use PrimeVue's built-in accessibility features (ARIA attributes, keyboard navigation).
 - Leverage PrimeVue's responsive design patterns and breakpoint system.
@@ -153,15 +166,18 @@
 - Test PrimeVue components thoroughly as they integrate with FormKit validation.
 
 ## FormKit
+
 This project integrates FormKit (https://formkit.com/) with PrimeVue components to create powerful, accessible forms.
 
 ### Core Concepts
+
 - **FormKit Schema**: Use schema-based form rendering for dynamic and flexible forms. Schema is a JSON-serializable format that defines form structure.
 - **FormKit Context**: The core of FormKit's reactivity system. Every input has a context object that contains node data, props, handlers, and state.
 - **FormKit Nodes**: The foundation of FormKit's architecture. Each form element is represented as a node in a tree structure.
 - **Input Types**: FormKit provides many built-in input types (text, email, number, etc.) and this project extends them with PrimeVue-based inputs.
 
 ### Component Development
+
 - Define custom PrimeVue-based FormKit inputs in `src/components/` directory (e.g., `PrimeInputText.vue`, `PrimeSelect.vue`).
 - Define custom output components for displaying data in `src/components/` (e.g., `PrimeOutputText.vue`, `PrimeOutputNumber.vue`).
 - Use composables like `useFormKitInput`, `useFormKitSection`, and `useFormKitSchema` for reusable logic.
@@ -170,6 +186,7 @@ This project integrates FormKit (https://formkit.com/) with PrimeVue components 
 - Emit proper events using `context.handlers.blur`, `context.handlers.touch` for proper validation timing.
 
 ### Schema Usage
+
 - Use FormKit schema for programmatic form generation and dynamic forms.
 - Schema supports `$el`, `$cmp`, and `$formkit` node types for different rendering needs.
 - Use schema functions and conditions (`$if`, `$for`) for dynamic behavior.
@@ -180,6 +197,7 @@ This project integrates FormKit (https://formkit.com/) with PrimeVue components 
 - Type-check schemas with TypeScript using FormKit's schema types.
 
 ### Validation
+
 - Use FormKit's built-in validation rules (required, email, number, min, max, etc.).
 - Create custom validation rules as needed and register them with FormKit.
 - Use `validation-visibility` prop to control when validation messages appear (blur, live, dirty, submit).
@@ -190,18 +208,21 @@ This project integrates FormKit (https://formkit.com/) with PrimeVue components 
 - Provide user-friendly validation messages using `validation-messages` prop or i18n.
 
 ### Props and Configuration
+
 - Use `defineProps` with proper TypeScript types for FormKit context and additional props.
 - Common props include: `label`, `help`, `placeholder`, `disabled`, `validation`, `validationMessages`.
 - Use `props` object from context to access all FormKit props.
 - Support `prefix` and `suffix` features using `FormKitPrefix` and `FormKitSuffix` components.
 
 ### Styling and Theming
+
 - FormKit uses section-based styling (outer, wrapper, inner, input, label, help, messages, etc.).
 - Use `classes` prop or config to customize section classes.
 - Integrate with PrimeVue's theming system for consistent UI.
 - Use SCSS for custom styles and ensure they work with both light and dark themes.
 
 ### Plugins and Extensions
+
 - Keep FormKit configuration and plugin registration in dedicated modules (e.g., `dev/modules/formkit.ts`).
 - Create plugins to extend FormKit functionality (custom inputs, validation rules, etc.).
 - Use `createInput` helper for registering custom input types with proper schema.
@@ -212,18 +233,21 @@ This project integrates FormKit (https://formkit.com/) with PrimeVue components 
 - Test plugins independently from components for better maintainability.
 
 ### Internationalization (i18n)
+
 - FormKit has built-in i18n support for validation messages and UI text.
 - Use FormKit's locale system for multi-language support.
 - Define custom message translations in locale files.
 - Access translated messages through FormKit's message system.
 
 ### Testing
+
 - Write unit tests for custom FormKit components and composables in `test/` directory.
 - Test validation logic, state management, and event handling.
 - Mock FormKit context when testing components in isolation.
 - Test schema generation and manipulation functions.
 
 ### Best Practices
+
 - Always use TypeScript for type safety with FormKit components.
 - Prefer composition API and `<script setup>` for all FormKit components.
 - Use FormKit's context object rather than direct DOM manipulation.
@@ -234,6 +258,7 @@ This project integrates FormKit (https://formkit.com/) with PrimeVue components 
 - Follow FormKit naming conventions (e.g., use `context` prop name consistently).
 
 ### Resources
+
 - Official FormKit documentation: https://formkit.com/
 - FormKit Inputs: https://formkit.com/inputs
 - FormKit Schema: https://formkit.com/essentials/schema
@@ -241,11 +266,12 @@ This project integrates FormKit (https://formkit.com/) with PrimeVue components 
 - FormKit Plugins: https://formkit.com/advanced/plugins
 
 ## VitePress Best Practices
+
 - Organize documentation in the `docs/` directory, following the structure of your codebase for easy navigation.
 - Use Markdown (`.md`) files for all documentation pages.
 - Use frontmatter (`---`) at the top of each Markdown file for metadata (title, description, etc.).
 - Structure guides, API references, and advanced topics in subfolders (e.g., `docs/guide/`, `docs/advanced/`).
-- Use code blocks with language annotations (e.g., ```ts, ```vue) for syntax highlighting.
+- Use code blocks with language annotations (e.g., `ts, `vue) for syntax highlighting.
 - Keep examples concise and relevant; link to source files or stories for full examples.
 - Use VitePress sidebar and navigation configuration for a clear, user-friendly doc site.
 - Document all public APIs, configuration options, and usage patterns.
@@ -256,6 +282,7 @@ This project integrates FormKit (https://formkit.com/) with PrimeVue components 
 - Preview documentation locally with `pnpm docs:dev` before publishing changes.
 
 ## PNPM Best Practices
+
 - Use `pnpm` for all dependency management (faster, more efficient than npm/yarn).
 - Use workspace protocol (`workspace:*`) for monorepo package references.
 - Leverage PNPM catalog for centralized dependency version management.
@@ -267,6 +294,7 @@ This project integrates FormKit (https://formkit.com/) with PrimeVue components 
 - Configure `shamefully-hoist=true` only if needed for compatibility.
 
 ## Miscellaneous
+
 - Keep dependencies up to date and avoid deprecated packages.
 - Use `crypto.randomUUID()` for unique IDs instead of external libraries.
 - Use Conventional Commits for commit messages to maintain a clear history.
@@ -279,6 +307,7 @@ This project integrates FormKit (https://formkit.com/) with PrimeVue components 
 - Optimize Core Web Vitals (LCP, FID/INP, CLS) for better user experience.
 - Implement proper SEO with meta tags, structured data, and semantic HTML.
 - Use service workers for offline functionality and improved performance.
+
 ---
 
 _These instructions are intended to help Copilot and contributors maintain consistency and quality when working with Vue and Vite in this project._

@@ -12,9 +12,9 @@ defineProps({
   },
   requiredSymbol: {
     type: String,
-    default: '*',
+    default: "*",
   },
-})
+});
 </script>
 
 <template>
@@ -23,6 +23,4 @@ defineProps({
   <span class="p-formkit-required">{{ requiredSymbol }}</span>
 </template>
 
-<style scoped lang="scss">
-
-</style>
+<style scoped lang="scss"></style>

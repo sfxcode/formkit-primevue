@@ -1,19 +1,19 @@
-<script setup lang='ts'>
-import JsonEditorVue from 'json-editor-vue'
-import { FormKitDataView } from 'my-library'
+<script setup lang="ts">
+import JsonEditorVue from "json-editor-vue";
+import { FormKitDataView } from "my-library";
 
-import { ref } from 'vue'
+import { ref } from "vue";
 
 const props = defineProps<{
-  header: string
-  schema: object
-  data: object
-  primeAttributes?: string
-  customAttributes?: string
-}>()
+  header: string;
+  schema: object;
+  data: object;
+  primeAttributes?: string;
+  customAttributes?: string;
+}>();
 
-const formSchema = ref(props.schema)
-const formData = ref(props.data)
+const formSchema = ref(props.schema);
+const formData = ref(props.data);
 </script>
 
 <template>
@@ -31,16 +31,16 @@ const formData = ref(props.data)
       <div class="">
         <Tabs value="0">
           <TabList>
-            <Tab value="0">
-              Schema Editor
-            </Tab>
-            <Tab value="1">
-              Data Editor
-            </Tab>
+            <Tab value="0"> Schema Editor </Tab>
+            <Tab value="1"> Data Editor </Tab>
           </TabList>
           <TabPanels>
             <TabPanel value="0">
-              <JsonEditorVue v-model="formSchema" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
+              <JsonEditorVue
+                v-model="formSchema"
+                v-bind="{ mode: 'tree' }"
+                class="jse-theme-dark"
+              />
             </TabPanel>
             <TabPanel value="1">
               <JsonEditorVue v-model="formData" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
@@ -52,7 +52,7 @@ const formData = ref(props.data)
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .jse-theme-dark {
   /* over all fonts, sizes, and colors */
   --jse-theme-color: #383e42;

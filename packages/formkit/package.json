@@ -1,7 +1,8 @@
 {
   "name": "@sfxcode/formkit-primevue",
-  "type": "module",
   "version": "3.3.3",
+  "homepage": "https://github.com/sfxcode/formkit-primevue",
+  "license": "MIT",
   "author": {
     "name": "Tom",
     "email": "tom@sfxcode.com"
@@ -9,11 +10,29 @@
   "contributors": [
     "sfxcode <tom@sfxcode.com>"
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/sfxcode/formkit-primevue",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sfxcode/formkit-primevue.git"
+  },
+  "files": [
+    "*.css",
+    "*.scss",
+    "components.d.ts",
+    "dist"
+  ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "*",
+        "dist/*",
+        "dist/*.d.ts",
+        "dist/*/index.d.ts"
+      ]
+    }
   },
   "exports": {
     ".": {
@@ -50,25 +69,6 @@
       "require": "./dist/style.css"
     }
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "*",
-        "dist/*",
-        "dist/*.d.ts",
-        "dist/*/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "*.css",
-    "*.scss",
-    "components.d.ts",
-    "dist"
-  ],
   "scripts": {
     "build": "vue-tsc --build --force && unbuild",
     "dev": "vue-tsc --build",

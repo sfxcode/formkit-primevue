@@ -1,7 +1,8 @@
 {
   "name": "@sfxcode/formkit-primevue",
-  "type": "module",
   "version": "3.3.3",
+  "homepage": "https://github.com/sfxcode/formkit-primevue",
+  "license": "MIT",
   "author": {
     "name": "Tom",
     "email": "tom@sfxcode.com"
@@ -9,12 +10,11 @@
   "contributors": [
     "sfxcode <tom@sfxcode.com>"
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/sfxcode/formkit-primevue",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sfxcode/formkit-primevue.git"
   },
+  "type": "module",
   "scripts": {
     "ready": "vp fmt && vp lint && vp run test -r && vp run build -r",
     "prepare": "vp config",

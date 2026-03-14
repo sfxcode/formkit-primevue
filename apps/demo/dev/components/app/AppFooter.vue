@@ -1,13 +1,14 @@
-<script setup lang='ts'>
-const version = ref(import.meta.env.VITE_APP_VERSION)
+<script setup lang="ts">
+const version = ref(import.meta.env.VITE_APP_VERSION);
 </script>
 
 <template>
   <div class="mt-8 layout-footer text-center text-gray-700">
-    <span class="font-medium ml-2">Formkit (1.7.x) - PrimeVue (4.5.x) - FormKit-PrimeVue-Version {{ version }} - sfxcode 2025</span>
+    <span class="font-medium ml-2"
+      >Formkit (1.7.x) - PrimeVue (4.5.x) - FormKit-PrimeVue-Version {{ version }} - sfxcode
+      2025</span
+    >
   </div>
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

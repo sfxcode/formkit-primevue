@@ -5,9 +5,9 @@
 // Read more: https://github.com/vuejs/core/pull/3399
 export {}
 
-declare module 'vue' {
+declare module "vue" {
   export interface GlobalComponents {
-    RouterLink: typeof import('vue-router')['RouterLink']
-    RouterView: typeof import('vue-router')['RouterView']
+    RouterLink: (typeof import("vue-router"))["RouterLink"];
+    RouterView: (typeof import("vue-router"))["RouterView"];
   }
 }

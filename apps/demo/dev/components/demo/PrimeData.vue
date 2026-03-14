@@ -1,7 +1,7 @@
-<script setup lang='ts'>
+<script setup lang="ts">
 defineProps<{
-  header: string
-}>()
+  header: string;
+}>();
 </script>
 
 <template>

@@ -1,51 +1,54 @@
-<script setup lang='ts'>
-import { FormKitSchema } from '@formkit/vue'
-import { useClipboard } from '@vueuse/core'
-import { useInputEditor } from 'my-library'
+<script setup lang="ts">
+import { FormKitSchema } from "@formkit/vue";
+import { useClipboard } from "@vueuse/core";
+import { useInputEditor } from "my-library";
 
-import { ref } from 'vue'
-import { useMessages } from '../../composables/messages'
+import { ref } from "vue";
+import { useMessages } from "../../composables/messages";
 
 const props = defineProps<{
-  header: string
-  schema: object
-  data: object
-}>()
+  header: string;
+  schema: object;
+  data: object;
+}>();
 
 // key is used for reflecting changes to the output - editorDataToSchema will remove schemaResultFormKey from generated schema output
-const schemaResultFormKey = ref(0)
+const schemaResultFormKey = ref(0);
 
-const { editorDataToSchema, editorDataToJson, editorDataToCode } = useInputEditor()
+const { editorDataToSchema, editorDataToJson, editorDataToCode } = useInputEditor();
 
-const { showSuccessMessage } = useMessages()
+const { showSuccessMessage } = useMessages();
 
-const formSchema = ref(props.schema)
-const formData = reactive(props.data)
+const formSchema = ref(props.schema);
+const formData = reactive(props.data);
 
-const data = ref({})
+const data = ref({});
 
 async function submitHandler() {
-  showSuccessMessage(`Form Input (${formData._dollar_formkit}) updated`, 'Input creation completed successfully ...')
+  showSuccessMessage(
+    `Form Input (${formData._dollar_formkit}) updated`,
+    "Input creation completed successfully ...",
+  );
 
-  data.value = { }
-  schemaResultFormKey.value += 1
-  Object.assign(formData, { ...formData, schemaResultFormKey: schemaResultFormKey.value })
+  data.value = {};
+  schemaResultFormKey.value += 1;
+  Object.assign(formData, { ...formData, schemaResultFormKey: schemaResultFormKey.value });
 }
 
 async function submitHandler2() {
-  showSuccessMessage(`Data submitted`, data.value.toString())
+  showSuccessMessage(`Data submitted`, data.value.toString());
 }
 
-const schemaResult = computed(() => editorDataToSchema(formData))
+const schemaResult = computed(() => editorDataToSchema(formData));
 
-const { copy, isSupported } = useClipboard({})
+const { copy, isSupported } = useClipboard({});
 
 function copyJson() {
-  copy(editorDataToJson(formData))
+  copy(editorDataToJson(formData));
 }
 
 function copyObject() {
-  copy(editorDataToCode(formData))
+  copy(editorDataToCode(formData));
 }
 </script>
 
@@ -73,9 +76,7 @@ function copyObject() {
       </div>
       <div>
         <h3>Generated Formkit Input Preview</h3>
-        <div class="mb-4">
-          Some changes require to trigger the update of generated input
-        </div>
+        <div class="mb-4">Some changes require to trigger the update of generated input</div>
         <div :key="schemaResultFormKey">
           <div class="max-w-100">
             <FormKit
@@ -101,6 +102,4 @@ function copyObject() {
   </div>
 </template>
 
-<style lang='scss' scoped>
-
-</style>
+<style lang="scss" scoped></style>

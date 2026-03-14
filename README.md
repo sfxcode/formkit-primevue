@@ -8,7 +8,7 @@ In addition, you can use the same pattern for **data output** from **schema** us
 
 ## PrimeVue Versions
 
-Actual PrimeVue Version of the main branch is *4.x.*
+Actual PrimeVue Version of the main branch is _4.x._
 
 PrimeVue 3 is in the prime3 branch, but future development will only focus on PrimeVue 4
 
@@ -28,32 +28,38 @@ PrimeVue 3 is in the prime3 branch, but future development will only focus on Pr
 
 ### Configuration
 
-Add *formkit.config.ts*
+Add _formkit.config.ts_
 
 ```typescript
-import { defaultConfig, plugin } from '@formkit/vue'
-import { primeInputs } from '@sfxcode/formkit-primevue'
+import { defaultConfig, plugin } from "@formkit/vue";
+import { primeInputs } from "@sfxcode/formkit-primevue";
 
-app.use(plugin, defaultConfig({
-  locales: { de, en },
-  // Define the active locale
-  locale: 'en',
-  inputs: primeInputs, 
-}))
+app.use(
+  plugin,
+  defaultConfig({
+    locales: { de, en },
+    // Define the active locale
+    locale: "en",
+    inputs: primeInputs,
+  }),
+);
 ```
 
 or if using also the output part
 
 ```typescript
-import { defaultConfig, plugin } from '@formkit/vue'
-import { primeInputs, primeOutputs } from '@sfxcode/formkit-primevue'
+import { defaultConfig, plugin } from "@formkit/vue";
+import { primeInputs, primeOutputs } from "@sfxcode/formkit-primevue";
 
-app.use(plugin, defaultConfig({
-  locales: { de, en },
-  // Define the active locale
-  locale: 'en',
+app.use(
+  plugin,
+  defaultConfig({
+    locales: { de, en },
+    // Define the active locale
+    locale: "en",
     inputs: { ...primeInputs, ...primeOutputs },
-}))
+  }),
+);
 ```
 
 Important: output elements depends on vue-i18n to style numbers, dates, ...

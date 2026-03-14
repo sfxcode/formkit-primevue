@@ -1,28 +1,28 @@
-<script setup lang='ts'>
-import JsonEditorVue from 'json-editor-vue'
-import { FormKitDataEdit } from 'my-library'
-import { ref } from 'vue'
-import { useMessages } from '../../composables/messages'
+<script setup lang="ts">
+import JsonEditorVue from "json-editor-vue";
+import { FormKitDataEdit } from "my-library";
+import { ref } from "vue";
+import { useMessages } from "../../composables/messages";
 
 const props = defineProps<{
-  header: string
-  schema: object
-  data: object
-  primeAttributes?: string
-  customAttributes?: string
-  formClass?: string
-  hideTabs?: boolean
-}>()
+  header: string;
+  schema: object;
+  data: object;
+  primeAttributes?: string;
+  customAttributes?: string;
+  formClass?: string;
+  hideTabs?: boolean;
+}>();
 
-const { showSuccessMessage } = useMessages()
+const { showSuccessMessage } = useMessages();
 
-const formSchema = ref(props.schema)
-const formData = ref(props.data)
+const formSchema = ref(props.schema);
+const formData = ref(props.data);
 
-const documentationLink = `https://primevue.org/${props.header.replace('Prime', '').toLowerCase()}`
+const documentationLink = `https://primevue.org/${props.header.replace("Prime", "").toLowerCase()}`;
 
 async function submitHandler() {
-  showSuccessMessage('Form Submitted ...', `${props.header} submitted successfully`)
+  showSuccessMessage("Form Submitted ...", `${props.header} submitted successfully`);
 }
 </script>
 
@@ -35,25 +35,28 @@ async function submitHandler() {
     <div class="flex gap-8 flex-wrap">
       <div class="min-w-32rem basis-1/2 xl:basis-1/3">
         <div>
-          <FormKitDataEdit :data="formData" :schema="formSchema" debug-data @data-saved="submitHandler" />
+          <FormKitDataEdit
+            :data="formData"
+            :schema="formSchema"
+            debug-data
+            @data-saved="submitHandler"
+          />
         </div>
       </div>
       <div class="basis-1/2 xl:basis-1/3">
         <Tabs v-if="!hideTabs" value="0">
           <TabList>
-            <Tab value="0">
-              Schema Editor
-            </Tab>
-            <Tab value="1">
-              Data Editor
-            </Tab>
-            <Tab v-if="primeAttributes || customAttributes" value="2">
-              Supported Attributes
-            </Tab>
+            <Tab value="0"> Schema Editor </Tab>
+            <Tab value="1"> Data Editor </Tab>
+            <Tab v-if="primeAttributes || customAttributes" value="2"> Supported Attributes </Tab>
           </TabList>
           <TabPanels class="">
             <TabPanel value="0" class="w-full max-w-200">
-              <JsonEditorVue v-model="formSchema" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
+              <JsonEditorVue
+                v-model="formSchema"
+                v-bind="{ mode: 'tree' }"
+                class="jse-theme-dark"
+              />
             </TabPanel>
             <TabPanel value="1">
               <JsonEditorVue v-model="formData" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
@@ -61,7 +64,10 @@ async function submitHandler() {
             <TabPanel v-if="primeAttributes || customAttributes" value="2">
               <h4>Base Attributes</h4>
               <div>
-                <span>disabled, readonly, style, class, tabindex, ariaLabel, ariaLabelledby, pt, ptOptions, unstyled</span>
+                <span
+                  >disabled, readonly, style, class, tabindex, ariaLabel, ariaLabelledby, pt,
+                  ptOptions, unstyled</span
+                >
               </div>
               <h4>PrimeVue Attributes</h4>
               <div>
@@ -70,9 +76,7 @@ async function submitHandler() {
               <div class="mt-2">
                 <span>{{ primeAttributes }}</span>
               </div>
-              <h4 v-if="customAttributes">
-                Custom Attributes
-              </h4>
+              <h4 v-if="customAttributes">Custom Attributes</h4>
               <div>
                 <span v-if="customAttributes">{{ customAttributes }}</span>
               </div>
@@ -84,10 +88,9 @@ async function submitHandler() {
   </div>
 </template>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 .jse-theme-dark {
-
- /* over all fonts, sizes, and colors */
+  /* over all fonts, sizes, and colors */
   --jse-theme-color: #383e42;
   --jse-theme-color-highlight: #687177;
   --jse-background-color: #1e1e1e;
