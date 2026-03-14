@@ -1,6 +1,6 @@
 import Unocss from 'unocss/vite'
 import { defineConfig } from 'vitepress'
-import { version } from '../../../packages/formkit-primevue/package.json'
+import { version } from '../../../packages/formkit/package.json'
 
 export default defineConfig({
   title: 'FormKit-PrimeVue',
