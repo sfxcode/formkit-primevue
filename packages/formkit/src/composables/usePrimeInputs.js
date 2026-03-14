@@ -1,0 +1,56 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.usePrimeInputs = usePrimeInputs;
+var autocomplete_1 = require("primevue/autocomplete");
+var button_1 = require("primevue/button");
+var cascadeselect_1 = require("primevue/cascadeselect");
+var checkbox_1 = require("primevue/checkbox");
+var chip_1 = require("primevue/chip");
+var colorpicker_1 = require("primevue/colorpicker");
+var datepicker_1 = require("primevue/datepicker");
+var inputmask_1 = require("primevue/inputmask");
+var inputnumber_1 = require("primevue/inputnumber");
+var inputotp_1 = require("primevue/inputotp");
+var inputtext_1 = require("primevue/inputtext");
+var knob_1 = require("primevue/knob");
+var listbox_1 = require("primevue/listbox");
+var multiselect_1 = require("primevue/multiselect");
+var password_1 = require("primevue/password");
+var radiobutton_1 = require("primevue/radiobutton");
+var rating_1 = require("primevue/rating");
+var select_1 = require("primevue/select");
+var selectbutton_1 = require("primevue/selectbutton");
+var slider_1 = require("primevue/slider");
+var textarea_1 = require("primevue/textarea");
+var togglebutton_1 = require("primevue/togglebutton");
+var toggleswitch_1 = require("primevue/toggleswitch");
+var treeselect_1 = require("primevue/treeselect");
+function usePrimeInputs() {
+    function registerInputs(app) {
+        app.component("AutoComplete", autocomplete_1.default);
+        app.component("Button", button_1.default);
+        app.component("CascadeSelect", cascadeselect_1.default);
+        app.component("Checkbox", checkbox_1.default);
+        app.component("Chip", chip_1.default);
+        app.component("ColorPicker", colorpicker_1.default);
+        app.component("DatePicker", datepicker_1.default);
+        app.component("InputMask", inputmask_1.default);
+        app.component("InputNumber", inputnumber_1.default);
+        app.component("InputOtp", inputotp_1.default);
+        app.component("InputText", inputtext_1.default);
+        app.component("Knob", knob_1.default);
+        app.component("Listbox", listbox_1.default);
+        app.component("MultiSelect", multiselect_1.default);
+        app.component("Password", password_1.default);
+        app.component("RadioButton", radiobutton_1.default);
+        app.component("Rating", rating_1.default);
+        app.component("Select", select_1.default);
+        app.component("SelectButton", selectbutton_1.default);
+        app.component("Slider", slider_1.default);
+        app.component("Textarea", textarea_1.default);
+        app.component("ToggleButton", togglebutton_1.default);
+        app.component("ToggleSwitch", toggleswitch_1.default);
+        app.component("TreeSelect", treeselect_1.default);
+    }
+    return { registerInputs: registerInputs };
+}
