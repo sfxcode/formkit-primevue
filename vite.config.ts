@@ -13,6 +13,10 @@ export default defineConfig({
       "apps/demo/dev/main.ts",
       "apps/demo/dev/vite.config.ts",
       "**/dev/modules/**",
+      "apps/formkit-primevue-demo/src/main.ts",
+      "apps/formkit-primevue-demo/src/modules/**",
+      "apps/formkit-primevue-demo/src/vite.config.ts",
+      "apps/formkit-primevue-demo/components.d.ts",
     ],
     options: {
       typeAware: true,
@@ -27,6 +31,10 @@ export default defineConfig({
       "**/docs/**",
       "apps/demo/dev/main.ts",
       "apps/demo/dev/vite.config.ts",
+      "apps/formkit-primevue-demo/src/main.ts",
+      "apps/formkit-primevue-demo/src/modules/**",
+      "apps/formkit-primevue-demo/src/vite.config.ts",
+      "apps/formkit-primevue-demo/components.d.ts",
     ],
   },
 
