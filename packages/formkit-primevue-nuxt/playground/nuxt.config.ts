@@ -1,54 +1,54 @@
-import Aura from '@primeuix/themes/aura'
+import Aura from "@primeuix/themes/aura";
 
 export const wrappedPrimeInputs: string[] = [
-  'AutoComplete',
-  'CascadeSelect',
-  'Checkbox',
-  'Chip',
-  'ColorPicker',
-  'DatePicker',
-  'InputMask',
-  'InputNumber',
-  'InputOtp',
-  'InputText',
-  'Knob',
-  'Listbox',
-  'MultiSelect',
-  'Password',
-  'RadioButton',
-  'Rating',
-  'Select',
-  'SelectButton',
-  'Slider',
-  'Textarea',
-  'ToggleButton',
-  'ToggleSwitch',
-  'TreeSelect',
-]
+  "AutoComplete",
+  "CascadeSelect",
+  "Checkbox",
+  "Chip",
+  "ColorPicker",
+  "DatePicker",
+  "InputMask",
+  "InputNumber",
+  "InputOtp",
+  "InputText",
+  "Knob",
+  "Listbox",
+  "MultiSelect",
+  "Password",
+  "RadioButton",
+  "Rating",
+  "Select",
+  "SelectButton",
+  "Slider",
+  "Textarea",
+  "ToggleButton",
+  "ToggleSwitch",
+  "TreeSelect",
+];
 
 export default defineNuxtConfig({
-  modules: ['../src/module', '@nuxt/hints'],
+  modules: ["../src/module", "@nuxt/hints"],
   ssr: true,
   devtools: { enabled: true },
   future: {
     compatibilityVersion: 4,
   },
-  compatibilityDate: '2024-11-03',
+  compatibilityDate: "2024-11-03",
   vite: {
     optimizeDeps: {
       include: [
-        '@formkit/addons',
-        '@formkit/core',
-        '@formkit/i18n',
-        '@sfxcode/formkit-primevue',
-        '@sfxcode/formkit-primevue/plugins',
-        '@vue/devtools-core',
-        '@vue/devtools-kit',
+        "@formkit/addons",
+        "@formkit/core",
+        "@formkit/i18n",
+        "@sfxcode/formkit-primevue",
+        "@sfxcode/formkit-primevue/plugins",
+        "@vue/devtools-core",
+        "@vue/devtools-kit",
       ],
     },
   },
   formkit: {
-    configFile: '../src/runtime/formkit.config.ts',
+    configFile: "../src/runtime/formkit.config.ts",
   },
   formkitPrimevue: {
     includePrimeIcons: true,
@@ -57,12 +57,12 @@ export default defineNuxtConfig({
     installI18N: true,
   },
   i18n: {
-    langDir: 'locales',
-    defaultLocale: 'en',
-    strategy: 'no_prefix',
+    langDir: "locales",
+    defaultLocale: "en",
+    strategy: "no_prefix",
     locales: [
-      { code: 'en', file: 'en.json', name: 'English' },
-      { code: 'de', file: 'de.json', name: 'German' },
+      { code: "en", file: "en.json", name: "English" },
+      { code: "de", file: "de.json", name: "German" },
     ],
   },
   primevue: {
@@ -71,13 +71,13 @@ export default defineNuxtConfig({
       theme: {
         preset: Aura,
         options: {
-          darkModeSelector: '.dark',
+          darkModeSelector: ".dark",
         },
       },
       ripple: true,
     },
     components: {
-      exclude: [...wrappedPrimeInputs, 'Button', 'Form', 'FormField', 'Chart'],
+      exclude: [...wrappedPrimeInputs, "Button", "Form", "FormField", "Chart"],
     },
   },
-})
+});

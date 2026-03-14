@@ -5,6 +5,24 @@
   "homepage": "https://github.com/sfxcode/formkit-primevue-nuxt",
   "license": "MIT",
   "repository": "https://github.com/sfxcode/formkit-primevue-nuxt",
+  "files": [
+    "*.css",
+    "*.scss",
+    "components.d.ts",
+    "dist"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "typesVersions": {
+    "*": {
+      "*": [
+        "*",
+        "dist/*",
+        "dist/*.d.ts",
+        "dist/*/index.d.ts"
+      ]
+    }
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -40,25 +58,6 @@
       "require": "./dist/style.css"
     }
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
-  "typesVersions": {
-    "*": {
-      "*": [
-        "*",
-        "dist/*",
-        "dist/*.d.ts",
-        "dist/*/index.d.ts"
-      ]
-    }
-  },
-  "files": [
-    "*.css",
-    "*.scss",
-    "components.d.ts",
-    "dist"
-  ],
   "scripts": {
     "prepack": "nuxt-module-build build",
     "dev": "npm run dev:prepare && nuxt dev playground",
