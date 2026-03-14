@@ -25,7 +25,7 @@ export function useInputEditor() {
           return [key, value] as [string, any]
         })
 
-      tempData = Object.assign({}, ...mapped.map(([key, val]: [string, any]) => ({ [key]: val })))
+      tempData = { ...Object.fromEntries(mapped) }
     }
 
     const readonlyValue = data.readonly === true ? true : undefined
@@ -67,7 +67,7 @@ export function useInputEditor() {
           .includes(formkitInput)
       : false
 
-    let result: Record<string, any> = {}
+    let result: Record<string, any>
 
     if (useOptions) {
       result = {
