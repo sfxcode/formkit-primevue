@@ -8,6 +8,7 @@ export default antfu(
   {
     rules: {
       'unicorn/consistent-function-scoping': 'off',
+      'e18e/prefer-static-regex': 'off',
     },
 
   },
