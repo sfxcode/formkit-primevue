@@ -1,0 +1,14 @@
+{
+  "app_name": "FormKit Playground",
+  "app_description": "FormKit PrimeVue Nuxt Module Playground",
+  "welcome": "Welcome",
+  "sample": "Hello World",
+  "save": "Save",
+  "search": "Search",
+  "formkit": {
+    "prime": {
+      "true": "Yes",
+      "false": "No"
+    }
+  }
+}
