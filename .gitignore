@@ -21,8 +21,8 @@ dist-ssr
 .netlify
 
 # vitepress
-.vitepress/cache
-.vitepress/dist
+apps/docs/.vitepress/cache
+apps/docs/.vitepress/dist
 
 # Editor directories and files
 .vscode/*
