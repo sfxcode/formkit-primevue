@@ -18,6 +18,7 @@
   "scripts": {
     "ready": "vp fmt && vp lint && vp run test -r && vp run build -r",
     "prepare": "vp config",
+    "dev:build": "pnpm -C apps/formkit-primevue-demo run dev:build",
     "docs:dev": "vitepress dev apps/docs",
     "docs:build": "vitepress build docs",
     "docs:preview": "vitepress preview docs"

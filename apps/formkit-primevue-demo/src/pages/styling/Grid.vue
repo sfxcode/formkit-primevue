@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { FormKitDataEdit, FormKitDataView } from "formkit-primevue-components";
+import { FormKitDataEdit, FormKitDataView } from "formkit-primevue";
 
 const schema = [
   {
