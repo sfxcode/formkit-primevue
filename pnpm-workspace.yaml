@@ -47,7 +47,7 @@ catalog:
   vite-plugin-dts: ^4.5.4
   vite-plugin-eslint: ^1.8.1
   vite-plugin-pages: ^0.33.3
-  vite-plus: ^0.1.11
+  vite-plus: ^0.1.12
   vite-ssg: ^28.3.0
   vitepress: 2.0.0-alpha.16
   vitest: npm:@voidzero-dev/vite-plus-test@latest

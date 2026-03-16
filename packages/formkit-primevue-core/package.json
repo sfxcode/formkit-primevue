@@ -84,6 +84,7 @@
     "@formkit/core": "catalog:",
     "@formkit/inputs": "catalog:",
     "@formkit/vue": "catalog:",
+    "consola": "catalog:",
     "primeicons": "catalog:",
     "primevue": "catalog:",
     "vue-i18n": "catalog:"
@@ -95,7 +96,6 @@
     "@vue/tsconfig": "catalog:",
     "add": "catalog:",
     "bumpp": "^10.4.1",
-    "consola": "catalog:",
     "fs-extra": "catalog:",
     "sass": "catalog:",
     "typescript": "catalog:",
