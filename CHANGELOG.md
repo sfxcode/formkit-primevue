@@ -1,3 +1,15 @@
+## v3.3.7
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.3.6...v3.3.7)
+
+### 🚀 Enhancements
+
+- Enhance PrimeOutputList with additional props and improve template structure ([80c6271](https://github.com/sfxcode/formkit-primevue/commit/80c6271))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.3.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.3.3...v3.3.6)
