@@ -1,3 +1,15 @@
+## v3.3.8
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.3.7...v3.3.8)
+
+### 🩹 Fixes
+
+- Update import path for useFormKitSection in PrimeOutputList.vue ([02038e5](https://github.com/sfxcode/formkit-primevue/commit/02038e5))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.3.7
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.3.6...v3.3.7)
