@@ -18,6 +18,9 @@
   "scripts": {
     "ready": "vp fmt && vp lint && vp run test -r && vp run build -r",
     "prepare": "vp config",
+    "nuxt:prepare": "vp run @sfxcode/formkit-primevue-nuxt#dev:prepare",
+    "nuxt:dev": "vp run @sfxcode/formkit-primevue-nuxt#dev",
+    "core:build": "vp run @sfxcode/formkit-primevue#build",
     "dev:build": "pnpm -C apps/formkit-primevue-demo run dev:build",
     "docs:dev": "vitepress dev apps/docs",
     "docs:build": "vitepress build docs",

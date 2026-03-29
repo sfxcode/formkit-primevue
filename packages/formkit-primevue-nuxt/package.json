@@ -73,12 +73,12 @@
   },
   "dependencies": {
     "@formkit/nuxt": "^1.7.2",
-    "@nuxtjs/i18n": "^10.2.3",
+    "@nuxtjs/i18n": "^10.2.4",
     "@primevue/nuxt-module": "^4.5.4",
     "@sfxcode/formkit-primevue": "^3.3.3"
   },
   "devDependencies": {
-    "@nuxt/devtools": "^3.2.3",
+    "@nuxt/devtools": "^3.2.4",
     "@nuxt/eslint-config": "^1.15.2",
     "@nuxt/hints": "1.0.0-alpha.5",
     "@nuxt/kit": "^4.4.2",
@@ -91,10 +91,10 @@
     "changelogen": "^0.6.2",
     "eslint": "^9.39.4",
     "nuxt": "^4.4.2",
-    "typescript": "5.9.3",
+    "typescript": "catalog:",
     "vite-plus": "catalog:",
-    "vitest": "npm:@voidzero-dev/vite-plus-test@^0.1.11",
-    "vue-tsc": "^3.2.5"
+    "vitest": "npm:@voidzero-dev/vite-plus-test@^0.1.14",
+    "vue-tsc": "catalog:"
   },
   "build": {
     "failOnWarn": false
