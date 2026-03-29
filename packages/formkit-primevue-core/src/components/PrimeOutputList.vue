@@ -7,8 +7,13 @@ import { useFormKitSection } from "../composables/index.ts";
 import FormKitIcon from "./FormKitIcon.vue";
 import FormKitPrefix from "./FormKitPrefix.vue";
 import FormKitSuffix from "./FormKitSuffix.vue";
+import type {SelectProps} from "primevue/select";
+import {options} from "@formkit/inputs";
 
 export interface PrimeOutputListProps {
+  options?: SelectProps["options"];
+  optionLabel?: SelectProps["optionLabel"];
+  optionValue?: SelectProps["optionValue"];
   convertValue?: (array: []) => [];
 }
 
@@ -27,7 +32,14 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
 
 const getListValues = computed(() => {
   const values = Array.isArray(props.context?._value) ? props.context._value : [];
-  if (typeof props.context?.convertValue === "function") {
+  if (props.context?.options && props.context?.optionsKey) {
+    const key:string = '' + props.context.optionsKey
+    return values.map(value => {
+      const foundOption = props.context?.options?.find(option => option[key] === value[key]);
+      return foundOption ? foundOption[props.context?.optionLabel as string] : value;
+    })
+  }
+  else if (typeof props.context?.convertValue === "function") {
     return props.context.convertValue([...values]);
   }
   return values;

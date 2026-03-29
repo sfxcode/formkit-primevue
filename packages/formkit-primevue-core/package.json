@@ -101,9 +101,9 @@
     "typescript": "catalog:",
     "unbuild": "catalog:",
     "unplugin-vue": "catalog:",
-    "vite": "npm:@voidzero-dev/vite-plus-core@^0.1.11",
+    "vite": "catalog:",
     "vite-plus": "catalog:",
-    "vitest": "npm:@voidzero-dev/vite-plus-test@^0.1.11",
+    "vitest": "catalog:",
     "vue": "catalog:",
     "vue-sfc-transformer": "catalog:",
     "vue-tsc": "catalog:"
