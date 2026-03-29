@@ -32,10 +32,10 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
 
 const getListValues = computed(() => {
   const values = Array.isArray(props.context?._value) ? props.context._value : [];
-  if (props.context?.options && props.context?.optionsKey) {
-    const key:string = '' + props.context.optionsKey
+  if (props.context?.options && props.context?.optionValue) {
+    const key:string = '' + props.context.optionValue
     return values.map(value => {
-      const foundOption = props.context?.options?.find(option => option[key] === value[key]);
+      const foundOption = props.context?.options?.find(option => option[key] === value);
       return foundOption ? foundOption[props.context?.optionLabel as string] : value;
     })
   }
