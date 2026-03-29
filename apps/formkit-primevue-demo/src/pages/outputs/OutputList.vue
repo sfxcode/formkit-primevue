@@ -17,6 +17,12 @@ function convertValuesSortedReverse(value: string[]): string[] {
   return value.sort((a, b) => a.localeCompare(b)).reverse();
 }
 
+const options = [
+  { label: "Every page load", value: "refresh" },
+  { label: "Every hour", value: "hourly" },
+  { label: "Every day", value: "daily" },
+];
+
 const schema = [
   addElement("h3", ["Default (listStyle: span)"]),
 
@@ -92,9 +98,17 @@ const schema = [
     label: "Use listStyle: ol",
     listStyle: "ol",
   },
+  {
+    $formkit: "primeOutputList",
+    name: "list3",
+    label: "Options",
+    optionLabel: "label",
+    optionValue: "value",
+    options,
+  },
 ];
 
-const data = { list1: ["Hello", "World"], list2: ["FormKit", "meets", "PrimeVue"] };
+const data = { list1: ["Hello", "World"], list2: ["FormKit", "meets", "PrimeVue"], list3: ['hourly', 'daily'] };
 </script>
 
 <template>
