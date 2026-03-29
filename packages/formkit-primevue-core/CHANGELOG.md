@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v3.3.5
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.3.4...v3.3.5)
+
+### 🏡 Chore
+
+- Update package dependencies to latest versions for improved stability and compatibility ([470fce0](https://github.com/sfxcode/formkit-primevue/commit/470fce0))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.3.4
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.3.3...v3.3.4)
