@@ -1,3 +1,15 @@
+## v3.3.6
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.3.3...v3.3.6)
+
+### 🩹 Fixes
+
+- Bump version to 3.3.5 in package.json ([1343d99](https://github.com/sfxcode/formkit-primevue/commit/1343d99))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.3.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.3.0...v3.3.3)
