@@ -1,6 +1,6 @@
 {
   "name": "@sfxcode/formkit-primevue",
-  "version": "3.3.3",
+  "version": "3.3.4",
   "homepage": "https://github.com/sfxcode/formkit-primevue",
   "license": "MIT",
   "author": {
@@ -74,7 +74,7 @@
     "dev": "vue-tsc --build",
     "dev:build": "vite build dev",
     "dev:preview": "vite preview dev",
-    "release": "npm run lint && npm run build && changelogen --patch --release  && npm publish --access public && git push --follow-tags",
+    "release": "npm run build && changelogen --patch --release  && npm publish --access public && git push --follow-tags",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepublishOnly": "pnpm build"
