@@ -1,3 +1,17 @@
+## v4.0.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.3.8...v4.0.0)
+
+### 🏡 Chore
+
+- Update dependencies and release script for improved versioning ([04ffb8c](https://github.com/sfxcode/formkit-primevue/commit/04ffb8c))
+- Update @formkit dependencies to version 2.0.0 and @intlify/core to 11.3.2 ([f89ab32](https://github.com/sfxcode/formkit-primevue/commit/f89ab32))
+- Update version information in AppFooter.vue to reflect Formkit 2.0.x ([31c3e44](https://github.com/sfxcode/formkit-primevue/commit/31c3e44))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v3.3.8
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.3.7...v3.3.8)
