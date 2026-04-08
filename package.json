@@ -90,12 +90,12 @@
     "vue": "^3.4.0"
   },
   "dependencies": {
-    "@formkit/addons": "^1.7.2",
-    "@formkit/core": "^1.7.2",
-    "@formkit/i18n": "^1.7.2",
-    "@formkit/inputs": "^1.7.2",
-    "@formkit/vue": "^1.7.2",
-    "@intlify/core": "^11.3.0",
+    "@formkit/addons": "^2.0.0",
+    "@formkit/core": "^2.0.0",
+    "@formkit/i18n": "^2.0.0",
+    "@formkit/inputs": "^2.0.0",
+    "@formkit/vue": "^2.0.0",
+    "@intlify/core": "^11.3.2",
     "primeicons": "^7.0.0",
     "primevue": "^4.5.5",
     "vue-i18n": "^11.3.2"
