@@ -63,4 +63,7 @@ const { addInsertButton, addGroupButtons, addListGroupFunctions } = useFormKitRe
 </script>
 ```
 
+::: warning
+Added primeRepeater node that will do all this automatically. useFormkitRepeater is deprecated and will be removed in future versions.
+
 A working example can be found in the [repeater demo](https://github.com/sfxcode/formkit-primevue/blob/main/dev/pages/samples/Repeater.vue).
