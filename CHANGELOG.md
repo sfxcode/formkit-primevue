@@ -1,3 +1,23 @@
+## v4.1.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.1.0...v4.1.1)
+
+### 🏡 Chore
+
+- Update NODE_VERSION in netlify.toml to 24 ([ae112434](https://github.com/sfxcode/formkit-primevue/commit/ae112434))
+- Add engines field to package.json for Node.js and pnpm version requirements ([f2ba251e](https://github.com/sfxcode/formkit-primevue/commit/f2ba251e))
+- Update action versions in deploy.yml for improved stability ([4e12ae5f](https://github.com/sfxcode/formkit-primevue/commit/4e12ae5f))
+- Update action versions in deploy.yml for improved stability" ([f3ed8a7b](https://github.com/sfxcode/formkit-primevue/commit/f3ed8a7b))
+- Restore engines field in package.json for Node.js and pnpm version requirements ([a0805223](https://github.com/sfxcode/formkit-primevue/commit/a0805223))
+- Refactor button handling in repeater component for improved functionality ([d5435aa6](https://github.com/sfxcode/formkit-primevue/commit/d5435aa6))
+- Enhance button configuration in repeater component for better usability ([09e425c7](https://github.com/sfxcode/formkit-primevue/commit/09e425c7))
+- Improve type handling in repeater component for better clarity and functionality ([44008006](https://github.com/sfxcode/formkit-primevue/commit/44008006))
+- Update release script to use patch versioning for changelogen ([6b7ba678](https://github.com/sfxcode/formkit-primevue/commit/6b7ba678))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.1.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.0.0...v4.1.0)
