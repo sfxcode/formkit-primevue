@@ -1,3 +1,24 @@
+## v4.1.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.1.1...v4.1.2)
+
+### 🚀 Enhancements
+
+- Add Repeater component for managing dynamic input groups ([773846bb](https://github.com/sfxcode/formkit-primevue/commit/773846bb))
+- Add PrimeRepeater component and update input types for consistency ([7ebcf74e](https://github.com/sfxcode/formkit-primevue/commit/7ebcf74e))
+
+### 🩹 Fixes
+
+- Update router link for PrimeRepeater in AppTopbar component ([14088049](https://github.com/sfxcode/formkit-primevue/commit/14088049))
+
+### 🎨 Styles
+
+- Format code in PrimeRepeater.md for consistency ([4c106f3f](https://github.com/sfxcode/formkit-primevue/commit/4c106f3f))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.1.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.1.0...v4.1.1)
