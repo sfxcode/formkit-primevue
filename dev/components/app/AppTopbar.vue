@@ -72,6 +72,7 @@ const items = ref([
             { label: 'Knob', icon: 'pi pi-fw pi-user-edit', route: '/inputs/knob' },
             { label: 'Slider', icon: 'pi pi-fw pi-user-edit', route: '/inputs/slider' },
             { label: 'Rating', icon: 'pi pi-fw pi-user-edit', route: '/inputs/rating' },
+            { label: 'Repeater', icon: 'pi pi-fw pi-list', route: '/inputs/repeater' },
           ],
         },
       ],

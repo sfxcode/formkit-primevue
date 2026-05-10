@@ -137,6 +137,7 @@ Some samples for common tasks are available
 - Password
 - RadioButton
 - Rating
+- Repeater (not a PrimeVue component, but provided as helper for repeating groups of inputs)
 - Select
 - SelectButton
 - Slider
