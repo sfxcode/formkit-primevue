@@ -71,7 +71,7 @@ const sourceSelection = ref<any[]>([])
 const targetSelection = ref<any[]>([])
 
 const transferHeaderClass = computed(() => {
-  return props.context.transferHeaderClass || 'text-base font-semibold mb-2'
+  return props.context.transferHeaderClass || 'text-base font-semibold'
 })
 
 const sourceItems = computed(() => {
@@ -195,7 +195,7 @@ watch(() => modelValue.value, (newVal) => {
         v-bind="context?.attrs"
         :disabled="!!context?.disabled"
         :readonly="context?.attrs.readonly ?? false"
-        :list-style="{ height: '20rem' }"
+        :list-style="context?.attrs.style"
         :class="context?.attrs?.class"
         :invalid="isInvalid"
         :tabindex="context?.attrs.tabindex"
@@ -278,7 +278,7 @@ watch(() => modelValue.value, (newVal) => {
         v-bind="context?.attrs"
         :disabled="!!context?.disabled"
         :readonly="context?.attrs.readonly ?? false"
-        :list-style="{ height: '20rem' }"
+        :list-style="context?.attrs.style"
         :class="context?.attrs?.class"
         :invalid="isInvalid"
         :tabindex="context?.attrs.tabindex"
