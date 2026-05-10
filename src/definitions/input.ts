@@ -23,7 +23,7 @@ import PrimeTextarea from '../components/PrimeTextarea.vue'
 import PrimeToggleButton from '../components/PrimeToggleButton.vue'
 import PrimeToggleSwitch from '../components/PrimeToggleSwitch.vue'
 import PrimeTreeSelect from '../components/PrimeTreeSelect.vue'
-import { primeRepeaterDefinition } from "./repeater.ts";
+import { primeRepeaterDefinition } from './repeater.ts'
 
 export const primeAutoCompleteDefinition: FormKitTypeDefinition = createInput(PrimeAutoComplete, {
   props: ['pt', 'ptOptions', 'unstyled', 'Select', 'multiple', 'typeahead', 'optionLabel', 'options', 'size', 'minLength', 'placeholder', 'fluid', 'separators'],
@@ -156,5 +156,5 @@ export const primeInputs = {
   primeCascadeSelect: primeCascadeSelectDefinition,
   primeTreeSelect: primeTreeSelectDefinition,
   primeInputOtp: primeInputOtpDefinition,
-  primeRepeater: primeRepeaterDefinition
+  primeRepeater: primeRepeaterDefinition,
 }

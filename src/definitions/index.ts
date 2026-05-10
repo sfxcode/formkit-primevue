@@ -34,7 +34,7 @@ import {
   primeOutputTextDefinition,
 } from './output'
 
-import {primeRepeaterDefinition} from "./repeater.ts";
+import { primeRepeaterDefinition } from './repeater.ts'
 
 export const primeInputs = {
   primeAutoComplete: primeAutoCompleteDefinition,
@@ -59,7 +59,7 @@ export const primeInputs = {
   primeCascadeSelect: primeCascadeSelectDefinition,
   primeTreeSelect: primeTreeSelectDefinition,
   primeInputOtp: primeInputOtpDefinition,
-  primeRepeater: primeRepeaterDefinition
+  primeRepeater: primeRepeaterDefinition,
 }
 
 export const primeOutputs = {

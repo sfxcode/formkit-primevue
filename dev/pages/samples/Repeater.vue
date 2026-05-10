@@ -1,5 +1,4 @@
 <script setup lang='ts'>
-
 const data = ref()
 
 function createDefaultValue(): object {
@@ -12,42 +11,42 @@ onMounted(() => {
 
 const schema
   = [
-  {
-    $formkit: 'primeInputText',
-    label: 'Name',
-    name: 'name',
-    outerClass: 'col-6 mb-2',
-  },
-  {
-    $formkit: 'primeRepeater',
-    name: 'attacks',
-    label: 'Attacks',
-    help: 'Attacks List Demo - Use Buttons to clone, move and delete',
-    itemListClass: '',
-    itemClass: 'grid grid-cols-12 gap-4',
-    buttonsOuterClass: 'col-span-4 col-start-9',
-    buttonsInnerClass: 'flex gap-1 pt-1',
-    buttonsLabel: 'Actions',
-    addButtonLabel: 'Add Attack',
-    addButtonClass: 'mb-4',
-    alwaysDisplayAddButton: false,
-    displayCloneButton: true,
-    newItem: createDefaultValue(),
-    children: [
-       {
-        $formkit: 'primeInputText',
-        label: 'Name',
-        name: 'name',
-        outerClass: 'col-span-5',
-      },
-      {
-        $formkit: 'primeInputText',
-        label: 'Damage',
-        name: 'damage',
-        outerClass: 'col-span-3 col-start-6',
-      },
-    ],
-  },
+    {
+      $formkit: 'primeInputText',
+      label: 'Name',
+      name: 'name',
+      outerClass: 'col-6 mb-2',
+    },
+    {
+      $formkit: 'primeRepeater',
+      name: 'attacks',
+      label: 'Attacks',
+      help: 'Attacks List Demo - Use Buttons to clone, move and delete',
+      itemListClass: '',
+      itemClass: 'grid grid-cols-12 gap-4',
+      buttonsOuterClass: 'col-span-4 col-start-9',
+      buttonsInnerClass: 'flex gap-1 pt-1',
+      buttonsLabel: 'Actions',
+      addButtonLabel: 'Add Attack',
+      addButtonClass: 'mb-4',
+      alwaysDisplayAddButton: false,
+      displayCloneButton: true,
+      newItem: createDefaultValue(),
+      children: [
+        {
+          $formkit: 'primeInputText',
+          label: 'Name',
+          name: 'name',
+          outerClass: 'col-span-5',
+        },
+        {
+          $formkit: 'primeInputText',
+          label: 'Damage',
+          name: 'damage',
+          outerClass: 'col-span-3 col-start-6',
+        },
+      ],
+    },
   ]
 </script>
 
