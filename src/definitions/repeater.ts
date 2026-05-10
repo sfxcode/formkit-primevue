@@ -5,13 +5,13 @@ import { useFormKitSchema } from '../composables/useFormKitSchema'
 const { addList, addElement, addListGroup, addComponent, addElementsInOuterDiv } = useFormKitSchema()
 
 function addActionButtons(innerClass: string = '', outerClass: string = '', label: string = 'Actions', help: string = '', render: string = 'true') {
-  const addButtonComponent = (onClick: string = '', label: string = '', icon: string = '', severity: string = '', render: string = 'true', disabled: 'false', styleClass: string = 'p-button-sm'): object => {
+  const addButtonComponent = (onClick: string = '', label: string = '', icon: string = '', severity: string = '', render: string = 'true', disabled: string = 'false', styleClass: string = 'p-button-sm'): object => {
     return addComponent('Button', { onClick, label, icon, class: styleClass, severity, disabled }, render)
   }
 
   return addElementsInOuterDiv([
-    addButtonComponent('$removeNode($node.parent, $index)', '', 'pi pi-times', 'danger'),
-    addButtonComponent('$cloneNode($node.parent, $index)', '', 'pi pi-clone', '', '$displayCloneButton'),
+    addButtonComponent('$removeNode($node.parent, $index)', '', 'pi pi-times', 'danger', 'true', '$false'),
+    addButtonComponent('$cloneNode($node.parent, $index)', '', 'pi pi-clone', '', '$displayCloneButton', '$false'),
     addButtonComponent('$moveNodeDown($node.parent, $index)', '', 'pi pi-arrow-down', 'secondary', 'true', '$index === $node.parent.value.length -1'),
     addButtonComponent('$moveNodeUp($node.parent, $index)', '', 'pi pi-arrow-up', 'secondary', 'true', '$index === 0'),
   ], innerClass, outerClass, label, help, render)
@@ -50,6 +50,9 @@ function addRepeaterHandler(node: FormKitNode): void {
     return newArray
   }
   node.on('created', () => {
+    if (node.context)  {
+      const newItem = node.context.newItem || {}
+
     node.context.listName = node.name
 
     node.context.removeNode = (parentNode: FormKitNode, index: number) => (): void => {
@@ -59,7 +62,7 @@ function addRepeaterHandler(node: FormKitNode): void {
     }
     node.context.addNode = (parentNode: any) => (): void => {
       if (parentNode && Array.isArray(parentNode._value)) {
-        const newArray: any[] = [...parentNode.value, node.context.newItem || {}]
+        const newArray: any[] = [...parentNode.value, newItem]
         parentNode.input(newArray, false)
       }
     }
@@ -83,6 +86,7 @@ function addRepeaterHandler(node: FormKitNode): void {
         if (index < array.length - 1)
           parentNode.input(swapElements(array, index, index + 1), false)
       }
+    }
     }
   })
 }
