@@ -145,7 +145,7 @@ const items = ref([
       </template>  <template #center>
         <div class="text-lg">
           <span class="text-yellow-600 font-bold">New: </span>
-          <router-link to="/samples/repeater" class="">
+          <router-link to="/inputs/repeater" class="">
             <span class="">PrimeRepeater</span>
           </router-link>
         </div>
