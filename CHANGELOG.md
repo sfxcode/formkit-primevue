@@ -1,3 +1,23 @@
+## v4.1.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.1.2...v4.1.3)
+
+### 🚀 Enhancements
+
+- Add Transfer List functionality to PrimeListbox component with enhanced city selection ([dc06edc5](https://github.com/sfxcode/formkit-primevue/commit/dc06edc5))
+
+### 🩹 Fixes
+
+- Update list-style binding in PrimeListbox component for dynamic styling ([371448cf](https://github.com/sfxcode/formkit-primevue/commit/371448cf))
+
+### 🎨 Styles
+
+- Update icons in AppTopbar component for improved clarity and consistency ([3c836af4](https://github.com/sfxcode/formkit-primevue/commit/3c836af4))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.1.2
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.1.1...v4.1.2)
