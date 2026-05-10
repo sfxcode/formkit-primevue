@@ -1,8 +1,4 @@
 <script setup lang='ts'>
-import { useFormKitRepeater, useFormKitSchema } from 'my-library'
-
-const { addElement, addList, addListGroup } = useFormKitSchema()
-const { addInsertButton, addGroupButtons, addListGroupFunctions } = useFormKitRepeater()
 
 const data = ref()
 
@@ -11,39 +7,45 @@ function createDefaultValue(): object {
 }
 
 onMounted(() => {
-  const defaultData = { name: 'Fighter', attacks: [{ name: 'Sword', damage: '2D20' }, { name: 'Dagger', damage: '2D6' }] }
-  addListGroupFunctions(defaultData, createDefaultValue())
-  data.value = defaultData
+  data.value = { name: 'Fighter', attacks: [{ name: 'Sword', damage: '2D6' }, { name: 'Dagger', damage: '1D6' }, { name: 'Spear', damage: '1D6+2' }] }
 })
 
 const schema
   = [
-    {
-      $formkit: 'primeInputText',
-      label: 'Name',
-      name: 'name',
-      outerClass: 'col-6',
-    },
-    addElement('div', [], { class: 'mt-4' }),
-    addList('attacks', [
-      addElement('div', ['Attacks'], { class: 'text-xl' }),
-      addInsertButton(),
-      addListGroup([
-        {
-          $formkit: 'primeInputText',
-          label: 'Name',
-          name: 'name',
-          outerClass: 'col-4',
-        },
-        {
-          $formkit: 'primeInputText',
-          label: 'Damage',
-          name: 'damage',
-          outerClass: 'col-2',
-        },
-        addGroupButtons('', 'col-6', 'Actions'),
-      ]),
-    ], true, 'true'),
+  {
+    $formkit: 'primeInputText',
+    label: 'Name',
+    name: 'name',
+    outerClass: 'col-6 mb-2',
+  },
+  {
+    $formkit: 'primeRepeater',
+    name: 'attacks',
+    label: 'Attacks',
+    help: 'Attacks List Demo - Use Buttons to clone, move and delete',
+    itemListClass: '',
+    itemClass: 'grid grid-cols-12 gap-4',
+    buttonsOuterClass: 'col-span-4 col-start-9',
+    buttonsInnerClass: 'flex gap-1 pt-1',
+    buttonsLabel: 'Actions',
+    addButtonLabel: 'Add Attack',
+    addButtonClass: 'mb-4',
+    newItem: createDefaultValue(),
+    children: [
+       {
+        $formkit: 'primeInputText',
+        label: 'Name',
+        name: 'name',
+        outerClass: 'col-span-5',
+      },
+      {
+        $formkit: 'primeInputText',
+        label: 'Damage',
+        name: 'damage',
+        outerClass: 'col-span-3 col-start-6',
+      },
+    ],
+  },
   ]
 </script>
 
