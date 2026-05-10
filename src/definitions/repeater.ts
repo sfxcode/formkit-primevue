@@ -5,7 +5,7 @@ import { useFormKitSchema } from '../composables/useFormKitSchema'
 const { addList, addElement, addListGroup, addComponent } = useFormKitSchema()
 
 function addButtonGroup(buttonGroupClass: string = '', buttonGroupItemClass: string = '', buttonSize: string, render: string = 'true') {
-  const addActionButtonComponent = (onClick: string = '', icon: string = '', severity: string = '', render: string = 'true', disabled: 'false'): object => {
+  const addActionButtonComponent = (onClick: string = '', icon: string = '', severity: string = '', render: string = 'true', disabled: string = 'false'): object => {
     return addElement('div', [addComponent('Button', { onClick, icon, severity, disabled, size: buttonSize })], { class: buttonGroupItemClass }, render)
   }
 
@@ -47,7 +47,7 @@ export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
 )
 
 function addRepeaterHandler(node: FormKitNode): void {
-  const swapElements = (array: unknown[], index1: number, index2: number) => {
+  const swapElements = (array: any[], index1: number, index2: number) => {
     const newArray = [...array]
     const temp = newArray[index1]
     newArray[index1] = newArray[index2]
@@ -55,50 +55,52 @@ function addRepeaterHandler(node: FormKitNode): void {
     return newArray
   }
   node.on('created', () => {
-    node.context.listName = node.name
-    node.context.renderButtons = !node.context.hideButtonGroup
-    node.context.insertButtonSize = node.context.insertButtonSize ? node.context.insertButtonSize : ''
-    node.context.buttonSize = node.context.buttonSize ? node.context.buttonSize : ''
-    node.context.renderMoveButtons = !node.context.hideMoveButtons
+    if (node.context) {
+      const newItem = node.context.newItem || {}
 
-    node.context.insertNode = (parentNode: FormKitNode) => (): void => {
-      if (parentNode && Array.isArray(parentNode._value)) {
-        const item: unknown = node.context.newItem ? { ...node.context.newItem } : {}
-        const newArray: unknown[] = [item, ...parentNode.value]
-        parentNode.input(newArray, false)
+      node.context.listName = node.name
+      node.context.renderButtons = !node.context.hideButtonGroup
+      node.context.insertButtonSize = node.context.insertButtonSize ? node.context.insertButtonSize : ''
+      node.context.buttonSize = node.context.buttonSize ? node.context.buttonSize : ''
+      node.context.renderMoveButtons = !node.context.hideMoveButtons
+
+      node.context.insertNode = (parentNode: any) => (): void => {
+        if (parentNode && Array.isArray(parentNode._value)) {
+          const newArray: any[] = [{ ...newItem }, ...parentNode.value]
+          parentNode.input(newArray, false)
+        }
       }
-    }
-    node.context.removeNode = (parentNode: FormKitNode, index: number) => (): void => {
-      if (parentNode && Array.isArray(parentNode._value)) {
-        parentNode.input(parentNode._value.filter((_: unknown, i: number): boolean => i !== index), false)
+      node.context.removeNode = (parentNode: FormKitNode, index: number) => (): void => {
+        if (parentNode && Array.isArray(parentNode._value)) {
+          parentNode.input(parentNode._value.filter((_: any, i: number): boolean => i !== index), false)
+        }
       }
-    }
-    node.context.addNode = (parentNode: FormKitNode, index: number) => (): void => {
-      if (parentNode && Array.isArray(parentNode._value)) {
-        const item: unknown = node.context.newItem ? { ...node.context.newItem } : {}
-        const newArray: unknown[] = [...parentNode.value.slice(0, index + 1), { ...item }, ...parentNode.value.slice(index + 1)]
-        parentNode.input([...newArray], false)
+      node.context.addNode = (parentNode: any, index: number) => (): void => {
+        if (parentNode && Array.isArray(parentNode._value)) {
+          const newArray: any[] = [...parentNode.value.slice(0, index + 1), { ...newItem }, ...parentNode.value.slice(index + 1)]
+          parentNode.input([...newArray], false)
+        }
       }
-    }
-    node.context.cloneNode = (parentNode: FormKitNode, index: number) => (): void => {
-      if (parentNode && Array.isArray(parentNode._value)) {
-        const item: unknown = parentNode.value[index]
-        const newArray: unknown[] = [...parentNode.value.slice(0, index + 1), { ...item }, ...parentNode.value.slice(index + 1)]
-        parentNode.input([...newArray], false)
+      node.context.cloneNode = (parentNode: any, index: number) => (): void => {
+        if (parentNode && Array.isArray(parentNode._value)) {
+          const item: any = parentNode.value[index]
+          const newArray: any[] = [...parentNode.value.slice(0, index + 1), { ...item }, ...parentNode.value.slice(index + 1)]
+          parentNode.input([...newArray], false)
+        }
       }
-    }
-    node.context.moveNodeUp = (parentNode: FormKitNode, index: number) => (): void => {
-      if (parentNode && Array.isArray(parentNode._value)) {
-        const array: unknown[] = [...parentNode.value]
-        if (index > 0)
-          parentNode.input(swapElements(array, index - 1, index), false)
+      node.context.moveNodeUp = (parentNode: any, index: number) => (): void => {
+        if (parentNode && Array.isArray(parentNode._value)) {
+          const array: any[] = [...parentNode.value]
+          if (index > 0)
+            parentNode.input(swapElements(array, index - 1, index), false)
+        }
       }
-    }
-    node.context.moveNodeDown = (parentNode: FormKitNode, index: number) => (): void => {
-      if (parentNode && Array.isArray(parentNode._value)) {
-        const array: unknown[] = [...parentNode.value]
-        if (index < array.length - 1)
-          parentNode.input(swapElements(array, index, index + 1), false)
+      node.context.moveNodeDown = (parentNode: any, index: number) => (): void => {
+        if (parentNode && Array.isArray(parentNode._value)) {
+          const array: any[] = [...parentNode.value]
+          if (index < array.length - 1)
+            parentNode.input(swapElements(array, index, index + 1), false)
+        }
       }
     }
   })
