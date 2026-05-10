@@ -30,6 +30,8 @@ const schema
     buttonsLabel: 'Actions',
     addButtonLabel: 'Add Attack',
     addButtonClass: 'mb-4',
+    alwaysDisplayAddButton: false,
+    displayCloneButton: true,
     newItem: createDefaultValue(),
     children: [
        {

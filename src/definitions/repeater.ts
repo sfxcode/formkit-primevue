@@ -4,27 +4,23 @@ import { useFormKitSchema} from "../composables/useFormKitSchema"
 const { addList, addElement, addListGroup, addComponent, addElementsInOuterDiv } = useFormKitSchema()
 
 function addActionButtons(innerClass: string = '', outerClass: string = '', label: string = 'Actions', help: string = '', render: string = 'true') {
-    const addButtonComponent = (onClick: string = '', label: string = '', icon: string = '', severity: string = '', render: string = 'true', styleClass: string = 'p-button-sm'): object => {
-        return addComponent('Button', { onClick, label, icon, class: styleClass, severity }, render)
+    const addButtonComponent = (onClick: string = '', label: string = '', icon: string = '', severity: string = '', render: string = 'true', disabled: 'false', styleClass: string = 'p-button-sm'): object => {
+        return addComponent('Button', { onClick, label, icon, class: styleClass, severity, disabled }, render)
     }
 
     return addElementsInOuterDiv([
-        addButtonComponent('$removeNode($node.parent, $index)', '', 'pi pi-times', 'danger','$renderDeleteButton'),
-        addButtonComponent('$cloneNode($node.parent, $index)', '', 'pi pi-clone',  '', '$renderCloneButton'),
-        addButtonComponent('$moveNodeUp($node.parent, $index)', '', 'pi pi-arrow-up', 'secondary', '$index != 0 && $renderMoveButtons'),
-        addButtonComponent('$moveNodeDown($node.parent, $index)', '', 'pi pi-arrow-down', 'secondary', '$index < $node.parent.value.length -1 && $renderMoveButtons'),
+        addButtonComponent('$removeNode($node.parent, $index)', '', 'pi pi-times', 'danger'),
+        addButtonComponent('$cloneNode($node.parent, $index)', '', 'pi pi-clone',  '', '$displayCloneButton'),
+        addButtonComponent('$moveNodeDown($node.parent, $index)', '', 'pi pi-arrow-down', 'secondary', 'true', '$index === $node.parent.value.length -1'),
+        addButtonComponent('$moveNodeUp($node.parent, $index)', '', 'pi pi-arrow-up', 'secondary', 'true', '$index === 0'),
     ], innerClass, outerClass, label, help, render)
-}
-
-function combineListGroupChildren(children: object[] = [], additionalChildren: object[] = [] ) {
-    return [...children, ...additionalChildren]
 }
 
 export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
     [
         addElement('div', [
             addList('$listName', [
-                addComponent('Button', { onClick: '$addNode($node)', label: '$addButtonLabel', size: 'small', icon: 'pi pi-plus', class: '$addButtonClass' }, '$node.children.length == 0 && $renderAddButton'),
+                addComponent('Button', { onClick: '$addNode($node)', label: '$addButtonLabel', size: 'small', icon: 'pi pi-plus', class: '$addButtonClass' }, '$node.children.length == 0 || $alwaysDisplayAddButton'),
                 addListGroup([
                     addElement('div', [
                         {
@@ -40,7 +36,7 @@ export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
 
     ],
     {
-        props: ['buttonsOuterClass', 'buttonsInnerClass', 'buttonsLabel', 'addButtonLabel', 'addButtonClass', 'newItem', 'itemClass', 'listClass', 'hideMoveButtons', 'hideCloneButton', 'hideDeleteButton', 'hideAddButton'],
+        props: ['buttonsOuterClass', 'buttonsInnerClass', 'buttonsLabel', 'addButtonLabel', 'addButtonClass', 'newItem', 'itemClass', 'listClass', 'displayCloneButton', 'alwaysDisplayAddButton'],
         features: [addRepeaterHandler]
     }
 )
@@ -54,12 +50,8 @@ function addRepeaterHandler(node: FormKitNode): void {
         return newArray
     }
     node.on('created', () => {
-        console.error('Created repeater node', node.context.hideMoveButtons)
         node.context.listName = node.name
-        node.context.renderMoveButtons = !node.context.hideMoveButtons
-        node.context.renderCloneButton = !node.context.hideCloneButton
-        node.context.renderDeleteButton = !node.context.hideDeleteButton
-        node.context.renderAddButton = !node.context.hideAddButton
+
         node.context.removeNode = (parentNode: FormKitNode, index: number) => (): void => {
             if (parentNode && parentNode._value instanceof Array) {
                 parentNode.input(parentNode._value.filter((_: any, i: number): boolean => i !== index), false)
