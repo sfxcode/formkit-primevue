@@ -52,12 +52,12 @@ export function useFormKitSchema() {
   }
 
   const addElementsInOuterDiv = (children: object[] = [], innerClass: string = '', outerClass: string = '', label: string = '', help: string = '', render: string | boolean = true) => {
-    const inner = addElement('div', children, { class: `formkit-inner ${innerClass}`, style: 'position: relative;' })
+    const inner = addElement('div', children, { class: innerClass, style: 'position: relative;' })
     const labelDiv = addElement('label', [label], { class: 'formkit-label' })
     const wrapperDiv = addElement('div', [labelDiv, inner], { class: 'formkit-wrapper' })
     const helpDiv = addElement('div', [help], { class: 'formkit-help' })
-    return addElement('div', [wrapperDiv, helpDiv], { class: `formkit-outer ${outerClass}`, style: 'position: relative;' }, render)
+    return addElement('div', [wrapperDiv, helpDiv], { class: outerClass, style: 'position: relative;' }, render)
   }
 
-  return { addComponent, addElement, addGroup, addList, addListGroup, addElementsInOuterDiv }
+  return { addComponent, addElement, addGroup, addList, addListGroup, addElementsInOuterDiv, }
 }
