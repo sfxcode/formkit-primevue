@@ -1,3 +1,39 @@
+## v4.1.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.0.0...v4.1.0)
+
+### 🚀 Enhancements
+
+- Add primeRepeater input component for dynamic list management ([5a51ab86](https://github.com/sfxcode/formkit-primevue/commit/5a51ab86))
+- Enhance Repeater component with primeRepeater for dynamic data list management ([44fed8c6](https://github.com/sfxcode/formkit-primevue/commit/44fed8c6))
+- Update AppTopbar to link to PrimeRepeater sample ([f30f69e8](https://github.com/sfxcode/formkit-primevue/commit/f30f69e8))
+- Add options for always displaying add button and enabling clone button in Repeater component ([439390a1](https://github.com/sfxcode/formkit-primevue/commit/439390a1))
+
+### 🩹 Fixes
+
+- Simplify class handling in addElementsInOuterDiv function ([6f7d5acc](https://github.com/sfxcode/formkit-primevue/commit/6f7d5acc))
+- Clean up import statements and formatting in Repeater component files ([5d24ea19](https://github.com/sfxcode/formkit-primevue/commit/5d24ea19))
+- Update addButtonComponent parameters for consistency and improve new item handling in node context ([0e8c056c](https://github.com/sfxcode/formkit-primevue/commit/0e8c056c))
+- Standardize formatting and indentation in repeater component event handlers ([b02f95f3](https://github.com/sfxcode/formkit-primevue/commit/b02f95f3))
+- Update release script to use minor versioning for changelog ([dfc7809c](https://github.com/sfxcode/formkit-primevue/commit/dfc7809c))
+- Mark useFormKitRepeater as deprecated and suggest primeRepeater ([33efa5d3](https://github.com/sfxcode/formkit-primevue/commit/33efa5d3))
+
+### 📖 Documentation
+
+- Update composables.md to add primeRepeater and deprecate useFormKitRepeater ([ea5cc26b](https://github.com/sfxcode/formkit-primevue/commit/ea5cc26b))
+
+### 🏡 Chore
+
+- Update release script to use patch versioning ([8ebda625](https://github.com/sfxcode/formkit-primevue/commit/8ebda625))
+- Update dependencies in package.json for improved compatibility and performance ([daa476af](https://github.com/sfxcode/formkit-primevue/commit/daa476af))
+- Update packageManager version in package.json to 11.0.9 ([828b42e8](https://github.com/sfxcode/formkit-primevue/commit/828b42e8))
+- Add pnpm workspace configuration to disable builds for specific packages ([54329ae4](https://github.com/sfxcode/formkit-primevue/commit/54329ae4))
+- Update pnpm workspace configuration to enable shell emulator and set trust policy ([723a9fa4](https://github.com/sfxcode/formkit-primevue/commit/723a9fa4))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.0.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v3.3.8...v4.0.0)
