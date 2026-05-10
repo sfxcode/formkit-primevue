@@ -50,43 +50,43 @@ function addRepeaterHandler(node: FormKitNode): void {
     return newArray
   }
   node.on('created', () => {
-    if (node.context)  {
+    if (node.context) {
       const newItem = node.context.newItem || {}
 
-    node.context.listName = node.name
+      node.context.listName = node.name
 
-    node.context.removeNode = (parentNode: FormKitNode, index: number) => (): void => {
-      if (parentNode && Array.isArray(parentNode._value)) {
-        parentNode.input(parentNode._value.filter((_: any, i: number): boolean => i !== index), false)
+      node.context.removeNode = (parentNode: FormKitNode, index: number) => (): void => {
+        if (parentNode && Array.isArray(parentNode._value)) {
+          parentNode.input(parentNode._value.filter((_: any, i: number): boolean => i !== index), false)
+        }
       }
-    }
-    node.context.addNode = (parentNode: any) => (): void => {
-      if (parentNode && Array.isArray(parentNode._value)) {
-        const newArray: any[] = [...parentNode.value, newItem]
-        parentNode.input(newArray, false)
+      node.context.addNode = (parentNode: any) => (): void => {
+        if (parentNode && Array.isArray(parentNode._value)) {
+          const newArray: any[] = [...parentNode.value, newItem]
+          parentNode.input(newArray, false)
+        }
       }
-    }
-    node.context.cloneNode = (parentNode: any, index: number) => (): void => {
-      if (parentNode && Array.isArray(parentNode._value)) {
-        const item: any = parentNode.value[index]
-        const newArray: any[] = [...parentNode.value.slice(0, index), { ...item }, ...parentNode.value.slice(index)]
-        parentNode.input([...newArray], false)
+      node.context.cloneNode = (parentNode: any, index: number) => (): void => {
+        if (parentNode && Array.isArray(parentNode._value)) {
+          const item: any = parentNode.value[index]
+          const newArray: any[] = [...parentNode.value.slice(0, index), { ...item }, ...parentNode.value.slice(index)]
+          parentNode.input([...newArray], false)
+        }
       }
-    }
-    node.context.moveNodeUp = (parentNode: any, index: number) => (): void => {
-      if (parentNode && Array.isArray(parentNode._value)) {
-        const array: any[] = [...parentNode.value]
-        if (index > 0)
-          parentNode.input(swapElements(array, index - 1, index), false)
+      node.context.moveNodeUp = (parentNode: any, index: number) => (): void => {
+        if (parentNode && Array.isArray(parentNode._value)) {
+          const array: any[] = [...parentNode.value]
+          if (index > 0)
+            parentNode.input(swapElements(array, index - 1, index), false)
+        }
       }
-    }
-    node.context.moveNodeDown = (parentNode: any, index: number) => (): void => {
-      if (parentNode && Array.isArray(parentNode._value)) {
-        const array: any[] = [...parentNode.value]
-        if (index < array.length - 1)
-          parentNode.input(swapElements(array, index, index + 1), false)
+      node.context.moveNodeDown = (parentNode: any, index: number) => (): void => {
+        if (parentNode && Array.isArray(parentNode._value)) {
+          const array: any[] = [...parentNode.value]
+          if (index < array.length - 1)
+            parentNode.input(swapElements(array, index, index + 1), false)
+        }
       }
-    }
     }
   })
 }
