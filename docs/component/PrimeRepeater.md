@@ -6,9 +6,9 @@ A FormKit component for repeating groups of inputs with add, remove, clone, and 
 
 ## Usage
 ```vue
-<FormKit 
-  type="primeRepeater" 
-  name="items" 
+<FormKit
+  type="primeRepeater"
+  name="items"
   :newItem="{ name: '', value: '' }"
 >
   <FormKit type="primeInputText" name="name" label="Name" />
@@ -96,8 +96,8 @@ const data = {
 ## Example with Custom Styling
 
 ```vue
-<FormKit 
-  type="primeRepeater" 
+<FormKit
+  type="primeRepeater"
   name="inventory"
   insertButtonLabel="Add Item"
   listItemClass="flex gap-2 mb-2"
