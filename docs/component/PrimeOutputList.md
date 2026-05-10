@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's OutputList component.
 
 ## Usage
 ```vue
-<FormKit type="primeoutputlist" v-model="list" />
+<FormKit type="primeOutputList" v-model="list" />
 ```
 
 ### Object-based Example

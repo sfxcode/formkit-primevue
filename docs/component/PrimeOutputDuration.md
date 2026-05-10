@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's OutputDuration component.
 
 ## Usage
 ```vue
-<FormKit type="primeoutputduration" v-model="duration" />
+<FormKit type="primeOutputDuration" v-model="duration" />
 ```
 
 ### Object-based Example

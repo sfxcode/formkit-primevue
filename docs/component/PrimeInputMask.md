@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's InputMask component.
 
 ## Usage
 ```vue
-<FormKit type="primeinputmask" v-model="value" mask="99-999999" />
+<FormKit type="primeInputMask" v-model="value" mask="99-999999" />
 ```
 
 ### Object-based Example

@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's Knob component.
 
 ## Usage
 ```vue
-<FormKit type="primeknob" v-model="value" />
+<FormKit type="primeKnob" v-model="value" />
 ```
 
 ### Object-based Example

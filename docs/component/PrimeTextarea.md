@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's Textarea component.
 
 ## Usage
 ```vue
-<FormKit type="primetextarea" v-model="text" />
+<FormKit type="primeTextarea" v-model="text" />
 ```
 
 ### Object-based Example

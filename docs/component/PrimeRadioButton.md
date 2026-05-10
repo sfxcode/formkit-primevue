@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's RadioButton component.
 
 ## Usage
 ```vue
-<FormKit type="primeradiobutton" :options="options" option-label="label" option-value="value" v-model="selected" />
+<FormKit type="primeRadioButton" :options="options" option-label="label" option-value="value" v-model="selected" />
 ```
 
 ### Object-based Example

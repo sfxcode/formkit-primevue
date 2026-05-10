@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's OutputReference component.
 
 ## Usage
 ```vue
-<FormKit type="primeoutputreference" v-model="reference" />
+<FormKit type="primeOutputReference" v-model="reference" />
 ```
 
 ### Object-based Example

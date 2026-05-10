@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's OutputBoolean component.
 
 ## Usage
 ```vue
-<FormKit type="primeoutputboolean" v-model="value" />
+<FormKit type="primeOutputBoolean" v-model="value" />
 ```
 
 ### Object-based Example

@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's OutputNumber component.
 
 ## Usage
 ```vue
-<FormKit type="primeoutputnumber" v-model="number" />
+<FormKit type="primeOutputNumber" v-model="number" />
 ```
 
 ### Object-based Example

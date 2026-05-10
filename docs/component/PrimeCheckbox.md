@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's Checkbox component.
 
 ## Usage
 ```vue
-<FormKit type="primecheckbox" v-model="value" />
+<FormKit type="primeCheckbox" v-model="value" />
 ```
 
 ### Object-based Example

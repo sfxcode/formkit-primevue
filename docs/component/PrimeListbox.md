@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's Listbox component.
 
 ## Usage
 ```vue
-<FormKit type="primelistbox" :options="options" option-label="label" option-value="value" v-model="selected" />
+<FormKit type="primeListbox" :options="options" option-label="label" option-value="value" v-model="selected" />
 ```
 
 ### Object-based Example

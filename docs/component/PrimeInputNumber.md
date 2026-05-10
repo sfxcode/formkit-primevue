@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's InputNumber component.
 
 ## Usage
 ```vue
-<FormKit type="primeinputnumber" v-model="value" />
+<FormKit type="primeInputNumber" v-model="value" />
 ```
 
 ### Object-based Example

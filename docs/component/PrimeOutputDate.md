@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's OutputDate component.
 
 ## Usage
 ```vue
-<FormKit type="primeoutputdate" v-model="date" />
+<FormKit type="primeOutputDate" v-model="date" />
 ```
 
 ### Object-based Example

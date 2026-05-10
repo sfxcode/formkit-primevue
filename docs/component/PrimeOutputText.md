@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's OutputText component.
 
 ## Usage
 ```vue
-<FormKit type="primeoutputtext" v-model="text" />
+<FormKit type="primeOutputText" v-model="text" />
 ```
 
 ### Object-based Example

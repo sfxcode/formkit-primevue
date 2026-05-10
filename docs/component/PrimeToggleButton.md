@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's ToggleButton component.
 
 ## Usage
 ```vue
-<FormKit type="primetogglebutton" v-model="value" />
+<FormKit type="primeToggleButton" v-model="value" />
 ```
 
 ### Object-based Example

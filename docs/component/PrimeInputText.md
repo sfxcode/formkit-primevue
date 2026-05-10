@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's InputText component.
 
 ## Usage
 ```vue
-<FormKit type="primeinputtext" v-model="text" />
+<FormKit type="primeInputText" v-model="text" />
 ```
 
 ### Object-based Example

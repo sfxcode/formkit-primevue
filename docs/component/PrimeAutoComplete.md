@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's AutoComplete component.
 
 ## Usage
 ```vue
-<FormKit type="primeautocomplete" :options="userList" option-label="name" v-model="selectedUser" />
+<FormKit type="primeAutoComplete" :options="userList" option-label="name" v-model="selectedUser" />
 ```
 
 ### Object-based Example
@@ -20,7 +20,7 @@ const selectedUser = ref()
 </script>
 
 <FormKit
-  type="primeautocomplete"
+  type="primeAutoComplete"
   label="Object AutoComplete - Use [t]om"
   :options="userList"
   option-label="name"

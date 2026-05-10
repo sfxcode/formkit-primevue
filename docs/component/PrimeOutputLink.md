@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's OutputLink component.
 
 ## Usage
 ```vue
-<FormKit type="primeoutputlink" v-model="link" />
+<FormKit type="primeOutputLink" v-model="link" />
 ```
 
 ### Object-based Example

@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's ColorPicker component.
 
 ## Usage
 ```vue
-<FormKit type="primecolorpicker" v-model="color" />
+<FormKit type="primeColorPicker" v-model="color" />
 ```
 
 ### Object-based Example

@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's InputOtp component.
 
 ## Usage
 ```vue
-<FormKit type="primeinputotp" v-model="otp" length="6" />
+<FormKit type="primeInputOtp" v-model="otp" length="6" />
 ```
 
 ### Object-based Example

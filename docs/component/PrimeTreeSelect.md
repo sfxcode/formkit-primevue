@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's TreeSelect component.
 
 ## Usage
 ```vue
-<FormKit type="primetreeselect" :options="options" v-model="selected" />
+<FormKit type="primeTreeSelect" :options="options" v-model="selected" />
 ```
 
 ### Object-based Example

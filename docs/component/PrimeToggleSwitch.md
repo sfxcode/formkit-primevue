@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's ToggleSwitch component.
 
 ## Usage
 ```vue
-<FormKit type="primetoggleswitch" v-model="value" />
+<FormKit type="primeToggleSwitch" v-model="value" />
 ```
 
 ### Object-based Example

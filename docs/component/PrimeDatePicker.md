@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's DatePicker component.
 
 ## Usage
 ```vue
-<FormKit type="primedatepicker" v-model="date" />
+<FormKit type="primeDatePicker" v-model="date" />
 ```
 
 ### Object-based Example

@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's Slider component.
 
 ## Usage
 ```vue
-<FormKit type="primeslider" v-model="value" />
+<FormKit type="primeSlider" v-model="value" />
 ```
 
 ### Object-based Example

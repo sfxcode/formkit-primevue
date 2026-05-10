@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's MultiSelect component.
 
 ## Usage
 ```vue
-<FormKit type="primemultiselect" :options="options" option-label="label" option-value="value" v-model="selected" />
+<FormKit type="primeMultiSelect" :options="options" option-label="label" option-value="value" v-model="selected" />
 ```
 
 ### Object-based Example

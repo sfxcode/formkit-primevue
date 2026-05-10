@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's CascadeSelect component.
 
 ## Usage
 ```vue
-<FormKit type="primecascadeselect" :options="options" option-label="cname" option-group-label="name" :option-group-children="['states','cities']" v-model="selectedCity" />
+<FormKit type="primeCascadeSelect" :options="options" option-label="cname" option-group-label="name" :option-group-children="['states','cities']" v-model="selectedCity" />
 ```
 
 ### Object-based Example
@@ -26,7 +26,7 @@ const selectedCity = ref()
 </script>
 
 <FormKit
-  type="primecascadeselect"
+  type="primeCascadeSelect"
   label="Cascade Select"
   :options="options"
   option-label="cname"

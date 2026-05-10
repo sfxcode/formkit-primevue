@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's Password component.
 
 ## Usage
 ```vue
-<FormKit type="primepassword" v-model="password" />
+<FormKit type="primePassword" v-model="password" />
 ```
 
 ### Object-based Example

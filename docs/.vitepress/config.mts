@@ -147,6 +147,7 @@ function sidebarComponent() {
         { text: 'PrimePassword', link: '/component/PrimePassword' },
         { text: 'PrimeRadioButton', link: '/component/PrimeRadioButton' },
         { text: 'PrimeRating', link: '/component/PrimeRating' },
+        { text: 'PrimeRepeater', link: '/component/PrimeRepeater' },
         { text: 'PrimeSelect', link: '/component/PrimeSelect' },
         { text: 'PrimeSelectButton', link: '/component/PrimeSelectButton' },
         { text: 'PrimeSlider', link: '/component/PrimeSlider' },

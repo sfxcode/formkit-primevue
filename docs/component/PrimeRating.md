@@ -6,7 +6,7 @@ A FormKit wrapper for PrimeVue's Rating component.
 
 ## Usage
 ```vue
-<FormKit type="primerating" v-model="rating" />
+<FormKit type="primeRating" v-model="rating" />
 ```
 
 ### Object-based Example
