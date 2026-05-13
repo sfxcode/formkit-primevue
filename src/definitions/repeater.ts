@@ -37,7 +37,7 @@ export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
         ],
         ),
       ], true, 'true'),
-    ], { class: '$listClass' }),
+    ], { 'class': '$listClass', 'data-auto-animate': 'true' }),
 
   ],
   {
