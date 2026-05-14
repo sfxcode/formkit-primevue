@@ -7,6 +7,7 @@ import ConfirmationService from 'primevue/confirmationservice'
 
 import MegaMenu from 'primevue/megamenu'
 import Ripple from 'primevue/ripple'
+import Tab from 'primevue/tab'
 import TabList from 'primevue/tablist'
 import TabPanel from 'primevue/tabpanel'
 
@@ -35,6 +36,7 @@ export const install: UserModule = ({ app }) => {
   // other components
   app.component('MegaMenu', MegaMenu)
   app.component('Fieldset', Fieldset)
+  app.component('Tab', Tab)
   app.component('Tabs', Tabs)
   app.component('TabList', TabList)
   app.component('TabPanels', TabPanels)
