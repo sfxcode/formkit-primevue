@@ -1,3 +1,23 @@
+## v4.1.8
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.1.3...v4.1.8)
+
+### 🚀 Enhancements
+
+- Register Tab component in PrimeVue for enhanced tab functionality ([283eb8ff](https://github.com/sfxcode/formkit-primevue/commit/283eb8ff))
+
+### 🩹 Fixes
+
+- Add data-auto-animate attribute to repeater component for improved animation support ([cb7de478](https://github.com/sfxcode/formkit-primevue/commit/cb7de478))
+
+### 💅 Refactors
+
+- Streamline Repeater component structure and improve class bindings ([dc4bad15](https://github.com/sfxcode/formkit-primevue/commit/dc4bad15))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.1.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.1.2...v4.1.3)
