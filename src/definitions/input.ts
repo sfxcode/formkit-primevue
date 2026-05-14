@@ -23,7 +23,6 @@ import PrimeTextarea from '../components/PrimeTextarea.vue'
 import PrimeToggleButton from '../components/PrimeToggleButton.vue'
 import PrimeToggleSwitch from '../components/PrimeToggleSwitch.vue'
 import PrimeTreeSelect from '../components/PrimeTreeSelect.vue'
-import { primeRepeaterDefinition } from './repeater.ts'
 
 export const primeAutoCompleteDefinition: FormKitTypeDefinition = createInput(PrimeAutoComplete, {
   props: ['pt', 'ptOptions', 'unstyled', 'Select', 'multiple', 'typeahead', 'optionLabel', 'options', 'size', 'minLength', 'placeholder', 'fluid', 'separators'],
@@ -132,29 +131,3 @@ export const primeTreeSelectDefinition: FormKitTypeDefinition = createInput(Prim
   props: ['options', 'placeholder', 'selectionMode', 'pt', 'ptOptions', 'unstyled', 'emptyMessage', 'display', 'metaKeySelection', 'appendTo', 'scrollHeight', 'panelClass', 'variant', 'size'],
   family: 'PrimeInput',
 })
-
-export const primeInputs = {
-  primeAutoComplete: primeAutoCompleteDefinition,
-  primeInputText: primeInputTextDefinition,
-  primeInputNumber: primeInputNumberDefinition,
-  primeInputMask: primeInputMaskDefinition,
-  primePassword: primePasswordDefinition,
-  primeCheckbox: primeCheckboxDefinition,
-  primeToggleSwitch: primeToggleSwitchDefinition,
-  primeTextarea: primeTextareaDefinition,
-  primeSelect: primeSelectDefinition,
-  primeMultiSelect: primeMultiSelectDefinition,
-  primeDatePicker: primeDatePickerDefinition,
-  primeSlider: primeSliderDefinition,
-  primeKnob: primeKnobDefinition,
-  primeRating: primeRatingDefinition,
-  primeRadioButton: primeRadioButtonDefinition,
-  primeColorPicker: primeColorPickerDefinition,
-  primeToggleButton: primeToggleButtonDefinition,
-  primeListbox: primeListboxDefinition,
-  primeSelectButton: primeSelectButtonDefinition,
-  primeCascadeSelect: primeCascadeSelectDefinition,
-  primeTreeSelect: primeTreeSelectDefinition,
-  primeInputOtp: primeInputOtpDefinition,
-  primeRepeater: primeRepeaterDefinition,
-}

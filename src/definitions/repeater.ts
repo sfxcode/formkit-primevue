@@ -33,11 +33,11 @@ export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
           addElement('div', [
             addElement('div', [{ children: '$slots.default' }], { class: '$groupClass' }),
             addButtonGroup('$buttonGroupClass', '$buttonGroupItemClass', '$buttonSize', '$renderButtons'),
-          ], { class: '$listItemClass' }),
+          ], { class: '$internalListItemClass' }),
         ],
         ),
       ], true, 'true'),
-    ], { 'class': '$listClass', 'data-auto-animate': 'true' }),
+    ], { class: '$internalListClass' }),
 
   ],
   {
@@ -63,6 +63,8 @@ function addRepeaterHandler(node: FormKitNode): void {
       node.context.insertButtonSize = node.context.insertButtonSize ? node.context.insertButtonSize : ''
       node.context.buttonSize = node.context.buttonSize ? node.context.buttonSize : ''
       node.context.renderMoveButtons = !node.context.hideMoveButtons
+      node.context.internalListClass = node.context.listClass ? `items ${node.context.listClass}` : 'items'
+      node.context.internalListItemClass = node.context.listItemClass ? `item ${node.context.listItemClass}` : 'item'
 
       node.context.insertNode = (parentNode: any) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
@@ -70,7 +72,7 @@ function addRepeaterHandler(node: FormKitNode): void {
           parentNode.input(newArray, false)
         }
       }
-      node.context.removeNode = (parentNode: FormKitNode, index: number) => (): void => {
+      node.context.removeNode = (parentNode: any, index: number) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
           parentNode.input(parentNode._value.filter((_: any, i: number): boolean => i !== index), false)
         }
