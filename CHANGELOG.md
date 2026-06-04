@@ -1,3 +1,19 @@
+## v4.1.9
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.1.8...v4.1.9)
+
+### 🚀 Enhancements
+
+- Enhance Repeater component with improved class bindings and new properties - use formkit-item as class and remove not needed div surrounding the repeater item ([969dfda0](https://github.com/sfxcode/formkit-primevue/commit/969dfda0))
+
+### 🏡 Chore
+
+- Update dependencies in package.json for improved compatibility and performance ([2f6213ef](https://github.com/sfxcode/formkit-primevue/commit/2f6213ef))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.1.8
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.1.3...v4.1.8)
