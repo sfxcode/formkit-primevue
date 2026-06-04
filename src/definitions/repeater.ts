@@ -25,23 +25,16 @@ function addInsertButton(label: string = 'Add Item', icon: string = 'i-lucide-pl
 }
 
 export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
-  [
-    addElement('div', [
-      addList('$listName', [
-        addInsertButton('$insertButtonLabel', 'pi pi-plus', '$insertButtonClass', '$insertButtonSize', '$node.children.length == 0 || $alwaysDisplayInsertButton'),
-        addListGroup([
-          addElement('div', [
-            addElement('div', [{ children: '$slots.default' }], { class: '$groupClass' }),
-            addButtonGroup('$buttonGroupClass', '$buttonGroupItemClass', '$buttonSize', '$renderButtons'),
-          ], { class: '$internalListItemClass' }),
-        ],
-        ),
-      ], true, 'true'),
-    ], { class: '$internalListClass' }),
-
-  ],
+  addElement('div', [
+    addList('$listName', [
+      addInsertButton('$insertButtonLabel', 'pi pi-plus', '$insertButtonClass', '$insertButtonSize', '$node.children.length == 0 || $alwaysDisplayInsertButton'),
+      addListGroup([
+        addElement('div', [{ children: '$slots.default' }, addButtonGroup('$buttonGroupClass', '$buttonGroupItemClass', '$buttonSize', '$renderButtons')], { class: '$internalListItemClass' }),
+      ], true, {}),
+    ], true, 'true'),
+  ], { class: '$internalListClass' }, true),
   {
-    props: ['insertButtonLabel', 'insertButtonClass', 'insertButtonSize', 'alwaysDisplayInsertButton', 'newItem', 'listClass', 'listItemClass', 'groupClass', 'hideButtonGroup', 'hideMoveButtons', 'buttonGroupClass', 'buttonGroupItemClass', 'buttonSize', 'displayCloneButton', 'displayAddButton', 'displayDeleteButton'],
+    props: ['insertButtonLabel', 'insertButtonClass', 'insertButtonSize', 'alwaysDisplayInsertButton', 'newItem', 'listClass', 'listItemClass', 'hideButtonGroup', 'hideMoveButtons', 'buttonGroupClass', 'buttonGroupItemClass', 'buttonSize', 'displayCloneButton', 'displayAddButton', 'displayDeleteButton'],
     features: [addRepeaterHandler],
   },
 )
@@ -63,8 +56,8 @@ function addRepeaterHandler(node: FormKitNode): void {
       node.context.insertButtonSize = node.context.insertButtonSize ? node.context.insertButtonSize : ''
       node.context.buttonSize = node.context.buttonSize ? node.context.buttonSize : ''
       node.context.renderMoveButtons = !node.context.hideMoveButtons
-      node.context.internalListClass = node.context.listClass ? `items ${node.context.listClass}` : 'items'
-      node.context.internalListItemClass = node.context.listItemClass ? `item ${node.context.listItemClass}` : 'item'
+      node.context.internalListClass = node.context.listClass ? `formkit-items ${node.context.listClass}` : 'formkit-items'
+      node.context.internalListItemClass = node.context.listItemClass ? `formkit-item ${node.context.listItemClass}` : 'formkit-item'
 
       node.context.insertNode = (parentNode: any) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {

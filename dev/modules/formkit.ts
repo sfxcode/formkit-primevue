@@ -55,6 +55,7 @@ export const install: UserModule = ({ app }) => {
           // default:
           global: ['outer', 'inner'],
           form: ['form'],
+          primeRepeater: ['input'],
         },
       ),
       addPrimeAsteriskPlugin,
