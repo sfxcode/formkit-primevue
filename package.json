@@ -107,7 +107,6 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^9.0.0",
-    "@formkit/drag-and-drop": "^0.5.3",
     "@primeuix/themes": "^2.0.3",
     "@types/node": "^25.9.1",
     "@unocss/preset-icons": "66.7.0",

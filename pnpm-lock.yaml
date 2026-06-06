@@ -42,9 +42,6 @@ importers:
       '@antfu/eslint-config':
         specifier: ^9.0.0
         version: 9.0.0(@typescript-eslint/rule-tester@8.56.1(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3))(@typescript-eslint/typescript-estree@8.60.1(typescript@6.0.3))(@typescript-eslint/utils@8.60.1(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3))(@vue/compiler-sfc@3.5.35)(eslint@10.4.1(jiti@2.7.0))(typescript@6.0.3)(vitest@4.1.8)
-      '@formkit/drag-and-drop':
-        specifier: ^0.5.3
-        version: 0.5.3
       '@primeuix/themes':
         specifier: ^2.0.3
         version: 2.0.3
@@ -949,9 +946,6 @@ packages:
 
   '@formkit/dev@2.0.0':
     resolution: {integrity: sha512-AFoRoFmoZjywfrRcbjyvuCSHeWS1lADn4tTuyx1nW1ZXw40G4T6ZoTW+ooiZKALpT2FpoKEnktbnQh97crozBw==}
-
-  '@formkit/drag-and-drop@0.5.3':
-    resolution: {integrity: sha512-VGQsKYc350OOMbz7wYt69YqDbn49x7RJ32eqiJieNke54nGZYmx18XEqTw0lBiJmH3RaiH6V45gB1u+tvI/TNw==}
 
   '@formkit/i18n@2.0.0':
     resolution: {integrity: sha512-crUPI5vNyubvOJek24FAMQ2T2wVTaFrisnf9GudI3oj9+Gu73sUZZBH7cQ3Mhf3WpE0QimMEhmDknYIaxoVwXA==}
@@ -5511,8 +5505,6 @@ snapshots:
       '@formkit/core': 2.0.0
       '@formkit/utils': 2.0.0
 
-  '@formkit/drag-and-drop@0.5.3': {}
-
   '@formkit/i18n@2.0.0':
     dependencies:
       '@formkit/core': 2.0.0
@@ -6280,8 +6272,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.56.1(typescript@6.0.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.56.1(typescript@6.0.3)
-      '@typescript-eslint/types': 8.56.1
+      '@typescript-eslint/tsconfig-utils': 8.60.1(typescript@6.0.3)
+      '@typescript-eslint/types': 8.60.1
       debug: 4.4.3
       typescript: 6.0.3
     transitivePeerDependencies:
