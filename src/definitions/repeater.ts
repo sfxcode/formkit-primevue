@@ -41,12 +41,10 @@ export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
 
 function addRepeaterHandler(node: FormKitNode): void {
   const swapElements = (array: any[], index1: number, index2: number) => {
-    const newArray = [...array]
-    const temp = newArray[index1]
-    newArray[index1] = newArray[index2]
-    newArray[index2] = temp
-    return newArray
+    array.splice(index2, 0, array.splice(index1, 1)[0])
+    return array
   }
+
   node.on('created', () => {
     if (node.context) {
       const newItem = node.context.newItem || {}
@@ -72,29 +70,29 @@ function addRepeaterHandler(node: FormKitNode): void {
       }
       node.context.addNode = (parentNode: any, index: number) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
-          const newArray: any[] = [...parentNode.value.slice(0, index + 1), { ...newItem }, ...parentNode.value.slice(index + 1)]
-          parentNode.input([...newArray], false)
+          const array: any[] = parentNode.value
+          array.splice(index + 1, 0, newItem)
+          parentNode.input(array, false)
         }
       }
       node.context.cloneNode = (parentNode: any, index: number) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
           const item: any = parentNode.value[index]
-          const newArray: any[] = [...parentNode.value.slice(0, index + 1), { ...item }, ...parentNode.value.slice(index + 1)]
-          parentNode.input([...newArray], false)
+          const array: any[] = parentNode.value
+          array.splice(index + 1, 0, item)
+          parentNode.input(array, false)
         }
       }
       node.context.moveNodeUp = (parentNode: any, index: number) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
-          const array: any[] = [...parentNode.value]
           if (index > 0)
-            parentNode.input(swapElements(array, index - 1, index), false)
+            parentNode.input(swapElements(parentNode.value, index - 1, index), false)
         }
       }
       node.context.moveNodeDown = (parentNode: any, index: number) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
-          const array: any[] = [...parentNode.value]
-          if (index < array.length - 1)
-            parentNode.input(swapElements(array, index, index + 1), false)
+          if (index < parentNode.value.length - 1)
+            parentNode.input(swapElements(parentNode.value, index, index + 1), false)
         }
       }
     }
