@@ -1,3 +1,32 @@
+## v4.2.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.1.10...v4.2.0)
+
+### 🚀 Enhancements
+
+- Add minItems and maxItems properties to Repeater component for better item management ([f63edbee](https://github.com/sfxcode/formkit-primevue/commit/f63edbee))
+- Add explicit @formkit/auto-animate dependency for enhanced animations ([f92c3852](https://github.com/sfxcode/formkit-primevue/commit/f92c3852))
+- Enhance PrimeListbox with customizable transfer button styles and container classes ([6f127aac](https://github.com/sfxcode/formkit-primevue/commit/6f127aac))
+- Add ListboxTransfer component with enhanced transfer functionality and examples ([8281de78](https://github.com/sfxcode/formkit-primevue/commit/8281de78))
+- Enhance PrimeListbox documentation with customizable styling examples and transfer options ([1269bf35](https://github.com/sfxcode/formkit-primevue/commit/1269bf35))
+- Update Listbox Transfer icon for improved visual representation ([5e21a8eb](https://github.com/sfxcode/formkit-primevue/commit/5e21a8eb))
+- Update release script to use minor versioning for changelog ([f22281d3](https://github.com/sfxcode/formkit-primevue/commit/f22281d3))
+- Enhance addInsertButton to disable button when max items limit is reached ([6a0e1a87](https://github.com/sfxcode/formkit-primevue/commit/6a0e1a87))
+- Add watchers to FormKitDataEdit and FormKitDataView for reactive prop updates ([56f6fb86](https://github.com/sfxcode/formkit-primevue/commit/56f6fb86))
+- Enhance JSON editor integration in PrimeInput and PrimeOutput for better data handling ([df1c383c](https://github.com/sfxcode/formkit-primevue/commit/df1c383c))
+
+### 💅 Refactors
+
+- Optimize array manipulation in Repeater component methods ([14dfc292](https://github.com/sfxcode/formkit-primevue/commit/14dfc292))
+
+### 🏡 Chore
+
+- Update dependencies for improved stability and performance ([76c4ee40](https://github.com/sfxcode/formkit-primevue/commit/76c4ee40))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.1.10
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.1.9...v4.1.10)
