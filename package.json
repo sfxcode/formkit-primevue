@@ -99,6 +99,7 @@
     "@formkit/i18n": "^2.0.0",
     "@formkit/inputs": "^2.0.0",
     "@formkit/vue": "^2.0.0",
+    "@formkit/auto-animate": "^0.9.0",
     "@intlify/core": "^11.4.4",
     "primeicons": "^7.0.0",
     "primevue": "^4.5.5",

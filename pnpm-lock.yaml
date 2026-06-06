@@ -11,6 +11,9 @@ importers:
       '@formkit/addons':
         specifier: ^2.0.0
         version: 2.0.0
+      '@formkit/auto-animate':
+        specifier: ^0.9.0
+        version: 0.9.0
       '@formkit/core':
         specifier: ^2.0.0
         version: 2.0.0
@@ -6272,8 +6275,8 @@ snapshots:
 
   '@typescript-eslint/project-service@8.56.1(typescript@6.0.3)':
     dependencies:
-      '@typescript-eslint/tsconfig-utils': 8.56.1(typescript@6.0.3)
-      '@typescript-eslint/types': 8.56.1
+      '@typescript-eslint/tsconfig-utils': 8.60.1(typescript@6.0.3)
+      '@typescript-eslint/types': 8.60.1
       debug: 4.4.3
       typescript: 6.0.3
     transitivePeerDependencies:
