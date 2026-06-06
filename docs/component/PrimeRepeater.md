@@ -84,6 +84,9 @@ const data = {
 | displayCloneButton        | boolean   | false   | Show clone button |
 | displayAddButton          | boolean   | false   | Show add button |
 | displayDeleteButton       | boolean   | true    | Show delete button |
+| displayDragHandle         | boolean   | false   | Show drag handle and enable drag-and-drop reordering |
+| dragHandleClass           | string    | ''      | Extra CSS class for the drag handle |
+| dragHandleIconClass       | string    | 'pi pi-bars' | Icon class used inside the drag handle |
 
 ## Features
 
@@ -91,6 +94,7 @@ const data = {
 - **Remove Items**: Delete items from the list
 - **Clone Items**: Duplicate existing items
 - **Reorder Items**: Move items up or down in the list
+- **Drag and Drop**: Reorder items by dragging list rows when `displayDragHandle` is enabled
 - **Customizable**: Full control over styling and button visibility
 
 ## Example with Custom Styling

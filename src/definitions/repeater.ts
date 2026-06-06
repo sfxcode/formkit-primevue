@@ -1,6 +1,6 @@
 import type { FormKitNode, FormKitTypeDefinition } from '@formkit/core'
 import { createInput } from '@formkit/vue'
-import { useFormKitSchema } from '../composables/useFormKitSchema'
+import { useFormKitSchema } from '../composables'
 
 const { addList, addElement, addListGroup, addComponent } = useFormKitSchema()
 
@@ -24,17 +24,38 @@ function addInsertButton(label: string = 'Add Item', icon: string = 'i-lucide-pl
   ], { class: styleClass }, render)
 }
 
+function addDragHandle(handleClass: string = '', iconClass: string = '', render: string = 'true') {
+  return addElement('span', [
+    addElement('i', [], { class: iconClass }),
+  ], {
+    'class': handleClass,
+    'aria-label': 'Drag to reorder',
+  }, render)
+}
+
 export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
   addElement('div', [
     addList('$listName', [
       addInsertButton('$insertButtonLabel', 'pi pi-plus', '$insertButtonClass', '$insertButtonSize', '$node.children.length == 0 || $alwaysDisplayInsertButton'),
       addListGroup([
-        addElement('div', [{ children: '$slots.default' }, addButtonGroup('$buttonGroupClass', '$buttonGroupItemClass', '$buttonSize', '$renderButtons')], { class: '$internalListItemClass' }),
+        addElement('div', [
+          addDragHandle('$internalDragHandleClass', '$dragHandleIconClass', '$renderDragHandle'),
+          { children: '$slots.default' },
+          addButtonGroup('$buttonGroupClass', '$buttonGroupItemClass', '$buttonSize', '$renderButtons'),
+        ], {
+          class: '$getListItemClass($index)',
+          draggable: '$renderDragHandle',
+          onDragstart: '$dragNodeStart($node.parent, $index)',
+          onDragover: '$dragNodeOver($index)',
+          onDragleave: '$dragNodeLeave($index)',
+          onDrop: '$dropNode($node.parent, $index)',
+          onDragend: '$dragNodeEnd',
+        }),
       ], true, {}),
     ], true, 'true'),
-  ], { class: '$internalListClass' }, true),
+  ], { class: '$internalListClass', id: '$internalListId' }, true),
   {
-    props: ['insertButtonLabel', 'insertButtonClass', 'insertButtonSize', 'alwaysDisplayInsertButton', 'newItem', 'listClass', 'listItemClass', 'hideButtonGroup', 'hideMoveButtons', 'buttonGroupClass', 'buttonGroupItemClass', 'buttonSize', 'displayCloneButton', 'displayAddButton', 'displayDeleteButton', 'minItems', 'maxItems'],
+    props: ['insertButtonLabel', 'insertButtonClass', 'insertButtonSize', 'alwaysDisplayInsertButton', 'newItem', 'listClass', 'listItemClass', 'hideButtonGroup', 'hideMoveButtons', 'buttonGroupClass', 'buttonGroupItemClass', 'buttonSize', 'displayCloneButton', 'displayAddButton', 'displayDeleteButton', 'minItems', 'maxItems', 'displayDragHandle', 'dragHandleClass', 'dragHandleIconClass'],
     features: [addRepeaterHandler],
   },
 )
@@ -47,6 +68,8 @@ function addRepeaterHandler(node: FormKitNode): void {
 
   node.on('created', () => {
     if (node.context) {
+      let dragStartIndex: number | null = null
+      let dragOverIndex: number | null = null
       const newItem = node.context.newItem || {}
 
       node.context.listName = node.name
@@ -54,8 +77,18 @@ function addRepeaterHandler(node: FormKitNode): void {
       node.context.insertButtonSize = node.context.insertButtonSize ? node.context.insertButtonSize : ''
       node.context.buttonSize = node.context.buttonSize ? node.context.buttonSize : ''
       node.context.renderMoveButtons = !node.context.hideMoveButtons
+      node.context.renderDragHandle = !!node.context.displayDragHandle
+      node.context.dragHandleIconClass = node.context.dragHandleIconClass || 'pi pi-bars'
+      node.context.internalDragHandleClass = node.context.dragHandleClass ? `formkit-repeater-drag-handle ${node.context.dragHandleClass}` : 'formkit-repeater-drag-handle'
       node.context.internalListClass = node.context.listClass ? `formkit-items ${node.context.listClass}` : 'formkit-items'
       node.context.internalListItemClass = node.context.listItemClass ? `formkit-item ${node.context.listItemClass}` : 'formkit-item'
+      node.context.internalListId = `formkit-prime-repeater-${String(node.props.id || node.name || 'list').replace(/[^\w-]/g, '-')}`
+
+      node.context.getListItemClass = (index: number): string => {
+        if (dragOverIndex === index && dragStartIndex !== index)
+          return `${node.context?.internalListItemClass} formkit-repeater-drop-target`
+        return node.context?.internalListItemClass
+      }
 
       node.context.insertNode = (parentNode: any) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
@@ -94,6 +127,50 @@ function addRepeaterHandler(node: FormKitNode): void {
           if (index < parentNode.value.length - 1)
             parentNode.input(swapElements(parentNode.value, index, index + 1), false)
         }
+      }
+      node.context.dragNodeStart = (_parentNode: any, index: number) => (event?: DragEvent): void => {
+        dragStartIndex = index
+        if (event?.dataTransfer) {
+          event.dataTransfer.effectAllowed = 'move'
+          event.dataTransfer.setData('text/plain', String(index))
+        }
+      }
+      node.context.dragNodeOver = (targetIndex: number) => (event?: DragEvent): void => {
+        event?.preventDefault()
+        dragOverIndex = targetIndex
+        if (event?.dataTransfer)
+          event.dataTransfer.dropEffect = 'move'
+      }
+      node.context.dragNodeLeave = (targetIndex: number) => (): void => {
+        if (dragOverIndex === targetIndex)
+          dragOverIndex = null
+      }
+      node.context.dropNode = (parentNode: any, targetIndex: number) => (event?: DragEvent): void => {
+        event?.preventDefault()
+        if (!parentNode || !Array.isArray(parentNode._value)) {
+          dragOverIndex = null
+          return
+        }
+
+        const sourceFromEvent = Number.parseInt(event?.dataTransfer?.getData('text/plain') || '', 10)
+        const sourceIndex = Number.isInteger(sourceFromEvent) ? sourceFromEvent : dragStartIndex
+
+        if (sourceIndex === null || sourceIndex === targetIndex) {
+          dragOverIndex = null
+          return
+        }
+        if (sourceIndex < 0 || sourceIndex >= parentNode.value.length) {
+          dragOverIndex = null
+          return
+        }
+
+        parentNode.input(swapElements(parentNode.value, sourceIndex, targetIndex), false)
+        dragStartIndex = null
+        dragOverIndex = null
+      }
+      node.context.dragNodeEnd = (): void => {
+        dragStartIndex = null
+        dragOverIndex = null
       }
     }
   })

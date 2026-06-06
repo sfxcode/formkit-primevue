@@ -177,6 +177,27 @@ $grid-breakpoints: (
     border-radius: 1rem;
     padding: 0.2rem 0.5rem;
   }
+
+  .formkit-repeater-drag-handle {
+    display: inline-flex;
+    align-items: center;
+    cursor: grab;
+    user-select: none;
+  }
+
+  .formkit-item[draggable="true"] {
+    cursor: grab;
+
+    &:active {
+      cursor: grabbing;
+    }
+
+    &.formkit-repeater-drop-target {
+      outline: 1px dashed var(--p-primary-color, #3b82f6);
+      outline-offset: 2px;
+      background: color-mix(in srgb, var(--p-primary-color, #3b82f6) 12%, transparent);
+    }
+  }
 }
 
 // data view only
