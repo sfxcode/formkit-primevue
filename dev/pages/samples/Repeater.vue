@@ -24,6 +24,8 @@ const schema
       help: 'Attacks List Demo - Use Buttons to clone, move and delete',
       listClass: '',
       listItemClass: 'flex gap-2',
+      minItems: 1,
+      maxItems: 4,
       buttonGroupClass: 'formkit-outer buttonGroupClass mt-6 flex gap-1',
       buttonGroupItemClass: 'buttonGroupItemClass',
       itemClass: '',
