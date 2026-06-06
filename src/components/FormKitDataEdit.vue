@@ -3,7 +3,7 @@ import type { FormKitSchemaDefinition } from '@formkit/core'
 import type { PropType } from 'vue'
 import { reset } from '@formkit/core'
 import { FormKit, FormKitMessages, FormKitSchema } from '@formkit/vue'
-import { ref } from 'vue'
+import { ref, watch } from 'vue'
 import FormKitDataDebug from './FormKitDataDebug.vue'
 
 const props = defineProps({
@@ -81,6 +81,17 @@ if (props.data) {
 }
 
 const formSchema = ref(props.schema)
+
+// Watch for changes to props and update internal refs
+watch(() => props.schema, (newSchema) => {
+  formSchema.value = newSchema
+}, { deep: true })
+
+watch(() => props.data, (newData) => {
+  if (newData && newData !== formData.value) {
+    formData.value = newData
+  }
+}, { deep: true })
 
 function handleSave() {
   emit('dataSaved', formData.value)
