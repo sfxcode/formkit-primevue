@@ -1,3 +1,24 @@
+## v4.2.1
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.2.0...v4.2.1)
+
+### 🚀 Enhancements
+
+- Add drag-and-drop functionality to Repeater component with customizable drag handle ([3def24f9](https://github.com/sfxcode/formkit-primevue/commit/3def24f9))
+
+### 🩹 Fixes
+
+- Ensure internalListItemClass is a string in Repeater component ([8eaec905](https://github.com/sfxcode/formkit-primevue/commit/8eaec905))
+
+### 🏡 Chore
+
+- Remove @formkit/drag-and-drop dependency from package.json and pnpm-lock.yaml ([7e8fc81b](https://github.com/sfxcode/formkit-primevue/commit/7e8fc81b))
+- Update release script to use patch versioning for changelog ([55fe930d](https://github.com/sfxcode/formkit-primevue/commit/55fe930d))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.2.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.1.10...v4.2.0)
