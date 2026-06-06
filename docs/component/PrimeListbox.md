@@ -4,6 +4,8 @@ A FormKit wrapper for PrimeVue's Listbox component with optional Transfer List f
 
 [Live Example on Website](https://formkit-primevue.netlify.app/inputs/listbox)
 
+[Comprehensive Transfer Mode Examples](https://formkit-primevue.netlify.app/samples/listboxtransfer)
+
 ## Usage
 ```vue
 <FormKit type="primeListbox" :options="options" option-label="label" option-value="value" v-model="selected" />
@@ -83,6 +85,28 @@ const schema = [
 ]
 ```
 
+### Custom Styling Example
+```vue
+<FormKit
+  type="primeListbox"
+  name="styledTransfer"
+  label="Custom Styled Transfer List"
+  display-mode="transfer"
+  transfer-left-header-text="Available"
+  transfer-right-header-text="Selected"
+  transfer-header-class="text-lg font-bold text-primary-600"
+  transfer-button-severity="primary"
+  transfer-container-class="my-custom-transfer-container"
+  transfer-list-container-class="my-list-wrapper"
+  transfer-button-class="shadow-md hover:shadow-lg"
+  :transfer-all="true"
+  option-label="name"
+  option-value="id"
+  :options="items"
+  :filter="true"
+/>
+```
+
 ## Props
 | Name         | Type      | Description |
 |--------------|-----------|-------------|
@@ -105,6 +129,10 @@ const schema = [
 | transferRightHeaderText | string | Header text for target list (transfer mode) |
 | transferHeaderClass | string | CSS class for transfer headers |
 | transferAll  | boolean   | Show transfer all/remove all buttons |
+| transferButtonSeverity | string | Button severity/color (default: 'secondary') |
+| transferContainerClass | string | Custom class for transfer container |
+| transferListContainerClass | string | Custom class for list containers |
+| transferButtonClass | string | Custom class for transfer buttons |
 
 ## Transfer List
 
@@ -117,5 +145,24 @@ The Transfer List feature allows users to move items between two lists (source a
 - **Remove All**: Remove all items from target (when `transferAll` is enabled)
 - **Filtering**: Both lists support filtering
 - **Icons**: Uses PrimeIcons (angle-right, angle-double-right, angle-left, angle-double-left)
+- **Customizable Styling**: Control button appearance and container classes
+- **Accessibility**: Built-in ARIA labels and keyboard navigation support
+
+### Customization Options:
+
+#### Button Styling
+Use `transferButtonSeverity` to control the button color theme:
+- `secondary` (default) - Neutral gray buttons
+- `primary` - Primary color buttons
+- `success` - Green buttons
+- `info` - Blue buttons
+- `warning` - Orange buttons
+- `danger` - Red buttons
+
+#### Container Classes
+- `transferContainerClass` - Custom class for the entire transfer component
+- `transferListContainerClass` - Custom class for each list wrapper
+- `transferButtonClass` - Custom class for transfer buttons
+- `transferHeaderClass` - Custom class for header text
 
 See [PrimeVue Listbox docs](https://primevue.org/listbox/) for more details.
