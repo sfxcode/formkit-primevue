@@ -35,6 +35,10 @@ export interface FormKitPrimeListboxProps {
   transferRightHeaderText?: string
   transferHeaderClass?: string
   transferAll?: boolean
+  transferButtonSeverity?: string
+  transferContainerClass?: string
+  transferListContainerClass?: string
+  transferButtonClass?: string
 }
 
 const props = defineProps({
@@ -44,7 +48,24 @@ const props = defineProps({
   },
 })
 
-const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur, modelValue } = useFormKitInput(props.context)
+const { validSlotNames, unstyled, isInvalid, handleInput, handleBlur, handleChange, modelValue } = useFormKitInput(props.context)
+
+// Computed properties for transfer mode styling
+const transferContainerClass = computed(() => {
+  return props.context.transferContainerClass || 'p-formkit-transfer'
+})
+
+const transferListContainerClass = computed(() => {
+  return props.context.transferListContainerClass || 'p-formkit-transfer-list-container'
+})
+
+const transferButtonClass = computed(() => {
+  return props.context.transferButtonClass || ''
+})
+
+const transferButtonSeverity = computed(() => {
+  return props.context.transferButtonSeverity || 'secondary'
+})
 
 // Transfer List functionality
 const optionValueKey = computed(() => {
@@ -89,22 +110,30 @@ const sourceItems = computed(() => {
 })
 
 function transferSelected() {
-  // sourceSelection now contains full objects since we removed optionValue
+  if (sourceSelection.value.length === 0)
+    return
+  // Use splice-based approach for better performance
   targetItems.value = [...targetItems.value, ...sourceSelection.value]
   sourceSelection.value = []
 }
 
 function transferAll() {
+  if (sourceItems.value.length === 0)
+    return
   targetItems.value = [...targetItems.value, ...sourceItems.value]
   sourceSelection.value = []
 }
 
 function removeSelected() {
-  // targetSelection now contains full objects since we removed optionValue
+  if (targetSelection.value.length === 0)
+    return
+
+  // Filter out selected items using splice-inspired logic
+  const valueKey = optionValueKey.value
   targetItems.value = targetItems.value.filter((item: any) => {
-    const itemValue = optionValueKey.value && typeof item === 'object' ? item[optionValueKey.value] : item
+    const itemValue = valueKey && typeof item === 'object' ? item[valueKey] : item
     return !targetSelection.value.some((sel: any) => {
-      const selValue = optionValueKey.value && typeof sel === 'object' ? sel[optionValueKey.value] : sel
+      const selValue = valueKey && typeof sel === 'object' ? sel[valueKey] : sel
       return selValue === itemValue
     })
   })
@@ -112,6 +141,8 @@ function removeSelected() {
 }
 
 function removeAll() {
+  if (targetItems.value.length === 0)
+    return
   targetItems.value = []
   targetSelection.value = []
 }
@@ -119,6 +150,7 @@ function removeAll() {
 watch(targetItems, (newVal) => {
   modelValue.value = newVal
   handleInput(newVal)
+  handleChange(newVal)
 }, { deep: true })
 
 // Watch for external changes to modelValue and update targetItems
@@ -168,7 +200,8 @@ watch(() => modelValue.value, (newVal) => {
       :pt="context.pt"
       :pt-options="context.ptOptions"
       :unstyled="unstyled"
-      @change="handleInput"
+      @update:model-value="handleInput"
+      @change="handleChange"
       @blur="handleBlur"
     >
       <template v-for="slotName in validSlotNames" :key="slotName" #[slotName]="slotProps">
@@ -180,11 +213,10 @@ watch(() => modelValue.value, (newVal) => {
   <!-- Transfer Mode -->
   <div
     v-if="context.displayMode === 'transfer'"
-    class="p-formkit-transfer"
-    style="display: flex; align-items: stretch; gap: 1rem; width: 100%;"
+    :class="transferContainerClass"
   >
     <!-- Source List -->
-    <div style="display: flex; flex-direction: column; flex: 1; gap: 0.5rem; min-width: 0;">
+    <div :class="transferListContainerClass">
       <span
         v-if="context.transferLeftHeaderText"
         :class="transferHeaderClass"
@@ -199,7 +231,7 @@ watch(() => modelValue.value, (newVal) => {
         :class="context?.attrs?.class"
         :invalid="isInvalid"
         :tabindex="context?.attrs.tabindex"
-        :aria-label="context?.attrs.ariaLabel"
+        :aria-label="context?.attrs.ariaLabel || 'Source list'"
         :aria-labelledby="context?.attrs.ariaLabelledby"
         :options="sourceItems"
         :option-label="context.optionLabel"
@@ -229,19 +261,21 @@ watch(() => modelValue.value, (newVal) => {
     </div>
 
     <!-- Transfer Buttons -->
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.5rem;">
+    <div class="p-formkit-transfer-buttons">
       <Button
         icon="pi pi-angle-right"
-        severity="secondary"
+        :severity="transferButtonSeverity"
+        :class="transferButtonClass"
         outlined
         :disabled="sourceSelection.length === 0"
-        aria-label="Move selected to target"
+        :aria-label="context.transferAll ? 'Move selected to target' : 'Move to target'"
         @click="transferSelected"
       />
       <Button
         v-if="context.transferAll"
         icon="pi pi-angle-double-right"
-        severity="secondary"
+        :severity="transferButtonSeverity"
+        :class="transferButtonClass"
         outlined
         :disabled="sourceItems.length === 0"
         aria-label="Move all to target"
@@ -249,16 +283,18 @@ watch(() => modelValue.value, (newVal) => {
       />
       <Button
         icon="pi pi-angle-left"
-        severity="secondary"
+        :severity="transferButtonSeverity"
+        :class="transferButtonClass"
         outlined
         :disabled="targetSelection.length === 0"
-        aria-label="Move selected to source"
+        :aria-label="context.transferAll ? 'Move selected to source' : 'Move to source'"
         @click="removeSelected"
       />
       <Button
         v-if="context.transferAll"
         icon="pi pi-angle-double-left"
-        severity="secondary"
+        :severity="transferButtonSeverity"
+        :class="transferButtonClass"
         outlined
         :disabled="targetItems.length === 0"
         aria-label="Move all to source"
@@ -267,7 +303,7 @@ watch(() => modelValue.value, (newVal) => {
     </div>
 
     <!-- Target List -->
-    <div style="display: flex; flex-direction: column; flex: 1; gap: 0.5rem; min-width: 0;">
+    <div :class="transferListContainerClass">
       <span
         v-if="context.transferRightHeaderText"
         :class="transferHeaderClass"
@@ -282,7 +318,7 @@ watch(() => modelValue.value, (newVal) => {
         :class="context?.attrs?.class"
         :invalid="isInvalid"
         :tabindex="context?.attrs.tabindex"
-        :aria-label="context?.attrs.ariaLabel"
+        :aria-label="context?.attrs.ariaLabel || 'Target list'"
         :aria-labelledby="context?.attrs.ariaLabelledby"
         :options="targetItems"
         :option-label="context.optionLabel"
