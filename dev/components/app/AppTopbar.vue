@@ -126,6 +126,7 @@ const items = ref([
             { label: 'Repeater', icon: 'pi pi-fw pi-list', route: '/samples/repeater' },
             { label: 'Input Editor', icon: 'pi pi-fw pi-code', route: '/samples/inputEditor' },
             { label: 'MultiStep', icon: 'pi pi-fw pi-forward', route: '/samples/multiStep' },
+            { label: 'Listbox Transfer', icon: 'pi pi-fw pi-forward', route: '/samples/listboxTransfer' },
           ],
         },
       ],

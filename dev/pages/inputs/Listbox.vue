@@ -63,22 +63,24 @@ const schema
     {
       $formkit: 'primeListbox',
       name: 'selectedCities',
-      label: 'Transfer List - Select Your Cities',
-      help: 'Move cities between lists using the buttons',
+      label: '🔄 Transfer Mode - Select Your Cities',
+      help: 'Move cities between lists using the buttons. See /samples/ListboxTransfer for more examples!',
       displayMode: 'transfer',
       transferLeftHeaderText: 'Available Cities',
       transferRightHeaderText: 'Selected Cities',
       transferHeaderClass: 'text-base font-semibold',
       transferAll: true,
+      transferButtonSeverity: 'secondary',
       optionLabel: 'name',
       optionValue: 'code',
       options: cityOptions,
       filter: true,
       filterPlaceholder: 'Search cities...',
+      validation: 'required|min:1',
     },
   ]
 
-const data = { selectedCities: [{ name: 'Paris', code: 'PRS' }] }
+const data = { selectedCities: ['PRS', 'BER'] }
 </script>
 
 <template>
