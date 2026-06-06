@@ -20,7 +20,7 @@ function addButtonGroup(buttonGroupClass: string = '', buttonGroupItemClass: str
 
 function addInsertButton(label: string = 'Add Item', icon: string = 'i-lucide-plus', styleClass: string = '', buttonSize: string, render: string = 'true') {
   return addElement('div', [
-    addComponent('Button', { onClick: '$insertNode($node)', label, icon, size: buttonSize }),
+    addComponent('Button', { onClick: '$insertNode($node)', label, icon, size: buttonSize, disabled: '$node.value.length > $maxItems -1' }),
   ], { class: styleClass }, render)
 }
 
