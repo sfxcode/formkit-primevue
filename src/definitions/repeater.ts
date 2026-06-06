@@ -87,7 +87,7 @@ function addRepeaterHandler(node: FormKitNode): void {
       node.context.getListItemClass = (index: number): string => {
         if (dragOverIndex === index && dragStartIndex !== index)
           return `${node.context?.internalListItemClass} formkit-repeater-drop-target`
-        return node.context?.internalListItemClass
+        return node.context?.internalListItemClass?.toString() ?? ''
       }
 
       node.context.insertNode = (parentNode: any) => (): void => {
