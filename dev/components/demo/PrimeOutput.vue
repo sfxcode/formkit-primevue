@@ -14,6 +14,27 @@ const props = defineProps<{
 
 const formSchema = ref(props.schema)
 const formData = ref(props.data)
+
+// Handle JSON editor updates - parse if string (text mode), otherwise use as-is (tree mode)
+function updateSchema(value: any) {
+  try {
+    formSchema.value = typeof value === 'string' ? JSON.parse(value) : value
+  }
+  catch (e) {
+    // If JSON parsing fails, keep the current value
+    console.error('Failed to parse schema JSON:', e)
+  }
+}
+
+function updateData(value: any) {
+  try {
+    formData.value = typeof value === 'string' ? JSON.parse(value) : value
+  }
+  catch (e) {
+    // If JSON parsing fails, keep the current value
+    console.error('Failed to parse data JSON:', e)
+  }
+}
 </script>
 
 <template>
@@ -39,11 +60,11 @@ const formData = ref(props.data)
             </Tab>
           </TabList>
           <TabPanels>
-            <TabPanel value="0">
-              <JsonEditorVue v-model="formSchema" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
+            <TabPanel value="0" class="w-full max-w-200">
+              <JsonEditorVue :model-value="formSchema" class="jse-theme-dark" @update:model-value="updateSchema" />
             </TabPanel>
             <TabPanel value="1">
-              <JsonEditorVue v-model="formData" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
+              <JsonEditorVue :model-value="formData" class="jse-theme-dark" @update:model-value="updateData" />
             </TabPanel>
           </TabPanels>
         </Tabs>

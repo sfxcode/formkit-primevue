@@ -1,12 +1,12 @@
 <script setup lang='ts'>
+import type { FormKitSchemaDefinition } from '@formkit/core'
 import JsonEditorVue from 'json-editor-vue'
 import { FormKitDataEdit } from 'my-library'
-import { ref } from 'vue'
 import { useMessages } from '../../composables/messages'
 
 const props = defineProps<{
   header: string
-  schema: object
+  schema: FormKitSchemaDefinition
   data: object
   primeAttributes?: string
   customAttributes?: string
@@ -20,6 +20,27 @@ const formSchema = ref(props.schema)
 const formData = ref(props.data)
 
 const documentationLink = `https://primevue.org/${props.header.replace('Prime', '').toLowerCase()}`
+
+// Handle JSON editor updates - parse if string (text mode), otherwise use as-is (tree mode)
+function updateSchema(value: any) {
+  try {
+    formSchema.value = typeof value === 'string' ? JSON.parse(value) : value
+  }
+  catch (e) {
+    // If JSON parsing fails, keep the current value
+    console.error('Failed to parse schema JSON:', e)
+  }
+}
+
+function updateData(value: any) {
+  try {
+    formData.value = typeof value === 'string' ? JSON.parse(value) : value
+  }
+  catch (e) {
+    // If JSON parsing fails, keep the current value
+    console.error('Failed to parse data JSON:', e)
+  }
+}
 
 async function submitHandler() {
   showSuccessMessage('Form Submitted ...', `${props.header} submitted successfully`)
@@ -53,10 +74,10 @@ async function submitHandler() {
           </TabList>
           <TabPanels class="">
             <TabPanel value="0" class="w-full max-w-200">
-              <JsonEditorVue v-model="formSchema" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
+              <JsonEditorVue :model-value="formSchema" class="jse-theme-dark" @update:model-value="updateSchema" />
             </TabPanel>
             <TabPanel value="1">
-              <JsonEditorVue v-model="formData" v-bind="{ mode: 'tree' }" class="jse-theme-dark" />
+              <JsonEditorVue :model-value="formData" class="jse-theme-dark" @update:model-value="updateData" />
             </TabPanel>
             <TabPanel v-if="primeAttributes || customAttributes" value="2">
               <h4>Base Attributes</h4>
