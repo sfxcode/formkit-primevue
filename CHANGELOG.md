@@ -1,3 +1,28 @@
+## v4.2.2
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.2.1...v4.2.2)
+
+### 🚀 Enhancements
+
+- Enhance Repeater component with unique IDs for list items and internal list ([0d44f8a3](https://github.com/sfxcode/formkit-primevue/commit/0d44f8a3))
+- Add drag-and-drop functionality to Listbox component for item transfer ([b9424961](https://github.com/sfxcode/formkit-primevue/commit/b9424961))
+
+### 💅 Refactors
+
+- Remove skills transfer list and update help text for city and country transfers ([97c83157](https://github.com/sfxcode/formkit-primevue/commit/97c83157))
+
+### ✅ Tests
+
+- Update internalListId assertion in Repeater component tests ([0ad0cce7](https://github.com/sfxcode/formkit-primevue/commit/0ad0cce7))
+
+### 🎨 Styles
+
+- Add margin-bottom to formkit-outer for improved spacing ([33367a71](https://github.com/sfxcode/formkit-primevue/commit/33367a71))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.2.1
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.2.0...v4.2.1)
