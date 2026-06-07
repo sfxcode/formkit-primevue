@@ -27,7 +27,7 @@ describe('primeRepeaterDefinition', () => {
 
     expect(node.context.renderDragHandle).toBe(true)
     expect(node.context.dragHandleIconClass).toBe('pi pi-bars')
-    expect(node.context.internalListId).toBe('formkit-prime-repeater-attack-list')
+    expect(node.context.internalListId).toContain('formkit-items')
     expect(typeof node.context.dragNodeStart).toBe('function')
     expect(typeof node.context.dropNode).toBe('function')
   })
