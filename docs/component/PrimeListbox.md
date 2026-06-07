@@ -99,6 +99,7 @@ const schema = [
   transfer-container-class="my-custom-transfer-container"
   transfer-list-container-class="my-list-wrapper"
   transfer-button-class="shadow-md hover:shadow-lg"
+  :transfer-drag-drop="true"
   :transfer-all="true"
   option-label="name"
   option-value="id"
@@ -133,6 +134,7 @@ const schema = [
 | transferContainerClass | string | Custom class for transfer container |
 | transferListContainerClass | string | Custom class for list containers |
 | transferButtonClass | string | Custom class for transfer buttons |
+| transferDragDrop | boolean | Enable drag-and-drop between source and target lists (default: `true`) |
 
 ## Transfer List
 
@@ -144,6 +146,7 @@ The Transfer List feature allows users to move items between two lists (source a
 - **Remove Selected**: Remove selected items from target back to source
 - **Remove All**: Remove all items from target (when `transferAll` is enabled)
 - **Filtering**: Both lists support filtering
+- **Drag and Drop**: Drag one or many selected options between lists
 - **Icons**: Uses PrimeIcons (angle-right, angle-double-right, angle-left, angle-double-left)
 - **Customizable Styling**: Control button appearance and container classes
 - **Accessibility**: Built-in ARIA labels and keyboard navigation support

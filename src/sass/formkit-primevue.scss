@@ -333,6 +333,20 @@ $grid-breakpoints: (
   gap: 0.5rem;
 }
 
+.p-formkit-transfer-option {
+  width: 100%;
+}
+
+.p-formkit-transfer-option-draggable {
+  cursor: grab;
+}
+
+.p-formkit-transfer-option-draggable:active {
+  cursor: grabbing;
+}
+
+
+
 
 // Debug
 .p-formkit-data-debug {

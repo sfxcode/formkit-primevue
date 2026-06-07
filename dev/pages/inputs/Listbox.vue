@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import PrimeInput from '@/components/demo/PrimeInput.vue'
 
-const primeAttributes = 'placeholder, options, filter, optionLabel, optionValue, multiple, displayMode, transferLeftHeaderText, transferRightHeaderText, transferAll'
+const primeAttributes = 'placeholder, options, filter, optionLabel, optionValue, multiple, displayMode, transferLeftHeaderText, transferRightHeaderText, transferAll, transferDragDrop'
 
 const options = [
   { label: 'Every page load', value: 'refresh' },
@@ -64,12 +64,13 @@ const schema
       $formkit: 'primeListbox',
       name: 'selectedCities',
       label: '🔄 Transfer Mode - Select Your Cities',
-      help: 'Move cities between lists using the buttons. See /samples/ListboxTransfer for more examples!',
+      help: 'Move cities between lists using buttons or drag and drop. See /samples/ListboxTransfer for more examples!',
       displayMode: 'transfer',
       transferLeftHeaderText: 'Available Cities',
       transferRightHeaderText: 'Selected Cities',
       transferHeaderClass: 'text-base font-semibold',
       transferAll: true,
+      transferDragDrop: true,
       transferButtonSeverity: 'secondary',
       optionLabel: 'name',
       optionValue: 'code',

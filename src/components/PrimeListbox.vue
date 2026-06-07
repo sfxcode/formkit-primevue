@@ -39,6 +39,7 @@ export interface FormKitPrimeListboxProps {
   transferContainerClass?: string
   transferListContainerClass?: string
   transferButtonClass?: string
+  transferDragDrop?: boolean
 }
 
 const props = defineProps({
@@ -65,6 +66,14 @@ const transferButtonClass = computed(() => {
 
 const transferButtonSeverity = computed(() => {
   return props.context.transferButtonSeverity || 'secondary'
+})
+
+const transferDragDrop = computed(() => {
+  return props.context.transferDragDrop ?? true
+})
+
+const transferSlotNames = computed(() => {
+  return validSlotNames.value.filter((slotName: string) => slotName !== 'option')
 })
 
 // Transfer List functionality
@@ -108,6 +117,121 @@ const sourceItems = computed(() => {
     })
   })
 })
+
+type TransferList = 'source' | 'target'
+
+const dragSource = ref<TransferList | null>(null)
+const draggedItems = ref<any[]>([])
+const activeDropzone = ref<TransferList | null>(null)
+
+function getComparableValue(item: any): any {
+  const valueKey = optionValueKey.value
+  return valueKey && typeof item === 'object' ? item?.[valueKey] : item
+}
+
+function isSameOption(left: any, right: any): boolean {
+  return getComparableValue(left) === getComparableValue(right)
+}
+
+function getUniqueItems(items: any[]): any[] {
+  return items.filter((item, index) => items.findIndex(candidate => isSameOption(candidate, item)) === index)
+}
+
+function mergeUniqueItems(base: any[], toAdd: any[]): any[] {
+  return [...base, ...toAdd.filter(item => !base.some(candidate => isSameOption(candidate, item)))]
+}
+
+function getDraggableItems(origin: TransferList, option: any): any[] {
+  const selection = origin === 'source' ? sourceSelection.value : targetSelection.value
+  if (!selection.length)
+    return [option]
+
+  const hasOptionSelected = selection.some(item => isSameOption(item, option))
+  return hasOptionSelected ? getUniqueItems(selection) : [option]
+}
+
+function clearDragState() {
+  dragSource.value = null
+  draggedItems.value = []
+  activeDropzone.value = null
+}
+
+function canDropInto(target: TransferList): boolean {
+  return transferDragDrop.value
+    && !props.context.disabled
+    && !!dragSource.value
+    && dragSource.value !== target
+    && draggedItems.value.length > 0
+}
+
+function handleOptionDragStart(origin: TransferList, option: any, event: DragEvent) {
+  if (!transferDragDrop.value || props.context.disabled)
+    return
+
+  draggedItems.value = getDraggableItems(origin, option)
+  dragSource.value = origin
+  if (event.dataTransfer) {
+    event.dataTransfer.effectAllowed = 'move'
+    event.dataTransfer.setData('text/plain', 'formkit-primevue-transfer')
+  }
+}
+
+function handleOptionDragEnd() {
+  clearDragState()
+}
+
+function handleDropzoneDragOver(target: TransferList, event: DragEvent) {
+  if (!canDropInto(target))
+    return
+
+  event.preventDefault()
+  activeDropzone.value = target
+  if (event.dataTransfer)
+    event.dataTransfer.dropEffect = 'move'
+}
+
+function handleDropzoneDragLeave(target: TransferList) {
+  if (activeDropzone.value === target)
+    activeDropzone.value = null
+}
+
+function handleDropzoneDrop(target: TransferList, event: DragEvent) {
+  if (!canDropInto(target)) {
+    clearDragState()
+    return
+  }
+
+  event.preventDefault()
+  if (target === 'target') {
+    targetItems.value = mergeUniqueItems(targetItems.value, draggedItems.value)
+    sourceSelection.value = []
+  }
+  else {
+    targetItems.value = targetItems.value.filter(item => !draggedItems.value.some(dragged => isSameOption(dragged, item)))
+    targetSelection.value = []
+  }
+
+  clearDragState()
+}
+
+function resolveOptionDisabled(option: any): boolean {
+  const optionDisabled = props.context.optionDisabled
+  if (!optionDisabled)
+    return false
+  if (typeof optionDisabled === 'function')
+    return !!optionDisabled(option)
+  if (typeof optionDisabled === 'string')
+    return !!option?.[optionDisabled]
+  return !!optionDisabled
+}
+
+function resolveOptionLabel(option: any): string {
+  if (!props.context.optionLabel)
+    return String(option)
+  if (typeof props.context.optionLabel === 'function')
+    return String(props.context.optionLabel(option))
+  return String(option?.[props.context.optionLabel] ?? option)
+}
 
 function transferSelected() {
   if (sourceSelection.value.length === 0)
@@ -216,7 +340,12 @@ watch(() => modelValue.value, (newVal) => {
     :class="transferContainerClass"
   >
     <!-- Source List -->
-    <div :class="transferListContainerClass">
+    <div
+      :class="[transferListContainerClass, { 'p-formkit-transfer-dropzone-active': activeDropzone === 'source' }]"
+      @dragover="handleDropzoneDragOver('source', $event)"
+      @dragleave="handleDropzoneDragLeave('source')"
+      @drop="handleDropzoneDrop('source', $event)"
+    >
       <span
         v-if="context.transferLeftHeaderText"
         :class="transferHeaderClass"
@@ -254,7 +383,23 @@ watch(() => modelValue.value, (newVal) => {
         :unstyled="unstyled"
         @blur="handleBlur"
       >
-        <template v-for="slotName in validSlotNames" :key="slotName" #[slotName]="slotProps">
+        <template #option="slotProps">
+          <div
+            :draggable="transferDragDrop && !context.disabled && !resolveOptionDisabled(slotProps.option)"
+            class="p-formkit-transfer-option"
+            :class="{ 'p-formkit-transfer-option-draggable': transferDragDrop && !context.disabled && !resolveOptionDisabled(slotProps.option) }"
+            @dragstart="handleOptionDragStart('source', slotProps.option, $event)"
+            @dragend="handleOptionDragEnd"
+          >
+            <component
+              :is="context?.slots.option"
+              v-if="context?.slots?.option"
+              v-bind="{ ...context, ...slotProps }"
+            />
+            <span v-else>{{ resolveOptionLabel(slotProps.option) }}</span>
+          </div>
+        </template>
+        <template v-for="slotName in transferSlotNames" :key="slotName" #[slotName]="slotProps">
           <component :is="context?.slots[slotName]" v-bind="{ ...context, ...slotProps }" />
         </template>
       </Listbox>
@@ -303,7 +448,12 @@ watch(() => modelValue.value, (newVal) => {
     </div>
 
     <!-- Target List -->
-    <div :class="transferListContainerClass">
+    <div
+      :class="[transferListContainerClass, { 'p-formkit-transfer-dropzone-active': activeDropzone === 'target' }]"
+      @dragover="handleDropzoneDragOver('target', $event)"
+      @dragleave="handleDropzoneDragLeave('target')"
+      @drop="handleDropzoneDrop('target', $event)"
+    >
       <span
         v-if="context.transferRightHeaderText"
         :class="transferHeaderClass"
@@ -341,7 +491,23 @@ watch(() => modelValue.value, (newVal) => {
         :unstyled="unstyled"
         @blur="handleBlur"
       >
-        <template v-for="slotName in validSlotNames" :key="slotName" #[slotName]="slotProps">
+        <template #option="slotProps">
+          <div
+            :draggable="transferDragDrop && !context.disabled && !resolveOptionDisabled(slotProps.option)"
+            class="p-formkit-transfer-option"
+            :class="{ 'p-formkit-transfer-option-draggable': transferDragDrop && !context.disabled && !resolveOptionDisabled(slotProps.option) }"
+            @dragstart="handleOptionDragStart('target', slotProps.option, $event)"
+            @dragend="handleOptionDragEnd"
+          >
+            <component
+              :is="context?.slots.option"
+              v-if="context?.slots?.option"
+              v-bind="{ ...context, ...slotProps }"
+            />
+            <span v-else>{{ resolveOptionLabel(slotProps.option) }}</span>
+          </div>
+        </template>
+        <template v-for="slotName in transferSlotNames" :key="slotName" #[slotName]="slotProps">
           <component :is="context?.slots[slotName]" v-bind="{ ...context, ...slotProps }" />
         </template>
       </Listbox>
@@ -350,10 +516,6 @@ watch(() => modelValue.value, (newVal) => {
 </template>
 
 <style scoped>
-.p-formkit-transfer {
-  min-width: 600px;
-}
-
 .p-formkit-transfer :deep(.p-listbox) {
   width: 100%;
   height: 100%;
@@ -361,5 +523,10 @@ watch(() => modelValue.value, (newVal) => {
 
 .p-formkit-transfer :deep(.p-listbox-list-container) {
   max-height: none;
+}
+
+.p-formkit-transfer-dropzone-active :deep(.p-listbox) {
+  outline: 2px dashed var(--p-primary-color);
+  outline-offset: 2px;
 }
 </style>
