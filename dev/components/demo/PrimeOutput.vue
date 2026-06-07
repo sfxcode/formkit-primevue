@@ -74,6 +74,9 @@ function updateData(value: any) {
 </template>
 
 <style lang='scss' scoped>
+:deep(.formkit-outer) {
+  margin-bottom: 1rem;
+}
 .jse-theme-dark {
   /* over all fonts, sizes, and colors */
   --jse-theme-color: #383e42;
