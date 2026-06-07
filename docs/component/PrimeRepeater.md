@@ -66,26 +66,27 @@ const data = {
 
 ## Props
 
-| Name                      | Type      | Default | Description |
-|---------------------------|-----------|---------|-------------|
-| newItem                   | object    | {}      | Template object for new items |
-| insertButtonLabel         | string    | 'Add Item' | Label for the insert button |
-| insertButtonClass         | string    | ''      | CSS class for insert button |
-| insertButtonSize          | string    | ''      | Size of insert button (small, large) |
-| alwaysDisplayInsertButton | boolean   | false   | Always show insert button |
-| listClass                 | string    | ''      | CSS class for the list container |
-| listItemClass             | string    | ''      | CSS class for each list item |
-| groupClass                | string    | ''      | CSS class for the input group |
-| hideButtonGroup           | boolean   | false   | Hide all action buttons |
-| hideMoveButtons           | boolean   | false   | Hide move up/down buttons |
-| buttonGroupClass          | string    | ''      | CSS class for button group |
-| buttonGroupItemClass      | string    | ''      | CSS class for each button |
-| buttonSize                | string    | ''      | Size of action buttons |
-| displayCloneButton        | boolean   | false   | Show clone button |
-| displayAddButton          | boolean   | false   | Show add button |
-| displayDeleteButton       | boolean   | true    | Show delete button |
-| displayDragHandle         | boolean   | false   | Show drag handle and enable drag-and-drop reordering |
-| dragHandleClass           | string    | ''      | Extra CSS class for the drag handle |
+| Name                      | Type      | Default | Description                            |
+|---------------------------|-----------|---------|----------------------------------------|
+| newItem                   | object    | {}      | Template object for new items          |
+| insertButtonLabel         | string    | 'Add Item' | Label for the insert button            |
+| insertButtonClass         | string    | ''      | CSS class for insert button            |
+| insertButtonSize          | string    | ''      | Size of insert button (small, large)   |
+| alwaysDisplayInsertButton | boolean   | false   | Always show insert button              |
+| listClass                 | string    | ''      | CSS class for the list container       |
+| listItemClass             | string    | ''      | CSS class for each list item           |
+| groupClass                | string    | ''      | CSS class for the input group          |
+| hideButtonGroup           | boolean   | false   | Hide all action buttons                |
+| hideMoveButtons           | boolean   | false   | Hide move up/down buttons              |
+| buttonGroupClass          | string    | ''      | CSS class for button group             |
+| buttonGroupItemClass      | string    | ''      | CSS class for each button              |
+| buttonSize                | string    | ''      | Size of action buttons                 |
+| displayCloneButton        | boolean   | false   | Show clone button                      |
+| displayAddButton          | boolean   | false   | Show add button                        |
+| displayDeleteButton       | boolean   | true    | Show delete button                     |
+| draggable                 | boolean   | false   | Enable drag-and-drop reordering        |
+| displayDragHandle         | boolean   | false   | Show drag handle                       |
+| dragHandleClass           | string    | ''      | Extra CSS class for the drag handle    |
 | dragHandleIconClass       | string    | 'pi pi-bars' | Icon class used inside the drag handle |
 
 ## Features
@@ -94,7 +95,7 @@ const data = {
 - **Remove Items**: Delete items from the list
 - **Clone Items**: Duplicate existing items
 - **Reorder Items**: Move items up or down in the list
-- **Drag and Drop**: Reorder items by dragging list rows when `displayDragHandle` is enabled
+- **Drag and Drop**: Reorder items by dragging list rows when `draggable` is enabled
 - **Customizable**: Full control over styling and button visibility
 
 ## Example with Custom Styling
