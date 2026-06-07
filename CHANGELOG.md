@@ -1,3 +1,19 @@
+## v4.2.3
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.2.2...v4.2.3)
+
+### 🚀 Enhancements
+
+- Make Repeater draggable by adding `draggable` prop and context handling ([0cf2b9e1](https://github.com/sfxcode/formkit-primevue/commit/0cf2b9e1))
+
+### 📖 Documentation
+
+- Update PrimeRepeater props table and features for `draggable` prop ([038aedc0](https://github.com/sfxcode/formkit-primevue/commit/038aedc0))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.2.2
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.2.1...v4.2.2)
