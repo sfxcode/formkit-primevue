@@ -29,6 +29,7 @@ const schema
       displayCloneButton: true,
       displayAddButton: true,
       displayDeleteButton: true,
+      draggable: true,
       displayDragHandle: true,
       insertButtonLabel: 'Add Attack',
       insertButtonClass: 'mb-2',

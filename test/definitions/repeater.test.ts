@@ -23,8 +23,9 @@ function createRepeaterNode(context: Record<string, any> = {}, props: Record<str
 
 describe('primeRepeaterDefinition', () => {
   it('enables drag handlers when drag handle is displayed', () => {
-    const node = createRepeaterNode({ displayDragHandle: true }, { id: 'attack-list' })
+    const node = createRepeaterNode({ draggable: true, displayDragHandle: true }, { id: 'attack-list' })
 
+    expect(node.context.draggable).toBe(true)
     expect(node.context.renderDragHandle).toBe(true)
     expect(node.context.dragHandleIconClass).toBe('pi pi-bars')
     expect(node.context.internalListId).toContain('formkit-items')

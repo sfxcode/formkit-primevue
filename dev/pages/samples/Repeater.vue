@@ -31,6 +31,7 @@ const schema
       itemClass: '',
       hideButtonGroup: false,
       hideMoveButtons: false,
+      draggable: true,
       displayDragHandle: true,
       dragHandleClass: 'mt-3 me-2 cursor-move text-surface-500',
       dragHandleIconClass: 'pi pi-bars',

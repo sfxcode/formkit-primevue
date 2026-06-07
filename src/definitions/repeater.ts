@@ -45,7 +45,7 @@ export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
         ], {
           id: '$getListItemId($index)',
           class: '$getListItemClass($index)',
-          draggable: '$renderDragHandle',
+          draggable: '$draggable',
           onDragstart: '$dragNodeStart($node.parent, $index)',
           onDragover: '$dragNodeOver($index)',
           onDragleave: '$dragNodeLeave($index)',
@@ -56,7 +56,7 @@ export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
     ], true, 'true'),
   ], { class: '$internalListClass', id: '$internalListId' }, true),
   {
-    props: ['insertButtonLabel', 'insertButtonClass', 'insertButtonSize', 'alwaysDisplayInsertButton', 'newItem', 'listClass', 'listItemClass', 'hideButtonGroup', 'hideMoveButtons', 'buttonGroupClass', 'buttonGroupItemClass', 'buttonSize', 'displayCloneButton', 'displayAddButton', 'displayDeleteButton', 'minItems', 'maxItems', 'displayDragHandle', 'dragHandleClass', 'dragHandleIconClass'],
+    props: ['insertButtonLabel', 'insertButtonClass', 'insertButtonSize', 'alwaysDisplayInsertButton', 'newItem', 'listClass', 'listItemClass', 'hideButtonGroup', 'hideMoveButtons', 'buttonGroupClass', 'buttonGroupItemClass', 'buttonSize', 'displayCloneButton', 'displayAddButton', 'displayDeleteButton', 'minItems', 'maxItems', 'displayDragHandle', 'draggable', 'dragHandleClass', 'dragHandleIconClass'],
     features: [addRepeaterHandler],
   },
 )
@@ -80,6 +80,7 @@ function addRepeaterHandler(node: FormKitNode): void {
       node.context.insertButtonSize = node.context.insertButtonSize ? node.context.insertButtonSize : ''
       node.context.buttonSize = node.context.buttonSize ? node.context.buttonSize : ''
       node.context.renderMoveButtons = !node.context.hideMoveButtons
+      node.context.draggable = !!node.context.draggable
       node.context.renderDragHandle = !!node.context.displayDragHandle
       node.context.dragHandleIconClass = node.context.dragHandleIconClass || 'pi pi-bars'
       node.context.internalDragHandleClass = node.context.dragHandleClass ? `formkit-repeater-drag-handle ${node.context.dragHandleClass}` : 'formkit-repeater-drag-handle'
