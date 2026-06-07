@@ -43,6 +43,7 @@ export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
           { children: '$slots.default' },
           addButtonGroup('$buttonGroupClass', '$buttonGroupItemClass', '$buttonSize', '$renderButtons'),
         ], {
+          id: '$getListItemId($index)',
           class: '$getListItemClass($index)',
           draggable: '$renderDragHandle',
           onDragstart: '$dragNodeStart($node.parent, $index)',
@@ -66,6 +67,8 @@ function addRepeaterHandler(node: FormKitNode): void {
     return array
   }
 
+  const uuid = typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2)
+
   node.on('created', () => {
     if (node.context) {
       let dragStartIndex: number | null = null
@@ -82,12 +85,16 @@ function addRepeaterHandler(node: FormKitNode): void {
       node.context.internalDragHandleClass = node.context.dragHandleClass ? `formkit-repeater-drag-handle ${node.context.dragHandleClass}` : 'formkit-repeater-drag-handle'
       node.context.internalListClass = node.context.listClass ? `formkit-items ${node.context.listClass}` : 'formkit-items'
       node.context.internalListItemClass = node.context.listItemClass ? `formkit-item ${node.context.listItemClass}` : 'formkit-item'
-      node.context.internalListId = `formkit-prime-repeater-${String(node.props.id || node.name || 'list').replace(/[^\w-]/g, '-')}`
+      node.context.internalListId = `formkit-items-${uuid}`
 
       node.context.getListItemClass = (index: number): string => {
         if (dragOverIndex === index && dragStartIndex !== index)
           return `${node.context?.internalListItemClass} formkit-repeater-drop-target`
         return node.context?.internalListItemClass?.toString() ?? ''
+      }
+
+      node.context.getListItemId = (index: number): string => {
+        return `formkit-item-${index}-${uuid}`
       }
 
       node.context.insertNode = (parentNode: any) => (): void => {
