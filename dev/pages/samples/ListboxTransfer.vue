@@ -4,7 +4,6 @@ import PrimeInput from '@/components/demo/PrimeInput.vue'
 const data = ref({
   cities: ['PRS', 'BER'],
   countries: [],
-  skills: [{ name: 'Vue.js', category: 'frontend' }, { name: 'Docker', category: 'devops' }],
   departments: [],
 })
 
@@ -34,19 +33,6 @@ const countryOptions = [
   { label: 'Canada', value: 'CA' },
 ]
 
-const skillOptions = [
-  { name: 'Vue.js', category: 'frontend' },
-  { name: 'React', category: 'frontend' },
-  { name: 'Angular', category: 'frontend' },
-  { name: 'Node.js', category: 'backend' },
-  { name: 'Python', category: 'backend' },
-  { name: 'Docker', category: 'devops' },
-  { name: 'Kubernetes', category: 'devops' },
-  { name: 'AWS', category: 'cloud' },
-  { name: 'Azure', category: 'cloud' },
-  { name: 'PostgreSQL', category: 'database' },
-]
-
 const departmentOptions = [
   'Engineering',
   'Marketing',
@@ -63,12 +49,13 @@ const schema = [
     $formkit: 'primeListbox',
     name: 'cities',
     label: 'City Transfer - With Filter & Transfer All',
-    help: 'Select and move cities between lists. Use filter to search.',
+    help: 'Select and move cities between lists with buttons or drag and drop. Use filter to search.',
     displayMode: 'transfer',
     transferLeftHeaderText: 'Available Cities',
     transferRightHeaderText: 'Selected Cities',
     transferHeaderClass: 'text-base font-semibold mb-2',
     transferAll: true,
+    transferDragDrop: true,
     transferButtonSeverity: 'secondary',
     optionLabel: 'name',
     optionValue: 'code',
@@ -81,34 +68,19 @@ const schema = [
     $formkit: 'primeListbox',
     name: 'countries',
     label: 'Country Transfer - Basic (No Transfer All)',
-    help: 'Simple transfer without transfer all buttons',
+    help: 'Simple transfer without transfer all buttons, drag and drop disabled',
     displayMode: 'transfer',
     transferLeftHeaderText: 'Available',
     transferRightHeaderText: 'Selected',
     transferHeaderClass: 'text-sm font-medium text-gray-600',
     transferAll: false,
+    transferDragDrop: false,
     transferButtonSeverity: 'primary',
     optionLabel: 'label',
     optionValue: 'value',
     options: countryOptions,
   },
-  {
-    $formkit: 'primeListbox',
-    name: 'skills',
-    label: 'Skills Transfer - Custom Styling',
-    help: 'Transfer with custom button styling and colors',
-    displayMode: 'transfer',
-    transferLeftHeaderText: '🎯 Available Skills',
-    transferRightHeaderText: '✅ Your Skills',
-    transferHeaderClass: 'text-lg font-bold text-blue-600 mb-3',
-    transferAll: true,
-    transferButtonSeverity: 'success',
-    transferButtonClass: 'shadow-md',
-    optionLabel: 'name',
-    options: skillOptions,
-    filter: true,
-    filterPlaceholder: 'Search skills...',
-  },
+
   {
     $formkit: 'primeListbox',
     name: 'departments',
