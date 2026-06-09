@@ -123,6 +123,7 @@ type TransferList = 'source' | 'target'
 const dragSource = ref<TransferList | null>(null)
 const draggedItems = ref<any[]>([])
 const activeDropzone = ref<TransferList | null>(null)
+const dragOverIndex = ref<number | null>(null)
 
 function getComparableValue(item: any): any {
   const valueKey = optionValueKey.value
@@ -154,14 +155,17 @@ function clearDragState() {
   dragSource.value = null
   draggedItems.value = []
   activeDropzone.value = null
+  dragOverIndex.value = null
 }
 
 function canDropInto(target: TransferList): boolean {
-  return transferDragDrop.value
-    && !props.context.disabled
-    && !!dragSource.value
-    && dragSource.value !== target
-    && draggedItems.value.length > 0
+  if (!transferDragDrop.value || props.context.disabled || !dragSource.value || draggedItems.value.length === 0)
+    return false
+  // The target list accepts cross-list moves as well as same-list reordering.
+  if (target === 'target')
+    return true
+  // The source list only accepts items coming from the target (i.e. removal).
+  return dragSource.value !== target
 }
 
 function handleOptionDragStart(origin: TransferList, option: any, event: DragEvent) {
@@ -186,6 +190,8 @@ function handleDropzoneDragOver(target: TransferList, event: DragEvent) {
 
   event.preventDefault()
   activeDropzone.value = target
+  // Hovering empty space (not over a specific item) clears the per-item highlight.
+  dragOverIndex.value = null
   if (event.dataTransfer)
     event.dataTransfer.dropEffect = 'move'
 }
@@ -209,6 +215,57 @@ function handleDropzoneDrop(target: TransferList, event: DragEvent) {
   else {
     targetItems.value = targetItems.value.filter(item => !draggedItems.value.some(dragged => isSameOption(dragged, item)))
     targetSelection.value = []
+  }
+
+  clearDragState()
+}
+
+function handleTargetItemDragOver(index: number, event: DragEvent) {
+  if (!canDropInto('target'))
+    return
+
+  // Handle the drop at the item level so it lands at a precise position.
+  event.preventDefault()
+  event.stopPropagation()
+  activeDropzone.value = 'target'
+  dragOverIndex.value = index
+  if (event.dataTransfer)
+    event.dataTransfer.dropEffect = 'move'
+}
+
+function handleTargetItemDrop(index: number, event: DragEvent) {
+  if (!canDropInto('target')) {
+    clearDragState()
+    return
+  }
+
+  event.preventDefault()
+  event.stopPropagation()
+
+  const referenceItem = targetItems.value[index]
+  const itemsToInsert = getUniqueItems(draggedItems.value)
+
+  if (dragSource.value === 'target') {
+    // Reorder within the target list: move the dragged items to the drop position.
+    if (itemsToInsert.some(dragged => isSameOption(dragged, referenceItem))) {
+      clearDragState()
+      return
+    }
+    const remaining = targetItems.value.filter(item => !itemsToInsert.some(dragged => isSameOption(dragged, item)))
+    let insertAt = remaining.findIndex(item => isSameOption(item, referenceItem))
+    if (insertAt === -1)
+      insertAt = remaining.length
+    remaining.splice(insertAt, 0, ...itemsToInsert)
+    targetItems.value = remaining
+    targetSelection.value = []
+  }
+  else {
+    // Cross-list move: insert the dragged source items at the drop position.
+    const additions = itemsToInsert.filter(item => !targetItems.value.some(candidate => isSameOption(candidate, item)))
+    const updated = [...targetItems.value]
+    updated.splice(index, 0, ...additions)
+    targetItems.value = updated
+    sourceSelection.value = []
   }
 
   clearDragState()
@@ -495,9 +552,14 @@ watch(() => modelValue.value, (newVal) => {
           <div
             :draggable="transferDragDrop && !context.disabled && !resolveOptionDisabled(slotProps.option)"
             class="p-formkit-transfer-option"
-            :class="{ 'p-formkit-transfer-option-draggable': transferDragDrop && !context.disabled && !resolveOptionDisabled(slotProps.option) }"
+            :class="{
+              'p-formkit-transfer-option-draggable': transferDragDrop && !context.disabled && !resolveOptionDisabled(slotProps.option),
+              'p-formkit-transfer-option-dragover': dragOverIndex === slotProps.index,
+            }"
             @dragstart="handleOptionDragStart('target', slotProps.option, $event)"
             @dragend="handleOptionDragEnd"
+            @dragover="handleTargetItemDragOver(slotProps.index, $event)"
+            @drop="handleTargetItemDrop(slotProps.index, $event)"
           >
             <component
               :is="context?.slots.option"
@@ -528,5 +590,9 @@ watch(() => modelValue.value, (newVal) => {
 .p-formkit-transfer-dropzone-active :deep(.p-listbox) {
   outline: 2px dashed var(--p-primary-color);
   outline-offset: 2px;
+}
+
+.p-formkit-transfer-option-dragover {
+  box-shadow: inset 0 2px 0 0 var(--p-primary-color);
 }
 </style>
