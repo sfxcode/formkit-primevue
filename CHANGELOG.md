@@ -1,3 +1,15 @@
+## v4.2.4
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.2.3...v4.2.4)
+
+### 🚀 Enhancements
+
+- Enhance Listbox with precise drag-and-drop support for item reordering and cross-list transfers ([70576ada](https://github.com/sfxcode/formkit-primevue/commit/70576ada))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.2.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.2.2...v4.2.3)
