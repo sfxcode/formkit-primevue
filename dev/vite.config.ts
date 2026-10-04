@@ -5,7 +5,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { defineConfig } from 'vite'
 import Pages from 'vite-plugin-pages'
-import pkg from '../package.json'
+import pkg from '../package.json' with { type: 'json' }
 
 // eslint-disable-next-line node/prefer-global/process
 process.env.VITE_APP_BUILD_EPOCH = Date.now().toString()
@@ -44,13 +44,20 @@ export default defineConfig({
     ],
   },
   build: {
-    // Rolldown's automatic chunk-splitting can place shared runtime helpers
-    // (e.g. __exportAll) in a chunk that circularly imports back from another
-    // chunk, leaving the helper undefined at call time ("e is not a function").
-    // Disabling code-splitting avoids that class of bug for this demo build.
+    // Rolldown's automatic chunk-splitting placed its runtime helpers
+    // (e.g. __exportAll) into the json-editor-vue chunk, which itself imports
+    // Vue from the shared components chunk -> circular chunk dependency
+    // ("e is not a function" at runtime). Pin runtime and vendors to their own
+    // chunks so the chunk graph stays acyclic.
     rolldownOptions: {
       output: {
-        codeSplitting: false,
+        codeSplitting: {
+          groups: [
+            { name: 'rolldown-runtime', test: /rolldown[\\/]runtime/, priority: 100 },
+            { name: 'vue', test: /node_modules[\\/](?:\.pnpm[\\/])?(?:@vue|vue)[\\/@]/, priority: 50 },
+            { name: 'json-editor', test: /node_modules[\\/].*(?:json-editor-vue|vanilla-jsoneditor)/, priority: 20 },
+          ],
+        },
       },
     },
   },
@@ -99,10 +106,10 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, '.'),
-      '~': path.resolve(__dirname, 'node_modules/'),
-      'my-library': path.resolve(__dirname, '../src'),
-      'my-library-components': path.resolve(__dirname, '../src/components'),
+      '@': path.resolve(import.meta.dirname, '.'),
+      '~': path.resolve(import.meta.dirname, 'node_modules/'),
+      'my-library': path.resolve(import.meta.dirname, '../src'),
+      'my-library-components': path.resolve(import.meta.dirname, '../src/components'),
 
     },
   },
