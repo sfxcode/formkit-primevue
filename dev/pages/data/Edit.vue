@@ -24,8 +24,8 @@ const schema = reactive(
       label: 'Email',
       help: 'This will be used for your account.',
       validation: 'required|email',
-      iconPrefix: 'pi pi-book',
-      iconSuffix: 'pi pi-bullseye',
+      iconPrefix: 'oi oi-book',
+      iconSuffix: 'oi oi-bullseye',
     },
     {
       $formkit: 'primeTextarea',
@@ -44,10 +44,10 @@ const schema = reactive(
       name: 'field',
       value: 'https://www.google.de',
       label: 'Output Link',
-      iconSuffix: 'pi pi-check',
+      iconSuffix: 'oi oi-check',
       suffix: 'This is the suffix',
       prefix: 'This is the prefix',
-      iconPrefix: 'pi pi-trash',
+      iconPrefix: 'oi oi-trash',
     },
     addElement('h3', 'Password demo'),
     {

@@ -14,8 +14,8 @@ A FormKit wrapper for PrimeVue's OutputNumber component.
 <script setup>
 const schema = [
   { $formkit: 'primeOutputNumber', name: 'mumber1', format: 'decimal', label: 'Basic' },
-  { $formkit: 'primeOutputNumber', name: 'number2', label: 'Icon Left', iconPrefix: 'pi pi-check' },
-  { $formkit: 'primeOutputNumber', name: 'number3', format: 'currency', label: 'Icon Right', help: 'Right Icon Demo', iconSuffix: 'pi pi-check' },
+  { $formkit: 'primeOutputNumber', name: 'number2', label: 'Icon Left', iconPrefix: 'oi oi-check' },
+  { $formkit: 'primeOutputNumber', name: 'number3', format: 'currency', label: 'Icon Right', help: 'Right Icon Demo', iconSuffix: 'oi oi-check' },
 ]
 const data = { mumber1: 12.2, number2: 42.0, number3: 20000 }
 </script>

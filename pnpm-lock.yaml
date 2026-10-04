@@ -39,12 +39,12 @@ importers:
       '@intlify/core':
         specifier: ^11.4.13
         version: 11.4.13
+      '@openvue/openicons-vue':
+        specifier: ^1.0.0
+        version: 1.0.0(vue@3.5.43(typescript@6.0.3))
       openvue:
         specifier: 1.0.0
         version: 1.0.0(chart.js@4.5.1)(vue@3.5.43(typescript@6.0.3))
-      primeicons:
-        specifier: 7.0.0
-        version: 7.0.0
       vue-i18n:
         specifier: ^11.4.13
         version: 11.4.13(vue@3.5.43(typescript@6.0.3))
@@ -973,6 +973,11 @@ packages:
   '@openvue/icons@1.0.0':
     resolution: {integrity: sha512-xCBcHvs0SjEqrDkL54cwcSKUYkjbAPPbfISfygoxjkE/yibUGk3STyutVsGTAEeV5BIYmK/Hd4eUMN/FOTcsfw==}
     engines: {node: '>=12.11.0'}
+
+  '@openvue/openicons-vue@1.0.0':
+    resolution: {integrity: sha512-xM6GmT4Hdk0ktqjsRGWvXALM/b3IJYJEp8pDWKwr6AFr7qwalOtpJJvXD0udCiRKQitGvwpFpVgwUwR/avybaQ==}
+    peerDependencies:
+      vue: ^3.0.0
 
   '@openvue/themes@1.0.0':
     resolution: {integrity: sha512-YiLHzoa+0ic5yz/+vljDaH3UWNofgu5JLENq2FPMY+rPJD9L2F+/QumvUj7vUHvPIFexnb35FwM6fpetw6BfiA==}
@@ -3788,9 +3793,6 @@ packages:
     resolution: {integrity: sha512-T2kroepGB5DRVbkN/nOpW03+VRWqdtJhZNuCW3wYk3chdPjgi4GcTBOaxWfHq1MIM0ypidxsSWbQaAiRpxnXmg==}
     engines: {node: '>=20'}
 
-  primeicons@7.0.0:
-    resolution: {integrity: sha512-jK3Et9UzwzTsd6tzl2RmwrVY/b8raJ3QZLzoDACj+oTJ0oX7L9Hy+XnVwgo4QVKlKpnP/Ur13SXV/pVh4LzaDw==}
-
   property-information@7.2.0:
     resolution: {integrity: sha512-IAtzIB6sUiWaJYrX9smp3V46pBGbBeLFRGdh25kg1334VcBlD8HzhPeNIWQH9zhGmo2itIe25EHt9dQP7G5hmg==}
 
@@ -5258,6 +5260,10 @@ snapshots:
       '@openvue/core': 1.0.0(vue@3.5.43(typescript@6.0.3))
     transitivePeerDependencies:
       - vue
+
+  '@openvue/openicons-vue@1.0.0(vue@3.5.43(typescript@6.0.3))':
+    dependencies:
+      vue: 3.5.43(typescript@6.0.3)
 
   '@openvue/themes@1.0.0':
     dependencies:
@@ -8263,8 +8269,6 @@ snapshots:
   prelude-ls@1.2.1: {}
 
   pretty-bytes@7.2.0: {}
-
-  primeicons@7.0.0: {}
 
   property-information@7.2.0: {}
 

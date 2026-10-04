@@ -15,8 +15,8 @@ A FormKit wrapper for PrimeVue's InputText component.
 const schema = [
   { $formkit: 'primeInputText', name: 'name', label: 'Basic', validation: 'required', help: 'Some Help Text' },
   { $formkit: 'primeInputText', name: 'telephone', placeholder: 'telephone', help: 'Input Type: tel', label: 'Telephone', inputType: 'tel' },
-  { $formkit: 'primeInputText', id: 'icon', name: 'iconLeft', label: 'Icon Left', placeholder: 'icon', iconPrefix: 'pi pi-check' },
-  { $formkit: 'primeInputText', name: 'iconRight', label: 'Icon Right (Disabled) - smize: small', help: 'Right Icon Demo', iconSuffix: 'pi pi-check', disabled: true, size: 'small' },
+  { $formkit: 'primeInputText', id: 'icon', name: 'iconLeft', label: 'Icon Left', placeholder: 'icon', iconPrefix: 'oi oi-check' },
+  { $formkit: 'primeInputText', name: 'iconRight', label: 'Icon Right (Disabled) - smize: small', help: 'Right Icon Demo', iconSuffix: 'oi oi-check', disabled: true, size: 'small' },
 ]
 const data = { name: 'Harry Potter', iconLeft: 'Some Text ...', iconRight: 'Another Text ...' }
 </script>

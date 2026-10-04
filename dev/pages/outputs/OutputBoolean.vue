@@ -38,7 +38,7 @@ const schema
       label: 'Conditional true - only Icon',
       if: '$trueValue',
       trueValue: '',
-      iconSuffix: 'pi pi-check',
+      iconSuffix: 'oi oi-check',
     },
     {
       $formkit: 'primeOutputBoolean',
@@ -46,16 +46,16 @@ const schema
       label: 'Conditional false - only Icon',
       if: '!$falseValue',
       falseValue: '',
-      iconSuffix: 'pi pi-minus',
+      iconSuffix: 'oi oi-minus',
     },
     {
       $formkit: 'primeOutputBoolean',
       name: 'trueValue',
       label: 'Icon Tooltips',
       help: 'Hover the icons to see the tooltips',
-      iconPrefix: 'pi pi-info-circle',
+      iconPrefix: 'oi oi-info-circle',
       iconPrefixTooltip: 'Status information',
-      iconSuffix: 'pi pi-check',
+      iconSuffix: 'oi oi-check',
       iconSuffixTooltip: 'Confirmed',
     },
   ]

@@ -25,7 +25,7 @@ const schema
       label: 'Custom Icon',
       dateFormat: 'yy-mm-dd',
       showIcon: true,
-      icon: 'pi pi-question',
+      icon: 'oi oi-question',
     },
     {
       $formkit: 'primeDatePicker',

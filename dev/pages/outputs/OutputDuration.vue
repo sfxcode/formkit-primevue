@@ -22,7 +22,7 @@ const schema
       $formkit: 'primeOutputDuration',
       name: 'duration3',
       label: 'Another Duration',
-      iconPrefix: 'pi pi-check',
+      iconPrefix: 'oi oi-check',
       iconPrefixTooltip: 'Duration verified',
       onIconPrefixClicked: prefixClicked,
     },
@@ -30,7 +30,7 @@ const schema
       $formkit: 'primeOutputDuration',
       name: 'duration3',
       label: 'Icon Right with Tooltip',
-      iconSuffix: 'pi pi-clock',
+      iconSuffix: 'oi oi-clock',
       iconSuffixTooltip: 'Elapsed time',
     },
 

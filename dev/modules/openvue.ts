@@ -22,7 +22,7 @@ import ToastService from 'openvue/toastservice'
 import Toolbar from 'openvue/toolbar'
 import Tooltip from 'openvue/tooltip'
 import PrimeLabel from '../components/demo/PrimeLabel.vue'
-import 'primeicons/primeicons.css'
+import '@openvue/openicons/openicons.css'
 
 export const install: UserModule = ({ app }) => {
   // directives

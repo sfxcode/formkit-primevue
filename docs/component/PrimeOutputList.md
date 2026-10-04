@@ -24,7 +24,7 @@ function convertValuesSortedReverse(value) {
 const schema = [
   { $formkit: 'primeOutputList', name: 'list1', label: 'Default Divider' },
   { $formkit: 'primeOutputList', name: 'list1', label: 'Custom Divider', divider: ' ' },
-  { $formkit: 'primeOutputList', name: 'list2', label: 'Custom Divider with Prefix Icon', iconPrefix: 'pi pi-list', divider: ' - ' },
+  { $formkit: 'primeOutputList', name: 'list2', label: 'Custom Divider with Prefix Icon', iconPrefix: 'oi oi-list', divider: ' - ' },
   { $formkit: 'primeOutputList', name: 'list1', label: 'Converter Function', convertValue: convertValues, divider: ' - ' },
   { $formkit: 'primeOutputList', name: 'list2', label: 'Converter Function - Char Count', convertValue: convertValuesCharCount },
   { $formkit: 'primeOutputList', name: 'list2', label: 'Converter Function - Sorted Reverse', convertValue: convertValuesSortedReverse },

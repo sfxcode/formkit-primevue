@@ -15,7 +15,7 @@ const schema
       name: 'date2',
       label: 'Icon Left',
       help: '',
-      iconPrefix: 'pi pi-check',
+      iconPrefix: 'oi oi-check',
       iconPrefixTooltip: 'Verified date',
     },
     {
@@ -23,7 +23,7 @@ const schema
       name: 'date3',
       label: 'Icon Right',
       help: 'Right Icon Demo',
-      iconSuffix: 'pi pi-check text-yellow-500',
+      iconSuffix: 'oi oi-check text-yellow-500',
       iconSuffixTooltip: 'Confirmed',
     },
 

@@ -68,7 +68,7 @@ const schema = reactive([
             label: 'Todo',
             help: '',
             placeholder: 'todo',
-            iconPrefix: 'pi pi-check',
+            iconPrefix: 'oi oi-check',
             validation: 'required',
           },
         ],

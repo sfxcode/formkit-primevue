@@ -28,9 +28,9 @@ const schema
       name: 'falseValue',
       label: 'False',
       prefix: 'prefix',
-      iconPrefix: 'pi pi-check',
+      iconPrefix: 'oi oi-check',
       suffix: 'suffix',
-      iconSuffix: 'pi pi-times',
+      iconSuffix: 'oi oi-times',
     }
   ]
 ```

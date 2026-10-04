@@ -15,7 +15,7 @@ A FormKit wrapper for PrimeVue's DatePicker component.
 const schema = [
   { $formkit: 'primeDatePicker', id: 'basic', name: 'basic', label: 'Basic', placeholder: 'MM/DD/YYYY', validation: 'required' },
   { $formkit: 'primeDatePicker', name: 'styled', label: 'Styled', style: { background: 'gray' }, class: 'customClass', showIcon: true },
-  { $formkit: 'primeDatePicker', name: 'icon', label: 'Custom Icon', dateFormat: 'yy-mm', showIcon: true, icon: 'pi pi-question' },
+  { $formkit: 'primeDatePicker', name: 'icon', label: 'Custom Icon', dateFormat: 'yy-mm', showIcon: true, icon: 'oi oi-question' },
   { $formkit: 'primeDatePicker', name: 'range', label: 'Date Range', selectionMode: 'range', manualInput: false },
   { $formkit: 'primeDatePicker', name: 'multiple', label: 'Multiple Dates', selectionMode: 'multiple', manualInput: false },
 ]

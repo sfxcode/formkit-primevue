@@ -42,7 +42,7 @@ async function submitHandler() {
         <FormKitMessages class="p-formkit-data-edit-messages" />
       </template>
       <template #submit>
-        <Button type="submit" label="Save" icon="pi pi-check" icon-pos="right" @submit="submitHandler" />
+        <Button type="submit" label="Save" icon="oi oi-check" icon-pos="right" @submit="submitHandler" />
       </template>
     </FormKitDataEdit>
   </PrimeData>

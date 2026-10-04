@@ -38,9 +38,9 @@ const schema
       label: 'Icon Tooltips',
       help: 'Hover the icons to see the tooltips',
       reference: 'https://github.com/sfxcode/{{value}}',
-      iconPrefix: 'pi pi-github',
+      iconPrefix: 'oi oi-github',
       iconPrefixTooltip: 'View on GitHub',
-      iconSuffix: 'pi pi-arrow-up-right',
+      iconSuffix: 'oi oi-arrow-up-right',
       iconSuffixTooltip: 'Opens externally',
     },
 

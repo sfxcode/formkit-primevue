@@ -23,8 +23,8 @@ const schema = [
   { $formkit: 'primeOutputText', name: 'toTranslate', isTranslationKey: true, label: 'Translated' },
   { $formkit: 'primeOutputText', name: 'html', label: 'HTML as Text (Default)' },
   { $formkit: 'primeOutputText', name: 'html', html: true, label: 'HTML Output (v-html)', help: 'Only use on trusted content or sanitize after input !' },
-  { $formkit: 'primeOutputText', id: 'icon', name: 'iconLeft', label: 'Icon Left', iconPrefix: 'pi pi-check', onIconPrefixClicked: prefixClicked },
-  { $formkit: 'primeOutputText', name: 'iconRight', label: 'Icon Right', iconSuffix: 'pi pi-check text-yellow-500', onIconSuffixClicked: suffixClicked },
+  { $formkit: 'primeOutputText', id: 'icon', name: 'iconLeft', label: 'Icon Left', iconPrefix: 'oi oi-check', onIconPrefixClicked: prefixClicked },
+  { $formkit: 'primeOutputText', name: 'iconRight', label: 'Icon Right', iconSuffix: 'oi oi-check text-yellow-500', onIconSuffixClicked: suffixClicked },
 ]
 const data = { name: 'Harry Potter', toTranslate: 'sample', iconLeft: 'Some Text ...', iconRight: 'Another Text ...', html: '<b style="color: gold">Bold Hello World</b>' }
 </script>

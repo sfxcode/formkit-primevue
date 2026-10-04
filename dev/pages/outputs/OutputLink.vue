@@ -20,9 +20,9 @@ const schema
       name: 'link1',
       label: 'Icon Tooltips',
       help: 'Hover the icons to see the tooltips',
-      iconPrefix: 'pi pi-external-link',
+      iconPrefix: 'oi oi-external-link',
       iconPrefixTooltip: 'Opens in a new tab',
-      iconSuffix: 'pi pi-info-circle',
+      iconSuffix: 'oi oi-info-circle',
       iconSuffixTooltip: 'External resource',
     },
 

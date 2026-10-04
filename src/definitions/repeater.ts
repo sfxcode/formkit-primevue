@@ -10,11 +10,11 @@ function addButtonGroup(buttonGroupClass: string = '', buttonGroupItemClass: str
   }
 
   return addElement('div', [
-    addActionButtonComponent('$moveNodeUp($node.parent, $index)', 'pi pi-arrow-up', 'secondary', '$renderMoveButtons', '$index === 0'),
-    addActionButtonComponent('$removeNode($node.parent, $index)', 'pi pi-trash', 'danger', '$displayDeleteButton', '$node.parent.value.length === $minItems'),
-    addActionButtonComponent('$cloneNode($node.parent, $index)', 'pi pi-clone', '', '$displayCloneButton', '$node.parent.value.length > $maxItems -1'),
-    addActionButtonComponent('$addNode($node.parent, $index)', 'pi pi-plus', '', '$displayAddButton', '$node.parent.value.length > $maxItems -1'),
-    addActionButtonComponent('$moveNodeDown($node.parent, $index)', 'pi pi-arrow-down', 'secondary', '$renderMoveButtons', '$index === $node.parent.value.length -1'),
+    addActionButtonComponent('$moveNodeUp($node.parent, $index)', 'oi oi-arrow-up', 'secondary', '$renderMoveButtons', '$index === 0'),
+    addActionButtonComponent('$removeNode($node.parent, $index)', 'oi oi-trash', 'danger', '$displayDeleteButton', '$node.parent.value.length === $minItems'),
+    addActionButtonComponent('$cloneNode($node.parent, $index)', 'oi oi-clone', '', '$displayCloneButton', '$node.parent.value.length > $maxItems -1'),
+    addActionButtonComponent('$addNode($node.parent, $index)', 'oi oi-plus', '', '$displayAddButton', '$node.parent.value.length > $maxItems -1'),
+    addActionButtonComponent('$moveNodeDown($node.parent, $index)', 'oi oi-arrow-down', 'secondary', '$renderMoveButtons', '$index === $node.parent.value.length -1'),
   ], { class: buttonGroupClass }, render)
 }
 
@@ -36,7 +36,7 @@ function addDragHandle(handleClass: string = '', iconClass: string = '', render:
 export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
   addElement('div', [
     addList('$listName', [
-      addInsertButton('$insertButtonLabel', 'pi pi-plus', '$insertButtonClass', '$insertButtonSize', '$node.children.length == 0 || $alwaysDisplayInsertButton'),
+      addInsertButton('$insertButtonLabel', 'oi oi-plus', '$insertButtonClass', '$insertButtonSize', '$node.children.length == 0 || $alwaysDisplayInsertButton'),
       addListGroup([
         addElement('div', [
           addDragHandle('$internalDragHandleClass', '$dragHandleIconClass', '$renderDragHandle'),
@@ -82,7 +82,7 @@ function addRepeaterHandler(node: FormKitNode): void {
       node.context.renderMoveButtons = !node.context.hideMoveButtons
       node.context.draggable = !!node.context.draggable
       node.context.renderDragHandle = !!node.context.displayDragHandle
-      node.context.dragHandleIconClass = node.context.dragHandleIconClass || 'pi pi-bars'
+      node.context.dragHandleIconClass = node.context.dragHandleIconClass || 'oi oi-bars'
       node.context.internalDragHandleClass = node.context.dragHandleClass ? `formkit-repeater-drag-handle ${node.context.dragHandleClass}` : 'formkit-repeater-drag-handle'
       node.context.internalListClass = node.context.listClass ? `formkit-items ${node.context.listClass}` : 'formkit-items'
       node.context.internalListItemClass = node.context.listItemClass ? `formkit-item ${node.context.listItemClass}` : 'formkit-item'

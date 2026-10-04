@@ -14,8 +14,8 @@ A FormKit wrapper for PrimeVue's OutputDate component.
 <script setup>
 const schema = [
   { $formkit: 'primeOutputDate', name: 'date1', label: 'Basic' },
-  { $formkit: 'primeOutputDate', id: 'date2', name: 'date2', label: 'Icon Left', iconPrefix: 'pi pi-check' },
-  { $formkit: 'primeOutputDate', name: 'date3', label: 'Icon Right', help: 'Right Icon Demo', iconSuffix: 'pi pi-check text-yellow-500' },
+  { $formkit: 'primeOutputDate', id: 'date2', name: 'date2', label: 'Icon Left', iconPrefix: 'oi oi-check' },
+  { $formkit: 'primeOutputDate', name: 'date3', label: 'Icon Right', help: 'Right Icon Demo', iconSuffix: 'oi oi-check text-yellow-500' },
 ]
 const data = { date1: new Date(), date2: new Date(), date3: new Date() }
 </script>

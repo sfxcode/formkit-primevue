@@ -15,7 +15,7 @@ A FormKit wrapper for PrimeVue's ToggleButton component.
 const schema = [
   { $formkit: 'primeToggleButton', label: 'ToggleButton', name: 'toggleButton' },
   { $formkit: 'primeToggleButton', label: 'Second ToggleButton', name: 'toggleButtonRight', iconPos: 'right' },
-  { $formkit: 'primeToggleButton', label: 'Custom ToggleButton', name: 'toggleButtonCustom', iconPos: 'right', onIcon: 'pi pi-plus', offIcon: 'pi pi-minus', onLabel: 'plus', offLabel: 'minus' },
+  { $formkit: 'primeToggleButton', label: 'Custom ToggleButton', name: 'toggleButtonCustom', iconPos: 'right', onIcon: 'oi oi-plus', offIcon: 'oi oi-minus', onLabel: 'plus', offLabel: 'minus' },
 ]
 const data = {}
 </script>

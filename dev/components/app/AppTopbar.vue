@@ -22,20 +22,20 @@ const items = ref([
   },
   {
     label: 'Components',
-    icon: 'pi pi-objects-column',
+    icon: 'oi oi-objects-column',
     class: 'ml-2',
     items: [
       [
         {
           label: 'Edit',
           items: [
-            { label: 'InputText', icon: 'pi pi-fw pi-pencil', route: '/inputs/inputText' },
-            { label: 'Textarea', icon: 'pi pi-fw pi-align-left', route: '/inputs/textArea' },
-            { label: 'InputNumber', icon: 'pi pi-fw pi-hashtag', route: '/inputs/inputNumber' },
-            { label: 'InputOtp', icon: 'pi pi-fw pi-shield', route: '/inputs/inputOtp' },
-            { label: 'InputMask', icon: 'pi pi-fw pi-id-card', route: '/inputs/inputMask' },
-            { label: 'DatePicker', icon: 'pi pi-fw pi-calendar', route: '/inputs/datePicker' },
-            { label: 'Password', icon: 'pi pi-fw pi-lock', route: '/inputs/password' },
+            { label: 'InputText', icon: 'oi oi-fw pi-pencil', route: '/inputs/inputText' },
+            { label: 'Textarea', icon: 'oi oi-fw pi-align-left', route: '/inputs/textArea' },
+            { label: 'InputNumber', icon: 'oi oi-fw pi-hashtag', route: '/inputs/inputNumber' },
+            { label: 'InputOtp', icon: 'oi oi-fw pi-shield', route: '/inputs/inputOtp' },
+            { label: 'InputMask', icon: 'oi oi-fw pi-id-card', route: '/inputs/inputMask' },
+            { label: 'DatePicker', icon: 'oi oi-fw pi-calendar', route: '/inputs/datePicker' },
+            { label: 'Password', icon: 'oi oi-fw pi-lock', route: '/inputs/password' },
           ],
         },
       ],
@@ -43,14 +43,14 @@ const items = ref([
         {
           label: 'Select',
           items: [
-            { label: 'CascadeSelect', icon: 'pi pi-fw pi-share-alt', route: '/inputs/cascadeSelect' },
-            { label: 'Select', icon: 'pi pi-fw pi-chevron-down', route: '/inputs/select' },
-            { label: 'Listbox', icon: 'pi pi-fw pi-list', route: '/inputs/listbox' },
-            { label: 'MultiSelect', icon: 'pi pi-fw pi-check-square', route: '/inputs/multiSelect' },
-            { label: 'RadioButton', icon: 'pi pi-fw pi-circle', route: '/inputs/radioButton' },
-            { label: 'SelectButton', icon: 'pi pi-fw pi-stop', route: '/inputs/selectButton' },
-            { label: 'ToggleButton', icon: 'pi pi-fw pi-toggle-on', route: '/inputs/toggleButton' },
-            { label: 'TreeSelect', icon: 'pi pi-fw pi-sitemap', route: '/inputs/treeSelect' },
+            { label: 'CascadeSelect', icon: 'oi oi-fw pi-share-alt', route: '/inputs/cascadeSelect' },
+            { label: 'Select', icon: 'oi oi-fw pi-chevron-down', route: '/inputs/select' },
+            { label: 'Listbox', icon: 'oi oi-fw pi-list', route: '/inputs/listbox' },
+            { label: 'MultiSelect', icon: 'oi oi-fw pi-check-square', route: '/inputs/multiSelect' },
+            { label: 'RadioButton', icon: 'oi oi-fw pi-circle', route: '/inputs/radioButton' },
+            { label: 'SelectButton', icon: 'oi oi-fw pi-stop', route: '/inputs/selectButton' },
+            { label: 'ToggleButton', icon: 'oi oi-fw pi-toggle-on', route: '/inputs/toggleButton' },
+            { label: 'TreeSelect', icon: 'oi oi-fw pi-sitemap', route: '/inputs/treeSelect' },
           ],
         },
       ],
@@ -58,8 +58,8 @@ const items = ref([
         {
           label: 'Check',
           items: [
-            { label: 'Checkbox', icon: 'pi pi-fw pi-check-square', route: '/inputs/checkBox' },
-            { label: 'ToggleSwitch', icon: 'pi pi-fw pi-power-off', route: '/inputs/toggleSwitch' },
+            { label: 'Checkbox', icon: 'oi oi-fw pi-check-square', route: '/inputs/checkBox' },
+            { label: 'ToggleSwitch', icon: 'oi oi-fw pi-power-off', route: '/inputs/toggleSwitch' },
           ],
         },
       ],
@@ -67,12 +67,12 @@ const items = ref([
         {
           label: 'Misc',
           items: [
-            { label: 'AutoComplete', icon: 'pi pi-fw pi-search', route: '/inputs/autoComplete' },
-            { label: 'ColorPicker', icon: 'pi pi-fw pi-palette', route: '/inputs/colorPicker' },
-            { label: 'Knob', icon: 'pi pi-fw pi-sync', route: '/inputs/knob' },
-            { label: 'Slider', icon: 'pi pi-fw pi-sliders-h', route: '/inputs/slider' },
-            { label: 'Rating', icon: 'pi pi-fw pi-star', route: '/inputs/rating' },
-            { label: 'Repeater', icon: 'pi pi-fw pi-list', route: '/inputs/repeater' },
+            { label: 'AutoComplete', icon: 'oi oi-fw pi-search', route: '/inputs/autoComplete' },
+            { label: 'ColorPicker', icon: 'oi oi-fw pi-palette', route: '/inputs/colorPicker' },
+            { label: 'Knob', icon: 'oi oi-fw pi-sync', route: '/inputs/knob' },
+            { label: 'Slider', icon: 'oi oi-fw pi-sliders-h', route: '/inputs/slider' },
+            { label: 'Rating', icon: 'oi oi-fw pi-star', route: '/inputs/rating' },
+            { label: 'Repeater', icon: 'oi oi-fw pi-list', route: '/inputs/repeater' },
           ],
         },
       ],
@@ -80,21 +80,21 @@ const items = ref([
   },
   {
     label: 'More',
-    icon: 'pi pi-ellipsis-h',
+    icon: 'oi oi-ellipsis-h',
     class: 'ml-2',
     items: [
       [
         {
           label: 'Output Components',
           items: [
-            { label: 'Output Text', icon: 'pi pi-fw pi-align-left', route: '/outputs/outputText' },
-            { label: 'Output Number', icon: 'pi pi-fw pi-hashtag', route: '/outputs/outputNumber' },
-            { label: 'Output Date', icon: 'pi pi-fw pi-calendar', route: '/outputs/outputDate' },
-            { label: 'Output Link', icon: 'pi pi-fw pi-link', route: '/outputs/outputLink' },
-            { label: 'Output List', icon: 'pi pi-fw pi-list', route: '/outputs/outputList' },
-            { label: 'Output Boolean', icon: 'pi pi-fw pi-check', route: '/outputs/outputBoolean' },
-            { label: 'Output Duration', icon: 'pi pi-fw pi-clock', route: '/outputs/outputDuration' },
-            { label: 'Output Reference', icon: 'pi pi-fw pi-bookmark', route: '/outputs/outputReference' },
+            { label: 'Output Text', icon: 'oi oi-fw pi-align-left', route: '/outputs/outputText' },
+            { label: 'Output Number', icon: 'oi oi-fw pi-hashtag', route: '/outputs/outputNumber' },
+            { label: 'Output Date', icon: 'oi oi-fw pi-calendar', route: '/outputs/outputDate' },
+            { label: 'Output Link', icon: 'oi oi-fw pi-link', route: '/outputs/outputLink' },
+            { label: 'Output List', icon: 'oi oi-fw pi-list', route: '/outputs/outputList' },
+            { label: 'Output Boolean', icon: 'oi oi-fw pi-check', route: '/outputs/outputBoolean' },
+            { label: 'Output Duration', icon: 'oi oi-fw pi-clock', route: '/outputs/outputDuration' },
+            { label: 'Output Reference', icon: 'oi oi-fw pi-bookmark', route: '/outputs/outputReference' },
           ],
         },
       ],
@@ -102,11 +102,11 @@ const items = ref([
         {
           label: 'Styling',
           items: [
-            { label: 'Basic', icon: 'pi pi-fw pi-palette', route: '/styling/base' },
-            { label: 'Pass Through', icon: 'pi pi-fw pi-arrow-right-arrow-left', route: '/styling/passThrough' },
-            { label: 'FormKit Class', icon: 'pi pi-fw pi-code', route: '/styling/class' },
-            { label: 'Grid', icon: 'pi pi-fw pi-th-large', route: '/styling/grid' },
-            { label: 'Horizontal', icon: 'pi pi-fw pi-arrows-h', route: '/styling/horizontal' },
+            { label: 'Basic', icon: 'oi oi-fw pi-palette', route: '/styling/base' },
+            { label: 'Pass Through', icon: 'oi oi-fw pi-arrow-right-arrow-left', route: '/styling/passThrough' },
+            { label: 'FormKit Class', icon: 'oi oi-fw pi-code', route: '/styling/class' },
+            { label: 'Grid', icon: 'oi oi-fw pi-th-large', route: '/styling/grid' },
+            { label: 'Horizontal', icon: 'oi oi-fw pi-arrows-h', route: '/styling/horizontal' },
           ],
         },
       ],
@@ -114,19 +114,19 @@ const items = ref([
         {
           label: 'Data',
           items: [
-            { label: 'Edit', icon: 'pi pi-fw pi-pencil', route: '/data/edit' },
-            { label: 'View', icon: 'pi pi-fw pi-eye', route: '/data/view' },
-            { label: 'Without Schema', icon: 'pi pi-fw pi-file', route: '/data/withoutSchema' },
-            { label: 'Slots', icon: 'pi pi-fw pi-box', route: '/data/slots' },
+            { label: 'Edit', icon: 'oi oi-fw pi-pencil', route: '/data/edit' },
+            { label: 'View', icon: 'oi oi-fw pi-eye', route: '/data/view' },
+            { label: 'Without Schema', icon: 'oi oi-fw pi-file', route: '/data/withoutSchema' },
+            { label: 'Slots', icon: 'oi oi-fw pi-box', route: '/data/slots' },
           ],
         },
         {
           label: 'Samples',
           items: [
-            { label: 'Repeater', icon: 'pi pi-fw pi-list', route: '/samples/repeater' },
-            { label: 'Input Editor', icon: 'pi pi-fw pi-code', route: '/samples/inputEditor' },
-            { label: 'MultiStep', icon: 'pi pi-fw pi-forward', route: '/samples/multiStep' },
-            { label: 'Listbox Transfer', icon: 'pi pi-fw pi-arrow-right-arrow-left', route: '/samples/listboxTransfer' },
+            { label: 'Repeater', icon: 'oi oi-fw pi-list', route: '/samples/repeater' },
+            { label: 'Input Editor', icon: 'oi oi-fw pi-code', route: '/samples/inputEditor' },
+            { label: 'MultiStep', icon: 'oi oi-fw pi-forward', route: '/samples/multiStep' },
+            { label: 'Listbox Transfer', icon: 'oi oi-fw pi-arrow-right-arrow-left', route: '/samples/listboxTransfer' },
           ],
         },
       ],
@@ -152,9 +152,9 @@ const items = ref([
         </div>
       </template>  <template #end>
         <Button label="FormKit" class="mr-2" @click="redirectToFormKit" />
-        <Button icon="pi pi-prime" label="PrimeVue" class="mr-2" @click="redirectToPrimeVue" />
-        <Button icon="pi pi-book" label="Docs" class="mr-2" @click="redirectToDocs" />
-        <Button icon="pi pi-github" @click="redirectToGithub" />
+        <Button icon="oi oi-prime" label="PrimeVue" class="mr-2" @click="redirectToPrimeVue" />
+        <Button icon="oi oi-book" label="Docs" class="mr-2" @click="redirectToDocs" />
+        <Button icon="oi oi-github" @click="redirectToGithub" />
       </template>
     </Toolbar>
   </nav>

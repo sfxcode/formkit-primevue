@@ -18,8 +18,8 @@ const schema = [
   { $formkit: 'primeOutputBoolean', name: 'falseValue', label: 'False Example' },
   { $formkit: 'primeOutputBoolean', name: 'trueValue', label: 'True with custom Text', trueValue: 'Sure' },
   { $formkit: 'primeOutputBoolean', name: 'falseValue', label: 'False with custom Text', falseValue: 'Never' },
-  { $formkit: 'primeOutputBoolean', name: 'trueValue', label: 'Conditional true - only Icon', if: '$trueValue', trueValue: '', iconSuffix: 'pi pi-check' },
-  { $formkit: 'primeOutputBoolean', name: 'falseValue', label: 'Conditional false - only Icon', if: '!$falseValue', falseValue: '', iconSuffix: 'pi pi-minus' },
+  { $formkit: 'primeOutputBoolean', name: 'trueValue', label: 'Conditional true - only Icon', if: '$trueValue', trueValue: '', iconSuffix: 'oi oi-check' },
+  { $formkit: 'primeOutputBoolean', name: 'falseValue', label: 'Conditional false - only Icon', if: '!$falseValue', falseValue: '', iconSuffix: 'oi oi-minus' },
 ]
 const data = { trueValue: true, falseValue: false }
 </script>

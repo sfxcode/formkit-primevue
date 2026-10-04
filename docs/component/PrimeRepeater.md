@@ -87,7 +87,7 @@ const data = {
 | draggable                 | boolean   | false   | Enable drag-and-drop reordering        |
 | displayDragHandle         | boolean   | false   | Show drag handle                       |
 | dragHandleClass           | string    | ''      | Extra CSS class for the drag handle    |
-| dragHandleIconClass       | string    | 'pi pi-bars' | Icon class used inside the drag handle |
+| dragHandleIconClass       | string    | 'oi oi-bars' | Icon class used inside the drag handle |
 
 ## Features
 

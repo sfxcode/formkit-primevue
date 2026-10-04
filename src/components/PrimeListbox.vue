@@ -465,7 +465,7 @@ watch(() => modelValue.value, (newVal) => {
     <!-- Transfer Buttons -->
     <div class="p-formkit-transfer-buttons">
       <Button
-        icon="pi pi-angle-right"
+        icon="oi oi-angle-right"
         :severity="transferButtonSeverity"
         :class="transferButtonClass"
         outlined
@@ -475,7 +475,7 @@ watch(() => modelValue.value, (newVal) => {
       />
       <Button
         v-if="context.transferAll"
-        icon="pi pi-angle-double-right"
+        icon="oi oi-angle-double-right"
         :severity="transferButtonSeverity"
         :class="transferButtonClass"
         outlined
@@ -484,7 +484,7 @@ watch(() => modelValue.value, (newVal) => {
         @click="transferAll"
       />
       <Button
-        icon="pi pi-angle-left"
+        icon="oi oi-angle-left"
         :severity="transferButtonSeverity"
         :class="transferButtonClass"
         outlined
@@ -494,7 +494,7 @@ watch(() => modelValue.value, (newVal) => {
       />
       <Button
         v-if="context.transferAll"
-        icon="pi pi-angle-double-left"
+        icon="oi oi-angle-double-left"
         :severity="transferButtonSeverity"
         :class="transferButtonClass"
         outlined

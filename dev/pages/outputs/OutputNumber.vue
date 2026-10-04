@@ -15,7 +15,7 @@ const schema
       name: 'number2',
       label: 'Icon Left',
       help: '',
-      iconPrefix: 'pi pi-check',
+      iconPrefix: 'oi oi-check',
       iconPrefixTooltip: 'Verified value',
     },
     {
@@ -24,7 +24,7 @@ const schema
       format: 'currency',
       label: 'Icon Right',
       help: 'Right Icon Demo',
-      iconSuffix: 'pi pi-check',
+      iconSuffix: 'oi oi-check',
       iconSuffixTooltip: 'Payment confirmed',
 
     },
