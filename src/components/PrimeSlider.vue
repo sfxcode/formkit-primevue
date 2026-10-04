@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { SliderProps } from 'primevue/slider'
+import type { SliderProps } from 'openvue/slider'
 
 import type { PropType } from 'vue'
 import { useFormKitInput } from '../composables'

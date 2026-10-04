@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { RatingProps } from 'primevue/rating'
+import type { RatingProps } from 'openvue/rating'
 
 import type { PropType } from 'vue'
 import { useFormKitInput } from '../composables'

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { AutoCompleteCompleteEvent, AutoCompleteProps } from 'primevue/autocomplete'
+import type { AutoCompleteCompleteEvent, AutoCompleteProps } from 'openvue/autocomplete'
 import type { PropType } from 'vue'
 import { ref } from 'vue'
 import { useFormKitInput } from '../composables'

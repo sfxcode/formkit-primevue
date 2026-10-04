@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { CascadeSelectProps } from 'primevue/cascadeselect'
+import type { CascadeSelectProps } from 'openvue/cascadeselect'
 
 import type { PropType } from 'vue'
 import { useFormKitInput } from '../composables'

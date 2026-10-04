@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { DatePickerBlurEvent, DatePickerProps } from 'primevue/datepicker'
+import type { DatePickerBlurEvent, DatePickerProps } from 'openvue/datepicker'
 
 import type { PropType } from 'vue'
 import { useFormKitInput } from '../composables'

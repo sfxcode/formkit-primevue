@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { MultiSelectProps } from 'primevue/multiselect'
+import type { MultiSelectProps } from 'openvue/multiselect'
 
 import type { PropType } from 'vue'
 import { useFormKitInput } from '../composables'

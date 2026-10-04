@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { InputOtpProps } from 'primevue/inputotp'
+import type { InputOtpProps } from 'openvue/inputotp'
 
 import type { PropType } from 'vue'
 import { useFormKitInput } from '../composables'

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { CheckboxProps } from 'primevue/checkbox'
+import type { CheckboxProps } from 'openvue/checkbox'
 
 import type { PropType } from 'vue'
 import { useFormKitInput, useFormKitSection } from '../composables'

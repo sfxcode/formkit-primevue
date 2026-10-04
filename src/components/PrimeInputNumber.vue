@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { InputNumberBlurEvent, InputNumberProps } from 'primevue/inputnumber'
+import type { InputNumberBlurEvent, InputNumberProps } from 'openvue/inputnumber'
 
 import type { PropType } from 'vue'
 import { watch } from 'vue'

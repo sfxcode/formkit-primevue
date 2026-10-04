@@ -1,5 +1,5 @@
-import type { ToastMessageOptions } from 'primevue/toast'
-import { useToast } from 'primevue/usetoast'
+import type { ToastMessageOptions } from 'openvue/toast'
+import { useToast } from 'openvue/usetoast'
 
 export enum MessageSeverity {
   SUCCESS = 'success',

@@ -22,13 +22,13 @@ import type {
   ToggleButtonSlots,
   ToggleSwitchSlots,
   TreeSelectSlots,
-} from 'primevue'
-import type { CascadeSelectProps } from 'primevue/cascadeselect'
-import type { ListboxProps } from 'primevue/listbox'
-import type { MultiSelectProps } from 'primevue/multiselect'
-import type { SelectProps } from 'primevue/select'
-import type { SelectButtonProps } from 'primevue/selectbutton'
-import type { TreeSelectProps } from 'primevue/treeselect'
+} from 'openvue'
+import type { CascadeSelectProps } from 'openvue/cascadeselect'
+import type { ListboxProps } from 'openvue/listbox'
+import type { MultiSelectProps } from 'openvue/multiselect'
+import type { SelectProps } from 'openvue/select'
+import type { SelectButtonProps } from 'openvue/selectbutton'
+import type { TreeSelectProps } from 'openvue/treeselect'
 import { FormKitDataEdit, FormKitDataView } from './components'
 import { useFormKitRepeater, useFormKitSchema, useInputEditor, useInputEditorSchema, usePrimeInputs } from './composables'
 import { primeInputs, primeOutputs } from './definitions'

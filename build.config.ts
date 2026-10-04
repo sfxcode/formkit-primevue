@@ -1,4 +1,4 @@
-import fs from 'fs-extra'
+import fs from 'node:fs'
 import * as sass from 'sass'
 import { defineBuildConfig } from 'unbuild'
 

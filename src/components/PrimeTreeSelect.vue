@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { TreeSelectProps } from 'primevue/treeselect'
+import type { TreeSelectProps } from 'openvue/treeselect'
 
 import type { PropType } from 'vue'
 import { useFormKitInput } from '../composables'

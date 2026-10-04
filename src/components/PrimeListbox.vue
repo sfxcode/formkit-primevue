@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { ListboxProps } from 'primevue/listbox'
+import type { ListboxProps } from 'openvue/listbox'
 import type { PropType } from 'vue'
 import { computed, ref, watch } from 'vue'
 import { useFormKitInput } from '../composables'

@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import type { FormKitFrameworkContext } from '@formkit/core'
-import type { PasswordProps } from 'primevue/password'
+import type { PasswordProps } from 'openvue/password'
 
 import type { PropType } from 'vue'
 import { useFormKitInput } from '../composables'

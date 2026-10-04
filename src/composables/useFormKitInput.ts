@@ -1,4 +1,4 @@
-import { usePrimeVue } from 'primevue/config'
+import { usePrimeVue } from 'openvue/config'
 import { computed } from 'vue'
 
 export function useFormKitInput(context: any) {

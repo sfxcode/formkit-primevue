@@ -1,26 +1,26 @@
 import type { UserModule } from '@/types'
-import Aura from '@primeuix/themes/aura'
+import Aura from '@openvue/themes/aura'
 import { usePrimeInputs } from 'my-library'
-import { Fieldset } from 'primevue'
-import PrimeVue from 'primevue/config'
-import ConfirmationService from 'primevue/confirmationservice'
+import { Fieldset } from 'openvue'
+import PrimeVue from 'openvue/config'
+import ConfirmationService from 'openvue/confirmationservice'
 
-import MegaMenu from 'primevue/megamenu'
-import Ripple from 'primevue/ripple'
-import Tab from 'primevue/tab'
-import TabList from 'primevue/tablist'
-import TabPanel from 'primevue/tabpanel'
+import MegaMenu from 'openvue/megamenu'
+import Ripple from 'openvue/ripple'
+import Tab from 'openvue/tab'
+import TabList from 'openvue/tablist'
+import TabPanel from 'openvue/tabpanel'
 
-import TabPanels from 'primevue/tabpanels'
+import TabPanels from 'openvue/tabpanels'
 
-import Tabs from 'primevue/tabs'
+import Tabs from 'openvue/tabs'
 
 // services
 
-import Toast from 'primevue/toast'
-import ToastService from 'primevue/toastservice'
-import Toolbar from 'primevue/toolbar'
-import Tooltip from 'primevue/tooltip'
+import Toast from 'openvue/toast'
+import ToastService from 'openvue/toastservice'
+import Toolbar from 'openvue/toolbar'
+import Tooltip from 'openvue/tooltip'
 import PrimeLabel from '../components/demo/PrimeLabel.vue'
 import 'primeicons/primeicons.css'
 
