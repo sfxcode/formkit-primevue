@@ -1,0 +1,1 @@
+import{_t as e,it as t,n,rt as r}from"./chunks/framework.BBz9Zbhj.js";var i=JSON.parse(`{"title":"Usage","description":"","frontmatter":{},"headers":[],"relativePath":"guide/usage.md","filePath":"guide/usage.md"}`),a={name:`guide/usage.md`};function o(n,i,a,o,s,c){return e(),r(`div`,null,[...i[0]||=[t("",6)]])}var s=n(a,[[`render`,o]]);export{i as __pageData,s as default};

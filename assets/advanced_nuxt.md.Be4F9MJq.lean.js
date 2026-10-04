@@ -1,0 +1,1 @@
+import{_t as e,it as t,n,rt as r}from"./chunks/framework.BBz9Zbhj.js";var i=JSON.parse(`{"title":"Nuxt","description":"","frontmatter":{},"headers":[],"relativePath":"advanced/nuxt.md","filePath":"advanced/nuxt.md"}`),a={name:`advanced/nuxt.md`};function o(n,i,a,o,s,c){return e(),r(`div`,null,[...i[0]||=[t("",12)]])}var s=n(a,[[`render`,o]]);export{i as __pageData,s as default};
