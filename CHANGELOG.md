@@ -1,3 +1,19 @@
+## v4.3.4
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.3.3...v4.3.4)
+
+### 🩹 Fixes
+
+- Update pnpm-workspace.yaml to adjust minimum release age and restore allowBuilds configuration ([c42d67e2](https://github.com/sfxcode/formkit-primevue/commit/c42d67e2))
+
+### 🏡 Chore
+
+- Update dependencies in package.json to latest versions - vitest 5 ([cdc51e34](https://github.com/sfxcode/formkit-primevue/commit/cdc51e34))
+
+### ❤️ Contributors
+
+- Sfxcode <tom@sfxcode.com>
+
 ## v4.3.3
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.3.2...v4.3.3)
