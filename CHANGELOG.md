@@ -1,3 +1,16 @@
+## v4.3.5
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.3.4...v4.3.5)
+
+### 🩹 Fixes
+
+- Update fs import to use node:fs and add vue-sfc-transformer dependency ([8ff4b4c5](https://github.com/sfxcode/formkit-primevue/commit/8ff4b4c5))
+- Update import statement for package.json and enhance rolldownOptions for chunk management ([911888a1](https://github.com/sfxcode/formkit-primevue/commit/911888a1))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.3.4
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.3.3...v4.3.4)
