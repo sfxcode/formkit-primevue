@@ -116,7 +116,7 @@ function handleReset() {
       <FormKitSchema v-if="formSchema" :schema="formSchema" :data="formData" />
       <slot />
       <FormKitDataDebug v-if="debugData" :data="formData" header="Debug Mode - Data" />
-      <FormKitDataDebug v-if="debugSchema" :data="formSchema as object" header="Debug Mode - Schema" />
+      <FormKitDataDebug v-if="debugSchema" :data="formSchema" header="Debug Mode - Schema" />
     </template>
     <template #messages>
       <slot name="messages">

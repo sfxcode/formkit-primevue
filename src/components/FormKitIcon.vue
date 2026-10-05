@@ -4,6 +4,10 @@ import type { PropType } from 'vue'
 export interface FormKitIconProps {
   onIconPrefixClicked?: () => void
   onIconSuffixClicked?: () => void
+  iconPrefix?: string
+  iconSuffix?: string
+  prefix?: string
+  suffix?: string
   iconPrefixTooltip?: string
   iconSuffixTooltip?: string
 }

@@ -18,7 +18,7 @@ export interface FormKitOutputTextProps {
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext> & FormKitIconProps & FormKitOutputTextProps,
+    type: Object as PropType<FormKitFrameworkContext & FormKitIconProps & FormKitOutputTextProps>,
     required: true,
   },
 })
@@ -63,11 +63,11 @@ const { hasPrefix, hasPrefixIcon, hasSuffix, hasSuffixIcon } = useFormKitSection
 
 <template>
   <div class="p-formkit p-output-text">
-    <FormKitIcon v-if="hasPrefixIcon" :icon-class="context?.iconPrefix as string" :on-click="context?.onIconPrefixClicked as (() => void)" :tooltip="context?.iconPrefixTooltip as string" position="prefix" />
-    <FormKitPrefix v-if="hasPrefix" :prefix="context?.prefix as string" />
+    <FormKitIcon v-if="hasPrefixIcon" :icon-class="context?.iconPrefix" :on-click="context?.onIconPrefixClicked" :tooltip="context?.iconPrefixTooltip" position="prefix" />
+    <FormKitPrefix v-if="hasPrefix" :prefix="context?.prefix" />
     <span v-if="context?.html" :id="context?.id" :class="context?.attrs?.class" :style="context?.attrs?.style" v-html="textValue" />
     <span v-else :id="context?.id" :class="context?.attrs?.class" :style="context?.attrs?.style" v-text="textValue" />
-    <FormKitSuffix v-if="hasSuffix" :suffix="context?.suffix as string" />
-    <FormKitIcon v-if="hasSuffixIcon" :icon-class="context?.iconSuffix as string" :on-click="context?.onIconSuffixClicked as (() => void)" :tooltip="context?.iconSuffixTooltip as string" position="suffix" />
+    <FormKitSuffix v-if="hasSuffix" :suffix="context?.suffix" />
+    <FormKitIcon v-if="hasSuffixIcon" :icon-class="context?.iconSuffix" :on-click="context?.onIconSuffixClicked" :tooltip="context?.iconSuffixTooltip" position="suffix" />
   </div>
 </template>

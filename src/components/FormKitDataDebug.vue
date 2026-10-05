@@ -1,7 +1,9 @@
 <script setup lang='ts'>
+import type { PropType } from 'vue'
+
 defineProps({
   data: {
-    type: Object,
+    type: [Object, Array, String, Number, Boolean] as PropType<any>,
     default: null,
   },
   header: {

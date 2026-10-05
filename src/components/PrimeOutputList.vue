@@ -13,12 +13,12 @@ export interface PrimeOutputListProps {
   options?: SelectProps['options']
   optionLabel?: SelectProps['optionLabel']
   optionValue?: SelectProps['optionValue']
-  convertValue?: (array: []) => []
+  convertValue?: (array: any[]) => any[]
 }
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext> & FormKitIconProps & PrimeOutputListProps,
+    type: Object as PropType<FormKitFrameworkContext & FormKitIconProps & PrimeOutputListProps>,
     required: true,
   },
 })
@@ -34,7 +34,7 @@ const getListValues = computed(() => {
   if (props.context?.options && props.context?.optionValue) {
     const key: string = `${props.context.optionValue}`
     return values.map((value) => {
-      const foundOption = props.context?.options?.find(option => option[key] === value)
+      const foundOption = props.context?.options?.find((option: any) => option[key] === value)
       return foundOption ? foundOption[props.context?.optionLabel as string] : value
     })
   }
@@ -53,12 +53,12 @@ const listItemsClass = computed(() => props.context?.attrs?.class || '')
   <div class="p-formkit p-output-list">
     <FormKitIcon
       v-if="hasPrefixIcon"
-      :icon-class="context?.iconPrefix as string"
-      :on-click="context?.onIconPrefixClicked as () => void"
-      :tooltip="context?.iconPrefixTooltip as string"
+      :icon-class="context?.iconPrefix"
+      :on-click="context?.onIconPrefixClicked"
+      :tooltip="context?.iconPrefixTooltip"
       position="prefix"
     />
-    <FormKitPrefix v-if="hasPrefix && listStyle === 'span'" :prefix="context?.prefix as string" />
+    <FormKitPrefix v-if="hasPrefix && listStyle === 'span'" :prefix="context?.prefix" />
     <span
       v-if="listStyle === 'span'"
       :id="context?.id"
@@ -112,12 +112,12 @@ const listItemsClass = computed(() => props.context?.attrs?.class || '')
         </span>
       </li>
     </ol>
-    <FormKitSuffix v-if="hasSuffix && listStyle === 'span'" :suffix="context?.suffix as string" />
+    <FormKitSuffix v-if="hasSuffix && listStyle === 'span'" :suffix="context?.suffix" />
     <FormKitIcon
       v-if="hasSuffixIcon"
-      :icon-class="context?.iconSuffix as string"
-      :on-click="context?.onIconSuffixClicked as () => void"
-      :tooltip="context?.iconSuffixTooltip as string"
+      :icon-class="context?.iconSuffix"
+      :on-click="context?.onIconSuffixClicked"
+      :tooltip="context?.iconSuffixTooltip"
       position="suffix"
     />
   </div>

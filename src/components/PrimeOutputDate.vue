@@ -11,7 +11,7 @@ import FormKitSuffix from './FormKitSuffix.vue'
 
 const props = defineProps({
   context: {
-    type: Object as PropType<FormKitFrameworkContext> & FormKitIconProps,
+    type: Object as PropType<FormKitFrameworkContext & FormKitIconProps>,
     required: true,
   },
 })
@@ -40,12 +40,12 @@ const converted = computed(() => {
 
 <template>
   <div class="p-formkit p-output-date">
-    <FormKitIcon v-if="hasPrefixIcon" :icon-class="context?.iconPrefix as string" :on-click="context?.onIconPrefixClicked as (() => void)" :tooltip="context?.iconPrefixTooltip as string" position="prefix" />
-    <FormKitPrefix v-if="hasPrefix" :prefix="context?.prefix as string" />
+    <FormKitIcon v-if="hasPrefixIcon" :icon-class="context?.iconPrefix" :on-click="context?.onIconPrefixClicked" :tooltip="context?.iconPrefixTooltip" position="prefix" />
+    <FormKitPrefix v-if="hasPrefix" :prefix="context?.prefix" />
     <span :id="context?.id" :style="context?.attrs?.style" :class="context?.attrs?.class">
       {{ converted }}
     </span>
-    <FormKitSuffix v-if="hasSuffix" :suffix="context?.suffix as string" />
-    <FormKitIcon v-if="hasSuffixIcon" :icon-class="context?.iconSuffix as string" :on-click="context?.onIconSuffixClicked as (() => void)" :tooltip="context?.iconSuffixTooltip as string" position="suffix" />
+    <FormKitSuffix v-if="hasSuffix" :suffix="context?.suffix" />
+    <FormKitIcon v-if="hasSuffixIcon" :icon-class="context?.iconSuffix" :on-click="context?.onIconSuffixClicked" :tooltip="context?.iconSuffixTooltip" position="suffix" />
   </div>
 </template>
