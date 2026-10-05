@@ -1,3 +1,15 @@
+## v4.3.6
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.3.5...v4.3.6)
+
+### 🩹 Fixes
+
+- Update prop types and improve data handling in FormKit components ([cfd899f0](https://github.com/sfxcode/formkit-primevue/commit/cfd899f0))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.3.5
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.3.4...v4.3.5)
