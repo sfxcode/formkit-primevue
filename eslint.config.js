@@ -12,4 +12,14 @@ export default antfu(
     },
 
   },
+  {
+    // TypeScript syntax in <template> is emitted as-is into dist and breaks consumer bundlers
+    files: ['src/**/*.vue'],
+    rules: {
+      'vue/no-restricted-syntax': ['error', ...['TSAsExpression', 'TSNonNullExpression', 'TSTypeAssertion', 'TSSatisfiesExpression'].map(selector => ({
+        selector,
+        message: 'TypeScript syntax is not allowed in <template>; move the typing to <script setup>.',
+      }))],
+    },
+  },
 )
