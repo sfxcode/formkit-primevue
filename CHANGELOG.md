@@ -1,3 +1,31 @@
+## v4.5.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.4.0...v4.5.0)
+
+### 🚀 Enhancements
+
+- **dev:** Responsive demo layout, per-page titles and accessibility fixes ([1cab4552](https://github.com/sfxcode/formkit-primevue/commit/1cab4552))
+- **dev:** Add a light and dark theme toggle to the demo ([718476af](https://github.com/sfxcode/formkit-primevue/commit/718476af))
+- **dev:** Add search, breadcrumb, active states and a landing page to the demo ([9913e130](https://github.com/sfxcode/formkit-primevue/commit/9913e130))
+- Name the repeater row buttons and improve the demo's JSON editors ([cb2662c1](https://github.com/sfxcode/formkit-primevue/commit/cb2662c1))
+- **repeater:** Offer to put back a deleted row ([970d28db](https://github.com/sfxcode/formkit-primevue/commit/970d28db))
+
+### 🩹 Fixes
+
+- Let the listbox transfer shrink to its container ([3ca67e18](https://github.com/sfxcode/formkit-primevue/commit/3ca67e18))
+
+### 💅 Refactors
+
+- **dev:** Replace vite-ssg with a plain module loader ([e5f3a1f5](https://github.com/sfxcode/formkit-primevue/commit/e5f3a1f5))
+
+### 🏡 Chore
+
+- Allow the newer typescript and vue-sfc-transformer peers ([9731da27](https://github.com/sfxcode/formkit-primevue/commit/9731da27))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.4.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.3.6...v4.4.0)
