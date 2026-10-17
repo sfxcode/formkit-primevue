@@ -3,6 +3,7 @@ import generatedRoutes from 'virtual:generated-pages'
 import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
+import { pageTitle } from './utils/pageTitle'
 import 'uno.css'
 
 const routes = generatedRoutes
@@ -10,6 +11,11 @@ const routes = generatedRoutes
 const app = createApp(App)
 const router = createRouter({ history: createWebHistory(import.meta.env.BASE_URL), routes })
 app.use(router)
+
+// every page gets its own document title
+router.afterEach((to) => {
+  document.title = pageTitle(to.name)
+})
 
 // install all modules under `modules/`
 Object.values(import.meta.glob<{ install: UserModule }>('./modules/*.ts', { eager: true }))

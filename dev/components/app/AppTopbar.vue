@@ -1,24 +1,9 @@
 <script setup lang='ts'>
-function redirectToGithub() {
-  window.open('https://github.com/sfxcode/formkit-primevue', '_blank')
-}
-
-function redirectToFormKit() {
-  window.open('https://formkit.com/', '_blank')
-}
-
-function redirectToPrimeVue() {
-  window.open('https://primevue.org', '_blank')
-}
-
-function redirectToDocs() {
-  window.open('https://sfxcode.github.io/formkit-primevue/', '_blank')
-}
-
 const items = ref([
   {
-    label: 'Demo -> ',
-    class: '',
+    label: 'Demo',
+    icon: 'pi pi-home',
+    route: '/',
   },
   {
     label: 'Components',
@@ -46,10 +31,10 @@ const items = ref([
             { label: 'CascadeSelect', icon: 'pi pi-fw pi-share-alt', route: '/inputs/cascadeSelect' },
             { label: 'Select', icon: 'pi pi-fw pi-chevron-down', route: '/inputs/select' },
             { label: 'Listbox', icon: 'pi pi-fw pi-list', route: '/inputs/listbox' },
-            { label: 'MultiSelect', icon: 'pi pi-fw pi-check-square', route: '/inputs/multiSelect' },
+            { label: 'MultiSelect', icon: 'pi pi-fw pi-list-check', route: '/inputs/multiSelect' },
             { label: 'RadioButton', icon: 'pi pi-fw pi-circle', route: '/inputs/radioButton' },
             { label: 'SelectButton', icon: 'pi pi-fw pi-stop', route: '/inputs/selectButton' },
-            { label: 'ToggleButton', icon: 'pi pi-fw pi-toggle-on', route: '/inputs/toggleButton' },
+            { label: 'ToggleButton', icon: 'pi pi-fw pi-circle-on', route: '/inputs/toggleButton' },
             { label: 'TreeSelect', icon: 'pi pi-fw pi-sitemap', route: '/inputs/treeSelect' },
           ],
         },
@@ -72,7 +57,7 @@ const items = ref([
             { label: 'Knob', icon: 'pi pi-fw pi-sync', route: '/inputs/knob' },
             { label: 'Slider', icon: 'pi pi-fw pi-sliders-h', route: '/inputs/slider' },
             { label: 'Rating', icon: 'pi pi-fw pi-star', route: '/inputs/rating' },
-            { label: 'Repeater', icon: 'pi pi-fw pi-list', route: '/inputs/repeater' },
+            { label: 'Repeater', icon: 'pi pi-fw pi-clone', route: '/inputs/repeater' },
           ],
         },
       ],
@@ -103,7 +88,7 @@ const items = ref([
           label: 'Styling',
           items: [
             { label: 'Basic', icon: 'pi pi-fw pi-palette', route: '/styling/base' },
-            { label: 'Pass Through', icon: 'pi pi-fw pi-arrow-right-arrow-left', route: '/styling/passThrough' },
+            { label: 'Pass Through', icon: 'pi pi-fw pi-cog', route: '/styling/passThrough' },
             { label: 'FormKit Class', icon: 'pi pi-fw pi-code', route: '/styling/class' },
             { label: 'Grid', icon: 'pi pi-fw pi-th-large', route: '/styling/grid' },
             { label: 'Horizontal', icon: 'pi pi-fw pi-arrows-h', route: '/styling/horizontal' },
@@ -123,8 +108,8 @@ const items = ref([
         {
           label: 'Samples',
           items: [
-            { label: 'Repeater', icon: 'pi pi-fw pi-list', route: '/samples/repeater' },
-            { label: 'Input Editor', icon: 'pi pi-fw pi-code', route: '/samples/inputEditor' },
+            { label: 'Repeater', icon: 'pi pi-fw pi-clone', route: '/samples/repeater' },
+            { label: 'Input Editor', icon: 'pi pi-fw pi-file-edit', route: '/samples/inputEditor' },
             { label: 'MultiStep', icon: 'pi pi-fw pi-forward', route: '/samples/multiStep' },
             { label: 'Listbox Transfer', icon: 'pi pi-fw pi-arrow-right-arrow-left', route: '/samples/listboxTransfer' },
           ],
@@ -137,7 +122,7 @@ const items = ref([
 </script>
 
 <template>
-  <nav class="pb-4">
+  <header class="pb-4">
     <Toolbar>
       <template #start>
         <router-link to="/" class="">
@@ -151,15 +136,17 @@ const items = ref([
           </router-link>
         </div>
       </template>  <template #end>
-        <Button label="FormKit" class="mr-2" @click="redirectToFormKit" />
-        <Button icon="pi pi-prime" label="PrimeVue" class="mr-2" @click="redirectToPrimeVue" />
-        <Button icon="pi pi-book" label="Docs" class="mr-2" @click="redirectToDocs" />
-        <Button icon="pi pi-github" @click="redirectToGithub" />
+        <div class="flex flex-wrap gap-2">
+          <Button as="a" href="https://formkit.com/" target="_blank" rel="noopener noreferrer" label="FormKit" />
+          <Button as="a" href="https://primevue.org" target="_blank" rel="noopener noreferrer" icon="pi pi-prime" label="PrimeVue" />
+          <Button as="a" href="https://sfxcode.github.io/formkit-primevue/" target="_blank" rel="noopener noreferrer" icon="pi pi-book" label="Docs" />
+          <Button as="a" href="https://github.com/sfxcode/formkit-primevue" target="_blank" rel="noopener noreferrer" icon="pi pi-github" aria-label="GitHub" />
+        </div>
       </template>
     </Toolbar>
-  </nav>
-  <div>
-    <MegaMenu :model="items" class="w-134">
+  </header>
+  <nav aria-label="Demo pages">
+    <MegaMenu :model="items" class="w-134 max-w-full">
       <template #item="{ item }">
         <router-link v-if="item.route" v-slot="{ href, navigate }" :to="item.route" custom>
           <a v-ripple :href="href" class="" @click="navigate">
@@ -173,11 +160,12 @@ const items = ref([
         </a>
       </template>
     </MegaMenu>
-  </div>
+  </nav>
 </template>
 
 <style scoped lang='scss'>
-a {
+// links that are buttons keep the text color of their button
+a:not(.p-button) {
   color: var(--p-primary-color);
 }
 </style>

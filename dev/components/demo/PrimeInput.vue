@@ -49,17 +49,17 @@ async function submitHandler() {
 
 <template>
   <div>
-    <h2 class="text-color-[var(--p-primary-color)] pb-2">
+    <h1 class="page-title">
       {{ header }}
-    </h2>
+    </h1>
     <slot />
-    <div class="flex gap-8 flex-wrap">
-      <div class="min-w-32rem basis-1/2 xl:basis-1/3">
+    <div class="demo-columns">
+      <div>
         <div>
           <FormKitDataEdit :data="formData" :schema="formSchema" debug-data @data-saved="submitHandler" />
         </div>
       </div>
-      <div class="basis-1/2 xl:basis-1/3">
+      <div class="demo-editor">
         <Tabs v-if="!hideTabs" value="0">
           <TabList>
             <Tab value="0">

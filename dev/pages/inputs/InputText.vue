@@ -31,7 +31,7 @@ const schema
     {
       $formkit: 'primeInputText',
       name: 'iconRight',
-      label: 'Icon Right (Disabled) - smize: small',
+      label: 'Icon Right (Disabled) - size: small',
       help: 'Right Icon Demo',
       iconSuffix: 'pi pi-check',
       disabled: true,

@@ -27,6 +27,10 @@ html {
 
 a {
   text-decoration: none;
+}
+
+// links that are buttons keep the text color of their button
+a:not(.p-button) {
   color: var(--p-primary-color);
 }
 
@@ -53,4 +57,38 @@ a {
   }
 }
 
+// Page title of the demo pages: an h1 that looks like the h2 it replaces.
+.page-title {
+  margin: 0.83em 0;
+  padding-bottom: 0.5rem;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: var(--p-primary-color);
+}
 
+// Demo pages: live form and editor side by side, one below the other on narrow screens.
+// `minmax(0, 1fr)` and `min-width: 0` keep wide children (editor, inputs) from stretching the page.
+.demo-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+
+  > * {
+    min-width: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .demo-columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  // The editor stays in view next to the form and scrolls inside itself when the schema is long.
+  .demo-editor {
+    position: sticky;
+    top: 0.5rem;
+    max-height: calc(100vh - 1rem);
+    overflow: auto;
+  }
+}

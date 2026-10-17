@@ -1,13 +1,18 @@
 <script setup lang='ts'>
-const version = ref(import.meta.env.VITE_APP_VERSION)
+const version = import.meta.env.VITE_APP_VERSION
+const formkitVersion = import.meta.env.VITE_APP_FORMKIT_VERSION
+const primevueVersion = import.meta.env.VITE_APP_PRIMEVUE_VERSION
+const year = new Date().getFullYear()
 </script>
 
 <template>
-  <div class="mt-8 layout-footer text-center text-gray-700">
-    <span class="font-medium ml-2">Formkit (2.0.x) - PrimeVue (4.5.x) - FormKit-PrimeVue-Version {{ version }} - sfxcode 2026</span>
-  </div>
+  <footer class="mt-8 layout-footer text-center">
+    <span class="font-medium">FormKit {{ formkitVersion }} - PrimeVue {{ primevueVersion }} - FormKit-PrimeVue {{ version }} - sfxcode {{ year }}</span>
+  </footer>
 </template>
 
 <style scoped>
-
+.layout-footer {
+  color: var(--p-text-muted-color);
+}
 </style>

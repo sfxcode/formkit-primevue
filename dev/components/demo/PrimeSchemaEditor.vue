@@ -51,12 +51,12 @@ function copyObject() {
 
 <template>
   <div>
-    <h2 class="text-color-[var(--p-primary-color)] pb-2">
+    <h1 class="page-title">
       {{ header }}
-    </h2>
+    </h1>
     <slot />
     <div class="flex gap-12 flex-wrap">
-      <div class="w-40rem">
+      <div class="w-full max-w-40rem">
         <h3>Create Formkit Input</h3>
         <FormKit
           v-model="formData"
@@ -102,5 +102,9 @@ function copyObject() {
 </template>
 
 <style lang='scss' scoped>
-
+// The row of input types is wider than a phone: keep it inside its box and let it scroll sideways there.
+:deep(.p-selectbutton) {
+  max-width: 100%;
+  overflow-x: auto;
+}
 </style>

@@ -39,17 +39,17 @@ function updateData(value: any) {
 
 <template>
   <div>
-    <h2 class="text-color-[var(--p-primary-color)] pb-2">
+    <h1 class="page-title">
       {{ header }}
-    </h2>
+    </h1>
     <slot />
-    <div class="flex flex-wrap gap-8">
-      <div class="min-w-30rem basis-1/3 md:basis-1/4">
+    <div class="demo-columns">
+      <div>
         <div>
           <FormKitDataView :data="formData" :schema="formSchema" debug-data />
         </div>
       </div>
-      <div class="">
+      <div class="demo-editor">
         <Tabs value="0">
           <TabList>
             <Tab value="0">

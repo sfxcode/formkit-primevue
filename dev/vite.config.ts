@@ -11,6 +11,11 @@ import pkg from '../package.json' with { type: 'json' }
 process.env.VITE_APP_BUILD_EPOCH = Date.now().toString()
 // eslint-disable-next-line node/prefer-global/process
 process.env.VITE_APP_VERSION = pkg.version
+// the versions the demo shows in its footer are the ones the library depends on, without the range prefix
+// eslint-disable-next-line node/prefer-global/process
+process.env.VITE_APP_FORMKIT_VERSION = pkg.dependencies['@formkit/vue'].replace(/^[\^~]/, '')
+// eslint-disable-next-line node/prefer-global/process
+process.env.VITE_APP_PRIMEVUE_VERSION = pkg.dependencies.primevue.replace(/^[\^~]/, '')
 
 /**
  * @type {import('vite').UserConfig}
