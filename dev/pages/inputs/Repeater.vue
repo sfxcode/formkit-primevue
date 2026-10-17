@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 const primeAttributes = 'N/A'
-const customAttributes = 'insertButtonLabel, insertButtonClass, insertButtonSize, alwaysDisplayInsertButton, newItem, listClass, listItemClass, groupClass, hideButtonGroup, hideMoveButtons, buttonGroupClass, buttonGroupItemClass, buttonSize, displayCloneButton, displayAddButton, displayDeleteButton, moveUpLabel, moveDownLabel, deleteLabel, cloneLabel, addLabel, displayDragHandle, dragHandleClass, dragHandleIconClass'
+const customAttributes = 'insertButtonLabel, insertButtonClass, insertButtonSize, alwaysDisplayInsertButton, newItem, listClass, listItemClass, groupClass, hideButtonGroup, hideMoveButtons, buttonGroupClass, buttonGroupItemClass, buttonSize, displayCloneButton, displayAddButton, displayDeleteButton, moveUpLabel, moveDownLabel, deleteLabel, cloneLabel, addLabel, undoDelete, undoLabel, deletedLabel, undoTimeout, displayDragHandle, dragHandleClass, dragHandleIconClass'
 
 function createDefaultValue(): object {
   return { name: '', damage: '' }
@@ -29,6 +29,7 @@ const schema
       displayCloneButton: true,
       displayAddButton: true,
       displayDeleteButton: true,
+      undoDelete: true,
       draggable: true,
       displayDragHandle: true,
       insertButtonLabel: 'Add Attack',

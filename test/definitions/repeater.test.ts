@@ -1,6 +1,6 @@
 import { createNode } from '@formkit/core'
 import { defaultConfig } from '@formkit/vue'
-import { describe, expect, it, vi } from 'vitest'
+import { afterEach, describe, expect, it, vi } from 'vitest'
 import { computed, reactive } from 'vue'
 import { primeRepeaterDefinition } from '../../src/definitions/repeater'
 
@@ -347,6 +347,211 @@ describe('primeRepeaterDefinition', () => {
       ])
       for (const button of buttons)
         expect(button.props.title).toBe(button.props['aria-label'])
+    })
+  })
+
+  describe('undo of a delete', () => {
+    function createParent(value: any[]) {
+      const parentNode: any = {
+        _value: value,
+        value,
+        input: vi.fn((nextValue: any[]) => {
+          parentNode.value = nextValue
+          parentNode._value = nextValue
+        }),
+      }
+      return parentNode
+    }
+
+    function findNodes(node: any, matches: (entry: any) => boolean, found: any[] = []): any[] {
+      if (Array.isArray(node)) {
+        node.forEach(entry => findNodes(entry, matches, found))
+      }
+      else if (node && typeof node === 'object') {
+        if (matches(node))
+          found.push(node)
+        Object.values(node).forEach(value => findNodes(value, matches, found))
+      }
+      return found
+    }
+
+    afterEach(() => {
+      vi.useRealTimers()
+    })
+
+    it('is off by default and has English texts and a timeout of 8 seconds', () => {
+      const node = createRepeaterNode()
+
+      expect(node.context.undoDelete).toBe(false)
+      expect(node.context.undoLabel).toBe('Undo')
+      expect(node.context.deletedLabel).toBe('Item deleted')
+      expect(node.context.undoTimeout).toBe(8000)
+      expect(node.context.removedItem).toBeUndefined()
+    })
+
+    it('accepts its props', () => {
+      const props = (primeRepeaterDefinition as any).props as string[]
+
+      expect(props).toEqual(expect.arrayContaining(['undoDelete', 'undoLabel', 'deletedLabel', 'undoTimeout']))
+    })
+
+    it('does not keep a deleted row when it is off', () => {
+      const node = createRepeaterNode()
+      const parentNode = createParent([{ name: 'a' }, { name: 'b' }])
+
+      node.context.removeNode(parentNode, 0)()
+
+      expect(parentNode.value).toEqual([{ name: 'b' }])
+      expect(node.context.removedItem).toBeUndefined()
+    })
+
+    it('keeps the deleted row and puts it back at its place', () => {
+      const node = createRepeaterNode({ undoDelete: true })
+      const parentNode = createParent([{ name: 'a' }, { name: 'b' }, { name: 'c' }])
+
+      node.context.removeNode(parentNode, 1)()
+      expect(parentNode.value).toEqual([{ name: 'a' }, { name: 'c' }])
+      expect(node.context.removedItem).toEqual({ index: 1, item: { name: 'b' } })
+
+      node.context.undoRemoveNode(parentNode)()
+      expect(parentNode.value).toEqual([{ name: 'a' }, { name: 'b' }, { name: 'c' }])
+      expect(node.context.removedItem).toBeUndefined()
+    })
+
+    it('puts back a copy that shares nothing with the deleted row', () => {
+      const node = createRepeaterNode({ undoDelete: true })
+      const original = { name: 'b', tags: ['x'] }
+      const parentNode = createParent([{ name: 'a' }, original])
+
+      node.context.removeNode(parentNode, 1)()
+      node.context.undoRemoveNode(parentNode)()
+
+      expect(parentNode.value[1]).toEqual(original)
+      expect(parentNode.value[1]).not.toBe(original)
+      expect(parentNode.value[1].tags).not.toBe(original.tags)
+    })
+
+    it('puts the row at the end when the list became shorter than its place', () => {
+      const node = createRepeaterNode({ undoDelete: true })
+      const parentNode = createParent([{ name: 'a' }, { name: 'b' }, { name: 'c' }])
+
+      node.context.removeNode(parentNode, 2)()
+      expect(node.context.removedItem).toEqual({ index: 2, item: { name: 'c' } })
+      // other rows are deleted without the undo being used, so the list has only one row, the place 2 does not exist
+      parentNode.value = [{ name: 'a' }]
+      parentNode._value = parentNode.value
+      node.context.undoRemoveNode(parentNode)()
+
+      expect(parentNode.value).toEqual([{ name: 'a' }, { name: 'c' }])
+    })
+
+    it('does nothing when there is nothing to put back', () => {
+      const node = createRepeaterNode({ undoDelete: true })
+      const parentNode = createParent([{ name: 'a' }])
+
+      node.context.undoRemoveNode(parentNode)()
+
+      expect(parentNode.input).not.toHaveBeenCalled()
+      expect(parentNode.value).toEqual([{ name: 'a' }])
+    })
+
+    it('does not put the row back above maxItems', () => {
+      const node = createRepeaterNode({ undoDelete: true, maxItems: 2 })
+      const parentNode = createParent([{ name: 'a' }, { name: 'b' }])
+
+      node.context.removeNode(parentNode, 0)()
+      parentNode.value = [{ name: 'b' }, { name: 'new' }]
+      parentNode._value = parentNode.value
+      parentNode.input.mockClear()
+      node.context.undoRemoveNode(parentNode)()
+
+      expect(parentNode.input).not.toHaveBeenCalled()
+      expect(parentNode.value).toEqual([{ name: 'b' }, { name: 'new' }])
+      expect(node.context.removedItem).toBeUndefined()
+    })
+
+    it('forgets the row when the timeout is over', () => {
+      vi.useFakeTimers()
+      const node = createRepeaterNode({ undoDelete: true })
+      const parentNode = createParent([{ name: 'a' }, { name: 'b' }])
+
+      node.context.removeNode(parentNode, 0)()
+      vi.advanceTimersByTime(7999)
+      expect(node.context.removedItem).toBeDefined()
+      vi.advanceTimersByTime(1)
+      expect(node.context.removedItem).toBeUndefined()
+
+      parentNode.input.mockClear()
+      node.context.undoRemoveNode(parentNode)()
+      expect(parentNode.input).not.toHaveBeenCalled()
+    })
+
+    it('uses the timeout that is set', () => {
+      vi.useFakeTimers()
+      const node = createRepeaterNode({ undoDelete: true, undoTimeout: 1000 })
+      const parentNode = createParent([{ name: 'a' }, { name: 'b' }])
+
+      node.context.removeNode(parentNode, 0)()
+      vi.advanceTimersByTime(1000)
+
+      expect(node.context.removedItem).toBeUndefined()
+    })
+
+    it('keeps the row until another one is deleted when the timeout is 0', () => {
+      vi.useFakeTimers()
+      const node = createRepeaterNode({ undoDelete: true, undoTimeout: 0 })
+      const parentNode = createParent([{ name: 'a' }, { name: 'b' }, { name: 'c' }])
+
+      node.context.removeNode(parentNode, 0)()
+      vi.advanceTimersByTime(60 * 60 * 1000)
+      expect(node.context.removedItem).toEqual({ index: 0, item: { name: 'a' } })
+
+      node.context.removeNode(parentNode, 0)()
+      expect(node.context.removedItem).toEqual({ index: 0, item: { name: 'b' } })
+    })
+
+    it('offers the row of the latest delete and starts its timeout again', () => {
+      vi.useFakeTimers()
+      const node = createRepeaterNode({ undoDelete: true })
+      const parentNode = createParent([{ name: 'a' }, { name: 'b' }, { name: 'c' }])
+
+      node.context.removeNode(parentNode, 0)()
+      vi.advanceTimersByTime(5000)
+      node.context.removeNode(parentNode, 0)()
+      expect(node.context.removedItem).toEqual({ index: 0, item: { name: 'b' } })
+
+      // 10 seconds after the first delete, 5 after the second
+      vi.advanceTimersByTime(5000)
+      expect(node.context.removedItem).toEqual({ index: 0, item: { name: 'b' } })
+      vi.advanceTimersByTime(3000)
+      expect(node.context.removedItem).toBeUndefined()
+    })
+
+    it('re-renders when the context is reactive', () => {
+      const node = createRepeaterNode(reactive({ undoDelete: true }))
+      const parentNode = createParent([{ name: 'a' }, { name: 'b' }])
+      const offered = computed(() => node.context.removedItem !== undefined)
+
+      expect(offered.value).toBe(false)
+      node.context.removeNode(parentNode, 0)()
+      expect(offered.value).toBe(true)
+      node.context.undoRemoveNode(parentNode)()
+      expect(offered.value).toBe(false)
+    })
+
+    it('has an undo bar in the schema that shows when a row was deleted', () => {
+      const schema = (primeRepeaterDefinition as any).schema()
+      const [bar] = findNodes(schema, entry => entry.attrs?.class === 'formkit-repeater-undo')
+      const [button] = findNodes(bar, entry => entry.$cmp === 'Button')
+      const [region] = findNodes(schema, entry => entry.attrs?.role === 'status')
+
+      expect(bar.if).toBe('$removedItem')
+      expect(bar.children[0].children).toEqual(['$deletedLabel'])
+      expect(button.props).toMatchObject({ onClick: '$undoRemoveNode($node)', label: '$undoLabel' })
+      // the region exists as long as the undo is enabled, so it is announced when the bar appears
+      expect(region.if).toBe('$undoDelete')
+      expect(region.attrs['aria-live']).toBe('polite')
+      expect(region.children).toContain(bar)
     })
   })
 })

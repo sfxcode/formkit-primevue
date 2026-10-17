@@ -28,6 +28,17 @@ function addInsertButton(label: string = 'Add Item', icon: string = 'i-lucide-pl
   ], { class: styleClass }, render)
 }
 
+// A deleted row can be put back for a while. The status region exists as long as the undo is enabled, so
+// screen readers announce the message when it appears.
+function addUndoBar(render: string = 'true') {
+  return addElement('div', [
+    addElement('div', [
+      addElement('span', ['$deletedLabel']),
+      addComponent('Button', { onClick: '$undoRemoveNode($node)', label: '$undoLabel', size: 'small', variant: 'text' }),
+    ], { class: 'formkit-repeater-undo' }, '$removedItem'),
+  ], { 'role': 'status', 'aria-live': 'polite' }, render)
+}
+
 function addDragHandle(handleClass: string = '', iconClass: string = '', render: string = 'true') {
   return addElement('span', [
     addElement('i', [], { class: iconClass }),
@@ -57,10 +68,11 @@ export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
           onDragend: '$dragNodeEnd',
         }),
       ], true, {}),
+      addUndoBar('$undoDelete'),
     ], true, 'true', { value: '$value', validation: '$repeaterValidation' }),
   ], { class: '$internalListClass', id: '$internalListId' }, true),
   {
-    props: ['insertButtonLabel', 'insertButtonClass', 'insertButtonSize', 'alwaysDisplayInsertButton', 'newItem', 'listClass', 'listItemClass', 'hideButtonGroup', 'hideMoveButtons', 'buttonGroupClass', 'buttonGroupItemClass', 'buttonSize', 'displayCloneButton', 'displayAddButton', 'displayDeleteButton', 'minItems', 'maxItems', 'moveUpLabel', 'moveDownLabel', 'deleteLabel', 'cloneLabel', 'addLabel', 'displayDragHandle', 'draggable', 'dragHandleClass', 'dragHandleIconClass'],
+    props: ['insertButtonLabel', 'insertButtonClass', 'insertButtonSize', 'alwaysDisplayInsertButton', 'newItem', 'listClass', 'listItemClass', 'hideButtonGroup', 'hideMoveButtons', 'buttonGroupClass', 'buttonGroupItemClass', 'buttonSize', 'displayCloneButton', 'displayAddButton', 'displayDeleteButton', 'minItems', 'maxItems', 'moveUpLabel', 'moveDownLabel', 'deleteLabel', 'cloneLabel', 'addLabel', 'undoDelete', 'undoLabel', 'deletedLabel', 'undoTimeout', 'displayDragHandle', 'draggable', 'dragHandleClass', 'dragHandleIconClass'],
     features: [addRepeaterHandler],
   },
 )
@@ -87,6 +99,15 @@ function addRepeaterHandler(node: FormKitNode): void {
       const context = node.context
       context.dragOverIndex = null
 
+      // the row that was deleted last, which can be put back until the timeout is over
+      let undoTimer: ReturnType<typeof setTimeout> | undefined
+      const forgetRemoved = (): void => {
+        clearTimeout(undoTimer)
+        undoTimer = undefined
+        context.removedItem = undefined
+      }
+      node.on('destroying', () => clearTimeout(undoTimer))
+
       node.context.listName = node.name
       node.context.renderButtons = !node.context.hideButtonGroup
       node.context.insertButtonSize = node.context.insertButtonSize ? node.context.insertButtonSize : ''
@@ -103,6 +124,11 @@ function addRepeaterHandler(node: FormKitNode): void {
       node.context.deleteLabel = node.context.deleteLabel || 'Delete item'
       node.context.cloneLabel = node.context.cloneLabel || 'Clone item'
       node.context.addLabel = node.context.addLabel || 'Add item below'
+      node.context.undoDelete = !!node.context.undoDelete
+      node.context.undoLabel = node.context.undoLabel || 'Undo'
+      node.context.deletedLabel = node.context.deletedLabel || 'Item deleted'
+      node.context.undoTimeout = node.context.undoTimeout !== undefined ? Number(node.context.undoTimeout) : 8000
+      node.context.removedItem = undefined
       node.context.minItems = node.context.minItems !== undefined ? node.context.minItems : 0
       node.context.maxItems = node.context.maxItems !== undefined ? node.context.maxItems : Number.POSITIVE_INFINITY
       // `+` keeps the rule running on an empty list: FormKit skips every other rule on an empty
@@ -128,8 +154,25 @@ function addRepeaterHandler(node: FormKitNode): void {
       }
       node.context.removeNode = (parentNode: any, index: number) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
+          const removed = clonePlain(parentNode._value[index])
           parentNode.input(parentNode._value.filter((_: any, i: number): boolean => i !== index), false)
+          if (context.undoDelete) {
+            clearTimeout(undoTimer)
+            context.removedItem = { index, item: removed }
+            // a timeout of 0 keeps the undo until another row is deleted or it is used
+            const timeout = Number(context.undoTimeout)
+            undoTimer = timeout > 0 ? setTimeout(forgetRemoved, timeout) : undefined
+          }
         }
+      }
+      node.context.undoRemoveNode = (parentNode: any) => (): void => {
+        const removed = context.removedItem as { index: number, item: unknown } | undefined
+        if (removed && parentNode && Array.isArray(parentNode._value) && parentNode._value.length < Number(context.maxItems)) {
+          const array: any[] = [...parentNode.value]
+          array.splice(Math.min(removed.index, array.length), 0, clonePlain(removed.item))
+          parentNode.input(array, false)
+        }
+        forgetRemoved()
       }
       node.context.addNode = (parentNode: any, index: number) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {

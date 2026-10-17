@@ -93,6 +93,10 @@ const data = {
 | deleteLabel               | string    | 'Delete item' | Accessible name and tooltip of the delete button |
 | cloneLabel                | string    | 'Clone item' | Accessible name and tooltip of the clone button |
 | addLabel                  | string    | 'Add item below' | Accessible name and tooltip of the add button |
+| undoDelete                | boolean   | false   | Offer to put back the row that was deleted last |
+| undoLabel                 | string    | 'Undo'  | Label of the undo button |
+| deletedLabel              | string    | 'Item deleted' | Message that is shown with the undo button |
+| undoTimeout               | number    | 8000    | Milliseconds the undo is offered, 0 keeps it until another row is deleted |
 
 ## Accessible button names
 
@@ -109,6 +113,23 @@ const attacks = {
   addLabel: 'Eintrag darunter einfügen',
 }
 ```
+
+## Undo of a delete
+
+A row that is deleted is gone at once. Set `undoDelete` and the repeater shows the message `Item deleted` with an `Undo` button for a few seconds. `Undo` puts the row back at the place it had, and only the row that was deleted last can be put back. The bar is part of the repeater and needs no toast or dialog service, and it is announced to screen readers.
+
+```ts
+const attacks = {
+  $formkit: 'primeRepeater',
+  name: 'attacks',
+  undoDelete: true,
+  undoTimeout: 5000, // the undo is offered for 5 seconds
+  deletedLabel: 'Eintrag gelöscht',
+  undoLabel: 'Rückgängig',
+}
+```
+
+The row is not put back when the list already has `maxItems` rows.
 
 ## Features
 
