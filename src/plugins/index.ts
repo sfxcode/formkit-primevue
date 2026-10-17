@@ -60,3 +60,6 @@ export function addLabelPlugin(node: FormKitNode): void {
     }
   })
 }
+
+export { createAutoAnimatePlugin } from './autoAnimate'
+export type { AutoAnimateTargets } from './autoAnimate'
