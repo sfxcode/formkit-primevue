@@ -79,7 +79,6 @@ export default defineConfig({
         'vue',
         'vue-router',
         'vue-i18n',
-        '@vueuse/head',
       ],
       exclude: [
         '**/dist/**',
