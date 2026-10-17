@@ -35,20 +35,8 @@ export default config
 Every input and output is also available under the library-neutral `form` prefix: `formInputText` next to `primeInputText`, `formSelect` next to `primeSelect`, `formRepeater` next to `primeRepeater`, `formOutputText` next to `primeOutputText`, and so on.
 The `form` names are the same definitions, so both names behave identically. Use them when a schema should keep its type names across UI libraries that offer the same prefix.
 
-The `prime` names are unchanged. `primeInputs` and `primeOutputs` still contain only the `prime` names, so existing configurations keep working without any change.
-To use the `form` names, register `formInputs` and `formOutputs` as well. Both prefixes can be used at the same time.
-
-```ts
-// formkit.config.ts
-import type { DefaultConfigOptions } from '@formkit/vue'
-import { formInputs, formOutputs, primeInputs, primeOutputs } from '@sfxcode/formkit-primevue'
-
-const config: DefaultConfigOptions = {
-  inputs: { ...primeInputs, ...primeOutputs, ...formInputs, ...formOutputs },
-}
-
-export default config
-```
+`primeInputs` and `primeOutputs` contain both names, so the configuration above registers them without any change, and every `prime` name works as before.
+`formInputs` and `formOutputs` contain only the `form` names, for the case that you register them on their own.
 
 ```ts
 const schema = [
@@ -57,8 +45,15 @@ const schema = [
 ]
 ```
 
+If you register only a subset of the inputs yourself, add the `form` names of those inputs as well, or filter the `prime` names out of `primeInputs`:
+
+```ts
+const primeOnly = Object.fromEntries(Object.entries(primeInputs).filter(([name]) => name.startsWith('prime')))
+```
+
 The [plugins](../advanced/plugins.md) and the TypeScript types treat the `form` names like the `prime` names.
 Only the registered `form` names are recognized: your own `formSomething` input types and FormKit's own `form` type are not affected.
+If an input of your own has the same name as one of the `form` names, register it after `primeInputs` so it takes precedence.
 
 ## Usage
 

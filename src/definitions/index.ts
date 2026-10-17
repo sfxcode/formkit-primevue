@@ -37,7 +37,7 @@ import {
 import { renamePrefix } from './prefix'
 import { primeRepeaterDefinition } from './repeater'
 
-export const primeInputs = {
+const primeInputDefinitions = {
   primeAutoComplete: primeAutoCompleteDefinition,
   primeInputText: primeInputTextDefinition,
   primeInputNumber: primeInputNumberDefinition,
@@ -63,7 +63,7 @@ export const primeInputs = {
   primeRepeater: primeRepeaterDefinition,
 }
 
-export const primeOutputs = {
+const primeOutputDefinitions = {
   primeOutputText: primeOutputTextDefinition,
   primeOutputLink: primeOutputLinkDefinition,
   primeOutputReference: primeOutputReferenceDefinition,
@@ -77,8 +77,18 @@ export const primeOutputs = {
 /**
  * The same definitions under the library-neutral `form` prefix (`formInputText`, `formRepeater`, ...), so
  * a schema can keep its type names when it moves between UI libraries that share the prefix.
- * `primeInputs` and `primeOutputs` are unchanged: register these in addition to keep both names.
+ * Only the `form` names: `primeInputs` and `primeOutputs` already contain them next to the `prime` names.
  */
-export const formInputs = renamePrefix(primeInputs, 'prime', 'form')
+export const formInputs = renamePrefix(primeInputDefinitions, 'prime', 'form')
 
-export const formOutputs = renamePrefix(primeOutputs, 'prime', 'form')
+export const formOutputs = renamePrefix(primeOutputDefinitions, 'prime', 'form')
+
+/**
+ * Every input, under its `prime` name and its `form` name. Both names are the same definition.
+ */
+export const primeInputs = { ...primeInputDefinitions, ...formInputs }
+
+/**
+ * Every output, under its `prime` name and its `form` name. Both names are the same definition.
+ */
+export const primeOutputs = { ...primeOutputDefinitions, ...formOutputs }

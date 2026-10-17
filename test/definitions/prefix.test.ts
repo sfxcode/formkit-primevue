@@ -6,45 +6,59 @@ import { formInputs, formOutputs, primeInputs, primeOutputs } from '../../src/de
 import { renamePrefix } from '../../src/definitions/prefix'
 import { addLabelPlugin, addPrimeAsteriskPlugin, createAutoAnimatePlugin } from '../../src/plugins'
 
-describe('form prefix aliases', () => {
-  it('offers every prime input under the form prefix, with the same definition', () => {
-    const primeKeys = Object.keys(primeInputs)
+// The names that existed before the `form` prefix was added: all of them must stay registered, as they were.
+const ORIGINAL_INPUTS = ['primeAutoComplete', 'primeInputText', 'primeInputNumber', 'primeInputMask', 'primePassword', 'primeCheckbox', 'primeToggleSwitch', 'primeTextarea', 'primeSelect', 'primeMultiSelect', 'primeDatePicker', 'primeSlider', 'primeKnob', 'primeRating', 'primeRadioButton', 'primeColorPicker', 'primeToggleButton', 'primeListbox', 'primeSelectButton', 'primeCascadeSelect', 'primeTreeSelect', 'primeInputOtp', 'primeRepeater']
+const ORIGINAL_OUTPUTS = ['primeOutputText', 'primeOutputLink', 'primeOutputReference', 'primeOutputNumber', 'primeOutputDate', 'primeOutputBoolean', 'primeOutputDuration', 'primeOutputList']
 
-    expect(Object.keys(formInputs)).toEqual(primeKeys.map(key => key.replace(/^prime/, 'form')))
-    for (const key of primeKeys)
-      expect((formInputs as Record<string, unknown>)[key.replace(/^prime/, 'form')]).toBe((primeInputs as Record<string, unknown>)[key])
+const toForm = (key: string): string => key.replace(/^prime/, 'form')
+const asRecord = (definitions: object): Record<string, unknown> => definitions as Record<string, unknown>
+
+describe('form prefix aliases', () => {
+  it('keeps every original prime name in primeInputs and primeOutputs', () => {
+    expect(ORIGINAL_INPUTS).toHaveLength(23)
+    expect(ORIGINAL_OUTPUTS).toHaveLength(8)
+    for (const key of ORIGINAL_INPUTS)
+      expect(asRecord(primeInputs)[key], key).toBeDefined()
+    for (const key of ORIGINAL_OUTPUTS)
+      expect(asRecord(primeOutputs)[key], key).toBeDefined()
   })
 
-  it('offers every prime output under the form prefix, with the same definition', () => {
-    const primeKeys = Object.keys(primeOutputs)
+  it('contains the prime names and their form names, and nothing else', () => {
+    expect(Object.keys(primeInputs).sort()).toEqual([...ORIGINAL_INPUTS, ...ORIGINAL_INPUTS.map(toForm)].sort())
+    expect(Object.keys(primeOutputs).sort()).toEqual([...ORIGINAL_OUTPUTS, ...ORIGINAL_OUTPUTS.map(toForm)].sort())
+  })
 
-    expect(Object.keys(formOutputs)).toEqual(primeKeys.map(key => key.replace(/^prime/, 'form')))
-    for (const key of primeKeys)
-      expect((formOutputs as Record<string, unknown>)[key.replace(/^prime/, 'form')]).toBe((primeOutputs as Record<string, unknown>)[key])
+  it('registers each form name with the same definition as its prime name', () => {
+    for (const key of ORIGINAL_INPUTS)
+      expect(asRecord(primeInputs)[toForm(key)], key).toBe(asRecord(primeInputs)[key])
+    for (const key of ORIGINAL_OUTPUTS)
+      expect(asRecord(primeOutputs)[toForm(key)], key).toBe(asRecord(primeOutputs)[key])
+  })
+
+  it('offers formInputs and formOutputs with only the form names', () => {
+    expect(Object.keys(formInputs)).toEqual(ORIGINAL_INPUTS.map(toForm))
+    expect(Object.keys(formOutputs)).toEqual(ORIGINAL_OUTPUTS.map(toForm))
+    for (const [key, definition] of Object.entries(formInputs))
+      expect(definition, key).toBe(asRecord(primeInputs)[key])
+    for (const [key, definition] of Object.entries(formOutputs))
+      expect(definition, key).toBe(asRecord(primeOutputs)[key])
   })
 
   it('includes the inputs and outputs that are mentioned by name', () => {
+    expect(primeInputs.formInputText).toBe(primeInputs.primeInputText)
+    expect(primeInputs.formRepeater).toBe(primeInputs.primeRepeater)
+    expect(primeOutputs.formOutputText).toBe(primeOutputs.primeOutputText)
     expect(formInputs.formInputText).toBe(primeInputs.primeInputText)
-    expect(formInputs.formRepeater).toBe(primeInputs.primeRepeater)
-    expect(formOutputs.formOutputText).toBe(primeOutputs.primeOutputText)
   })
 
-  it('does not overlap with the prime names', () => {
-    const all = [...Object.keys(primeInputs), ...Object.keys(primeOutputs), ...Object.keys(formInputs), ...Object.keys(formOutputs)]
+  it('does not overlap between inputs and outputs', () => {
+    const all = [...Object.keys(primeInputs), ...Object.keys(primeOutputs)]
 
     expect(new Set(all).size).toBe(all.length)
   })
 
-  it('keeps the prime exports as they were', () => {
-    expect(Object.keys(primeInputs).every(key => key.startsWith('prime'))).toBe(true)
-    expect(Object.keys(primeOutputs).every(key => key.startsWith('primeOutput'))).toBe(true)
-    expect(Object.keys(primeInputs)).toHaveLength(23)
-    expect(Object.keys(primeOutputs)).toHaveLength(8)
-    expect(Object.keys(primeInputs)).toEqual(expect.arrayContaining(['primeInputText', 'primeSelect', 'primeRepeater']))
-  })
-
   it('does not use the form names that FormKit or applications may already own', () => {
-    expect(Object.keys(formInputs)).not.toContain('form')
+    expect(Object.keys(primeInputs)).not.toContain('form')
     expect(Object.keys(formInputs).every(key => /^form[A-Z]/.test(key))).toBe(true)
     expect(Object.keys(formOutputs).every(key => /^formOutput[A-Z]/.test(key))).toBe(true)
   })

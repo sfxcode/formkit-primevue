@@ -4,7 +4,7 @@ import { createMultiStepPlugin } from '@formkit/addons'
 
 import { de, en } from '@formkit/i18n'
 import { defaultConfig, plugin } from '@formkit/vue'
-import { formInputs, formOutputs, primeInputs, primeOutputs } from 'my-library/definitions'
+import { primeInputs, primeOutputs } from 'my-library/definitions'
 import { addPrimeAsteriskPlugin, createAutoAnimatePlugin } from '../../src/plugins'
 import '@formkit/addons/css/multistep'
 
@@ -41,7 +41,7 @@ export const install: UserModule = ({ app }) => {
     locales: { de, en },
     // Define the active locale
     locale: 'en',
-    inputs: { ...primeInputs, ...primeOutputs, ...formInputs, ...formOutputs },
+    inputs: { ...primeInputs, ...primeOutputs },
     plugins: [
       createAutoAnimatePlugin(
         {
