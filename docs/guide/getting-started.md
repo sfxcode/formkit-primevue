@@ -30,6 +30,36 @@ const config: DefaultConfigOptions = {
 export default config
 ```
 
+### The `form` prefix
+
+Every input and output is also available under the library-neutral `form` prefix: `formInputText` next to `primeInputText`, `formSelect` next to `primeSelect`, `formRepeater` next to `primeRepeater`, `formOutputText` next to `primeOutputText`, and so on.
+The `form` names are the same definitions, so both names behave identically. Use them when a schema should keep its type names across UI libraries that offer the same prefix.
+
+The `prime` names are unchanged. `primeInputs` and `primeOutputs` still contain only the `prime` names, so existing configurations keep working without any change.
+To use the `form` names, register `formInputs` and `formOutputs` as well. Both prefixes can be used at the same time.
+
+```ts
+// formkit.config.ts
+import type { DefaultConfigOptions } from '@formkit/vue'
+import { formInputs, formOutputs, primeInputs, primeOutputs } from '@sfxcode/formkit-primevue'
+
+const config: DefaultConfigOptions = {
+  inputs: { ...primeInputs, ...primeOutputs, ...formInputs, ...formOutputs },
+}
+
+export default config
+```
+
+```ts
+const schema = [
+  { $formkit: 'formInputText', name: 'name', label: 'Name', validation: 'required' },
+  { $formkit: 'formSelect', name: 'role', label: 'Role', options: [] },
+]
+```
+
+The [plugins](../advanced/plugins.md) and the TypeScript types treat the `form` names like the `prime` names.
+Only the registered `form` names are recognized: your own `formSomething` input types and FormKit's own `form` type are not affected.
+
 ## Usage
 
 ### Example

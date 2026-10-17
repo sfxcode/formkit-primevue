@@ -10,6 +10,8 @@ export function useInputEditor() {
       return {}
 
     const formkitInput = data?._dollar_formkit
+    // The `form` prefix names are aliases: look them up like the `prime` name, keep the node's own name in the result.
+    const lookupInput = typeof formkitInput === 'string' ? formkitInput.replace(/^form(?=[A-Z])/, 'prime') : formkitInput
     let tempData: Record<string, any> = {}
 
     if (data.prime && Array.isArray(data.prime) && data.prime.length > 0) {
@@ -19,7 +21,7 @@ export function useInputEditor() {
           const key: string = entry.prime_key || ''
           let value: any = entry.prime_value
           // some inputs require numbers
-          if (formkitInput === 'primeInputOtp' && key === 'length' && value !== undefined) {
+          if (lookupInput === 'primeInputOtp' && key === 'length' && value !== undefined) {
             value = Number(value)
           }
           return [key, value] as [string, any]
@@ -64,7 +66,7 @@ export function useInputEditor() {
     const useOptions = formkitInput
       ? primeInputWithOptionNames
           .map(s => `prime${s}`)
-          .includes(formkitInput)
+          .includes(lookupInput)
       : false
 
     let result: Record<string, any>

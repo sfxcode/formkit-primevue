@@ -1,7 +1,22 @@
 import type { FormKitExtendableSchemaRoot, FormKitNode } from '@formkit/core'
+import { formInputs, formOutputs } from '../definitions'
+
+// `prime` types are matched by prefix, as before. `form` types by exact name: a prefix match
+// would also catch FormKit's own `form` type and any `formSomething` type of the application.
+function isFormType(type: string): boolean {
+  return Object.hasOwn(formInputs, type) || Object.hasOwn(formOutputs, type)
+}
+
+function isPrimeType(type: string): boolean {
+  return type.startsWith('prime') || isFormType(type)
+}
+
+function isOutputType(type: string): boolean {
+  return type.startsWith('primeOutput') || Object.hasOwn(formOutputs, type)
+}
 
 export function addPrimeAsteriskPlugin(node: FormKitNode): void {
-  if (!node.props.type.startsWith('prime') || node.props.type.startsWith('primeOutput'))
+  if (!isPrimeType(node.props.type) || isOutputType(node.props.type))
     return
 
   node.on('created', () => {
@@ -26,7 +41,7 @@ export function addPrimeAsteriskPlugin(node: FormKitNode): void {
 }
 
 export function addLabelPlugin(node: FormKitNode): void {
-  if (!node.props.type.startsWith('prime'))
+  if (!isPrimeType(node.props.type))
     return
 
   node.on('created', () => {

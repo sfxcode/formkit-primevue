@@ -7,6 +7,14 @@ import { eachSection } from '@formkit/inputs'
 /** Sections to animate, per input type. `global` applies to every input. */
 export type AutoAnimateTargets = Record<string, string[]>
 
+// A targets entry keyed by the `prime` name of an input also applies to its `form` prefix name, and the
+// other way round (`primeRepeater` / `formRepeater`), as both names are the same input. The `form`
+// type of FormKit itself has no uppercase letter after the prefix and is not an alias.
+function typeNames(type: string): string[] {
+  const match = /^(?:prime|form)([A-Z].*)$/.exec(type)
+  return match ? [`prime${match[1]}`, `form${match[1]}`] : [type]
+}
+
 // `@formkit/addons`' own plugin calls `autoAnimate()` again on EVERY marked element each
 // time a new input is created. AutoAnimate does not dedupe: each call adds another
 // MutationObserver to the element and leaves the old one running, so after the first
@@ -75,6 +83,7 @@ export function createAutoAnimatePlugin(options: Partial<AutoAnimateOptions> = {
       if (typeof node.props.definition?.schema !== 'function')
         return
 
+      const typeTargets = typeNames(node.props.type).flatMap(type => targets[type] ?? [])
       const originalSchema = node.props.definition.schema
       node.props.definition.schema = (extensions) => {
         const schema = originalSchema(extensions)
@@ -96,7 +105,7 @@ export function createAutoAnimatePlugin(options: Partial<AutoAnimateOptions> = {
           }
           else {
             const sectionName = meta?.section
-            if (typeof sectionName === 'string' && (targets.global?.includes(sectionName) || targets[node.props.type]?.includes(sectionName)))
+            if (typeof sectionName === 'string' && (targets.global?.includes(sectionName) || typeTargets.includes(sectionName)))
               key = DEFAULT_KEY
           }
           if (key === undefined)

@@ -17,6 +17,8 @@ plugins: [
 ]
 ```
 
+The plugin applies to `prime` inputs and to their [`form` prefix](../guide/getting-started.md#the-form-prefix) names. Outputs are skipped.
+
 ## AutoAnimatePlugin
 
 `createAutoAnimatePlugin` animates inputs and sections when they are added, removed or moved, for example the items of a `primeRepeater`.
