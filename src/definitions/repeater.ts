@@ -1,6 +1,7 @@
 import type { FormKitNode, FormKitTypeDefinition } from '@formkit/core'
 import { createInput } from '@formkit/vue'
 import { useFormKitSchema } from '../composables'
+import { clonePlain } from '../utils/clonePlain'
 
 const { addList, addElement, addListGroup, addComponent } = useFormKitSchema()
 
@@ -33,19 +34,6 @@ function addDragHandle(handleClass: string = '', iconClass: string = '', render:
   }, render)
 }
 
-// Items must never share an object: the repeater's value is edited in place, so a shared
-// reference makes a clone (or two added items) collapse into one object on the next change,
-// and an item inserted as the `newItem` template itself would turn edits into the new default.
-function cloneItem<T>(item: T): T {
-  if (Array.isArray(item))
-    return item.map(cloneItem) as T
-  if (item instanceof Date)
-    return new Date(item.getTime()) as T
-  if (item !== null && typeof item === 'object' && Object.getPrototypeOf(item) === Object.prototype)
-    return Object.fromEntries(Object.entries(item).map(([key, value]) => [key, cloneItem(value)])) as T
-  return item
-}
-
 export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
   addElement('div', [
     addList('$listName', [
@@ -66,7 +54,7 @@ export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
           onDragend: '$dragNodeEnd',
         }),
       ], true, {}),
-    ], true, 'true', { value: '$value' }),
+    ], true, 'true', { value: '$value', validation: '$repeaterValidation' }),
   ], { class: '$internalListClass', id: '$internalListId' }, true),
   {
     props: ['insertButtonLabel', 'insertButtonClass', 'insertButtonSize', 'alwaysDisplayInsertButton', 'newItem', 'listClass', 'listItemClass', 'hideButtonGroup', 'hideMoveButtons', 'buttonGroupClass', 'buttonGroupItemClass', 'buttonSize', 'displayCloneButton', 'displayAddButton', 'displayDeleteButton', 'minItems', 'maxItems', 'displayDragHandle', 'draggable', 'dragHandleClass', 'dragHandleIconClass'],
@@ -80,15 +68,21 @@ function addRepeaterHandler(node: FormKitNode): void {
     return array
   }
 
-  const uuid = typeof crypto !== 'undefined' && crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).slice(2)
-
   node.on('created', () => {
     if (node.context) {
       let dragStartIndex: number | null = null
+      // Deep-cloned per row, so rows never share a nested array/object with each other or with
+      // the `newItem` prop. Read on every call: a `newItem` changed after mount reaches new rows.
+      const makeNewItem = (): object => clonePlain(node.context?.newItem || {})
+
+      // Makes the list and row element ids unique per repeater instance. Not random: a server-rendered
+      // page and its hydration create the repeater twice, and an id that differs between the two
+      // is a hydration mismatch. FormKit's node id is unique per node and the same on both sides.
+      const instanceId = String(node.props.id ?? node.name)
+
       // lives on the (reactive) context, so the drop-target class re-renders while dragging
       const context = node.context
       context.dragOverIndex = null
-      const newItem = node.context.newItem || {}
 
       node.context.listName = node.name
       node.context.renderButtons = !node.context.hideButtonGroup
@@ -101,7 +95,12 @@ function addRepeaterHandler(node: FormKitNode): void {
       node.context.internalDragHandleClass = node.context.dragHandleClass ? `formkit-repeater-drag-handle ${node.context.dragHandleClass}` : 'formkit-repeater-drag-handle'
       node.context.internalListClass = node.context.listClass ? `formkit-items ${node.context.listClass}` : 'formkit-items'
       node.context.internalListItemClass = node.context.listItemClass ? `formkit-item ${node.context.listItemClass}` : 'formkit-item'
-      node.context.internalListId = `formkit-items-${uuid}`
+      node.context.minItems = node.context.minItems !== undefined ? node.context.minItems : 0
+      node.context.maxItems = node.context.maxItems !== undefined ? node.context.maxItems : Number.POSITIVE_INFINITY
+      // `+` keeps the rule running on an empty list: FormKit skips every other rule on an empty
+      // value, so a repeater below its `minItems` would otherwise pass as valid.
+      node.context.repeaterValidation = [['+length', node.context.minItems, node.context.maxItems]]
+      node.context.internalListId = `formkit-items-${instanceId}`
 
       node.context.getListItemClass = (index: number): string => {
         if (context.dragOverIndex === index && dragStartIndex !== index)
@@ -110,12 +109,12 @@ function addRepeaterHandler(node: FormKitNode): void {
       }
 
       node.context.getListItemId = (index: number): string => {
-        return `formkit-item-${index}-${uuid}`
+        return `formkit-item-${index}-${instanceId}`
       }
 
       node.context.insertNode = (parentNode: any) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
-          const newArray: any[] = [cloneItem(newItem), ...parentNode.value]
+          const newArray: any[] = [makeNewItem(), ...parentNode.value]
           parentNode.input(newArray, false)
         }
       }
@@ -127,14 +126,14 @@ function addRepeaterHandler(node: FormKitNode): void {
       node.context.addNode = (parentNode: any, index: number) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
           const array: any[] = parentNode.value
-          array.splice(index + 1, 0, cloneItem(newItem))
+          array.splice(index + 1, 0, makeNewItem())
           parentNode.input(array, false)
         }
       }
       node.context.cloneNode = (parentNode: any, index: number) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
           const array: any[] = parentNode.value
-          array.splice(index + 1, 0, cloneItem(array[index]))
+          array.splice(index + 1, 0, clonePlain(array[index]))
           parentNode.input(array, false)
         }
       }
