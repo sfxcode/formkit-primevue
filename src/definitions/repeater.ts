@@ -33,6 +33,19 @@ function addDragHandle(handleClass: string = '', iconClass: string = '', render:
   }, render)
 }
 
+// Items must never share an object: the repeater's value is edited in place, so a shared
+// reference makes a clone (or two added items) collapse into one object on the next change,
+// and an item inserted as the `newItem` template itself would turn edits into the new default.
+function cloneItem<T>(item: T): T {
+  if (Array.isArray(item))
+    return item.map(cloneItem) as T
+  if (item instanceof Date)
+    return new Date(item.getTime()) as T
+  if (item !== null && typeof item === 'object' && Object.getPrototypeOf(item) === Object.prototype)
+    return Object.fromEntries(Object.entries(item).map(([key, value]) => [key, cloneItem(value)])) as T
+  return item
+}
+
 export const primeRepeaterDefinition: FormKitTypeDefinition = createInput(
   addElement('div', [
     addList('$listName', [
@@ -72,7 +85,9 @@ function addRepeaterHandler(node: FormKitNode): void {
   node.on('created', () => {
     if (node.context) {
       let dragStartIndex: number | null = null
-      let dragOverIndex: number | null = null
+      // lives on the (reactive) context, so the drop-target class re-renders while dragging
+      const context = node.context
+      context.dragOverIndex = null
       const newItem = node.context.newItem || {}
 
       node.context.listName = node.name
@@ -89,7 +104,7 @@ function addRepeaterHandler(node: FormKitNode): void {
       node.context.internalListId = `formkit-items-${uuid}`
 
       node.context.getListItemClass = (index: number): string => {
-        if (dragOverIndex === index && dragStartIndex !== index)
+        if (context.dragOverIndex === index && dragStartIndex !== index)
           return `${node.context?.internalListItemClass} formkit-repeater-drop-target`
         return node.context?.internalListItemClass?.toString() ?? ''
       }
@@ -100,7 +115,7 @@ function addRepeaterHandler(node: FormKitNode): void {
 
       node.context.insertNode = (parentNode: any) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
-          const newArray: any[] = [{ ...newItem }, ...parentNode.value]
+          const newArray: any[] = [cloneItem(newItem), ...parentNode.value]
           parentNode.input(newArray, false)
         }
       }
@@ -112,15 +127,14 @@ function addRepeaterHandler(node: FormKitNode): void {
       node.context.addNode = (parentNode: any, index: number) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
           const array: any[] = parentNode.value
-          array.splice(index + 1, 0, newItem)
+          array.splice(index + 1, 0, cloneItem(newItem))
           parentNode.input(array, false)
         }
       }
       node.context.cloneNode = (parentNode: any, index: number) => (): void => {
         if (parentNode && Array.isArray(parentNode._value)) {
-          const item: any = parentNode.value[index]
           const array: any[] = parentNode.value
-          array.splice(index + 1, 0, item)
+          array.splice(index + 1, 0, cloneItem(array[index]))
           parentNode.input(array, false)
         }
       }
@@ -145,18 +159,18 @@ function addRepeaterHandler(node: FormKitNode): void {
       }
       node.context.dragNodeOver = (targetIndex: number) => (event?: DragEvent): void => {
         event?.preventDefault()
-        dragOverIndex = targetIndex
+        context.dragOverIndex = targetIndex
         if (event?.dataTransfer)
           event.dataTransfer.dropEffect = 'move'
       }
       node.context.dragNodeLeave = (targetIndex: number) => (): void => {
-        if (dragOverIndex === targetIndex)
-          dragOverIndex = null
+        if (context.dragOverIndex === targetIndex)
+          context.dragOverIndex = null
       }
       node.context.dropNode = (parentNode: any, targetIndex: number) => (event?: DragEvent): void => {
         event?.preventDefault()
         if (!parentNode || !Array.isArray(parentNode._value)) {
-          dragOverIndex = null
+          context.dragOverIndex = null
           return
         }
 
@@ -164,21 +178,21 @@ function addRepeaterHandler(node: FormKitNode): void {
         const sourceIndex = Number.isInteger(sourceFromEvent) ? sourceFromEvent : dragStartIndex
 
         if (sourceIndex === null || sourceIndex === targetIndex) {
-          dragOverIndex = null
+          context.dragOverIndex = null
           return
         }
         if (sourceIndex < 0 || sourceIndex >= parentNode.value.length) {
-          dragOverIndex = null
+          context.dragOverIndex = null
           return
         }
 
         parentNode.input(swapElements(parentNode.value, sourceIndex, targetIndex), false)
         dragStartIndex = null
-        dragOverIndex = null
+        context.dragOverIndex = null
       }
       node.context.dragNodeEnd = (): void => {
         dragStartIndex = null
-        dragOverIndex = null
+        context.dragOverIndex = null
       }
     }
   })
