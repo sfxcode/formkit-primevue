@@ -1,3 +1,33 @@
+## v4.4.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.3.6...v4.4.0)
+
+### 🚀 Enhancements
+
+- Add createAutoAnimatePlugin for improved input animations ([72f15fd8](https://github.com/sfxcode/formkit-primevue/commit/72f15fd8))
+- Implement deep cloning for repeater items to prevent shared references ([34192016](https://github.com/sfxcode/formkit-primevue/commit/34192016))
+- Add form prefix for inputs and outputs to support library-neutral naming ([924d6a29](https://github.com/sfxcode/formkit-primevue/commit/924d6a29))
+- Register the form prefix names by default in primeInputs and primeOutputs ([07e465bf](https://github.com/sfxcode/formkit-primevue/commit/07e465bf))
+
+### 🩹 Fixes
+
+- Prevent object reference issues by cloning items in repeater ([b52220c3](https://github.com/sfxcode/formkit-primevue/commit/b52220c3))
+
+### 🏡 Chore
+
+- Add lint rule forbidding TypeScript syntax in Vue templates ([d96a67a1](https://github.com/sfxcode/formkit-primevue/commit/d96a67a1))
+- Update dependencies to latest versions in package.json and pnpm-workspace.yaml ([a3404679](https://github.com/sfxcode/formkit-primevue/commit/a3404679))
+- Update release script to use minor versioning for changelog ([a72bca74](https://github.com/sfxcode/formkit-primevue/commit/a72bca74))
+- Add trust policy to prevent downgrades in pnpm workspace configuration ([72520c83](https://github.com/sfxcode/formkit-primevue/commit/72520c83))
+
+### ✅ Tests
+
+- Enhance repeater tests with reactive context and deep cloning ([147439a5](https://github.com/sfxcode/formkit-primevue/commit/147439a5))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.3.6
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.3.5...v4.3.6)
