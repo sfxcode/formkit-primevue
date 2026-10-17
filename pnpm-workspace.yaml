@@ -1,5 +1,13 @@
 minimumReleaseAgeExcludePrune: true
 trustPolicy: no-downgrade
+# mkdist and unbuild declare conservative peer ranges. The library builds and works with the versions
+# used here (TypeScript 6, vue-sfc-transformer 0.3), and there is no newer mkdist or unbuild release
+# that accepts them yet.
+peerDependencyRules:
+  allowedVersions:
+    mkdist>vue-sfc-transformer: ^0.3.0
+    unbuild>typescript: ^6.0.0
+
 shellEmulator: true
 
 overrides:
