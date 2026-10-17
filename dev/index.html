@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" class="p-dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="./assets/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FormKit PrimeVue Demo</title>
+    <script>
+      // the theme before the first paint: the stored choice, or else the setting of the system (see composables/theme.ts)
+      (function () {
+        try {
+          var stored = localStorage.getItem('formkit-primevue-demo-theme')
+          var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches
+          document.documentElement.classList.toggle('p-dark', dark)
+          document.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+        }
+        catch (e) {}
+      })()
+    </script>
   </head>
   <body>
     <div id="app"></div>

@@ -1,8 +1,9 @@
 <script setup lang='ts'>
 import JsonEditorVue from 'json-editor-vue'
 import { FormKitDataView } from 'my-library'
-
 import { ref } from 'vue'
+
+import { useTheme } from '../../composables/theme'
 
 const props = defineProps<{
   header: string
@@ -11,6 +12,8 @@ const props = defineProps<{
   primeAttributes?: string
   customAttributes?: string
 }>()
+
+const { isDark } = useTheme()
 
 const formSchema = ref(props.schema)
 const formData = ref(props.data)
@@ -61,10 +64,10 @@ function updateData(value: any) {
           </TabList>
           <TabPanels>
             <TabPanel value="0" class="w-full max-w-200">
-              <JsonEditorVue :model-value="formSchema" class="jse-theme-dark" @update:model-value="updateSchema" />
+              <JsonEditorVue :model-value="formSchema" :class="{ 'jse-theme-dark': isDark }" @update:model-value="updateSchema" />
             </TabPanel>
             <TabPanel value="1">
-              <JsonEditorVue :model-value="formData" class="jse-theme-dark" @update:model-value="updateData" />
+              <JsonEditorVue :model-value="formData" :class="{ 'jse-theme-dark': isDark }" @update:model-value="updateData" />
             </TabPanel>
           </TabPanels>
         </Tabs>

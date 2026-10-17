@@ -3,6 +3,7 @@ import type { FormKitSchemaDefinition } from '@formkit/core'
 import JsonEditorVue from 'json-editor-vue'
 import { FormKitDataEdit } from 'my-library'
 import { useMessages } from '../../composables/messages'
+import { useTheme } from '../../composables/theme'
 
 const props = defineProps<{
   header: string
@@ -13,6 +14,8 @@ const props = defineProps<{
   formClass?: string
   hideTabs?: boolean
 }>()
+
+const { isDark } = useTheme()
 
 const { showSuccessMessage } = useMessages()
 
@@ -74,10 +77,10 @@ async function submitHandler() {
           </TabList>
           <TabPanels class="">
             <TabPanel value="0" class="w-full max-w-200">
-              <JsonEditorVue :model-value="formSchema" class="jse-theme-dark" @update:model-value="updateSchema" />
+              <JsonEditorVue :model-value="formSchema" :class="{ 'jse-theme-dark': isDark }" @update:model-value="updateSchema" />
             </TabPanel>
             <TabPanel value="1">
-              <JsonEditorVue :model-value="formData" class="jse-theme-dark" @update:model-value="updateData" />
+              <JsonEditorVue :model-value="formData" :class="{ 'jse-theme-dark': isDark }" @update:model-value="updateData" />
             </TabPanel>
             <TabPanel v-if="primeAttributes || customAttributes" value="2">
               <h4>Base Attributes</h4>

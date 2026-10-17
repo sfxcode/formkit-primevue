@@ -1,4 +1,8 @@
 <script setup lang='ts'>
+import { useTheme } from '../../composables/theme'
+
+const { isDark, toggleTheme } = useTheme()
+
 const items = ref([
   {
     label: 'Demo',
@@ -130,7 +134,7 @@ const items = ref([
         </router-link>
       </template>  <template #center>
         <div class="text-lg">
-          <span class="text-yellow-600 font-bold">New: </span>
+          <span class="new-badge font-bold">New: </span>
           <router-link to="/inputs/repeater" class="">
             <span class="">PrimeRepeater</span>
           </router-link>
@@ -141,6 +145,12 @@ const items = ref([
           <Button as="a" href="https://primevue.org" target="_blank" rel="noopener noreferrer" icon="pi pi-prime" label="PrimeVue" />
           <Button as="a" href="https://sfxcode.github.io/formkit-primevue/" target="_blank" rel="noopener noreferrer" icon="pi pi-book" label="Docs" />
           <Button as="a" href="https://github.com/sfxcode/formkit-primevue" target="_blank" rel="noopener noreferrer" icon="pi pi-github" aria-label="GitHub" />
+          <Button
+            :icon="isDark ? 'pi pi-sun' : 'pi pi-moon'"
+            severity="secondary"
+            :aria-label="isDark ? 'Switch to the light theme' : 'Switch to the dark theme'"
+            @click="toggleTheme"
+          />
         </div>
       </template>
     </Toolbar>
@@ -167,5 +177,10 @@ const items = ref([
 // links that are buttons keep the text color of their button
 a:not(.p-button) {
   color: var(--p-primary-color);
+}
+
+// `light-dark()` follows the `color-scheme` of the page, set together with the theme
+.new-badge {
+  color: light-dark(#b45309, #eab308);
 }
 </style>
