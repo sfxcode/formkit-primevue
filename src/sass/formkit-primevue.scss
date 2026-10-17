@@ -314,7 +314,8 @@ $grid-breakpoints: (
   align-items: stretch;
   gap: 1rem;
   width: 100%;
-  min-width: 600px;
+  // never wider than the container it is in
+  min-width: min(600px, 100%);
 }
 
 .p-formkit-transfer-list-container {
@@ -331,6 +332,23 @@ $grid-breakpoints: (
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
+}
+
+// Narrow screens: the lists are stacked, the buttons sit between them in a row and their arrows point down and up.
+@media (max-width: 640px) {
+  .p-formkit-transfer {
+    flex-direction: column;
+    min-width: 0;
+  }
+
+  .p-formkit-transfer-buttons {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .pi {
+      transform: rotate(90deg);
+    }
+  }
 }
 
 .p-formkit-transfer-option {
