@@ -1,6 +1,6 @@
 import Unocss from 'unocss/vite'
 import { defineConfig } from 'vitepress'
-import { version } from '../../package.json'
+import pkg from '../../package.json' with { type: 'json' }
 
 export default defineConfig({
   title: 'FormKit-PrimeVue',
@@ -65,7 +65,7 @@ function nav() {
       ],
     },
     {
-      text: version,
+      text: pkg.version,
       items: [
         {
           text: 'Changelog',

@@ -22,11 +22,6 @@ export default defineConfig({
       path: '/ws',
     },
   },
-  // https://github.com/antfu/vite-ssg
-  ssgOptions: {
-    script: 'async',
-    formatting: 'minify',
-  },
   test: {
     globals: true,
     include: ['test/**/*.test.ts'],
