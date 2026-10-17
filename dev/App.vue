@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AppBreadcrumb from '@/components/app/AppBreadcrumb.vue'
 import AppFooter from '@/components/app/AppFooter.vue'
 import AppTopBar from '@/components/app/AppTopbar.vue'
 </script>
@@ -9,6 +10,7 @@ import AppTopBar from '@/components/app/AppTopbar.vue'
     <div class="">
       <AppTopBar />
       <div class="pl-2">
+        <AppBreadcrumb />
         <router-view />
       </div>
       <AppFooter />

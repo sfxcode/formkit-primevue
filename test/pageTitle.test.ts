@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { APP_TITLE, pageTitle } from '../dev/utils/pageTitle'
+import { APP_TITLE, pageTitle, routeParts } from '../dev/utils/pageTitle'
 
 describe('pageTitle', () => {
   it('is the app title for the home page and for a route without a name', () => {
@@ -26,5 +26,24 @@ describe('pageTitle', () => {
 
   it('names a page without a section by itself', () => {
     expect(pageTitle('About')).toBe('About | FormKit PrimeVue Demo')
+  })
+})
+
+describe('routeParts', () => {
+  it('has no parts for the home page and for a route without a name', () => {
+    expect(routeParts('index')).toBeUndefined()
+    expect(routeParts(undefined)).toBeUndefined()
+    expect(routeParts(null)).toBeUndefined()
+    expect(routeParts('')).toBeUndefined()
+    expect(routeParts(Symbol('route'))).toBeUndefined()
+  })
+
+  it('splits the name of a page route into its page and its section', () => {
+    expect(routeParts('inputs-InputText')).toEqual({ page: 'InputText', section: 'Inputs' })
+    expect(routeParts('samples-Repeater')).toEqual({ page: 'Repeater', section: 'Samples' })
+  })
+
+  it('has no section for a page without one', () => {
+    expect(routeParts('About')).toEqual({ page: 'About', section: undefined })
   })
 })
