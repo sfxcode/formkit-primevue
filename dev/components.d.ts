@@ -14,6 +14,7 @@ declare module 'vue' {
     AppBreadcrumb: typeof import('./components/app/AppBreadcrumb.vue')['default']
     AppFooter: typeof import('./components/app/AppFooter.vue')['default']
     AppTopbar: typeof import('./components/app/AppTopbar.vue')['default']
+    JsonEditor: typeof import('./components/demo/JsonEditor.vue')['default']
     PrimeData: typeof import('./components/demo/PrimeData.vue')['default']
     PrimeInput: typeof import('./components/demo/PrimeInput.vue')['default']
     PrimeLabel: typeof import('./components/demo/PrimeLabel.vue')['default']

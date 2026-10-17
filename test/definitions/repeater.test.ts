@@ -295,4 +295,58 @@ describe('primeRepeaterDefinition', () => {
       expect(schema).toContain('"validation":"$repeaterValidation"')
     })
   })
+
+  describe('accessible button names', () => {
+    function findButtons(node: any, found: any[] = []): any[] {
+      if (Array.isArray(node)) {
+        node.forEach(entry => findButtons(entry, found))
+      }
+      else if (node && typeof node === 'object') {
+        if (node.$cmp === 'Button')
+          found.push(node)
+        Object.values(node).forEach(value => findButtons(value, found))
+      }
+      return found
+    }
+
+    it('has an English default for each row button', () => {
+      const node = createRepeaterNode()
+
+      expect(node.context.moveUpLabel).toBe('Move item up')
+      expect(node.context.moveDownLabel).toBe('Move item down')
+      expect(node.context.deleteLabel).toBe('Delete item')
+      expect(node.context.cloneLabel).toBe('Clone item')
+      expect(node.context.addLabel).toBe('Add item below')
+    })
+
+    it('keeps the labels that are set', () => {
+      const node = createRepeaterNode({ moveUpLabel: 'Hoch', moveDownLabel: 'Runter', deleteLabel: 'Löschen', cloneLabel: 'Duplizieren', addLabel: 'Einfügen' })
+
+      expect(node.context.moveUpLabel).toBe('Hoch')
+      expect(node.context.moveDownLabel).toBe('Runter')
+      expect(node.context.deleteLabel).toBe('Löschen')
+      expect(node.context.cloneLabel).toBe('Duplizieren')
+      expect(node.context.addLabel).toBe('Einfügen')
+    })
+
+    it('accepts the label props', () => {
+      const props = (primeRepeaterDefinition as any).props as string[]
+
+      expect(props).toEqual(expect.arrayContaining(['moveUpLabel', 'moveDownLabel', 'deleteLabel', 'cloneLabel', 'addLabel']))
+    })
+
+    it('gives each action button its label and the number of its row as name and tooltip', () => {
+      const buttons = findButtons((primeRepeaterDefinition as any).schema()).filter(button => button.props.icon?.startsWith('pi pi-') && !button.props.label)
+
+      expect(buttons.map(button => button.props['aria-label'])).toEqual([
+        '$moveUpLabel + " " + ($index + 1)',
+        '$deleteLabel + " " + ($index + 1)',
+        '$cloneLabel + " " + ($index + 1)',
+        '$addLabel + " " + ($index + 1)',
+        '$moveDownLabel + " " + ($index + 1)',
+      ])
+      for (const button of buttons)
+        expect(button.props.title).toBe(button.props['aria-label'])
+    })
+  })
 })

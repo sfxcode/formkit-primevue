@@ -88,6 +88,27 @@ const data = {
 | displayDragHandle         | boolean   | false   | Show drag handle                       |
 | dragHandleClass           | string    | ''      | Extra CSS class for the drag handle    |
 | dragHandleIconClass       | string    | 'pi pi-bars' | Icon class used inside the drag handle |
+| moveUpLabel               | string    | 'Move item up' | Accessible name and tooltip of the move up button |
+| moveDownLabel             | string    | 'Move item down' | Accessible name and tooltip of the move down button |
+| deleteLabel               | string    | 'Delete item' | Accessible name and tooltip of the delete button |
+| cloneLabel                | string    | 'Clone item' | Accessible name and tooltip of the clone button |
+| addLabel                  | string    | 'Add item below' | Accessible name and tooltip of the add button |
+
+## Accessible button names
+
+The row buttons only show an icon. Each one has an accessible name and a tooltip made of its label and the number of its row, for example `Delete item 2`, so the buttons of different rows can be told apart. Set the label props to change the text, for example to translate it:
+
+```ts
+const attacks = {
+  $formkit: 'primeRepeater',
+  name: 'attacks',
+  deleteLabel: 'Eintrag löschen', // `Eintrag löschen 2`
+  moveUpLabel: 'Eintrag nach oben',
+  moveDownLabel: 'Eintrag nach unten',
+  cloneLabel: 'Eintrag duplizieren',
+  addLabel: 'Eintrag darunter einfügen',
+}
+```
 
 ## Features
 

@@ -44,6 +44,9 @@ export default defineConfig({
     ],
   },
   build: {
+    // The two big chunks are vendor code: PrimeVue with its theme (about 0.9 MB) and the JSON editor (about 1 MB),
+    // which is only loaded by the pages that show an editor. The code of the demo itself is a small chunk.
+    chunkSizeWarningLimit: 1100,
     // Rolldown's automatic chunk-splitting placed its runtime helpers
     // (e.g. __exportAll) into the json-editor-vue chunk, which itself imports
     // Vue from the shared components chunk -> circular chunk dependency
@@ -55,7 +58,8 @@ export default defineConfig({
           groups: [
             { name: 'rolldown-runtime', test: /rolldown[\\/]runtime/, priority: 100 },
             { name: 'vue', test: /node_modules[\\/](?:\.pnpm[\\/])?(?:@vue|vue)[\\/@]/, priority: 50 },
-            { name: 'json-editor', test: /node_modules[\\/].*(?:json-editor-vue|vanilla-jsoneditor)/, priority: 20 },
+            { name: 'primevue', test: /node_modules[\\/].*(?:primevue|@primeuix|@primevue)[\\/]/, priority: 40 },
+            { name: 'formkit', test: /node_modules[\\/].*@formkit[\\/]/, priority: 30 },
           ],
         },
       },

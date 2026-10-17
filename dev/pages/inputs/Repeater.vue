@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 const primeAttributes = 'N/A'
-const customAttributes = 'insertButtonLabel, insertButtonClass, insertButtonSize, alwaysDisplayInsertButton, newItem, listClass, listItemClass, groupClass, hideButtonGroup, hideMoveButtons, buttonGroupClass, buttonGroupItemClass, buttonSize, displayCloneButton, displayAddButton, displayDeleteButton, displayDragHandle, dragHandleClass, dragHandleIconClass'
+const customAttributes = 'insertButtonLabel, insertButtonClass, insertButtonSize, alwaysDisplayInsertButton, newItem, listClass, listItemClass, groupClass, hideButtonGroup, hideMoveButtons, buttonGroupClass, buttonGroupItemClass, buttonSize, displayCloneButton, displayAddButton, displayDeleteButton, moveUpLabel, moveDownLabel, deleteLabel, cloneLabel, addLabel, displayDragHandle, dragHandleClass, dragHandleIconClass'
 
 function createDefaultValue(): object {
   return { name: '', damage: '' }
