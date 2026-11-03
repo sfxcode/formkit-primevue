@@ -1,3 +1,15 @@
+## v4.6.0
+
+[compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.5.0...v4.6.0)
+
+### 🏡 Chore
+
+- Update dependencies and devDependencies to latest versions ([77a5a830](https://github.com/sfxcode/formkit-primevue/commit/77a5a830))
+
+### ❤️ Contributors
+
+- Sfxcode ([@sfxcode](https://github.com/sfxcode))
+
 ## v4.5.0
 
 [compare changes](https://github.com/sfxcode/formkit-primevue/compare/v4.4.0...v4.5.0)
