@@ -12,6 +12,18 @@ Actual PrimeVue Version of the main branch is *4.5.5.*
 
 This is the last version of the 4.x branch. Starting with [PrimeVue's "Next Chapter"](https://primeui.dev/nextchapter), newer versions are no longer open source, so 5.x and later will not be supported. Dependency overrides pin PrimeVue-related packages to their last MIT-licensed versions.
 
+## Alternative: formkit-openvue
+
+[sfxcode/formkit-openvue](https://github.com/sfxcode/formkit-openvue) provides OpenVue based FormKit inputs. It is the natural successor if you want to keep the schema-driven form approach of this project on a fully open source component base, independent of PrimeVue's licensing changes.
+
+[Docs](https://sfxcode.github.io/formkit-openvue/) | [Demo/Playground](https://formkit-openvue.netlify.app/)
+
+## Alternative: nuxt-ui-formkit
+
+[sfxcode/nuxt-ui-formkit](https://github.com/sfxcode/nuxt-ui-formkit) integrates FormKit form handling with [Nuxt UI](https://ui.nuxt.com/) components for Nuxt 4. Choose it if your application is built on Nuxt UI instead of PrimeVue.
+
+[Docs](https://sfxcode.github.io/nuxt-ui-formkit/) | [Demo/Playground](https://nuxt-ui-formkit.netlify.app/)
+
 ## Build
 
 [![CI](https://github.com/sfxcode/formkit-primevue/actions/workflows/deploy.yml/badge.svg)](https://github.com/sfxcode/formkit-primevue/actions/workflows/deploy.yml)

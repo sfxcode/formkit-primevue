@@ -4,6 +4,18 @@
 
 The main motivation for this project is to use Formkit Validation by Schema with form elements provided by PrimeVue.
 
+## Alternative: formkit-openvue
+
+[sfxcode/formkit-openvue](https://github.com/sfxcode/formkit-openvue) provides OpenVue based FormKit inputs. It is the natural successor if you want to keep the schema-driven form approach of this project on a fully open source component base, independent of PrimeVue's licensing changes.
+
+[Docs](https://sfxcode.github.io/formkit-openvue/) | [Demo/Playground](https://formkit-openvue.netlify.app/)
+
+## Alternative: nuxt-ui-formkit
+
+[sfxcode/nuxt-ui-formkit](https://github.com/sfxcode/nuxt-ui-formkit) integrates FormKit form handling with [Nuxt UI](https://ui.nuxt.com/) components for Nuxt 4. Choose it if your application is built on Nuxt UI instead of PrimeVue.
+
+[Docs](https://sfxcode.github.io/nuxt-ui-formkit/) | [Demo/Playground](https://nuxt-ui-formkit.netlify.app/)
+
 ## Guide Overview
 
 Navigate the guide to learn about all features and usage:
